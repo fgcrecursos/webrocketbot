@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rocketbot · El futuro de la automatización</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════════ */
+:root {
+  --rb-red:        #BC0017;
+  --rb-red-deep:   #8E0011;
+  --rb-red-soft:   rgba(188,0,23,0.10);
+  --rb-red-glow:   rgba(188,0,23,0.30);
+  --rb-blue:       #2B7FFF;
+  --rb-neon-cyan:  #00D4FF;
+
+  /* neutrals */
+  --rb-black:      #000000;
+  --rb-space:      #02061B;
+  --rb-dark-1:     #0A0A0F;
+  --rb-dark-2:     #121218;
+  --rb-dark-3:     #1B1F23;
+  --rb-secondary:  #263238;
+  --rb-gray-900:   #0B0E11;
+  --rb-gray-700:   #404040;
+  --rb-gray-500:   #909090;
+  --rb-off-white:  #FAFAFA;
+  --rb-white:      #FFFFFF;
+
+  /* semantic (light) */
+  --background:    var(--rb-off-white);
+  --foreground:    var(--rb-gray-900);
+  --card:          rgba(255,255,255,0.70);
+  --border:        rgba(0,0,0,0.08);
+  --muted:         var(--rb-gray-500);
+  --glass-bg:      rgba(255,255,255,0.60);
+  --glass-border:  rgba(255,255,255,0.30);
+  --glass-blur:    20px;
+
+  /* radii */
+  --r-md:   16px; --r-lg: 24px; --r-xl: 32px;
+  --r-2xl:  40px; --r-pill: 9999px;
+
+  /* shadows */
+  --sh-card: 0 8px 32px rgba(0,0,0,.10), inset 0 1px 0 rgba(255,255,255,.10);
+  --sh-red:  0 0 20px rgba(188,0,23,.30), 0 0 40px rgba(188,0,23,.20);
+
+  /* type */
+  --font-sans: 'Montserrat', system-ui, -apple-system, Segoe UI, sans-serif;
+}
+
+/* ─── DARK TOKEN OVERRIDES ─── */
+[data-theme="dark"] {
+  --background:   var(--rb-dark-1);
+  --foreground:   var(--rb-white);
+  --card:         rgba(20,20,30,0.80);
+  --border:       rgba(255,255,255,0.08);
+  --glass-bg:     rgba(20,20,35,0.60);
+  --glass-border: rgba(255,255,255,0.10);
+}
+
+/* ═══════════════════════════════════════════
+   RESET + BASE
+═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  background: var(--background);
+  color: var(--foreground);
+  font-weight: 400;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  transition: background .35s, color .35s;
+}
+img { max-width: 100%; display: block; }
+a   { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+h1,h2,h3,h4,h5,h6 { font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin: 0; }
+p { margin: 0; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+/* ═══════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════ */
+.rb-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  padding: 18px 32px;
+  transition: padding .3s, backdrop-filter .3s, background .3s, border-color .3s;
+}
+.rb-nav.scrolled {
+  padding: 10px 32px;
+  background: linear-gradient(135deg, rgba(43,127,255,.12), rgba(188,0,23,.12), rgba(38,50,56,.18));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 4px 24px rgba(0,0,0,.08);
+}
+[data-theme="dark"] .rb-nav.scrolled {
+  background: linear-gradient(135deg, rgba(43,127,255,.08), rgba(188,0,23,.10), rgba(10,10,15,.85));
+  border-bottom-color: rgba(255,255,255,.08);
+}
+.rb-nav__inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 32px;
+}
+.rb-nav__logo-wrap { display: flex; align-items: center; }
+.rb-nav__logo      { height: 32px; width: auto; display: block; }
+
+.rb-nav__links {
+  display: flex; align-items: center; gap: 28px;
+  list-style: none; margin: 0; padding: 0;
+}
+.rb-nav__links a, .rb-nav__links button {
+  background: none; border: none; padding: 0;
+  font-size: 14px; font-weight: 500; color: #555;
+  display: inline-flex; align-items: center; gap: 4px;
+  transition: color .2s;
+}
+[data-theme="dark"] .rb-nav__links a,
+[data-theme="dark"] .rb-nav__links button { color: rgba(255,255,255,.6); }
+.rb-nav__links a:hover, .rb-nav__links button:hover { color: #000; }
+[data-theme="dark"] .rb-nav__links a:hover,
+[data-theme="dark"] .rb-nav__links button:hover { color: #fff; }
+.rb-nav__actions { display: flex; align-items: center; gap: 12px; }
+
+.rb-iconbtn {
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--card);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #555; transition: color .2s, transform .2s, background .3s;
+}
+[data-theme="dark"] .rb-iconbtn { color: rgba(255,255,255,.6); }
+.rb-iconbtn:hover { color: var(--rb-red); transform: scale(1.05); }
+[data-theme="dark"] .rb-iconbtn:hover { color: var(--rb-red); }
+
+/* ═══════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════ */
+.rb-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 700; font-size: 14px;
+  padding: 12px 24px; border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  transition: transform .2s, box-shadow .25s, background .25s, color .2s;
+}
+.rb-btn--primary {
+  background: var(--rb-red); color: #fff;
+  box-shadow: 0 4px 16px rgba(188,0,23,.25);
+}
+.rb-btn--primary:hover {
+  background: var(--rb-red-deep); transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(188,0,23,.45);
+}
+.rb-btn--ghost {
+  background: transparent; border-color: var(--border);
+  color: var(--foreground);
+}
+.rb-btn--ghost:hover { background: rgba(0,0,0,.04); }
+[data-theme="dark"] .rb-btn--ghost:hover { background: rgba(255,255,255,.07); }
+.rb-btn--lg { padding: 14px 32px; font-size: 15px; }
+.rb-btn--square { border-radius: 10px; }
+
+/* ═══════════════════════════════════════════
+   EYEBROW
+═══════════════════════════════════════════ */
+.rb-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--rb-red);
+  background: rgba(188,0,23,.08); border: 1px solid rgba(188,0,23,.2);
+  padding: 8px 16px; border-radius: var(--r-pill);
+}
+.rb-eyebrow .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--rb-red);
+  animation: rb-pulse 2s ease-in-out infinite;
+}
+@keyframes rb-pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:0.5; transform:scale(0.8); }
+}
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.rb-hero {
+  position: relative; min-height: 90vh;
+  padding: 140px 0 80px; overflow: hidden;
+}
+.rb-hero__particles {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(188,0,23,.10) 0%, transparent 40%),
+    radial-gradient(circle at 20% 70%, rgba(43,127,255,.05) 0%, transparent 40%);
+  transition: background .4s;
+}
+[data-theme="dark"] .rb-hero__particles {
+  background:
+    radial-gradient(circle at 80% 30%, rgba(188,0,23,.18) 0%, transparent 45%),
+    radial-gradient(circle at 20% 70%, rgba(43,127,255,.10) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(10,10,15,.6) 0%, transparent 70%);
+}
+.rb-hero__grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: center; position: relative; z-index: 1;
+}
+.rb-hero__title {
+  font-size: clamp(40px, 6vw, 88px);
+  font-weight: 800; letter-spacing: -0.04em;
+  line-height: 1.05; margin: 24px 0;
+}
+.rb-hero__title span   { color: var(--rb-secondary); }
+[data-theme="dark"] .rb-hero__title span { color: rgba(255,255,255,.55); }
+.rb-hero__title strong { color: var(--rb-red); font-weight: inherit; }
+.rb-hero__sub {
+  font-size: 22px; color: #555; line-height: 1.4;
+  max-width: 540px; margin-bottom: 36px; font-weight: 300;
+  transition: color .3s;
+}
+[data-theme="dark"] .rb-hero__sub { color: rgba(255,255,255,.55); }
+.rb-hero__sub small { display: block; margin-top: 12px; font-size: 14px; color: #888; }
+[data-theme="dark"] .rb-hero__sub small { color: rgba(255,255,255,.35); }
+.rb-hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* ─── ORB ─── */
+.rb-orb {
+  position: relative; width: 100%; aspect-ratio: 1;
+  max-width: 480px; margin: 0 auto;
+}
+.rb-orb__svg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none;
+}
+.rb-orb__svg .rb-orb__net line { stroke-dasharray: 6 6; animation: rb-dash 6s linear infinite; }
+.rb-orb__svg circle[r="4"] { animation: rb-node-pulse 3s ease-in-out infinite; }
+.rb-orb__svg circle.n0 { animation-delay: 0.0s; }
+.rb-orb__svg circle.n1 { animation-delay: 0.4s; }
+.rb-orb__svg circle.n2 { animation-delay: 0.8s; }
+.rb-orb__svg circle.n3 { animation-delay: 1.2s; }
+.rb-orb__svg circle.n4 { animation-delay: 1.6s; }
+.rb-orb__svg circle.n5 { animation-delay: 2.0s; }
+@keyframes rb-dash { to { stroke-dashoffset: -120; } }
+@keyframes rb-node-pulse {
+  0%,100% { fill: #263238; r: 4; }
+  50%      { fill: var(--rb-red); r: 6; }
+}
+[data-theme="dark"] .rb-orb__svg .rb-orb__net line { stroke: rgba(255,255,255,.25); }
+[data-theme="dark"] .rb-orb__svg circle[r="4"]     { fill: rgba(255,255,255,.5); }
+
+.rb-orb__ring {
+  position: absolute; inset: 12%;
+  border: 2px solid rgba(188,0,23,.4); border-radius: 50%;
+  animation: rb-spin 30s linear infinite;
+}
+.rb-orb__ring--2 { inset:22%; border-color:rgba(38,50,56,.5); border-style:dashed; animation-duration:22s; animation-direction:reverse; }
+.rb-orb__ring--3 { inset:32%; border-color:rgba(255,255,255,.7); border-width:1px; animation-duration:40s; }
+[data-theme="dark"] .rb-orb__ring     { border-color: rgba(188,0,23,.6); }
+[data-theme="dark"] .rb-orb__ring--2  { border-color: rgba(255,255,255,.15); }
+[data-theme="dark"] .rb-orb__ring--3  { border-color: rgba(255,255,255,.25); }
+
+.rb-orb__core {
+  position: absolute; inset: 38%; border-radius: 50%;
+  background: linear-gradient(135deg, var(--rb-red), var(--rb-red-deep));
+  box-shadow: 0 0 60px rgba(188,0,23,.5);
+  display: flex; align-items: center; justify-content: center;
+  animation: rb-core-breath 4s ease-in-out infinite;
+}
+.rb-orb__core img { width: 60%; height: 60%; object-fit: contain; }
+@keyframes rb-core-breath {
+  0%,100% { transform:scale(1);    box-shadow:0 0 50px rgba(188,0,23,.45); }
+  50%     { transform:scale(1.06); box-shadow:0 0 90px rgba(188,0,23,.70); }
+}
+.rb-orb__pulse {
+  position: absolute; inset: 38%; border-radius: 50%;
+  border: 2px solid var(--rb-red);
+  animation: rb-orb-pulse 3s cubic-bezier(0,0,.2,1) infinite;
+  pointer-events: none;
+}
+@keyframes rb-orb-pulse {
+  0%   { transform:scale(1);   opacity:0.8; }
+  100% { transform:scale(2.2); opacity:0; }
+}
+.rb-orb__orbiter { position:absolute; inset:0; pointer-events:none; animation:rb-spin 8s linear infinite; }
+.rb-orb__orbiter span { position:absolute; width:12px; height:12px; border-radius:50%; background:var(--rb-red); box-shadow:0 0 12px var(--rb-red); }
+.rb-orb__orbiter--a { animation-duration:9s; }
+.rb-orb__orbiter--a span { top:14%; left:50%; transform:translateX(-50%); }
+.rb-orb__orbiter--b { animation-duration:14s; animation-direction:reverse; }
+.rb-orb__orbiter--b span { top:24%; left:50%; transform:translateX(-50%); background:var(--rb-secondary); box-shadow:0 0 10px var(--rb-secondary); }
+[data-theme="dark"] .rb-orb__orbiter--b span { background:rgba(255,255,255,.6); box-shadow:0 0 10px rgba(255,255,255,.4); }
+.rb-orb__orbiter--c { animation-duration:18s; }
+.rb-orb__orbiter--c span { top:34%; left:50%; transform:translateX(-50%); background:#fff; box-shadow:0 0 10px rgba(255,255,255,.8); width:8px; height:8px; }
+@keyframes rb-spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+/* ═══════════════════════════════════════════
+   LOGO CAROUSEL
+═══════════════════════════════════════════ */
+.rb-logos {
+  padding: 48px 0; background: #fff; overflow: hidden;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  transition: background .35s;
+}
+[data-theme="dark"] .rb-logos {
+  background: var(--rb-dark-2);
+  border-color: rgba(255,255,255,.06);
+}
+.rb-logos__label {
+  text-align: center; font-size: 12px; font-weight: 600;
+  color: #999; letter-spacing: 0.25em; text-transform: uppercase;
+  margin-bottom: 32px; transition: color .3s;
+}
+[data-theme="dark"] .rb-logos__label { color: rgba(255,255,255,.35); }
+.rb-logos__track {
+  display: flex; gap: 80px; align-items: center;
+  animation: rb-marquee 30s linear infinite;
+  width: max-content;
+}
+.rb-logos__track img {
+  height: 36px; width: auto; opacity: 0.45;
+  filter: grayscale(1);
+  transition: opacity .3s, filter .3s; flex-shrink: 0;
+}
+.rb-logos__track img:hover { opacity: 1; filter: none; }
+[data-theme="dark"] .rb-logos__track img { filter: grayscale(1) invert(1); opacity: 0.35; }
+[data-theme="dark"] .rb-logos__track img:hover { filter: invert(1); opacity: 0.85; }
+@keyframes rb-marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ═══════════════════════════════════════════
+   STATS BAR
+═══════════════════════════════════════════ */
+.rb-statsbar {
+  background: var(--rb-secondary); color: #fff;
+  padding: 56px 0; position: relative; overflow: hidden;
+}
+.rb-statsbar::before {
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 600px 200px at 0% 100%, rgba(188,0,23,.30), transparent 60%),
+    radial-gradient(ellipse 600px 200px at 100% 0%, rgba(0,212,255,.10), transparent 60%);
+  pointer-events:none;
+}
+[data-theme="dark"] .rb-statsbar { background: var(--rb-dark-3); }
+[data-theme="dark"] .rb-statsbar::before {
+  background:
+    radial-gradient(ellipse 600px 200px at 0% 100%, rgba(188,0,23,.40), transparent 60%),
+    radial-gradient(ellipse 600px 200px at 100% 0%, rgba(0,212,255,.15), transparent 60%);
+}
+.rb-statsbar__inner { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; position:relative; z-index:1; }
+.rb-statsbar__item { border-left:2px solid rgba(255,255,255,.18); padding-left:24px; }
+.rb-statsbar__item:first-child { border-left:none; padding-left:0; }
+.rb-statsbar__v { font-family:var(--font-sans); font-weight:800; font-size:clamp(36px,4vw,56px); letter-spacing:-0.04em; line-height:1; color:#fff; }
+.rb-statsbar__l { font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,.7); margin-top:12px; }
+
+/* ═══════════════════════════════════════════
+   SECTION HEADER
+═══════════════════════════════════════════ */
+.rb-section { padding:120px 0; position:relative; }
+.rb-section__head { text-align:center; max-width:720px; margin:0 auto 64px; }
+.rb-section__head--left { text-align:left; margin:0 0 64px; }
+.rb-section__title {
+  font-size:clamp(32px,4vw,56px); font-weight:700;
+  letter-spacing:-0.02em; line-height:1.1; margin:16px 0;
+  color: var(--foreground);
+}
+.rb-section__title span { color:var(--rb-red); }
+.rb-section__sub { font-size:18px; color:#555; transition:color .3s; }
+[data-theme="dark"] .rb-section__sub { color:rgba(255,255,255,.5); }
+.rb-section__rule { width:96px; height:4px; background:var(--rb-red); border-radius:2px; margin:0 auto; }
+.rb-section__rule--left { margin:0; }
+
+/* ═══════════════════════════════════════════
+   PRODUCT GRID
+═══════════════════════════════════════════ */
+.rb-products { display:grid; grid-template-columns:repeat(6,1fr); gap:16px; }
+.rb-product {
+  padding:32px 24px; border-radius:32px;
+  background: var(--card);
+  border:1px solid var(--border);
+  backdrop-filter:blur(20px);
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+  transition: border-color .4s, transform .3s, box-shadow .3s, background .35s;
+}
+.rb-product:hover { border-color:rgba(188,0,23,.5); transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,.06); }
+[data-theme="dark"] .rb-product:hover { box-shadow:0 20px 40px rgba(0,0,0,.3); }
+.rb-product__iso {
+  width:72px; height:72px; border-radius:18px;
+  background:#fff; border:1px solid var(--border);
+  padding:12px; display:flex; align-items:center; justify-content:center;
+  margin-bottom:28px; position:relative; transition:background .3s;
+}
+[data-theme="dark"] .rb-product__iso { background:rgba(255,255,255,.07); }
+.rb-product:hover .rb-product__iso::before {
+  content:''; position:absolute; inset:-8px;
+  background:rgba(188,0,23,.15); border-radius:24px;
+  filter:blur(12px); z-index:-1;
+}
+.rb-product__iso img { width:100%; height:100%; object-fit:contain; }
+.rb-product__title { font-size:17px; font-weight:800; letter-spacing:-0.01em; text-transform:uppercase; margin-bottom:12px; color:var(--foreground); }
+.rb-product__desc  { font-size:13px; color:#777; line-height:1.5; flex:1; margin-bottom:28px; transition:color .3s; }
+[data-theme="dark"] .rb-product__desc { color:rgba(255,255,255,.45); }
+.rb-product__cta {
+  width:100%; padding:12px; border-radius:12px;
+  border:1px solid var(--border); background:transparent;
+  font-weight:700; font-size:11px; letter-spacing:0.2em;
+  text-transform:uppercase; color:var(--foreground); transition:all .3s;
+}
+.rb-product__cta:hover { background:var(--rb-red); color:#fff; border-color:var(--rb-red); }
+
+/* ═══════════════════════════════════════════
+   SOLUTIONS TABS
+═══════════════════════════════════════════ */
+.rb-solutions-card {
+  display:grid; grid-template-columns:1fr 2fr;
+  background:#fff; border-radius:40px;
+  border:1px solid var(--border); overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.06);
+  transition:background .35s, border-color .35s, box-shadow .35s;
+}
+[data-theme="dark"] .rb-solutions-card {
+  background: var(--rb-dark-2);
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+.rb-tablist { padding:32px; display:flex; flex-direction:column; gap:8px; }
+.rb-tab {
+  background:transparent; border:none; padding:20px 24px; border-radius:18px;
+  display:flex; align-items:center; justify-content:space-between; text-align:left;
+  color:#999; transition:all .3s;
+}
+[data-theme="dark"] .rb-tab { color:rgba(255,255,255,.4); }
+.rb-tab__inner { display:flex; align-items:center; gap:16px; }
+.rb-tab svg { width:22px; height:22px; color:var(--rb-red); transition:transform .2s; }
+.rb-tab span.label { font-weight:800; font-size:14px; letter-spacing:0.18em; text-transform:uppercase; }
+.rb-tab.active { background:var(--rb-red); color:#fff; box-shadow:0 12px 32px rgba(188,0,23,.25); }
+.rb-tab.active svg { color:#fff; }
+.rb-tab:not(.active):hover { background:rgba(0,0,0,.04); color:#000; }
+[data-theme="dark"] .rb-tab:not(.active):hover { background:rgba(255,255,255,.06); color:#fff; }
+.rb-tab__arrow { opacity:0; transition:opacity .2s; }
+.rb-tab.active .rb-tab__arrow { opacity:1; }
+.rb-tab-promo { margin-top:24px; padding:20px; border-radius:16px; background:rgba(188,0,23,.05); border:1px solid rgba(188,0,23,.12); }
+[data-theme="dark"] .rb-tab-promo { background:rgba(188,0,23,.08); border-color:rgba(188,0,23,.18); }
+.rb-tab-promo__eyebrow { font-size:10px; font-weight:700; color:var(--rb-red); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:8px; }
+.rb-tab-promo__text    { font-size:13px; color:#666; transition:color .3s; }
+[data-theme="dark"] .rb-tab-promo__text { color:rgba(255,255,255,.45); }
+
+.rb-tabpanel { display:grid; grid-template-columns:1fr 320px; }
+.rb-tabpanel__copy { padding:48px 40px; }
+.rb-tabpanel__tag {
+  display:inline-block; padding:6px 12px;
+  background:rgba(188,0,23,.10); color:var(--rb-red);
+  font-size:10px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+  border:1px solid rgba(188,0,23,.2); border-radius:var(--r-pill); margin-bottom:28px;
+}
+.rb-tabpanel__list { list-style:none; padding:0; margin:0 0 36px; display:flex; flex-direction:column; gap:18px; }
+.rb-tabpanel__list li { display:flex; align-items:flex-start; gap:14px; font-size:16px; color:#333; transition:color .3s; }
+[data-theme="dark"] .rb-tabpanel__list li { color:rgba(255,255,255,.75); }
+.rb-tabpanel__list svg { width:20px; height:20px; color:var(--rb-red); flex-shrink:0; margin-top:2px; }
+.rb-tabpanel__img { background-size:cover; background-position:center; filter:grayscale(.6) brightness(.7); transition:filter .5s; }
+.rb-tabpanel__img:hover { filter:none; }
+[data-theme="dark"] .rb-tabpanel__img { filter:grayscale(.5) brightness(.45); }
+[data-theme="dark"] .rb-tabpanel__img:hover { filter:brightness(.8); }
+
+.rb-panel { display:none; }
+.rb-panel.active { display:contents; }
+
+/* ═══════════════════════════════════════════
+   KEY BENEFITS
+═══════════════════════════════════════════ */
+.rb-benefits { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.rb-benefit {
+  padding:32px; border-radius:24px;
+  background: var(--glass-bg);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(24px);
+  box-shadow:0 8px 32px rgba(0,0,0,.05), inset 0 1px 0 rgba(255,255,255,.4);
+  transition:background .35s, border-color .35s;
+}
+[data-theme="dark"] .rb-benefit { box-shadow:0 8px 32px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.06); }
+.rb-benefit__icon {
+  width:56px; height:56px; border-radius:16px;
+  background:linear-gradient(135deg, #fff, #f3f3f3);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--rb-red); margin-bottom:24px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06); transition:transform .3s, background .35s;
+}
+[data-theme="dark"] .rb-benefit__icon { background:linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.05)); }
+.rb-benefit:hover .rb-benefit__icon { transform:scale(1.1) rotate(5deg); }
+.rb-benefit__title { font-size:20px; font-weight:700; margin-bottom:12px; letter-spacing:-0.01em; color:var(--foreground); }
+.rb-benefit__desc  { font-size:14px; color:#777; line-height:1.6; transition:color .3s; }
+[data-theme="dark"] .rb-benefit__desc { color:rgba(255,255,255,.5); }
+.rb-benefit__rule  { width:48px; height:3px; background:linear-gradient(90deg, var(--rb-red), rgba(188,0,23,.4)); border-radius:2px; margin-top:24px; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+.rb-footer { background:#1a242a; color:#fff; padding:80px 0 32px; border-top:6px solid var(--rb-red); }
+[data-theme="dark"] .rb-footer { background:#080c0f; }
+.rb-footer__grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:64px; margin-bottom:64px; }
+.rb-footer__brand img { height:36px; width:auto; display:block; margin-bottom:24px; }
+.rb-footer__copy { color:#999; font-size:14px; max-width:320px; line-height:1.6; }
+.rb-footer__col h6 { font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--rb-red); margin-bottom:20px; font-weight:700; }
+.rb-footer__col ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
+.rb-footer__col a  { color:#ccc; font-size:14px; transition:color .2s; }
+.rb-footer__col a:hover { color:var(--rb-red); }
+.rb-footer__bottom { border-top:1px solid rgba(255,255,255,.08); padding-top:24px; display:flex; justify-content:space-between; color:#777; font-size:13px; }
+</style>
+</head>
+<body>
+
+<!-- ════════════════ NAVBAR ════════════════ -->
+<nav class="rb-nav" id="rb-nav">
+  <div class="rb-nav__inner">
+    <a href="#" class="rb-nav__logo-wrap">
+      <img id="nav-logo"
+           src="assets/logos/logo-header.png"
+           alt="Rocketbot"
+           class="rb-nav__logo">
+    </a>
+
+    <ul class="rb-nav__links">
+      <li><a href="#historia">Nuestra Historia</a></li>
+      <li><a href="#presencia">Presencia</a></li>
+      <li>
+        <button type="button">Plataforma
+          <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+      </li>
+      <li>
+        <button type="button">Soluciones
+          <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+      </li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+
+    <div class="rb-nav__actions">
+      <button class="rb-iconbtn" title="Idioma" type="button">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      </button>
+      <!-- THEME TOGGLE – icon swaps in JS -->
+      <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
+        <!-- sun (light mode icon) -->
+        <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/>
+        </svg>
+        <!-- moon (dark mode icon) -->
+        <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
+        </svg>
+      </button>
+      <button class="rb-btn rb-btn--primary" type="button">
+        Descargar
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section class="rb-hero">
+  <div class="rb-hero__particles"></div>
+  <div class="container rb-hero__grid">
+
+    <div>
+      <span class="rb-eyebrow"><span class="dot"></span>Plataforma de Automatización Inteligente</span>
+      <h1 class="rb-hero__title">El futuro de la <strong>automatización</strong> ya está <span>aquí.</span></h1>
+      <p class="rb-hero__sub">
+        Libera tiempo para lo que realmente importa con la automatización impulsada por IA de Rocketbot.
+        <small>Desde 2017 ayudamos a 62+ enterprises en LatAm, Europa y USA a desplegar agentes digitales que piensan, deciden y se adaptan.</small>
+      </p>
+      <div class="rb-hero__ctas">
+        <button class="rb-btn rb-btn--primary rb-btn--lg rb-btn--square" type="button">
+          Empezar ahora
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+        <button class="rb-btn rb-btn--ghost rb-btn--lg rb-btn--square" type="button">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+          Ver demo
+        </button>
+      </div>
+    </div>
+
+    <!-- ORB – iso-white always works on red core -->
+    <div class="rb-orb">
+      <svg class="rb-orb__svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <radialGradient id="orb-haze" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="rgba(188,0,23,0.40)"/>
+            <stop offset="55%"  stop-color="rgba(188,0,23,0.10)"/>
+            <stop offset="100%" stop-color="rgba(188,0,23,0)"/>
+          </radialGradient>
+        </defs>
+        <circle cx="200" cy="200" r="180" fill="url(#orb-haze)"/>
+        <g class="rb-orb__net" stroke="#263238" stroke-width="1" stroke-opacity="0.35" fill="none">
+          <line x1="60"  y1="80"  x2="200" y2="200"/>
+          <line x1="340" y1="100" x2="200" y2="200"/>
+          <line x1="330" y1="320" x2="200" y2="200"/>
+          <line x1="80"  y1="310" x2="200" y2="200"/>
+          <line x1="200" y1="30"  x2="200" y2="200"/>
+          <line x1="200" y1="370" x2="200" y2="200"/>
+        </g>
+        <g fill="#263238">
+          <circle class="n0" cx="60"  cy="80"  r="4"/>
+          <circle class="n1" cx="340" cy="100" r="4"/>
+          <circle class="n2" cx="330" cy="320" r="4"/>
+          <circle class="n3" cx="80"  cy="310" r="4"/>
+          <circle class="n4" cx="200" cy="30"  r="4"/>
+          <circle class="n5" cx="200" cy="370" r="4"/>
+        </g>
+      </svg>
+      <div class="rb-orb__ring"></div>
+      <div class="rb-orb__ring rb-orb__ring--2"></div>
+      <div class="rb-orb__ring rb-orb__ring--3"></div>
+      <div class="rb-orb__orbiter rb-orb__orbiter--a"><span></span></div>
+      <div class="rb-orb__orbiter rb-orb__orbiter--b"><span></span></div>
+      <div class="rb-orb__orbiter rb-orb__orbiter--c"><span></span></div>
+      <div class="rb-orb__pulse"></div>
+      <!-- Always white iso on red core -->
+      <div class="rb-orb__core">
+        <img src="assets/logos/rocketbot-iso-white.png" alt="Rocketbot">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════ SOCIAL PROOF ════════════════ -->
+<section class="rb-logos">
+  <div class="rb-logos__label">Empresas líderes confían en Rocketbot</div>
+  <div class="rb-logos__track">
+    <img src="assets/clients/LOGO AGROSUPER NEGRO.png" alt="Agrosuper">
+    <img src="assets/clients/LOGO ENTEL NEGRO.png"     alt="Entel">
+    <img src="assets/clients/LOGO LATAM NEGRO.png"     alt="Latam">
+    <img src="assets/clients/LOGO MOVISTAR NEGRO.png"  alt="Movistar">
+    <img src="assets/clients/LOGO OXXO NEGRO.png"      alt="Oxxo">
+    <img src="assets/clients/LOGO SAMSUNG NEGRO.png"   alt="Samsung">
+    <img src="assets/clients/LOGO TOYOTA NEGRO.png"    alt="Toyota">
+    <img src="assets/clients/LOGO VOLVO NEGRO.png"     alt="Volvo">
+    <img src="assets/clients/LOGO ZURICH NEGRO.png"    alt="Zurich">
+    <!-- duplicate set for seamless marquee loop -->
+    <img src="assets/clients/LOGO AGROSUPER NEGRO.png" alt="" aria-hidden="true">
+    <img src="assets/clients/LOGO ENTEL NEGRO.png"     alt="" aria-hidden="true">
+    <img src="assets/clients/LOGO LATAM NEGRO.png"     alt="" aria-hidden="true">
+    <img src="assets/clients/LOGO MOVISTAR NEGRO.png"  alt="" aria-hidden="true">
+    <img src="assets/clients/LOGO OXXO NEGRO.png"      alt="" aria-hidden="true">
+    <img src="assets/clients/LOGO SAMSUNG NEGRO.png"   alt="" aria-hidden="true">
+    <img src="assets/clients/LOGO TOYOTA NEGRO.png"    alt="" aria-hidden="true">
+    <img src="assets/clients/LOGO VOLVO NEGRO.png"     alt="" aria-hidden="true">
+    <img src="assets/clients/LOGO ZURICH NEGRO.png"    alt="" aria-hidden="true">
+  </div>
+</section>
+
+<!-- ════════════════ STATS BAR ════════════════ -->
+<section class="rb-statsbar">
+  <div class="container rb-statsbar__inner">
+    <div class="rb-statsbar__item">
+      <div class="rb-statsbar__v">62</div>
+      <div class="rb-statsbar__l">Clientes enterprise</div>
+    </div>
+    <div class="rb-statsbar__item">
+      <div class="rb-statsbar__v">+500</div>
+      <div class="rb-statsbar__l">Casos de uso</div>
+    </div>
+    <div class="rb-statsbar__item">
+      <div class="rb-statsbar__v">30%</div>
+      <div class="rb-statsbar__l">YoY growth</div>
+    </div>
+    <div class="rb-statsbar__item">
+      <div class="rb-statsbar__v">14</div>
+      <div class="rb-statsbar__l">Países con presencia directa</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ PRODUCTS ════════════════ -->
+<section class="rb-section" id="plataforma">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow">Plataforma</span>
+      <h2 class="rb-section__title">Una plataforma. <span>Cinco poderes.</span></h2>
+      <div class="rb-section__rule"></div>
+    </div>
+    <div class="rb-products">
+      <div class="rb-product">
+        <div class="rb-product__iso"><img src="assets/logos/products/rpa-studio.png" alt="RPA Studio"></div>
+        <div class="rb-product__title">RPA STUDIO</div>
+        <div class="rb-product__desc">Construcción de bots transaccionales y procesos repetitivos.</div>
+        <button class="rb-product__cta" type="button">Ver más</button>
+      </div>
+      <div class="rb-product">
+        <div class="rb-product__iso"><img src="assets/logos/products/ai-studio.png" alt="AI Studio"></div>
+        <div class="rb-product__title">AI STUDIO</div>
+        <div class="rb-product__desc">ML, análisis de datos, optimización y ejecución inteligente de tareas.</div>
+        <button class="rb-product__cta" type="button">Ver más</button>
+      </div>
+      <div class="rb-product">
+        <div class="rb-product__iso"><img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio"></div>
+        <div class="rb-product__title">SATURN STUDIO</div>
+        <div class="rb-product__desc">Diseño de flujos, condiciones, decisiones y agentes inteligentes.</div>
+        <button class="rb-product__cta" type="button">Ver más</button>
+      </div>
+      <div class="rb-product">
+        <div class="rb-product__iso"><img src="assets/logos/products/orchestrator.png" alt="Orquestador"></div>
+        <div class="rb-product__title">ORQUESTADOR</div>
+        <div class="rb-product__desc">Gestión centralizada de bots, procesos y excepciones (HITL).</div>
+        <button class="rb-product__cta" type="button">Ver más</button>
+      </div>
+      <div class="rb-product">
+        <div class="rb-product__iso"><img src="assets/logos/products/xperience.png" alt="Xperience"></div>
+        <div class="rb-product__title">XPERIENCE</div>
+        <div class="rb-product__desc">Formularios inteligentes que disparan procesos empresariales.</div>
+        <button class="rb-product__cta" type="button">Ver más</button>
+      </div>
+      <div class="rb-product">
+        <div class="rb-product__iso"><img src="assets/logos/products/nexus.png" alt="Nexus"></div>
+        <div class="rb-product__title">NEXUS</div>
+        <div class="rb-product__desc">Tejido conectivo entre agentes, sistemas y fuentes de datos.</div>
+        <button class="rb-product__cta" type="button">Ver más</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SOLUTIONS ════════════════ -->
+<section class="rb-section" id="soluciones" style="background:linear-gradient(180deg,transparent,rgba(188,0,23,.02),transparent);">
+  <div class="container">
+    <div class="rb-section__head rb-section__head--left">
+      <h2 class="rb-section__title">Automatización lista para <span>tu industria.</span></h2>
+      <p class="rb-section__sub">+500 casos de uso implementados. Selecciona tu sector.</p>
+    </div>
+    <div class="rb-solutions-card">
+      <div class="rb-tablist">
+
+        <button class="rb-tab active" data-tab="retail" type="button">
+          <span class="rb-tab__inner">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="label">Retail</span>
+          </span>
+          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </button>
+
+        <button class="rb-tab" data-tab="educacion" type="button">
+          <span class="rb-tab__inner">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>
+            <span class="label">Educación</span>
+          </span>
+          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </button>
+
+        <button class="rb-tab" data-tab="rrhh" type="button">
+          <span class="rb-tab__inner">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span class="label">RRHH</span>
+          </span>
+          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </button>
+
+        <button class="rb-tab" data-tab="finanzas" type="button">
+          <span class="rb-tab__inner">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+            <span class="label">Finanzas</span>
+          </span>
+          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </button>
+
+        <div class="rb-tab-promo">
+          <div class="rb-tab-promo__eyebrow">¿Otro sector?</div>
+          <div class="rb-tab-promo__text">Contamos con +500 casos de uso implementados en diversas industrias.</div>
+        </div>
+      </div>
+
+      <!-- RETAIL -->
+      <div id="panel-retail" class="rb-panel active">
+        <div class="rb-tabpanel__copy">
+          <span class="rb-tabpanel__tag">Caso de éxito</span>
+          <ul class="rb-tabpanel__list">
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Inventarios</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Procesamiento de Pedidos</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Informes Operativos Automatizados</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Logística y Envíos</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Conciliación de Pagos</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Actualización de Portales</span></li>
+          </ul>
+          <button class="rb-btn rb-btn--primary rb-btn--lg" type="button">Descargar caso PDF</button>
+        </div>
+        <div class="rb-tabpanel__img" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800');"></div>
+      </div>
+
+      <!-- EDUCACIÓN -->
+      <div id="panel-educacion" class="rb-panel">
+        <div class="rb-tabpanel__copy">
+          <span class="rb-tabpanel__tag">Caso de éxito</span>
+          <ul class="rb-tabpanel__list">
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Matrículas y Admisiones</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Procesamiento de Pagos y Facturación</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Reportes Académicos y Administrativos</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Solicitudes Estudiantiles</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Personal</span></li>
+          </ul>
+          <button class="rb-btn rb-btn--primary rb-btn--lg" type="button">Descargar caso PDF</button>
+        </div>
+        <div class="rb-tabpanel__img" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1170&auto=format&fit=crop');"></div>
+      </div>
+
+      <!-- RRHH -->
+      <div id="panel-rrhh" class="rb-panel">
+        <div class="rb-tabpanel__copy">
+          <span class="rb-tabpanel__tag">Caso de éxito</span>
+          <ul class="rb-tabpanel__list">
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Onboarding de Empleados</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Procesamiento de Solicitudes</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Monitoreo y Prevención de Fraudes</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Activación, Remisión y Cierre de Casos</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Renovación de Depósitos a Plazos</span></li>
+          </ul>
+          <button class="rb-btn rb-btn--primary rb-btn--lg" type="button">Descargar caso PDF</button>
+        </div>
+        <div class="rb-tabpanel__img" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800');"></div>
+      </div>
+
+      <!-- FINANZAS -->
+      <div id="panel-finanzas" class="rb-panel">
+        <div class="rb-tabpanel__copy">
+          <span class="rb-tabpanel__tag">Caso de éxito</span>
+          <ul class="rb-tabpanel__list">
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Conciliación Bancaria Automática</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Generación de Reportes Financieros</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Cuentas por Pagar</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Auditoría y Cumplimiento</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Riesgos</span></li>
+          </ul>
+          <button class="rb-btn rb-btn--primary rb-btn--lg" type="button">Descargar caso PDF</button>
+        </div>
+        <div class="rb-tabpanel__img" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800');"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ KEY BENEFITS ════════════════ -->
+<section class="rb-section" id="beneficios">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow">Beneficios</span>
+      <h2 class="rb-section__title">¿Por qué <span>Rocketbot</span>?</h2>
+      <p class="rb-section__sub">La plataforma de automatización elegida por las enterprises más exigentes de LatAm.</p>
+    </div>
+    <div class="rb-benefits">
+      <div class="rb-benefit">
+        <div class="rb-benefit__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3 class="rb-benefit__title">Velocidad Extrema</h3>
+        <p class="rb-benefit__desc">Despliega bots en horas, no en meses. Time-to-value 10× más rápido que RPA tradicional.</p>
+        <div class="rb-benefit__rule"></div>
+      </div>
+      <div class="rb-benefit">
+        <div class="rb-benefit__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.8 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        </div>
+        <h3 class="rb-benefit__title">Seguridad Enterprise</h3>
+        <p class="rb-benefit__desc">Cumplimiento ISO 27001 / SOC 2. Encriptación E2E y vault gestionado en cada agente.</p>
+        <div class="rb-benefit__rule"></div>
+      </div>
+      <div class="rb-benefit">
+        <div class="rb-benefit__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <h3 class="rb-benefit__title">ROI Demostrable</h3>
+        <p class="rb-benefit__desc">Clientes promedio recuperan inversión en 4 meses. Casos con ROI 5× anual.</p>
+        <div class="rb-benefit__rule"></div>
+      </div>
+      <div class="rb-benefit">
+        <div class="rb-benefit__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="rb-benefit__title">Operación 24/7</h3>
+        <p class="rb-benefit__desc">Bots que no duermen. Orquestación HITL para excepciones críticas.</p>
+        <div class="rb-benefit__rule"></div>
+      </div>
+      <div class="rb-benefit">
+        <div class="rb-benefit__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+        </div>
+        <h3 class="rb-benefit__title">Multi-Stack</h3>
+        <p class="rb-benefit__desc">SAP, Oracle, Salesforce, navegadores, terminales — un mismo bot habla con todo.</p>
+        <div class="rb-benefit__rule"></div>
+      </div>
+      <div class="rb-benefit">
+        <div class="rb-benefit__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        </div>
+        <h3 class="rb-benefit__title">Global, Local</h3>
+        <p class="rb-benefit__desc">Presencia directa en 14 países. Soporte en tu idioma y zona horaria.</p>
+        <div class="rb-benefit__rule"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer class="rb-footer">
+  <div class="container">
+    <div class="rb-footer__grid">
+      <div class="rb-footer__brand">
+        <img src="assets/logos/logo-header-white.png" alt="Rocketbot">
+        <p class="rb-footer__copy">Libera tiempo para lo que realmente importa. La plataforma RPA + Agentic AI con presencia directa en 14 países.</p>
+      </div>
+      <div class="rb-footer__col">
+        <h6>Plataforma</h6>
+        <ul>
+          <li><a href="#">RPA Studio</a></li>
+          <li><a href="#">AI Studio</a></li>
+          <li><a href="#">Saturn Studio</a></li>
+          <li><a href="#">Orquestador</a></li>
+          <li><a href="#">Xperience</a></li>
+        </ul>
+      </div>
+      <div class="rb-footer__col">
+        <h6>Soluciones</h6>
+        <ul>
+          <li><a href="#">Retail</a></li>
+          <li><a href="#">Educación</a></li>
+          <li><a href="#">RRHH</a></li>
+          <li><a href="#">Finanzas</a></li>
+        </ul>
+      </div>
+      <div class="rb-footer__col">
+        <h6>Empresa</h6>
+        <ul>
+          <li><a href="#">Nuestra Historia</a></li>
+          <li><a href="#">Presencia</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rb-footer__bottom">
+      <span>© 2026 Rocketbot · Todos los derechos reservados.</span>
+      <span>Hecho con ❤ en Chile</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── Logo paths per theme ───
+var LOGOS = {
+  light: 'assets/logos/logo-header.png',
+  dark:  'assets/logos/logo-header-white.png'
+};
+
+var html     = document.documentElement;
+var navLogo  = document.getElementById('nav-logo');
+var themeBtn = document.getElementById('theme-btn');
+var iconSun  = document.getElementById('icon-sun');
+var iconMoon = document.getElementById('icon-moon');
+
+function applyTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  navLogo.src = LOGOS[theme];
+  iconSun.style.display  = theme === 'dark'  ? 'none' : '';
+  iconMoon.style.display = theme === 'light' ? 'none' : '';
+  try { localStorage.setItem('rb-theme', theme); } catch(e) {}
+}
+
+// Restore saved preference
+(function () {
+  var saved = 'light';
+  try { saved = localStorage.getItem('rb-theme') || 'light'; } catch(e) {}
+  applyTheme(saved);
+})();
+
+themeBtn.addEventListener('click', function () {
+  var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+});
+
+// ─── Navbar scroll ───
+(function () {
+  var nav = document.getElementById('rb-nav');
+  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 50); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+// ─── Solutions tabs ───
+(function () {
+  var tabs   = document.querySelectorAll('.rb-tab[data-tab]');
+  var panels = document.querySelectorAll('.rb-panel');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t)   { t.classList.remove('active'); });
+      panels.forEach(function (p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      var panel = document.getElementById('panel-' + tab.dataset.tab);
+      if (panel) panel.classList.add('active');
+    });
+  });
+})();
+</script>
+</body>
+</html>

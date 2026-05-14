@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"/c/Users/frani/Downloads/Rocketbot_Design_System\" -type f | head -100)"
+    ]
+  }
+}
