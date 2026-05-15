@@ -507,7 +507,102 @@ p { margin: 0; }
 .rb-footer__col ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
 .rb-footer__col a  { color:#ccc; font-size:14px; transition:color .2s; }
 .rb-footer__col a:hover { color:var(--rb-red); }
-.rb-footer__bottom { border-top:1px solid rgba(255,255,255,.08); padding-top:24px; display:flex; justify-content:space-between; color:#777; font-size:13px; }
+.rb-footer__bottom { border-top:1px solid rgba(255,255,255,.08); padding-top:24px; display:flex; justify-content:space-between; align-items:center; color:#777; font-size:13px; }
+.rb-footer__legal { display:flex; gap:20px; }
+.rb-footer__legal a { color:#777; font-size:13px; transition:color .2s; }
+.rb-footer__legal a:hover { color:var(--rb-red); }
+.rb-footer__social { display:flex; gap:12px; margin-top:20px; }
+.rb-footer__social a { width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.10); display:inline-flex; align-items:center; justify-content:center; color:#aaa; transition:background .2s, color .2s; }
+.rb-footer__social a:hover { background:var(--rb-red); color:#fff; border-color:var(--rb-red); }
+.rb-footer__grid { display:grid; grid-template-columns:2fr 1fr 1.2fr 1fr; gap:48px; margin-bottom:64px; }
+
+/* ═══════════════════════════════════════════
+   NAV DROPDOWN
+═══════════════════════════════════════════ */
+.rb-nav__item { position:relative; }
+.rb-nav__item--dropdown:hover .rb-nav__dropdown { opacity:1; pointer-events:auto; transform:translateY(0); }
+.rb-nav__dropdown {
+  position:absolute; top:calc(100% + 10px); left:50%; transform:translate(-50%, -8px);
+  background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:16px;
+  padding:8px; min-width:200px;
+  box-shadow:0 20px 50px rgba(0,0,0,.12);
+  opacity:0; pointer-events:none;
+  transition:opacity .2s, transform .2s;
+  z-index:100;
+}
+[data-theme="dark"] .rb-nav__dropdown { background:var(--rb-dark-2); border-color:rgba(255,255,255,.08); box-shadow:0 20px 50px rgba(0,0,0,.4); }
+.rb-nav__dropdown a {
+  display:block; padding:10px 16px; border-radius:10px;
+  font-size:14px; font-weight:600; color:#333; transition:background .15s, color .15s;
+}
+[data-theme="dark"] .rb-nav__dropdown a { color:rgba(255,255,255,.75); }
+.rb-nav__dropdown a:hover { background:rgba(188,0,23,.07); color:var(--rb-red); }
+
+/* ═══════════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════════ */
+.rb-section--alt { background:var(--rb-off-white); }
+[data-theme="dark"] .rb-section--alt { background:var(--rb-dark-2); }
+.rb-testimonials { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.rb-testi {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:24px; padding:32px;
+  backdrop-filter:blur(20px);
+  transition:border-color .3s, transform .3s, background .35s;
+}
+.rb-testi:hover { border-color:rgba(188,0,23,.35); transform:translateY(-4px); }
+.rb-testi:last-child:nth-child(3n+2) { grid-column: span 1; }
+.rb-testi__platform { margin-bottom:20px; }
+.rb-testi__title { font-size:15px; font-weight:700; line-height:1.4; color:var(--foreground); margin-bottom:12px; }
+.rb-testi__body  { font-size:14px; color:#666; line-height:1.6; transition:color .3s; }
+[data-theme="dark"] .rb-testi__body { color:rgba(255,255,255,.5); }
+
+/* ═══════════════════════════════════════════
+   CTA BAND
+═══════════════════════════════════════════ */
+.rb-cta-band {
+  background:linear-gradient(135deg, var(--rb-secondary) 0%, #1a242a 100%);
+  padding:80px 0; position:relative; overflow:hidden;
+}
+.rb-cta-band::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 700px 300px at 10% 50%, rgba(188,0,23,.35), transparent 60%);
+  pointer-events:none;
+}
+[data-theme="dark"] .rb-cta-band { background:linear-gradient(135deg, #080c0f 0%, var(--rb-dark-3) 100%); }
+.rb-cta-band__inner {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:48px; position:relative; z-index:1;
+}
+.rb-cta-band__title { font-size:clamp(24px,3vw,40px); font-weight:700; color:#fff; letter-spacing:-0.02em; margin-bottom:12px; line-height:1.2; }
+.rb-cta-band__sub   { font-size:16px; color:rgba(255,255,255,.6); max-width:520px; }
+
+/* Product cards as links */
+a.rb-product { text-decoration:none; color:inherit; }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width:1100px) {
+  .rb-products { grid-template-columns:repeat(3,1fr); }
+  .rb-footer__grid { grid-template-columns:1fr 1fr; gap:32px; }
+}
+@media (max-width:900px) {
+  .rb-hero__grid { grid-template-columns:1fr; }
+  .rb-solutions-card { grid-template-columns:1fr; }
+  .rb-tablist { flex-direction:row; flex-wrap:wrap; }
+  .rb-testimonials { grid-template-columns:1fr 1fr; }
+  .rb-cta-band__inner { flex-direction:column; text-align:center; }
+  .rb-statsbar__inner { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:600px) {
+  .rb-products { grid-template-columns:1fr 1fr; }
+  .rb-benefits { grid-template-columns:1fr; }
+  .rb-testimonials { grid-template-columns:1fr; }
+  .rb-footer__grid { grid-template-columns:1fr; }
+  .rb-statsbar__inner { grid-template-columns:1fr 1fr; }
+  .rb-nav__links { display:none; }
+}
 </style>
 </head>
 <body>
@@ -523,41 +618,55 @@ p { margin: 0; }
     </a>
 
     <ul class="rb-nav__links">
-      <li><a href="#historia">Nuestra Historia</a></li>
-      <li><a href="#presencia">Presencia</a></li>
-      <li>
-        <button type="button">Plataforma
+      <li class="rb-nav__item rb-nav__item--dropdown">
+        <button type="button">Productos
           <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
+        <div class="rb-nav__dropdown">
+          <a href="saturn-studio.html">Saturn Studio</a>
+          <a href="rpa-studio.html">RPA Studio</a>
+          <a href="ai-studio.html">AI Studio</a>
+          <a href="orquestador.html">Orquestador</a>
+          <a href="xperience.html">Xperience</a>
+        </div>
       </li>
-      <li>
-        <button type="button">Soluciones
+      <li class="rb-nav__item rb-nav__item--dropdown">
+        <button type="button">Recursos
           <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
+        <div class="rb-nav__dropdown">
+          <a href="blog.html">Blog</a>
+          <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
+        </div>
       </li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li class="rb-nav__item rb-nav__item--dropdown">
+        <button type="button">Soporte y servicios
+          <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="rb-nav__dropdown">
+          <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a>
+          <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
+          <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
+          <a href="https://rocketbot.com/media-kit" target="_blank" rel="noopener">Media kit</a>
+        </div>
+      </li>
+      <li><a href="contacto.html">Contáctanos</a></li>
     </ul>
 
     <div class="rb-nav__actions">
       <button class="rb-iconbtn" title="Idioma" type="button">
         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
       </button>
-      <!-- THEME TOGGLE – icon swaps in JS -->
       <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
-        <!-- sun (light mode icon) -->
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="4"/>
           <path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/>
         </svg>
-        <!-- moon (dark mode icon) -->
         <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
         </svg>
       </button>
-      <button class="rb-btn rb-btn--primary" type="button">
-        Descargar
-        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-      </button>
+      <a href="https://rocketbot.com/descargar" class="rb-btn rb-btn--primary" target="_blank" rel="noopener">Descarga</a>
     </div>
   </div>
 </nav>
@@ -568,21 +677,19 @@ p { margin: 0; }
   <div class="container rb-hero__grid">
 
     <div>
-      <span class="rb-eyebrow"><span class="dot"></span>Plataforma de Automatización Inteligente</span>
-      <h1 class="rb-hero__title">El futuro de la <strong>automatización</strong> ya está <span>aquí.</span></h1>
+      <span class="rb-eyebrow"><span class="dot"></span>Suite completa de Automatización Empresarial end-to-end</span>
+      <h1 class="rb-hero__title">Suite completa de <strong>Automatización</strong> Empresarial <span>end-to-end</span></h1>
       <p class="rb-hero__sub">
-        Libera tiempo para lo que realmente importa con la automatización impulsada por IA de Rocketbot.
-        <small>Desde 2017 ayudamos a 62+ enterprises en LatAm, Europa y USA a desplegar agentes digitales que piensan, deciden y se adaptan.</small>
+        Agentes digitales que piensan, deciden y ejecutan procesos como humanos, garantizando velocidad, precisión y disponibilidad continua 24/7.
       </p>
       <div class="rb-hero__ctas">
-        <button class="rb-btn rb-btn--primary rb-btn--lg rb-btn--square" type="button">
-          Empezar ahora
+        <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg rb-btn--square">
+          Contáctanos
           <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </button>
-        <button class="rb-btn rb-btn--ghost rb-btn--lg rb-btn--square" type="button">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-          Ver demo
-        </button>
+        </a>
+        <a href="https://rocketbot.com/descargar" class="rb-btn rb-btn--ghost rb-btn--lg rb-btn--square" target="_blank" rel="noopener">
+          Descarga gratis
+        </a>
       </div>
     </div>
 
@@ -687,42 +794,36 @@ p { margin: 0; }
       <div class="rb-section__rule"></div>
     </div>
     <div class="rb-products">
-      <div class="rb-product">
-        <div class="rb-product__iso"><img src="assets/logos/products/rpa-studio.png" alt="RPA Studio"></div>
-        <div class="rb-product__title">RPA STUDIO</div>
-        <div class="rb-product__desc">Construcción de bots transaccionales y procesos repetitivos.</div>
-        <button class="rb-product__cta" type="button">Ver más</button>
-      </div>
-      <div class="rb-product">
-        <div class="rb-product__iso"><img src="assets/logos/products/ai-studio.png" alt="AI Studio"></div>
-        <div class="rb-product__title">AI STUDIO</div>
-        <div class="rb-product__desc">ML, análisis de datos, optimización y ejecución inteligente de tareas.</div>
-        <button class="rb-product__cta" type="button">Ver más</button>
-      </div>
-      <div class="rb-product">
+      <a class="rb-product" href="saturn-studio.html">
         <div class="rb-product__iso"><img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio"></div>
         <div class="rb-product__title">SATURN STUDIO</div>
-        <div class="rb-product__desc">Diseño de flujos, condiciones, decisiones y agentes inteligentes.</div>
-        <button class="rb-product__cta" type="button">Ver más</button>
-      </div>
-      <div class="rb-product">
+        <div class="rb-product__desc">Agentes digitales que piensan, razonan, interpretan y ejecutan. Orquestación inteligente al siguiente nivel.</div>
+        <span class="rb-product__cta">Ver más</span>
+      </a>
+      <a class="rb-product" href="rpa-studio.html">
+        <div class="rb-product__iso"><img src="assets/logos/products/rpa-studio.png" alt="RPA Studio"></div>
+        <div class="rb-product__title">RPA STUDIO</div>
+        <div class="rb-product__desc">Crea y construye robots de manera robusta y confiable, sin limitaciones.</div>
+        <span class="rb-product__cta">Ver más</span>
+      </a>
+      <a class="rb-product" href="ai-studio.html">
+        <div class="rb-product__iso"><img src="assets/logos/products/ai-studio.png" alt="AI Studio"></div>
+        <div class="rb-product__title">AI STUDIO</div>
+        <div class="rb-product__desc">Dale inteligencia a tus procesos empresariales. Estructura datos desde documentos, correos y audios.</div>
+        <span class="rb-product__cta">Ver más</span>
+      </a>
+      <a class="rb-product" href="orquestador.html">
         <div class="rb-product__iso"><img src="assets/logos/products/orchestrator.png" alt="Orquestador"></div>
         <div class="rb-product__title">ORQUESTADOR</div>
-        <div class="rb-product__desc">Gestión centralizada de bots, procesos y excepciones (HITL).</div>
-        <button class="rb-product__cta" type="button">Ver más</button>
-      </div>
-      <div class="rb-product">
+        <div class="rb-product__desc">Administra y controla tus robots en cualquier momento con monitoreo en tiempo real.</div>
+        <span class="rb-product__cta">Ver más</span>
+      </a>
+      <a class="rb-product" href="xperience.html">
         <div class="rb-product__iso"><img src="assets/logos/products/xperience.png" alt="Xperience"></div>
         <div class="rb-product__title">XPERIENCE</div>
-        <div class="rb-product__desc">Formularios inteligentes que disparan procesos empresariales.</div>
-        <button class="rb-product__cta" type="button">Ver más</button>
-      </div>
-      <div class="rb-product">
-        <div class="rb-product__iso"><img src="assets/logos/products/nexus.png" alt="Nexus"></div>
-        <div class="rb-product__title">NEXUS</div>
-        <div class="rb-product__desc">Tejido conectivo entre agentes, sistemas y fuentes de datos.</div>
-        <button class="rb-product__cta" type="button">Ver más</button>
-      </div>
+        <div class="rb-product__desc">Crea increíbles formularios con lógica de manera simple. Plataforma no-code para formularios inteligentes.</div>
+        <span class="rb-product__cta">Ver más</span>
+      </a>
     </div>
   </div>
 </section>
@@ -904,46 +1005,140 @@ p { margin: 0; }
   </div>
 </section>
 
+<!-- ════════════════ TESTIMONIALS ════════════════ -->
+<section class="rb-section rb-section--alt" id="testimonios">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow">Testimonios</span>
+      <h2 class="rb-section__title">Lo que dicen nuestros <span>clientes</span></h2>
+      <div class="rb-section__rule"></div>
+    </div>
+    <div class="rb-testimonials">
+
+      <div class="rb-testi">
+        <div class="rb-testi__platform rb-testi__platform--g2">
+          <svg viewBox="0 0 40 40" width="22" height="22" aria-label="G2"><circle cx="20" cy="20" r="20" fill="#FF492C"/><text x="50%" y="56%" text-anchor="middle" fill="#fff" font-size="18" font-weight="800" font-family="sans-serif" dominant-baseline="middle">G2</text></svg>
+        </div>
+        <p class="rb-testi__title">"Servicio al cliente destaca por soporte rápido y claro a través de Slack."</p>
+        <p class="rb-testi__body">Rocketbot simplifica la automatización con su interfaz intuitiva, mejora la eficiencia y nos permite enfocarnos en tareas estratégicas.</p>
+      </div>
+
+      <div class="rb-testi">
+        <div class="rb-testi__platform rb-testi__platform--gartner">
+          <svg viewBox="0 0 80 20" width="72" height="18" aria-label="Gartner"><text y="16" fill="#FF0000" font-size="17" font-weight="800" font-family="sans-serif">Gartner</text></svg>
+        </div>
+        <p class="rb-testi__title">"Análisis de mi experiencia con Rocketbot: fortalezas clave y áreas de mejora."</p>
+        <p class="rb-testi__body">Trabajar con Rocketbot ha sido una de las experiencias más gratificantes de mi trayectoria profesional.</p>
+      </div>
+
+      <div class="rb-testi">
+        <div class="rb-testi__platform rb-testi__platform--g2">
+          <svg viewBox="0 0 40 40" width="22" height="22" aria-label="G2"><circle cx="20" cy="20" r="20" fill="#FF492C"/><text x="50%" y="56%" text-anchor="middle" fill="#fff" font-size="18" font-weight="800" font-family="sans-serif" dominant-baseline="middle">G2</text></svg>
+        </div>
+        <p class="rb-testi__title">"Facilidad de uso y variedad de funciones en la herramienta RPA de Rocketbot."</p>
+        <p class="rb-testi__body">La herramienta RPA de Rocketbot es fácil y sencilla de utilizar, garantizando a los desarrolladores de robots una amplia variedad de recursos.</p>
+      </div>
+
+      <div class="rb-testi">
+        <div class="rb-testi__platform rb-testi__platform--gartner">
+          <svg viewBox="0 0 80 20" width="72" height="18" aria-label="Gartner"><text y="16" fill="#FF0000" font-size="17" font-weight="800" font-family="sans-serif">Gartner</text></svg>
+        </div>
+        <p class="rb-testi__title">"Eficiencia en procesos y costes, combinada con un excelente servicio al cliente."</p>
+        <p class="rb-testi__body">Rocketbot es fácil de implementar y ofrece documentación clara con excelentes recursos de capacitación.</p>
+      </div>
+
+      <div class="rb-testi">
+        <div class="rb-testi__platform rb-testi__platform--g2">
+          <svg viewBox="0 0 40 40" width="22" height="22" aria-label="G2"><circle cx="20" cy="20" r="20" fill="#FF492C"/><text x="50%" y="56%" text-anchor="middle" fill="#fff" font-size="18" font-weight="800" font-family="sans-serif" dominant-baseline="middle">G2</text></svg>
+        </div>
+        <p class="rb-testi__title">"La plataforma facilita automatizaciones rápidas pero las licencias encarecen proyectos."</p>
+        <p class="rb-testi__body">Es una plataforma fácil de usar, muy intuitiva, que permite desarrollar automatizaciones de manera sencilla y ágil.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ CTA ASESORES ════════════════ -->
+<section class="rb-cta-band">
+  <div class="container rb-cta-band__inner">
+    <div>
+      <h2 class="rb-cta-band__title">Habla con uno de nuestros Asesores comerciales</h2>
+      <p class="rb-cta-band__sub">Te brindaremos toda la ayuda necesaria para automatizar tus procesos manuales</p>
+    </div>
+    <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg">Contáctanos</a>
+  </div>
+</section>
+
 <!-- ════════════════ FOOTER ════════════════ -->
 <footer class="rb-footer">
   <div class="container">
     <div class="rb-footer__grid">
       <div class="rb-footer__brand">
         <img src="assets/logos/logo-header-white.png" alt="Rocketbot">
-        <p class="rb-footer__copy">Libera tiempo para lo que realmente importa. La plataforma RPA + Agentic AI con presencia directa en 14 países.</p>
+        <p class="rb-footer__copy">Suite completa de Automatización Empresarial end-to-end. Agentes digitales disponibles 24/7.</p>
+        <div class="rb-footer__social">
+          <a href="https://facebook.com/rocketbot" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://twitter.com/rocketbot" target="_blank" rel="noopener" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="https://youtube.com/rocketbot" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1a242a"/></svg>
+          </a>
+          <a href="https://linkedin.com/company/rocketbot" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://instagram.com/rocketbot" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
       </div>
       <div class="rb-footer__col">
-        <h6>Plataforma</h6>
+        <h6>Productos</h6>
         <ul>
-          <li><a href="#">RPA Studio</a></li>
-          <li><a href="#">AI Studio</a></li>
-          <li><a href="#">Saturn Studio</a></li>
-          <li><a href="#">Orquestador</a></li>
-          <li><a href="#">Xperience</a></li>
+          <li><a href="saturn-studio.html">Saturn Studio</a></li>
+          <li><a href="rpa-studio.html">RPA Studio</a></li>
+          <li><a href="ai-studio.html">AI Studio</a></li>
+          <li><a href="orquestador.html">Orquestador</a></li>
+          <li><a href="xperience.html">Xperience</a></li>
         </ul>
       </div>
       <div class="rb-footer__col">
-        <h6>Soluciones</h6>
+        <h6>Recursos</h6>
         <ul>
-          <li><a href="#">Retail</a></li>
-          <li><a href="#">Educación</a></li>
-          <li><a href="#">RRHH</a></li>
-          <li><a href="#">Finanzas</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li>
+        </ul>
+        <h6 style="margin-top:28px;">Empresa</h6>
+        <ul>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="#">Políticas de privacidad</a></li>
+          <li><a href="#">Políticas de seguridad</a></li>
+          <li><a href="https://g2.com/products/rocketbot" target="_blank" rel="noopener">G2</a></li>
+          <li><a href="#">Trabaja con Nosotros</a></li>
         </ul>
       </div>
       <div class="rb-footer__col">
-        <h6>Empresa</h6>
+        <h6>Soporte y servicios</h6>
         <ul>
-          <li><a href="#">Nuestra Historia</a></li>
-          <li><a href="#">Presencia</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Certificación</a></li>
+          <li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li>
+          <li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li>
+          <li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li>
+          <li><a href="#">Descargas</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Media kit</a></li>
         </ul>
       </div>
     </div>
     <div class="rb-footer__bottom">
-      <span>© 2026 Rocketbot · Todos los derechos reservados.</span>
-      <span>Hecho con ❤ en Chile</span>
+      <span>© Rocketbot SpA | All rights reserved 2018 – 2025</span>
+      <div class="rb-footer__legal">
+        <a href="#">Políticas de privacidad</a>
+        <a href="#">Políticas de seguridad</a>
+      </div>
     </div>
   </div>
 </footer>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog · Rocketbot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--rb-red:#BC0017;--rb-red-deep:#8E0011;--rb-red-soft:rgba(188,0,23,0.10);--rb-blue:#2B7FFF;--rb-dark-1:#0A0A0F;--rb-dark-2:#121218;--rb-dark-3:#1B1F23;--rb-secondary:#263238;--rb-gray-900:#0B0E11;--rb-gray-500:#909090;--rb-off-white:#FAFAFA;--rb-white:#FFFFFF;--background:var(--rb-off-white);--foreground:var(--rb-gray-900);--card:rgba(255,255,255,0.70);--border:rgba(0,0,0,0.08);--glass-bg:rgba(255,255,255,0.60);--glass-border:rgba(255,255,255,0.30);--r-md:16px;--r-lg:24px;--r-xl:32px;--r-pill:9999px;--font-sans:'Montserrat',system-ui,-apple-system,Segoe UI,sans-serif;}
+[data-theme="dark"]{--background:var(--rb-dark-1);--foreground:var(--rb-white);--card:rgba(20,20,30,0.80);--border:rgba(255,255,255,0.08);--glass-bg:rgba(20,20,35,0.60);--glass-border:rgba(255,255,255,0.10);}
+*,*::before,*::after{box-sizing:border-box;}html,body{margin:0;padding:0;}
+body{font-family:var(--font-sans);background:var(--background);color:var(--foreground);font-weight:400;line-height:1.4;-webkit-font-smoothing:antialiased;transition:background .35s,color .35s;}
+img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}button{font-family:inherit;cursor:pointer;}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin:0;}p{margin:0;}ul{margin:0;padding:0;list-style:none;}
+.container{max-width:1280px;margin:0 auto;padding:0 32px;}
+.rb-nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 32px;transition:padding .3s,backdrop-filter .3s,background .3s,border-color .3s;}
+.rb-nav.scrolled{padding:10px 32px;background:linear-gradient(135deg,rgba(43,127,255,.12),rgba(188,0,23,.12),rgba(38,50,56,.18));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.15);box-shadow:0 4px 24px rgba(0,0,0,.08);}
+[data-theme="dark"] .rb-nav.scrolled{background:linear-gradient(135deg,rgba(43,127,255,.08),rgba(188,0,23,.10),rgba(10,10,15,.85));border-bottom-color:rgba(255,255,255,.08);}
+.rb-nav__inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;}
+.rb-nav__logo-wrap{display:flex;align-items:center;}.rb-nav__logo{height:32px;width:auto;display:block;}
+.rb-nav__links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;}
+.rb-nav__links a,.rb-nav__links button{background:none;border:none;padding:0;font-size:14px;font-weight:500;color:#555;display:inline-flex;align-items:center;gap:4px;transition:color .2s;}
+[data-theme="dark"] .rb-nav__links a,[data-theme="dark"] .rb-nav__links button{color:rgba(255,255,255,.6);}
+.rb-nav__links a:hover,.rb-nav__links button:hover{color:#000;}[data-theme="dark"] .rb-nav__links a:hover,[data-theme="dark"] .rb-nav__links button:hover{color:#fff;}
+.rb-nav__actions{display:flex;align-items:center;gap:12px;}
+.rb-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--card);display:inline-flex;align-items:center;justify-content:center;color:#555;transition:color .2s,transform .2s,background .3s;}
+[data-theme="dark"] .rb-iconbtn{color:rgba(255,255,255,.6);}.rb-iconbtn:hover{color:var(--rb-red);transform:scale(1.05);}
+.rb-nav__item{position:relative;}
+.rb-nav__item--dropdown:hover .rb-nav__dropdown{opacity:1;pointer-events:auto;transform:translate(-50%,0);}
+.rb-nav__dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-8px);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:8px;min-width:200px;box-shadow:0 20px 50px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:100;}
+[data-theme="dark"] .rb-nav__dropdown{background:var(--rb-dark-2);border-color:rgba(255,255,255,.08);}
+.rb-nav__dropdown a{display:block;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;color:#333;transition:background .15s,color .15s;}
+[data-theme="dark"] .rb-nav__dropdown a{color:rgba(255,255,255,.75);}
+.rb-nav__dropdown a:hover{background:rgba(188,0,23,.07);color:var(--rb-red);}
+.rb-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:12px 24px;border-radius:var(--r-pill);border:1px solid transparent;transition:transform .2s,box-shadow .25s,background .25s,color .2s;}
+.rb-btn--primary{background:var(--rb-red);color:#fff;box-shadow:0 4px 16px rgba(188,0,23,.25);}
+.rb-btn--primary:hover{background:var(--rb-red-deep);transform:translateY(-1px);box-shadow:0 10px 30px rgba(188,0,23,.45);}
+.rb-btn--ghost{background:transparent;border-color:var(--border);color:var(--foreground);}
+.rb-btn--ghost:hover{background:rgba(0,0,0,.04);}[data-theme="dark"] .rb-btn--ghost:hover{background:rgba(255,255,255,.07);}
+.rb-btn--lg{padding:14px 32px;font-size:15px;}
+.rb-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--rb-red);background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.2);padding:8px 16px;border-radius:var(--r-pill);}
+.rb-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--rb-red);animation:rb-pulse 2s ease-in-out infinite;}
+@keyframes rb-pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);}}
+
+/* HERO */
+.rb-blog-hero{position:relative;padding:140px 0 80px;overflow:hidden;background:var(--background);}
+.rb-blog-hero__particles{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 30%,rgba(188,0,23,.08) 0%,transparent 40%),radial-gradient(circle at 20% 70%,rgba(43,127,255,.04) 0%,transparent 40%);}
+[data-theme="dark"] .rb-blog-hero__particles{background:radial-gradient(circle at 80% 30%,rgba(188,0,23,.15) 0%,transparent 45%),radial-gradient(circle at 20% 70%,rgba(43,127,255,.08) 0%,transparent 40%);}
+.rb-blog-hero__inner{position:relative;z-index:1;text-align:center;max-width:640px;margin:0 auto;}
+.rb-blog-hero__title{font-size:clamp(40px,6vw,80px);font-weight:800;letter-spacing:-0.04em;line-height:1.0;margin:20px 0 16px;color:var(--foreground);}
+.rb-blog-hero__title span{color:var(--rb-red);}
+.rb-blog-hero__sub{font-size:18px;color:#666;line-height:1.6;font-weight:300;transition:color .3s;}
+[data-theme="dark"] .rb-blog-hero__sub{color:rgba(255,255,255,.5);}
+
+/* FILTERS */
+.rb-blog-filters{display:flex;gap:8px;justify-content:center;padding:0 0 60px;flex-wrap:wrap;}
+.rb-filter-btn{padding:8px 20px;border-radius:var(--r-pill);border:1.5px solid var(--border);background:transparent;font-size:13px;font-weight:700;color:#777;cursor:pointer;transition:all .2s;font-family:var(--font-sans);}
+[data-theme="dark"] .rb-filter-btn{color:rgba(255,255,255,.5);}
+.rb-filter-btn:hover{border-color:rgba(188,0,23,.4);color:var(--rb-red);}
+.rb-filter-btn.active{background:var(--rb-red);border-color:var(--rb-red);color:#fff;}
+
+/* BLOG GRID */
+.rb-blog-section{padding:0 0 100px;}
+.rb-blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.rb-blog-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;display:flex;flex-direction:column;transition:border-color .3s,transform .3s,box-shadow .3s,background .35s;}
+.rb-blog-card:hover{border-color:rgba(188,0,23,.35);transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.08);}
+[data-theme="dark"] .rb-blog-card:hover{box-shadow:0 24px 48px rgba(0,0,0,.35);}
+.rb-blog-card__img{width:100%;height:200px;object-fit:cover;display:block;transition:transform .4s;}
+.rb-blog-card:hover .rb-blog-card__img{transform:scale(1.04);}
+.rb-blog-card__img-wrap{overflow:hidden;}
+.rb-blog-card__body{padding:28px;display:flex;flex-direction:column;flex:1;gap:12px;}
+.rb-blog-card__meta{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.rb-blog-card__cat{display:inline-block;padding:4px 12px;background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.15);border-radius:var(--r-pill);font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--rb-red);}
+.rb-blog-card__date{font-size:12px;color:#999;font-weight:500;}
+[data-theme="dark"] .rb-blog-card__date{color:rgba(255,255,255,.4);}
+.rb-blog-card__title{font-size:17px;font-weight:700;color:var(--foreground);line-height:1.35;letter-spacing:-0.01em;}
+.rb-blog-card__excerpt{font-size:13px;color:#777;line-height:1.6;flex:1;}
+[data-theme="dark"] .rb-blog-card__excerpt{color:rgba(255,255,255,.45);}
+.rb-blog-card__link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--rb-red);margin-top:4px;transition:gap .2s;}
+.rb-blog-card__link:hover{gap:10px;}
+
+/* CTA DEMO */
+.rb-demo-cta{background:linear-gradient(135deg,var(--rb-secondary) 0%,#1a242a 100%);padding:80px 0;position:relative;overflow:hidden;text-align:center;}
+.rb-demo-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 700px 300px at 50% 50%,rgba(188,0,23,.30),transparent 60%);pointer-events:none;}
+[data-theme="dark"] .rb-demo-cta{background:linear-gradient(135deg,#080c0f 0%,var(--rb-dark-3) 100%);}
+.rb-demo-cta__inner{position:relative;z-index:1;}
+.rb-demo-cta__label{font-size:11px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:16px;}
+.rb-demo-cta__title{font-size:clamp(28px,4vw,48px);font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:24px;}
+.rb-demo-cta__title span{color:var(--rb-red);}
+
+.rb-footer{background:#1a242a;color:#fff;padding:80px 0 32px;border-top:6px solid var(--rb-red);}
+[data-theme="dark"] .rb-footer{background:#080c0f;}
+.rb-footer__grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px;margin-bottom:64px;}
+.rb-footer__brand img{height:36px;width:auto;display:block;margin-bottom:24px;}
+.rb-footer__copy{color:#999;font-size:14px;max-width:320px;line-height:1.6;}
+.rb-footer__col h6{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--rb-red);margin-bottom:20px;font-weight:700;}
+.rb-footer__col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.rb-footer__col a{color:#ccc;font-size:14px;transition:color .2s;}
+.rb-footer__col a:hover{color:var(--rb-red);}
+.rb-footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;color:#777;font-size:13px;}
+.rb-footer__legal{display:flex;gap:20px;}
+.rb-footer__legal a{color:#777;font-size:13px;transition:color .2s;}
+.rb-footer__legal a:hover{color:var(--rb-red);}
+.rb-footer__social{display:flex;gap:12px;margin-top:20px;}
+.rb-footer__social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);display:inline-flex;align-items:center;justify-content:center;color:#aaa;transition:background .2s,color .2s;}
+.rb-footer__social a:hover{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
+@media(max-width:900px){.rb-blog-grid{grid-template-columns:repeat(2,1fr);}.rb-footer__grid{grid-template-columns:1fr 1fr;gap:32px;}}
+@media(max-width:600px){.container{padding:0 20px;}.rb-blog-grid{grid-template-columns:1fr;}.rb-footer__grid{grid-template-columns:1fr;}.rb-nav__links{display:none;}}
+</style>
+</head>
+<body>
+
+<nav class="rb-nav" id="rb-nav">
+  <div class="rb-nav__inner">
+    <a href="index.html" class="rb-nav__logo-wrap">
+      <img id="nav-logo" src="assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
+    </a>
+    <ul class="rb-nav__links">
+      <li class="rb-nav__item rb-nav__item--dropdown">
+        <button type="button">Productos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown">
+          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestador</a><a href="xperience.html">Xperience</a>
+        </div>
+      </li>
+      <li class="rb-nav__item rb-nav__item--dropdown">
+        <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="blog.html">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
+      </li>
+      <li class="rb-nav__item rb-nav__item--dropdown">
+        <button type="button">Soporte y servicios <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a><a href="#">Media kit</a></div>
+      </li>
+      <li><a href="contacto.html">Contáctanos</a></li>
+    </ul>
+    <div class="rb-nav__actions">
+      <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
+        <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
+        <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+      </button>
+      <a href="https://rocketbot.com/descargar" class="rb-btn rb-btn--primary" target="_blank" rel="noopener">Descarga</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="rb-blog-hero">
+  <div class="rb-blog-hero__particles"></div>
+  <div class="container">
+    <div class="rb-blog-hero__inner">
+      <span class="rb-eyebrow"><span class="dot"></span>Rocketbot Blog</span>
+      <h1 class="rb-blog-hero__title"><span>Blog</span></h1>
+      <p class="rb-blog-hero__sub">Noticias, casos de éxito y tendencias en automatización empresarial</p>
+    </div>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<div class="container">
+  <div class="rb-blog-filters">
+    <button class="rb-filter-btn active" data-filter="todos">Todos</button>
+    <button class="rb-filter-btn" data-filter="automatizacion">Automatización</button>
+    <button class="rb-filter-btn" data-filter="destacado">Destacado</button>
+  </div>
+</div>
+
+<!-- BLOG GRID -->
+<section class="rb-blog-section">
+  <div class="container">
+    <div class="rb-blog-grid" id="blogGrid">
+
+      <!-- Post 1 -->
+      <article class="rb-blog-card" data-cat="automatizacion">
+        <div class="rb-blog-card__img-wrap">
+          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&q=80&w=800" alt="Tríada empresarial" class="rb-blog-card__img">
+        </div>
+        <div class="rb-blog-card__body">
+          <div class="rb-blog-card__meta">
+            <span class="rb-blog-card__cat">Automatización</span>
+            <span class="rb-blog-card__date">12 de mayo de 2026</span>
+          </div>
+          <h2 class="rb-blog-card__title">La tríada que está redefiniendo las operaciones empresariales en 2026</h2>
+          <p class="rb-blog-card__excerpt">Una conversación con un gerente de operaciones de manufactura en Valle del Cauca que cambió nuestra forma de entender la automatización inteligente.</p>
+          <a href="#" class="rb-blog-card__link">Leer más <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="rb-blog-card" data-cat="automatizacion">
+        <div class="rb-blog-card__img-wrap">
+          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" alt="Automatización multimodal" class="rb-blog-card__img">
+        </div>
+        <div class="rb-blog-card__body">
+          <div class="rb-blog-card__meta">
+            <span class="rb-blog-card__cat">Automatización</span>
+            <span class="rb-blog-card__date">28 de abril de 2026</span>
+          </div>
+          <h2 class="rb-blog-card__title">Automatización multimodal: cómo los agentes inteligentes están cambiando</h2>
+          <p class="rb-blog-card__excerpt">Si tu tecnología solo entiende datos en una tabla de Excel, tu operación está viendo solo una parte de la realidad. Descubre el enfoque multimodal.</p>
+          <a href="#" class="rb-blog-card__link">Leer más <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="rb-blog-card" data-cat="automatizacion">
+        <div class="rb-blog-card__img-wrap">
+          <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=800" alt="Orquestación Rocketbot" class="rb-blog-card__img">
+        </div>
+        <div class="rb-blog-card__body">
+          <div class="rb-blog-card__meta">
+            <span class="rb-blog-card__cat">Automatización</span>
+            <span class="rb-blog-card__date">9 de abril de 2026</span>
+          </div>
+          <h2 class="rb-blog-card__title">Orquestación Rocketbot: El Cerebro de la Operación Autónoma 2026</h2>
+          <p class="rb-blog-card__excerpt">Tener 50 agentes inteligentes trabajando por su cuenta no es innovación; es un problema de gestión. Aprende a orquestarlos correctamente.</p>
+          <a href="#" class="rb-blog-card__link">Leer más <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Post 4 -->
+      <article class="rb-blog-card" data-cat="destacado">
+        <div class="rb-blog-card__img-wrap">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Caso MITTA Robotipy" class="rb-blog-card__img">
+        </div>
+        <div class="rb-blog-card__body">
+          <div class="rb-blog-card__meta">
+            <span class="rb-blog-card__cat">Destacado</span>
+            <span class="rb-blog-card__date">27 de enero de 2026</span>
+          </div>
+          <h2 class="rb-blog-card__title">Órdenes de compra que avanzan solas. El caso MITTA y Robotipy</h2>
+          <p class="rb-blog-card__excerpt">Procesos transaccionales a escala empresarial sin intervención manual. Cómo MITTA y Robotipy lograron automatizar su cadena de compras completa.</p>
+          <a href="#" class="rb-blog-card__link">Leer más <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Post 5 -->
+      <article class="rb-blog-card" data-cat="destacado">
+        <div class="rb-blog-card__img-wrap">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" alt="2026 el nuevo estándar" class="rb-blog-card__img">
+        </div>
+        <div class="rb-blog-card__body">
+          <div class="rb-blog-card__meta">
+            <span class="rb-blog-card__cat">Destacado</span>
+            <span class="rb-blog-card__date">14 de enero de 2026</span>
+          </div>
+          <h2 class="rb-blog-card__title">2026: El nuevo estándar operativo</h2>
+          <p class="rb-blog-card__excerpt">Hay años en los que el cambio no se anuncia con ruido. El 2026 está siendo uno de esos años para la automatización empresarial en Latinoamérica.</p>
+          <a href="#" class="rb-blog-card__link">Leer más <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Post 6 -->
+      <article class="rb-blog-card" data-cat="destacado">
+        <div class="rb-blog-card__img-wrap">
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=800" alt="Gold Fields Kabeli" class="rb-blog-card__img">
+        </div>
+        <div class="rb-blog-card__body">
+          <div class="rb-blog-card__meta">
+            <span class="rb-blog-card__cat">Destacado</span>
+            <span class="rb-blog-card__date">22 de diciembre de 2025</span>
+          </div>
+          <h2 class="rb-blog-card__title">Tecnología para proteger vida silvestre: El Caso Gold Fields – Kabeli</h2>
+          <p class="rb-blog-card__excerpt">Cómo la tecnología de automatización inteligente protege ecosistemas frágiles y facilita la gestión ambiental en operaciones mineras.</p>
+          <a href="#" class="rb-blog-card__link">Leer más <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- DEMO CTA -->
+<section class="rb-demo-cta">
+  <div class="container">
+    <div class="rb-demo-cta__inner">
+      <div class="rb-demo-cta__label">¿Listo para empezar?</div>
+      <h2 class="rb-demo-cta__title">OBTÉN UNA <span>DEMO GRATIS</span></h2>
+      <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg">Solicitar demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="rb-footer">
+  <div class="container">
+    <div class="rb-footer__grid">
+      <div class="rb-footer__brand">
+        <img src="assets/logos/logo-header-white.png" alt="Rocketbot">
+        <p class="rb-footer__copy">Suite completa de Automatización Empresarial end-to-end. Agentes digitales disponibles 24/7.</p>
+        <div class="rb-footer__social">
+          <a href="https://facebook.com/rocketbot" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://twitter.com/rocketbot" target="_blank" rel="noopener" aria-label="Twitter"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+          <a href="https://linkedin.com/company/rocketbot" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://instagram.com/rocketbot" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        </div>
+      </div>
+      <div class="rb-footer__col"><h6>Productos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestador</a></li><li><a href="xperience.html">Xperience</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="blog.html">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="#">Políticas de privacidad</a></li><li><a href="#">Políticas de seguridad</a></li><li><a href="https://g2.com/products/rocketbot" target="_blank" rel="noopener">G2</a></li><li><a href="#">Trabaja con Nosotros</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Soporte y servicios</h6><ul><li><a href="#">Certificación</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li><li><a href="#">Descargas</a></li><li><a href="#">FAQs</a></li><li><a href="#">Media kit</a></li></ul></div>
+    </div>
+    <div class="rb-footer__bottom">
+      <span>© Rocketbot SpA | All rights reserved 2018 – 2025</span>
+      <div class="rb-footer__legal"><a href="#">Políticas de privacidad</a><a href="#">Políticas de seguridad</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+var LOGOS={light:'assets/logos/logo-header.png',dark:'assets/logos/logo-header-white.png'};
+var html=document.documentElement,navLogo=document.getElementById('nav-logo'),themeBtn=document.getElementById('theme-btn'),iconSun=document.getElementById('icon-sun'),iconMoon=document.getElementById('icon-moon');
+function applyTheme(t){html.setAttribute('data-theme',t);if(navLogo)navLogo.src=LOGOS[t];if(iconSun)iconSun.style.display=t==='dark'?'none':'';if(iconMoon)iconMoon.style.display=t==='light'?'none':'';try{localStorage.setItem('rb-theme',t);}catch(e){}}
+(function(){var s='light';try{s=localStorage.getItem('rb-theme')||'light';}catch(e){}applyTheme(s);})();
+if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttribute('data-theme')==='dark'?'light':'dark');});
+(function(){var nav=document.getElementById('rb-nav');if(!nav)return;function onScroll(){nav.classList.toggle('scrolled',window.scrollY>50);}onScroll();window.addEventListener('scroll',onScroll,{passive:true});})();
+
+// Blog filter
+(function(){
+  var btns=document.querySelectorAll('.rb-filter-btn');
+  var cards=document.querySelectorAll('.rb-blog-card');
+  btns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      btns.forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      var f=btn.getAttribute('data-filter');
+      cards.forEach(function(card){
+        if(f==='todos'||card.getAttribute('data-cat')===f){
+          card.style.display='';
+        } else {
+          card.style.display='none';
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
