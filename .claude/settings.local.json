@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find \"/c/Users/frani/Downloads/Rocketbot_Design_System\" -type f | head -100)"
+      "Bash(find \"/c/Users/frani/Downloads/Rocketbot_Design_System\" -type f | head -100)",
+      "Bash(python -c \"import os; p='C:/Users/frani/.claude/worktrees/quirky-aryabhata-b7856b/rocketbot-orb.gif'; print\\('EXISTS:', os.path.exists\\(p\\)\\); print\\('SIZE KB:', os.path.getsize\\(p\\)//1024 if os.path.exists\\(p\\) else 'N/A'\\)\")",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "WebFetch(domain:rocketbot.com)",
+      "Bash(python -c ' *)",
+      "Bash(git -c user.email=\"frani@rocketbot.com\" -c user.name=\"Frani\" add index.html rpa-studio.html ai-studio.html saturn-studio.html orquestador.html xperience.html contacto.html blog.html)",
+      "Bash(git -c user.email=frani@rocketbot.com -c user.name=Frani commit -m ' *)",
+      "Bash(git -c user.email=\"frani@rocketbot.com\" -c user.name=\"Frani\" add -u)"
     ]
   }
 }
