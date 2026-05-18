@@ -25,7 +25,7 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-nav.scrolled{padding:10px 32px;background:linear-gradient(135deg,rgba(43,127,255,.12),rgba(188,0,23,.12),rgba(38,50,56,.18));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.15);box-shadow:0 4px 24px rgba(0,0,0,.08);}
 [data-theme="dark"] .rb-nav.scrolled{background:linear-gradient(135deg,rgba(43,127,255,.08),rgba(188,0,23,.10),rgba(10,10,15,.85));border-bottom-color:rgba(255,255,255,.08);}
 .rb-nav__inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;}
-.rb-nav__logo-wrap{display:flex;align-items:center;}
+.rb-nav__logo-wrap{display:flex;align-items:center;flex-shrink:0;}
 .rb-nav__logo{height:32px;width:auto;display:block;}
 .rb-nav__links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;}
 .rb-nav__links a,.rb-nav__links button{background:none;border:none;padding:0;font-size:14px;font-weight:500;color:#555;display:inline-flex;align-items:center;gap:4px;transition:color .2s;}
@@ -164,6 +164,7 @@ ul{margin:0;padding:0;list-style:none;}
   .rb-cta-band__inner{flex-direction:column;text-align:center;}
 }
 @media(max-width:600px){
+  .rb-nav{padding:12px 20px;}.rb-nav__inner{gap:12px;}.rb-nav__logo{height:24px;}.rb-nav__actions .rb-btn{display:none;}
   .container{padding:0 20px;}
   .rb-section{padding:64px 0;}
   .rb-compare{grid-template-columns:1fr;}

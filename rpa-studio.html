@@ -93,7 +93,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: flex; align-items: center;
   justify-content: space-between; gap: 32px;
 }
-.rb-nav__logo-wrap { display: flex; align-items: center; }
+.rb-nav__logo-wrap { display: flex; align-items: center; flex-shrink: 0; }
 .rb-nav__logo      { height: 32px; width: auto; display: block; }
 .rb-nav__links {
   display: flex; align-items: center; gap: 28px;
@@ -447,6 +447,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   .rb-cta-band__inner { flex-direction: column; text-align: center; }
 }
 @media (max-width: 600px) {
+  .rb-nav { padding: 12px 20px; }
+  .rb-nav__inner { gap: 12px; }
+  .rb-nav__logo { height: 24px; }
+  .rb-nav__actions .rb-btn { display: none; }
   .container { padding: 0 20px; }
   .rb-section { padding: 64px 0; }
   .rb-footer__grid { grid-template-columns: 1fr; }

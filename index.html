@@ -110,7 +110,7 @@ p { margin: 0; }
   display: flex; align-items: center;
   justify-content: space-between; gap: 32px;
 }
-.rb-nav__logo-wrap { display: flex; align-items: center; }
+.rb-nav__logo-wrap { display: flex; align-items: center; flex-shrink: 0; }
 .rb-nav__logo      { height: 32px; width: auto; display: block; }
 
 .rb-nav__links {
@@ -615,6 +615,7 @@ a.rb-product { text-decoration:none; color:inherit; }
   .rb-statsbar__inner { grid-template-columns:repeat(3,1fr); }
 }
 @media (max-width:600px) {
+  .rb-nav { padding: 12px 20px; } .rb-nav__inner { gap: 12px; } .rb-nav__logo { height: 24px; } .rb-nav__actions .rb-btn { display: none; }
   .rb-product { flex: 0 1 calc(50% - 12px); max-width: none; }
   .rb-benefits { grid-template-columns:1fr; }
   .rb-testimonials { grid-template-columns:1fr; }
