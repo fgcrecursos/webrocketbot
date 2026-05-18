@@ -520,6 +520,27 @@ ul { margin: 0; padding: 0; list-style: none; }
   .rb-acc-img { display:none; }
 }
 
+
+/* HAMBURGER */
+.rb-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--card);cursor:pointer;padding:0;color:var(--foreground);}
+.rb-hamburger span{display:block;width:16px;height:2px;background:currentColor;border-radius:2px;transition:transform .3s,opacity .3s;}
+.rb-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.rb-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.rb-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+/* MOBILE MENU */
+.rb-mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;z-index:48;background:var(--background);padding:80px 28px 48px;display:flex;flex-direction:column;overflow-y:auto;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+[data-theme="dark"] .rb-mobile-menu{background:var(--rb-dark-1);}
+.rb-mobile-menu.open{transform:translateX(0);}
+.rb-mobile-menu__inner{display:flex;flex-direction:column;gap:28px;flex:1;}
+.rb-mobile-menu__section{display:flex;flex-direction:column;}
+.rb-mobile-menu__label{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--rb-red);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid rgba(188,0,23,.2);}
+.rb-mobile-menu__section a{display:block;font-size:16px;font-weight:600;color:var(--foreground);padding:11px 0;border-bottom:1px solid var(--border);transition:color .2s;}
+.rb-mobile-menu__section a:hover{color:var(--rb-red);}
+.rb-mobile-menu__actions{display:flex;flex-direction:column;gap:10px;margin-top:auto;padding-top:28px;}
+.rb-mobile-menu__btn{display:block;text-align:center;font-size:14px;font-weight:700;padding:13px 24px;border-radius:var(--r-pill);border:1px solid var(--border);color:var(--foreground);font-family:var(--font-sans);transition:background .2s,color .2s;}
+.rb-mobile-menu__btn--primary{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
+.rb-mobile-menu__btn--primary:hover{background:var(--rb-red-deep);}
+@media(max-width:600px){.rb-hamburger{display:flex;}}
 </style>
 </head>
 <body>
@@ -559,6 +580,7 @@ ul { margin: 0; padding: 0; list-style: none; }
       <li><a href="contacto.html">Contáctanos</a></li>
     </ul>
     <div class="rb-nav__actions">
+      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
       <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
         <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
@@ -567,6 +589,37 @@ ul { margin: 0; padding: 0; list-style: none; }
     </div>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="rb-mobile-menu" id="rb-mobile-menu">
+  <div class="rb-mobile-menu__inner">
+    <div class="rb-mobile-menu__section">
+      <div class="rb-mobile-menu__label">Productos</div>
+      <a href="saturn-studio.html">Saturn Studio</a>
+      <a href="rpa-studio.html">RPA Studio</a>
+      <a href="ai-studio.html">AI Studio</a>
+      <a href="orquestador.html">Orquestador</a>
+      <a href="xperience.html">Xperience</a>
+    </div>
+    <div class="rb-mobile-menu__section">
+      <div class="rb-mobile-menu__label">Recursos</div>
+      <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
+      <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
+    </div>
+    <div class="rb-mobile-menu__section">
+      <div class="rb-mobile-menu__label">Soporte y servicios</div>
+      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a>
+      <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
+      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
+      <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Media kit</a>
+    </div>
+    <div class="rb-mobile-menu__actions">
+      <a href="contacto.html" class="rb-mobile-menu__btn">Contáctanos</a>
+      <a href="https://rocketbot.com/descargar" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" target="_blank" rel="noopener">Descarga</a>
+    </div>
+  </div>
+</div>
+
 
 <!-- HERO -->
 <section class="rb-hero">
@@ -978,6 +1031,25 @@ if (themeBtn) themeBtn.addEventListener('click', function() { applyTheme(html.ge
     });
   });
 
+
+  // Hamburger menu
+  (function(){
+    var btn=document.getElementById('rb-hamburger');
+    var menu=document.getElementById('rb-mobile-menu');
+    if(!btn||!menu) return;
+    btn.addEventListener('click',function(){
+      var open=menu.classList.toggle('open');
+      btn.classList.toggle('open',open);
+      document.body.style.overflow=open?'hidden':'';
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        document.body.style.overflow='';
+      });
+    });
+  })();
 </script>
 </body>
 </html>
