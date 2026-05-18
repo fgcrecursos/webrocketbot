@@ -212,9 +212,9 @@ p { margin: 0; }
   gap: 64px; align-items: center; position: relative; z-index: 1;
 }
 .rb-hero__title {
-  font-size: clamp(40px, 6vw, 88px);
-  font-weight: 800; letter-spacing: -0.04em;
-  line-height: 1.05; margin: 24px 0;
+  font-size: clamp(28px, 3.8vw, 56px);
+  font-weight: 800; letter-spacing: -0.03em;
+  line-height: 1.1; margin: 24px 0;
 }
 .rb-hero__title span   { color: var(--rb-secondary); }
 [data-theme="dark"] .rb-hero__title span { color: rgba(255,255,255,.55); }
@@ -351,7 +351,7 @@ p { margin: 0; }
     radial-gradient(ellipse 600px 200px at 0% 100%, rgba(188,0,23,.40), transparent 60%),
     radial-gradient(ellipse 600px 200px at 100% 0%, rgba(0,212,255,.15), transparent 60%);
 }
-.rb-statsbar__inner { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; position:relative; z-index:1; }
+.rb-statsbar__inner { display:grid; grid-template-columns:repeat(5,1fr); gap:24px; position:relative; z-index:1; }
 .rb-statsbar__item { border-left:2px solid rgba(255,255,255,.18); padding-left:24px; }
 .rb-statsbar__item:first-child { border-left:none; padding-left:0; }
 .rb-statsbar__v { font-family:var(--font-sans); font-weight:800; font-size:clamp(36px,4vw,56px); letter-spacing:-0.04em; line-height:1; color:#fff; }
@@ -377,8 +377,16 @@ p { margin: 0; }
 /* ═══════════════════════════════════════════
    PRODUCT GRID
 ═══════════════════════════════════════════ */
-.rb-products { display:grid; grid-template-columns:repeat(6,1fr); gap:16px; }
+.rb-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 .rb-product {
+  flex: 0 1 calc(20% - 16px);
+  min-width: 180px;
+  max-width: 240px;
   padding:32px 24px; border-radius:32px;
   background: var(--card);
   border:1px solid var(--border);
@@ -593,7 +601,7 @@ a.rb-product { text-decoration:none; color:inherit; }
    RESPONSIVE
 ═══════════════════════════════════════════ */
 @media (max-width:1100px) {
-  .rb-products { grid-template-columns:repeat(3,1fr); }
+  .rb-product { flex: 0 1 calc(33% - 16px); }
   .rb-footer__grid { grid-template-columns:1fr 1fr; gap:32px; }
 }
 @media (max-width:900px) {
@@ -602,10 +610,10 @@ a.rb-product { text-decoration:none; color:inherit; }
   .rb-tablist { flex-direction:row; flex-wrap:wrap; }
   .rb-testimonials { grid-template-columns:1fr 1fr; }
   .rb-cta-band__inner { flex-direction:column; text-align:center; }
-  .rb-statsbar__inner { grid-template-columns:repeat(2,1fr); }
+  .rb-statsbar__inner { grid-template-columns:repeat(3,1fr); }
 }
 @media (max-width:600px) {
-  .rb-products { grid-template-columns:1fr 1fr; }
+  .rb-product { flex: 0 1 calc(50% - 12px); max-width: none; }
   .rb-benefits { grid-template-columns:1fr; }
   .rb-testimonials { grid-template-columns:1fr; }
   .rb-footer__grid { grid-template-columns:1fr; }
@@ -644,7 +652,7 @@ a.rb-product { text-decoration:none; color:inherit; }
           <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div class="rb-nav__dropdown">
-          <a href="blog.html">Blog</a>
+          <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
           <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
         </div>
       </li>
@@ -687,7 +695,7 @@ a.rb-product { text-decoration:none; color:inherit; }
 
     <div>
       <span class="rb-eyebrow"><span class="dot"></span>Suite completa de Automatización Empresarial end-to-end</span>
-      <h1 class="rb-hero__title">Suite completa de <strong>Automatización</strong> Empresarial <span>end-to-end</span></h1>
+      <h1 class="rb-hero__title">Suite completa<br>de <strong>Automatización</strong><br>Empresarial<br><span>end-to-end</span></h1>
       <p class="rb-hero__sub">
         Agentes digitales que piensan, deciden y ejecutan procesos como humanos, garantizando velocidad, precisión y disponibilidad continua 24/7.
       </p>
@@ -776,20 +784,24 @@ a.rb-product { text-decoration:none; color:inherit; }
 <section class="rb-statsbar">
   <div class="container rb-statsbar__inner">
     <div class="rb-statsbar__item">
-      <div class="rb-statsbar__v">62</div>
-      <div class="rb-statsbar__l">Clientes enterprise</div>
+      <div class="rb-statsbar__v">21</div>
+      <div class="rb-statsbar__l">Países</div>
     </div>
     <div class="rb-statsbar__item">
-      <div class="rb-statsbar__v">+500</div>
-      <div class="rb-statsbar__l">Casos de uso</div>
-    </div>
-    <div class="rb-statsbar__item">
-      <div class="rb-statsbar__v">30%</div>
-      <div class="rb-statsbar__l">YoY growth</div>
-    </div>
-    <div class="rb-statsbar__item">
-      <div class="rb-statsbar__v">14</div>
+      <div class="rb-statsbar__v">8</div>
       <div class="rb-statsbar__l">Países con presencia directa</div>
+    </div>
+    <div class="rb-statsbar__item">
+      <div class="rb-statsbar__v">+14.000</div>
+      <div class="rb-statsbar__l">Usuarios</div>
+    </div>
+    <div class="rb-statsbar__item">
+      <div class="rb-statsbar__v">85%</div>
+      <div class="rb-statsbar__l">Renovaciones</div>
+    </div>
+    <div class="rb-statsbar__item">
+      <div class="rb-statsbar__v">+100</div>
+      <div class="rb-statsbar__l">Partners</div>
     </div>
   </div>
 </section>
@@ -799,7 +811,7 @@ a.rb-product { text-decoration:none; color:inherit; }
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow">Plataforma</span>
-      <h2 class="rb-section__title">Una plataforma. <span>Cinco poderes.</span></h2>
+      <h2 class="rb-section__title">Una plataforma.<br><span>Cinco poderes.</span></h2>
       <div class="rb-section__rule"></div>
     </div>
     <div class="rb-products">
@@ -899,7 +911,7 @@ a.rb-product { text-decoration:none; color:inherit; }
           </ul>
           <button class="rb-btn rb-btn--primary rb-btn--lg" type="button">Descargar caso PDF</button>
         </div>
-        <div class="rb-tabpanel__img" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800');"></div>
+        <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/retail.jpg');"></div>
       </div>
 
       <!-- EDUCACIÓN -->
@@ -915,7 +927,7 @@ a.rb-product { text-decoration:none; color:inherit; }
           </ul>
           <button class="rb-btn rb-btn--primary rb-btn--lg" type="button">Descargar caso PDF</button>
         </div>
-        <div class="rb-tabpanel__img" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1170&auto=format&fit=crop');"></div>
+        <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/educacion.jpg');"></div>
       </div>
 
       <!-- RRHH -->
@@ -931,7 +943,7 @@ a.rb-product { text-decoration:none; color:inherit; }
           </ul>
           <button class="rb-btn rb-btn--primary rb-btn--lg" type="button">Descargar caso PDF</button>
         </div>
-        <div class="rb-tabpanel__img" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800');"></div>
+        <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/rrhh.jpg');"></div>
       </div>
 
       <!-- FINANZAS -->
@@ -947,7 +959,7 @@ a.rb-product { text-decoration:none; color:inherit; }
           </ul>
           <button class="rb-btn rb-btn--primary rb-btn--lg" type="button">Descargar caso PDF</button>
         </div>
-        <div class="rb-tabpanel__img" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800');"></div>
+        <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/finanzas.jpg');"></div>
       </div>
     </div>
   </div>
@@ -1117,7 +1129,7 @@ a.rb-product { text-decoration:none; color:inherit; }
       <div class="rb-footer__col">
         <h6>Recursos</h6>
         <ul>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li>
           <li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li>
         </ul>
         <h6 style="margin-top:28px;">Empresa</h6>
