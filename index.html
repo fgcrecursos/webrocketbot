@@ -456,7 +456,9 @@ p { margin: 0; }
 .rb-tab-promo__text    { font-size:13px; color:#666; transition:color .3s; }
 [data-theme="dark"] .rb-tab-promo__text { color:rgba(255,255,255,.45); }
 
-.rb-tabpanel { display:grid; grid-template-columns:1fr 320px; }
+.rb-tabpanel { display:block; }
+.rb-panel { display:none; }
+.rb-panel.active { display:grid; grid-template-columns:1fr 340px; }
 .rb-tabpanel__copy { padding:48px 40px; }
 .rb-tabpanel__tag {
   display:inline-block; padding:6px 12px;
@@ -473,8 +475,6 @@ p { margin: 0; }
 [data-theme="dark"] .rb-tabpanel__img { filter:grayscale(.5) brightness(.45); }
 [data-theme="dark"] .rb-tabpanel__img:hover { filter:brightness(.8); }
 
-.rb-panel { display:none; }
-.rb-panel.active { display:contents; }
 
 /* ═══════════════════════════════════════════
    KEY BENEFITS
