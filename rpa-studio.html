@@ -454,6 +454,42 @@ ul { margin: 0; padding: 0; list-style: none; }
   .rb-security-grid { grid-template-columns: 1fr; }
   .rb-nav__links { display: none; }
 }
+
+/* SOLUTIONS TABS */
+.rb-solutions-card{display:grid;grid-template-columns:1fr 2fr;background:var(--card);border-radius:40px;border:1px solid var(--border);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.06);transition:background .35s,border-color .35s;}
+[data-theme="dark"] .rb-solutions-card{background:var(--rb-dark-2);box-shadow:0 30px 80px rgba(0,0,0,.35);}
+.rb-tablist{padding:32px;display:flex;flex-direction:column;gap:8px;}
+.rb-tab{background:transparent;border:none;padding:20px 24px;border-radius:18px;display:flex;align-items:center;justify-content:space-between;text-align:left;color:#999;transition:all .3s;cursor:pointer;font-family:inherit;}
+[data-theme="dark"] .rb-tab{color:rgba(255,255,255,.4);}
+.rb-tab__inner{display:flex;align-items:center;gap:16px;}
+.rb-tab svg{width:22px;height:22px;color:var(--rb-red);transition:transform .2s;}
+.rb-tab span.label{font-weight:800;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;}
+.rb-tab.active{background:var(--rb-red);color:#fff;box-shadow:0 12px 32px rgba(188,0,23,.25);}
+.rb-tab.active svg{color:#fff;}
+.rb-tab:not(.active):hover{background:rgba(0,0,0,.04);color:#000;}
+[data-theme="dark"] .rb-tab:not(.active):hover{background:rgba(255,255,255,.06);color:#fff;}
+.rb-tab__arrow{opacity:0;transition:opacity .2s;}
+.rb-tab.active .rb-tab__arrow{opacity:1;}
+.rb-tab-promo{margin-top:24px;padding:20px;border-radius:16px;background:rgba(188,0,23,.05);border:1px solid rgba(188,0,23,.12);}
+[data-theme="dark"] .rb-tab-promo{background:rgba(188,0,23,.08);border-color:rgba(188,0,23,.18);}
+.rb-tab-promo__eyebrow{font-size:10px;font-weight:700;color:var(--rb-red);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px;}
+.rb-tab-promo__text{font-size:13px;color:#666;transition:color .3s;}
+[data-theme="dark"] .rb-tab-promo__text{color:rgba(255,255,255,.45);}
+.rb-tabpanel{display:block;}
+.rb-panel{display:none;}
+.rb-panel.active{display:grid;grid-template-columns:1fr 340px;}
+.rb-tabpanel__copy{padding:48px 40px;}
+.rb-tabpanel__tag{display:inline-block;padding:6px 12px;background:rgba(188,0,23,.10);color:var(--rb-red);font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;border:1px solid rgba(188,0,23,.2);border-radius:9999px;margin-bottom:28px;}
+.rb-tabpanel__list{list-style:none;padding:0;margin:0 0 36px;display:flex;flex-direction:column;gap:18px;}
+.rb-tabpanel__list li{display:flex;align-items:flex-start;gap:14px;font-size:16px;color:#333;transition:color .3s;}
+[data-theme="dark"] .rb-tabpanel__list li{color:rgba(255,255,255,.75);}
+.rb-tabpanel__list svg{width:20px;height:20px;color:var(--rb-red);flex-shrink:0;margin-top:2px;}
+.rb-tabpanel__img{background-size:cover;background-position:center;filter:grayscale(.6) brightness(.7);transition:filter .5s;min-height:420px;border-radius:0 32px 32px 0;}
+.rb-tabpanel__img:hover{filter:none;}
+[data-theme="dark"] .rb-tabpanel__img{filter:grayscale(.5) brightness(.45);}
+[data-theme="dark"] .rb-tabpanel__img:hover{filter:brightness(.8);}
+@media(max-width:900px){.rb-solutions-card{grid-template-columns:1fr;}.rb-tablist{flex-direction:row;flex-wrap:wrap;}.rb-tabpanel__img{display:none;}.rb-panel.active{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -477,7 +513,7 @@ ul { margin: 0; padding: 0; list-style: none; }
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="blog.html">Blog</a>
+          <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
           <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
         </div>
       </li>
@@ -580,35 +616,95 @@ ul { margin: 0; padding: 0; list-style: none; }
   </div>
 </section>
 
-<!-- CASOS DE ÉXITO -->
-<section class="rb-section rb-section--alt">
+<!-- CASOS DE ÉXITO (tabs) -->
+<section class="rb-section rb-section--alt" id="casos">
   <div class="container">
-    <div class="rb-section__head">
-      <span class="rb-eyebrow">Casos de uso</span>
-      <h2 class="rb-section__title">Casos de <span>Éxito</span></h2>
-      <div class="rb-section__rule" style="margin-bottom:24px;"></div>
-      <p class="rb-section__sub">Automatiza los procesos más críticos de tu organización</p>
+    <div class="rb-section__head rb-section__head--left">
+      <h2 class="rb-section__title">Automatización lista para <span>tu industria.</span></h2>
+      <p class="rb-section__sub">+500 casos de uso implementados. Selecciona tu sector.</p>
     </div>
-    <div class="rb-usecases">
-      <div class="rb-usecase">
-        <div class="rb-usecase__num">Caso 01</div>
-        <div class="rb-usecase__title">Conciliaciones Financieras y Bancarias</div>
+    <div class="rb-solutions-card">
+      <div class="rb-tablist">
+        <button class="rb-tab active" data-tab="retail" type="button">
+          <span class="rb-tab__inner"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="label">Retail</span></span>
+          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </button>
+        <button class="rb-tab" data-tab="educacion" type="button">
+          <span class="rb-tab__inner"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg><span class="label">Educación</span></span>
+          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </button>
+        <button class="rb-tab" data-tab="rrhh" type="button">
+          <span class="rb-tab__inner"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="label">RRHH</span></span>
+          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </button>
+        <button class="rb-tab" data-tab="finanzas" type="button">
+          <span class="rb-tab__inner"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg><span class="label">Finanzas</span></span>
+          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </button>
+        <div class="rb-tab-promo">
+          <div class="rb-tab-promo__eyebrow">¿Otro sector?</div>
+          <div class="rb-tab-promo__text">Contamos con +500 casos de uso implementados en diversas industrias.</div>
+        </div>
       </div>
-      <div class="rb-usecase">
-        <div class="rb-usecase__num">Caso 02</div>
-        <div class="rb-usecase__title">Gestión de facturación y pagos</div>
-      </div>
-      <div class="rb-usecase">
-        <div class="rb-usecase__num">Caso 03</div>
-        <div class="rb-usecase__title">Generación de Reportes Financieros y Regulatorios</div>
-      </div>
-      <div class="rb-usecase">
-        <div class="rb-usecase__num">Caso 04</div>
-        <div class="rb-usecase__title">Análisis de presupuestos y proyecciones</div>
-      </div>
-      <div class="rb-usecase">
-        <div class="rb-usecase__num">Caso 05</div>
-        <div class="rb-usecase__title">Gestión del flujo de caja y previsión de tesorería</div>
+
+      <div class="rb-tabpanel">
+        <div id="panel-retail" class="rb-panel active">
+          <div class="rb-tabpanel__copy">
+            <span class="rb-tabpanel__tag">Caso de éxito</span>
+            <ul class="rb-tabpanel__list">
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Inventarios</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Procesamiento de Pedidos</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Informes Operativos Automatizados</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Logística y Envíos</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Conciliación de Pagos</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Actualización de Portales</span></li>
+            </ul>
+            <button class="rb-btn rb-btn--primary" type="button">Descargar caso PDF</button>
+          </div>
+          <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/retail.jpg');"></div>
+        </div>
+        <div id="panel-educacion" class="rb-panel">
+          <div class="rb-tabpanel__copy">
+            <span class="rb-tabpanel__tag">Caso de éxito</span>
+            <ul class="rb-tabpanel__list">
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Matrículas y Admisiones</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Procesamiento de Pagos y Facturación</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Reportes Académicos y Administrativos</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Solicitudes Estudiantiles</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Personal Docente</span></li>
+            </ul>
+            <button class="rb-btn rb-btn--primary" type="button">Descargar caso PDF</button>
+          </div>
+          <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/educacion.jpg');"></div>
+        </div>
+        <div id="panel-rrhh" class="rb-panel">
+          <div class="rb-tabpanel__copy">
+            <span class="rb-tabpanel__tag">Caso de éxito</span>
+            <ul class="rb-tabpanel__list">
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Onboarding de Empleados</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Procesamiento de Solicitudes de RRHH</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Nómina y Beneficios</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Reportes de Desempeño Automatizados</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Activación y Cierre de Cuentas</span></li>
+            </ul>
+            <button class="rb-btn rb-btn--primary" type="button">Descargar caso PDF</button>
+          </div>
+          <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/rrhh.jpg');"></div>
+        </div>
+        <div id="panel-finanzas" class="rb-panel">
+          <div class="rb-tabpanel__copy">
+            <span class="rb-tabpanel__tag">Caso de éxito</span>
+            <ul class="rb-tabpanel__list">
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Conciliaciones Financieras y Bancarias</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Facturación y Pagos</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Generación de Reportes Financieros</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Análisis de Presupuestos y Proyecciones</span></li>
+              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión del Flujo de Caja</span></li>
+            </ul>
+            <button class="rb-btn rb-btn--primary" type="button">Descargar caso PDF</button>
+          </div>
+          <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/finanzas.jpg');"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -808,7 +904,7 @@ ul { margin: 0; padding: 0; list-style: none; }
       <div class="rb-footer__col">
         <h6>Recursos</h6>
         <ul>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li>
           <li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li>
         </ul>
         <h6 style="margin-top:28px;">Empresa</h6>
@@ -860,6 +956,19 @@ function applyTheme(theme) {
 (function() { var s='light'; try { s=localStorage.getItem('rb-theme')||'light'; } catch(e){} applyTheme(s); })();
 if (themeBtn) themeBtn.addEventListener('click', function() { applyTheme(html.getAttribute('data-theme')==='dark'?'light':'dark'); });
 (function() { var nav=document.getElementById('rb-nav'); if(!nav) return; function onScroll(){nav.classList.toggle('scrolled',window.scrollY>50);} onScroll(); window.addEventListener('scroll',onScroll,{passive:true}); })();
+
+  // Tab switching
+  document.querySelectorAll('.rb-tab[data-tab]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var tabId = this.getAttribute('data-tab');
+      this.closest('.rb-solutions-card').querySelectorAll('.rb-tab').forEach(function(b){ b.classList.remove('active'); });
+      this.closest('.rb-solutions-card').querySelectorAll('.rb-panel').forEach(function(p){ p.classList.remove('active'); });
+      this.classList.add('active');
+      var panel = document.getElementById('panel-' + tabId);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
 </script>
 </body>
 </html>
