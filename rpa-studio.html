@@ -490,6 +490,27 @@ ul { margin: 0; padding: 0; list-style: none; }
 [data-theme="dark"] .rb-tabpanel__img:hover{filter:brightness(.8);}
 @media(max-width:900px){.rb-solutions-card{grid-template-columns:1fr;}.rb-tablist{flex-direction:row;flex-wrap:wrap;}.rb-tabpanel__img{display:none;}.rb-panel.active{grid-template-columns:1fr;}}
 
+
+/* USE CASES ACCORDION */
+.rb-usecases-wrap { display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:32px; overflow:hidden; }
+.rb-accordion { background:var(--rb-dark-3); }
+[data-theme="light"] .rb-accordion { background:#1B1F23; }
+.rb-acc-item { border-bottom:1px solid rgba(255,255,255,.07); cursor:pointer; transition:background .2s; }
+.rb-acc-item:last-child { border-bottom:none; }
+.rb-acc-item.open { background:rgba(255,255,255,.04); }
+.rb-acc-header { display:flex; align-items:center; gap:16px; padding:22px 28px; }
+.rb-acc-header svg { width:22px; height:22px; color:var(--rb-red); flex-shrink:0; opacity:.8; }
+.rb-acc-header span { font-size:12px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,.75); line-height:1.3; }
+.rb-acc-item.open .rb-acc-header span { color:#fff; }
+.rb-acc-body { display:none; padding:0 28px 22px 66px; }
+.rb-acc-item.open .rb-acc-body { display:block; }
+.rb-acc-body p { font-size:14px; color:rgba(255,255,255,.5); line-height:1.7; }
+.rb-acc-img { background-size:cover; background-position:center; min-height:480px; }
+@media(max-width:900px) {
+  .rb-usecases-wrap { grid-template-columns:1fr; }
+  .rb-acc-img { min-height:260px; border-radius:0 0 32px 32px; }
+}
+
 </style>
 </head>
 <body>
@@ -616,96 +637,73 @@ ul { margin: 0; padding: 0; list-style: none; }
   </div>
 </section>
 
-<!-- CASOS DE ÉXITO (tabs) -->
+<!-- CASOS DE USO ACCORDION -->
 <section class="rb-section rb-section--alt" id="casos">
   <div class="container">
     <div class="rb-section__head rb-section__head--left">
       <h2 class="rb-section__title">Automatización lista para <span>tu industria.</span></h2>
       <p class="rb-section__sub">+500 casos de uso implementados. Selecciona tu sector.</p>
     </div>
-    <div class="rb-solutions-card">
-      <div class="rb-tablist">
-        <button class="rb-tab active" data-tab="retail" type="button">
-          <span class="rb-tab__inner"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="label">Retail</span></span>
-          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </button>
-        <button class="rb-tab" data-tab="educacion" type="button">
-          <span class="rb-tab__inner"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg><span class="label">Educación</span></span>
-          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </button>
-        <button class="rb-tab" data-tab="rrhh" type="button">
-          <span class="rb-tab__inner"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="label">RRHH</span></span>
-          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </button>
-        <button class="rb-tab" data-tab="finanzas" type="button">
-          <span class="rb-tab__inner"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg><span class="label">Finanzas</span></span>
-          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </button>
-        <div class="rb-tab-promo">
-          <div class="rb-tab-promo__eyebrow">¿Otro sector?</div>
-          <div class="rb-tab-promo__text">Contamos con +500 casos de uso implementados en diversas industrias.</div>
+    <div class="rb-usecases-wrap">
+
+      <!-- ACORDEÓN -->
+      <div class="rb-accordion">
+
+        <div class="rb-acc-item open" data-acc="1">
+          <div class="rb-acc-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+            <span>Conciliaciones Financieras y Bancarias</span>
+          </div>
+          <div class="rb-acc-body">
+            <p>Automatiza la conciliación bancaria al comparar transacciones con registros contables, detectando discrepancias en tiempo real. Esto asegura precisión, acelera los cierres financieros y reduce errores, liberando tiempo para tareas estratégicas.</p>
+          </div>
         </div>
+
+        <div class="rb-acc-item" data-acc="2">
+          <div class="rb-acc-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span>Gestión de Facturación y Pagos</span>
+          </div>
+          <div class="rb-acc-body">
+            <p>Automatiza el procesamiento de facturas al validar datos, programar pagos y actualizar registros en tiempo real, lo que reduce costos, optimiza el flujo de caja y fortalece la relación con proveedores.</p>
+          </div>
+        </div>
+
+        <div class="rb-acc-item" data-acc="3">
+          <div class="rb-acc-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+            <span>Generación de Reportes Financieros y Regulatorios</span>
+          </div>
+          <div class="rb-acc-body">
+            <p>Automatiza la recopilación y consolidación de datos para generar reportes financieros y regulatorios precisos, agilizando auditorías, asegurando cumplimiento y mejorando la transparencia.</p>
+          </div>
+        </div>
+
+        <div class="rb-acc-item" data-acc="4">
+          <div class="rb-acc-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Análisis de Presupuestos y Proyecciones</span>
+          </div>
+          <div class="rb-acc-body">
+            <p>Automatiza la consolidación de datos presupuestarios, detecta desviaciones y genera proyecciones financieras, optimizando la planificación estratégica y la capacidad de respuesta.</p>
+          </div>
+        </div>
+
+        <div class="rb-acc-item" data-acc="5">
+          <div class="rb-acc-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <span>Gestión del Flujo de Caja y Previsión de Tesorería</span>
+          </div>
+          <div class="rb-acc-body">
+            <p>Automatiza el monitoreo de efectivo y la generación de previsiones de flujo de caja, mejorando la planificación, optimizando recursos y fortaleciendo la gestión de tesorería.</p>
+          </div>
+        </div>
+
       </div>
 
-      <div class="rb-tabpanel">
-        <div id="panel-retail" class="rb-panel active">
-          <div class="rb-tabpanel__copy">
-            <span class="rb-tabpanel__tag">Caso de éxito</span>
-            <ul class="rb-tabpanel__list">
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Inventarios</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Procesamiento de Pedidos</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Informes Operativos Automatizados</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Logística y Envíos</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Conciliación de Pagos</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Actualización de Portales</span></li>
-            </ul>
-            <button class="rb-btn rb-btn--primary" type="button">Descargar caso PDF</button>
-          </div>
-          <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/retail.jpg');"></div>
-        </div>
-        <div id="panel-educacion" class="rb-panel">
-          <div class="rb-tabpanel__copy">
-            <span class="rb-tabpanel__tag">Caso de éxito</span>
-            <ul class="rb-tabpanel__list">
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Matrículas y Admisiones</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Procesamiento de Pagos y Facturación</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Reportes Académicos y Administrativos</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Solicitudes Estudiantiles</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Personal Docente</span></li>
-            </ul>
-            <button class="rb-btn rb-btn--primary" type="button">Descargar caso PDF</button>
-          </div>
-          <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/educacion.jpg');"></div>
-        </div>
-        <div id="panel-rrhh" class="rb-panel">
-          <div class="rb-tabpanel__copy">
-            <span class="rb-tabpanel__tag">Caso de éxito</span>
-            <ul class="rb-tabpanel__list">
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Onboarding de Empleados</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Procesamiento de Solicitudes de RRHH</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Nómina y Beneficios</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Reportes de Desempeño Automatizados</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Activación y Cierre de Cuentas</span></li>
-            </ul>
-            <button class="rb-btn rb-btn--primary" type="button">Descargar caso PDF</button>
-          </div>
-          <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/rrhh.jpg');"></div>
-        </div>
-        <div id="panel-finanzas" class="rb-panel">
-          <div class="rb-tabpanel__copy">
-            <span class="rb-tabpanel__tag">Caso de éxito</span>
-            <ul class="rb-tabpanel__list">
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Conciliaciones Financieras y Bancarias</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión de Facturación y Pagos</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Generación de Reportes Financieros</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Análisis de Presupuestos y Proyecciones</span></li>
-              <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gestión del Flujo de Caja</span></li>
-            </ul>
-            <button class="rb-btn rb-btn--primary" type="button">Descargar caso PDF</button>
-          </div>
-          <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/finanzas.jpg');"></div>
-        </div>
-      </div>
+      <!-- IMAGEN -->
+      <div class="rb-acc-img" style="background-image:url('assets/images/rpa/usecases.jpg');"></div>
+
     </div>
   </div>
 </section>
@@ -957,15 +955,12 @@ function applyTheme(theme) {
 if (themeBtn) themeBtn.addEventListener('click', function() { applyTheme(html.getAttribute('data-theme')==='dark'?'light':'dark'); });
 (function() { var nav=document.getElementById('rb-nav'); if(!nav) return; function onScroll(){nav.classList.toggle('scrolled',window.scrollY>50);} onScroll(); window.addEventListener('scroll',onScroll,{passive:true}); })();
 
-  // Tab switching
-  document.querySelectorAll('.rb-tab[data-tab]').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var tabId = this.getAttribute('data-tab');
-      this.closest('.rb-solutions-card').querySelectorAll('.rb-tab').forEach(function(b){ b.classList.remove('active'); });
-      this.closest('.rb-solutions-card').querySelectorAll('.rb-panel').forEach(function(p){ p.classList.remove('active'); });
-      this.classList.add('active');
-      var panel = document.getElementById('panel-' + tabId);
-      if (panel) panel.classList.add('active');
+  // Accordion
+  document.querySelectorAll('.rb-acc-item').forEach(function(item) {
+    item.querySelector('.rb-acc-header').addEventListener('click', function() {
+      var parent = item.closest('.rb-accordion');
+      parent.querySelectorAll('.rb-acc-item').forEach(function(i){ i.classList.remove('open'); });
+      item.classList.add('open');
     });
   });
 
