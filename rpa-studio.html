@@ -492,20 +492,25 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 
 /* USE CASES ACCORDION */
-.rb-usecases-wrap { display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:32px; overflow:hidden; }
-.rb-accordion { background:var(--rb-dark-3); }
+.rb-usecases-wrap { display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:32px; overflow:hidden; align-items:stretch; }
+.rb-accordion { background:var(--rb-dark-3); display:flex; flex-direction:column; }
 [data-theme="light"] .rb-accordion { background:#1B1F23; }
-.rb-acc-item { border-bottom:1px solid rgba(255,255,255,.07); cursor:pointer; transition:background .2s; }
-.rb-acc-item:last-child { border-bottom:none; }
-.rb-acc-item.open { background:rgba(255,255,255,.04); }
-.rb-acc-header { display:flex; align-items:center; gap:16px; padding:22px 28px; }
-.rb-acc-header svg { width:22px; height:22px; color:var(--rb-red); flex-shrink:0; opacity:.8; }
-.rb-acc-header span { font-size:12px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,.75); line-height:1.3; }
-.rb-acc-item.open .rb-acc-header span { color:#fff; }
-.rb-acc-body { display:none; padding:0 28px 22px 66px; }
-.rb-acc-item.open .rb-acc-body { display:block; }
-.rb-acc-body p { font-size:14px; color:rgba(255,255,255,.5); line-height:1.7; }
-.rb-acc-img { background-size:cover; background-position:center; min-height:480px; }
+.rb-acc-item { border-bottom:1px solid rgba(255,255,255,.07); border-left:3px solid transparent; cursor:pointer; transition:background .25s, border-color .25s; flex-shrink:0; }
+.rb-acc-item:last-child { border-bottom:none; flex-grow:1; }
+.rb-acc-item:not(.open):hover { background:rgba(255,255,255,.04); border-left-color:rgba(188,0,23,.4); }
+.rb-acc-item.open { background:rgba(188,0,23,.07); border-left-color:var(--rb-red); }
+.rb-acc-header { display:flex; align-items:center; gap:16px; padding:22px 24px 22px 20px; user-select:none; }
+.rb-acc-icon { width:22px; height:22px; color:var(--rb-red); flex-shrink:0; opacity:.7; transition:opacity .25s; }
+.rb-acc-item.open .rb-acc-icon { opacity:1; }
+.rb-acc-label { font-size:11px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,.6); line-height:1.35; flex:1; transition:color .25s; }
+.rb-acc-item.open .rb-acc-label { color:#fff; }
+.rb-acc-item:not(.open):hover .rb-acc-label { color:rgba(255,255,255,.85); }
+.rb-acc-chevron { margin-left:8px; flex-shrink:0; color:rgba(255,255,255,.25); transition:transform .35s cubic-bezier(.4,0,.2,1), color .25s; }
+.rb-acc-item.open .rb-acc-chevron { transform:rotate(180deg); color:rgba(255,255,255,.6); }
+.rb-acc-body { max-height:0; overflow:hidden; opacity:0; transition:max-height .4s cubic-bezier(.4,0,.2,1), opacity .3s ease, padding .35s ease; padding:0 24px 0 58px; }
+.rb-acc-item.open .rb-acc-body { max-height:200px; opacity:1; padding:0 24px 22px 58px; }
+.rb-acc-body p { font-size:14px; color:rgba(255,255,255,.5); line-height:1.75; }
+.rb-acc-img { background-size:cover; background-position:center; min-height:0; align-self:stretch; }
 @media(max-width:900px) {
   .rb-usecases-wrap { grid-template-columns:1fr; }
   .rb-acc-img { min-height:260px; border-radius:0 0 32px 32px; }
@@ -651,8 +656,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 
         <div class="rb-acc-item open" data-acc="1">
           <div class="rb-acc-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
-            <span>Conciliaciones Financieras y Bancarias</span>
+            <svg class="rb-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+            <span class="rb-acc-label">Conciliaciones Financieras y Bancarias</span>
+            <svg class="rb-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </div>
           <div class="rb-acc-body">
             <p>Automatiza la conciliación bancaria al comparar transacciones con registros contables, detectando discrepancias en tiempo real. Esto asegura precisión, acelera los cierres financieros y reduce errores, liberando tiempo para tareas estratégicas.</p>
@@ -661,8 +667,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 
         <div class="rb-acc-item" data-acc="2">
           <div class="rb-acc-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            <span>Gestión de Facturación y Pagos</span>
+            <svg class="rb-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span class="rb-acc-label">Gestión de Facturación y Pagos</span>
+            <svg class="rb-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </div>
           <div class="rb-acc-body">
             <p>Automatiza el procesamiento de facturas al validar datos, programar pagos y actualizar registros en tiempo real, lo que reduce costos, optimiza el flujo de caja y fortalece la relación con proveedores.</p>
@@ -671,8 +678,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 
         <div class="rb-acc-item" data-acc="3">
           <div class="rb-acc-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-            <span>Generación de Reportes Financieros y Regulatorios</span>
+            <svg class="rb-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+            <span class="rb-acc-label">Generación de Reportes Financieros y Regulatorios</span>
+            <svg class="rb-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </div>
           <div class="rb-acc-body">
             <p>Automatiza la recopilación y consolidación de datos para generar reportes financieros y regulatorios precisos, agilizando auditorías, asegurando cumplimiento y mejorando la transparencia.</p>
@@ -681,8 +689,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 
         <div class="rb-acc-item" data-acc="4">
           <div class="rb-acc-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <span>Análisis de Presupuestos y Proyecciones</span>
+            <svg class="rb-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span class="rb-acc-label">Análisis de Presupuestos y Proyecciones</span>
+            <svg class="rb-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </div>
           <div class="rb-acc-body">
             <p>Automatiza la consolidación de datos presupuestarios, detecta desviaciones y genera proyecciones financieras, optimizando la planificación estratégica y la capacidad de respuesta.</p>
@@ -691,8 +700,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 
         <div class="rb-acc-item" data-acc="5">
           <div class="rb-acc-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-            <span>Gestión del Flujo de Caja y Previsión de Tesorería</span>
+            <svg class="rb-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <span class="rb-acc-label">Gestión del Flujo de Caja y Previsión de Tesorería</span>
+            <svg class="rb-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </div>
           <div class="rb-acc-body">
             <p>Automatiza el monitoreo de efectivo y la generación de previsiones de flujo de caja, mejorando la planificación, optimizando recursos y fortaleciendo la gestión de tesorería.</p>
@@ -955,12 +965,12 @@ function applyTheme(theme) {
 if (themeBtn) themeBtn.addEventListener('click', function() { applyTheme(html.getAttribute('data-theme')==='dark'?'light':'dark'); });
 (function() { var nav=document.getElementById('rb-nav'); if(!nav) return; function onScroll(){nav.classList.toggle('scrolled',window.scrollY>50);} onScroll(); window.addEventListener('scroll',onScroll,{passive:true}); })();
 
-  // Accordion
+  // Accordion — animated with max-height CSS transition
   document.querySelectorAll('.rb-acc-item').forEach(function(item) {
     item.querySelector('.rb-acc-header').addEventListener('click', function() {
-      var parent = item.closest('.rb-accordion');
-      parent.querySelectorAll('.rb-acc-item').forEach(function(i){ i.classList.remove('open'); });
-      item.classList.add('open');
+      var isOpen = item.classList.contains('open');
+      item.closest('.rb-accordion').querySelectorAll('.rb-acc-item').forEach(function(i){ i.classList.remove('open'); });
+      if (!isOpen) item.classList.add('open');
     });
   });
 
