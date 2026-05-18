@@ -80,8 +80,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
 .rb-what__feature-icon{width:40px;height:40px;border-radius:10px;background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.15);display:flex;align-items:center;justify-content:center;color:var(--rb-red);flex-shrink:0;}
 .rb-what__feature-title{font-size:15px;font-weight:700;margin-bottom:4px;color:var(--foreground);}
 .rb-what__feature-desc{font-size:13px;color:#777;line-height:1.5;}[data-theme="dark"] .rb-what__feature-desc{color:rgba(255,255,255,.45);}
-.rb-what__img{border-radius:var(--r-xl);overflow:hidden;}
-.rb-what__img img{width:100%;height:440px;object-fit:cover;}
+.rb-what__img{border-radius:var(--r-xl);overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--card);}
+.rb-what__img img{width:100%;height:440px;object-fit:contain;object-position:center;}
 
 /* STEPS */
 .rb-steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
@@ -163,7 +163,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="blog.html">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
+        <div class="rb-nav__dropdown"><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Soporte y servicios <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
@@ -224,7 +224,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
         </div>
       </div>
       <div class="rb-what__img">
-        <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&q=80&w=800" alt="Xperience formularios">
+        <img src="assets/images/xperience/xperience-hero.png" alt="Xperience formularios">
       </div>
     </div>
   </div>
@@ -396,7 +396,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
         </div>
       </div>
       <div class="rb-footer__col"><h6>Productos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestador</a></li><li><a href="xperience.html">Xperience</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="blog.html">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="#">Políticas de privacidad</a></li><li><a href="#">Políticas de seguridad</a></li><li><a href="https://g2.com/products/rocketbot" target="_blank" rel="noopener">G2</a></li><li><a href="#">Trabaja con Nosotros</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="#">Políticas de privacidad</a></li><li><a href="#">Políticas de seguridad</a></li><li><a href="https://g2.com/products/rocketbot" target="_blank" rel="noopener">G2</a></li><li><a href="#">Trabaja con Nosotros</a></li></ul></div>
       <div class="rb-footer__col"><h6>Soporte y servicios</h6><ul><li><a href="#">Certificación</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li><li><a href="#">Descargas</a></li><li><a href="#">FAQs</a></li><li><a href="#">Media kit</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">
