@@ -129,6 +129,18 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
 .rb-footer__social{display:flex;gap:12px;margin-top:20px;}
 .rb-footer__social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);display:inline-flex;align-items:center;justify-content:center;color:#aaa;transition:background .2s,color .2s;}
 .rb-footer__social a:hover{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
+/* FAQ */
+.rb-faq{display:flex;flex-direction:column;gap:0;max-width:860px;margin:0 auto;}
+.rb-faq__item{border-bottom:1px solid var(--border);}
+.rb-faq__item:first-child{border-top:1px solid var(--border);}
+.rb-faq__q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 0;cursor:pointer;font-size:16px;font-weight:700;color:var(--foreground);background:none;border:none;width:100%;text-align:left;font-family:var(--font-sans);}
+.rb-faq__q:hover{color:var(--rb-red);}
+.rb-faq__chevron{flex-shrink:0;color:rgba(128,128,128,.5);transition:transform .35s cubic-bezier(.4,0,.2,1),color .2s;}
+.rb-faq__item.open .rb-faq__chevron{transform:rotate(180deg);color:var(--rb-red);}
+.rb-faq__a{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s cubic-bezier(.4,0,.2,1),opacity .3s ease,padding .35s ease;padding:0 0 0 0;font-size:14px;color:#666;line-height:1.8;}
+[data-theme="dark"] .rb-faq__a{color:rgba(255,255,255,.5);}
+.rb-faq__item.open .rb-faq__a{max-height:300px;opacity:1;padding:0 0 24px 0;}
+
 @media(max-width:1100px){.rb-pricing5{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:900px){.rb-featurelist,.rb-pillars{grid-template-columns:1fr;}.rb-footer__grid{grid-template-columns:1fr 1fr;gap:32px;}.rb-cta-band__inner{flex-direction:column;text-align:center;}.rb-pricing5{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.container{padding:0 20px;}.rb-section{padding:64px 0;}.rb-footer__grid{grid-template-columns:1fr;}.rb-pricing5{grid-template-columns:1fr;}.rb-nav__links{display:none;}}
@@ -150,7 +162,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="blog.html">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
+        <div class="rb-nav__dropdown"><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Soporte y servicios <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
@@ -174,11 +186,58 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
   <div class="container">
     <div class="rb-hero__content">
       <span class="rb-eyebrow"><span class="dot"></span>Rocketbot Orquestador</span>
-      <h1 class="rb-hero__title">Administre y controle sus robots en cualquier momento con <strong>R.O.C.</strong></h1>
-      <p class="rb-hero__sub">Ejecute procesos y flujos de trabajo con monitoreo en tiempo real de funcionalidad y consumo de recursos.</p>
+      <h1 class="rb-hero__title">Automatiza, gobierna y escala tus procesos <strong>sin límites</strong></h1>
+      <p class="rb-hero__sub">Con nuestro orquestador podés ejecutar procesos, flujos de trabajo, conocer el funcionamiento y consumo de tu arquitectura en tiempo real, y controlar los procesos y sus resultados.</p>
       <div class="rb-hero__ctas">
-        <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg">Contáctanos</a>
+        <a href="https://login.rocketbot.com" class="rb-btn rb-btn--primary rb-btn--lg" target="_blank" rel="noopener">Pruébalo Ya</a>
         <a href="#planes" class="rb-btn rb-btn--ghost rb-btn--lg">Ver planes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTES -->
+<section class="rb-section" style="padding:48px 0;">
+  <div class="container">
+    <p style="text-align:center;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:32px;">Clientes que confían en nosotros</p>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px;">
+      <span style="font-size:16px;font-weight:800;letter-spacing:-0.02em;color:var(--muted);opacity:.6;">ONYX</span>
+      <span style="font-size:16px;font-weight:800;letter-spacing:-0.02em;color:var(--muted);opacity:.6;">AGROSUPER</span>
+      <span style="font-size:16px;font-weight:800;letter-spacing:-0.02em;color:var(--muted);opacity:.6;">PIT</span>
+      <span style="font-size:16px;font-weight:800;letter-spacing:-0.02em;color:var(--muted);opacity:.6;">PROTECCIÓN</span>
+      <span style="font-size:16px;font-weight:800;letter-spacing:-0.02em;color:var(--muted);opacity:.6;">SOLAR</span>
+      <span style="font-size:16px;font-weight:800;letter-spacing:-0.02em;color:var(--muted);opacity:.6;">TECNISEGUROS</span>
+    </div>
+  </div>
+</section>
+
+<!-- AUTOMATIZACIÓN SIN LÍMITES -->
+<section class="rb-section rb-section--alt">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div>
+        <span class="rb-eyebrow" style="margin-bottom:20px;display:inline-flex;">Despliegue</span>
+        <h2 class="rb-section__title" style="margin-bottom:24px;">Automatización <span>sin límites</span></h2>
+        <p style="font-size:16px;color:#666;line-height:1.8;margin-bottom:20px;transition:color .3s;" class="rb-text-muted">Ejecuta y gestiona automatizaciones creadas en Python y Rocketbot sin complicaciones. Con el Orchestrator, podés programar la ejecución de tus bots en el momento exacto que los necesitás, optimizando el uso de recursos y asegurando que tus procesos se ejecuten de forma eficiente y sin interrupciones.</p>
+        <p style="font-size:16px;color:#666;line-height:1.8;transition:color .3s;" class="rb-text-muted">Desplegá y controlá tus procesos de manera simple desde una consola centralizada.</p>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:40px;display:flex;flex-direction:column;gap:20px;transition:background .35s,border-color .3s;">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.15);display:flex;align-items:center;justify-content:center;color:var(--rb-red);flex-shrink:0;"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><div style="font-size:14px;font-weight:700;color:var(--foreground);">Programación exacta</div><div style="font-size:13px;color:#777;">Ejecutá bots en el momento y frecuencia que necesitás</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.15);display:flex;align-items:center;justify-content:center;color:var(--rb-red);flex-shrink:0;"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div><div style="font-size:14px;font-weight:700;color:var(--foreground);">Monitoreo en tiempo real</div><div style="font-size:13px;color:#777;">Estado, logs y métricas de cada robot en ejecución</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.15);display:flex;align-items:center;justify-content:center;color:var(--rb-red);flex-shrink:0;"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div style="font-size:14px;font-weight:700;color:var(--foreground);">Python y Rocketbot</div><div style="font-size:13px;color:#777;">Gestión unificada de robots .db y .zip personalizados</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.15);display:flex;align-items:center;justify-content:center;color:var(--rb-red);flex-shrink:0;"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div><div style="font-size:14px;font-weight:700;color:var(--foreground);">API REST + Webhooks</div><div style="font-size:13px;color:#777;">Integración con ERPs, CRMs y plataformas externas</div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -325,6 +384,65 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="rb-section rb-section--alt">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow">FAQ</span>
+      <h2 class="rb-section__title">Preguntas <span>frecuentes</span></h2>
+      <div class="rb-section__rule" style="margin-bottom:24px;"></div>
+    </div>
+    <div class="rb-faq">
+
+      <div class="rb-faq__item open">
+        <button class="rb-faq__q">¿Qué es el Orquestador de Rocketbot y para qué sirve?<svg class="rb-faq__chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-faq__a">Es una herramienta central para administrar, programar y monitorear la ejecución de bots desde un solo lugar. Permite gestionar múltiples robots, programar tareas, monitorear logs, distribuir cargas de trabajo y manejar robots tanto de Python como de Rocketbot Studio.</div>
+      </div>
+
+      <div class="rb-faq__item">
+        <button class="rb-faq__q">¿Puedo monitorear múltiples robots desde el Orquestador?<svg class="rb-faq__chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-faq__a">Sí. El Orquestador te permite ver el estado en tiempo real de todos tus bots, asignar tareas dinámicamente, acceder a métricas y logs detallados, y escalar operaciones manteniendo el control total desde una sola consola.</div>
+      </div>
+
+      <div class="rb-faq__item">
+        <button class="rb-faq__q">¿Cómo se gestionan los bots y flujos dentro del Orquestador?<svg class="rb-faq__chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-faq__a">Podés asignar bots a flujos de trabajo, programar ejecuciones automáticas o manuales, configurar condiciones por fecha y hora, supervisar el avance paso a paso y gestionar versiones de tus robots sin interrumpir los procesos en producción.</div>
+      </div>
+
+      <div class="rb-faq__item">
+        <button class="rb-faq__q">¿Qué tipos de robots puedo gestionar?<svg class="rb-faq__chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-faq__a">El Orquestador soporta robots Rocketbot Studio (.db) y robots personalizados (.zip con Python, Node.js o CMD). Podés editar, reemplazar versiones y reutilizar los mismos robots en distintos entornos (desarrollo, QA, producción).</div>
+      </div>
+
+      <div class="rb-faq__item">
+        <button class="rb-faq__q">¿Es necesario tener conocimientos técnicos para usarlo?<svg class="rb-faq__chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-faq__a">No. La interfaz es visual e intuitiva: usuarios sin perfil técnico pueden programar y monitorear bots con pocos clics. Los equipos técnicos pueden además aprovechar funciones avanzadas como API REST, webhooks y configuración de entornos.</div>
+      </div>
+
+      <div class="rb-faq__item">
+        <button class="rb-faq__q">¿Qué medidas de seguridad tiene el Orquestador?<svg class="rb-faq__chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-faq__a">Incluye autenticación con control de roles (RBAC), 2FA (autenticación de dos pasos), HTTPS con certificados SSL, encriptación de credenciales con APIKEY y registros completos de actividad de usuarios y bots para auditoría.</div>
+      </div>
+
+      <div class="rb-faq__item">
+        <button class="rb-faq__q">¿Se puede integrar con otras herramientas?<svg class="rb-faq__chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-faq__a">Sí. El Orquestador ofrece una API REST robusta para conectar ERPs, CRMs, bases de datos, plataformas web y servicios cloud. Además, enviá notificaciones vía webhooks al inicio o finalización de cada ejecución.</div>
+      </div>
+
+      <div class="rb-faq__item">
+        <button class="rb-faq__q">¿Qué es Xperience y para qué sirven los formularios?<svg class="rb-faq__chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-faq__a">Rocketbot Xperience es una funcionalidad del Orquestador que permite crear interfaces visuales (formularios web) conectadas directamente con los procesos automatizados. Permite que usuarios completen datos, seleccionen opciones o aprueben acciones antes de que el robot continúe.</div>
+      </div>
+
+      <div class="rb-faq__item">
+        <button class="rb-faq__q">¿Cómo obtengo soporte?<svg class="rb-faq__chevron" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-faq__a">Contás con centro de ayuda y documentación oficial, canal técnico vía Slack para clientes con licencia, comunidad activa en el foro oficial y sesiones de onboarding incluidas según tu plan contratado.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="rb-cta-band">
   <div class="container">
@@ -352,7 +470,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
         </div>
       </div>
       <div class="rb-footer__col"><h6>Productos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestador</a></li><li><a href="xperience.html">Xperience</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="blog.html">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="#">Políticas de privacidad</a></li><li><a href="#">Políticas de seguridad</a></li><li><a href="https://g2.com/products/rocketbot" target="_blank" rel="noopener">G2</a></li><li><a href="#">Trabaja con Nosotros</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="#">Políticas de privacidad</a></li><li><a href="#">Políticas de seguridad</a></li><li><a href="https://g2.com/products/rocketbot" target="_blank" rel="noopener">G2</a></li><li><a href="#">Trabaja con Nosotros</a></li></ul></div>
       <div class="rb-footer__col"><h6>Soporte y servicios</h6><ul><li><a href="#">Certificación</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li><li><a href="#">Descargas</a></li><li><a href="#">FAQs</a></li><li><a href="#">Media kit</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">
@@ -369,6 +487,14 @@ function applyTheme(t){html.setAttribute('data-theme',t);if(navLogo)navLogo.src=
 (function(){var s='light';try{s=localStorage.getItem('rb-theme')||'light';}catch(e){}applyTheme(s);})();
 if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttribute('data-theme')==='dark'?'light':'dark');});
 (function(){var nav=document.getElementById('rb-nav');if(!nav)return;function onScroll(){nav.classList.toggle('scrolled',window.scrollY>50);}onScroll();window.addEventListener('scroll',onScroll,{passive:true});})();
+  // FAQ accordion
+  document.querySelectorAll('.rb-faq__item').forEach(function(item){
+    item.querySelector('.rb-faq__q').addEventListener('click',function(){
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.rb-faq__item').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen) item.classList.add('open');
+    });
+  });
 </script>
 </body>
 </html>
