@@ -167,20 +167,18 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
 .rb-mobile-menu__btn--primary:hover{background:var(--rb-red-deep);}
 @media(max-width:600px){.rb-hamburger{display:flex;}}
 
-/* XPERIENCE HERO VIZ */
-.rb-hero__viz{position:absolute;right:0;top:50%;transform:translateY(-50%);width:440px;height:440px;pointer-events:none;z-index:0;opacity:.72;}
-.rb-xpr-field{animation:xpr-appear 7s ease-in-out infinite;}
-.rb-xpr-field.f2{animation-delay:1s;}.rb-xpr-field.f3{animation-delay:2s;}.rb-xpr-field.f4{animation-delay:3s;}
-@keyframes xpr-appear{0%,95%,100%{opacity:0;transform:translateX(10px);}15%,80%{opacity:1;transform:translateX(0);}}
-.rb-xpr-btn-glow{animation:xpr-btn 3s ease-in-out infinite;}
-@keyframes xpr-btn{0%,100%{fill:rgba(188,0,23,.1);}50%{fill:rgba(188,0,23,.22);}}
-.rb-xpr-check{animation:xpr-check 3s ease-in-out infinite;}
-.rb-xpr-check.ck2{animation-delay:1.5s;}
-@keyframes xpr-check{0%,100%{opacity:.4;}50%{opacity:1;}}
-.rb-xpr-float{animation:xpr-float 4s ease-in-out infinite;}
-.rb-xpr-float.fl2{animation-delay:2s;}
-@keyframes xpr-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-@media(max-width:900px){.rb-hero__viz{display:none;}}
+
+
+
+/* HERO VIDEO LAYOUT */
+.rb-hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1;width:100%;}
+.rb-hero__copy{display:flex;flex-direction:column;gap:0;}
+.rb-hero__video-wrap{display:flex;align-items:center;justify-content:center;}
+.rb-hero__video-wrap video{width:100%;max-width:520px;border-radius:20px;display:block;}
+@media(max-width:900px){
+  .rb-hero__grid{grid-template-columns:1fr;gap:32px;}
+  .rb-hero__video-wrap{display:none;}
+}
 
 </style>
 </head>
@@ -253,56 +251,22 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
 <!-- HERO -->
 <section class="rb-hero">
   <div class="rb-hero__particles"></div>
-  <div class="rb-hero__viz" aria-hidden="true">
-    <svg viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <rect x="80" y="55" width="280" height="326" rx="20" fill="rgba(255,255,255,.92)" stroke="rgba(188,0,23,.2)" stroke-width="2" class="rb-xpr-float"/>
-      <rect x="80" y="55" width="280" height="44" rx="20" fill="rgba(188,0,23,.1)" stroke="rgba(188,0,23,.15)" stroke-width="1"/>
-      <rect x="80" y="75" width="280" height="24" fill="rgba(188,0,23,.1)"/>
-      <circle cx="106" cy="77" r="6" fill="rgba(188,0,23,.4)"/>
-      <circle cx="126" cy="77" r="6" fill="rgba(255,180,0,.4)"/>
-      <circle cx="146" cy="77" r="6" fill="rgba(0,200,80,.4)"/>
-      <rect x="168" y="73" width="100" height="8" rx="4" fill="rgba(188,0,23,.2)"/>
-      <rect x="104" y="122" width="150" height="9" rx="4" fill="rgba(188,0,23,.3)"/>
-      <rect x="104" y="138" width="100" height="6" rx="3" fill="rgba(0,0,0,.1)"/>
-      <g class="rb-xpr-field">
-        <rect x="104" y="162" width="232" height="36" rx="8" fill="rgba(255,255,255,.95)" stroke="rgba(188,0,23,.35)" stroke-width="1.5"/>
-        <rect x="116" y="177" width="60" height="6" rx="3" fill="rgba(0,0,0,.15)"/>
-      </g>
-      <g class="rb-xpr-field f2">
-        <rect x="104" y="210" width="232" height="36" rx="8" fill="rgba(255,255,255,.95)" stroke="rgba(188,0,23,.25)" stroke-width="1.5"/>
-        <rect x="116" y="225" width="80" height="6" rx="3" fill="rgba(0,0,0,.12)"/>
-      </g>
-      <g class="rb-xpr-field f3">
-        <rect x="104" y="260" width="14" height="14" rx="3" fill="rgba(188,0,23,.1)" stroke="rgba(188,0,23,.4)" stroke-width="1.5"/>
-        <polyline points="107,267 111,271 117,263" fill="none" stroke="rgba(188,0,23,.8)" stroke-width="2" stroke-linecap="round" class="rb-xpr-check"/>
-        <rect x="126" y="263" width="70" height="6" rx="3" fill="rgba(0,0,0,.12)"/>
-        <rect x="104" y="282" width="14" height="14" rx="3" fill="rgba(188,0,23,.1)" stroke="rgba(188,0,23,.4)" stroke-width="1.5"/>
-        <polyline points="107,289 111,293 117,285" fill="none" stroke="rgba(188,0,23,.6)" stroke-width="2" stroke-linecap="round" class="rb-xpr-check ck2"/>
-        <rect x="126" y="285" width="55" height="6" rx="3" fill="rgba(0,0,0,.1)"/>
-      </g>
-      <g class="rb-xpr-field f4">
-        <rect x="104" y="314" width="232" height="42" rx="10" class="rb-xpr-btn-glow" stroke="rgba(188,0,23,.4)" stroke-width="1.5"/>
-        <rect x="158" y="328" width="84" height="8" rx="4" fill="rgba(188,0,23,.55)"/>
-      </g>
-      <g class="rb-xpr-float fl2">
-        <rect x="292" y="26" width="100" height="26" rx="13" fill="rgba(0,200,80,.12)" stroke="rgba(0,200,80,.32)" stroke-width="1.5"/>
-        <circle cx="312" cy="39" r="5" fill="rgba(0,200,80,.5)" class="rb-xpr-check"/>
-        <rect x="324" y="36" width="50" height="5" rx="2" fill="rgba(0,150,60,.35)"/>
-      </g>
-      <g class="rb-xpr-float">
-        <rect x="42" y="294" width="26" height="26" rx="8" fill="rgba(43,127,255,.12)" stroke="rgba(43,127,255,.3)" stroke-width="1.5"/>
-        <path d="M 50 302 L 55 312 L 60 302" fill="none" stroke="rgba(43,127,255,.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </g>
-    </svg>
-  </div>
+
   <div class="container">
-    <div class="rb-hero__content">
+    <div class="rb-hero__grid">
+      <div class="rb-hero__copy">
       <span class="rb-eyebrow"><span class="dot"></span>Rocketbot Xperience</span>
       <h1 class="rb-hero__title">Crea increíbles formularios con lógica, de manera <strong>simple.</strong></h1>
       <p class="rb-hero__sub">Plataforma no-code para formularios inteligentes que disparan automatizaciones y conectan personas con robots.</p>
       <div class="rb-hero__ctas">
         <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg">Pruébalo Ya</a>
         <a href="#planes" class="rb-btn rb-btn--ghost rb-btn--lg">Ver planes</a>
+      </div>
+    </div>
+      <div class="rb-hero__video-wrap">
+        <video autoplay loop muted playsinline>
+          <source src="assets/images/anims/xperience.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>

@@ -543,18 +543,18 @@ ul { margin: 0; padding: 0; list-style: none; }
 .rb-mobile-menu__btn--primary:hover{background:var(--rb-red-deep);}
 @media(max-width:600px){.rb-hamburger{display:flex;}}
 
-/* RPA HERO VIZ */
-.rb-hero__viz{position:absolute;right:0;top:50%;transform:translateY(-50%);width:460px;height:460px;pointer-events:none;z-index:0;opacity:.7;}
-.rb-rpa-gear--big{transform-origin:170px 200px;animation:rpa-spin-r 16s linear infinite;}
-.rb-rpa-gear--small{transform-origin:308px 148px;animation:rpa-spin-r 10s linear infinite reverse;}
-@keyframes rpa-spin-r{to{transform:rotate(360deg);}}
-.rb-rpa-flow-line{stroke-dasharray:8 5;animation:rpa-flow 2.5s linear infinite;}
-@keyframes rpa-flow{to{stroke-dashoffset:-130;}}
-.rb-rpa-node-pulse{animation:rpa-np 2s ease-in-out infinite;}
-.rb-rpa-node-pulse.d1{animation-delay:.5s;}
-.rb-rpa-node-pulse.d2{animation-delay:1s;}
-@keyframes rpa-np{0%,100%{opacity:.45;}60%{opacity:1;}}
-@media(max-width:900px){.rb-hero__viz{display:none;}}
+
+
+
+/* HERO VIDEO LAYOUT */
+.rb-hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1;width:100%;}
+.rb-hero__copy{display:flex;flex-direction:column;gap:0;}
+.rb-hero__video-wrap{display:flex;align-items:center;justify-content:center;}
+.rb-hero__video-wrap video{width:100%;max-width:520px;border-radius:20px;display:block;}
+@media(max-width:900px){
+  .rb-hero__grid{grid-template-columns:1fr;gap:32px;}
+  .rb-hero__video-wrap{display:none;}
+}
 
 </style>
 </head>
@@ -639,42 +639,21 @@ ul { margin: 0; padding: 0; list-style: none; }
 <!-- HERO -->
 <section class="rb-hero">
   <div class="rb-hero__particles"></div>
-  <div class="rb-hero__viz" aria-hidden="true">
-    <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <g class="rb-rpa-gear--big">
-        <circle cx="170" cy="200" r="105" fill="none" stroke="rgba(188,0,23,.15)" stroke-width="2" stroke-dasharray="22 8"/>
-        <circle cx="170" cy="200" r="80" fill="rgba(188,0,23,.07)" stroke="rgba(188,0,23,.25)" stroke-width="2"/>
-        <circle cx="170" cy="200" r="28" fill="rgba(188,0,23,.12)" stroke="rgba(188,0,23,.35)" stroke-width="2"/>
-        <line x1="170" y1="120" x2="170" y2="280" stroke="rgba(188,0,23,.15)" stroke-width="2"/>
-        <line x1="90" y1="200" x2="250" y2="200" stroke="rgba(188,0,23,.15)" stroke-width="2"/>
-        <line x1="114" y1="144" x2="226" y2="256" stroke="rgba(188,0,23,.1)" stroke-width="1.5"/>
-        <line x1="226" y1="144" x2="114" y2="256" stroke="rgba(188,0,23,.1)" stroke-width="1.5"/>
-      </g>
-      <g class="rb-rpa-gear--small">
-        <circle cx="308" cy="148" r="66" fill="none" stroke="rgba(43,127,255,.15)" stroke-width="1.5" stroke-dasharray="14 6"/>
-        <circle cx="308" cy="148" r="50" fill="rgba(43,127,255,.06)" stroke="rgba(43,127,255,.22)" stroke-width="1.5"/>
-        <circle cx="308" cy="148" r="17" fill="rgba(43,127,255,.12)" stroke="rgba(43,127,255,.32)" stroke-width="1.5"/>
-        <line x1="308" y1="98" x2="308" y2="198" stroke="rgba(43,127,255,.12)" stroke-width="1.5"/>
-        <line x1="258" y1="148" x2="358" y2="148" stroke="rgba(43,127,255,.12)" stroke-width="1.5"/>
-        <line x1="272" y1="112" x2="344" y2="184" stroke="rgba(43,127,255,.1)" stroke-width="1"/>
-        <line x1="344" y1="112" x2="272" y2="184" stroke="rgba(43,127,255,.1)" stroke-width="1"/>
-      </g>
-      <path d="M 40 380 L 140 380 L 180 380 L 280 380 L 320 380 L 420 380" fill="none" stroke="rgba(188,0,23,.18)" stroke-width="1.5" class="rb-rpa-flow-line"/>
-      <rect x="40" y="358" width="100" height="42" rx="10" fill="rgba(188,0,23,.07)" stroke="rgba(188,0,23,.28)" stroke-width="1.5" class="rb-rpa-node-pulse"/>
-      <rect x="180" y="358" width="100" height="42" rx="10" fill="rgba(188,0,23,.07)" stroke="rgba(188,0,23,.28)" stroke-width="1.5" class="rb-rpa-node-pulse d1"/>
-      <rect x="320" y="358" width="100" height="42" rx="10" fill="rgba(43,127,255,.07)" stroke="rgba(43,127,255,.28)" stroke-width="1.5" class="rb-rpa-node-pulse d2"/>
-      <polyline points="58,380 68,390 88,368" fill="none" stroke="rgba(188,0,23,.65)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="rb-rpa-node-pulse"/>
-      <polyline points="198,380 208,390 228,368" fill="none" stroke="rgba(188,0,23,.65)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="rb-rpa-node-pulse d1"/>
-      <circle cx="370" cy="379" r="11" fill="none" stroke="rgba(43,127,255,.6)" stroke-width="2.5" stroke-dasharray="20 14" class="rb-rpa-gear--small"/>
-    </svg>
-  </div>
+
   <div class="container">
-    <div class="rb-hero__content">
+    <div class="rb-hero__grid">
+      <div class="rb-hero__copy">
       <span class="rb-eyebrow"><span class="dot"></span>Rocketbot RPA Studio</span>
       <h1 class="rb-hero__title">Crea y construye robots de manera robusta y confiable,<br><strong>Sin limitaciones.</strong></h1>
       <div class="rb-hero__ctas">
         <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg">Pruébalo Ya</a>
         <a href="#licenciamiento" class="rb-btn rb-btn--ghost rb-btn--lg">Ver planes</a>
+      </div>
+    </div>
+      <div class="rb-hero__video-wrap">
+        <video autoplay loop muted playsinline>
+          <source src="assets/images/anims/rpa.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
