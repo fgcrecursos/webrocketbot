@@ -174,7 +174,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
 .rb-hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1;width:100%;}
 .rb-hero__copy{display:flex;flex-direction:column;gap:0;}
 .rb-hero__video-wrap{display:flex;align-items:center;justify-content:center;}
-.rb-hero__video-wrap video{width:100%;max-width:520px;border-radius:20px;display:block;}
+.rb-hero__video-wrap video{width:100%;aspect-ratio:1254/1080;max-width:520px;border-radius:20px;object-fit:cover;display:block;overflow:hidden;}
 @media(max-width:900px){
   .rb-hero__grid{grid-template-columns:1fr;gap:32px;}
   .rb-hero__video-wrap{display:none;}
