@@ -138,6 +138,21 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
 .rb-mobile-menu__btn--primary{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
 .rb-mobile-menu__btn--primary:hover{background:var(--rb-red-deep);}
 @media(max-width:600px){.rb-hamburger{display:flex;}}
+
+/* LANGUAGE SWITCHER */
+.rb-lang{position:relative;}
+.rb-lang__menu{position:absolute;top:calc(100% + 10px);right:0;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:6px;min-width:148px;box-shadow:0 16px 40px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:opacity .2s,transform .18s;transform:translateY(-6px);z-index:200;}
+[data-theme="dark"] .rb-lang__menu{background:var(--rb-dark-2);border-color:rgba(255,255,255,.08);}
+.rb-lang__menu.open{opacity:1;pointer-events:auto;transform:translateY(0);}
+.rb-lang__opt{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:9px;font-size:13px;font-weight:600;color:#333;cursor:pointer;transition:background .15s,color .15s;border:none;background:none;width:100%;font-family:inherit;text-align:left;}
+[data-theme="dark"] .rb-lang__opt{color:rgba(255,255,255,.75);}
+.rb-lang__opt:hover{background:rgba(188,0,23,.07);color:var(--rb-red);}
+.rb-lang__opt.rb-lang--active{color:var(--rb-red);background:rgba(188,0,23,.05);}
+/* Hide Google Translate toolbar */
+.goog-te-banner-frame,.goog-te-gadget,.goog-te-gadget-icon,#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,.goog-tooltip:hover,.skiptranslate{display:none !important;height:0 !important;}
+body{top:0 !important;}
+.goog-text-highlight{background:none !important;box-shadow:none !important;}
+
 </style>
 </head>
 <body>
@@ -166,6 +181,16 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
     </ul>
     <div class="rb-nav__actions">
       <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <div class="rb-lang" id="rb-lang">
+      <button class="rb-iconbtn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      </button>
+      <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
+        <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button">🇪🇸 Español</button>
+        <button class="rb-lang__opt" data-lang="en" type="button">🇺🇸 English</button>
+        <button class="rb-lang__opt" data-lang="pt" type="button">🇧🇷 Português</button>
+      </div>
+    </div>
       <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
         <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
@@ -415,5 +440,81 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
     });
   })();
 </script>
+
+<!-- Google Translate -->
+<div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'es',
+    includedLanguages:'es,en,pt',
+    autoDisplay:false
+  },'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+
+<script>
+/* Language Switcher */
+(function(){
+  var btn  = document.getElementById('rb-lang-btn');
+  var menu = document.getElementById('rb-lang-menu');
+  if(!btn || !menu) return;
+
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', function(){
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  });
+
+  function setLang(lang){
+    try{ localStorage.setItem('rb-lang', lang); }catch(e){}
+    menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
+      o.classList.toggle('rb-lang--active', o.dataset.lang === lang);
+    });
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+
+    if(lang === 'es'){
+      var exp0 = new Date(0).toUTCString();
+      document.cookie = 'googtrans=; path=/; expires=' + exp0;
+      document.cookie = 'googtrans=; path=/; domain=.' + location.hostname + '; expires=' + exp0;
+      location.reload();
+      return;
+    }
+    // Try live Google Translate select
+    var sel = document.querySelector('.goog-te-combo');
+    if(sel){
+      sel.value = lang;
+      sel.dispatchEvent(new Event('change'));
+    } else {
+      var exp1 = new Date(); exp1.setFullYear(exp1.getFullYear()+1);
+      var expStr = exp1.toUTCString();
+      document.cookie = 'googtrans=/es/'+lang+'; path=/; expires='+expStr;
+      document.cookie = 'googtrans=/es/'+lang+'; path=/; domain=.'+location.hostname+'; expires='+expStr;
+      location.reload();
+    }
+  }
+
+  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
+    o.addEventListener('click', function(){ setLang(o.dataset.lang); });
+  });
+
+  // Restore saved preference
+  var saved = 'es';
+  try{ saved = localStorage.getItem('rb-lang') || 'es'; }catch(e){}
+  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
+    o.classList.toggle('rb-lang--active', o.dataset.lang === saved);
+  });
+  if(saved !== 'es' && document.cookie.indexOf('googtrans') === -1){
+    document.cookie = 'googtrans=/es/'+saved+'; path=/';
+  }
+})();
+</script>
+
 </body>
 </html>
