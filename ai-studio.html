@@ -217,6 +217,22 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-mobile-menu__btn--primary{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
 .rb-mobile-menu__btn--primary:hover{background:var(--rb-red-deep);}
 @media(max-width:600px){.rb-hamburger{display:flex;}}
+
+/* AI STUDIO HERO VIZ */
+.rb-hero__viz{position:absolute;right:0;top:50%;transform:translateY(-50%);width:460px;height:440px;pointer-events:none;z-index:0;opacity:.7;}
+.rb-ai-link{stroke-dasharray:6 5;animation:ai-link-flow 2s linear infinite;}
+.rb-ai-link.d1{animation-delay:.4s;}.rb-ai-link.d2{animation-delay:.8s;}.rb-ai-link.d3{animation-delay:1.2s;}.rb-ai-link.d4{animation-delay:1.6s;}
+@keyframes ai-link-flow{to{stroke-dashoffset:-110;}}
+.rb-ai-node{animation:ai-node-p 2.5s ease-in-out infinite;}
+.rb-ai-node.d1{animation-delay:.3s;}.rb-ai-node.d2{animation-delay:.6s;}.rb-ai-node.d3{animation-delay:.9s;}
+@keyframes ai-node-p{0%,100%{opacity:.5;}50%{opacity:1;}}
+.rb-ai-card{animation:ai-card-fl 4s ease-in-out infinite;}
+.rb-ai-card.c2{animation-delay:1.3s;}.rb-ai-card.c3{animation-delay:2.6s;}
+@keyframes ai-card-fl{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.rb-ai-scan{animation:ai-scan 2s ease-in-out infinite;}
+@keyframes ai-scan{0%,100%{opacity:.3;}50%{opacity:.9;}}
+@media(max-width:900px){.rb-hero__viz{display:none;}}
+
 </style>
 </head>
 <body>

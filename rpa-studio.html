@@ -542,6 +542,20 @@ ul { margin: 0; padding: 0; list-style: none; }
 .rb-mobile-menu__btn--primary{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
 .rb-mobile-menu__btn--primary:hover{background:var(--rb-red-deep);}
 @media(max-width:600px){.rb-hamburger{display:flex;}}
+
+/* RPA HERO VIZ */
+.rb-hero__viz{position:absolute;right:0;top:50%;transform:translateY(-50%);width:460px;height:460px;pointer-events:none;z-index:0;opacity:.7;}
+.rb-rpa-gear--big{transform-origin:170px 200px;animation:rpa-spin-r 16s linear infinite;}
+.rb-rpa-gear--small{transform-origin:308px 148px;animation:rpa-spin-r 10s linear infinite reverse;}
+@keyframes rpa-spin-r{to{transform:rotate(360deg);}}
+.rb-rpa-flow-line{stroke-dasharray:8 5;animation:rpa-flow 2.5s linear infinite;}
+@keyframes rpa-flow{to{stroke-dashoffset:-130;}}
+.rb-rpa-node-pulse{animation:rpa-np 2s ease-in-out infinite;}
+.rb-rpa-node-pulse.d1{animation-delay:.5s;}
+.rb-rpa-node-pulse.d2{animation-delay:1s;}
+@keyframes rpa-np{0%,100%{opacity:.45;}60%{opacity:1;}}
+@media(max-width:900px){.rb-hero__viz{display:none;}}
+
 </style>
 </head>
 <body>

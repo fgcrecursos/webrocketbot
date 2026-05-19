@@ -166,6 +166,22 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
 .rb-mobile-menu__btn--primary{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
 .rb-mobile-menu__btn--primary:hover{background:var(--rb-red-deep);}
 @media(max-width:600px){.rb-hamburger{display:flex;}}
+
+/* XPERIENCE HERO VIZ */
+.rb-hero__viz{position:absolute;right:0;top:50%;transform:translateY(-50%);width:440px;height:440px;pointer-events:none;z-index:0;opacity:.72;}
+.rb-xpr-field{animation:xpr-appear 7s ease-in-out infinite;}
+.rb-xpr-field.f2{animation-delay:1s;}.rb-xpr-field.f3{animation-delay:2s;}.rb-xpr-field.f4{animation-delay:3s;}
+@keyframes xpr-appear{0%,95%,100%{opacity:0;transform:translateX(10px);}15%,80%{opacity:1;transform:translateX(0);}}
+.rb-xpr-btn-glow{animation:xpr-btn 3s ease-in-out infinite;}
+@keyframes xpr-btn{0%,100%{fill:rgba(188,0,23,.1);}50%{fill:rgba(188,0,23,.22);}}
+.rb-xpr-check{animation:xpr-check 3s ease-in-out infinite;}
+.rb-xpr-check.ck2{animation-delay:1.5s;}
+@keyframes xpr-check{0%,100%{opacity:.4;}50%{opacity:1;}}
+.rb-xpr-float{animation:xpr-float 4s ease-in-out infinite;}
+.rb-xpr-float.fl2{animation-delay:2s;}
+@keyframes xpr-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+@media(max-width:900px){.rb-hero__viz{display:none;}}
+
 </style>
 </head>
 <body>

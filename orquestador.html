@@ -165,6 +165,17 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
 .rb-mobile-menu__btn--primary{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
 .rb-mobile-menu__btn--primary:hover{background:var(--rb-red-deep);}
 @media(max-width:600px){.rb-hamburger{display:flex;}}
+
+/* ORQUESTADOR HERO VIZ */
+.rb-hero__viz{position:absolute;right:0;top:50%;transform:translateY(-50%);width:460px;height:440px;pointer-events:none;z-index:0;opacity:.65;}
+.rb-orq-flow{stroke-dasharray:7 5;animation:orq-flow 2s linear infinite;}
+.rb-orq-flow.d1{animation-delay:.5s;}.rb-orq-flow.d2{animation-delay:1s;}
+@keyframes orq-flow{to{stroke-dashoffset:-120;}}
+.rb-orq-pulse{animation:orq-pulse 2s ease-in-out infinite;}
+.rb-orq-pulse.d1{animation-delay:.4s;}.rb-orq-pulse.d2{animation-delay:.8s;}.rb-orq-pulse.d3{animation-delay:1.2s;}
+@keyframes orq-pulse{0%,100%{opacity:.35;}55%{opacity:1;}}
+@media(max-width:900px){.rb-hero__viz{display:none;}}
+
 </style>
 </head>
 <body>
