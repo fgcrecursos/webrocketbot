@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# No indexar la página de contacto (tiene noindex en el HTML también)
+Disallow: /contacto
+
+# No indexar assets internos
+Disallow: /assets/images/anims/
+
+Sitemap: https://rocketbot.com/sitemap.xml
