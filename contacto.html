@@ -65,35 +65,9 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
 .rb-contact-hero__sub{font-size:18px;color:#666;margin-bottom:40px;line-height:1.5;font-weight:300;}
 [data-theme="dark"] .rb-contact-hero__sub{color:rgba(255,255,255,.5);}
 
-/* FORM */
-.rb-form{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:48px 40px;backdrop-filter:blur(20px);transition:background .35s,border-color .35s;}
-.rb-form__grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.rb-form__group{display:flex;flex-direction:column;gap:8px;}
-.rb-form__group--full{grid-column:1/-1;}
-.rb-form__label{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#555;transition:color .3s;}
-[data-theme="dark"] .rb-form__label{color:rgba(255,255,255,.55);}
-.rb-form__input,.rb-form__select,.rb-form__textarea{
-  width:100%;padding:14px 16px;
-  background:var(--background);border:1.5px solid var(--border);
-  border-radius:12px;font-family:var(--font-sans);font-size:14px;
-  color:var(--foreground);transition:border-color .2s,box-shadow .2s,background .35s,color .35s;
-  outline:none;appearance:none;-webkit-appearance:none;
-}
-.rb-form__input:focus,.rb-form__select:focus,.rb-form__textarea:focus{
-  border-color:var(--rb-red);
-  box-shadow:0 0 0 3px rgba(188,0,23,.12);
-}
-.rb-form__input::placeholder,.rb-form__textarea::placeholder{color:#aaa;}
-.rb-form__textarea{resize:vertical;min-height:120px;}
-.rb-form__select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' stroke='%23888' stroke-width='2' fill='none'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;cursor:pointer;}
-.rb-form__checks{display:flex;flex-direction:column;gap:14px;margin-top:8px;}
-.rb-form__check{display:flex;align-items:flex-start;gap:12px;cursor:pointer;}
-.rb-form__check input[type="checkbox"]{width:18px;height:18px;border:2px solid var(--border);border-radius:4px;accent-color:var(--rb-red);cursor:pointer;flex-shrink:0;margin-top:1px;}
-.rb-form__check-label{font-size:13px;color:#666;line-height:1.4;transition:color .3s;}
-[data-theme="dark"] .rb-form__check-label{color:rgba(255,255,255,.5);}
-.rb-form__submit{margin-top:28px;width:100%;}
-.rb-form__note{font-size:11px;color:#999;text-align:center;margin-top:16px;line-height:1.5;}
-[data-theme="dark"] .rb-form__note{color:rgba(255,255,255,.35);}
+/* CLIENTIFY FORM WRAP */
+.rb-clientify-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:48px 40px;backdrop-filter:blur(20px);transition:background .35s,border-color .35s;}
+@media(max-width:700px){.rb-clientify-wrap{padding:32px 20px;}}
 
 /* SIDEBAR INFO */
 .rb-contact-info{display:flex;flex-direction:column;gap:32px;padding-top:40px;}
@@ -255,76 +229,9 @@ body{top:0 !important;}
         <h1 class="rb-contact-hero__title">Gracias por tu interés</h1>
         <p class="rb-contact-hero__sub">Completa el formulario para brindarte la mejor atención</p>
 
-        <form class="rb-form" id="contactForm" novalidate>
-          <div class="rb-form__grid">
-            <div class="rb-form__group">
-              <label class="rb-form__label" for="nombre">Nombre *</label>
-              <input type="text" id="nombre" name="nombre" class="rb-form__input" placeholder="Tu nombre" required>
-            </div>
-            <div class="rb-form__group">
-              <label class="rb-form__label" for="apellido">Apellido *</label>
-              <input type="text" id="apellido" name="apellido" class="rb-form__input" placeholder="Tu apellido" required>
-            </div>
-            <div class="rb-form__group">
-              <label class="rb-form__label" for="empresa">Empresa *</label>
-              <input type="text" id="empresa" name="empresa" class="rb-form__input" placeholder="Nombre de tu empresa" required>
-            </div>
-            <div class="rb-form__group">
-              <label class="rb-form__label" for="cargo">Cargo</label>
-              <input type="text" id="cargo" name="cargo" class="rb-form__input" placeholder="Tu cargo o posición">
-            </div>
-            <div class="rb-form__group">
-              <label class="rb-form__label" for="industria">Industria</label>
-              <select id="industria" name="industria" class="rb-form__select">
-                <option value="">Selecciona tu industria</option>
-                <option>Banca</option>
-                <option>Energía</option>
-                <option>Entretenimiento</option>
-                <option>Gobierno</option>
-                <option>Educación</option>
-                <option>Salud</option>
-                <option>Seguros</option>
-                <option>Logística</option>
-                <option>Manufactura</option>
-                <option>Farmacéuticos</option>
-                <option>Retail</option>
-                <option>Tecnología</option>
-                <option>Telecomunicaciones</option>
-                <option>Turismo</option>
-                <option>Otro</option>
-              </select>
-            </div>
-            <div class="rb-form__group">
-              <label class="rb-form__label" for="telefono">Teléfono</label>
-              <input type="tel" id="telefono" name="telefono" class="rb-form__input" placeholder="+56 9 XXXX XXXX">
-            </div>
-            <div class="rb-form__group rb-form__group--full">
-              <label class="rb-form__label" for="email">Email *</label>
-              <input type="email" id="email" name="email" class="rb-form__input" placeholder="tu@empresa.com" required>
-            </div>
-            <div class="rb-form__group rb-form__group--full">
-              <label class="rb-form__label" for="mensaje">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" class="rb-form__textarea" placeholder="Cuéntanos sobre tu proyecto o consulta..."></textarea>
-            </div>
-            <div class="rb-form__group rb-form__group--full">
-              <div class="rb-form__checks">
-                <label class="rb-form__check">
-                  <input type="checkbox" name="privacidad" required>
-                  <span class="rb-form__check-label">He leído y acepto las <a href="#" style="color:var(--rb-red);">políticas de privacidad</a></span>
-                </label>
-                <label class="rb-form__check">
-                  <input type="checkbox" name="marketing">
-                  <span class="rb-form__check-label">Me gustaría recibir información sobre Rocketbot como noticias sobre productos, servicios, eventos y promociones</span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="rb-btn rb-btn--primary rb-btn--lg rb-form__submit">
-            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            Enviar
-          </button>
-          <p class="rb-form__note">Rocketbot se compromete a proteger los datos personales, que estos no serán ni vendidos ni compartidos por ningún motivo.</p>
-        </form>
+        <div class="rb-clientify-wrap">
+          <script type="text/javascript" src="https://api.clientify.net/web-marketing/superforms/script/251784.js"></script>
+        </div>
       </div>
 
       <!-- INFO SIDE -->
@@ -406,14 +313,6 @@ function applyTheme(t){
 (function(){var s='light';try{s=localStorage.getItem('rb-theme')||'light';}catch(e){}applyTheme(s);})();
 if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttribute('data-theme')==='dark'?'light':'dark');});
 (function(){var nav=document.getElementById('rb-nav');if(!nav)return;function onScroll(){nav.classList.toggle('scrolled',window.scrollY>50);}onScroll();window.addEventListener('scroll',onScroll,{passive:true});})();
-
-// Form submit
-document.getElementById('contactForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  var btn=this.querySelector('button[type="submit"]');
-  btn.textContent='Enviado ✓';btn.disabled=true;
-  btn.style.background='#16a34a';
-});
 
   // Hamburger menu
   (function(){
