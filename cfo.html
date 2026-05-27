@@ -211,6 +211,45 @@ body{top:0 !important;}
 .cfo-stats__v span{color:var(--rb-red);}
 .cfo-stats__l{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:10px;}
 
+/* ═══ SOLUTION ══════════════════════════════════════════════════════════════ */
+.cfo-solution{padding:100px 0;background:var(--background);}
+.cfo-solution__grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.cfo-solution__eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);margin-bottom:20px;}
+.cfo-solution__title{font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-.02em;color:var(--foreground);line-height:1.2;margin-bottom:20px;}
+.cfo-solution__sub{font-size:16px;color:#666;line-height:1.65;margin-bottom:36px;}
+[data-theme="dark"] .cfo-solution__sub{color:rgba(255,255,255,.5);}
+.cfo-solution__features{display:flex;flex-direction:column;gap:24px;}
+.cfo-solution__feat{display:flex;gap:16px;align-items:flex-start;}
+.cfo-solution__feat-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cfo-solution__feat-icon--green{background:rgba(34,197,94,.1);color:#16a34a;}
+.cfo-solution__feat-icon--blue{background:rgba(43,127,255,.1);color:#2B7FFF;}
+.cfo-solution__feat-icon--orange{background:rgba(249,115,22,.1);color:#ea580c;}
+.cfo-solution__feat-title{font-size:15px;font-weight:700;color:var(--foreground);margin-bottom:5px;}
+.cfo-solution__feat-text{font-size:14px;color:#666;line-height:1.6;}
+[data-theme="dark"] .cfo-solution__feat-text{color:rgba(255,255,255,.5);}
+/* Diagram */
+.cfo-diag{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px 28px;box-shadow:0 8px 40px rgba(0,0,0,.07);}
+[data-theme="dark"] .cfo-diag{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);}
+.cfo-diag__label{text-align:center;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:24px;}
+.cfo-diag__top{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.cfo-diag__box{border-radius:12px;padding:14px 16px;text-align:center;}
+.cfo-diag__box--red{background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.2);}
+.cfo-diag__box--pink{background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);}
+.cfo-diag__box-title{font-size:13px;font-weight:700;color:var(--foreground);line-height:1.3;}
+.cfo-diag__box-sub{font-size:11px;color:#999;margin-top:3px;}
+.cfo-diag__arrows{display:flex;justify-content:center;gap:60px;margin-bottom:4px;}
+.cfo-diag__arrow{width:1px;height:24px;background:linear-gradient(to bottom,rgba(0,0,0,.15),rgba(0,0,0,.05));position:relative;}
+[data-theme="dark"] .cfo-diag__arrow{background:linear-gradient(to bottom,rgba(255,255,255,.15),rgba(255,255,255,.05));}
+.cfo-diag__arrow::after{content:'▼';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);font-size:8px;color:#bbb;}
+.cfo-diag__center{background:rgba(188,0,23,.1);border:2px solid rgba(188,0,23,.3);border-radius:14px;padding:16px;text-align:center;margin-bottom:4px;}
+.cfo-diag__center-title{font-size:15px;font-weight:800;color:var(--rb-red);}
+.cfo-diag__center-sub{font-size:11px;color:#999;margin-top:3px;}
+.cfo-diag__arrows-down{display:flex;justify-content:space-around;margin-bottom:4px;}
+.cfo-diag__bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.cfo-diag__box--green{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);}
+.cfo-diag__box--green .cfo-diag__box-title{color:#16a34a;}
+@media(max-width:1024px){.cfo-solution__grid{grid-template-columns:1fr;gap:48px;}}
+
 /* ═══ USE CASES ═════════════════════════════════════════════════════════════ */
 .cfo-cases{padding:100px 0;background:var(--background);}
 .cfo-cases__head{margin-bottom:64px;}
@@ -516,34 +555,34 @@ body{top:0 !important;}
 
       <div class="cfo-pain__card">
         <div class="cfo-pain__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="cfo-pain__card-title">Fragilidad operacional</div>
+        <p class="cfo-pain__card-text">Cuando los procesos dependen de personas específicas, la organización es tan frágil como su eslabón más débil. Una ausencia, una rotación o un error humano puede paralizar operaciones completas.</p>
+        <div class="cfo-pain__card-flag">
+          <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Rocketbot lo resuelve
+        </div>
+      </div>
+
+      <div class="cfo-pain__card">
+        <div class="cfo-pain__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="cfo-pain__card-title">Escala sin control</div>
+        <p class="cfo-pain__card-text">Crecer significa contratar. Cada nuevo proceso requiere más personas, más coordinación y más margen de error. Una organización que no puede escalar sin aumentar su planta no está lista para competir.</p>
+        <div class="cfo-pain__card-flag">
+          <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Rocketbot lo resuelve
+        </div>
+      </div>
+
+      <div class="cfo-pain__card">
+        <div class="cfo-pain__icon">
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <div class="cfo-pain__card-title">Datos tardíos para decidir a tiempo</div>
-        <p class="cfo-pain__card-text">Cuando el cierre mensual tarda semanas, tomás decisiones sobre información vieja. En un entorno que se mueve rápido, la velocidad de los datos es tu ventaja competitiva — o tu talón de Aquiles.</p>
-        <div class="cfo-pain__card-flag">
-          <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          Rocketbot lo resuelve
-        </div>
-      </div>
-
-      <div class="cfo-pain__card">
-        <div class="cfo-pain__icon">
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-        <div class="cfo-pain__card-title">Exposición ante el directorio y el regulador</div>
-        <p class="cfo-pain__card-text">Un número incorrecto en un reporte o una conciliación fallida no es solo un error operativo — es tu reputación frente al directorio y una potencial sanción regulatoria. El proceso manual siempre es el eslabón más débil.</p>
-        <div class="cfo-pain__card-flag">
-          <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          Rocketbot lo resuelve
-        </div>
-      </div>
-
-      <div class="cfo-pain__card">
-        <div class="cfo-pain__icon">
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <div class="cfo-pain__card-title">Crecer sin sumar headcount</div>
-        <p class="cfo-pain__card-text">El CEO te pide escalar operaciones y el board te exige eficiencia. Contratar más analistas no es la respuesta. La automatización es lo que te permite hacer más con el equipo que ya tenés.</p>
+        <div class="cfo-pain__card-title">Velocidad atrapada en lo manual</div>
+        <p class="cfo-pain__card-text">Las decisiones solo son tan rápidas como los procesos que las alimentan. Mientras la información depende de trabajo manual, la organización siempre llegará tarde — a los números, a las alertas y a las oportunidades.</p>
         <div class="cfo-pain__card-flag">
           <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           Rocketbot lo resuelve
@@ -559,24 +598,107 @@ body{top:0 !important;}
 <section class="cfo-stats">
   <div class="container cfo-stats__inner">
     <div class="cfo-stats__item">
-      <div class="cfo-stats__v">80<span>%</span></div>
-      <div class="cfo-stats__l">Reducción en tiempo de cierre</div>
+      <div class="cfo-stats__v">40<span>%</span></div>
+      <div class="cfo-stats__l">del tiempo organizacional se destina a tareas repetitivas sin valor estratégico</div>
     </div>
     <div class="cfo-stats__item">
-      <div class="cfo-stats__v">&lt;4<span>m</span></div>
-      <div class="cfo-stats__l">Meses para recuperar la inversión</div>
+      <div class="cfo-stats__v">1<span>/3</span></div>
+      <div class="cfo-stats__l">de las decisiones se toman con información desactualizada o incompleta</div>
     </div>
     <div class="cfo-stats__item">
-      <div class="cfo-stats__v">99.9<span>%</span></div>
-      <div class="cfo-stats__l">Precisión en datos automatizados</div>
+      <div class="cfo-stats__v">70<span>%</span></div>
+      <div class="cfo-stats__l">de los errores operativos tienen origen en procesos manuales</div>
     </div>
     <div class="cfo-stats__item">
-      <div class="cfo-stats__v">24<span>/7</span></div>
-      <div class="cfo-stats__l">Disponibilidad operativa</div>
+      <div class="cfo-stats__v">2–4<span>sem</span></div>
+      <div class="cfo-stats__l">por ciclo se pierden consolidando información que debería fluir sola</div>
     </div>
     <div class="cfo-stats__item">
-      <div class="cfo-stats__v">+500</div>
-      <div class="cfo-stats__l">Casos de uso financieros implementados</div>
+      <div class="cfo-stats__v">$0</div>
+      <div class="cfo-stats__l">de valor estratégico genera cada hora dedicada a procesar en lugar de decidir</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ SOLUTION ════════════════ -->
+<section class="cfo-solution">
+  <div class="container">
+    <div class="cfo-solution__grid">
+
+      <!-- Copy -->
+      <div>
+        <div class="cfo-solution__eyebrow">La solución</div>
+        <h2 class="cfo-solution__title">Rocketbot: la capa de automatización que necesita tu organización</h2>
+        <p class="cfo-solution__sub">Elimina la dependencia de procesos manuales, libera el talento para el trabajo que realmente importa y le da a tu organización la velocidad para competir.</p>
+        <div class="cfo-solution__features">
+          <div class="cfo-solution__feat">
+            <div class="cfo-solution__feat-icon cfo-solution__feat-icon--green">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="cfo-solution__feat-title">Automatización end-to-end</div>
+              <div class="cfo-solution__feat-text">Los procesos se ejecutan con precisión, a cualquier escala y sin pausas — integrándose con los sistemas que ya usas.</div>
+            </div>
+          </div>
+          <div class="cfo-solution__feat">
+            <div class="cfo-solution__feat-icon cfo-solution__feat-icon--blue">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="cfo-solution__feat-title">El talento donde genera valor</div>
+              <div class="cfo-solution__feat-text">Cada hora que un robot asume una tarea manual es una hora que tu equipo dedica a analizar, decidir y crecer.</div>
+            </div>
+          </div>
+          <div class="cfo-solution__feat">
+            <div class="cfo-solution__feat-icon cfo-solution__feat-icon--orange">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="cfo-solution__feat-title">Velocidad y visibilidad en tiempo real</div>
+              <div class="cfo-solution__feat-text">La información fluye sin fricciones. Tu organización detecta desviaciones antes de que escalen y responde más rápido que la competencia.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diagram -->
+      <div class="cfo-diag">
+        <div class="cfo-diag__label">Tu organización</div>
+        <div class="cfo-diag__top">
+          <div class="cfo-diag__box cfo-diag__box--red">
+            <div class="cfo-diag__box-title">Procesos<br>manuales hoy</div>
+          </div>
+          <div class="cfo-diag__box cfo-diag__box--pink">
+            <div class="cfo-diag__box-title">Dependencia<br>de personas</div>
+          </div>
+        </div>
+        <div class="cfo-diag__arrows">
+          <div class="cfo-diag__arrow"></div>
+          <div class="cfo-diag__arrow"></div>
+        </div>
+        <div class="cfo-diag__center">
+          <div class="cfo-diag__center-title">Rocketbot</div>
+          <div class="cfo-diag__center-sub">Automatización inteligente</div>
+        </div>
+        <div class="cfo-diag__arrows-down">
+          <div class="cfo-diag__arrow"></div>
+          <div class="cfo-diag__arrow"></div>
+          <div class="cfo-diag__arrow"></div>
+        </div>
+        <div class="cfo-diag__bottom">
+          <div class="cfo-diag__box cfo-diag__box--green">
+            <div class="cfo-diag__box-title">Velocidad<br>organizacional</div>
+          </div>
+          <div class="cfo-diag__box cfo-diag__box--green">
+            <div class="cfo-diag__box-title">Talento<br>estratégico</div>
+          </div>
+          <div class="cfo-diag__box cfo-diag__box--green">
+            <div class="cfo-diag__box-title">Visibilidad<br>en tiempo real</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
