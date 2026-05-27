@@ -272,15 +272,39 @@ body{top:0 !important;}
 .cfo-cases__img-placeholder{width:100%;aspect-ratio:4/3;border-radius:20px;background:linear-gradient(135deg,#0f1923 0%,#1a2830 100%);border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:40px;}
 .cfo-cases__img-label{font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);}
 
-/* ═══ PRODUCTS ══════════════════════════════════════════════════════════════ */
-.cfo-products{padding:100px 0;background:var(--background);}
-[data-theme="dark"] .cfo-products{background:var(--rb-dark-2);}
-.cfo-products__head{text-align:center;margin-bottom:64px;}
-.cfo-products__title{font-size:clamp(28px,3.5vw,48px);font-weight:700;letter-spacing:-.02em;color:var(--foreground);}
-.cfo-products__title span{color:var(--rb-red);}
-.cfo-products__sub{font-size:17px;color:#666;max-width:560px;margin:16px auto 0;line-height:1.6;}
-[data-theme="dark"] .cfo-products__sub{color:rgba(255,255,255,.5);}
-.cfo-products__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+/* ═══ PRODUCT ARCHITECTURE ═══════════════════════════════════════════════════ */
+.rb-arch{padding:80px 0;background:var(--background);}
+[data-theme="dark"] .rb-arch{background:var(--rb-dark-2);}
+.rb-arch__head{text-align:center;margin-bottom:56px;}
+.rb-arch__eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);margin-bottom:16px;}
+.rb-arch__title{font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-.02em;color:var(--foreground);line-height:1.2;margin-bottom:12px;}
+.rb-arch__title span{color:var(--rb-red);}
+.rb-arch__intro{font-size:16px;color:#666;max-width:580px;margin:0 auto;line-height:1.65;}
+[data-theme="dark"] .rb-arch__intro{color:rgba(255,255,255,.5);}
+.rb-arch__layer{margin-bottom:20px;}
+.rb-arch__layer-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:7px 14px;border-radius:8px;margin-bottom:10px;display:inline-flex;align-items:center;gap:6px;}
+.rb-arch__layer-label--entrada{background:rgba(34,197,94,.08);color:#16a34a;border:1px solid rgba(34,197,94,.2);}
+.rb-arch__layer-label--nucleo{background:rgba(188,0,23,.08);color:var(--rb-red);border:1px solid rgba(188,0,23,.25);}
+.rb-arch__layer-label--ejecucion{background:rgba(43,127,255,.08);color:#2B7FFF;border:1px solid rgba(43,127,255,.2);}
+.rb-arch__layer-label--control{background:rgba(249,115,22,.08);color:#ea580c;border:1px solid rgba(249,115,22,.2);}
+.rb-arch__cards{display:grid;gap:16px;}
+.rb-arch__cards--two{grid-template-columns:1fr 1fr;}
+.rb-arch__card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 28px;}
+[data-theme="dark"] .rb-arch__card{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);}
+.rb-arch__card--featured{border-color:rgba(188,0,23,.35);background:rgba(188,0,23,.02);}
+[data-theme="dark"] .rb-arch__card--featured{background:rgba(188,0,23,.05);border-color:rgba(188,0,23,.3);}
+.rb-arch__card-badge{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rb-red);background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.2);border-radius:20px;padding:4px 12px;margin-bottom:10px;}
+.rb-arch__card-product{font-size:20px;font-weight:800;color:var(--foreground);letter-spacing:-.01em;margin-bottom:4px;}
+.rb-arch__card--featured .rb-arch__card-product{font-size:22px;}
+.rb-arch__card-role{font-size:13px;font-weight:600;color:var(--rb-red);margin-bottom:12px;}
+.rb-arch__card-desc{font-size:14px;color:#666;line-height:1.65;}
+[data-theme="dark"] .rb-arch__card-desc{color:rgba(255,255,255,.5);}
+.rb-arch__card-cfo{font-size:13px;color:#555;line-height:1.55;border-left:3px solid rgba(188,0,23,.25);padding-left:12px;margin-top:16px;}
+[data-theme="dark"] .rb-arch__card-cfo{color:rgba(255,255,255,.45);border-left-color:rgba(188,0,23,.35);}
+.rb-arch__card-cfo-label{font-weight:700;color:var(--rb-red);display:block;margin-bottom:3px;font-size:10px;text-transform:uppercase;letter-spacing:.06em;}
+.rb-arch__card-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.rb-arch__card-tags span{font-size:11px;font-weight:600;color:rgba(188,0,23,.8);background:rgba(188,0,23,.07);border:1px solid rgba(188,0,23,.15);border-radius:20px;padding:3px 10px;}
+@media(max-width:768px){.rb-arch__cards--two{grid-template-columns:1fr;}}
 .cfo-prod-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:36px;display:flex;flex-direction:column;gap:20px;transition:border-color .2s,transform .2s,box-shadow .2s;}
 .cfo-prod-card:hover{border-color:rgba(188,0,23,.2);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.08);}
 .cfo-prod-card__head{display:flex;align-items:center;gap:16px;}
@@ -804,91 +828,95 @@ body{top:0 !important;}
 
 
 <!-- ════════════════ PRODUCTS ════════════════ -->
-<section class="cfo-products" id="productos">
+<section class="rb-arch" id="productos">
   <div class="container">
-    <div class="cfo-products__head">
-      <h2 class="cfo-products__title">Las herramientas que un <span>CFO necesita</span></h2>
-      <p class="cfo-products__sub">Cuatro productos que trabajan juntos para darte control total, visibilidad en tiempo real y un equipo que opera sin fricciones.</p>
+    <div class="rb-arch__head">
+      <div class="rb-arch__eyebrow">La suite completa</div>
+      <h2 class="rb-arch__title">Estructura en 4 capas.<br><span>Saturn Studio</span> es el núcleo que orquesta todo lo demás.</h2>
     </div>
-    <div class="cfo-products__grid">
 
-      <div class="cfo-prod-card">
-        <div class="cfo-prod-card__head">
-          <div class="cfo-prod-card__icon" style="background:rgba(188,0,23,.06);border:1px solid rgba(188,0,23,.12);">
-            <img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio" style="width:36px;height:36px;object-fit:contain;display:block;">
-          </div>
-          <div>
-            <div class="cfo-prod-card__name">Saturn Studio</div>
-            <div class="cfo-prod-card__tag">Agente Inteligente</div>
+    <div class="rb-arch__layer">
+      <div class="rb-arch__layer-label rb-arch__layer-label--entrada">ENTRADA — Dispara los procesos</div>
+      <div class="rb-arch__cards">
+        <div class="rb-arch__card">
+          <div class="rb-arch__card-product">Xperience</div>
+          <div class="rb-arch__card-role">Formularios inteligentes</div>
+          <p class="rb-arch__card-desc">Formularios dinámicos que validan datos en tiempo real y disparan automáticamente los flujos de automatización en Saturn Studio.</p>
+          <div class="rb-arch__card-cfo">
+            <span class="rb-arch__card-cfo-label">Para el CFO</span>
+            Cualquier área inicia un proceso automatizado sin fricción — sin errores de entrada ni datos incompletos.
           </div>
         </div>
-        <p class="cfo-prod-card__desc">El cerebro de la automatización. Combina RPA con IA para leer documentos, interpretar correos financieros, tomar decisiones y escalar excepciones al equipo humano cuando corresponde.</p>
-        <ul class="cfo-prod-card__list">
-          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Procesamiento de facturas con OCR + IA</li>
-          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Más de 38 integraciones nativas (SAP, Oracle…)</li>
-          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Supervisión humana estratégica (HITL)</li>
-        </ul>
-        <a href="saturn-studio.html" class="cfo-prod-card__link">Ver Saturn Studio <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
-
-      <div class="cfo-prod-card">
-        <div class="cfo-prod-card__head">
-          <div class="cfo-prod-card__icon" style="background:rgba(43,127,255,.06);border:1px solid rgba(43,127,255,.12);">
-            <img src="assets/logos/products/rpa-studio.png" alt="RPA Studio" style="width:36px;height:36px;object-fit:contain;display:block;">
-          </div>
-          <div>
-            <div class="cfo-prod-card__name">RPA Studio</div>
-            <div class="cfo-prod-card__tag">Robots de Proceso</div>
-          </div>
-        </div>
-        <p class="cfo-prod-card__desc">Construye robots robustos que replican exactamente lo que hace un analista financiero: navegan sistemas, extraen datos, validan y cargan información sin errores y sin pausas.</p>
-        <ul class="cfo-prod-card__list">
-          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Conciliaciones bancarias y contables</li>
-          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Integración con ERP, Excel y portales bancarios</li>
-          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Sin limitaciones de escala ni volumen</li>
-        </ul>
-        <a href="rpa-studio.html" class="cfo-prod-card__link">Ver RPA Studio <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-      </div>
-
-      <div class="cfo-prod-card">
-        <div class="cfo-prod-card__head">
-          <div class="cfo-prod-card__icon" style="background:rgba(0,212,255,.04);border:1px solid rgba(0,212,255,.12);">
-            <img src="assets/logos/products/ai-studio.png" alt="AI Studio" style="width:36px;height:36px;object-fit:contain;display:block;">
-          </div>
-          <div>
-            <div class="cfo-prod-card__name">AI Studio</div>
-            <div class="cfo-prod-card__tag">Inteligencia Artificial</div>
-          </div>
-        </div>
-        <p class="cfo-prod-card__desc">Extrae, interpreta y estructura datos de documentos no estructurados: facturas, contratos, extractos bancarios y correos. Con OCR avanzado e IA procesa información que antes requería revisión humana.</p>
-        <ul class="cfo-prod-card__list">
-          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>OCR para facturas, contratos y extractos</li>
-          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Clasificación y enrutamiento de correos AP/AR</li>
-          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Procesamiento de documentos escaneados o fotos</li>
-        </ul>
-        <a href="ai-studio.html" class="cfo-prod-card__link">Ver AI Studio <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-      </div>
-
-      <div class="cfo-prod-card">
-        <div class="cfo-prod-card__head">
-          <div class="cfo-prod-card__icon" style="background:rgba(188,0,23,.06);border:1px solid rgba(188,0,23,.12);">
-            <img src="assets/logos/products/orchestrator.png" alt="Orquestador" style="width:36px;height:36px;object-fit:contain;display:block;">
-          </div>
-          <div>
-            <div class="cfo-prod-card__name">Orquestador</div>
-            <div class="cfo-prod-card__tag">Control y Visibilidad</div>
-          </div>
-        </div>
-        <p class="cfo-prod-card__desc">Panel central de control para todos tus procesos automatizados. Monitorea en tiempo real, gestiona colas de trabajo, detecta fallas y genera reportes de performance para el equipo de finanzas y TI.</p>
-        <ul class="cfo-prod-card__list">
-          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Dashboard en tiempo real de todos los robots</li>
-          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Audit trail completo para compliance</li>
-          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Alertas automáticas ante excepciones</li>
-        </ul>
-        <a href="orquestador.html" class="cfo-prod-card__link">Ver Orquestador <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-      </div>
-
     </div>
+
+    <div class="rb-arch__layer">
+      <div class="rb-arch__layer-label rb-arch__layer-label--nucleo">NÚCLEO — Orquesta toda la suite</div>
+      <div class="rb-arch__cards">
+        <div class="rb-arch__card rb-arch__card--featured">
+          <div class="rb-arch__card-badge">Workflow Engine</div>
+          <div class="rb-arch__card-product">Saturn Studio</div>
+          <div class="rb-arch__card-role">Workflow automation engine</div>
+          <p class="rb-arch__card-desc">Diseña, orquesta y ejecuta flujos que conectan todos los productos de Rocketbot, APIs externas y cualquier LLM — GPT, Claude, Gemini, modelos open source o propietarios.</p>
+          <div class="rb-arch__card-cfo">
+            <span class="rb-arch__card-cfo-label">Para el CFO</span>
+            Un proceso puede leer un correo con IA, ejecutar en SAP, validar con un LLM y publicar en dashboard — todo en un flujo, sin intervención humana.
+          </div>
+          <div class="rb-arch__card-tags">
+            <span>RPA Studio</span><span>AI Studio</span><span>Orquestador</span><span>Nexus</span><span>APIs</span><span>LLMs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rb-arch__layer">
+      <div class="rb-arch__layer-label rb-arch__layer-label--ejecucion">EJECUCIÓN E INTELIGENCIA — Opera y procesa</div>
+      <div class="rb-arch__cards rb-arch__cards--two">
+        <div class="rb-arch__card">
+          <div class="rb-arch__card-product">RPA Studio</div>
+          <div class="rb-arch__card-role">Robot de proceso</div>
+          <p class="rb-arch__card-desc">Replica lo que hace un operador en pantalla. Navega ERPs, portales y sistemas legados sin API ni cambios en la arquitectura existente.</p>
+          <div class="rb-arch__card-cfo">
+            <span class="rb-arch__card-cfo-label">Para el CFO</span>
+            Opera sobre SAP, Oracle o cualquier sistema legado sin proyectos de integración adicionales.
+          </div>
+        </div>
+        <div class="rb-arch__card">
+          <div class="rb-arch__card-product">AI Studio</div>
+          <div class="rb-arch__card-role">Motor de extracción e interpretación</div>
+          <p class="rb-arch__card-desc">Extrae y estructura datos de documentos no estructurados: facturas, contratos y extractos con OCR avanzado e IA.</p>
+          <div class="rb-arch__card-cfo">
+            <span class="rb-arch__card-cfo-label">Para el CFO</span>
+            La información de cualquier documento entra limpia al flujo — sin revisión manual.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rb-arch__layer">
+      <div class="rb-arch__layer-label rb-arch__layer-label--control">CONTROL Y VISIBILIDAD — Audita y decide</div>
+      <div class="rb-arch__cards rb-arch__cards--two">
+        <div class="rb-arch__card">
+          <div class="rb-arch__card-product">Orquestador</div>
+          <div class="rb-arch__card-role">Panel central de operaciones</div>
+          <p class="rb-arch__card-desc">Monitorea todos los flujos en tiempo real, gestiona colas, detecta fallas y genera trazabilidad completa.</p>
+          <div class="rb-arch__card-cfo">
+            <span class="rb-arch__card-cfo-label">Para el CFO</span>
+            Audit trail completo para compliance y auditorías — sin depender de TI.
+          </div>
+        </div>
+        <div class="rb-arch__card">
+          <div class="rb-arch__card-product">Nexus</div>
+          <div class="rb-arch__card-role">Plataforma de dashboards ejecutivos</div>
+          <p class="rb-arch__card-desc">Consolida y visualiza en tiempo real los datos de todos los flujos automatizados.</p>
+          <div class="rb-arch__card-cfo">
+            <span class="rb-arch__card-cfo-label">Para el CFO</span>
+            Los números llegan al directorio actualizados y en el formato correcto — sin consolidar a mano.
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
