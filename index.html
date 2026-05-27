@@ -417,10 +417,10 @@ p { margin: 0; }
 [data-theme="dark"] .rb-arch__intro{color:rgba(255,255,255,.5);}
 .rb-arch__layer{margin-bottom:20px;}
 .rb-arch__layer-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:7px 14px;border-radius:8px;margin-bottom:10px;display:inline-flex;align-items:center;gap:6px;}
-.rb-arch__layer-label--entrada{background:rgba(34,197,94,.08);color:#16a34a;border:1px solid rgba(34,197,94,.2);}
+.rb-arch__layer-label--entrada{background:rgba(43,127,255,.08);color:#2B7FFF;border:1px solid rgba(43,127,255,.2);}
 .rb-arch__layer-label--nucleo{background:rgba(188,0,23,.08);color:var(--rb-red);border:1px solid rgba(188,0,23,.25);}
 .rb-arch__layer-label--ejecucion{background:rgba(43,127,255,.08);color:#2B7FFF;border:1px solid rgba(43,127,255,.2);}
-.rb-arch__layer-label--control{background:rgba(249,115,22,.08);color:#ea580c;border:1px solid rgba(249,115,22,.2);}
+.rb-arch__layer-label--control{background:rgba(188,0,23,.08);color:var(--rb-red);border:1px solid rgba(188,0,23,.25);}
 .rb-arch__cards{display:grid;gap:16px;}
 .rb-arch__cards--two{grid-template-columns:1fr 1fr;}
 .rb-arch__card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 28px;}
@@ -439,6 +439,100 @@ p { margin: 0; }
 .rb-arch__card-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
 .rb-arch__card-tags span{font-size:11px;font-weight:600;color:rgba(188,0,23,.8);background:rgba(188,0,23,.07);border:1px solid rgba(188,0,23,.15);border-radius:20px;padding:3px 10px;}
 @media(max-width:768px){.rb-arch__cards--two{grid-template-columns:1fr;}}
+
+/* ═══ PROBLEMA (Sección 2) ═══════════════════════════════════════════════════ */
+.rb-problem{padding:80px 0;}
+.rb-problem__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.rb-problem__card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 28px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;}
+[data-theme="dark"] .rb-problem__card{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);}
+.rb-problem__card:hover{border-color:rgba(188,0,23,.3);transform:translateY(-3px);}
+.rb-problem__icon{width:44px;height:44px;border-radius:12px;background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.15);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--rb-red);}
+.rb-problem__label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rb-red);margin-bottom:10px;}
+.rb-problem__title{font-size:17px;font-weight:800;color:var(--foreground);margin-bottom:12px;letter-spacing:-.01em;line-height:1.3;}
+.rb-problem__desc{font-size:14px;color:#666;line-height:1.7;}
+[data-theme="dark"] .rb-problem__desc{color:rgba(255,255,255,.5);}
+.rb-problem__hover-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--rb-red);margin-top:20px;opacity:0;transition:opacity .3s;letter-spacing:.04em;}
+.rb-problem__card:hover .rb-problem__hover-tag{opacity:1;}
+@media(max-width:900px){.rb-problem__cards{grid-template-columns:1fr;}}
+
+/* ═══ INEFICIENCIA (Sección 3) ════════════════════════════════════════════════ */
+.rb-inef{padding:70px 0;background:linear-gradient(180deg,transparent,rgba(188,0,23,.02),transparent);}
+.rb-inef__head{text-align:center;margin-bottom:48px;}
+.rb-inef__eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);margin-bottom:14px;}
+.rb-inef__title{font-size:clamp(22px,2.8vw,36px);font-weight:800;letter-spacing:-.02em;color:var(--foreground);}
+.rb-inef__grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+[data-theme="dark"] .rb-inef__grid{border-color:rgba(255,255,255,.08);}
+.rb-inef__item{padding:32px 20px;text-align:center;border-right:1px solid var(--border);background:var(--card);}
+[data-theme="dark"] .rb-inef__item{background:rgba(255,255,255,.02);border-right-color:rgba(255,255,255,.08);}
+.rb-inef__item:last-child{border-right:none;}
+.rb-inef__val{font-size:clamp(26px,3vw,42px);font-weight:900;color:var(--rb-red);letter-spacing:-.03em;line-height:1;margin-bottom:12px;}
+.rb-inef__desc{font-size:12px;color:#666;line-height:1.55;}
+[data-theme="dark"] .rb-inef__desc{color:rgba(255,255,255,.45);}
+.rb-inef__remate{text-align:center;margin-top:40px;font-size:15px;font-style:italic;color:#666;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6;}
+[data-theme="dark"] .rb-inef__remate{color:rgba(255,255,255,.45);}
+@media(max-width:900px){.rb-inef__grid{grid-template-columns:repeat(3,1fr);}.rb-inef__item:nth-child(3){border-right:none;}}
+@media(max-width:580px){.rb-inef__grid{grid-template-columns:1fr 1fr;}.rb-inef__item:nth-child(2n){border-right:none;}}
+
+/* ═══ SOLUCIÓN (Sección 4) ════════════════════════════════════════════════════ */
+.rb-solution{padding:80px 0;}
+.rb-solution__inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.rb-solution__eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);margin-bottom:16px;}
+.rb-solution__title{font-size:clamp(24px,2.8vw,38px);font-weight:800;letter-spacing:-.02em;color:var(--foreground);margin-bottom:20px;line-height:1.2;}
+.rb-solution__title span{color:var(--rb-red);}
+.rb-solution__lead{font-size:15px;color:#666;line-height:1.75;margin-bottom:36px;}
+[data-theme="dark"] .rb-solution__lead{color:rgba(255,255,255,.5);}
+.rb-solution__pillars{display:flex;flex-direction:column;gap:22px;}
+.rb-solution__pillar{display:flex;gap:16px;align-items:flex-start;}
+.rb-solution__pillar-icon{flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.15);display:flex;align-items:center;justify-content:center;color:var(--rb-red);}
+.rb-solution__pillar-title{font-size:14px;font-weight:700;color:var(--foreground);margin-bottom:4px;}
+.rb-solution__pillar-desc{font-size:13px;color:#666;line-height:1.65;}
+[data-theme="dark"] .rb-solution__pillar-desc{color:rgba(255,255,255,.45);}
+.rb-solution__diagram{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:14px;}
+[data-theme="dark"] .rb-solution__diagram{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);}
+.rb-solution__diag-row{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-radius:12px;border:1px solid var(--border);}
+[data-theme="dark"] .rb-solution__diag-row{border-color:rgba(255,255,255,.08);}
+.rb-solution__diag-row--before{opacity:.5;}
+.rb-solution__diag-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;min-width:64px;padding-top:2px;}
+.rb-solution__diag-label--before{color:#888;}
+.rb-solution__diag-label--after{color:var(--rb-red);}
+.rb-solution__diag-text{font-size:13px;color:var(--foreground);line-height:1.5;}
+.rb-solution__diag-arrow{text-align:center;color:var(--rb-red);font-size:22px;line-height:1;}
+@media(max-width:900px){.rb-solution__inner{grid-template-columns:1fr;gap:40px;}}
+
+/* ═══ IMPACTO (Sección 5) ════════════════════════════════════════════════════ */
+.rb-impact{padding:70px 0;background:linear-gradient(180deg,transparent,rgba(188,0,23,.02),transparent);}
+.rb-impact__head{text-align:center;margin-bottom:48px;}
+.rb-impact__eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);margin-bottom:14px;}
+.rb-impact__title{font-size:clamp(22px,2.8vw,36px);font-weight:800;letter-spacing:-.02em;color:var(--foreground);}
+.rb-impact__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+.rb-impact__item{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 18px;text-align:center;}
+[data-theme="dark"] .rb-impact__item{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);}
+.rb-impact__val{font-size:clamp(28px,3vw,42px);font-weight:900;color:var(--rb-red);letter-spacing:-.03em;line-height:1;margin-bottom:12px;}
+.rb-impact__label{font-size:12px;font-weight:600;color:var(--foreground);margin-bottom:8px;line-height:1.45;}
+.rb-impact__before{font-size:11px;color:#888;font-style:italic;line-height:1.4;}
+[data-theme="dark"] .rb-impact__before{color:rgba(255,255,255,.35);}
+@media(max-width:900px){.rb-impact__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:580px){.rb-impact__grid{grid-template-columns:1fr 1fr;}}
+
+/* ═══ TOP 3 KPIs (Sección 6) ══════════════════════════════════════════════════ */
+.rb-kpis{padding:80px 0;}
+.rb-kpis__head{text-align:center;margin-bottom:48px;}
+.rb-kpis__eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);margin-bottom:14px;}
+.rb-kpis__title{font-size:clamp(22px,2.8vw,36px);font-weight:800;letter-spacing:-.02em;color:var(--foreground);margin-bottom:8px;}
+.rb-kpis__sub{font-size:15px;color:#666;}
+[data-theme="dark"] .rb-kpis__sub{color:rgba(255,255,255,.45);}
+.rb-kpis__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.rb-kpis__card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px 32px;}
+[data-theme="dark"] .rb-kpis__card{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);}
+.rb-kpis__val{font-size:clamp(42px,5vw,64px);font-weight:900;color:var(--rb-red);letter-spacing:-.04em;line-height:1;margin-bottom:10px;}
+.rb-kpis__metric-title{font-size:15px;font-weight:700;color:var(--foreground);margin-bottom:16px;line-height:1.35;}
+.rb-kpis__desc{font-size:13px;color:#666;line-height:1.7;margin-bottom:20px;}
+[data-theme="dark"] .rb-kpis__desc{color:rgba(255,255,255,.45);}
+.rb-kpis__directorio{border-top:1px solid var(--border);padding-top:16px;}
+[data-theme="dark"] .rb-kpis__directorio{border-color:rgba(255,255,255,.08);}
+.rb-kpis__directorio-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rb-red);margin-bottom:6px;}
+.rb-kpis__directorio-text{font-size:13px;font-weight:700;color:var(--foreground);line-height:1.45;}
+@media(max-width:768px){.rb-kpis__grid{grid-template-columns:1fr;}}
 
 /* ═══════════════════════════════════════════
    PRODUCT GRID
@@ -843,9 +937,9 @@ body{top:0 !important;}
 
     <div>
       <span class="rb-eyebrow"><span class="dot"></span>Suite completa de Automatización Empresarial end-to-end</span>
-      <h1 class="rb-hero__title"><strong>No automatizar</strong><br>también cuesta.</h1>
+      <h1 class="rb-hero__title"><strong>No automatizar</strong><br>también tiene un precio.</h1>
       <p class="rb-hero__sub">
-        Mientras algunos siguen atrapados en tareas manuales, otros ya están escalando con procesos que ejecutan, aprenden y evolucionan.
+        Tu rol no es reportar lo que pasó — es anticipar lo que viene. Mientras unos siguen operando con procesos manuales, otros ya están ejecutando, ajustando y creciendo.
       </p>
       <div class="rb-hero__ctas">
         <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg rb-btn--square">
@@ -955,6 +1049,92 @@ body{top:0 !important;}
       <div class="rb-statsbar__v">+100</div>
       <div class="rb-statsbar__l">Partners</div>
     </div>
+  </div>
+</section>
+
+<!-- ════════════════ PROBLEMA ════════════════ -->
+<section class="rb-problem">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow">El Problema</span>
+      <h2 class="rb-section__title">Tres dolores organizacionales <span>que frenan el crecimiento</span></h2>
+      <p class="rb-section__sub">No son problemas de tecnología. Son problemas de competitividad.</p>
+    </div>
+    <div class="rb-problem__cards">
+
+      <div class="rb-problem__card">
+        <div class="rb-problem__icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="rb-problem__label">Fragilidad operacional</div>
+        <h3 class="rb-problem__title">Los procesos dependen de personas, no de sistemas</h3>
+        <p class="rb-problem__desc">Cuando los procesos dependen de personas específicas, la organización es frágil. Una ausencia, una rotación o un error humano puede paralizar operaciones completas.</p>
+        <span class="rb-problem__hover-tag">
+          <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Rocketbot lo resuelve
+        </span>
+      </div>
+
+      <div class="rb-problem__card">
+        <div class="rb-problem__icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <div class="rb-problem__label">Escala sin control</div>
+        <h3 class="rb-problem__title">Crecer significa contratar más personas</h3>
+        <p class="rb-problem__desc">Cada nuevo proceso requiere más personas, más tiempo y más coordinación. Una organización que no puede escalar sin aumentar su planta no está lista para competir.</p>
+        <span class="rb-problem__hover-tag">
+          <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Rocketbot lo resuelve
+        </span>
+      </div>
+
+      <div class="rb-problem__card">
+        <div class="rb-problem__icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="rb-problem__label">Velocidad atrapada en lo manual</div>
+        <h3 class="rb-problem__title">Las decisiones llegan tarde porque los datos también</h3>
+        <p class="rb-problem__desc">Las decisiones solo son tan rápidas como los procesos que las alimentan. Cuando todo es manual, la organización siempre llegará tarde — a los números, a las alertas, al mercado.</p>
+        <span class="rb-problem__hover-tag">
+          <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Rocketbot lo resuelve
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ INEFICIENCIA ════════════════ -->
+<section class="rb-inef">
+  <div class="container">
+    <div class="rb-inef__head">
+      <div class="rb-inef__eyebrow">Métricas de ineficiencia</div>
+      <h2 class="rb-inef__title">El costo real de operar sin automatización</h2>
+    </div>
+    <div class="rb-inef__grid">
+      <div class="rb-inef__item">
+        <div class="rb-inef__val">40%</div>
+        <div class="rb-inef__desc">del tiempo organizacional se destina a tareas repetitivas que no generan valor estratégico</div>
+      </div>
+      <div class="rb-inef__item">
+        <div class="rb-inef__val">1 de 3</div>
+        <div class="rb-inef__desc">decisiones se toman con información desactualizada o incompleta</div>
+      </div>
+      <div class="rb-inef__item">
+        <div class="rb-inef__val">70%</div>
+        <div class="rb-inef__desc">de los errores operativos tienen origen en procesos manuales</div>
+      </div>
+      <div class="rb-inef__item">
+        <div class="rb-inef__val">2–4 sem</div>
+        <div class="rb-inef__desc">por ciclo se pierden consolidando información que debería fluir sola</div>
+      </div>
+      <div class="rb-inef__item">
+        <div class="rb-inef__val">$0</div>
+        <div class="rb-inef__desc">de valor estratégico genera cada hora dedicada a procesar en lugar de decidir</div>
+      </div>
+    </div>
+    <p class="rb-inef__remate">«Estos no son problemas de tecnología. Son problemas de competitividad. Y tienen solución.»</p>
   </div>
 </section>
 
@@ -1273,6 +1453,104 @@ body{top:0 !important;}
   </div>
 </section>
 
+<!-- ════════════════ SOLUCIÓN ════════════════ -->
+<section class="rb-solution">
+  <div class="container">
+    <div class="rb-solution__inner">
+
+      <div class="rb-solution__copy">
+        <div class="rb-solution__eyebrow">La Solución</div>
+        <h2 class="rb-solution__title">Rocketbot: <span>la capa de automatización</span></h2>
+        <p class="rb-solution__lead">Rocketbot es una plataforma de automatización empresarial que elimina la dependencia de procesos manuales, libera el talento para el trabajo que realmente importa y le da a tu organización la velocidad para competir.</p>
+        <div class="rb-solution__pillars">
+          <div class="rb-solution__pillar">
+            <div class="rb-solution__pillar-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div>
+              <div class="rb-solution__pillar-title">Automatización end-to-end</div>
+              <p class="rb-solution__pillar-desc">Los procesos se ejecutan con precisión, a cualquier escala y sin pausas — integrándose con los sistemas que ya usas.</p>
+            </div>
+          </div>
+          <div class="rb-solution__pillar">
+            <div class="rb-solution__pillar-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="rb-solution__pillar-title">El talento donde genera valor</div>
+              <p class="rb-solution__pillar-desc">Cada hora que un robot asume una tarea manual es una hora que tu equipo dedica a analizar, decidir y crecer.</p>
+            </div>
+          </div>
+          <div class="rb-solution__pillar">
+            <div class="rb-solution__pillar-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div>
+              <div class="rb-solution__pillar-title">Velocidad y visibilidad en tiempo real</div>
+              <p class="rb-solution__pillar-desc">La información fluye cuando ocurre. Tu organización detecta desviaciones y actúa antes de que escalen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rb-solution__diagram">
+        <div class="rb-solution__diag-row rb-solution__diag-row--before">
+          <div class="rb-solution__diag-label rb-solution__diag-label--before">ANTES</div>
+          <div class="rb-solution__diag-text">Procesos manuales — lento, frágil, dependiente de personas</div>
+        </div>
+        <div class="rb-solution__diag-arrow">↓</div>
+        <div class="rb-solution__diag-row" style="border-color:rgba(188,0,23,.25);background:rgba(188,0,23,.04);">
+          <div class="rb-solution__diag-label rb-solution__diag-label--after">ROCKETBOT</div>
+          <div class="rb-solution__diag-text" style="font-weight:600;">Capa de automatización — robots que ejecutan, IA que interpreta, dashboards que muestran</div>
+        </div>
+        <div class="rb-solution__diag-arrow">↓</div>
+        <div class="rb-solution__diag-row">
+          <div class="rb-solution__diag-label rb-solution__diag-label--after">DESPUÉS</div>
+          <div class="rb-solution__diag-text">Operación autónoma, datos en tiempo real, talento en lo estratégico</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ IMPACTO ════════════════ -->
+<section class="rb-impact">
+  <div class="container">
+    <div class="rb-impact__head">
+      <div class="rb-impact__eyebrow">Métricas de impacto</div>
+      <h2 class="rb-impact__title">Lo que cambia en toda la organización</h2>
+    </div>
+    <div class="rb-impact__grid">
+      <div class="rb-impact__item">
+        <div class="rb-impact__val">80%</div>
+        <div class="rb-impact__label">Menos tiempo operando, más tiempo decidiendo</div>
+        <div class="rb-impact__before">Antes: Reducción en tiempo de cierre</div>
+      </div>
+      <div class="rb-impact__item">
+        <div class="rb-impact__val">&lt;4m</div>
+        <div class="rb-impact__label">Retorno antes del próximo ciclo de planificación</div>
+        <div class="rb-impact__before">Antes: Meses para recuperar la inversión</div>
+      </div>
+      <div class="rb-impact__item">
+        <div class="rb-impact__val">99.9%</div>
+        <div class="rb-impact__label">Decisiones basadas en datos confiables</div>
+        <div class="rb-impact__before">Antes: Precisión en datos automatizados</div>
+      </div>
+      <div class="rb-impact__item">
+        <div class="rb-impact__val">24/7</div>
+        <div class="rb-impact__label">La organización opera aunque las personas descansen</div>
+        <div class="rb-impact__before">Antes: Disponibilidad operativa</div>
+      </div>
+      <div class="rb-impact__item">
+        <div class="rb-impact__val">+500</div>
+        <div class="rb-impact__label">Procesos que ya no dependen de intervención humana</div>
+        <div class="rb-impact__before">Antes: Casos de uso implementados</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════════ TESTIMONIALS ════════════════ -->
 <section class="rb-section rb-section--alt" id="testimonios">
   <div class="container">
@@ -1321,6 +1599,50 @@ body{top:0 !important;}
         </div>
         <p class="rb-testi__title">"La plataforma facilita automatizaciones rápidas pero las licencias encarecen proyectos."</p>
         <p class="rb-testi__body">Es una plataforma fácil de usar, muy intuitiva, que permite desarrollar automatizaciones de manera sencilla y ágil.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ TOP 3 KPIs ════════════════ -->
+<section class="rb-kpis">
+  <div class="container">
+    <div class="rb-kpis__head">
+      <div class="rb-kpis__eyebrow">Top 3 métricas</div>
+      <h2 class="rb-kpis__title">Lo que llevas al directorio</h2>
+      <p class="rb-kpis__sub">3 métricas que hablan el idioma del crecimiento</p>
+    </div>
+    <div class="rb-kpis__grid">
+
+      <div class="rb-kpis__card">
+        <div class="rb-kpis__val">+60%</div>
+        <div class="rb-kpis__metric-title">Más capacidad estratégica sin aumentar la estructura</div>
+        <p class="rb-kpis__desc">El equipo deja de dedicar 3 días a la semana a procesos manuales. Ese tiempo se redirige a análisis, planificación y decisiones que mueven el negocio.</p>
+        <div class="rb-kpis__directorio">
+          <div class="rb-kpis__directorio-label">Para el directorio</div>
+          <div class="rb-kpis__directorio-text">Mismo presupuesto de personas, mayor impacto estratégico.</div>
+        </div>
+      </div>
+
+      <div class="rb-kpis__card">
+        <div class="rb-kpis__val">&lt;4m</div>
+        <div class="rb-kpis__metric-title">El retorno es visible antes del próximo cierre trimestral</div>
+        <p class="rb-kpis__desc">Los procesos automatizados operan desde el primer mes. Los costos bajan, los tiempos se acortan y el impacto aparece en los números antes de que acabe el trimestre.</p>
+        <div class="rb-kpis__directorio">
+          <div class="rb-kpis__directorio-label">Para el directorio</div>
+          <div class="rb-kpis__directorio-text">Inversión con fecha de retorno clara y medible.</div>
+        </div>
+      </div>
+
+      <div class="rb-kpis__card">
+        <div class="rb-kpis__val">10x</div>
+        <div class="rb-kpis__metric-title">La organización ejecuta 10 veces más rápido sin sumar recursos</div>
+        <p class="rb-kpis__desc">Procesos que hoy toman días se resuelven en horas. La capacidad operativa crece sin que el costo crezca con ella.</p>
+        <div class="rb-kpis__directorio">
+          <div class="rb-kpis__directorio-label">Para el directorio</div>
+          <div class="rb-kpis__directorio-text">Mayor velocidad de respuesta al mercado con la misma estructura.</div>
+        </div>
       </div>
 
     </div>
