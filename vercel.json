@@ -1,6 +1,7 @@
 {
   "outputDirectory": ".",
   "cleanUrls": true,
+  "framework": null,
   "trailingSlash": false,
   "headers": [
     {
