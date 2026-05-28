@@ -388,6 +388,14 @@ body{top:0 !important;}
 .sec-sub{font-size:17px;color:#666;max-width:600px;line-height:1.6;}
 [data-theme="dark"] .sec-sub{color:rgba(255,255,255,.5);}
 
+/* ═══ SECTION HEADER ════════════════════════════════════════════════════════ */
+.rb-section{padding:120px 0;position:relative;}
+.rb-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rb-red);background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.2);padding:8px 16px;border-radius:var(--r-pill);}
+.rb-section__head{text-align:center;max-width:720px;margin:0 auto 64px;}
+.rb-section__title{font-size:clamp(32px,4vw,56px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:16px 0;color:var(--foreground);}
+.rb-section__title span{color:var(--rb-red);}
+.rb-section__rule{width:96px;height:4px;background:var(--rb-red);border-radius:2px;margin:0 auto;}
+
 /* ═══ PRODUCT CARDS ═════════════════════════════════════════════════════════ */
 .rb-products{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
 .rb-product{flex:0 1 calc(20% - 16px);min-width:180px;max-width:240px;padding:32px 24px;border-radius:32px;background:var(--card);border:1px solid var(--border);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;text-align:center;transition:border-color .4s,transform .3s,box-shadow .3s,background .35s;}
@@ -848,9 +856,10 @@ a.rb-product{text-decoration:none;color:inherit;}
 <!-- ════════════════ PRODUCT CARDS ════════════════ -->
 <section class="rb-section" id="plataforma">
   <div class="container">
-    <div class="rb-arch__head">
-      <div class="rb-arch__eyebrow">Plataforma</div>
-      <h2 class="rb-arch__title">Una plataforma.<br><span>Seis poderes.</span></h2>
+    <div class="rb-section__head">
+      <span class="rb-eyebrow">Plataforma</span>
+      <h2 class="rb-section__title">Una plataforma.<br><span>Seis poderes.</span></h2>
+      <div class="rb-section__rule"></div>
     </div>
     <div class="rb-products">
       <a class="rb-product" href="saturn-studio.html">
