@@ -439,6 +439,9 @@ p { margin: 0; }
 .rb-arch__card-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
 .rb-arch__card-tags span{font-size:11px;font-weight:600;color:rgba(188,0,23,.8);background:rgba(188,0,23,.07);border:1px solid rgba(188,0,23,.15);border-radius:20px;padding:3px 10px;}
 @media(max-width:768px){.rb-arch__cards--two{grid-template-columns:1fr;}}
+.rb-arch__card-logo{width:36px;height:36px;object-fit:contain;margin-bottom:10px;display:block;}
+.rb-arch__card-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--rb-red);margin-top:14px;text-decoration:none;letter-spacing:.03em;}
+.rb-arch__card-link:hover{color:var(--rb-red-deep);}
 
 /* ═══ PROBLEMA (Sección 2) ═══════════════════════════════════════════════════ */
 .rb-problem{padding:80px 0;}
@@ -1105,6 +1108,100 @@ body{top:0 !important;}
   </div>
 </section>
 
+<!-- ════════════════ INEFICIENCIA ════════════════ -->
+<section class="rb-inef">
+  <div class="container">
+    <div class="rb-inef__head">
+      <div class="rb-inef__eyebrow">Métricas de ineficiencia</div>
+      <h2 class="rb-inef__title">El costo real de operar sin automatización</h2>
+    </div>
+    <div class="rb-inef__grid">
+      <div class="rb-inef__item">
+        <div class="rb-inef__val">40%</div>
+        <div class="rb-inef__desc">del tiempo organizacional se destina a tareas repetitivas que no generan valor estratégico</div>
+      </div>
+      <div class="rb-inef__item">
+        <div class="rb-inef__val">1 de 3</div>
+        <div class="rb-inef__desc">decisiones se toman con información desactualizada o incompleta</div>
+      </div>
+      <div class="rb-inef__item">
+        <div class="rb-inef__val">70%</div>
+        <div class="rb-inef__desc">de los errores operativos tienen origen en procesos manuales</div>
+      </div>
+      <div class="rb-inef__item">
+        <div class="rb-inef__val">2–4 sem</div>
+        <div class="rb-inef__desc">por ciclo se pierden consolidando información que debería fluir sola</div>
+      </div>
+      <div class="rb-inef__item">
+        <div class="rb-inef__val">$0</div>
+        <div class="rb-inef__desc">de valor estratégico genera cada hora dedicada a procesar en lugar de decidir</div>
+      </div>
+    </div>
+    <p class="rb-inef__remate">«Estos no son problemas de tecnología. Son problemas de competitividad. Y tienen solución.»</p>
+  </div>
+</section>
+
+<!-- ════════════════ KEY BENEFITS ════════════════ -->
+<section class="rb-section" id="beneficios">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow">Beneficios</span>
+      <h2 class="rb-section__title">¿Por qué <span>Rocketbot</span>?</h2>
+      <p class="rb-section__sub">La plataforma de automatización elegida por las enterprises más exigentes de LatAm.</p>
+    </div>
+    <div class="rb-benefits">
+      <div class="rb-benefit">
+        <div class="rb-benefit__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3 class="rb-benefit__title">Velocidad Extrema</h3>
+        <p class="rb-benefit__desc">Despliega bots en horas, no en meses. Time-to-value 10× más rápido que RPA tradicional.</p>
+        <div class="rb-benefit__rule"></div>
+      </div>
+      <div class="rb-benefit">
+        <div class="rb-benefit__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.8 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        </div>
+        <h3 class="rb-benefit__title">Seguridad Enterprise</h3>
+        <p class="rb-benefit__desc">Cumplimiento ISO 27001 / SOC 2. Encriptación E2E y vault gestionado en cada agente.</p>
+        <div class="rb-benefit__rule"></div>
+      </div>
+      <div class="rb-benefit">
+        <div class="rb-benefit__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <h3 class="rb-benefit__title">ROI Demostrable</h3>
+        <p class="rb-benefit__desc">Clientes promedio recuperan inversión en 4 meses. Casos con ROI 5× anual.</p>
+        <div class="rb-benefit__rule"></div>
+      </div>
+      <div class="rb-benefit">
+        <div class="rb-benefit__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="rb-benefit__title">Operación 24/7</h3>
+        <p class="rb-benefit__desc">Bots que no duermen. Orquestación HITL para excepciones críticas.</p>
+        <div class="rb-benefit__rule"></div>
+      </div>
+      <div class="rb-benefit">
+        <div class="rb-benefit__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+        </div>
+        <h3 class="rb-benefit__title">Multi-Stack</h3>
+        <p class="rb-benefit__desc">SAP, Oracle, Salesforce, navegadores, terminales — un mismo bot habla con todo.</p>
+        <div class="rb-benefit__rule"></div>
+      </div>
+      <div class="rb-benefit">
+        <div class="rb-benefit__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        </div>
+        <h3 class="rb-benefit__title">Global, Local</h3>
+        <p class="rb-benefit__desc">Presencia directa en 14 países. Soporte en tu idioma y zona horaria.</p>
+        <div class="rb-benefit__rule"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════════ SOLUCIÓN ════════════════ -->
 <section class="rb-solution">
   <div class="container">
@@ -1166,79 +1263,144 @@ body{top:0 !important;}
   </div>
 </section>
 
-<!-- ════════════════ PRODUCTS ════════════════ -->
-<section class="rb-section" id="plataforma">
+<!-- ════════════════ PLATAFORMA ════════════════ -->
+<section class="rb-arch" id="plataforma" style="background:linear-gradient(180deg,transparent,rgba(188,0,23,.02),transparent);">
   <div class="container">
-    <div class="rb-section__head">
+    <div class="rb-arch__head">
       <span class="rb-eyebrow">Plataforma</span>
-      <h2 class="rb-section__title">Una plataforma.<br><span>Cinco poderes.</span></h2>
-      <div class="rb-section__rule"></div>
+      <h2 class="rb-arch__title">Una plataforma.<br><span>Cinco poderes.</span></h2>
+      <p class="rb-arch__intro">Cada producto cumple un rol específico. Juntos cubren todo el ciclo de automatización de tu organización, de extremo a extremo.</p>
     </div>
-    <div class="rb-products">
-      <a class="rb-product" href="saturn-studio.html">
-        <div class="rb-product__iso"><img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio"></div>
-        <div class="rb-product__title">SATURN STUDIO</div>
-        <div class="rb-product__desc">Agentes digitales que piensan, razonan, interpretan y ejecutan. Orquestación inteligente al siguiente nivel.</div>
-        <span class="rb-product__cta">Ver más</span>
-      </a>
-      <a class="rb-product" href="rpa-studio.html">
-        <div class="rb-product__iso"><img src="assets/logos/products/rpa-studio.png" alt="RPA Studio"></div>
-        <div class="rb-product__title">RPA STUDIO</div>
-        <div class="rb-product__desc">Crea y construye robots de manera robusta y confiable, sin limitaciones.</div>
-        <span class="rb-product__cta">Ver más</span>
-      </a>
-      <a class="rb-product" href="ai-studio.html">
-        <div class="rb-product__iso"><img src="assets/logos/products/ai-studio.png" alt="AI Studio"></div>
-        <div class="rb-product__title">AI STUDIO</div>
-        <div class="rb-product__desc">Dale inteligencia a tus procesos empresariales. Estructura datos desde documentos, correos y audios.</div>
-        <span class="rb-product__cta">Ver más</span>
-      </a>
-      <a class="rb-product" href="orquestador.html">
-        <div class="rb-product__iso"><img src="assets/logos/products/orchestrator.png" alt="Orquestador"></div>
-        <div class="rb-product__title">ORQUESTADOR</div>
-        <div class="rb-product__desc">Administra y controla tus robots en cualquier momento con monitoreo en tiempo real.</div>
-        <span class="rb-product__cta">Ver más</span>
-      </a>
-      <a class="rb-product" href="xperience.html">
-        <div class="rb-product__iso"><img src="assets/logos/products/xperience.png" alt="Xperience"></div>
-        <div class="rb-product__title">XPERIENCE</div>
-        <div class="rb-product__desc">Crea increíbles formularios con lógica de manera simple. Plataforma no-code para formularios inteligentes.</div>
-        <span class="rb-product__cta">Ver más</span>
-      </a>
+
+    <div class="rb-arch__layer">
+      <div class="rb-arch__layer-label rb-arch__layer-label--entrada">ENTRADA — Dispara los procesos</div>
+      <div class="rb-arch__cards">
+        <div class="rb-arch__card">
+          <img class="rb-arch__card-logo" src="assets/logos/products/xperience.png" alt="Xperience">
+          <div class="rb-arch__card-product">Xperience</div>
+          <div class="rb-arch__card-role">Formularios inteligentes</div>
+          <p class="rb-arch__card-desc">Formularios dinámicos que validan datos en tiempo real y disparan automáticamente los flujos de automatización en Saturn Studio. Plataforma no-code para formularios inteligentes.</p>
+          <div class="rb-arch__card-cfo">
+            <span class="rb-arch__card-cfo-label">El resultado</span>
+            Cualquier área inicia un proceso automatizado sin fricción — sin errores de entrada ni datos incompletos.
+          </div>
+          <a class="rb-arch__card-link" href="xperience.html">Ver más →</a>
+        </div>
+      </div>
     </div>
+
+    <div class="rb-arch__layer">
+      <div class="rb-arch__layer-label rb-arch__layer-label--nucleo">NÚCLEO — Orquesta toda la suite</div>
+      <div class="rb-arch__cards">
+        <div class="rb-arch__card rb-arch__card--featured">
+          <img class="rb-arch__card-logo" src="assets/logos/products/saturn-studio.png" alt="Saturn Studio">
+          <div class="rb-arch__card-badge">Workflow Engine</div>
+          <div class="rb-arch__card-product">Saturn Studio</div>
+          <div class="rb-arch__card-role">Workflow automation engine</div>
+          <p class="rb-arch__card-desc">Agentes digitales que piensan, razonan, interpretan y ejecutan. Diseña, orquesta y ejecuta flujos que conectan todos los productos de Rocketbot, APIs externas y cualquier LLM — GPT, Claude, Gemini, modelos open source o propietarios.</p>
+          <div class="rb-arch__card-cfo">
+            <span class="rb-arch__card-cfo-label">El resultado</span>
+            Un proceso puede leer un correo con IA, ejecutar en SAP, validar con un LLM y publicar en dashboard — todo en un flujo, sin intervención humana.
+          </div>
+          <div class="rb-arch__card-tags">
+            <span>RPA Studio</span><span>AI Studio</span><span>Orquestador</span><span>Nexus</span><span>APIs</span><span>LLMs</span>
+          </div>
+          <a class="rb-arch__card-link" href="saturn-studio.html">Ver más →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rb-arch__layer">
+      <div class="rb-arch__layer-label rb-arch__layer-label--ejecucion">EJECUCIÓN E INTELIGENCIA — Opera y procesa</div>
+      <div class="rb-arch__cards rb-arch__cards--two">
+        <div class="rb-arch__card">
+          <img class="rb-arch__card-logo" src="assets/logos/products/rpa-studio.png" alt="RPA Studio">
+          <div class="rb-arch__card-product">RPA Studio</div>
+          <div class="rb-arch__card-role">Robot de proceso</div>
+          <p class="rb-arch__card-desc">Crea y construye robots de manera robusta y confiable, sin limitaciones. Replica lo que hace un operador en pantalla. Navega ERPs, portales y sistemas legados sin API ni cambios en la arquitectura existente.</p>
+          <div class="rb-arch__card-cfo">
+            <span class="rb-arch__card-cfo-label">El resultado</span>
+            Opera sobre SAP, Oracle o cualquier sistema legado sin proyectos de integración adicionales.
+          </div>
+          <a class="rb-arch__card-link" href="rpa-studio.html">Ver más →</a>
+        </div>
+        <div class="rb-arch__card">
+          <img class="rb-arch__card-logo" src="assets/logos/products/ai-studio.png" alt="AI Studio">
+          <div class="rb-arch__card-product">AI Studio</div>
+          <div class="rb-arch__card-role">Motor de extracción e interpretación</div>
+          <p class="rb-arch__card-desc">Dale inteligencia a tus procesos empresariales. Extrae y estructura datos de documentos no estructurados: facturas, contratos y extractos con OCR avanzado e IA.</p>
+          <div class="rb-arch__card-cfo">
+            <span class="rb-arch__card-cfo-label">El resultado</span>
+            La información de cualquier documento entra limpia al flujo — sin revisión manual.
+          </div>
+          <a class="rb-arch__card-link" href="ai-studio.html">Ver más →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rb-arch__layer">
+      <div class="rb-arch__layer-label rb-arch__layer-label--control">CONTROL Y VISIBILIDAD — Audita y decide</div>
+      <div class="rb-arch__cards rb-arch__cards--two">
+        <div class="rb-arch__card">
+          <img class="rb-arch__card-logo" src="assets/logos/products/orchestrator.png" alt="Orquestador">
+          <div class="rb-arch__card-product">Orquestador</div>
+          <div class="rb-arch__card-role">Panel central de operaciones</div>
+          <p class="rb-arch__card-desc">Administra y controla tus robots en cualquier momento. Monitorea todos los flujos en tiempo real, gestiona colas, detecta fallas y genera trazabilidad completa.</p>
+          <div class="rb-arch__card-cfo">
+            <span class="rb-arch__card-cfo-label">El resultado</span>
+            Audit trail completo para compliance y auditorías — visible para toda la organización.
+          </div>
+          <a class="rb-arch__card-link" href="orquestador.html">Ver más →</a>
+        </div>
+        <div class="rb-arch__card">
+          <div class="rb-arch__card-product">Nexus</div>
+          <div class="rb-arch__card-role">Plataforma de dashboards ejecutivos</div>
+          <p class="rb-arch__card-desc">Consolida y visualiza en tiempo real los datos de todos los flujos automatizados. Los números llegan donde se necesitan, en el formato correcto.</p>
+          <div class="rb-arch__card-cfo">
+            <span class="rb-arch__card-cfo-label">El resultado</span>
+            Los números llegan actualizados y en el formato correcto — sin consolidar a mano.
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ════════════════ INEFICIENCIA ════════════════ -->
-<section class="rb-inef">
+<!-- ════════════════ IMPACTO ════════════════ -->
+<section class="rb-impact">
   <div class="container">
-    <div class="rb-inef__head">
-      <div class="rb-inef__eyebrow">Métricas de eficiencia</div>
-      <h2 class="rb-inef__title">El costo real de operar sin automatización</h2>
+    <div class="rb-impact__head">
+      <div class="rb-impact__eyebrow">Métricas de eficiencia</div>
+      <h2 class="rb-impact__title">Lo que cambia en toda la organización</h2>
     </div>
-    <div class="rb-inef__grid">
-      <div class="rb-inef__item">
-        <div class="rb-inef__val">40%</div>
-        <div class="rb-inef__desc">del tiempo organizacional se destina a tareas repetitivas que no generan valor estratégico</div>
+    <div class="rb-impact__grid">
+      <div class="rb-impact__item">
+        <div class="rb-impact__val">80%</div>
+        <div class="rb-impact__label">Menos tiempo operando, más tiempo decidiendo</div>
+        <div class="rb-impact__before">Antes: Reducción en tiempo de cierre</div>
       </div>
-      <div class="rb-inef__item">
-        <div class="rb-inef__val">1 de 3</div>
-        <div class="rb-inef__desc">decisiones se toman con información desactualizada o incompleta</div>
+      <div class="rb-impact__item">
+        <div class="rb-impact__val">&lt;4m</div>
+        <div class="rb-impact__label">Retorno antes del próximo ciclo de planificación</div>
+        <div class="rb-impact__before">Antes: Meses para recuperar la inversión</div>
       </div>
-      <div class="rb-inef__item">
-        <div class="rb-inef__val">70%</div>
-        <div class="rb-inef__desc">de los errores operativos tienen origen en procesos manuales</div>
+      <div class="rb-impact__item">
+        <div class="rb-impact__val">99.9%</div>
+        <div class="rb-impact__label">Decisiones basadas en datos confiables</div>
+        <div class="rb-impact__before">Antes: Precisión en datos automatizados</div>
       </div>
-      <div class="rb-inef__item">
-        <div class="rb-inef__val">2–4 sem</div>
-        <div class="rb-inef__desc">por ciclo se pierden consolidando información que debería fluir sola</div>
+      <div class="rb-impact__item">
+        <div class="rb-impact__val">24/7</div>
+        <div class="rb-impact__label">La organización opera aunque las personas descansen</div>
+        <div class="rb-impact__before">Antes: Disponibilidad operativa</div>
       </div>
-      <div class="rb-inef__item">
-        <div class="rb-inef__val">$0</div>
-        <div class="rb-inef__desc">de valor estratégico genera cada hora dedicada a procesar en lugar de decidir</div>
+      <div class="rb-impact__item">
+        <div class="rb-impact__val">+500</div>
+        <div class="rb-impact__label">Procesos que ya no dependen de intervención humana</div>
+        <div class="rb-impact__before">Antes: Casos de uso implementados</div>
       </div>
     </div>
-    <p class="rb-inef__remate">«Estos no son problemas de tecnología. Son problemas de competitividad. Y tienen solución.»</p>
   </div>
 </section>
 
@@ -1358,194 +1520,46 @@ body{top:0 !important;}
   </div>
 </section>
 
-<!-- ════════════════ PRODUCT ARCHITECTURE ════════════════ -->
-<section class="rb-arch" style="background:linear-gradient(180deg,transparent,rgba(188,0,23,.02),transparent);">
+<!-- ════════════════ TOP 3 KPIs ════════════════ -->
+<section class="rb-kpis">
   <div class="container">
-    <div class="rb-arch__head">
-      <div class="rb-arch__eyebrow">Cómo funciona</div>
-      <h2 class="rb-arch__title">Estructura en 4 capas.<br><span>Saturn Studio</span> es el núcleo que orquesta todo lo demás.</h2>
-      <p class="rb-arch__intro">Cada producto cumple un rol específico. Juntos cubren todo el ciclo de automatización de tu organización, de extremo a extremo.</p>
+    <div class="rb-kpis__head">
+      <div class="rb-kpis__eyebrow">Top 3 métricas</div>
+      <h2 class="rb-kpis__title">Lo que llevas al directorio</h2>
+      <p class="rb-kpis__sub">3 métricas que hablan el idioma del crecimiento</p>
     </div>
+    <div class="rb-kpis__grid">
 
-    <div class="rb-arch__layer">
-      <div class="rb-arch__layer-label rb-arch__layer-label--entrada">ENTRADA — Dispara los procesos</div>
-      <div class="rb-arch__cards">
-        <div class="rb-arch__card">
-          <div class="rb-arch__card-product">Xperience</div>
-          <div class="rb-arch__card-role">Formularios inteligentes</div>
-          <p class="rb-arch__card-desc">Formularios dinámicos que validan datos en tiempo real y disparan automáticamente los flujos de automatización en Saturn Studio.</p>
-          <div class="rb-arch__card-cfo">
-            <span class="rb-arch__card-cfo-label">El resultado</span>
-            Cualquier área inicia un proceso automatizado sin fricción — sin errores de entrada ni datos incompletos.
-          </div>
+      <div class="rb-kpis__card">
+        <div class="rb-kpis__val">+60%</div>
+        <div class="rb-kpis__metric-title">Más capacidad estratégica sin aumentar la estructura</div>
+        <p class="rb-kpis__desc">El equipo deja de dedicar 3 días a la semana a procesos manuales. Ese tiempo se redirige a análisis, planificación y decisiones que mueven el negocio.</p>
+        <div class="rb-kpis__directorio">
+          <div class="rb-kpis__directorio-label">Para el directorio</div>
+          <div class="rb-kpis__directorio-text">Mismo presupuesto de personas, mayor impacto estratégico.</div>
         </div>
       </div>
-    </div>
 
-    <div class="rb-arch__layer">
-      <div class="rb-arch__layer-label rb-arch__layer-label--nucleo">NÚCLEO — Orquesta toda la suite</div>
-      <div class="rb-arch__cards">
-        <div class="rb-arch__card rb-arch__card--featured">
-          <div class="rb-arch__card-badge">Workflow Engine</div>
-          <div class="rb-arch__card-product">Saturn Studio</div>
-          <div class="rb-arch__card-role">Workflow automation engine</div>
-          <p class="rb-arch__card-desc">Diseña, orquesta y ejecuta flujos que conectan todos los productos de Rocketbot, APIs externas y cualquier LLM — GPT, Claude, Gemini, modelos open source o propietarios.</p>
-          <div class="rb-arch__card-cfo">
-            <span class="rb-arch__card-cfo-label">El resultado</span>
-            Un proceso puede leer un correo con IA, ejecutar en SAP, validar con un LLM y publicar en dashboard — todo en un flujo, sin intervención humana.
-          </div>
-          <div class="rb-arch__card-tags">
-            <span>RPA Studio</span><span>AI Studio</span><span>Orquestador</span><span>Nexus</span><span>APIs</span><span>LLMs</span>
-          </div>
+      <div class="rb-kpis__card">
+        <div class="rb-kpis__val">&lt;4m</div>
+        <div class="rb-kpis__metric-title">El retorno es visible antes del próximo cierre trimestral</div>
+        <p class="rb-kpis__desc">Los procesos automatizados operan desde el primer mes. Los costos bajan, los tiempos se acortan y el impacto aparece en los números antes de que acabe el trimestre.</p>
+        <div class="rb-kpis__directorio">
+          <div class="rb-kpis__directorio-label">Para el directorio</div>
+          <div class="rb-kpis__directorio-text">Inversión con fecha de retorno clara y medible.</div>
         </div>
       </div>
-    </div>
 
-    <div class="rb-arch__layer">
-      <div class="rb-arch__layer-label rb-arch__layer-label--ejecucion">EJECUCIÓN E INTELIGENCIA — Opera y procesa</div>
-      <div class="rb-arch__cards rb-arch__cards--two">
-        <div class="rb-arch__card">
-          <div class="rb-arch__card-product">RPA Studio</div>
-          <div class="rb-arch__card-role">Robot de proceso</div>
-          <p class="rb-arch__card-desc">Replica lo que hace un operador en pantalla. Navega ERPs, portales y sistemas legados sin API ni cambios en la arquitectura existente.</p>
-          <div class="rb-arch__card-cfo">
-            <span class="rb-arch__card-cfo-label">El resultado</span>
-            Opera sobre SAP, Oracle o cualquier sistema legado sin proyectos de integración adicionales.
-          </div>
-        </div>
-        <div class="rb-arch__card">
-          <div class="rb-arch__card-product">AI Studio</div>
-          <div class="rb-arch__card-role">Motor de extracción e interpretación</div>
-          <p class="rb-arch__card-desc">Extrae y estructura datos de documentos no estructurados: facturas, contratos y extractos con OCR avanzado e IA.</p>
-          <div class="rb-arch__card-cfo">
-            <span class="rb-arch__card-cfo-label">El resultado</span>
-            La información de cualquier documento entra limpia al flujo — sin revisión manual.
-          </div>
+      <div class="rb-kpis__card">
+        <div class="rb-kpis__val">10x</div>
+        <div class="rb-kpis__metric-title">La organización ejecuta 10 veces más rápido sin sumar recursos</div>
+        <p class="rb-kpis__desc">Procesos que hoy toman días se resuelven en horas. La capacidad operativa crece sin que el costo crezca con ella.</p>
+        <div class="rb-kpis__directorio">
+          <div class="rb-kpis__directorio-label">Para el directorio</div>
+          <div class="rb-kpis__directorio-text">Mayor velocidad de respuesta al mercado con la misma estructura.</div>
         </div>
       </div>
-    </div>
 
-    <div class="rb-arch__layer">
-      <div class="rb-arch__layer-label rb-arch__layer-label--control">CONTROL Y VISIBILIDAD — Audita y decide</div>
-      <div class="rb-arch__cards rb-arch__cards--two">
-        <div class="rb-arch__card">
-          <div class="rb-arch__card-product">Orquestador</div>
-          <div class="rb-arch__card-role">Panel central de operaciones</div>
-          <p class="rb-arch__card-desc">Monitorea todos los flujos en tiempo real, gestiona colas, detecta fallas y genera trazabilidad completa.</p>
-          <div class="rb-arch__card-cfo">
-            <span class="rb-arch__card-cfo-label">El resultado</span>
-            Audit trail completo para compliance y auditorías — visible para toda la organización.
-          </div>
-        </div>
-        <div class="rb-arch__card">
-          <div class="rb-arch__card-product">Nexus</div>
-          <div class="rb-arch__card-role">Plataforma de dashboards ejecutivos</div>
-          <p class="rb-arch__card-desc">Consolida y visualiza en tiempo real los datos de todos los flujos automatizados.</p>
-          <div class="rb-arch__card-cfo">
-            <span class="rb-arch__card-cfo-label">El resultado</span>
-            Los números llegan actualizados y en el formato correcto — sin consolidar a mano.
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ════════════════ KEY BENEFITS ════════════════ -->
-<section class="rb-section" id="beneficios">
-  <div class="container">
-    <div class="rb-section__head">
-      <span class="rb-eyebrow">Beneficios</span>
-      <h2 class="rb-section__title">¿Por qué <span>Rocketbot</span>?</h2>
-      <p class="rb-section__sub">La plataforma de automatización elegida por las enterprises más exigentes de LatAm.</p>
-    </div>
-    <div class="rb-benefits">
-      <div class="rb-benefit">
-        <div class="rb-benefit__icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        </div>
-        <h3 class="rb-benefit__title">Velocidad Extrema</h3>
-        <p class="rb-benefit__desc">Despliega bots en horas, no en meses. Time-to-value 10× más rápido que RPA tradicional.</p>
-        <div class="rb-benefit__rule"></div>
-      </div>
-      <div class="rb-benefit">
-        <div class="rb-benefit__icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.8 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-        </div>
-        <h3 class="rb-benefit__title">Seguridad Enterprise</h3>
-        <p class="rb-benefit__desc">Cumplimiento ISO 27001 / SOC 2. Encriptación E2E y vault gestionado en cada agente.</p>
-        <div class="rb-benefit__rule"></div>
-      </div>
-      <div class="rb-benefit">
-        <div class="rb-benefit__icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-        </div>
-        <h3 class="rb-benefit__title">ROI Demostrable</h3>
-        <p class="rb-benefit__desc">Clientes promedio recuperan inversión en 4 meses. Casos con ROI 5× anual.</p>
-        <div class="rb-benefit__rule"></div>
-      </div>
-      <div class="rb-benefit">
-        <div class="rb-benefit__icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <h3 class="rb-benefit__title">Operación 24/7</h3>
-        <p class="rb-benefit__desc">Bots que no duermen. Orquestación HITL para excepciones críticas.</p>
-        <div class="rb-benefit__rule"></div>
-      </div>
-      <div class="rb-benefit">
-        <div class="rb-benefit__icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
-        </div>
-        <h3 class="rb-benefit__title">Multi-Stack</h3>
-        <p class="rb-benefit__desc">SAP, Oracle, Salesforce, navegadores, terminales — un mismo bot habla con todo.</p>
-        <div class="rb-benefit__rule"></div>
-      </div>
-      <div class="rb-benefit">
-        <div class="rb-benefit__icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-        </div>
-        <h3 class="rb-benefit__title">Global, Local</h3>
-        <p class="rb-benefit__desc">Presencia directa en 14 países. Soporte en tu idioma y zona horaria.</p>
-        <div class="rb-benefit__rule"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════ IMPACTO ════════════════ -->
-<section class="rb-impact">
-  <div class="container">
-    <div class="rb-impact__head">
-      <div class="rb-impact__eyebrow">Métricas de impacto</div>
-      <h2 class="rb-impact__title">Lo que cambia en toda la organización</h2>
-    </div>
-    <div class="rb-impact__grid">
-      <div class="rb-impact__item">
-        <div class="rb-impact__val">80%</div>
-        <div class="rb-impact__label">Menos tiempo operando, más tiempo decidiendo</div>
-        <div class="rb-impact__before">Antes: Reducción en tiempo de cierre</div>
-      </div>
-      <div class="rb-impact__item">
-        <div class="rb-impact__val">&lt;4m</div>
-        <div class="rb-impact__label">Retorno antes del próximo ciclo de planificación</div>
-        <div class="rb-impact__before">Antes: Meses para recuperar la inversión</div>
-      </div>
-      <div class="rb-impact__item">
-        <div class="rb-impact__val">99.9%</div>
-        <div class="rb-impact__label">Decisiones basadas en datos confiables</div>
-        <div class="rb-impact__before">Antes: Precisión en datos automatizados</div>
-      </div>
-      <div class="rb-impact__item">
-        <div class="rb-impact__val">24/7</div>
-        <div class="rb-impact__label">La organización opera aunque las personas descansen</div>
-        <div class="rb-impact__before">Antes: Disponibilidad operativa</div>
-      </div>
-      <div class="rb-impact__item">
-        <div class="rb-impact__val">+500</div>
-        <div class="rb-impact__label">Procesos que ya no dependen de intervención humana</div>
-        <div class="rb-impact__before">Antes: Casos de uso implementados</div>
-      </div>
     </div>
   </div>
 </section>
@@ -1598,50 +1612,6 @@ body{top:0 !important;}
         </div>
         <p class="rb-testi__title">"La plataforma facilita automatizaciones rápidas pero las licencias encarecen proyectos."</p>
         <p class="rb-testi__body">Es una plataforma fácil de usar, muy intuitiva, que permite desarrollar automatizaciones de manera sencilla y ágil.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════ TOP 3 KPIs ════════════════ -->
-<section class="rb-kpis">
-  <div class="container">
-    <div class="rb-kpis__head">
-      <div class="rb-kpis__eyebrow">Top 3 métricas</div>
-      <h2 class="rb-kpis__title">Lo que llevas al directorio</h2>
-      <p class="rb-kpis__sub">3 métricas que hablan el idioma del crecimiento</p>
-    </div>
-    <div class="rb-kpis__grid">
-
-      <div class="rb-kpis__card">
-        <div class="rb-kpis__val">+60%</div>
-        <div class="rb-kpis__metric-title">Más capacidad estratégica sin aumentar la estructura</div>
-        <p class="rb-kpis__desc">El equipo deja de dedicar 3 días a la semana a procesos manuales. Ese tiempo se redirige a análisis, planificación y decisiones que mueven el negocio.</p>
-        <div class="rb-kpis__directorio">
-          <div class="rb-kpis__directorio-label">Para el directorio</div>
-          <div class="rb-kpis__directorio-text">Mismo presupuesto de personas, mayor impacto estratégico.</div>
-        </div>
-      </div>
-
-      <div class="rb-kpis__card">
-        <div class="rb-kpis__val">&lt;4m</div>
-        <div class="rb-kpis__metric-title">El retorno es visible antes del próximo cierre trimestral</div>
-        <p class="rb-kpis__desc">Los procesos automatizados operan desde el primer mes. Los costos bajan, los tiempos se acortan y el impacto aparece en los números antes de que acabe el trimestre.</p>
-        <div class="rb-kpis__directorio">
-          <div class="rb-kpis__directorio-label">Para el directorio</div>
-          <div class="rb-kpis__directorio-text">Inversión con fecha de retorno clara y medible.</div>
-        </div>
-      </div>
-
-      <div class="rb-kpis__card">
-        <div class="rb-kpis__val">10x</div>
-        <div class="rb-kpis__metric-title">La organización ejecuta 10 veces más rápido sin sumar recursos</div>
-        <p class="rb-kpis__desc">Procesos que hoy toman días se resuelven en horas. La capacidad operativa crece sin que el costo crezca con ella.</p>
-        <div class="rb-kpis__directorio">
-          <div class="rb-kpis__directorio-label">Para el directorio</div>
-          <div class="rb-kpis__directorio-text">Mayor velocidad de respuesta al mercado con la misma estructura.</div>
-        </div>
       </div>
 
     </div>
