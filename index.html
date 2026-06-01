@@ -765,16 +765,25 @@ p { margin: 0; }
 .rb-testimonials { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 .rb-testi {
   background:var(--card); border:1px solid var(--border);
-  border-radius:24px; padding:32px;
-  backdrop-filter:blur(20px);
-  transition:border-color .3s, transform .3s, background .35s;
+  border-radius:24px; padding:36px 32px;
+  display:flex; flex-direction:column; gap:0;
+  transition:border-color .3s, transform .3s, box-shadow .3s;
+  text-decoration:none; color:inherit;
 }
-.rb-testi:hover { border-color:rgba(188,0,23,.35); transform:translateY(-4px); }
-.rb-testi:last-child:nth-child(3n+2) { grid-column: span 1; }
-.rb-testi__platform { margin-bottom:20px; }
-.rb-testi__title { font-size:15px; font-weight:700; line-height:1.4; color:var(--foreground); margin-bottom:12px; }
-.rb-testi__body  { font-size:14px; color:#666; line-height:1.6; transition:color .3s; }
-[data-theme="dark"] .rb-testi__body { color:rgba(255,255,255,.5); }
+.rb-testi:hover { border-color:rgba(188,0,23,.4); transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.08); }
+[data-theme="dark"] .rb-testi { background:rgba(255,255,255,.03); border-color:rgba(255,255,255,.08); }
+[data-theme="dark"] .rb-testi:hover { box-shadow:0 16px 40px rgba(0,0,0,.35); }
+.rb-testi__company { font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#999; margin-bottom:16px; }
+[data-theme="dark"] .rb-testi__company { color:rgba(255,255,255,.4); }
+.rb-testi__metric { font-size:clamp(38px,4.5vw,56px); font-weight:900; letter-spacing:-.04em; line-height:1; color:var(--rb-red); margin-bottom:10px; }
+.rb-testi__label { font-size:15px; font-weight:700; color:var(--foreground); line-height:1.35; margin-bottom:16px; }
+.rb-testi__desc { font-size:13px; color:#666; line-height:1.6; flex:1; margin-bottom:24px; }
+[data-theme="dark"] .rb-testi__desc { color:rgba(255,255,255,.45); }
+.rb-testi__cta { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:var(--rb-red); border-top:1px solid var(--border); padding-top:20px; }
+[data-theme="dark"] .rb-testi__cta { border-color:rgba(255,255,255,.08); }
+.rb-testi__cta svg { width:32px; height:32px; background:rgba(188,0,23,.08); border-radius:50%; padding:7px; flex-shrink:0; transition:background .2s; }
+.rb-testi:hover .rb-testi__cta svg { background:rgba(188,0,23,.18); }
+.rb-testi--placeholder { border-style:dashed; opacity:.7; }
 
 /* ═══════════════════════════════════════════
    CTA BAND
@@ -1713,51 +1722,47 @@ body{top:0 !important;}
 <section class="rb-section rb-section--alt" id="testimonios">
   <div class="container">
     <div class="rb-section__head">
-      <span class="rb-eyebrow">Testimonios</span>
-      <h2 class="rb-section__title">Lo que dicen nuestros <span>clientes</span></h2>
+      <span class="rb-eyebrow">Summit de clientes</span>
+      <h2 class="rb-section__title">Resultados reales de <span>empresas reales</span></h2>
       <div class="rb-section__rule"></div>
     </div>
     <div class="rb-testimonials">
 
-      <div class="rb-testi">
-        <div class="rb-testi__platform rb-testi__platform--g2">
-          <svg viewBox="0 0 40 40" width="22" height="22" aria-label="G2"><circle cx="20" cy="20" r="20" fill="#FF492C"/><text x="50%" y="56%" text-anchor="middle" fill="#fff" font-size="18" font-weight="800" font-family="sans-serif" dominant-baseline="middle">G2</text></svg>
+      <!-- Agrosuper -->
+      <a class="rb-testi" href="#" target="_blank" rel="noopener">
+        <div class="rb-testi__company">Agrosuper</div>
+        <div class="rb-testi__metric">+300.000</div>
+        <div class="rb-testi__label">horas ahorradas al año</div>
+        <p class="rb-testi__desc">Agrosuper automatizó sus procesos operativos críticos con Rocketbot, eliminando el trabajo manual y liberando a su equipo para tareas de mayor valor.</p>
+        <div class="rb-testi__cta">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Ver summit
         </div>
-        <p class="rb-testi__title">"Servicio al cliente destaca por soporte rápido y claro a través de Slack."</p>
-        <p class="rb-testi__body">Rocketbot simplifica la automatización con su interfaz intuitiva, mejora la eficiencia y nos permite enfocarnos en tareas estratégicas.</p>
-      </div>
+      </a>
 
-      <div class="rb-testi">
-        <div class="rb-testi__platform rb-testi__platform--gartner">
-          <img src="assets/logos/gartner-logo.png" alt="Gartner" style="height:20px;width:auto;object-fit:contain;display:block;">
+      <!-- Protección -->
+      <a class="rb-testi" href="#" target="_blank" rel="noopener">
+        <div class="rb-testi__company">Protección</div>
+        <div class="rb-testi__metric">+500</div>
+        <div class="rb-testi__label">puestos de trabajo automatizados</div>
+        <p class="rb-testi__desc">Protección transformó su operación automatizando más de 500 puestos de trabajo, logrando escalar sin incrementar su estructura de personal.</p>
+        <div class="rb-testi__cta">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Ver summit
         </div>
-        <p class="rb-testi__title">"Análisis de mi experiencia con Rocketbot: fortalezas clave y áreas de mejora."</p>
-        <p class="rb-testi__body">Trabajar con Rocketbot ha sido una de las experiencias más gratificantes de mi trayectoria profesional.</p>
-      </div>
+      </a>
 
-      <div class="rb-testi">
-        <div class="rb-testi__platform rb-testi__platform--g2">
-          <svg viewBox="0 0 40 40" width="22" height="22" aria-label="G2"><circle cx="20" cy="20" r="20" fill="#FF492C"/><text x="50%" y="56%" text-anchor="middle" fill="#fff" font-size="18" font-weight="800" font-family="sans-serif" dominant-baseline="middle">G2</text></svg>
+      <!-- Placeholder -->
+      <a class="rb-testi rb-testi--placeholder" href="#" target="_blank" rel="noopener">
+        <div class="rb-testi__company">Próximamente</div>
+        <div class="rb-testi__metric">—</div>
+        <div class="rb-testi__label">caso por definir</div>
+        <p class="rb-testi__desc">Este espacio está reservado para el tercer caso de éxito del summit. El contenido se actualizará en breve con los resultados del cliente seleccionado.</p>
+        <div class="rb-testi__cta">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Ver summit
         </div>
-        <p class="rb-testi__title">"Facilidad de uso y variedad de funciones en la herramienta RPA de Rocketbot."</p>
-        <p class="rb-testi__body">La herramienta RPA de Rocketbot es fácil y sencilla de utilizar, garantizando a los desarrolladores de robots una amplia variedad de recursos.</p>
-      </div>
-
-      <div class="rb-testi">
-        <div class="rb-testi__platform rb-testi__platform--gartner">
-          <img src="assets/logos/gartner-logo.png" alt="Gartner" style="height:20px;width:auto;object-fit:contain;display:block;">
-        </div>
-        <p class="rb-testi__title">"Eficiencia en procesos y costes, combinada con un excelente servicio al cliente."</p>
-        <p class="rb-testi__body">Rocketbot es fácil de implementar y ofrece documentación clara con excelentes recursos de capacitación.</p>
-      </div>
-
-      <div class="rb-testi">
-        <div class="rb-testi__platform rb-testi__platform--g2">
-          <svg viewBox="0 0 40 40" width="22" height="22" aria-label="G2"><circle cx="20" cy="20" r="20" fill="#FF492C"/><text x="50%" y="56%" text-anchor="middle" fill="#fff" font-size="18" font-weight="800" font-family="sans-serif" dominant-baseline="middle">G2</text></svg>
-        </div>
-        <p class="rb-testi__title">"La plataforma facilita automatizaciones rápidas pero las licencias encarecen proyectos."</p>
-        <p class="rb-testi__body">Es una plataforma fácil de usar, muy intuitiva, que permite desarrollar automatizaciones de manera sencilla y ágil.</p>
-      </div>
+      </a>
 
     </div>
   </div>
