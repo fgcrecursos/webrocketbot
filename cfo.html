@@ -221,9 +221,9 @@ body{top:0 !important;}
 .cfo-solution__features{display:flex;flex-direction:column;gap:24px;}
 .cfo-solution__feat{display:flex;gap:16px;align-items:flex-start;}
 .cfo-solution__feat-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.cfo-solution__feat-icon--green{background:rgba(34,197,94,.1);color:#16a34a;}
-.cfo-solution__feat-icon--blue{background:rgba(43,127,255,.1);color:#2B7FFF;}
-.cfo-solution__feat-icon--orange{background:rgba(249,115,22,.1);color:#ea580c;}
+.cfo-solution__feat-icon--red{background:rgba(188,0,23,.1);color:var(--rb-red);}
+.cfo-solution__feat-icon--blue{background:rgba(43,127,255,.1);color:var(--rb-blue);}
+.cfo-solution__feat-icon--dark{background:rgba(255,255,255,.07);color:var(--foreground);}
 .cfo-solution__feat-title{font-size:15px;font-weight:700;color:var(--foreground);margin-bottom:5px;}
 .cfo-solution__feat-text{font-size:14px;color:#666;line-height:1.6;}
 [data-theme="dark"] .cfo-solution__feat-text{color:rgba(255,255,255,.5);}
@@ -234,7 +234,7 @@ body{top:0 !important;}
 .cfo-diag__top{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
 .cfo-diag__box{border-radius:12px;padding:14px 16px;text-align:center;}
 .cfo-diag__box--red{background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.2);}
-.cfo-diag__box--pink{background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);}
+.cfo-diag__box--pink{background:rgba(43,127,255,.06);border:1px solid rgba(43,127,255,.18);}
 .cfo-diag__box-title{font-size:13px;font-weight:700;color:var(--foreground);line-height:1.3;}
 .cfo-diag__box-sub{font-size:11px;color:#999;margin-top:3px;}
 .cfo-diag__arrows{display:flex;justify-content:center;gap:60px;margin-bottom:4px;}
@@ -246,8 +246,8 @@ body{top:0 !important;}
 .cfo-diag__center-sub{font-size:11px;color:#999;margin-top:3px;}
 .cfo-diag__arrows-down{display:flex;justify-content:space-around;margin-bottom:4px;}
 .cfo-diag__bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.cfo-diag__box--green{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);}
-.cfo-diag__box--green .cfo-diag__box-title{color:#16a34a;}
+.cfo-diag__box--green{background:rgba(43,127,255,.08);border:1px solid rgba(43,127,255,.2);}
+.cfo-diag__box--green .cfo-diag__box-title{color:var(--rb-blue);}
 @media(max-width:1024px){.cfo-solution__grid{grid-template-columns:1fr;gap:48px;}}
 
 /* ═══ USE CASES ═════════════════════════════════════════════════════════════ */
@@ -281,30 +281,34 @@ body{top:0 !important;}
 .rb-arch__title span{color:var(--rb-red);}
 .rb-arch__intro{font-size:16px;color:#666;max-width:580px;margin:0 auto;line-height:1.65;}
 [data-theme="dark"] .rb-arch__intro{color:rgba(255,255,255,.5);}
-.rb-arch__layer{margin-bottom:20px;}
-.rb-arch__layer-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:7px 14px;border-radius:8px;margin-bottom:10px;display:inline-flex;align-items:center;gap:6px;}
-.rb-arch__layer-label--entrada{background:rgba(43,127,255,.08);color:#2B7FFF;border:1px solid rgba(43,127,255,.2);}
-.rb-arch__layer-label--nucleo{background:rgba(188,0,23,.08);color:var(--rb-red);border:1px solid rgba(188,0,23,.25);}
-.rb-arch__layer-label--ejecucion{background:rgba(43,127,255,.08);color:#2B7FFF;border:1px solid rgba(43,127,255,.2);}
+.rb-arch__layer{margin-bottom:28px;}
+.rb-arch__layer-header{display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:16px;margin-bottom:14px;padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:14px;}
+[data-theme="dark"] .rb-arch__layer-header{background:rgba(255,255,255,.025);border-color:rgba(255,255,255,.07);}
+.rb-arch__layer-num{width:36px;height:36px;border-radius:50%;background:var(--rb-red);color:#fff;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rb-arch__layer-info{display:flex;flex-direction:column;gap:4px;}
+.rb-arch__layer-title{font-size:16px;font-weight:700;color:var(--foreground);letter-spacing:-.01em;}
+.rb-arch__layer-tagline{font-size:13px;color:#666;text-align:right;max-width:260px;line-height:1.4;}
+[data-theme="dark"] .rb-arch__layer-tagline{color:rgba(255,255,255,.4);}
+.rb-arch__layer-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;border-radius:6px;display:inline-block;}
+.rb-arch__layer-label--entrada{background:rgba(43,127,255,.08);color:var(--rb-blue);border:1px solid rgba(43,127,255,.2);}
+.rb-arch__layer-label--ejecucion{background:rgba(188,0,23,.08);color:var(--rb-red);border:1px solid rgba(188,0,23,.25);}
 .rb-arch__layer-label--control{background:rgba(188,0,23,.08);color:var(--rb-red);border:1px solid rgba(188,0,23,.25);}
 .rb-arch__cards{display:grid;gap:16px;}
 .rb-arch__cards--two{grid-template-columns:1fr 1fr;}
+.rb-arch__cards--three{grid-template-columns:repeat(3,1fr);}
 .rb-arch__card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 28px;}
 [data-theme="dark"] .rb-arch__card{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);}
 .rb-arch__card--featured{border-color:rgba(188,0,23,.35);background:rgba(188,0,23,.02);}
 [data-theme="dark"] .rb-arch__card--featured{background:rgba(188,0,23,.05);border-color:rgba(188,0,23,.3);}
-.rb-arch__card-badge{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rb-red);background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.2);border-radius:20px;padding:4px 12px;margin-bottom:10px;}
 .rb-arch__card-product{font-size:20px;font-weight:800;color:var(--foreground);letter-spacing:-.01em;margin-bottom:4px;}
-.rb-arch__card--featured .rb-arch__card-product{font-size:22px;}
 .rb-arch__card-role{font-size:13px;font-weight:600;color:var(--rb-red);margin-bottom:12px;}
 .rb-arch__card-desc{font-size:14px;color:#666;line-height:1.65;}
 [data-theme="dark"] .rb-arch__card-desc{color:rgba(255,255,255,.5);}
 .rb-arch__card-cfo{font-size:13px;color:#555;line-height:1.55;border-left:3px solid rgba(188,0,23,.25);padding-left:12px;margin-top:16px;}
 [data-theme="dark"] .rb-arch__card-cfo{color:rgba(255,255,255,.45);border-left-color:rgba(188,0,23,.35);}
 .rb-arch__card-cfo-label{font-weight:700;color:var(--rb-red);display:block;margin-bottom:3px;font-size:10px;text-transform:uppercase;letter-spacing:.06em;}
-.rb-arch__card-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
-.rb-arch__card-tags span{font-size:11px;font-weight:600;color:rgba(188,0,23,.8);background:rgba(188,0,23,.07);border:1px solid rgba(188,0,23,.15);border-radius:20px;padding:3px 10px;}
-@media(max-width:768px){.rb-arch__cards--two{grid-template-columns:1fr;}}
+@media(max-width:900px){.rb-arch__layer-header{grid-template-columns:40px 1fr;}.rb-arch__layer-tagline{display:none;}.rb-arch__cards--three{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.rb-arch__cards--two{grid-template-columns:1fr;}.rb-arch__cards--three{grid-template-columns:1fr;}}
 .cfo-prod-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:36px;display:flex;flex-direction:column;gap:20px;transition:border-color .2s,transform .2s,box-shadow .2s;}
 .cfo-prod-card:hover{border-color:rgba(188,0,23,.2);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.08);}
 .cfo-prod-card__head{display:flex;align-items:center;gap:16px;}
@@ -653,7 +657,7 @@ a.rb-product{text-decoration:none;color:inherit;}
       <div class="cfo-stats__l">del tiempo organizacional se destina a tareas repetitivas sin valor estratégico</div>
     </div>
     <div class="cfo-stats__item">
-      <div class="cfo-stats__v">1<span>/3</span></div>
+      <div class="cfo-stats__v">33<span>%</span></div>
       <div class="cfo-stats__l">de las decisiones se toman con información desactualizada o incompleta</div>
     </div>
     <div class="cfo-stats__item">
@@ -661,7 +665,7 @@ a.rb-product{text-decoration:none;color:inherit;}
       <div class="cfo-stats__l">de los errores operativos tienen origen en procesos manuales</div>
     </div>
     <div class="cfo-stats__item">
-      <div class="cfo-stats__v">2–4<span>sem</span></div>
+      <div class="cfo-stats__v">4<span>sem</span></div>
       <div class="cfo-stats__l">por ciclo se pierden consolidando información que debería fluir sola</div>
     </div>
     <div class="cfo-stats__item">
@@ -680,34 +684,34 @@ a.rb-product{text-decoration:none;color:inherit;}
       <!-- Copy -->
       <div>
         <div class="cfo-solution__eyebrow">La solución</div>
-        <h2 class="cfo-solution__title">Rocketbot: la capa de automatización que necesita tu organización</h2>
-        <p class="cfo-solution__sub">Elimina la dependencia de procesos manuales, libera el talento para el trabajo que realmente importa y le da a tu organización la velocidad para competir.</p>
+        <h2 class="cfo-solution__title">Rocketbot: robots que ejecutan, agentes que deciden</h2>
+        <p class="cfo-solution__sub">No reemplaza tus sistemas. Se instala encima de ellos y los hace trabajar solos — para que tu gente deje de ser el pegamento entre procesos.</p>
         <div class="cfo-solution__features">
           <div class="cfo-solution__feat">
-            <div class="cfo-solution__feat-icon cfo-solution__feat-icon--green">
-              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <div class="cfo-solution__feat-icon cfo-solution__feat-icon--red">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
             <div>
-              <div class="cfo-solution__feat-title">Automatización end-to-end</div>
-              <div class="cfo-solution__feat-text">Los procesos se ejecutan con precisión, a cualquier escala y sin pausas — integrándose con los sistemas que ya usas.</div>
+              <div class="cfo-solution__feat-title">Robots que ejecutan sin que nadie lo pida</div>
+              <div class="cfo-solution__feat-text">Corren 24/7 integrados con tus sistemas actuales — SAP, Oracle, portales, ERPs — sin cambiar arquitectura.</div>
             </div>
           </div>
           <div class="cfo-solution__feat">
             <div class="cfo-solution__feat-icon cfo-solution__feat-icon--blue">
-              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/><path d="M18 2v6h6"/></svg>
             </div>
             <div>
-              <div class="cfo-solution__feat-title">El talento donde genera valor</div>
-              <div class="cfo-solution__feat-text">Cada hora que un robot asume una tarea manual es una hora que tu equipo dedica a analizar, decidir y crecer.</div>
+              <div class="cfo-solution__feat-title">Agentes que interpretan y actúan con criterio</div>
+              <div class="cfo-solution__feat-text">La IA lee el contexto, interpreta documentos y toma decisiones — liberando a tu equipo de tareas que requieren juicio rutinario.</div>
             </div>
           </div>
           <div class="cfo-solution__feat">
-            <div class="cfo-solution__feat-icon cfo-solution__feat-icon--orange">
+            <div class="cfo-solution__feat-icon cfo-solution__feat-icon--dark">
               <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
             <div>
-              <div class="cfo-solution__feat-title">Velocidad y visibilidad en tiempo real</div>
-              <div class="cfo-solution__feat-text">La información fluye sin fricciones. Tu organización detecta desviaciones antes de que escalen y responde más rápido que la competencia.</div>
+              <div class="cfo-solution__feat-title">Visibilidad total sin trabajo manual</div>
+              <div class="cfo-solution__feat-text">Los números llegan donde se necesitan, en el formato correcto y en tiempo real — sin que nadie los prepare.</div>
             </div>
           </div>
         </div>
@@ -907,75 +911,90 @@ a.rb-product{text-decoration:none;color:inherit;}
 <section class="rb-arch" id="productos">
   <div class="container">
     <div class="rb-arch__head">
-      <div class="rb-arch__eyebrow">La suite completa</div>
-      <h2 class="rb-arch__title">Estructura en 4 capas.<br><span>Saturn Studio</span> es el núcleo que orquesta todo lo demás.</h2>
+      <div class="rb-arch__eyebrow">La plataforma</div>
+      <h2 class="rb-arch__title">Una plataforma.<br><span>Tres capas de valor.</span></h2>
+      <p class="rb-arch__intro">Cada producto cumple un rol específico en el ciclo de automatización. Juntos, cubren desde que entra el trabajo hasta que sale el resultado — sin intervención humana.</p>
     </div>
 
+    <!-- CAPA 1: ENTRADA -->
     <div class="rb-arch__layer">
-      <div class="rb-arch__layer-label rb-arch__layer-label--entrada">ENTRADA — Dispara los procesos</div>
+      <div class="rb-arch__layer-header">
+        <div class="rb-arch__layer-num">1</div>
+        <div class="rb-arch__layer-info">
+          <div class="rb-arch__layer-label rb-arch__layer-label--entrada">CAPA DE ENTRADA</div>
+          <div class="rb-arch__layer-title">Así entra el trabajo a la organización</div>
+        </div>
+        <div class="rb-arch__layer-tagline">Captura datos válidos desde el primer clic, sin errores de entrada</div>
+      </div>
       <div class="rb-arch__cards">
         <div class="rb-arch__card">
           <div class="rb-arch__card-product">Xperience</div>
           <div class="rb-arch__card-role">Formularios inteligentes</div>
-          <p class="rb-arch__card-desc">Formularios dinámicos que validan datos en tiempo real y disparan automáticamente los flujos de automatización en Saturn Studio.</p>
+          <p class="rb-arch__card-desc">Formularios que validan datos en tiempo real y disparan automáticamente los flujos — ningún proceso arranca con información incompleta.</p>
           <div class="rb-arch__card-cfo">
             <span class="rb-arch__card-cfo-label">Para el CFO</span>
-            Cualquier área inicia un proceso automatizado sin fricción — sin errores de entrada ni datos incompletos.
+            Cualquier área inicia un proceso automatizado sin fricción — sin errores de entrada.
           </div>
         </div>
       </div>
     </div>
 
+    <!-- CAPA 2: EJECUCIÓN -->
     <div class="rb-arch__layer">
-      <div class="rb-arch__layer-label rb-arch__layer-label--nucleo">NÚCLEO — Orquesta toda la suite</div>
-      <div class="rb-arch__cards">
+      <div class="rb-arch__layer-header">
+        <div class="rb-arch__layer-num">2</div>
+        <div class="rb-arch__layer-info">
+          <div class="rb-arch__layer-label rb-arch__layer-label--ejecucion">CAPA DE EJECUCIÓN</div>
+          <div class="rb-arch__layer-title">Así se procesa solo, sin que nadie intervenga</div>
+        </div>
+        <div class="rb-arch__layer-tagline">Robots que ejecutan, IA que interpreta, agentes que orquestan</div>
+      </div>
+      <div class="rb-arch__cards rb-arch__cards--three">
         <div class="rb-arch__card rb-arch__card--featured">
-          <div class="rb-arch__card-badge">Workflow Engine</div>
           <div class="rb-arch__card-product">Saturn Studio</div>
-          <div class="rb-arch__card-role">Workflow automation engine</div>
-          <p class="rb-arch__card-desc">Diseña, orquesta y ejecuta flujos que conectan todos los productos de Rocketbot, APIs externas y cualquier LLM — GPT, Claude, Gemini, modelos open source o propietarios.</p>
+          <div class="rb-arch__card-role">El cerebro de la plataforma</div>
+          <p class="rb-arch__card-desc">Diseña y orquesta todos los productos, APIs externas y modelos de IA. Un proceso completo corre de punta a punta sin intervención.</p>
           <div class="rb-arch__card-cfo">
             <span class="rb-arch__card-cfo-label">Para el CFO</span>
-            Un proceso puede leer un correo con IA, ejecutar en SAP, validar con un LLM y publicar en dashboard — todo en un flujo, sin intervención humana.
-          </div>
-          <div class="rb-arch__card-tags">
-            <span>RPA Studio</span><span>AI Studio</span><span>Orquestador</span><span>Nexus</span><span>APIs</span><span>LLMs</span>
+            Un proceso puede leer un correo con IA, ejecutar en SAP y publicar en dashboard — todo sin nadie en el medio.
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="rb-arch__layer">
-      <div class="rb-arch__layer-label rb-arch__layer-label--ejecucion">EJECUCIÓN E INTELIGENCIA — Opera y procesa</div>
-      <div class="rb-arch__cards rb-arch__cards--two">
         <div class="rb-arch__card">
           <div class="rb-arch__card-product">RPA Studio</div>
-          <div class="rb-arch__card-role">Robot de proceso</div>
-          <p class="rb-arch__card-desc">Replica lo que hace un operador en pantalla. Navega ERPs, portales y sistemas legados sin API ni cambios en la arquitectura existente.</p>
+          <div class="rb-arch__card-role">Los brazos de la operación</div>
+          <p class="rb-arch__card-desc">Robots que replican cualquier acción humana en pantalla — en cualquier sistema, sin cambiar arquitectura.</p>
           <div class="rb-arch__card-cfo">
             <span class="rb-arch__card-cfo-label">Para el CFO</span>
-            Opera sobre SAP, Oracle o cualquier sistema legado sin proyectos de integración adicionales.
+            De SAP a Oracle sin un proyecto de integración.
           </div>
         </div>
         <div class="rb-arch__card">
           <div class="rb-arch__card-product">AI Studio</div>
-          <div class="rb-arch__card-role">Motor de extracción e interpretación</div>
-          <p class="rb-arch__card-desc">Extrae y estructura datos de documentos no estructurados: facturas, contratos y extractos con OCR avanzado e IA.</p>
+          <div class="rb-arch__card-role">Los ojos inteligentes</div>
+          <p class="rb-arch__card-desc">Extrae y estructura datos de documentos no estructurados — facturas, contratos, correos — con OCR e IA.</p>
           <div class="rb-arch__card-cfo">
             <span class="rb-arch__card-cfo-label">Para el CFO</span>
-            La información de cualquier documento entra limpia al flujo — sin revisión manual.
+            Cualquier documento entra limpio y fluye sin revisión manual.
           </div>
         </div>
       </div>
     </div>
 
+    <!-- CAPA 3: CONTROL -->
     <div class="rb-arch__layer">
-      <div class="rb-arch__layer-label rb-arch__layer-label--control">CONTROL Y VISIBILIDAD — Audita y decide</div>
+      <div class="rb-arch__layer-header">
+        <div class="rb-arch__layer-num">3</div>
+        <div class="rb-arch__layer-info">
+          <div class="rb-arch__layer-label rb-arch__layer-label--control">CAPA DE CONTROL</div>
+          <div class="rb-arch__layer-title">Así lo ves, auditas y decides en tiempo real</div>
+        </div>
+        <div class="rb-arch__layer-tagline">Visibilidad total sin depender de nadie para conseguir el dato</div>
+      </div>
       <div class="rb-arch__cards rb-arch__cards--two">
         <div class="rb-arch__card">
           <div class="rb-arch__card-product">Orquestador</div>
           <div class="rb-arch__card-role">Panel central de operaciones</div>
-          <p class="rb-arch__card-desc">Monitorea todos los flujos en tiempo real, gestiona colas, detecta fallas y genera trazabilidad completa.</p>
+          <p class="rb-arch__card-desc">Panel central que administra y monitorea todos los robots en tiempo real. Audit trail completo para compliance.</p>
           <div class="rb-arch__card-cfo">
             <span class="rb-arch__card-cfo-label">Para el CFO</span>
             Audit trail completo para compliance y auditorías — sin depender de TI.
@@ -983,8 +1002,8 @@ a.rb-product{text-decoration:none;color:inherit;}
         </div>
         <div class="rb-arch__card">
           <div class="rb-arch__card-product">Nexus</div>
-          <div class="rb-arch__card-role">Plataforma de dashboards ejecutivos</div>
-          <p class="rb-arch__card-desc">Consolida y visualiza en tiempo real los datos de todos los flujos automatizados.</p>
+          <div class="rb-arch__card-role">Dashboard ejecutivo</div>
+          <p class="rb-arch__card-desc">Consolida en tiempo real los datos de todos los flujos automatizados — en el formato correcto, sin trabajo manual.</p>
           <div class="rb-arch__card-cfo">
             <span class="rb-arch__card-cfo-label">Para el CFO</span>
             Los números llegan al directorio actualizados y en el formato correcto — sin consolidar a mano.
