@@ -490,8 +490,11 @@ p { margin: 0; }
 .rb-inef__val{font-size:clamp(26px,3vw,42px);font-weight:900;color:var(--rb-red);letter-spacing:-.03em;line-height:1;margin-bottom:12px;}
 .rb-inef__desc{font-size:12px;color:#666;line-height:1.55;}
 [data-theme="dark"] .rb-inef__desc{color:rgba(255,255,255,.45);}
-.rb-inef__remate{text-align:center;margin-top:40px;font-size:15px;font-style:italic;color:#666;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6;}
-[data-theme="dark"] .rb-inef__remate{color:rgba(255,255,255,.45);}
+.rb-inef__remate{display:flex;align-items:flex-start;gap:16px;margin-top:40px;font-size:15px;color:#555;max-width:720px;margin-left:auto;margin-right:auto;line-height:1.65;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 28px;}
+[data-theme="dark"] .rb-inef__remate{color:rgba(255,255,255,.55);background:rgba(255,255,255,.025);border-color:rgba(255,255,255,.08);}
+.rb-inef__remate::before{content:'\201C\201C';font-size:28px;font-weight:900;color:var(--rb-red);line-height:1;flex-shrink:0;margin-top:-2px;font-family:Georgia,serif;}
+.rb-inef__remate em{font-style:italic;}
+.rb-inef__remate strong{color:var(--foreground);font-style:normal;}
 @media(max-width:900px){.rb-inef__grid{grid-template-columns:repeat(3,1fr);}.rb-inef__item:nth-child(3){border-right:none;}}
 @media(max-width:580px){.rb-inef__grid{grid-template-columns:1fr 1fr;}.rb-inef__item:nth-child(2n){border-right:none;}}
 
@@ -1188,7 +1191,7 @@ body{top:0 !important;}
         <div class="rb-inef__desc">de valor estratégico genera cada hora dedicada a procesar en lugar de decidir</div>
       </div>
     </div>
-    <p class="rb-inef__remate">Automatizar no es un gasto en tecnología — <strong>es dejar de perder dinero todos los días.</strong></p>
+    <p class="rb-inef__remate"><em>Cada uno de estos números representa plata que se va por el desagüe.</em> <strong>Automatizar no es un gasto en tecnología — es dejar de perder dinero todos los días.</strong></p>
   </div>
 </section>
 
