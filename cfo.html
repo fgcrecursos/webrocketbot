@@ -281,34 +281,38 @@ body{top:0 !important;}
 .rb-arch__title span{color:var(--rb-red);}
 .rb-arch__intro{font-size:16px;color:#666;max-width:580px;margin:0 auto;line-height:1.65;}
 [data-theme="dark"] .rb-arch__intro{color:rgba(255,255,255,.5);}
-.rb-arch__layer{margin-bottom:28px;}
-.rb-arch__layer-header{display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:16px;margin-bottom:14px;padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:14px;}
-[data-theme="dark"] .rb-arch__layer-header{background:rgba(255,255,255,.025);border-color:rgba(255,255,255,.07);}
-.rb-arch__layer-num{width:36px;height:36px;border-radius:50%;background:var(--rb-red);color:#fff;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.rb-arch__layer-info{display:flex;flex-direction:column;gap:4px;}
-.rb-arch__layer-title{font-size:16px;font-weight:700;color:var(--foreground);letter-spacing:-.01em;}
-.rb-arch__layer-tagline{font-size:13px;color:#666;text-align:right;max-width:260px;line-height:1.4;}
-[data-theme="dark"] .rb-arch__layer-tagline{color:rgba(255,255,255,.4);}
-.rb-arch__layer-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;border-radius:6px;display:inline-block;}
+.rb-arch__layer{margin-bottom:36px;}
+.rb-arch__layer-header{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+.rb-arch__layer-header::after{content:'';flex:1;height:1px;background:var(--border);}
+[data-theme="dark"] .rb-arch__layer-header::after{background:rgba(255,255,255,.08);}
+.rb-arch__layer-num{width:28px;height:28px;border-radius:50%;background:var(--rb-red);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rb-arch__layer-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;border-radius:6px;flex-shrink:0;}
 .rb-arch__layer-label--entrada{background:rgba(43,127,255,.08);color:var(--rb-blue);border:1px solid rgba(43,127,255,.2);}
-.rb-arch__layer-label--ejecucion{background:rgba(188,0,23,.08);color:var(--rb-red);border:1px solid rgba(188,0,23,.25);}
-.rb-arch__layer-label--control{background:rgba(188,0,23,.08);color:var(--rb-red);border:1px solid rgba(188,0,23,.25);}
-.rb-arch__cards{display:grid;gap:16px;}
+.rb-arch__layer-label--ejecucion{background:rgba(188,0,23,.08);color:var(--rb-red);border:1px solid rgba(188,0,23,.2);}
+.rb-arch__layer-label--control{background:rgba(188,0,23,.08);color:var(--rb-red);border:1px solid rgba(188,0,23,.2);}
+.rb-arch__layer-title{font-size:14px;font-weight:600;color:var(--foreground);}
+.rb-arch__cards{display:grid;gap:14px;}
 .rb-arch__cards--two{grid-template-columns:1fr 1fr;}
 .rb-arch__cards--three{grid-template-columns:repeat(3,1fr);}
-.rb-arch__card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 28px;}
-[data-theme="dark"] .rb-arch__card{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);}
-.rb-arch__card--featured{border-color:rgba(188,0,23,.35);background:rgba(188,0,23,.02);}
-[data-theme="dark"] .rb-arch__card--featured{background:rgba(188,0,23,.05);border-color:rgba(188,0,23,.3);}
-.rb-arch__card-product{font-size:20px;font-weight:800;color:var(--foreground);letter-spacing:-.01em;margin-bottom:4px;}
-.rb-arch__card-role{font-size:13px;font-weight:600;color:var(--rb-red);margin-bottom:12px;}
-.rb-arch__card-desc{font-size:14px;color:#666;line-height:1.65;}
-[data-theme="dark"] .rb-arch__card-desc{color:rgba(255,255,255,.5);}
-.rb-arch__card-cfo{font-size:13px;color:#555;line-height:1.55;border-left:3px solid rgba(188,0,23,.25);padding-left:12px;margin-top:16px;}
-[data-theme="dark"] .rb-arch__card-cfo{color:rgba(255,255,255,.45);border-left-color:rgba(188,0,23,.35);}
-.rb-arch__card-cfo-label{font-weight:700;color:var(--rb-red);display:block;margin-bottom:3px;font-size:10px;text-transform:uppercase;letter-spacing:.06em;}
-@media(max-width:900px){.rb-arch__layer-header{grid-template-columns:40px 1fr;}.rb-arch__layer-tagline{display:none;}.rb-arch__cards--three{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){.rb-arch__cards--two{grid-template-columns:1fr;}.rb-arch__cards--three{grid-template-columns:1fr;}}
+.rb-arch__cards--single{max-width:680px;margin:0 auto;}
+.rb-arch__cards--single .rb-arch__card{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;}
+.rb-arch__cards--single .rb-arch__card-logo{width:56px;height:56px;margin-bottom:0;}
+.rb-arch__card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 24px;transition:border-color .3s,transform .3s,box-shadow .3s;}
+.rb-arch__card:hover{border-color:rgba(188,0,23,.35);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08);}
+[data-theme="dark"] .rb-arch__card{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.07);}
+[data-theme="dark"] .rb-arch__card:hover{box-shadow:0 12px 32px rgba(0,0,0,.3);}
+.rb-arch__card--featured{border-color:rgba(188,0,23,.3);background:rgba(188,0,23,.02);}
+[data-theme="dark"] .rb-arch__card--featured{background:rgba(188,0,23,.04);border-color:rgba(188,0,23,.25);}
+.rb-arch__card-logo{width:40px;height:40px;object-fit:contain;margin-bottom:14px;display:block;}
+.rb-arch__card-product{font-size:17px;font-weight:800;color:var(--foreground);letter-spacing:-.01em;margin-bottom:3px;}
+.rb-arch__card-role{font-size:12px;font-weight:600;color:var(--rb-red);margin-bottom:10px;opacity:.85;}
+.rb-arch__card-desc{font-size:13px;color:#666;line-height:1.6;}
+[data-theme="dark"] .rb-arch__card-desc{color:rgba(255,255,255,.45);}
+.rb-arch__card-cfo{font-size:12px;color:#555;line-height:1.5;border-left:2px solid rgba(188,0,23,.2);padding-left:10px;margin-top:14px;}
+[data-theme="dark"] .rb-arch__card-cfo{color:rgba(255,255,255,.4);border-left-color:rgba(188,0,23,.3);}
+.rb-arch__card-cfo-label{font-weight:700;color:var(--rb-red);display:block;margin-bottom:2px;font-size:9px;text-transform:uppercase;letter-spacing:.06em;}
+@media(max-width:900px){.rb-arch__cards--three{grid-template-columns:1fr 1fr;}.rb-arch__cards--single .rb-arch__card{grid-template-columns:1fr;gap:16px;}}
+@media(max-width:640px){.rb-arch__cards--two{grid-template-columns:1fr;}.rb-arch__cards--three{grid-template-columns:1fr;}}
 .cfo-prod-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:36px;display:flex;flex-direction:column;gap:20px;transition:border-color .2s,transform .2s,box-shadow .2s;}
 .cfo-prod-card:hover{border-color:rgba(188,0,23,.2);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.08);}
 .cfo-prod-card__head{display:flex;align-items:center;gap:16px;}
@@ -920,20 +924,21 @@ a.rb-product{text-decoration:none;color:inherit;}
     <div class="rb-arch__layer">
       <div class="rb-arch__layer-header">
         <div class="rb-arch__layer-num">1</div>
-        <div class="rb-arch__layer-info">
-          <div class="rb-arch__layer-label rb-arch__layer-label--entrada">CAPA DE ENTRADA</div>
-          <div class="rb-arch__layer-title">Así entra el trabajo a la organización</div>
-        </div>
-        <div class="rb-arch__layer-tagline">Captura datos válidos desde el primer clic, sin errores de entrada</div>
+        <span class="rb-arch__layer-label rb-arch__layer-label--entrada">CAPA DE ENTRADA</span>
+        <span class="rb-arch__layer-title">Así entra el trabajo a la organización</span>
       </div>
-      <div class="rb-arch__cards">
+      <div class="rb-arch__cards rb-arch__cards--single">
         <div class="rb-arch__card">
-          <div class="rb-arch__card-product">Xperience</div>
-          <div class="rb-arch__card-role">Formularios inteligentes</div>
-          <p class="rb-arch__card-desc">Formularios que validan datos en tiempo real y disparan automáticamente los flujos — ningún proceso arranca con información incompleta.</p>
-          <div class="rb-arch__card-cfo">
-            <span class="rb-arch__card-cfo-label">Para el CFO</span>
-            Cualquier área inicia un proceso automatizado sin fricción — sin errores de entrada.
+          <div>
+            <div class="rb-arch__card-product">Xperience</div>
+            <div class="rb-arch__card-role">Formularios inteligentes</div>
+          </div>
+          <div>
+            <p class="rb-arch__card-desc">Formularios que validan datos en tiempo real y disparan automáticamente los flujos — ningún proceso arranca con información incompleta.</p>
+            <div class="rb-arch__card-cfo">
+              <span class="rb-arch__card-cfo-label">Para el CFO</span>
+              Cualquier área inicia un proceso automatizado sin fricción — sin errores de entrada.
+            </div>
           </div>
         </div>
       </div>
@@ -943,11 +948,8 @@ a.rb-product{text-decoration:none;color:inherit;}
     <div class="rb-arch__layer">
       <div class="rb-arch__layer-header">
         <div class="rb-arch__layer-num">2</div>
-        <div class="rb-arch__layer-info">
-          <div class="rb-arch__layer-label rb-arch__layer-label--ejecucion">CAPA DE EJECUCIÓN</div>
-          <div class="rb-arch__layer-title">Así se procesa solo, sin que nadie intervenga</div>
-        </div>
-        <div class="rb-arch__layer-tagline">Robots que ejecutan, IA que interpreta, agentes que orquestan</div>
+        <span class="rb-arch__layer-label rb-arch__layer-label--ejecucion">CAPA DE EJECUCIÓN</span>
+        <span class="rb-arch__layer-title">Robots que ejecutan, IA que interpreta, agentes que orquestan</span>
       </div>
       <div class="rb-arch__cards rb-arch__cards--three">
         <div class="rb-arch__card rb-arch__card--featured">
@@ -984,11 +986,8 @@ a.rb-product{text-decoration:none;color:inherit;}
     <div class="rb-arch__layer">
       <div class="rb-arch__layer-header">
         <div class="rb-arch__layer-num">3</div>
-        <div class="rb-arch__layer-info">
-          <div class="rb-arch__layer-label rb-arch__layer-label--control">CAPA DE CONTROL</div>
-          <div class="rb-arch__layer-title">Así lo ves, auditas y decides en tiempo real</div>
-        </div>
-        <div class="rb-arch__layer-tagline">Visibilidad total sin depender de nadie para conseguir el dato</div>
+        <span class="rb-arch__layer-label rb-arch__layer-label--control">CAPA DE CONTROL</span>
+        <span class="rb-arch__layer-title">Visibilidad total sin depender de nadie para conseguir el dato</span>
       </div>
       <div class="rb-arch__cards rb-arch__cards--two">
         <div class="rb-arch__card">
