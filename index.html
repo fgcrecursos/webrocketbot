@@ -374,21 +374,36 @@ p { margin: 0; }
 .rb-statsbar::before {
   content:''; position:absolute; inset:0;
   background:
-    radial-gradient(ellipse 600px 200px at 0% 100%, rgba(188,0,23,.30), transparent 60%),
-    radial-gradient(ellipse 600px 200px at 100% 0%, rgba(0,212,255,.10), transparent 60%);
+    radial-gradient(ellipse 600px 300px at 0% 100%, rgba(188,0,23,.25), transparent 60%),
+    radial-gradient(ellipse 400px 300px at 100% 0%, rgba(188,0,23,.10), transparent 60%);
   pointer-events:none;
 }
-[data-theme="dark"] .rb-statsbar { background: var(--rb-dark-3); }
+[data-theme="dark"] .rb-statsbar { background: var(--rb-dark-2); }
 [data-theme="dark"] .rb-statsbar::before {
   background:
-    radial-gradient(ellipse 600px 200px at 0% 100%, rgba(188,0,23,.40), transparent 60%),
-    radial-gradient(ellipse 600px 200px at 100% 0%, rgba(0,212,255,.15), transparent 60%);
+    radial-gradient(ellipse 600px 300px at 0% 100%, rgba(188,0,23,.35), transparent 60%),
+    radial-gradient(ellipse 400px 300px at 100% 0%, rgba(188,0,23,.15), transparent 60%);
 }
-.rb-statsbar__inner { display:grid; grid-template-columns:repeat(5,1fr); gap:24px; position:relative; z-index:1; }
-.rb-statsbar__item { border-left:2px solid rgba(255,255,255,.18); padding-left:24px; }
-.rb-statsbar__item:first-child { border-left:none; padding-left:0; }
-.rb-statsbar__v { font-family:var(--font-sans); font-weight:800; font-size:clamp(36px,4vw,56px); letter-spacing:-0.04em; line-height:1; color:#fff; }
-.rb-statsbar__l { font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,.7); margin-top:12px; }
+.rb-statsbar__body { position:relative; z-index:1; display:flex; flex-direction:column; gap:16px; }
+/* Featured card */
+.rb-statsbar__card { display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:20px; padding:28px 36px; }
+.rb-statsbar__card-eyebrow { font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:10px; }
+.rb-statsbar__card-val { font-size:clamp(48px,6vw,72px); font-weight:900; letter-spacing:-.04em; line-height:1; color:#fff; margin-bottom:8px; }
+.rb-statsbar__card-desc { font-size:13px; color:rgba(255,255,255,.6); line-height:1.5; margin-bottom:14px; max-width:340px; }
+.rb-statsbar__card-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(188,0,23,.25); border:1px solid rgba(188,0,23,.4); border-radius:100px; padding:5px 14px; font-size:11px; font-weight:700; color:rgba(255,255,255,.9); letter-spacing:.04em; }
+.rb-statsbar__card-right { display:flex; flex-direction:column; gap:20px; min-width:200px; }
+.rb-statsbar__card-kpi { border-left:2px solid rgba(255,255,255,.15); padding-left:16px; }
+.rb-statsbar__card-kv { font-size:clamp(22px,2.5vw,30px); font-weight:800; letter-spacing:-.03em; line-height:1; color:#fff; margin-bottom:4px; }
+.rb-statsbar__card-kl { font-size:11px; color:rgba(255,255,255,.5); line-height:1.4; }
+/* Bottom row */
+.rb-statsbar__row { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.rb-statsbar__stat { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:20px 24px; display:flex; flex-direction:column; gap:4px; }
+.rb-statsbar__stat-val { font-size:clamp(28px,3.5vw,42px); font-weight:900; letter-spacing:-.04em; line-height:1; color:#fff; }
+.rb-statsbar__stat-label { font-size:13px; font-weight:700; color:rgba(255,255,255,.8); margin-top:4px; }
+.rb-statsbar__stat-desc { font-size:12px; color:rgba(255,255,255,.45); line-height:1.4; margin-top:2px; }
+.rb-statsbar__stat-badge { display:inline-flex; align-items:center; margin-top:10px; background:rgba(43,127,255,.2); border:1px solid rgba(43,127,255,.3); border-radius:100px; padding:4px 10px; font-size:10px; font-weight:700; color:rgba(255,255,255,.8); letter-spacing:.06em; text-transform:uppercase; width:fit-content; }
+@media(max-width:900px){.rb-statsbar__card{grid-template-columns:1fr;gap:24px;}.rb-statsbar__card-right{flex-direction:row;gap:24px;}.rb-statsbar__row{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.rb-statsbar__row{grid-template-columns:1fr;}}
 
 /* ═══════════════════════════════════════════
    SECTION HEADER
@@ -789,7 +804,6 @@ a.rb-product { text-decoration:none; color:inherit; }
   .rb-panel.active { grid-template-columns:1fr; }
   .rb-testimonials { grid-template-columns:1fr 1fr; }
   .rb-cta-band__inner { flex-direction:column; text-align:center; }
-  .rb-statsbar__inner { grid-template-columns:repeat(3,1fr); }
 }
 @media (max-width:600px) {
   .rb-nav { padding: 12px 20px; } .rb-nav__inner { gap: 12px; } .rb-nav__logo { height: 24px; } .rb-nav__actions .rb-btn { display: none; }
@@ -797,7 +811,6 @@ a.rb-product { text-decoration:none; color:inherit; }
   .rb-benefits { grid-template-columns:1fr; }
   .rb-testimonials { grid-template-columns:1fr; }
   .rb-footer__grid { grid-template-columns:1fr; }
-  .rb-statsbar__inner { grid-template-columns:1fr 1fr; }
   .rb-nav__links { display:none; }
 }
 
@@ -1046,27 +1059,50 @@ body{top:0 !important;}
 
 <!-- ════════════════ STATS BAR ════════════════ -->
 <section class="rb-statsbar">
-  <div class="container rb-statsbar__inner">
-    <div class="rb-statsbar__item">
-      <div class="rb-statsbar__v">$2.5M</div>
-      <div class="rb-statsbar__l">Ahorrados por cliente / año</div>
+  <div class="container rb-statsbar__body">
+
+    <!-- Featured metric -->
+    <div class="rb-statsbar__card">
+      <div>
+        <div class="rb-statsbar__card-eyebrow">Ahorro generado · por cliente · anual</div>
+        <div class="rb-statsbar__card-val">$2.5M</div>
+        <p class="rb-statsbar__card-desc">USD que cada uno de los 3 clientes más grandes ahorra por año automatizando con la plataforma</p>
+        <span class="rb-statsbar__card-badge">Medido en clientes reales · no proyectado</span>
+      </div>
+      <div class="rb-statsbar__card-right">
+        <div class="rb-statsbar__card-kpi">
+          <div class="rb-statsbar__card-kv">+300.000 hrs</div>
+          <div class="rb-statsbar__card-kl">horas automatizadas por cliente / año</div>
+        </div>
+        <div class="rb-statsbar__card-kpi">
+          <div class="rb-statsbar__card-kv">~150 FTEs</div>
+          <div class="rb-statsbar__card-kl">equivalentes liberados por cliente</div>
+        </div>
+      </div>
     </div>
-    <div class="rb-statsbar__item">
-      <div class="rb-statsbar__v">700</div>
-      <div class="rb-statsbar__l">Clientes activos</div>
+
+    <!-- Secondary stats -->
+    <div class="rb-statsbar__row">
+      <div class="rb-statsbar__stat">
+        <div class="rb-statsbar__stat-val">21</div>
+        <div class="rb-statsbar__stat-label">Países</div>
+        <div class="rb-statsbar__stat-desc">Footprint regional consolidado</div>
+        <span class="rb-statsbar__stat-badge">Alcance global</span>
+      </div>
+      <div class="rb-statsbar__stat">
+        <div class="rb-statsbar__stat-val">700</div>
+        <div class="rb-statsbar__stat-label">Clientes activos</div>
+        <div class="rb-statsbar__stat-desc">Empresas operando con la plataforma hoy</div>
+        <span class="rb-statsbar__stat-badge">Cartera consolidada</span>
+      </div>
+      <div class="rb-statsbar__stat">
+        <div class="rb-statsbar__stat-val">14K</div>
+        <div class="rb-statsbar__stat-label">Personas automatizando</div>
+        <div class="rb-statsbar__stat-desc">Usuarios que dejaron el trabajo manual</div>
+        <span class="rb-statsbar__stat-badge">Adopción real</span>
+      </div>
     </div>
-    <div class="rb-statsbar__item">
-      <div class="rb-statsbar__v">14K</div>
-      <div class="rb-statsbar__l">Personas automatizando</div>
-    </div>
-    <div class="rb-statsbar__item">
-      <div class="rb-statsbar__v">+300K</div>
-      <div class="rb-statsbar__l">Horas automatizadas por cliente / año</div>
-    </div>
-    <div class="rb-statsbar__item">
-      <div class="rb-statsbar__v">21</div>
-      <div class="rb-statsbar__l">Países</div>
-    </div>
+
   </div>
 </section>
 
