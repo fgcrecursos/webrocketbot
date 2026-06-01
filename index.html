@@ -636,59 +636,46 @@ p { margin: 0; }
 .rb-product__cta:hover { background:var(--rb-red); color:#fff; border-color:var(--rb-red); }
 
 /* ═══════════════════════════════════════════
-   SOLUTIONS TABS
+   INDUSTRY TABS
 ═══════════════════════════════════════════ */
-.rb-solutions-card {
-  display:grid; grid-template-columns:1fr 2fr;
-  background:#fff; border-radius:40px;
-  border:1px solid var(--border); overflow:hidden;
-  box-shadow:0 30px 80px rgba(0,0,0,.06);
-  transition:background .35s, border-color .35s, box-shadow .35s;
-}
-[data-theme="dark"] .rb-solutions-card {
-  background: var(--rb-dark-2);
-  box-shadow:0 30px 80px rgba(0,0,0,.35);
-}
-.rb-tablist { padding:32px; display:flex; flex-direction:column; gap:8px; }
-.rb-tab {
-  background:transparent; border:none; padding:20px 24px; border-radius:18px;
-  display:flex; align-items:center; justify-content:space-between; text-align:left;
-  color:#999; transition:all .3s;
-}
-[data-theme="dark"] .rb-tab { color:rgba(255,255,255,.4); }
-.rb-tab__inner { display:flex; align-items:center; gap:16px; }
-.rb-tab svg { width:22px; height:22px; color:var(--rb-red); transition:transform .2s; }
-.rb-tab span.label { font-weight:800; font-size:14px; letter-spacing:0.18em; text-transform:uppercase; }
-.rb-tab.active { background:var(--rb-red); color:#fff; box-shadow:0 12px 32px rgba(188,0,23,.25); }
-.rb-tab.active svg { color:#fff; }
-.rb-tab:not(.active):hover { background:rgba(0,0,0,.04); color:#000; }
-[data-theme="dark"] .rb-tab:not(.active):hover { background:rgba(255,255,255,.06); color:#fff; }
-.rb-tab__arrow { opacity:0; transition:opacity .2s; }
-.rb-tab.active .rb-tab__arrow { opacity:1; }
-.rb-tab-promo { margin-top:24px; padding:20px; border-radius:16px; background:rgba(188,0,23,.05); border:1px solid rgba(188,0,23,.12); }
-[data-theme="dark"] .rb-tab-promo { background:rgba(188,0,23,.08); border-color:rgba(188,0,23,.18); }
-.rb-tab-promo__eyebrow { font-size:10px; font-weight:700; color:var(--rb-red); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:8px; }
-.rb-tab-promo__text    { font-size:13px; color:#666; transition:color .3s; }
-[data-theme="dark"] .rb-tab-promo__text { color:rgba(255,255,255,.45); }
+.rb-ind-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+.rb-ind-tab{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:100px;border:1px solid var(--border);background:transparent;font-size:14px;font-weight:600;color:var(--foreground);cursor:pointer;transition:all .2s;white-space:nowrap;}
+.rb-ind-tab svg{width:16px;height:16px;color:var(--rb-red);flex-shrink:0;transition:color .2s;}
+.rb-ind-tab:hover{border-color:rgba(188,0,23,.35);color:var(--rb-red);}
+.rb-ind-tab.active{background:var(--rb-red);color:#fff;border-color:var(--rb-red);box-shadow:0 8px 24px rgba(188,0,23,.25);}
+.rb-ind-tab.active svg{color:#fff;}
+[data-theme="dark"] .rb-ind-tab{border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.7);}
 
-.rb-tabpanel { display:block; }
-.rb-panel { display:none; }
-.rb-panel.active { display:grid; grid-template-columns:1fr 340px; }
-.rb-tabpanel__copy { padding:48px 40px; }
-.rb-tabpanel__tag {
-  display:inline-block; padding:6px 12px;
-  background:rgba(188,0,23,.10); color:var(--rb-red);
-  font-size:10px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
-  border:1px solid rgba(188,0,23,.2); border-radius:var(--r-pill); margin-bottom:28px;
-}
-.rb-tabpanel__list { list-style:none; padding:0; margin:0 0 36px; display:flex; flex-direction:column; gap:18px; }
-.rb-tabpanel__list li { display:flex; align-items:flex-start; gap:14px; font-size:16px; color:#333; transition:color .3s; }
-[data-theme="dark"] .rb-tabpanel__list li { color:rgba(255,255,255,.75); }
-.rb-tabpanel__list svg { width:20px; height:20px; color:var(--rb-red); flex-shrink:0; margin-top:2px; }
-.rb-tabpanel__img { background-size:cover; background-position:center; filter:grayscale(.6) brightness(.7); transition:filter .5s; min-height:420px; border-radius:0 32px 32px 0; }
-.rb-tabpanel__img:hover { filter:none; }
-[data-theme="dark"] .rb-tabpanel__img { filter:grayscale(.5) brightness(.45); }
-[data-theme="dark"] .rb-tabpanel__img:hover { filter:brightness(.8); }
+.rb-ind-panel{display:none;background:var(--card);border:1px solid var(--border);border-radius:24px;overflow:hidden;}
+.rb-ind-panel.active{display:grid;grid-template-columns:1fr 1fr;}
+[data-theme="dark"] .rb-ind-panel{background:rgba(255,255,255,.025);border-color:rgba(255,255,255,.08);}
+
+.rb-ind-panel__left{padding:40px 36px;display:flex;flex-direction:column;}
+.rb-ind-panel__right{padding:40px 36px;border-left:1px solid var(--border);}
+[data-theme="dark"] .rb-ind-panel__right{border-left-color:rgba(255,255,255,.08);}
+
+.rb-ind-panel__icon{width:52px;height:52px;border-radius:14px;background:rgba(188,0,23,.08);display:flex;align-items:center;justify-content:center;color:var(--rb-red);margin-bottom:20px;flex-shrink:0;}
+[data-theme="dark"] .rb-ind-panel__icon{background:rgba(188,0,23,.12);}
+.rb-ind-panel__eyebrow{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);margin-bottom:12px;}
+.rb-ind-panel__title{font-size:clamp(19px,2.2vw,26px);font-weight:800;letter-spacing:-.02em;line-height:1.2;color:var(--foreground);margin-bottom:14px;}
+.rb-ind-panel__desc{font-size:14px;color:#666;line-height:1.65;margin-bottom:24px;flex:1;}
+[data-theme="dark"] .rb-ind-panel__desc{color:rgba(255,255,255,.5);}
+.rb-ind-panel__kpi{padding:14px 18px;background:rgba(188,0,23,.06);border:1px solid rgba(188,0,23,.15);border-radius:12px;font-size:13px;font-weight:600;color:var(--rb-red);line-height:1.5;}
+
+.rb-ind-panel__processes-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#999;margin-bottom:20px;}
+[data-theme="dark"] .rb-ind-panel__processes-label{color:rgba(255,255,255,.35);}
+.rb-ind-panel__list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;}
+.rb-ind-panel__list li{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);}
+.rb-ind-panel__list li:first-child{padding-top:0;}
+.rb-ind-panel__list li:last-child{border-bottom:none;padding-bottom:0;}
+[data-theme="dark"] .rb-ind-panel__list li{border-color:rgba(255,255,255,.07);}
+.rb-ind-panel__list-icon{width:18px;height:18px;flex-shrink:0;color:var(--rb-red);margin-top:2px;}
+.rb-ind-panel__list strong{display:block;font-size:14px;font-weight:700;color:var(--foreground);margin-bottom:3px;line-height:1.3;}
+.rb-ind-panel__list span{font-size:12px;color:#777;line-height:1.45;}
+[data-theme="dark"] .rb-ind-panel__list span{color:rgba(255,255,255,.4);}
+
+@media(max-width:900px){.rb-ind-panel.active{grid-template-columns:1fr;}.rb-ind-panel__right{border-left:none;border-top:1px solid var(--border);padding:28px 28px 36px;}}
+@media(max-width:640px){.rb-ind-panel__left,.rb-ind-panel__right{padding:24px 20px;}.rb-ind-tabs{gap:6px;}.rb-ind-tab{font-size:13px;padding:8px 14px;}}
 
 
 /* ═══════════════════════════════════════════
@@ -821,10 +808,6 @@ a.rb-product { text-decoration:none; color:inherit; }
 }
 @media (max-width:900px) {
   .rb-hero__grid { grid-template-columns:1fr; }
-  .rb-solutions-card { grid-template-columns:1fr; }
-  .rb-tablist { flex-direction:row; flex-wrap:wrap; }
-  .rb-tabpanel__img { display:none; }
-  .rb-panel.active { grid-template-columns:1fr; }
   .rb-testimonials { grid-template-columns:1fr 1fr; }
   .rb-cta-band__inner { flex-direction:column; text-align:center; }
 }
@@ -1481,144 +1464,204 @@ body{top:0 !important;}
 <section class="rb-section" id="soluciones" style="background:linear-gradient(180deg,transparent,rgba(188,0,23,.02),transparent);">
   <div class="container">
     <div class="rb-section__head rb-section__head--left">
-      <h2 class="rb-section__title">Automatización lista para <span>tu industria.</span></h2>
+      <h2 class="rb-section__title">Automatización lista para <span>tu industria</span></h2>
       <p class="rb-section__sub">+500 procesos implementados en empresas reales. Selecciona tu sector.</p>
     </div>
-    <div class="rb-solutions-card">
-      <div class="rb-tablist">
 
-        <button class="rb-tab active" data-tab="banca" type="button">
-          <span class="rb-tab__inner">
-            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
-            <span class="label">Banca y Finanzas</span>
-          </span>
-          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </button>
-
-        <button class="rb-tab" data-tab="seguros" type="button">
-          <span class="rb-tab__inner">
-            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span class="label">Seguros</span>
-          </span>
-          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </button>
-
-        <button class="rb-tab" data-tab="retail" type="button">
-          <span class="rb-tab__inner">
-            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            <span class="label">Retail</span>
-          </span>
-          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </button>
-
-        <button class="rb-tab" data-tab="consumo" type="button">
-          <span class="rb-tab__inner">
-            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg>
-            <span class="label">Consumo Masivo</span>
-          </span>
-          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </button>
-
-        <button class="rb-tab" data-tab="industrial" type="button">
-          <span class="rb-tab__inner">
-            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
-            <span class="label">Industrial</span>
-          </span>
-          <span class="rb-tab__arrow"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </button>
-
-        <div class="rb-tab-promo">
-          <div class="rb-tab-promo__eyebrow">¿Otro sector?</div>
-          <div class="rb-tab-promo__text">Contamos con +500 casos de uso implementados en diversas industrias.</div>
-        </div>
-      </div>
-
-      <!-- BANCA Y FINANZAS -->
-      <div id="panel-banca" class="rb-panel active">
-        <div class="rb-tabpanel__copy">
-          <span class="rb-tabpanel__tag">Banca y Finanzas</span>
-          <h3 style="font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--foreground);margin-bottom:12px;line-height:1.25;">Cumplimiento, velocidad y cero errores en operaciones críticas</h3>
-          <p style="font-size:13px;color:#666;line-height:1.65;margin-bottom:20px;">En banca, un error manual en conciliación o un retraso en reportes regulatorios no es ineficiencia — es riesgo. Rocketbot elimina la intervención humana en los procesos donde más duele equivocarse.</p>
-          <ul class="rb-tabpanel__list">
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Conciliación bancaria automática</strong> — de días a horas, sin intervención del equipo contable</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Generación de reportes regulatorios</strong> — cumplimiento automático sin trabajo manual</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Onboarding de clientes</strong> — validación de documentos, KYC y apertura de cuentas en minutos</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Procesamiento de créditos</strong> — evaluación, aprobación y notificación sin colas de espera</span></li>
-          </ul>
-          <div style="margin-top:20px;padding:14px 18px;background:rgba(188,0,23,.06);border:1px solid rgba(188,0,23,.15);border-radius:12px;font-size:13px;color:var(--rb-red);font-weight:600;">Clientes reducen hasta 90% el costo de procesos como conciliación y generación de reportes regulatorios</div>
-        </div>
-        <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/finanzas.jpg');"></div>
-      </div>
-
-      <!-- SEGUROS -->
-      <div id="panel-seguros" class="rb-panel">
-        <div class="rb-tabpanel__copy">
-          <span class="rb-tabpanel__tag">Seguros</span>
-          <h3 style="font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--foreground);margin-bottom:12px;line-height:1.25;">Menos tiempo en gestión, más tiempo en el cliente</h3>
-          <p style="font-size:13px;color:#666;line-height:1.65;margin-bottom:20px;">La industria aseguradora maneja volúmenes enormes de pólizas, siniestros y renovaciones. Rocketbot automatiza los procesos que generan cuellos de botella sin agregar personal.</p>
-          <ul class="rb-tabpanel__list">
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Gestión de siniestros</strong> — recepción, validación y resolución automatizada</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Renovación de pólizas</strong> — notificación y actualización sin intervención manual</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Extracción de datos de documentos</strong> — OCR e IA para procesar formularios y contratos</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Reportes regulatorios automáticos</strong> — cumplimiento sin esfuerzo adicional</span></li>
-          </ul>
-          <div style="margin-top:20px;padding:14px 18px;background:rgba(188,0,23,.06);border:1px solid rgba(188,0,23,.15);border-radius:12px;font-size:13px;color:var(--rb-red);font-weight:600;">Reducción de hasta 70% en tiempo de procesamiento de siniestros</div>
-        </div>
-        <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/finanzas.jpg');"></div>
-      </div>
-
-      <!-- RETAIL -->
-      <div id="panel-retail" class="rb-panel">
-        <div class="rb-tabpanel__copy">
-          <span class="rb-tabpanel__tag">Retail</span>
-          <h3 style="font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--foreground);margin-bottom:12px;line-height:1.25;">Operaciones que escalan sin sumar personal</h3>
-          <p style="font-size:13px;color:#666;line-height:1.65;margin-bottom:20px;">En retail, el volumen define el negocio. Rocketbot permite que tus equipos manejen más SKUs, más pedidos y más proveedores — sin crecer la estructura.</p>
-          <ul class="rb-tabpanel__list">
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Gestión de inventarios</strong> — actualización automática en múltiples sistemas</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Procesamiento de pedidos</strong> — de la orden al despacho sin intervención manual</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Conciliación de pagos</strong> — cierre contable diario en minutos</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Reportes operativos</strong> — alertas y dashboards actualizados en tiempo real</span></li>
-          </ul>
-          <div style="margin-top:20px;padding:14px 18px;background:rgba(188,0,23,.06);border:1px solid rgba(188,0,23,.15);border-radius:12px;font-size:13px;color:var(--rb-red);font-weight:600;">Clientes del sector reducen tiempos de cierre operativo en más de 60%</div>
-        </div>
-        <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/retail.jpg');"></div>
-      </div>
-
-      <!-- CONSUMO MASIVO -->
-      <div id="panel-consumo" class="rb-panel">
-        <div class="rb-tabpanel__copy">
-          <span class="rb-tabpanel__tag">Consumo Masivo</span>
-          <h3 style="font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--foreground);margin-bottom:12px;line-height:1.25;">De la planificación al despacho, sin fricciones</h3>
-          <p style="font-size:13px;color:#666;line-height:1.65;margin-bottom:20px;">Las empresas de consumo masivo operan con márgenes ajustados y cadenas de suministro complejas. Automatizar los procesos clave marca la diferencia entre ganar o perder margen.</p>
-          <ul class="rb-tabpanel__list">
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Gestión de órdenes de compra</strong> — automatización de pedidos a proveedores</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Control de stock y reposición</strong> — alertas y acciones automáticas</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Facturación y cobranza</strong> — emisión y seguimiento sin trabajo manual</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Reportes de ventas y distribución</strong> — datos en tiempo real para decisiones ágiles</span></li>
-          </ul>
-          <div style="margin-top:20px;padding:14px 18px;background:rgba(188,0,23,.06);border:1px solid rgba(188,0,23,.15);border-radius:12px;font-size:13px;color:var(--rb-red);font-weight:600;">Hasta 80% de reducción en tiempo de procesamiento de órdenes</div>
-        </div>
-        <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/retail.jpg');"></div>
-      </div>
-
-      <!-- INDUSTRIAL -->
-      <div id="panel-industrial" class="rb-panel">
-        <div class="rb-tabpanel__copy">
-          <span class="rb-tabpanel__tag">Industrial</span>
-          <h3 style="font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--foreground);margin-bottom:12px;line-height:1.25;">Más producción, menos burocracia operativa</h3>
-          <p style="font-size:13px;color:#666;line-height:1.65;margin-bottom:20px;">En operaciones industriales, el tiempo perdido en reportes, órdenes de trabajo y gestión documental es tiempo que no está en el piso. Rocketbot libera ese tiempo.</p>
-          <ul class="rb-tabpanel__list">
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Órdenes de trabajo automatizadas</strong> — generación y seguimiento sin intervención</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Gestión de proveedores</strong> — cotizaciones, aprobaciones y pagos automáticos</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Reportes de producción</strong> — métricas consolidadas en tiempo real</span></li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span><strong>Compliance y auditorías</strong> — trazabilidad completa sin esfuerzo adicional</span></li>
-          </ul>
-          <div style="margin-top:20px;padding:14px 18px;background:rgba(188,0,23,.06);border:1px solid rgba(188,0,23,.15);border-radius:12px;font-size:13px;color:var(--rb-red);font-weight:600;">Reducción de carga administrativa en planta de hasta 65%</div>
-        </div>
-        <div class="rb-tabpanel__img" style="background-image:url('assets/images/solutions/rrhh.jpg');"></div>
-      </div>
-
+    <!-- Tabs horizontales -->
+    <div class="rb-ind-tabs">
+      <button class="rb-ind-tab active" data-ind="banca" type="button">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+        Banca y financieras
+      </button>
+      <button class="rb-ind-tab" data-ind="seguros" type="button">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Seguros
+      </button>
+      <button class="rb-ind-tab" data-ind="retail" type="button">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Retail
+      </button>
+      <button class="rb-ind-tab" data-ind="consumo" type="button">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg>
+        Consumo masivo
+      </button>
+      <button class="rb-ind-tab" data-ind="industrial" type="button">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        Industrial
+      </button>
     </div>
+
+    <!-- BANCA Y FINANCIERAS -->
+    <div class="rb-ind-panel active" id="ind-banca">
+      <div class="rb-ind-panel__left">
+        <div class="rb-ind-panel__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+        </div>
+        <div class="rb-ind-panel__eyebrow">Banca y Financieras</div>
+        <h3 class="rb-ind-panel__title">Cumplimiento, velocidad y cero errores en operaciones críticas</h3>
+        <p class="rb-ind-panel__desc">En banca, un error manual en conciliación o un retraso en reportes regulatorios no es ineficiencia — es riesgo. Rocketbot elimina la intervención humana en los procesos donde más duele equivocarse.</p>
+        <div class="rb-ind-panel__kpi">→ Clientes reducen hasta 90% el costo de procesos como conciliación y generación de reportes regulatorios</div>
+      </div>
+      <div class="rb-ind-panel__right">
+        <div class="rb-ind-panel__processes-label">Procesos que ya automatizamos</div>
+        <ul class="rb-ind-panel__list">
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Conciliación bancaria automática</strong><span>De días a horas — sin intervención del equipo contable</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Generación de reportes regulatorios</strong><span>Cumplimiento automático con la CMF u organismos locales sin trabajo manual</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Onboarding de clientes</strong><span>Validación de documentos, KYC y apertura de cuentas en minutos</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Procesamiento de créditos</strong><span>Evaluación, aprobación y notificación sin colas de espera</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SEGUROS -->
+    <div class="rb-ind-panel" id="ind-seguros">
+      <div class="rb-ind-panel__left">
+        <div class="rb-ind-panel__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="rb-ind-panel__eyebrow">Seguros</div>
+        <h3 class="rb-ind-panel__title">Menos tiempo en gestión, más tiempo en el cliente</h3>
+        <p class="rb-ind-panel__desc">La industria aseguradora maneja volúmenes enormes de pólizas, siniestros y renovaciones. Rocketbot automatiza los procesos que generan cuellos de botella sin agregar personal.</p>
+        <div class="rb-ind-panel__kpi">→ Reducción de hasta 70% en tiempo de procesamiento de siniestros</div>
+      </div>
+      <div class="rb-ind-panel__right">
+        <div class="rb-ind-panel__processes-label">Procesos que ya automatizamos</div>
+        <ul class="rb-ind-panel__list">
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Gestión de siniestros</strong><span>Recepción, validación y resolución automatizada sin intervención del equipo</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Renovación de pólizas</strong><span>Notificación y actualización automática sin intervención manual</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Extracción de datos de documentos</strong><span>OCR e IA para procesar formularios y contratos en segundos</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Reportes regulatorios automáticos</strong><span>Cumplimiento con organismos reguladores sin esfuerzo adicional</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RETAIL -->
+    <div class="rb-ind-panel" id="ind-retail">
+      <div class="rb-ind-panel__left">
+        <div class="rb-ind-panel__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <div class="rb-ind-panel__eyebrow">Retail</div>
+        <h3 class="rb-ind-panel__title">Operaciones que escalan sin sumar personal</h3>
+        <p class="rb-ind-panel__desc">En retail, el volumen define el negocio. Rocketbot permite que tus equipos manejen más SKUs, más pedidos y más proveedores — sin crecer la estructura operativa.</p>
+        <div class="rb-ind-panel__kpi">→ Clientes del sector reducen tiempos de cierre operativo en más de 60%</div>
+      </div>
+      <div class="rb-ind-panel__right">
+        <div class="rb-ind-panel__processes-label">Procesos que ya automatizamos</div>
+        <ul class="rb-ind-panel__list">
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Gestión de inventarios</strong><span>Actualización automática en múltiples sistemas sin intervención manual</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Procesamiento de pedidos</strong><span>De la orden al despacho sin intervención del equipo</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Conciliación de pagos</strong><span>Cierre contable diario en minutos, sin errores</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Reportes operativos</strong><span>Alertas y dashboards actualizados en tiempo real</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CONSUMO MASIVO -->
+    <div class="rb-ind-panel" id="ind-consumo">
+      <div class="rb-ind-panel__left">
+        <div class="rb-ind-panel__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg>
+        </div>
+        <div class="rb-ind-panel__eyebrow">Consumo Masivo</div>
+        <h3 class="rb-ind-panel__title">De la planificación al despacho, sin fricciones</h3>
+        <p class="rb-ind-panel__desc">Las empresas de consumo masivo operan con márgenes ajustados y cadenas de suministro complejas. Automatizar los procesos clave es la diferencia entre ganar o perder margen.</p>
+        <div class="rb-ind-panel__kpi">→ Hasta 80% de reducción en tiempo de procesamiento de órdenes</div>
+      </div>
+      <div class="rb-ind-panel__right">
+        <div class="rb-ind-panel__processes-label">Procesos que ya automatizamos</div>
+        <ul class="rb-ind-panel__list">
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Gestión de órdenes de compra</strong><span>Automatización completa de pedidos a proveedores</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Control de stock y reposición</strong><span>Alertas automáticas y acciones sin intervención humana</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Facturación y cobranza</strong><span>Emisión y seguimiento de facturas sin trabajo manual</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Reportes de ventas y distribución</strong><span>Datos en tiempo real para decisiones ágiles</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- INDUSTRIAL -->
+    <div class="rb-ind-panel" id="ind-industrial">
+      <div class="rb-ind-panel__left">
+        <div class="rb-ind-panel__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <div class="rb-ind-panel__eyebrow">Industrial</div>
+        <h3 class="rb-ind-panel__title">Más producción, menos burocracia operativa</h3>
+        <p class="rb-ind-panel__desc">En operaciones industriales, el tiempo perdido en reportes, órdenes de trabajo y gestión documental es tiempo que no está en el piso. Rocketbot libera ese tiempo.</p>
+        <div class="rb-ind-panel__kpi">→ Reducción de carga administrativa en planta de hasta 65%</div>
+      </div>
+      <div class="rb-ind-panel__right">
+        <div class="rb-ind-panel__processes-label">Procesos que ya automatizamos</div>
+        <ul class="rb-ind-panel__list">
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Órdenes de trabajo automatizadas</strong><span>Generación y seguimiento sin intervención del equipo</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Gestión de proveedores</strong><span>Cotizaciones, aprobaciones y pagos automáticos</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Reportes de producción</strong><span>Métricas consolidadas en tiempo real sin trabajo manual</span></div>
+          </li>
+          <li>
+            <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Compliance y auditorías</strong><span>Trazabilidad completa de cada operación sin esfuerzo adicional</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1845,16 +1888,16 @@ themeBtn.addEventListener('click', function () {
   window.addEventListener('scroll', onScroll, { passive: true });
 })();
 
-// ─── Solutions tabs ───
+// ─── Industry tabs ───
 (function () {
-  var tabs   = document.querySelectorAll('.rb-tab[data-tab]');
-  var panels = document.querySelectorAll('.rb-panel');
+  var tabs   = document.querySelectorAll('.rb-ind-tab[data-ind]');
+  var panels = document.querySelectorAll('.rb-ind-panel');
   tabs.forEach(function (tab) {
     tab.addEventListener('click', function () {
       tabs.forEach(function (t)   { t.classList.remove('active'); });
       panels.forEach(function (p) { p.classList.remove('active'); });
       tab.classList.add('active');
-      var panel = document.getElementById('panel-' + tab.dataset.tab);
+      var panel = document.getElementById('ind-' + tab.dataset.ind);
       if (panel) panel.classList.add('active');
     });
   });
