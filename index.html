@@ -814,28 +814,82 @@ p { margin: 0; }
 ═══════════════════════════════════════════ */
 .rb-section--alt { background:var(--rb-off-white); }
 [data-theme="dark"] .rb-section--alt { background:var(--rb-dark-2); }
-.rb-testimonials { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+/* SUMMIT cards */
+.rb-testimonials { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:24px; }
 .rb-testi {
   background:var(--card); border:1px solid var(--border);
-  border-radius:24px; padding:36px 32px;
-  display:flex; flex-direction:column; gap:0;
+  border-radius:24px; padding:32px 28px;
+  display:flex; flex-direction:column;
   transition:border-color .3s, transform .3s, box-shadow .3s;
-  text-decoration:none; color:inherit;
 }
 .rb-testi:hover { border-color:rgba(188,0,23,.4); transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.08); }
 [data-theme="dark"] .rb-testi { background:rgba(255,255,255,.03); border-color:rgba(255,255,255,.08); }
 [data-theme="dark"] .rb-testi:hover { box-shadow:0 16px 40px rgba(0,0,0,.35); }
-.rb-testi__company { display:flex; align-items:center; height:80px; margin-bottom:24px; }
-.rb-testi__company img { max-height:80px; max-width:200px; width:auto; height:auto; object-fit:contain; display:block; }
-.rb-testi__metric { font-size:clamp(38px,4.5vw,56px); font-weight:900; letter-spacing:-.04em; line-height:1; color:var(--rb-red); margin-bottom:10px; }
-.rb-testi__label { font-size:15px; font-weight:700; color:var(--foreground); line-height:1.35; margin-bottom:16px; }
-.rb-testi__desc { font-size:13px; color:#666; line-height:1.6; flex:1; margin-bottom:24px; }
-[data-theme="dark"] .rb-testi__desc { color:rgba(255,255,255,.45); }
-.rb-testi__cta { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:var(--rb-red); border-top:1px solid var(--border); padding-top:20px; }
-[data-theme="dark"] .rb-testi__cta { border-color:rgba(255,255,255,.08); }
-.rb-testi__cta svg { width:32px; height:32px; background:rgba(188,0,23,.08); border-radius:50%; padding:7px; flex-shrink:0; transition:background .2s; }
-.rb-testi:hover .rb-testi__cta svg { background:rgba(188,0,23,.18); }
-.rb-testi--placeholder { border-style:dashed; opacity:.7; }
+
+.rb-testi__head { display:flex; align-items:center; gap:14px; margin-bottom:22px; }
+.rb-testi__logo { width:56px; height:56px; border-radius:14px; background:#fff; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; padding:8px; flex-shrink:0; }
+.rb-testi__logo img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
+.rb-testi__company { font-size:18px; font-weight:800; color:var(--foreground); letter-spacing:-.01em; line-height:1.2; margin-bottom:3px; }
+.rb-testi__sector { font-size:12px; color:#888; font-weight:500; }
+[data-theme="dark"] .rb-testi__sector { color:rgba(255,255,255,.4); }
+
+.rb-testi__desc { font-size:13.5px; color:#555; line-height:1.6; margin-bottom:22px; }
+[data-theme="dark"] .rb-testi__desc { color:rgba(255,255,255,.55); }
+
+.rb-testi__metrics { display:flex; flex-direction:column; gap:10px; margin-bottom:22px; }
+.rb-testi__metric { display:grid; grid-template-columns:auto 1fr; align-items:center; gap:14px; background:rgba(188,0,23,.05); border:1px solid rgba(188,0,23,.12); border-radius:12px; padding:12px 16px; transition:transform .3s, background .3s; }
+[data-theme="dark"] .rb-testi__metric { background:rgba(188,0,23,.08); border-color:rgba(188,0,23,.18); }
+.rb-testi:hover .rb-testi__metric { transform:translateX(2px); }
+.rb-testi__val { font-size:clamp(22px,2.6vw,30px); font-weight:900; color:var(--rb-red); letter-spacing:-.03em; line-height:1; }
+.rb-testi__mlabel { font-size:12px; color:#555; line-height:1.45; }
+[data-theme="dark"] .rb-testi__mlabel { color:rgba(255,255,255,.55); }
+
+.rb-testi__quote { margin-top:auto; padding:18px 20px; background:rgba(188,0,23,.04); border-left:3px solid var(--rb-red); border-radius:0 10px 10px 0; }
+[data-theme="dark"] .rb-testi__quote { background:rgba(188,0,23,.07); }
+.rb-testi__quote p { font-size:12.5px; font-style:italic; color:#555; line-height:1.55; margin:0 0 8px; }
+[data-theme="dark"] .rb-testi__quote p { color:rgba(255,255,255,.6); }
+.rb-testi__author { font-size:11px; font-weight:700; color:var(--foreground); line-height:1.4; }
+.rb-testi__author span { font-weight:500; color:#888; display:block; margin-top:2px; }
+[data-theme="dark"] .rb-testi__author span { color:rgba(255,255,255,.4); }
+
+/* Bottom CTA banner */
+.rb-summit-cta {
+  display:flex; align-items:center; gap:20px;
+  background:rgba(188,0,23,.04); border:1px solid rgba(188,0,23,.15);
+  border-radius:18px; padding:22px 28px;
+}
+[data-theme="dark"] .rb-summit-cta { background:rgba(188,0,23,.08); border-color:rgba(188,0,23,.2); }
+.rb-summit-cta__icon { flex-shrink:0; width:46px; height:46px; border-radius:12px; background:rgba(188,0,23,.12); display:flex; align-items:center; justify-content:center; color:var(--rb-red); }
+.rb-summit-cta__text { flex:1; }
+.rb-summit-cta__title { font-size:15px; font-weight:700; color:var(--foreground); margin-bottom:4px; }
+.rb-summit-cta__desc { font-size:13px; color:#666; line-height:1.55; }
+[data-theme="dark"] .rb-summit-cta__desc { color:rgba(255,255,255,.5); }
+
+@media(max-width:980px){
+  .rb-testimonials { grid-template-columns:1fr; }
+  .rb-summit-cta { flex-direction:column; text-align:center; }
+}
+
+/* Metric pop-in animation when card becomes visible */
+.rb-stagger.is-visible .rb-testi__metric {
+  animation:rb-metricPop .55s cubic-bezier(.34,1.56,.64,1) both;
+}
+.rb-stagger.is-visible .rb-testi:nth-child(1) .rb-testi__metric:nth-child(1){ animation-delay:.4s; }
+.rb-stagger.is-visible .rb-testi:nth-child(1) .rb-testi__metric:nth-child(2){ animation-delay:.5s; }
+.rb-stagger.is-visible .rb-testi:nth-child(1) .rb-testi__metric:nth-child(3){ animation-delay:.6s; }
+.rb-stagger.is-visible .rb-testi:nth-child(2) .rb-testi__metric:nth-child(1){ animation-delay:.5s; }
+.rb-stagger.is-visible .rb-testi:nth-child(2) .rb-testi__metric:nth-child(2){ animation-delay:.6s; }
+.rb-stagger.is-visible .rb-testi:nth-child(3) .rb-testi__metric:nth-child(1){ animation-delay:.6s; }
+.rb-stagger.is-visible .rb-testi:nth-child(3) .rb-testi__metric:nth-child(2){ animation-delay:.7s; }
+.rb-stagger.is-visible .rb-testi:nth-child(3) .rb-testi__metric:nth-child(3){ animation-delay:.8s; }
+@keyframes rb-metricPop {
+  0%   { opacity:0; transform:translateX(-10px) scale(.95); }
+  60%  { opacity:1; transform:translateX(0) scale(1.02); }
+  100% { opacity:1; transform:translateX(0) scale(1); }
+}
+@media(prefers-reduced-motion:reduce){
+  .rb-stagger.is-visible .rb-testi__metric { animation:none; }
+}
 
 /* ═══════════════════════════════════════════
    CTA BAND
@@ -1816,48 +1870,112 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head rb-reveal">
       <span class="rb-eyebrow">Summit de clientes</span>
-      <h2 class="rb-section__title">Resultados reales de <span>empresas reales</span></h2>
-      <div class="rb-section__rule"></div>
+      <h2 class="rb-section__title">Empresas reales. <span>Resultados que se miden.</span></h2>
+      <p class="rb-section__sub">No son proyecciones. Son números que ya están ocurriendo en organizaciones como la tuya.</p>
     </div>
+
     <div class="rb-testimonials rb-stagger rb-stagger--horizontal">
 
-      <!-- Agrosuper -->
-      <a class="rb-testi" href="#" target="_blank" rel="noopener">
-        <div class="rb-testi__company"><img src="assets/logos/clients/agrosuper.png" alt="Agrosuper"></div>
-        <div class="rb-testi__metric">+300.000</div>
-        <div class="rb-testi__label">horas ahorradas al año</div>
-        <p class="rb-testi__desc">Agrosuper automatizó sus procesos operativos críticos con Rocketbot, eliminando el trabajo manual y liberando a su equipo para tareas de mayor valor.</p>
-        <div class="rb-testi__cta">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Ver summit
-        </div>
-      </a>
-
       <!-- Protección -->
-      <a class="rb-testi" href="#" target="_blank" rel="noopener">
-        <div class="rb-testi__company"><img src="assets/logos/clients/proteccion.png" alt="Protección"></div>
-        <div class="rb-testi__metric">+500</div>
-        <div class="rb-testi__label">puestos de trabajo automatizados</div>
-        <p class="rb-testi__desc">Protección transformó su operación automatizando más de 500 puestos de trabajo, logrando escalar sin incrementar su estructura de personal.</p>
-        <div class="rb-testi__cta">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Ver summit
+      <article class="rb-testi">
+        <div class="rb-testi__head">
+          <div class="rb-testi__logo"><img src="assets/logos/clients/proteccion.png" alt="Protección"></div>
+          <div>
+            <div class="rb-testi__company">Protección</div>
+            <div class="rb-testi__sector">Servicios financieros · Grupo Sura</div>
+          </div>
         </div>
-      </a>
+        <p class="rb-testi__desc">Migración de pólizas de una nueva unidad de negocio en tiempo récord — un proceso que manualmente habría tomado semanas.</p>
+        <div class="rb-testi__metrics">
+          <div class="rb-testi__metric">
+            <div class="rb-testi__val">80</div>
+            <div class="rb-testi__mlabel">robots corriendo en simultáneo</div>
+          </div>
+          <div class="rb-testi__metric">
+            <div class="rb-testi__val">4 días</div>
+            <div class="rb-testi__mlabel">para completar lo que se estimaba en semanas</div>
+          </div>
+          <div class="rb-testi__metric">
+            <div class="rb-testi__val">+$500K</div>
+            <div class="rb-testi__mlabel">USD ahorrados en una sola operación</div>
+          </div>
+        </div>
+        <div class="rb-testi__quote">
+          <p>"Rocketbot nos permitió abordar este desafío demostrando el poder de la hiperautomatización."</p>
+          <div class="rb-testi__author">Andrea Muñetón<span>Líder Automatización Digital</span></div>
+        </div>
+      </article>
+
+      <!-- Agrosuper -->
+      <article class="rb-testi">
+        <div class="rb-testi__head">
+          <div class="rb-testi__logo"><img src="assets/logos/clients/agrosuper.png" alt="Agrosuper"></div>
+          <div>
+            <div class="rb-testi__company">Agrosuper</div>
+            <div class="rb-testi__sector">Consumo masivo · Agroindustria</div>
+          </div>
+        </div>
+        <p class="rb-testi__desc">Miles de horas perdidas en procesos administrativos repetitivos sin visión de cómo escalar sin aumentar dotación.</p>
+        <div class="rb-testi__metrics">
+          <div class="rb-testi__metric">
+            <div class="rb-testi__val">+70</div>
+            <div class="rb-testi__mlabel">robots en producción en 2 años</div>
+          </div>
+          <div class="rb-testi__metric">
+            <div class="rb-testi__val">140K</div>
+            <div class="rb-testi__mlabel">horas de trabajo automatizadas al año</div>
+          </div>
+        </div>
+        <div class="rb-testi__quote">
+          <p>"La clave fue un Centro de Excelencia que alineó a toda la compañía hacia la automatización."</p>
+          <div class="rb-testi__author">Fredy Silva, CEO<span>MetroCapital · Partner Rocketbot</span></div>
+        </div>
+      </article>
 
       <!-- Consorcio -->
-      <a class="rb-testi" href="#" target="_blank" rel="noopener">
-        <div class="rb-testi__company"><img src="assets/logos/clients/consorcio.png" alt="Consorcio Banco"></div>
-        <div class="rb-testi__metric">+9.200</div>
-        <div class="rb-testi__label">horas liberadas al año para tareas de mayor valor</div>
-        <p class="rb-testi__desc">Consorcio liberó más de 9.200 horas anuales automatizando procesos repetitivos, redirigiendo el tiempo de su equipo a tareas estratégicas que mueven el negocio.</p>
-        <div class="rb-testi__cta">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Ver summit
+      <article class="rb-testi">
+        <div class="rb-testi__head">
+          <div class="rb-testi__logo"><img src="assets/logos/clients/consorcio.png" alt="Consorcio"></div>
+          <div>
+            <div class="rb-testi__company">Consorcio</div>
+            <div class="rb-testi__sector">Seguros · Chile</div>
+          </div>
         </div>
-      </a>
+        <p class="rb-testi__desc">Procesos operativos manuales en una aseguradora de alto volumen — cada error y demora con impacto directo en el cliente final.</p>
+        <div class="rb-testi__metrics">
+          <div class="rb-testi__metric">
+            <div class="rb-testi__val">+20</div>
+            <div class="rb-testi__mlabel">automatizaciones implementadas y en producción</div>
+          </div>
+          <div class="rb-testi__metric">
+            <div class="rb-testi__val">100%</div>
+            <div class="rb-testi__mlabel">de uso de licencias — adopción real, no piloto</div>
+          </div>
+          <div class="rb-testi__metric">
+            <div class="rb-testi__val">$109K</div>
+            <div class="rb-testi__mlabel">USD de ahorro anual generado</div>
+          </div>
+        </div>
+        <div class="rb-testi__quote">
+          <p>"La automatización no solo mejora la eficiencia — fortalece la capacidad de escalar sin aumentar estructura."</p>
+          <div class="rb-testi__author">Equipo Consorcio<span>Operaciones · Seguros</span></div>
+        </div>
+      </article>
 
     </div>
+
+    <!-- CTA banner -->
+    <div class="rb-summit-cta rb-reveal rb-reveal--zoom rb-reveal--delay-2">
+      <div class="rb-summit-cta__icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+      </div>
+      <div class="rb-summit-cta__text">
+        <div class="rb-summit-cta__title">¿Tu empresa podría ser el próximo caso?</div>
+        <p class="rb-summit-cta__desc">700 clientes activos en 21 países ya están automatizando con Rocketbot. El primer paso es identificar cuánto estás dejando sobre la mesa — sin compromiso.</p>
+      </div>
+      <a href="contacto.html" class="rb-btn rb-btn--primary">Hablemos</a>
+    </div>
+
   </div>
 </section>
 
