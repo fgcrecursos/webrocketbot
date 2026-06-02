@@ -908,8 +908,9 @@ p { margin: 0; }
   display:flex; align-items:center; justify-content:space-between;
   gap:48px; position:relative; z-index:1;
 }
-.rb-cta-band__title { font-size:clamp(24px,3vw,40px); font-weight:700; color:#fff; letter-spacing:-0.02em; margin-bottom:12px; line-height:1.2; }
-.rb-cta-band__sub   { font-size:16px; color:rgba(255,255,255,.6); max-width:520px; }
+.rb-cta-band__title { font-size:clamp(24px,3vw,40px); font-weight:700; color:#fff; letter-spacing:-0.02em; margin-bottom:14px; line-height:1.15; }
+.rb-cta-band__title span { color:var(--rb-red); display:block; }
+.rb-cta-band__sub   { font-size:16px; color:rgba(255,255,255,.6); max-width:520px; line-height:1.55; }
 
 /* Product cards as links */
 a.rb-product { text-decoration:none; color:inherit; }
@@ -1979,10 +1980,13 @@ body{top:0 !important;}
 <section class="rb-cta-band">
   <div class="container rb-cta-band__inner">
     <div>
-      <h2 class="rb-cta-band__title">Habla con uno de nuestros Asesores comerciales</h2>
-      <p class="rb-cta-band__sub">Te brindaremos toda la ayuda necesaria para automatizar tus procesos manuales</p>
+      <h2 class="rb-cta-band__title">¿Cuánto está costando<span>no automatizar hoy?</span></h2>
+      <p class="rb-cta-band__sub">En 30 minutos identificamos los procesos con mayor potencial de ahorro en tu organización — sin compromiso, sin PowerPoints, solo números reales.</p>
     </div>
-    <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg">Contáctanos</a>
+    <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg">
+      Agendar diagnóstico
+      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
   </div>
 </section>
 
