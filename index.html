@@ -778,8 +778,9 @@ p { margin: 0; }
 .rb-testi:hover { border-color:rgba(188,0,23,.4); transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.08); }
 [data-theme="dark"] .rb-testi { background:rgba(255,255,255,.03); border-color:rgba(255,255,255,.08); }
 [data-theme="dark"] .rb-testi:hover { box-shadow:0 16px 40px rgba(0,0,0,.35); }
-.rb-testi__company { font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#999; margin-bottom:16px; }
-[data-theme="dark"] .rb-testi__company { color:rgba(255,255,255,.4); }
+.rb-testi__company { display:flex; align-items:center; height:48px; margin-bottom:20px; }
+.rb-testi__company img { max-height:48px; max-width:160px; width:auto; height:auto; object-fit:contain; display:block; }
+[data-theme="dark"] .rb-testi__company img { filter:brightness(0) invert(1) opacity(.85); }
 .rb-testi__metric { font-size:clamp(38px,4.5vw,56px); font-weight:900; letter-spacing:-.04em; line-height:1; color:var(--rb-red); margin-bottom:10px; }
 .rb-testi__label { font-size:15px; font-weight:700; color:var(--foreground); line-height:1.35; margin-bottom:16px; }
 .rb-testi__desc { font-size:13px; color:#666; line-height:1.6; flex:1; margin-bottom:24px; }
@@ -1668,7 +1669,7 @@ body{top:0 !important;}
 
       <!-- Agrosuper -->
       <a class="rb-testi" href="#" target="_blank" rel="noopener">
-        <div class="rb-testi__company">Agrosuper</div>
+        <div class="rb-testi__company"><img src="assets/logos/clients/agrosuper.png" alt="Agrosuper"></div>
         <div class="rb-testi__metric">+300.000</div>
         <div class="rb-testi__label">horas ahorradas al año</div>
         <p class="rb-testi__desc">Agrosuper automatizó sus procesos operativos críticos con Rocketbot, eliminando el trabajo manual y liberando a su equipo para tareas de mayor valor.</p>
@@ -1680,7 +1681,7 @@ body{top:0 !important;}
 
       <!-- Protección -->
       <a class="rb-testi" href="#" target="_blank" rel="noopener">
-        <div class="rb-testi__company">Protección</div>
+        <div class="rb-testi__company"><img src="assets/logos/clients/proteccion.png" alt="Protección"></div>
         <div class="rb-testi__metric">+500</div>
         <div class="rb-testi__label">puestos de trabajo automatizados</div>
         <p class="rb-testi__desc">Protección transformó su operación automatizando más de 500 puestos de trabajo, logrando escalar sin incrementar su estructura de personal.</p>
@@ -1692,7 +1693,7 @@ body{top:0 !important;}
 
       <!-- Consorcio -->
       <a class="rb-testi" href="#" target="_blank" rel="noopener">
-        <div class="rb-testi__company">Consorcio</div>
+        <div class="rb-testi__company"><img src="assets/logos/clients/consorcio.png" alt="Consorcio Banco"></div>
         <div class="rb-testi__metric">+9.200</div>
         <div class="rb-testi__label">horas liberadas al año para tareas de mayor valor</div>
         <p class="rb-testi__desc">Consorcio liberó más de 9.200 horas anuales automatizando procesos repetitivos, redirigiendo el tiempo de su equipo a tareas estratégicas que mueven el negocio.</p>
