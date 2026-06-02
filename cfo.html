@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <!-- Google tag (gtag.js) - GA4 | reemplaza G-2EHJ8S289M con tu Measurement ID -->
@@ -1151,7 +1151,7 @@ a.rb-product{text-decoration:none;color:inherit;}
 var LOGOS={light:'assets/logos/logo-header.png',dark:'assets/logos/logo-header-white.png'};
 var html=document.documentElement,navLogo=document.getElementById('nav-logo'),themeBtn=document.getElementById('theme-btn'),iconSun=document.getElementById('icon-sun'),iconMoon=document.getElementById('icon-moon');
 function applyTheme(t){html.setAttribute('data-theme',t);if(navLogo)navLogo.src=LOGOS[t];if(iconSun)iconSun.style.display=t==='dark'?'none':'';if(iconMoon)iconMoon.style.display=t==='light'?'none':'';try{localStorage.setItem('rb-theme',t);}catch(e){}}
-(function(){var s='light';try{s=localStorage.getItem('rb-theme')||'light';}catch(e){}applyTheme(s);})();
+(function(){var s='dark';try{s=localStorage.getItem('rb-theme')||'dark';}catch(e){}applyTheme(s);})();
 if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttribute('data-theme')==='dark'?'light':'dark');});
 
 /* ─── Nav scroll ─── */

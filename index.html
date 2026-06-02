@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <!-- Google tag (gtag.js) – GA4 | reemplaza G-2EHJ8S289M con tu Measurement ID -->
@@ -1966,10 +1966,10 @@ function applyTheme(theme) {
   try { localStorage.setItem('rb-theme', theme); } catch(e) {}
 }
 
-// Restore saved preference
+// Restore saved preference (default: dark)
 (function () {
-  var saved = 'light';
-  try { saved = localStorage.getItem('rb-theme') || 'light'; } catch(e) {}
+  var saved = 'dark';
+  try { saved = localStorage.getItem('rb-theme') || 'dark'; } catch(e) {}
   applyTheme(saved);
 })();
 
