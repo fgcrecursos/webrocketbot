@@ -896,7 +896,7 @@ p { margin: 0; }
 ═══════════════════════════════════════════ */
 .rb-cta-band {
   background:linear-gradient(135deg, var(--rb-secondary) 0%, #1a242a 100%);
-  padding:80px 0; position:relative; overflow:hidden;
+  padding:80px 0 64px; position:relative; overflow:hidden;
 }
 .rb-cta-band::before {
   content:''; position:absolute; inset:0;
@@ -911,6 +911,19 @@ p { margin: 0; }
 .rb-cta-band__title { font-size:clamp(24px,3vw,40px); font-weight:700; color:#fff; letter-spacing:-0.02em; margin-bottom:14px; line-height:1.15; }
 .rb-cta-band__title span { color:var(--rb-red); display:block; }
 .rb-cta-band__sub   { font-size:16px; color:rgba(255,255,255,.6); max-width:520px; line-height:1.55; }
+
+/* Ratings strip */
+.rb-cta-ratings { position:relative; z-index:1; max-width:var(--max-w, 1200px); margin:32px auto 0; padding:24px 32px 0; display:flex; gap:32px; justify-content:center; align-items:center; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,.10); }
+.rb-cta-rating { display:flex; align-items:center; gap:14px; }
+.rb-cta-rating__logo { display:flex; align-items:center; height:32px; }
+.rb-cta-rating__logo img { max-height:32px; max-width:80px; object-fit:contain; }
+.rb-cta-rating__logo--g2 { width:36px; height:36px; border-radius:50%; background:#FF492C; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:13px; }
+.rb-cta-rating__info { display:flex; flex-direction:column; gap:2px; }
+.rb-cta-rating__score { display:flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:#fff; line-height:1; }
+.rb-cta-rating__stars { display:inline-flex; gap:2px; color:#FFB800; }
+.rb-cta-rating__stars svg { width:13px; height:13px; }
+.rb-cta-rating__label { font-size:11px; color:rgba(255,255,255,.5); letter-spacing:.04em; }
+@media(max-width:640px){.rb-cta-ratings{flex-direction:column;gap:20px;padding:20px 20px 0;}}
 
 /* Product cards as links */
 a.rb-product { text-decoration:none; color:inherit; }
@@ -1555,48 +1568,7 @@ body{top:0 !important;}
   </div>
 </section>
 
-<!-- ════════════════ IMPACTO ════════════════ -->
-<section class="rb-impact">
-  <div class="container">
-    <div class="rb-impact__head">
-      <div class="rb-impact__eyebrow">Métricas de eficiencia</div>
-      <h2 class="rb-impact__title">Lo que cambia en toda la organización</h2>
-      <p class="rb-impact__sub">Números reales, medidos en clientes activos — no proyecciones.</p>
-    </div>
-    <div class="rb-impact__grid rb-stagger rb-stagger--scale">
-      <div class="rb-impact__card">
-        <div class="rb-impact__val">6 meses</div>
-        <div class="rb-impact__card-title">Payback de la inversión</div>
-        <p class="rb-impact__card-desc">El retorno llega antes del próximo ciclo de planificación — no en años, en meses.</p>
-        <div class="rb-impact__card-cta">→ Conecta directo con la decisión de presupuesto</div>
-      </div>
-      <div class="rb-impact__card">
-        <div class="rb-impact__val">80%</div>
-        <div class="rb-impact__card-title">Menos tiempo operando, más tiempo decidiendo</div>
-        <p class="rb-impact__card-desc">El equipo deja de ser el engranaje del proceso y pasa a ser quien lo dirige.</p>
-        <div class="rb-impact__card-cta">→ Mismo equipo, mayor capacidad estratégica</div>
-      </div>
-      <div class="rb-impact__card">
-        <div class="rb-impact__val">90%</div>
-        <div class="rb-impact__card-title">Menos costo por proceso automatizado</div>
-        <p class="rb-impact__card-desc">Lo que antes requería personas, tiempo y coordinación, hoy corre a una fracción del costo.</p>
-        <div class="rb-impact__card-cta">→ Margen que se recupera en cada proceso</div>
-      </div>
-      <div class="rb-impact__card rb-impact__card--highlight">
-        <div class="rb-impact__val">$2.5M</div>
-        <div class="rb-impact__card-title">Ahorrados por cliente al año</div>
-        <p class="rb-impact__card-desc">Medido en clientes con estrategia de automatización madura — no es un techo teórico, es lo que ya está pasando.</p>
-        <div class="rb-impact__card-badge">
-          <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          Dato real · top 3 clientes con mayor adopción
-        </div>
-      </div>
-    </div>
-    <p class="rb-impact__quote rb-reveal rb-reveal--blur rb-reveal--delay-2">El $2.5M no es para todos desde el día uno. <strong>Es lo que ocurre cuando una organización decide automatizar con estrategia, no por proyecto.</strong> El camino para llegar ahí empieza con los primeros 6 meses de retorno.</p>
-  </div>
-</section>
-
-<!-- ════════════════ SOLUTIONS ════════════════ -->
+<!-- ════════════════ SOLUTIONS (Casos de uso) ════════════════ -->
 <section class="rb-section" id="soluciones" style="background:linear-gradient(180deg,transparent,rgba(188,0,23,.02),transparent);">
   <div class="container">
     <div class="rb-section__head rb-section__head--left rb-reveal">
@@ -1801,64 +1773,44 @@ body{top:0 !important;}
   </div>
 </section>
 
-<!-- ════════════════ KEY BENEFITS ════════════════ -->
-<section class="rb-section" id="beneficios">
+<!-- ════════════════ IMPACTO (Métricas de eficiencia) ════════════════ -->
+<section class="rb-impact">
   <div class="container">
-    <div class="rb-section__head rb-reveal">
-      <span class="rb-eyebrow">Beneficios</span>
-      <h2 class="rb-section__title">¿Por qué <span>Rocketbot</span>?</h2>
-      <p class="rb-section__sub">La plataforma de automatización elegida por las enterprises más exigentes de LatAm.</p>
+    <div class="rb-impact__head rb-reveal">
+      <div class="rb-impact__eyebrow">Métricas de eficiencia</div>
+      <h2 class="rb-impact__title">Lo que cambia en toda la organización</h2>
+      <p class="rb-impact__sub">Números reales, medidos en clientes activos — no proyecciones.</p>
     </div>
-    <div class="rb-benefits rb-stagger rb-stagger--scale">
-      <div class="rb-benefit">
-        <div class="rb-benefit__icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        </div>
-        <h3 class="rb-benefit__title">Velocidad Extrema</h3>
-        <p class="rb-benefit__desc">Despliega bots en horas, no en meses. Time-to-value 10× más rápido que RPA tradicional.</p>
-        <div class="rb-benefit__rule"></div>
+    <div class="rb-impact__grid rb-stagger rb-stagger--scale">
+      <div class="rb-impact__card">
+        <div class="rb-impact__val">6 meses</div>
+        <div class="rb-impact__card-title">Payback de la inversión</div>
+        <p class="rb-impact__card-desc">El retorno llega antes del próximo ciclo de planificación — no en años, en meses.</p>
+        <div class="rb-impact__card-cta">→ Conecta directo con la decisión de presupuesto</div>
       </div>
-      <div class="rb-benefit">
-        <div class="rb-benefit__icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.8 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-        </div>
-        <h3 class="rb-benefit__title">Seguridad Enterprise</h3>
-        <p class="rb-benefit__desc">Cumplimiento ISO 27001 / SOC 2. Encriptación E2E y vault gestionado en cada agente.</p>
-        <div class="rb-benefit__rule"></div>
+      <div class="rb-impact__card">
+        <div class="rb-impact__val">80%</div>
+        <div class="rb-impact__card-title">Menos tiempo operando, más tiempo decidiendo</div>
+        <p class="rb-impact__card-desc">El equipo deja de ser el engranaje del proceso y pasa a ser quien lo dirige.</p>
+        <div class="rb-impact__card-cta">→ Mismo equipo, mayor capacidad estratégica</div>
       </div>
-      <div class="rb-benefit">
-        <div class="rb-benefit__icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-        </div>
-        <h3 class="rb-benefit__title">ROI Demostrable</h3>
-        <p class="rb-benefit__desc">Clientes promedio recuperan inversión en 4 meses. Casos con ROI 5× anual.</p>
-        <div class="rb-benefit__rule"></div>
+      <div class="rb-impact__card">
+        <div class="rb-impact__val">90%</div>
+        <div class="rb-impact__card-title">Menos costo por proceso automatizado</div>
+        <p class="rb-impact__card-desc">Lo que antes requería personas, tiempo y coordinación, hoy corre a una fracción del costo.</p>
+        <div class="rb-impact__card-cta">→ Margen que se recupera en cada proceso</div>
       </div>
-      <div class="rb-benefit">
-        <div class="rb-benefit__icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <div class="rb-impact__card rb-impact__card--highlight">
+        <div class="rb-impact__val">$2.5M</div>
+        <div class="rb-impact__card-title">Ahorrados por cliente al año</div>
+        <p class="rb-impact__card-desc">Medido en clientes con estrategia de automatización madura — no es un techo teórico, es lo que ya está pasando.</p>
+        <div class="rb-impact__card-badge">
+          <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Dato real · top 3 clientes con mayor adopción
         </div>
-        <h3 class="rb-benefit__title">Operación 24/7</h3>
-        <p class="rb-benefit__desc">Bots que no duermen. Orquestación HITL para excepciones críticas.</p>
-        <div class="rb-benefit__rule"></div>
-      </div>
-      <div class="rb-benefit">
-        <div class="rb-benefit__icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
-        </div>
-        <h3 class="rb-benefit__title">Multi-Stack</h3>
-        <p class="rb-benefit__desc">SAP, Oracle, Salesforce, navegadores, terminales — un mismo bot habla con todo.</p>
-        <div class="rb-benefit__rule"></div>
-      </div>
-      <div class="rb-benefit">
-        <div class="rb-benefit__icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-        </div>
-        <h3 class="rb-benefit__title">Global, Local</h3>
-        <p class="rb-benefit__desc">Presencia directa en 14 países. Soporte en tu idioma y zona horaria.</p>
-        <div class="rb-benefit__rule"></div>
       </div>
     </div>
+    <p class="rb-impact__quote rb-reveal rb-reveal--blur rb-reveal--delay-2">El $2.5M no es para todos desde el día uno. <strong>Es lo que ocurre cuando una organización decide automatizar con estrategia, no por proyecto.</strong> El camino para llegar ahí empieza con los primeros 6 meses de retorno.</p>
   </div>
 </section>
 
@@ -1976,17 +1928,53 @@ body{top:0 !important;}
   </div>
 </section>
 
-<!-- ════════════════ CTA ASESORES ════════════════ -->
+<!-- ════════════════ CIERRE ════════════════ -->
 <section class="rb-cta-band">
   <div class="container rb-cta-band__inner">
-    <div>
+    <div class="rb-reveal">
       <h2 class="rb-cta-band__title">¿Cuánto está costando<span>no automatizar hoy?</span></h2>
       <p class="rb-cta-band__sub">En 30 minutos identificamos los procesos con mayor potencial de ahorro en tu organización — sin compromiso, sin PowerPoints, solo números reales.</p>
     </div>
-    <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg">
+    <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg rb-reveal rb-reveal--zoom rb-reveal--delay-1">
       Agendar diagnóstico
       <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
     </a>
+  </div>
+
+  <!-- Gartner + G2 ratings -->
+  <div class="container rb-cta-ratings rb-stagger rb-stagger--horizontal">
+    <div class="rb-cta-rating">
+      <div class="rb-cta-rating__logo"><img src="assets/logos/gartner-logo.png" alt="Gartner"></div>
+      <div class="rb-cta-rating__info">
+        <div class="rb-cta-rating__score">
+          4.5
+          <span class="rb-cta-rating__stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 17 5 22 7 14 2 9 9 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 17 5 22 7 14 2 9 9 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 17 5 22 7 14 2 9 9 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 17 5 22 7 14 2 9 9 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 17 5 22 7 14 2 9 9 9"/></svg>
+          </span>
+        </div>
+        <div class="rb-cta-rating__label">Calificación en Gartner Peer Insights</div>
+      </div>
+    </div>
+    <div class="rb-cta-rating">
+      <div class="rb-cta-rating__logo rb-cta-rating__logo--g2">G2</div>
+      <div class="rb-cta-rating__info">
+        <div class="rb-cta-rating__score">
+          4.7
+          <span class="rb-cta-rating__stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 17 5 22 7 14 2 9 9 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 17 5 22 7 14 2 9 9 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 17 5 22 7 14 2 9 9 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 17 5 22 7 14 2 9 9 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 17 5 22 7 14 2 9 9 9"/></svg>
+          </span>
+        </div>
+        <div class="rb-cta-rating__label">Reseñas verificadas en G2</div>
+      </div>
+    </div>
   </div>
 </section>
 
