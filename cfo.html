@@ -230,8 +230,10 @@ body{top:0 !important;}
 /* Diagram */
 .cfo-diag{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px 28px;box-shadow:0 8px 40px rgba(0,0,0,.07);}
 [data-theme="dark"] .cfo-diag{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);}
-.cfo-diag__label{text-align:center;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:24px;}
+.cfo-diag__label{text-align:center;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:18px;}
+.cfo-diag__label--bottom{color:var(--rb-red);margin-top:18px;margin-bottom:14px;}
 .cfo-diag__top{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.cfo-diag__top--three{grid-template-columns:repeat(3,1fr);gap:10px;}
 .cfo-diag__box{border-radius:12px;padding:14px 16px;text-align:center;}
 .cfo-diag__box--red{background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.2);}
 .cfo-diag__box--pink{background:rgba(43,127,255,.06);border:1px solid rgba(43,127,255,.18);}
@@ -517,8 +519,8 @@ a.rb-product{text-decoration:none;color:inherit;}
   <div class="container cfo-hero__grid">
     <div class="cfo-hero__copy">
       <div class="cfo-hero__tag"><span class="dot"></span>Para CFOs</div>
-      <h1 class="cfo-hero__title">Tú decides.<br><strong>Los robots</strong><br>ejecutan.</h1>
-      <p class="cfo-hero__sub">Como CFO, tu valor no está en cuántas horas invierte tu equipo en planillas. Está en la velocidad y precisión con que tomás decisiones. Automatizá el área financiera y enfocá el talento donde genera valor real.</p>
+      <h1 class="cfo-hero__title">Tu rentabilidad<br><strong>no debería depender</strong><br>de procesos manuales.</h1>
+      <p class="cfo-hero__sub">Automatiza conciliaciones, cierres y reportes financieros para reducir costos operativos, minimizar errores y tomar decisiones con información en tiempo real.</p>
       <div class="cfo-hero__ctas">
         <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg">
           Hablar con un asesor
@@ -607,8 +609,8 @@ a.rb-product{text-decoration:none;color:inherit;}
   <div class="container">
     <div class="cfo-pain__head">
       <div class="cfo-pain__eyebrow">El problema</div>
-      <h2 class="cfo-pain__title">Lo que te quita el sueño<br><span>como CFO</span></h2>
-      <p class="cfo-pain__sub">No es falta de talento. Es que ese talento está atrapado en operaciones que deberían estar automatizadas.</p>
+      <h2 class="cfo-pain__title">Lo que le quita el sueño<br><span>a un CFO</span></h2>
+      <p class="cfo-pain__sub">No es falta de talento. Es talento atrapado en procesos que ya deberían estar automatizados.</p>
     </div>
     <div class="cfo-pain__grid">
 
@@ -617,10 +619,10 @@ a.rb-product{text-decoration:none;color:inherit;}
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <div class="cfo-pain__card-title">Fragilidad operacional</div>
-        <p class="cfo-pain__card-text">Cuando los procesos dependen de personas específicas, la organización es tan frágil como su eslabón más débil. Una ausencia, una rotación o un error humano puede paralizar operaciones completas.</p>
+        <p class="cfo-pain__card-text">Cuando procesos críticos dependen de personas específicas, cualquier error, ausencia o rotación puede afectar toda la operación.</p>
         <div class="cfo-pain__card-flag">
           <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          Rocketbot lo resuelve
+          Gana continuidad operacional
         </div>
       </div>
 
@@ -629,10 +631,10 @@ a.rb-product{text-decoration:none;color:inherit;}
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
         <div class="cfo-pain__card-title">Escala sin control</div>
-        <p class="cfo-pain__card-text">Crecer significa contratar. Cada nuevo proceso requiere más personas, más coordinación y más margen de error. Una organización que no puede escalar sin aumentar su planta no está lista para competir.</p>
+        <p class="cfo-pain__card-text">Si crecer implica contratar más personas para sostener la operación, el problema no es el crecimiento. Es la estructura.</p>
         <div class="cfo-pain__card-flag">
           <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          Rocketbot lo resuelve
+          Escala con eficiencia
         </div>
       </div>
 
@@ -641,10 +643,10 @@ a.rb-product{text-decoration:none;color:inherit;}
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <div class="cfo-pain__card-title">Velocidad atrapada en lo manual</div>
-        <p class="cfo-pain__card-text">Las decisiones solo son tan rápidas como los procesos que las alimentan. Mientras la información depende de trabajo manual, la organización siempre llegará tarde — a los números, a las alertas y a las oportunidades.</p>
+        <p class="cfo-pain__card-text">Las decisiones dependen de la velocidad de la información. Si los datos llegan tarde, las decisiones también.</p>
         <div class="cfo-pain__card-flag">
           <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          Rocketbot lo resuelve
+          Decide en tiempo real
         </div>
       </div>
 
@@ -658,23 +660,23 @@ a.rb-product{text-decoration:none;color:inherit;}
   <div class="container cfo-stats__inner">
     <div class="cfo-stats__item">
       <div class="cfo-stats__v">40<span>%</span></div>
-      <div class="cfo-stats__l">del tiempo organizacional se destina a tareas repetitivas sin valor estratégico</div>
+      <div class="cfo-stats__l">del tiempo operativo se consume en tareas manuales que no generan valor estratégico.</div>
     </div>
     <div class="cfo-stats__item">
       <div class="cfo-stats__v">33<span>%</span></div>
-      <div class="cfo-stats__l">de las decisiones se toman con información desactualizada o incompleta</div>
+      <div class="cfo-stats__l">de las decisiones se toman con información incompleta o desactualizada.</div>
     </div>
     <div class="cfo-stats__item">
       <div class="cfo-stats__v">70<span>%</span></div>
-      <div class="cfo-stats__l">de los errores operativos tienen origen en procesos manuales</div>
+      <div class="cfo-stats__l">de los errores operativos tienen origen en procesos manuales.</div>
     </div>
     <div class="cfo-stats__item">
       <div class="cfo-stats__v">2-4</div>
-      <div class="cfo-stats__l">Semanas por ciclo se pierden consolidando información que debería fluir sola</div>
+      <div class="cfo-stats__l">Semanas puede tardar la consolidación de información crítica para la toma de decisiones.</div>
     </div>
     <div class="cfo-stats__item">
       <div class="cfo-stats__v">$0</div>
-      <div class="cfo-stats__l">de valor estratégico genera cada hora dedicada a procesar en lugar de decidir</div>
+      <div class="cfo-stats__l">genera una hora dedicada a procesar información en lugar de analizarla.</div>
     </div>
   </div>
 </section>
@@ -688,16 +690,16 @@ a.rb-product{text-decoration:none;color:inherit;}
       <!-- Copy -->
       <div>
         <div class="cfo-solution__eyebrow">La solución</div>
-        <h2 class="cfo-solution__title">Rocketbot: robots que ejecutan, agentes que deciden</h2>
-        <p class="cfo-solution__sub">No reemplaza tus sistemas. Se instala encima de ellos y los hace trabajar solos — para que tu gente deje de ser el pegamento entre procesos.</p>
+        <h2 class="cfo-solution__title">Rocketbot: robots que ejecutan, agentes que deciden.</h2>
+        <p class="cfo-solution__sub">Rocketbot no reemplaza tus sistemas. Se integra con tu operación actual y automatiza procesos de punta a punta, para que tu equipo deje de sostener manualmente lo que ya debería funcionar solo.</p>
         <div class="cfo-solution__features">
           <div class="cfo-solution__feat">
             <div class="cfo-solution__feat-icon cfo-solution__feat-icon--red">
               <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
             <div>
-              <div class="cfo-solution__feat-title">Robots que ejecutan sin que nadie lo pida</div>
-              <div class="cfo-solution__feat-text">Corren 24/7 integrados con tus sistemas actuales — SAP, Oracle, portales, ERPs — sin cambiar arquitectura.</div>
+              <div class="cfo-solution__feat-title">Robots que ejecutan sin fricción</div>
+              <div class="cfo-solution__feat-text">Operan 24/7 conectados con tus sistemas actuales SAP, Oracle, ERPs, portales y aplicaciones empresariales sin cambiar tu infraestructura.</div>
             </div>
           </div>
           <div class="cfo-solution__feat">
@@ -705,8 +707,8 @@ a.rb-product{text-decoration:none;color:inherit;}
               <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/><path d="M18 2v6h6"/></svg>
             </div>
             <div>
-              <div class="cfo-solution__feat-title">Agentes que interpretan y actúan con criterio</div>
-              <div class="cfo-solution__feat-text">La IA lee el contexto, interpreta documentos y toma decisiones — liberando a tu equipo de tareas que requieren juicio rutinario.</div>
+              <div class="cfo-solution__feat-title">Agentes que interpretan y actúan</div>
+              <div class="cfo-solution__feat-text">La IA analiza contexto, interpreta documentos y toma decisiones operativas para liberar a tu equipo de tareas de alto volumen y bajo valor.</div>
             </div>
           </div>
           <div class="cfo-solution__feat">
@@ -714,8 +716,8 @@ a.rb-product{text-decoration:none;color:inherit;}
               <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
             <div>
-              <div class="cfo-solution__feat-title">Visibilidad total sin trabajo manual</div>
-              <div class="cfo-solution__feat-text">Los números llegan donde se necesitan, en el formato correcto y en tiempo real — sin que nadie los prepare.</div>
+              <div class="cfo-solution__feat-title">Visibilidad total en tiempo real</div>
+              <div class="cfo-solution__feat-text">La información llega donde debe estar, cuando debe estar y en el formato correcto, sin trabajo manual ni consolidación innecesaria.</div>
             </div>
           </div>
         </div>
@@ -723,34 +725,30 @@ a.rb-product{text-decoration:none;color:inherit;}
 
       <!-- Diagram -->
       <div class="cfo-diag">
-        <div class="cfo-diag__label">Tu organización</div>
-        <div class="cfo-diag__top">
+        <div class="cfo-diag__label">Tu organización hoy</div>
+        <div class="cfo-diag__top cfo-diag__top--three">
           <div class="cfo-diag__box cfo-diag__box--red">
-            <div class="cfo-diag__box-title">Procesos<br>manuales hoy</div>
+            <div class="cfo-diag__box-title">Procesos<br>manuales</div>
           </div>
           <div class="cfo-diag__box cfo-diag__box--pink">
             <div class="cfo-diag__box-title">Dependencia<br>de personas</div>
           </div>
-        </div>
-        <div class="cfo-diag__arrows">
-          <div class="cfo-diag__arrow"></div>
-          <div class="cfo-diag__arrow"></div>
-        </div>
-        <div class="cfo-diag__center">
-          <div class="cfo-diag__center-title">Rocketbot</div>
-          <div class="cfo-diag__center-sub">Automatización inteligente</div>
+          <div class="cfo-diag__box cfo-diag__box--red">
+            <div class="cfo-diag__box-title">Información<br>fragmentada</div>
+          </div>
         </div>
         <div class="cfo-diag__arrows-down">
           <div class="cfo-diag__arrow"></div>
           <div class="cfo-diag__arrow"></div>
           <div class="cfo-diag__arrow"></div>
         </div>
+        <div class="cfo-diag__label cfo-diag__label--bottom">Con Rocketbot</div>
         <div class="cfo-diag__bottom">
           <div class="cfo-diag__box cfo-diag__box--green">
-            <div class="cfo-diag__box-title">Velocidad<br>organizacional</div>
+            <div class="cfo-diag__box-title">Automatización<br>inteligente</div>
           </div>
           <div class="cfo-diag__box cfo-diag__box--green">
-            <div class="cfo-diag__box-title">Talento<br>estratégico</div>
+            <div class="cfo-diag__box-title">Velocidad<br>operativa</div>
           </div>
           <div class="cfo-diag__box cfo-diag__box--green">
             <div class="cfo-diag__box-title">Visibilidad<br>en tiempo real</div>
@@ -769,7 +767,7 @@ a.rb-product{text-decoration:none;color:inherit;}
     <div class="cfo-cases__head sec-head">
       <div class="sec-eyebrow">Casos de uso</div>
       <h2 class="sec-title">Lo que tu equipo de finanzas <span>puede automatizar</span></h2>
-      <p class="sec-sub">Procesos concretos que Rocketbot ya opera para empresas líderes en Latinoamérica.</p>
+      <p class="sec-sub">Procesos reales que Rocketbot ya opera para empresas líderes en Latinoamérica.</p>
     </div>
     <div class="cfo-cases__grid">
 
@@ -780,11 +778,11 @@ a.rb-product{text-decoration:none;color:inherit;}
             <div class="cfo-acc-icon">
               <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
             </div>
-            <span class="cfo-acc-label">Conciliación Bancaria Automática</span>
+            <span class="cfo-acc-label">Conciliación bancaria</span>
             <svg class="cfo-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="m6 9 6 6 6-6"/></svg>
           </div>
           <div class="cfo-acc-body">
-            <p>Compara transacciones bancarias contra registros contables en tiempo real, detecta discrepancias automáticamente y genera reportes de excepción. Elimina el proceso manual que consume días y reduce el riesgo de errores críticos.</p>
+            <p>Compara transacciones bancarias con registros contables en tiempo real, detecta discrepancias automáticamente y genera reportes de excepción. Reduce tiempos de cierre y minimiza errores críticos.</p>
           </div>
         </div>
 
@@ -797,7 +795,7 @@ a.rb-product{text-decoration:none;color:inherit;}
             <svg class="cfo-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="m6 9 6 6 6-6"/></svg>
           </div>
           <div class="cfo-acc-body">
-            <p>Valida facturas automáticamente, programa pagos según condiciones contractuales, actualiza registros en SAP u Oracle en tiempo real y optimiza el flujo de caja. Reduce costos operativos y mejora la relación con proveedores.</p>
+            <p>Valida facturas, programa pagos según condiciones contractuales y actualiza registros en SAP, Oracle u otros sistemas en tiempo real. Optimiza el flujo de caja y reduce costos operativos.</p>
           </div>
         </div>
 
@@ -810,7 +808,7 @@ a.rb-product{text-decoration:none;color:inherit;}
             <svg class="cfo-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="m6 9 6 6 6-6"/></svg>
           </div>
           <div class="cfo-acc-body">
-            <p>Consolida datos de múltiples fuentes y sistemas para generar reportes precisos y oportunos. Agiliza auditorías internas y externas, asegura cumplimiento normativo y mejora la transparencia hacia el directorio.</p>
+            <p>Consolida información desde múltiples fuentes para generar reportes precisos y oportunos. Agiliza auditorías, fortalece el cumplimiento normativo y mejora la visibilidad financiera.</p>
           </div>
         </div>
 
@@ -823,7 +821,7 @@ a.rb-product{text-decoration:none;color:inherit;}
             <svg class="cfo-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="m6 9 6 6 6-6"/></svg>
           </div>
           <div class="cfo-acc-body">
-            <p>Consolida datos presupuestarios de distintas unidades de negocio, detecta desviaciones automáticamente y genera proyecciones actualizadas. Mejora la planificación estratégica y la velocidad de respuesta ante cambios del mercado.</p>
+            <p>Consolida datos de distintas unidades de negocio, detecta desviaciones y genera proyecciones actualizadas. Mejora la planificación y acelera la toma de decisiones.</p>
           </div>
         </div>
 
@@ -836,7 +834,7 @@ a.rb-product{text-decoration:none;color:inherit;}
             <svg class="cfo-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="m6 9 6 6 6-6"/></svg>
           </div>
           <div class="cfo-acc-body">
-            <p>Monitorea el efectivo disponible en tiempo real y genera previsiones de tesorería con datos actualizados. Optimiza la gestión de liquidez, reduce el costo financiero y fortalece la toma de decisiones de inversión.</p>
+            <p>Monitorea liquidez en tiempo real y genera previsiones financieras con datos actualizados. Optimiza la gestión de caja y mejora las decisiones de inversión.</p>
           </div>
         </div>
 
@@ -853,7 +851,7 @@ a.rb-product{text-decoration:none;color:inherit;}
             <polyline points="21,43 35,29 49,35 63,19" stroke="rgba(255,255,255,.2)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <span class="cfo-cases__img-label">Automatización financiera en acción</span>
-          <p style="font-size:13px;color:rgba(255,255,255,.3);text-align:center;line-height:1.5;max-width:260px;">Los robots ejecutan, tú supervisas. Control total desde el Orquestador.</p>
+          <p style="font-size:13px;color:rgba(255,255,255,.3);text-align:center;line-height:1.5;max-width:260px;">Los robots ejecutan. Tú supervisas. Control total desde el Orquestador.</p>
         </div>
       </div>
 
@@ -867,44 +865,44 @@ a.rb-product{text-decoration:none;color:inherit;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow">Plataforma</span>
-      <h2 class="rb-section__title">Una plataforma.<br><span>Seis poderes.</span></h2>
+      <h2 class="rb-section__title">Una suite.<br><span>Control total sobre tu operación.</span></h2>
       <div class="rb-section__rule"></div>
     </div>
     <div class="rb-products">
       <a class="rb-product" href="saturn-studio.html">
         <div class="rb-product__iso"><img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio"></div>
         <div class="rb-product__title">SATURN STUDIO</div>
-        <div class="rb-product__desc">Agentes digitales que piensan, razonan, interpretan y ejecutan. Orquestación inteligente al siguiente nivel.</div>
+        <div class="rb-product__desc">Agentes inteligentes que analizan, deciden y ejecutan procesos con supervisión humana y trazabilidad total.</div>
         <span class="rb-product__cta">Ver más</span>
       </a>
       <a class="rb-product" href="rpa-studio.html">
         <div class="rb-product__iso"><img src="assets/logos/products/rpa-studio.png" alt="RPA Studio"></div>
         <div class="rb-product__title">RPA STUDIO</div>
-        <div class="rb-product__desc">Crea y construye robots de manera robusta y confiable, sin limitaciones.</div>
+        <div class="rb-product__desc">Automatiza procesos con robots robustos y escalables que operan sobre tus sistemas actuales sin cambiar infraestructura.</div>
         <span class="rb-product__cta">Ver más</span>
       </a>
       <a class="rb-product" href="ai-studio.html">
         <div class="rb-product__iso"><img src="assets/logos/products/ai-studio.png" alt="AI Studio"></div>
         <div class="rb-product__title">AI STUDIO</div>
-        <div class="rb-product__desc">Dale inteligencia a tus procesos empresariales. Estructura datos desde documentos, correos y audios.</div>
+        <div class="rb-product__desc">Extrae, interpreta y estructura información desde documentos, correos y audios con inteligencia artificial.</div>
         <span class="rb-product__cta">Ver más</span>
       </a>
       <a class="rb-product" href="orquestador.html">
         <div class="rb-product__iso"><img src="assets/logos/products/orchestrator.png" alt="Orquestador"></div>
         <div class="rb-product__title">ORQUESTADOR</div>
-        <div class="rb-product__desc">Administra y controla tus robots en cualquier momento con monitoreo en tiempo real.</div>
+        <div class="rb-product__desc">Administra, monitorea y controla robots y procesos en tiempo real desde una consola centralizada.</div>
         <span class="rb-product__cta">Ver más</span>
       </a>
       <a class="rb-product" href="xperience.html">
         <div class="rb-product__iso"><img src="assets/logos/products/xperience.png" alt="Xperience"></div>
         <div class="rb-product__title">XPERIENCE</div>
-        <div class="rb-product__desc">Crea increíbles formularios con lógica de manera simple. Plataforma no-code para formularios inteligentes.</div>
+        <div class="rb-product__desc">Captura información mediante formularios inteligentes que activan procesos automatizados desde el primer paso.</div>
         <span class="rb-product__cta">Ver más</span>
       </a>
       <a class="rb-product" href="#">
         <div class="rb-product__iso"><img src="assets/logos/products/nexus.png" alt="Nexus"></div>
         <div class="rb-product__title">NEXUS</div>
-        <div class="rb-product__desc">Consolida y visualiza en tiempo real los datos de todos tus flujos automatizados en dashboards ejecutivos.</div>
+        <div class="rb-product__desc">Consolida y visualiza en tiempo real los datos de toda tu operación en dashboards ejecutivos.</div>
         <span class="rb-product__cta">Ver más</span>
       </a>
     </div>
@@ -917,7 +915,7 @@ a.rb-product{text-decoration:none;color:inherit;}
     <div class="rb-arch__head">
       <div class="rb-arch__eyebrow">La plataforma</div>
       <h2 class="rb-arch__title">Una plataforma.<br><span>Tres capas de valor.</span></h2>
-      <p class="rb-arch__intro">Cada producto cumple un rol específico en el ciclo de automatización. Juntos, cubren desde que entra el trabajo hasta que sale el resultado — sin intervención humana.</p>
+      <p class="rb-arch__intro">Cada producto cumple un rol específico en el ciclo de automatización. Juntos, permiten que la información entre, los procesos avancen y los resultados lleguen sin fricción.</p>
     </div>
 
     <!-- CAPA 1: ENTRADA -->
@@ -934,10 +932,10 @@ a.rb-product{text-decoration:none;color:inherit;}
             <div class="rb-arch__card-role">Formularios inteligentes</div>
           </div>
           <div>
-            <p class="rb-arch__card-desc">Formularios que validan datos en tiempo real y disparan automáticamente los flujos — ningún proceso arranca con información incompleta.</p>
+            <p class="rb-arch__card-desc">Captura y valida información en tiempo real para que cada proceso comience con datos completos y correctos.</p>
             <div class="rb-arch__card-cfo">
               <span class="rb-arch__card-cfo-label">Para el CFO</span>
-              Cualquier área inicia un proceso automatizado sin fricción — sin errores de entrada.
+              Cualquier área puede iniciar procesos sin fricción y con menos errores desde el primer paso.
             </div>
           </div>
         </div>
@@ -955,28 +953,28 @@ a.rb-product{text-decoration:none;color:inherit;}
         <div class="rb-arch__card rb-arch__card--featured">
           <div class="rb-arch__card-product">Saturn Studio</div>
           <div class="rb-arch__card-role">El cerebro de la plataforma</div>
-          <p class="rb-arch__card-desc">Diseña y orquesta todos los productos, APIs externas y modelos de IA. Un proceso completo corre de punta a punta sin intervención.</p>
+          <p class="rb-arch__card-desc">Orquesta procesos, sistemas, automatización e inteligencia artificial para ejecutar operaciones de punta a punta.</p>
           <div class="rb-arch__card-cfo">
             <span class="rb-arch__card-cfo-label">Para el CFO</span>
-            Un proceso puede leer un correo con IA, ejecutar en SAP y publicar en dashboard — todo sin nadie en el medio.
+            Un proceso puede interpretar un correo, ejecutar en SAP y actualizar un dashboard automáticamente.
           </div>
         </div>
         <div class="rb-arch__card">
           <div class="rb-arch__card-product">RPA Studio</div>
           <div class="rb-arch__card-role">Los brazos de la operación</div>
-          <p class="rb-arch__card-desc">Robots que replican cualquier acción humana en pantalla — en cualquier sistema, sin cambiar arquitectura.</p>
+          <p class="rb-arch__card-desc">Robots que ejecutan tareas en cualquier sistema sin modificar la infraestructura existente.</p>
           <div class="rb-arch__card-cfo">
             <span class="rb-arch__card-cfo-label">Para el CFO</span>
-            De SAP a Oracle sin un proyecto de integración.
+            Automatiza procesos entre SAP, Oracle y otros sistemas sin proyectos complejos de integración.
           </div>
         </div>
         <div class="rb-arch__card">
           <div class="rb-arch__card-product">AI Studio</div>
           <div class="rb-arch__card-role">Los ojos inteligentes</div>
-          <p class="rb-arch__card-desc">Extrae y estructura datos de documentos no estructurados — facturas, contratos, correos — con OCR e IA.</p>
+          <p class="rb-arch__card-desc">Extrae y estructura información desde facturas, contratos, correos y documentos no estructurados con IA.</p>
           <div class="rb-arch__card-cfo">
             <span class="rb-arch__card-cfo-label">Para el CFO</span>
-            Cualquier documento entra limpio y fluye sin revisión manual.
+            La información entra limpia, estructurada y lista para operar sin revisión manual.
           </div>
         </div>
       </div>
@@ -987,25 +985,25 @@ a.rb-product{text-decoration:none;color:inherit;}
       <div class="rb-arch__layer-header">
         <div class="rb-arch__layer-num">3</div>
         <span class="rb-arch__layer-label rb-arch__layer-label--control">CAPA DE CONTROL</span>
-        <span class="rb-arch__layer-title">Visibilidad total sin depender de nadie para conseguir el dato</span>
+        <span class="rb-arch__layer-title">Visibilidad total para decidir</span>
       </div>
       <div class="rb-arch__cards rb-arch__cards--two">
         <div class="rb-arch__card">
           <div class="rb-arch__card-product">Orquestador</div>
           <div class="rb-arch__card-role">Panel central de operaciones</div>
-          <p class="rb-arch__card-desc">Panel central que administra y monitorea todos los robots en tiempo real. Audit trail completo para compliance.</p>
+          <p class="rb-arch__card-desc">Administra y monitorea procesos, robots y automatizaciones en tiempo real con trazabilidad completa.</p>
           <div class="rb-arch__card-cfo">
             <span class="rb-arch__card-cfo-label">Para el CFO</span>
-            Audit trail completo para compliance y auditorías — sin depender de TI.
+            Control total para compliance, auditorías y operación sin depender de TI.
           </div>
         </div>
         <div class="rb-arch__card">
           <div class="rb-arch__card-product">Nexus</div>
           <div class="rb-arch__card-role">Dashboard ejecutivo</div>
-          <p class="rb-arch__card-desc">Consolida en tiempo real los datos de todos los flujos automatizados — en el formato correcto, sin trabajo manual.</p>
+          <p class="rb-arch__card-desc">Consolida en tiempo real los datos de todos los procesos automatizados en dashboards ejecutivos.</p>
           <div class="rb-arch__card-cfo">
             <span class="rb-arch__card-cfo-label">Para el CFO</span>
-            Los números llegan al directorio actualizados y en el formato correcto — sin consolidar a mano.
+            Los números llegan actualizados, consolidados y listos para tomar decisiones.
           </div>
         </div>
       </div>
@@ -1022,7 +1020,7 @@ a.rb-product{text-decoration:none;color:inherit;}
       <div class="cfo-security__copy">
         <div class="cfo-security__eyebrow">Seguridad y Compliance</div>
         <h2 class="cfo-security__title">La seguridad que exige <span>el área financiera</span></h2>
-        <p class="cfo-security__text">Los datos financieros son los más sensibles de la organización. Rocketbot fue diseñado desde el día uno con los más altos estándares de seguridad enterprise, para que puedas automatizar sin comprometer el control.</p>
+        <p class="cfo-security__text">Los datos financieros son algunos de los activos más sensibles de la organización. Rocketbot fue diseñado con estándares enterprise de seguridad, compliance y control para automatizar procesos críticos sin comprometer la operación.</p>
         <div class="cfo-security__badges">
           <div class="cfo-security__badge">
             <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -1049,7 +1047,7 @@ a.rb-product{text-decoration:none;color:inherit;}
           </div>
           <div>
             <div class="cfo-security__pillar-title">Audit Trail completo</div>
-            <p class="cfo-security__pillar-text">Cada acción ejecutada por un robot queda registrada con timestamp, usuario y resultado. Trazabilidad total para auditorías internas, externas y regulatorias.</p>
+            <p class="cfo-security__pillar-text">Cada acción ejecutada por robots, automatizaciones o agentes queda registrada con timestamp, usuario y resultado. Trazabilidad total para auditorías internas, externas y regulatorias.</p>
           </div>
         </div>
         <div class="cfo-security__pillar">
@@ -1058,7 +1056,7 @@ a.rb-product{text-decoration:none;color:inherit;}
           </div>
           <div>
             <div class="cfo-security__pillar-title">Separación de roles y accesos</div>
-            <p class="cfo-security__pillar-text">Control granular de permisos por usuario, robot y proceso. Ningún agente digital accede a más de lo que necesita para su tarea específica.</p>
+            <p class="cfo-security__pillar-text">Control granular de permisos por usuario, robot y proceso. Cada acceso se define según roles y responsabilidades dentro de la operación.</p>
           </div>
         </div>
         <div class="cfo-security__pillar">
@@ -1067,7 +1065,7 @@ a.rb-product{text-decoration:none;color:inherit;}
           </div>
           <div>
             <div class="cfo-security__pillar-title">Vault de credenciales cifrado</div>
-            <p class="cfo-security__pillar-text">Las credenciales de acceso a sistemas financieros se almacenan cifradas en un vault seguro. Los robots nunca exponen contraseñas en logs ni en código.</p>
+            <p class="cfo-security__pillar-text">Las credenciales de acceso a sistemas financieros se almacenan de forma cifrada en un vault seguro. La información sensible permanece protegida durante toda la operación.</p>
           </div>
         </div>
       </div>
@@ -1106,8 +1104,8 @@ a.rb-product{text-decoration:none;color:inherit;}
   <div class="container">
     <div class="cfo-cta__inner">
       <div class="cfo-cta__copy">
-        <h2 class="cfo-cta__title">¿Listo para dejar de operar y empezar a liderar?</h2>
-        <p class="cfo-cta__sub">En 30 minutos te mostramos exactamente qué procesos de tu área pueden automatizarse hoy y cuánto tiempo recupera tu equipo.</p>
+        <h2 class="cfo-cta__title">¿Listo para tomar decisiones con más velocidad y control?</h2>
+        <p class="cfo-cta__sub">En 30 minutos identificamos qué procesos financieros puedes automatizar para reducir costos operativos y mejorar la visibilidad de tu operación.</p>
       </div>
       <div class="cfo-cta__actions">
         <a href="contacto.html" class="rb-btn rb-btn--lg cfo-cta__white">
