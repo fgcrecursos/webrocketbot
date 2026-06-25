@@ -503,7 +503,7 @@ p { margin: 0; }
 /* ═══ INEFICIENCIA (Sección 3) ════════════════════════════════════════════════ */
 .rb-inef{padding:70px 0;background:linear-gradient(180deg,transparent,rgba(188,0,23,.02),transparent);}
 .rb-inef__head{text-align:center;margin-bottom:48px;}
-.rb-inef__eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);margin-bottom:14px;}
+.rb-inef__eyebrow{display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.2);padding:8px 16px;border-radius:var(--r-pill);margin-bottom:14px;}
 .rb-inef__title{font-size:clamp(22px,2.8vw,36px);font-weight:800;letter-spacing:-.02em;color:var(--foreground);}
 .rb-inef__grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
 [data-theme="dark"] .rb-inef__grid{border-color:rgba(255,255,255,.08);}
@@ -518,6 +518,7 @@ p { margin: 0; }
 .rb-inef__remate::before{content:'\201C';position:absolute;left:20px;top:20px;font-size:40px;font-weight:900;color:var(--rb-red);font-family:Georgia,serif;line-height:1;}
 .rb-inef__remate strong{display:block;font-size:16px;font-weight:700;color:var(--foreground);line-height:1.5;margin-bottom:10px;}
 .rb-inef__remate em{display:block;font-style:italic;font-size:14px;color:#666;line-height:1.6;}
+.rb-inef__remate em::after{content:'\201D';color:var(--rb-red);font-weight:900;font-style:normal;font-family:Georgia,serif;margin-left:2px;}
 [data-theme="dark"] .rb-inef__remate em{color:rgba(255,255,255,.45);}
 @media(max-width:900px){.rb-inef__grid{grid-template-columns:repeat(3,1fr);}.rb-inef__item:nth-child(3){border-right:none;}}
 @media(max-width:580px){.rb-inef__grid{grid-template-columns:1fr 1fr;}.rb-inef__item:nth-child(2n){border-right:none;}}
@@ -525,7 +526,7 @@ p { margin: 0; }
 /* ═══ SOLUCIÓN (Sección 4) ════════════════════════════════════════════════════ */
 .rb-solution{padding:80px 0;}
 .rb-solution__head{text-align:center;max-width:760px;margin:0 auto 56px;}
-.rb-solution__eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);margin-bottom:16px;display:block;}
+.rb-solution__eyebrow{display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.2);padding:8px 16px;border-radius:var(--r-pill);margin-bottom:16px;}
 .rb-solution__title{font-size:clamp(26px,3vw,42px);font-weight:800;letter-spacing:-.02em;color:var(--foreground);margin-bottom:20px;line-height:1.15;}
 .rb-solution__title span{color:var(--rb-red);}
 .rb-solution__lead{font-size:16px;color:#666;line-height:1.75;}
@@ -554,7 +555,7 @@ p { margin: 0; }
 /* ═══ IMPACTO (Sección 5) ════════════════════════════════════════════════════ */
 .rb-impact{padding:80px 0;background:linear-gradient(180deg,transparent,rgba(188,0,23,.02),transparent);}
 .rb-impact__head{text-align:center;margin-bottom:48px;}
-.rb-impact__eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);margin-bottom:14px;}
+.rb-impact__eyebrow{display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rb-red);background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.2);padding:8px 16px;border-radius:var(--r-pill);margin-bottom:14px;}
 .rb-impact__title{font-size:clamp(22px,2.8vw,36px);font-weight:800;letter-spacing:-.02em;color:var(--foreground);margin-bottom:8px;}
 .rb-impact__sub{font-size:15px;color:#666;}
 [data-theme="dark"] .rb-impact__sub{color:rgba(255,255,255,.45);}
@@ -1213,7 +1214,7 @@ body{top:0 !important;}
     <div>
       <h1 class="rb-hero__title"><strong>Automatiza procesos.</strong><br>Recupera tiempo<br>para lo importante.</h1>
       <p class="rb-hero__sub">
-        Cada hora dedicada a consolidar información es una hora menos para analizarla. Rocketbot ayuda a que el trabajo avance de forma más eficiente, sin depender de correos, planillas ni seguimiento manual, para que tu equipo pueda enfocarse en decidir y generar valor.
+        Deja atrás correos, Excel y seguimiento manual. Tu equipo tendrá más tiempo para analizar, decidir y generar valor.
       </p>
       <div class="rb-hero__ctas">
         <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg rb-btn--square">
@@ -1329,6 +1330,7 @@ body{top:0 !important;}
     <div class="rb-section__head rb-reveal">
       <span class="rb-eyebrow">El Problema</span>
       <h2 class="rb-section__title">Tres situaciones que frenan el crecimiento <span>de muchas empresas</span></h2>
+      <p class="rb-section__sub">Tres problemas que hoy están frenando tu operación.</p>
     </div>
     <div class="rb-problem__cards rb-stagger rb-stagger--scale">
 
@@ -1396,8 +1398,8 @@ body{top:0 !important;}
         <div class="rb-inef__desc">de los errores operativos están relacionados con procesos manuales.</div>
       </div>
       <div class="rb-inef__item">
-        <div class="rb-inef__val">2 a 4 sem</div>
-        <div class="rb-inef__desc">pueden perderse consolidando información entre sistemas, archivos y correos.</div>
+        <div class="rb-inef__val">2 a 4</div>
+        <div class="rb-inef__desc">semanas se pueden perder consolidando información entre sistemas, archivos y correos.</div>
       </div>
       <div class="rb-inef__item">
         <div class="rb-inef__val">$0</div>
@@ -1462,7 +1464,7 @@ body{top:0 !important;}
     <div class="rb-arch__head">
       <span class="rb-eyebrow">Plataforma</span>
       <h2 class="rb-arch__title">Una plataforma.<br><span>Tres capas de valor.</span></h2>
-      <p class="rb-arch__intro">Cada producto cumple un rol específico para que la información entre, los procesos avancen y los resultados lleguen sin fricción.</p>
+      <p class="rb-arch__intro">Toda tu operación conectada en un solo lugar.</p>
     </div>
 
     <!-- CAPA 1: ENTRADA -->
@@ -1820,7 +1822,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head rb-reveal">
       <span class="rb-eyebrow">Casos de éxito</span>
-      <h2 class="rb-section__title">Empresas reales. <span>Resultados de automatización que se miden.</span></h2>
+      <h2 class="rb-section__title">Automatización con <span>resultados reales.</span></h2>
       <p class="rb-section__sub">No son proyecciones. Son resultados obtenidos por empresas que hoy operan con procesos automatizados en producción.</p>
     </div>
 
@@ -1868,12 +1870,12 @@ body{top:0 !important;}
         <p class="rb-testi__desc">Miles de horas se destinaban a procesos administrativos que consumían tiempo valioso y dificultaban el crecimiento. La automatización permitió que los equipos se enfocaran en actividades de mayor valor.</p>
         <div class="rb-testi__metrics">
           <div class="rb-testi__metric">
-            <div class="rb-testi__val">+70</div>
-            <div class="rb-testi__mlabel">robots en producción en dos años</div>
+            <div class="rb-testi__val">+USD 1.5M</div>
+            <div class="rb-testi__mlabel">ahorrados</div>
           </div>
           <div class="rb-testi__metric">
-            <div class="rb-testi__val">140.000</div>
-            <div class="rb-testi__mlabel">horas de trabajo automatizadas al año</div>
+            <div class="rb-testi__val">+100</div>
+            <div class="rb-testi__mlabel">robots en producción en dos años</div>
           </div>
         </div>
         <div class="rb-testi__quote">
@@ -1894,16 +1896,16 @@ body{top:0 !important;}
         <p class="rb-testi__desc">Procesos operativos con alta carga manual impactaban tiempos de respuesta y experiencia de cliente. La automatización ayudó a mejorar la eficiencia operativa y la capacidad de respuesta.</p>
         <div class="rb-testi__metrics">
           <div class="rb-testi__metric">
-            <div class="rb-testi__val">+20</div>
+            <div class="rb-testi__val">+USD 500K</div>
+            <div class="rb-testi__mlabel">de ahorro anual generado</div>
+          </div>
+          <div class="rb-testi__metric">
+            <div class="rb-testi__val">+60</div>
             <div class="rb-testi__mlabel">automatizaciones implementadas y operando en producción</div>
           </div>
           <div class="rb-testi__metric">
             <div class="rb-testi__val">100%</div>
             <div class="rb-testi__mlabel">de uso de licencias</div>
-          </div>
-          <div class="rb-testi__metric">
-            <div class="rb-testi__val">USD 109K</div>
-            <div class="rb-testi__mlabel">de ahorro anual generado</div>
           </div>
         </div>
         <div class="rb-testi__quote">
