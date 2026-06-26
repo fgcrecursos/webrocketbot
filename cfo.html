@@ -83,8 +83,10 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-.
 .rb-nav__dropdown a{display:block;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;color:#333;transition:background .15s,color .15s;}
 [data-theme="dark"] .rb-nav__dropdown a{color:rgba(255,255,255,.75);}
 .rb-nav__dropdown a:hover{background:rgba(188,0,23,.07);color:var(--rb-red);}
-.rb-nav__suite-hdr{display:inline-flex !important;align-items:center;gap:6px;padding:9px 18px !important;border-radius:9999px;background:linear-gradient(110deg,#FF2942,#BC0017) !important;color:#fff !important;font-weight:800 !important;font-size:13px !important;box-shadow:0 6px 18px rgba(188,0,23,.45);transition:transform .2s,box-shadow .2s,filter .2s;}
+.rb-nav__suite-li{display:flex;align-items:center;flex:0 0 auto;}
+.rb-nav__suite-hdr{display:inline-flex !important;align-items:center;gap:6px;padding:9px 18px !important;border-radius:9999px;white-space:nowrap;line-height:1;flex:0 0 auto;background:linear-gradient(110deg,#FF2942,#BC0017) !important;color:#fff !important;font-weight:800 !important;font-size:13px !important;box-shadow:0 6px 18px rgba(188,0,23,.45);transition:transform .2s,box-shadow .2s,filter .2s;}
 .rb-nav__suite-hdr:hover{color:#fff !important;transform:translateY(-1px);box-shadow:0 10px 26px rgba(188,0,23,.6);filter:brightness(1.06);}
+@media(max-width:1260px){.rb-nav__suite-li{display:none !important;}}
 .rb-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:12px 24px;border-radius:var(--r-pill);border:1px solid transparent;transition:transform .2s,box-shadow .25s,background .25s,color .2s;}
 .rb-btn--primary{background:var(--rb-red);color:#fff;box-shadow:0 4px 16px rgba(188,0,23,.25);}
 .rb-btn--primary:hover{background:var(--rb-red-deep);transform:translateY(-1px);box-shadow:0 10px 30px rgba(188,0,23,.45);}
@@ -459,7 +461,7 @@ a.rb-product{text-decoration:none;color:inherit;}
       <img id="nav-logo" src="assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
     </a>
     <ul class="rb-nav__links">
-      <li><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
+      <li class="rb-nav__suite-li"><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Productos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
