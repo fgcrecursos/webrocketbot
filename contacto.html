@@ -478,19 +478,38 @@ function googleTranslateElementInit(){
   if(params.get('suite') !== '1') return;
   var msg = params.get('msg');
   if(!msg) return;
-  var wrap = document.querySelector('.rb-clientify-wrap') || document.body;
-  var tries = 0;
+
+  // El formulario de Clientify se renderiza dentro de un iframe (about:blank,
+  // mismo origen). Buscamos el <textarea> de "Mensaje" dentro de ese iframe y
+  // escribimos el valor usando el setter nativo + eventos, para que Angular lo tome.
+  var nativeSet = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value').set;
+  function findTextarea(){
+    var ifr = document.querySelector('iframe[id^="simpleembed-iframe"], iframe.form_embed_clientify_embed_form');
+    if(!ifr) return null;
+    var doc;
+    try { doc = ifr.contentDocument || (ifr.contentWindow && ifr.contentWindow.document); }
+    catch(e){ return null; }
+    if(!doc) return null;
+    return doc.querySelector('textarea');
+  }
+  function fill(ta){
+    nativeSet.call(ta, msg);
+    ta.dispatchEvent(new Event('input', {bubbles:true}));
+    ta.dispatchEvent(new Event('change', {bubbles:true}));
+  }
+  var tries = 0, done = false;
   var iv = setInterval(function(){
     tries++;
-    var ta = wrap.querySelector('textarea');
+    var ta = findTextarea();
     if(ta){
-      ta.value = msg;
-      ta.dispatchEvent(new Event('input', {bubbles:true}));
-      ta.dispatchEvent(new Event('change', {bubbles:true}));
-      try{ ta.scrollIntoView({behavior:'smooth', block:'center'}); }catch(e){}
-      clearInterval(iv);
+      // Rellena la primera vez, y vuelve a aplicar si Angular lo limpió al iniciar.
+      if(!done || (ta.value || '').indexOf(msg.slice(0, 20)) === -1){
+        fill(ta);
+        if(!done){ try{ ta.scrollIntoView({block:'center'}); }catch(e){} }
+        done = true;
+      }
     }
-    if(tries > 50) clearInterval(iv);
+    if(tries > 80) clearInterval(iv); // ~24 s de margen para que cargue el form
   }, 300);
 })();
 </script>
