@@ -72,9 +72,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
 .rb-nav__dropdown a{display:block;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;color:#333;transition:background .15s,color .15s;}
 [data-theme="dark"] .rb-nav__dropdown a{color:rgba(255,255,255,.75);}
 .rb-nav__dropdown a:hover{background:rgba(188,0,23,.07);color:var(--rb-red);}
-.rb-nav__suite{display:flex !important;flex-direction:column;gap:1px;margin-top:6px;padding:12px 16px !important;border-radius:12px;background:linear-gradient(110deg,#FF2942,#BC0017) !important;color:#fff !important;font-weight:800 !important;box-shadow:0 8px 22px rgba(188,0,23,.50),0 4px 14px rgba(38,50,56,.35);transform:translateY(-1px);transition:box-shadow .2s,transform .2s,filter .2s;}
-.rb-nav__suite small{font-weight:500;font-size:11px;opacity:.85;}
-.rb-nav__suite:hover{background:linear-gradient(110deg,#FF2942,#BC0017) !important;color:#fff !important;transform:translateY(-2px);box-shadow:0 12px 30px rgba(188,0,23,.65),0 6px 18px rgba(38,50,56,.5);filter:brightness(1.05);}
+.rb-nav__suite-hdr{display:inline-flex !important;align-items:center;gap:6px;padding:9px 18px !important;border-radius:9999px;background:linear-gradient(110deg,#FF2942,#BC0017) !important;color:#fff !important;font-weight:800 !important;font-size:13px !important;box-shadow:0 6px 18px rgba(188,0,23,.45);transition:transform .2s,box-shadow .2s,filter .2s;}
+.rb-nav__suite-hdr:hover{color:#fff !important;transform:translateY(-1px);box-shadow:0 10px 26px rgba(188,0,23,.6);filter:brightness(1.06);}
 .rb-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:12px 24px;border-radius:var(--r-pill);border:1px solid transparent;transition:transform .2s,box-shadow .25s,background .25s,color .2s;}
 .rb-btn--primary{background:var(--rb-red);color:#fff;box-shadow:0 4px 16px rgba(188,0,23,.25);}
 .rb-btn--primary:hover{background:var(--rb-red-deep);transform:translateY(-1px);box-shadow:0 10px 30px rgba(188,0,23,.45);}
@@ -182,10 +181,11 @@ body{top:0 !important;}
       <img id="nav-logo" src="assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
     </a>
     <ul class="rb-nav__links">
+      <li><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Productos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestador</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a><a href="suite-rocketbot.html" class="rb-nav__suite">✦ Suite Rocketbot<small>Los 6 productos, orquestados</small></a>
+          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestador</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
         </div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
@@ -231,7 +231,6 @@ body{top:0 !important;}
       <a href="orquestador.html">Orquestador</a>
       <a href="xperience.html">Xperience</a>
       <a href="nexus.html">Nexus</a>
-      <a href="suite-rocketbot.html">✦ Suite Rocketbot</a>
     </div>
     <div class="rb-mobile-menu__section">
       <div class="rb-mobile-menu__label">Recursos</div>
@@ -246,6 +245,7 @@ body{top:0 !important;}
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Media kit</a>
     </div>
     <div class="rb-mobile-menu__actions">
+      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suite Rocketbot</a>
       <a href="contacto.html" class="rb-mobile-menu__btn">Contáctanos</a>
       <a href="https://rocketbot.com/descargar" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" target="_blank" rel="noopener">Descarga</a>
     </div>
