@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
 <head>
 <meta charset="utf-8">
-<!-- Google tag (gtag.js) – GA4 | reemplaza G-2EHJ8S289M con tu Measurement ID -->
+<!-- Google tag (gtag.js) – GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EHJ8S289M"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -21,7 +21,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rocketbot">
 <meta property="og:title" content="RPA Studio | Automatización Robótica de Procesos Empresariales · Rocketbot">
-<meta property="og:description" content="Automatiza tareas repetitivas con RPA Studio. Robots de software que aumentan la productividad y reducen errores. Escala tus operaciones en Latinoamérica.">
+<meta property="og:description" content="Robots de software que ejecutan tus procesos entre sistemas, sin tocar tu infraestructura y sin programar. Más de 500 procesos implementados.">
 <meta property="og:url" content="https://rocketbot.com/rpa-studio">
 <meta property="og:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,529 +31,336 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rocketbot">
 <meta name="twitter:title" content="RPA Studio | Automatización Robótica de Procesos Empresariales · Rocketbot">
-<meta name="twitter:description" content="Automatiza tareas repetitivas con RPA Studio. Robots de software que aumentan la productividad y reducen errores. Escala tus operaciones en Latinoamérica.">
+<meta name="twitter:description" content="Robots de software que ejecutan tus procesos entre sistemas, sin tocar tu infraestructura y sin programar.">
 <meta name="twitter:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════
-   DESIGN TOKENS
-═══════════════════════════════════════════ */
-:root {
-  --rb-red:        #BC0017;
-  --rb-red-deep:   #8E0011;
-  --rb-red-soft:   rgba(188,0,23,0.10);
-  --rb-red-glow:   rgba(188,0,23,0.30);
-  --rb-blue:       #2B7FFF;
-  --rb-neon-cyan:  #00D4FF;
-  --rb-black:      #000000;
-  --rb-space:      #02061B;
-  --rb-dark-1:     #0A0A0F;
-  --rb-dark-2:     #121218;
-  --rb-dark-3:     #1B1F23;
-  --rb-secondary:  #263238;
-  --rb-gray-900:   #0B0E11;
-  --rb-gray-700:   #404040;
-  --rb-gray-500:   #909090;
-  --rb-off-white:  #FAFAFA;
-  --rb-white:      #FFFFFF;
-  --background:    var(--rb-off-white);
-  --foreground:    var(--rb-gray-900);
-  --card:          rgba(255,255,255,0.70);
-  --border:        rgba(0,0,0,0.08);
-  --muted:         var(--rb-gray-500);
-  --glass-bg:      rgba(255,255,255,0.60);
-  --glass-border:  rgba(255,255,255,0.30);
-  --glass-blur:    20px;
-  --r-md:   16px; --r-lg: 24px; --r-xl: 32px;
-  --r-2xl:  40px; --r-pill: 9999px;
-  --sh-card: 0 8px 32px rgba(0,0,0,.10), inset 0 1px 0 rgba(255,255,255,.10);
-  --sh-red:  0 0 20px rgba(188,0,23,.30), 0 0 40px rgba(188,0,23,.20);
-  --font-sans: 'Montserrat', system-ui, -apple-system, Segoe UI, sans-serif;
-}
-[data-theme="dark"] {
-  --background:   var(--rb-dark-1);
-  --foreground:   var(--rb-white);
-  --card:         rgba(20,20,30,0.80);
-  --border:       rgba(255,255,255,0.08);
-  --glass-bg:     rgba(20,20,35,0.60);
-  --glass-border: rgba(255,255,255,0.10);
-}
-*, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-body {
-  font-family: var(--font-sans);
-  background: var(--background);
-  color: var(--foreground);
-  font-weight: 400;
-  line-height: 1.4;
-  -webkit-font-smoothing: antialiased;
-  transition: background .35s, color .35s;
-}
-img { max-width: 100%; display: block; }
-a   { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; }
-h1,h2,h3,h4,h5,h6 { font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin: 0; }
-p { margin: 0; }
-ul { margin: 0; padding: 0; list-style: none; }
-.container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+:root{--rb-red:#BC0017;--rb-red-deep:#8E0011;--rb-red-soft:rgba(188,0,23,0.10);--rb-red-glow:rgba(188,0,23,0.30);--rb-blue:#2B7FFF;--rb-neon-cyan:#00D4FF;--rb-black:#000000;--rb-space:#02061B;--rb-dark-1:#0A0A0F;--rb-dark-2:#121218;--rb-dark-3:#1B1F23;--rb-secondary:#263238;--rb-gray-900:#0B0E11;--rb-gray-700:#404040;--rb-gray-500:#909090;--rb-off-white:#FAFAFA;--rb-white:#FFFFFF;--rb-green:#1D9E75;--rb-amber:#BA7517;--background:var(--rb-off-white);--foreground:var(--rb-gray-900);--card:rgba(255,255,255,0.70);--border:rgba(0,0,0,0.08);--muted:var(--rb-gray-500);--glass-bg:rgba(255,255,255,0.60);--glass-border:rgba(255,255,255,0.30);--glass-blur:20px;--r-md:16px;--r-lg:24px;--r-xl:32px;--r-2xl:40px;--r-pill:9999px;--font-sans:'Montserrat',system-ui,-apple-system,Segoe UI,sans-serif;}
+[data-theme="dark"]{--background:var(--rb-dark-1);--foreground:var(--rb-white);--card:rgba(20,20,30,0.80);--border:rgba(255,255,255,0.08);--glass-bg:rgba(20,20,35,0.60);--glass-border:rgba(255,255,255,0.10);}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{font-family:var(--font-sans);background:var(--background);color:var(--foreground);font-weight:400;line-height:1.4;-webkit-font-smoothing:antialiased;transition:background .35s,color .35s;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin:0;}
+p{margin:0;}
+ul{margin:0;padding:0;list-style:none;}
+.container{max-width:1280px;margin:0 auto;padding:0 32px;}
 
-/* NAVBAR */
-.rb-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-  padding: 18px 32px;
-  transition: padding .3s, backdrop-filter .3s, background .3s, border-color .3s;
-}
-.rb-nav.scrolled {
-  padding: 10px 32px;
-  background: linear-gradient(135deg, rgba(43,127,255,.12), rgba(188,0,23,.12), rgba(38,50,56,.18));
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,.15);
-  box-shadow: 0 4px 24px rgba(0,0,0,.08);
-}
-[data-theme="dark"] .rb-nav.scrolled {
-  background: linear-gradient(135deg, rgba(43,127,255,.08), rgba(188,0,23,.10), rgba(10,10,15,.85));
-  border-bottom-color: rgba(255,255,255,.08);
-}
-.rb-nav__inner {
-  max-width: 1280px; margin: 0 auto;
-  display: flex; align-items: center;
-  justify-content: space-between; gap: 32px;
-}
-.rb-nav__logo-wrap { display: flex; align-items: center; flex-shrink: 0; }
-.rb-nav__logo      { height: 32px; width: auto; display: block; }
-.rb-nav__links {
-  display: flex; align-items: center; gap: 28px;
-  list-style: none; margin: 0; padding: 0;
-}
-.rb-nav__links a, .rb-nav__links button {
-  background: none; border: none; padding: 0;
-  font-size: 14px; font-weight: 500; color: #555;
-  display: inline-flex; align-items: center; gap: 4px;
-  transition: color .2s;
-}
-[data-theme="dark"] .rb-nav__links a,
-[data-theme="dark"] .rb-nav__links button { color: rgba(255,255,255,.6); }
-.rb-nav__links a:hover, .rb-nav__links button:hover { color: #000; }
-[data-theme="dark"] .rb-nav__links a:hover,
-[data-theme="dark"] .rb-nav__links button:hover { color: #fff; }
-.rb-nav__actions { display: flex; align-items: center; gap: 12px; }
-.rb-iconbtn {
-  width: 38px; height: 38px; border-radius: 50%;
-  border: 1px solid var(--border); background: var(--card);
-  display: inline-flex; align-items: center; justify-content: center;
-  color: #555; transition: color .2s, transform .2s, background .3s;
-}
-[data-theme="dark"] .rb-iconbtn { color: rgba(255,255,255,.6); }
-.rb-iconbtn:hover { color: var(--rb-red); transform: scale(1.05); }
-.rb-nav__item { position: relative; }
-/* Puente hover: area invisible que une boton con dropdown */
-.rb-nav__item--dropdown::before {
-  content:''; position:absolute; top:100%; left:-32px; right:-32px; height:18px; z-index:101;
-}
-/* Extender area clickable del boton del nav */
-.rb-nav__item--dropdown > button {
-  padding: 8px 4px;
-}
-
-.rb-nav__item--dropdown:hover .rb-nav__dropdown { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
-.rb-nav__dropdown {
-  position: absolute; top: calc(100% + 10px); left: 50%; transform:translate(-50%, -4px);
-  background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 16px;
-  padding: 8px; min-width: 200px;
-  box-shadow: 0 20px 50px rgba(0,0,0,.12);
-  opacity: 0; pointer-events: none;
-  transition: opacity .2s, transform .2s;
-  z-index: 100;
-}
-[data-theme="dark"] .rb-nav__dropdown { background: var(--rb-dark-2); border-color: rgba(255,255,255,.08); }
-.rb-nav__dropdown a {
-  display: block; padding: 10px 16px; border-radius: 10px;
-  font-size: 14px; font-weight: 600; color: #333; transition: background .15s, color .15s;
-}
-[data-theme="dark"] .rb-nav__dropdown a { color: rgba(255,255,255,.75); }
-.rb-nav__dropdown a:hover { background: rgba(188,0,23,.07); color: var(--rb-red); }
+.rb-nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 32px;transition:padding .3s,backdrop-filter .3s,background .3s,border-color .3s;}
+.rb-nav.scrolled{padding:10px 32px;background:linear-gradient(135deg,rgba(43,127,255,.12),rgba(188,0,23,.12),rgba(38,50,56,.18));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.15);box-shadow:0 4px 24px rgba(0,0,0,.08);}
+[data-theme="dark"] .rb-nav.scrolled{background:linear-gradient(135deg,rgba(43,127,255,.08),rgba(188,0,23,.10),rgba(10,10,15,.85));border-bottom-color:rgba(255,255,255,.08);}
+.rb-nav__inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;}
+.rb-nav__logo-wrap{display:flex;align-items:center;flex-shrink:0;}
+.rb-nav__logo{height:32px;width:auto;display:block;}
+.rb-nav__links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;}
+.rb-nav__links a,.rb-nav__links button{background:none;border:none;padding:0;font-size:14px;font-weight:500;color:#555;display:inline-flex;align-items:center;gap:4px;transition:color .2s;}
+[data-theme="dark"] .rb-nav__links a,[data-theme="dark"] .rb-nav__links button{color:rgba(255,255,255,.6);}
+.rb-nav__links a:hover,.rb-nav__links button:hover{color:#000;}
+[data-theme="dark"] .rb-nav__links a:hover,[data-theme="dark"] .rb-nav__links button:hover{color:#fff;}
+.rb-nav__actions{display:flex;align-items:center;gap:12px;}
+.rb-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--card);display:inline-flex;align-items:center;justify-content:center;color:#555;transition:color .2s,transform .2s,background .3s;}
+[data-theme="dark"] .rb-iconbtn{color:rgba(255,255,255,.6);}
+.rb-iconbtn:hover{color:var(--rb-red);transform:scale(1.05);}
+.rb-nav__item{position:relative;}
+.rb-nav__item--dropdown::before{content:'';position:absolute;top:100%;left:-32px;right:-32px;height:18px;z-index:101;}
+.rb-nav__item--dropdown > button{padding:8px 4px;}
+.rb-nav__item--dropdown:hover .rb-nav__dropdown{opacity:1;pointer-events:auto;transform:translate(-50%,0);}
+.rb-nav__dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%, -4px);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:8px;min-width:200px;box-shadow:0 20px 50px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:100;}
+[data-theme="dark"] .rb-nav__dropdown{background:var(--rb-dark-2);border-color:rgba(255,255,255,.08);}
+.rb-nav__dropdown a{display:block;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;color:#333;transition:background .15s,color .15s;}
+[data-theme="dark"] .rb-nav__dropdown a{color:rgba(255,255,255,.75);}
+.rb-nav__dropdown a:hover{background:rgba(188,0,23,.07);color:var(--rb-red);}
 .rb-nav__suite-li{display:flex;align-items:center;flex:0 0 auto;}
 .rb-nav__suite-hdr{display:inline-flex !important;align-items:center;gap:6px;padding:9px 18px !important;border-radius:9999px;white-space:nowrap;line-height:1;flex:0 0 auto;background:linear-gradient(110deg,#FF2942,#BC0017) !important;color:#fff !important;font-weight:800 !important;font-size:13px !important;box-shadow:0 6px 18px rgba(188,0,23,.45);transition:transform .2s,box-shadow .2s,filter .2s;}
 .rb-nav__suite-hdr:hover{color:#fff !important;transform:translateY(-1px);box-shadow:0 10px 26px rgba(188,0,23,.6);filter:brightness(1.06);}
 @media(max-width:1260px){.rb-nav__suite-li{display:none !important;}}
-
-/* BUTTONS */
-.rb-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-weight: 700; font-size: 14px;
-  padding: 12px 24px; border-radius: var(--r-pill);
-  border: 1px solid transparent;
-  transition: transform .2s, box-shadow .25s, background .25s, color .2s;
-}
-.rb-btn--primary {
-  background: var(--rb-red); color: #fff;
-  box-shadow: 0 4px 16px rgba(188,0,23,.25);
-}
-.rb-btn--primary:hover {
-  background: var(--rb-red-deep); transform: translateY(-1px);
-  box-shadow: 0 10px 30px rgba(188,0,23,.45);
-}
-.rb-btn--ghost {
-  background: transparent; border-color: var(--border);
-  color: var(--foreground);
-}
-.rb-btn--ghost:hover { background: rgba(0,0,0,.04); }
-[data-theme="dark"] .rb-btn--ghost:hover { background: rgba(255,255,255,.07); }
-.rb-btn--lg { padding: 14px 32px; font-size: 15px; }
-.rb-btn--white { background: #fff; color: var(--rb-red); }
-.rb-btn--white:hover { background: #f0f0f0; }
-
-/* EYEBROW */
-.rb-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--rb-red);
-  background: rgba(188,0,23,.08); border: 1px solid rgba(188,0,23,.2);
-  padding: 8px 16px; border-radius: var(--r-pill);
-}
-.rb-eyebrow .dot {
-  width: 6px; height: 6px; border-radius: 50%; background: var(--rb-red);
-  animation: rb-pulse 2s ease-in-out infinite;
-}
-@keyframes rb-pulse {
-  0%,100% { opacity:1; transform:scale(1); }
-  50%      { opacity:0.5; transform:scale(0.8); }
-}
+.rb-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:12px 24px;border-radius:var(--r-pill);border:1px solid transparent;transition:transform .2s,box-shadow .25s,background .25s,color .2s;}
+.rb-btn--primary{background:var(--rb-red);color:#fff;box-shadow:0 4px 16px rgba(188,0,23,.25);}
+.rb-btn--primary:hover{background:var(--rb-red-deep);transform:translateY(-1px);box-shadow:0 10px 30px rgba(188,0,23,.45);}
+.rb-btn--ghost{background:transparent;border-color:var(--border);color:var(--foreground);}
+.rb-btn--ghost:hover{background:rgba(0,0,0,.04);}
+[data-theme="dark"] .rb-btn--ghost:hover{background:rgba(255,255,255,.07);}
+.rb-btn--lg{padding:14px 32px;font-size:15px;}
+.rb-btn--white{background:#fff;color:var(--rb-red);}
+.rb-btn--white:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2);}
+.rb-btn:disabled{opacity:.65;cursor:default;transform:none !important;box-shadow:none !important;}
+.rb-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--rb-red);background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.2);padding:8px 16px;border-radius:var(--r-pill);}
+.rb-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--rb-red);animation:rb-pulse 2s ease-in-out infinite;}
+.rb-eyebrow--light{color:#F3A6AD;background:rgba(243,166,173,.14);border-color:rgba(243,166,173,.25);}
+.rb-eyebrow--light .dot{background:#F3A6AD;}
+@keyframes rb-pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);}}
+.rb-cfo-btn{background:transparent;border-color:rgba(188,0,23,.35);color:var(--rb-red);font-size:13px;padding:10px 18px;}
+.rb-cfo-btn:hover{background:rgba(188,0,23,.06);border-color:var(--rb-red);}
 
 /* HERO */
-.rb-hero {
-  position: relative; min-height: 85vh;
-  padding: 140px 0 80px; overflow: hidden;
-  display: flex; align-items: center;
-}
-.rb-hero__particles {
-  position: absolute; inset: 0; pointer-events: none;
-  background:
-    radial-gradient(circle at 80% 30%, rgba(188,0,23,.10) 0%, transparent 40%),
-    radial-gradient(circle at 20% 70%, rgba(43,127,255,.05) 0%, transparent 40%);
-  transition: background .4s;
-}
-[data-theme="dark"] .rb-hero__particles {
-  background:
-    radial-gradient(circle at 80% 30%, rgba(188,0,23,.18) 0%, transparent 45%),
-    radial-gradient(circle at 20% 70%, rgba(43,127,255,.10) 0%, transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(10,10,15,.6) 0%, transparent 70%);
-}
-.rb-hero__content { position: relative; z-index: 1; max-width: 760px; }
-.rb-hero__title {
-  font-size: clamp(36px, 5.5vw, 72px);
-  font-weight: 800; letter-spacing: -0.04em;
-  line-height: 1.05; margin: 24px 0 20px;
-}
-.rb-hero__title strong { color: var(--rb-red); font-weight: inherit; }
-.rb-hero__sub {
-  font-size: 20px; color: #555; line-height: 1.5;
-  max-width: 560px; margin-bottom: 36px; font-weight: 300;
-  transition: color .3s;
-}
-[data-theme="dark"] .rb-hero__sub { color: rgba(255,255,255,.55); }
-.rb-hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.rb-hero{position:relative;min-height:78vh;padding:140px 0 70px;overflow:hidden;display:flex;align-items:center;background:linear-gradient(160deg,#02061B 0%,#0A0A0F 60%,#1B1F23 100%);text-align:center;}
+.rb-hero__particles{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 75% 40%,rgba(188,0,23,.22) 0%,transparent 45%),radial-gradient(circle at 20% 60%,rgba(43,127,255,.12) 0%,transparent 40%);}
+.rb-hero__content{position:relative;z-index:1;max-width:800px;margin:0 auto;}
+.rb-hero__title{font-size:clamp(36px,5.4vw,60px);font-weight:800;letter-spacing:-0.03em;line-height:1.06;margin:24px 0 18px;color:#fff;}
+.rb-hero__rot{display:inline-block;transition:opacity .3s ease,transform .3s ease;color:var(--rb-red);}
+.rb-hero__rot.out{opacity:0;transform:translateY(-8px);}
+.rb-hero__sub{font-size:18px;color:rgba(255,255,255,.6);line-height:1.6;max-width:640px;margin:0 auto 32px;font-weight:300;}
+.rb-hero__ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
 
-/* SECTION */
-.rb-section { padding: 100px 0; position: relative; }
-.rb-section--alt { background: var(--rb-off-white); }
-[data-theme="dark"] .rb-section--alt { background: var(--rb-dark-2); }
-.rb-section--dark { background: var(--rb-secondary); color: #fff; }
-[data-theme="dark"] .rb-section--dark { background: var(--rb-dark-3); }
-.rb-section__head { text-align: center; max-width: 720px; margin: 0 auto 64px; }
-.rb-section__head--left { text-align: left; margin: 0 0 64px; }
-.rb-section__title {
-  font-size: clamp(28px, 3.5vw, 48px); font-weight: 700;
-  letter-spacing: -0.02em; line-height: 1.15; margin: 16px 0;
-  color: var(--foreground);
-}
-.rb-section__title span { color: var(--rb-red); }
-.rb-section__sub { font-size: 18px; color: #555; transition: color .3s; line-height: 1.6; }
-[data-theme="dark"] .rb-section__sub { color: rgba(255,255,255,.5); }
-.rb-section__rule { width: 96px; height: 4px; background: var(--rb-red); border-radius: 2px; margin: 0 auto; }
+/* CLIENTS MARQUEE */
+.rb-clients{padding:34px 0;background:var(--rb-off-white);}
+[data-theme="dark"] .rb-clients{background:var(--rb-dark-2);}
+.rb-clients__label{text-align:center;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;}
+.rb-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);}
+.rb-marquee__track{display:flex;align-items:center;gap:56px;width:max-content;animation:rb-marq 26s linear infinite;}
+@keyframes rb-marq{to{transform:translateX(-50%);}}
+.rb-marquee img{height:28px;opacity:.5;filter:grayscale(1);}
+[data-theme="dark"] .rb-marquee img{opacity:.6;filter:grayscale(1) brightness(2);}
+@media(prefers-reduced-motion:reduce){.rb-marquee__track{animation:none;}}
 
-/* LOGOS CAROUSEL */
-.rb-logos {
-  padding: 48px 0; background: #fff; overflow: hidden;
-  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-  transition: background .35s;
-}
-[data-theme="dark"] .rb-logos {
-  background: var(--rb-dark-2);
-  border-color: rgba(255,255,255,.06);
-}
-.rb-logos__label {
-  text-align: center; font-size: 12px; font-weight: 600;
-  color: #999; letter-spacing: 0.25em; text-transform: uppercase;
-  margin-bottom: 32px;
-}
-[data-theme="dark"] .rb-logos__label { color: rgba(255,255,255,.35); }
-.rb-logos__wrap { overflow: hidden; }
-.rb-logos__track {
-  display: flex; gap: 80px; align-items: center;
-  animation: rb-marquee 22s linear infinite;
-  width: max-content;
-  will-change: transform;
-}
-.rb-logos__track img {
-  height: 56px; width: auto; opacity: 0.6;
-  filter: grayscale(1);
-  transition: opacity .3s, filter .3s; flex-shrink: 0;
-}
-.rb-logos__track img:hover { opacity: 1; filter: none; }
-[data-theme="dark"] .rb-logos__track img { filter: grayscale(1) invert(1); opacity: 0.35; }
-@keyframes rb-marquee { from{transform:translateX(0)} to{transform:translateX(-25%)} }
+.rb-section{padding:100px 0;position:relative;}
+.rb-section--alt{background:var(--rb-off-white);}
+[data-theme="dark"] .rb-section--alt{background:var(--rb-dark-2);}
+.rb-section--space{background:linear-gradient(135deg,#02061B,#0A0A0F);color:#fff;position:relative;overflow:hidden;}
+.rb-section--space::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 800px 400px at 50% 30%,rgba(188,0,23,.14),transparent 60%);pointer-events:none;}
+.rb-section__head{text-align:center;max-width:720px;margin:0 auto 56px;}
+.rb-section__title{font-size:clamp(28px,3.5vw,46px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin:16px 0;color:var(--foreground);}
+.rb-section__title span{color:var(--rb-red);}
+.rb-section--space .rb-section__title{color:#fff;}
+.rb-section__sub{font-size:17px;color:#555;transition:color .3s;line-height:1.6;}
+[data-theme="dark"] .rb-section__sub{color:rgba(255,255,255,.5);}
+.rb-section--space .rb-section__sub{color:rgba(255,255,255,.6);}
 
-/* CARDS GRID */
-.rb-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 20px; }
-.rb-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--r-lg); padding: 32px 24px;
-  backdrop-filter: blur(20px);
-  transition: border-color .3s, transform .3s, box-shadow .3s, background .35s;
-}
-.rb-card:hover { border-color: rgba(188,0,23,.4); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,.08); }
-[data-theme="dark"] .rb-card:hover { box-shadow: 0 20px 40px rgba(0,0,0,.35); }
-.rb-card__icon {
-  width: 52px; height: 52px; border-radius: 14px;
-  background: rgba(188,0,23,.08); border: 1px solid rgba(188,0,23,.15);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--rb-red); margin-bottom: 20px;
-}
-.rb-card__title { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--foreground); }
-.rb-card__desc { font-size: 13px; color: #777; line-height: 1.6; }
-[data-theme="dark"] .rb-card__desc { color: rgba(255,255,255,.45); }
+/* FEATURES / DIFFERENTIATOR CARDS */
+.rb-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.rb-compare__card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 24px;text-align:center;transition:border-color .3s,transform .3s,background .35s;}
+.rb-compare__card:hover{border-color:rgba(188,0,23,.4);transform:translateY(-4px);}
+.rb-compare__icon{width:56px;height:56px;border-radius:50%;background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.15);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--rb-red);}
+.rb-compare__title{font-size:16px;font-weight:700;margin-bottom:12px;color:var(--foreground);}
+.rb-compare__desc{font-size:13.5px;color:#777;line-height:1.6;}
+[data-theme="dark"] .rb-compare__desc{color:rgba(255,255,255,.45);}
 
-/* FEATURE SECTION (alternating) */
-.rb-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.rb-feature--rev { direction: rtl; }
-.rb-feature--rev > * { direction: ltr; }
-.rb-feature__img { border-radius: var(--r-xl); overflow: hidden; }
-.rb-feature__img img { width: 100%; height: 340px; object-fit: cover; }
-.rb-feature__body { display: flex; flex-direction: column; gap: 20px; }
-.rb-feature__title { font-size: clamp(24px, 2.8vw, 38px); font-weight: 700; color: var(--foreground); letter-spacing: -0.02em; }
-.rb-feature__title span { color: var(--rb-red); }
-.rb-feature__desc { font-size: 16px; color: #666; line-height: 1.7; }
-[data-theme="dark"] .rb-feature__desc { color: rgba(255,255,255,.55); }
-.rb-feature__list { display: flex; flex-direction: column; gap: 12px; }
-.rb-feature__list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--foreground); }
-.rb-feature__list li::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--rb-red); flex-shrink: 0; margin-top: 6px; }
+/* EXECUTION DEMO (step list + terminal) */
+.rb-exec-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:26px;}
+.rb-exec-tab{padding:10px 18px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-weight:600;font-size:14px;color:var(--muted);cursor:pointer;transition:all .15s;}
+.rb-exec-tab:hover{border-color:var(--rb-red);color:var(--rb-red);}
+.rb-exec-tab.act{background:var(--rb-red);border-color:var(--rb-red);color:#fff;}
+.rb-exec-win{border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 34px 80px -30px rgba(0,0,0,.4);background:var(--card);backdrop-filter:blur(20px);}
+.rb-exec-bar{display:flex;align-items:center;gap:12px;padding:13px 18px;background:rgba(0,0,0,.03);border-bottom:1px solid var(--border);}
+[data-theme="dark"] .rb-exec-bar{background:rgba(255,255,255,.03);}
+.rb-exec-dots{display:flex;gap:6px;}
+.rb-exec-dots span{width:11px;height:11px;border-radius:50%;background:rgba(120,120,120,.3);}
+.rb-exec-dots span:nth-child(1){background:#F2C0C5;}
+.rb-exec-bar .ttl{font-weight:700;font-size:14px;color:var(--foreground);display:flex;align-items:center;gap:9px;}
+.rb-exec-bar .ttl .ic{width:22px;height:22px;border-radius:6px;background:var(--rb-red);color:#fff;display:flex;align-items:center;justify-content:center;}
+.rb-exec-bar .ttl .ic svg{width:13px;height:13px;}
+.rb-exec-bar .st{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;}
+.rb-exec-bar .st.run{background:rgba(43,127,255,.14);color:var(--rb-blue);}
+.rb-exec-bar .st.done{background:rgba(29,158,117,.14);color:var(--rb-green);}
+.rb-exec-bar .st .ld{width:7px;height:7px;border-radius:50%;background:currentColor;}
+@media(prefers-reduced-motion:no-preference){.rb-exec-bar .st.run .ld{animation:rb-spulse 1.2s infinite;}}
+@keyframes rb-spulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+.rb-exec-body{display:grid;grid-template-columns:1fr 1.2fr;}
+.rb-exec-steps{padding:24px;border-right:1px solid var(--border);background:rgba(0,0,0,.015);}
+[data-theme="dark"] .rb-exec-steps{background:rgba(255,255,255,.015);}
+.rb-exec-steps .pl{font-weight:700;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;}
+.rb-exec-list{position:relative;}
+.rb-exec-list::before{content:"";position:absolute;left:13px;top:18px;bottom:18px;width:2px;background:var(--border);}
+.rb-exec-step{position:relative;z-index:1;display:flex;align-items:center;gap:13px;padding:10px 0;}
+.rb-exec-step .dot{width:26px;height:26px;border-radius:50%;border:2px solid var(--border);background:var(--card);display:flex;align-items:center;justify-content:center;flex:0 0 auto;transition:all .3s;}
+.rb-exec-step .dot svg{width:14px;height:14px;color:#fff;opacity:0;transition:opacity .3s;}
+.rb-exec-step .lbl{font-size:14px;color:var(--muted);transition:color .3s;}
+.rb-exec-step.active .dot{border-color:var(--rb-blue);background:var(--card);box-shadow:0 0 0 4px rgba(43,127,255,.15);}
+.rb-exec-step.active .lbl{color:var(--foreground);font-weight:600;}
+.rb-exec-step.done .dot{background:var(--rb-green);border-color:var(--rb-green);}
+.rb-exec-step.done .dot svg{opacity:1;}
+.rb-exec-step.done .lbl{color:var(--foreground);}
+.rb-exec-term{padding:0;background:#1B2227;display:flex;flex-direction:column;}
+.rb-exec-term-h{display:flex;align-items:center;gap:8px;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.07);font-family:monospace;font-size:11.5px;color:#79838A;}
+.rb-exec-term-h .d{width:8px;height:8px;border-radius:50%;background:#7FD4AD;}
+.rb-exec-log{padding:16px 18px;font-family:monospace;font-size:12.5px;line-height:1.9;color:#AAB3B8;flex:1;min-height:240px;max-height:300px;overflow:auto;}
+.rb-exec-log .ln{display:flex;gap:10px;opacity:0;transform:translateY(4px);animation:rb-execline .3s ease forwards;}
+@keyframes rb-execline{to{opacity:1;transform:none;}}
+.rb-exec-log .tm{color:#566169;flex:0 0 auto;}
+.rb-exec-log .tx{color:#CDD3D6;}
+.rb-exec-log .tx .ok{color:#7FD4AD;}
+.rb-exec-log .tx .wn{color:#E7B26A;}
+.rb-exec-foot{display:flex;gap:14px;align-items:center;padding:13px 18px;border-top:1px solid var(--border);background:var(--card);flex-wrap:wrap;}
+.rb-exec-foot .rb-btn{padding:9px 18px;font-size:13.5px;}
+.rb-exec-foot .sm{font-size:12.5px;color:var(--muted);}
+.rb-exec-caption{text-align:center;font-size:12.5px;color:var(--muted);margin-top:14px;}
+@media(max-width:760px){.rb-exec-body{grid-template-columns:1fr;}.rb-exec-steps{border-right:0;border-bottom:1px solid var(--border);}}
 
-/* PRICING */
-.rb-pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 20px; }
-.rb-price-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--r-xl); padding: 40px 32px;
-  display: flex; flex-direction: column; gap: 4px;
-  transition: border-color .3s, transform .3s, background .35s;
+/* 4-STEP FLOW */
+.rb-flow4{display:flex;align-items:stretch;justify-content:center;margin-top:8px;flex-wrap:nowrap;}
+.rb-flow4__node{flex:1 1 0;min-width:0;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 18px;text-align:center;cursor:pointer;transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column;align-items:center;}
+.rb-flow4__node:hover{border-color:rgba(188,0,23,.3);}
+.rb-flow4__node.active{border-color:var(--rb-red);transform:translateY(-5px);box-shadow:0 16px 34px rgba(0,0,0,.14),0 0 0 1px var(--rb-red);}
+.rb-flow4__node .ic{width:46px;height:46px;border-radius:13px;background:var(--rb-red);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:transform .22s;}
+.rb-flow4__node.active .ic{transform:scale(1.08);}
+.rb-flow4__node .ic svg{width:24px;height:24px;}
+.rb-flow4__node .step{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+.rb-flow4__node .nm{font-weight:700;font-size:18px;color:var(--foreground);}
+.rb-flow4__conn{flex:0 0 auto;width:clamp(40px,6vw,84px);display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.rb-flow4__conn .pl{font-size:11px;color:var(--muted);font-weight:600;margin-bottom:6px;white-space:nowrap;transition:color .25s;}
+.rb-flow4__conn .track{position:relative;width:100%;height:14px;display:flex;align-items:center;}
+.rb-flow4__conn .line{position:absolute;left:2px;right:9px;height:2px;background:var(--border);border-radius:2px;transition:background .25s;}
+.rb-flow4__conn .chev{position:absolute;right:0;width:9px;height:9px;border-top:2px solid var(--border);border-right:2px solid var(--border);transform:rotate(45deg);transition:border-color .25s;}
+.rb-flow4__conn .pulse{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--rb-red);opacity:0;animation:rb-travel 2.4s linear infinite;}
+@keyframes rb-travel{0%{left:4%;opacity:0}12%{opacity:1}85%{opacity:1}100%{left:86%;opacity:0}}
+.rb-flow4__conn.lit .line{background:var(--rb-red);}
+.rb-flow4__conn.lit .chev{border-color:var(--rb-red);}
+.rb-flow4__conn.lit .pl{color:var(--rb-red);}
+.rb-flow4__detail{margin-top:26px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 26px;display:flex;align-items:center;gap:18px;box-shadow:0 8px 26px rgba(0,0,0,.1);}
+.rb-flow4__detail .ic{width:50px;height:50px;border-radius:13px;background:var(--rb-red);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-flow4__detail .ic svg{width:26px;height:26px;}
+.rb-flow4__detail .nm{font-weight:700;font-size:17px;color:var(--foreground);border-right:1px solid var(--border);padding-right:18px;flex:0 0 auto;}
+.rb-flow4__detail .tx{font-size:16px;color:var(--foreground);transition:opacity .22s;}
+@media(prefers-reduced-motion:reduce){.rb-flow4__conn .pulse{display:none;}.rb-flow4__node,.rb-flow4__node .ic{transition:none;}}
+@media(max-width:900px){.rb-flow4{flex-direction:column;}.rb-flow4__conn{width:100% !important;flex-direction:row;justify-content:center;gap:10px;padding:8px 0;}.rb-flow4__conn .track{width:40px;transform:rotate(90deg);}.rb-flow4__conn .pl{margin-bottom:0;}.rb-flow4__detail{flex-direction:column;text-align:center;}.rb-flow4__detail .nm{border-right:0;border-bottom:1px solid var(--border);padding:0 0 12px;}}
+
+/* MCP / CLAUDE PANEL (dark) */
+.rb-mcp-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch;}
+.rb-mcp-card,.rb-mcp-out{background:var(--rb-dark-3);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:24px;display:flex;flex-direction:column;min-height:360px;}
+.rb-mcp-lbl{font-weight:700;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:16px;}
+.rb-mcp-msg{display:flex;gap:11px;margin-bottom:14px;align-items:flex-start;}
+.rb-mcp-av{width:30px;height:30px;border-radius:8px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;}
+.rb-mcp-av.user{background:rgba(255,255,255,.1);color:#fff;}
+.rb-mcp-av.bot{background:var(--rb-red);color:#fff;}
+.rb-mcp-bub{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:11px 14px;font-size:13.5px;color:#E6E9EA;line-height:1.55;min-height:18px;flex:1;}
+.rb-mcp-bub.typing::after{content:"";display:inline-block;width:1px;height:1em;background:#fff;margin-left:1px;vertical-align:-2px;animation:rb-mcpcaret 1s steps(1) infinite;}
+@keyframes rb-mcpcaret{50%{opacity:0;}}
+.rb-mcp-dots{display:inline-flex;gap:5px;padding:3px 0;}
+.rb-mcp-dots span{width:6px;height:6px;border-radius:50%;background:#F3A6AD;animation:rb-mcpdot 1s infinite;}
+.rb-mcp-dots span:nth-child(2){animation-delay:.15s;}
+.rb-mcp-dots span:nth-child(3){animation-delay:.3s;}
+@keyframes rb-mcpdot{0%,60%,100%{opacity:.3;transform:translateY(0);}30%{opacity:1;transform:translateY(-3px);}}
+.rb-mcp-chips{display:flex;gap:8px;flex-wrap:wrap;margin:auto 0 12px;}
+.rb-mcp-chip{font-size:12.5px;font-weight:600;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#CDD3D6;cursor:pointer;transition:all .15s;}
+.rb-mcp-chip:hover{border-color:#F3A6AD;color:#fff;}
+.rb-mcp-chip.act{background:var(--rb-red);border-color:var(--rb-red);color:#fff;}
+.rb-mcp-bar{display:flex;gap:10px;align-items:center;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:8px 8px 8px 14px;}
+.rb-mcp-bar .ph{flex:1;font-size:13px;color:rgba(255,255,255,.4);}
+.rb-mcp-bar .rb-btn{padding:9px 16px;font-size:13.5px;white-space:nowrap;}
+.rb-mcp-out-h{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;}
+.rb-mcp-out-h .pin{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);}
+.rb-mcp-screen{display:flex;flex-direction:column;gap:10px;flex:1;}
+.rb-mcp-reveal{opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;}
+.rb-mcp-reveal.in{opacity:1;transform:none;}
+.rb-mcp-conn{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;font-size:12px;font-weight:600;color:#F3A6AD;background:rgba(243,166,173,.1);border:1px solid rgba(243,166,173,.25);border-radius:999px;padding:6px 12px;}
+.rb-mcp-conn svg{width:14px;height:14px;}
+.rb-mcp-cmd{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:11px;padding:11px 13px;}
+.rb-mcp-cmd .n{width:24px;height:24px;border-radius:7px;background:rgba(243,166,173,.13);color:#F3A6AD;display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-size:12px;font-weight:600;}
+.rb-mcp-cmd .t{font-size:13.5px;color:#E6E9EA;}
+.rb-mcp-cmd .t small{display:block;color:rgba(255,255,255,.4);font-size:11.5px;}
+.rb-mcp-pub{margin-top:6px;display:flex;align-items:center;gap:10px;background:rgba(29,158,117,.12);border:1px solid rgba(29,158,117,.3);border-radius:11px;padding:12px 14px;font-size:13px;color:#7FD4AD;font-weight:600;}
+.rb-mcp-pub .ic{width:26px;height:26px;border-radius:50%;background:var(--rb-green);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-mcp-pub .ic svg{width:15px;height:15px;}
+.rb-mcp-pub small{display:block;font-weight:400;color:rgba(255,255,255,.55);font-size:12px;}
+.rb-mcp-points{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;}
+.rb-mcp-point{display:flex;gap:12px;align-items:flex-start;}
+.rb-mcp-point .ic{width:38px;height:38px;border-radius:10px;background:rgba(243,166,173,.13);color:#F3A6AD;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-mcp-point .ic svg{width:19px;height:19px;}
+.rb-mcp-point h4{font-size:14.5px;font-weight:700;color:#fff;margin:2px 0 4px;}
+.rb-mcp-point p{font-size:13px;color:rgba(255,255,255,.55);margin:0;line-height:1.5;}
+@media(max-width:860px){.rb-mcp-grid{grid-template-columns:1fr;}.rb-mcp-points{grid-template-columns:1fr;}}
+
+/* INDUSTRY EXPLORER */
+.rb-explorer{display:grid;grid-template-columns:272px 1fr;background:var(--rb-dark-3);border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(0,0,0,.5);}
+.rb-explorer__rail{background:#13191D;padding:16px 14px;display:flex;flex-direction:column;gap:4px;}
+.rb-explorer__rail-h{font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);padding:6px 12px 12px;}
+.rb-explorer__ind{display:flex;align-items:center;gap:13px;padding:12px 13px;border-radius:12px;cursor:pointer;color:#AAB3B8;border-left:3px solid transparent;background:transparent;width:100%;text-align:left;transition:background .2s,color .2s,border-color .2s;}
+.rb-explorer__ind:hover{background:rgba(255,255,255,.045);color:#F4F6F7;}
+.rb-explorer__ind.active{background:rgba(188,0,23,.14);color:#fff;border-left-color:var(--rb-red);}
+.rb-explorer__ind .ico{flex:0 0 auto;width:21px;height:21px;color:var(--rb-red);display:flex;}
+.rb-explorer__ind .ico svg{width:21px;height:21px;}
+.rb-explorer__ind.active .ico{color:#fff;}
+.rb-explorer__ind .nm{font-weight:600;font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;line-height:1.25;}
+.rb-explorer__panel{padding:30px 34px 34px;min-width:0;}
+.rb-explorer__head{display:flex;align-items:center;gap:16px;margin-bottom:22px;}
+.rb-explorer__head .big{flex:0 0 auto;width:52px;height:52px;border-radius:15px;background:var(--rb-red);color:#fff;display:flex;align-items:center;justify-content:center;}
+.rb-explorer__head .big svg{width:27px;height:27px;}
+.rb-explorer__head h3{font-weight:700;font-size:23px;color:#F4F6F7;margin:0 0 4px;}
+.rb-explorer__head .intro{color:#AAB3B8;font-size:14px;margin:0;}
+.rb-explorer__cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:14px;}
+.rb-ecase{background:#232C32;border:1px solid rgba(255,255,255,.07);border-radius:15px;padding:18px;opacity:0;transform:translateY(10px);display:flex;flex-direction:column;}
+.rb-ecase.show{animation:rb-rise .45s cubic-bezier(.2,.7,.3,1) forwards;}
+@keyframes rb-rise{to{opacity:1;transform:translateY(0);}}
+.rb-ecase .area{align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#F3A6AD;background:rgba(188,0,23,.18);padding:4px 9px;border-radius:999px;margin-bottom:11px;}
+.rb-ecase .t{font-weight:700;font-size:15.5px;color:#F4F6F7;line-height:1.25;margin-bottom:8px;}
+.rb-ecase .d{color:#AAB3B8;font-size:13.5px;line-height:1.5;margin:0 0 14px;flex:1;}
+.rb-ecase .tag{align-self:flex-start;font-size:11px;font-weight:600;color:#AAB3B8;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.07);padding:5px 10px;border-radius:8px;}
+@media(max-width:900px){
+  .rb-explorer{grid-template-columns:1fr;}
+  .rb-explorer__rail{flex-direction:row;overflow-x:auto;padding:12px;gap:8px;scrollbar-width:none;}
+  .rb-explorer__rail::-webkit-scrollbar{display:none;}
+  .rb-explorer__rail-h{display:none;}
+  .rb-explorer__ind{flex:0 0 auto;flex-direction:column;gap:7px;border-left:0;border-bottom:3px solid transparent;padding:10px 14px;min-width:92px;text-align:center;}
+  .rb-explorer__ind.active{border-left:0;border-bottom-color:var(--rb-red);}
 }
-.rb-price-card--featured {
-  border-color: var(--rb-red);
-  box-shadow: 0 0 0 1px var(--rb-red), 0 20px 60px rgba(188,0,23,.15);
-}
-.rb-price-card__badge {
-  display: inline-block; padding: 4px 12px;
-  background: var(--rb-red); color: #fff;
-  font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
-  text-transform: uppercase; border-radius: var(--r-pill);
-  margin-bottom: 8px; align-self: flex-start;
-}
-.rb-price-card__name { font-size: 22px; font-weight: 800; color: var(--foreground); }
-.rb-price-card__price {
-  font-size: 32px; font-weight: 800; color: var(--rb-red);
-  letter-spacing: -0.03em; margin: 12px 0 4px;
-}
-.rb-price-card__price small { font-size: 14px; font-weight: 500; color: #888; }
-.rb-price-card__period { font-size: 12px; color: #999; margin-bottom: 24px; }
-.rb-price-card__divider { border: none; border-top: 1px solid var(--border); margin: 8px 0 20px; }
-.rb-price-card__features { display: flex; flex-direction: column; gap: 10px; flex: 1; }
-.rb-price-card__features li {
-  display: flex; align-items: flex-start; gap: 10px;
-  font-size: 13px; color: #555; line-height: 1.4;
-}
-[data-theme="dark"] .rb-price-card__features li { color: rgba(255,255,255,.6); }
-.rb-price-card__features li::before {
-  content: '✓'; color: var(--rb-red); font-weight: 700; flex-shrink: 0;
-}
-.rb-price-note { text-align: center; font-size: 12px; color: #999; margin-top: 20px; }
+
+/* SECURITY CARDS */
+.rb-scards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:30px;}
+.rb-scard{background:var(--rb-dark-3);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;}
+.rb-scard .ic{width:46px;height:46px;border-radius:12px;background:rgba(188,0,23,.18);color:#F3A6AD;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.rb-scard .ic svg{width:24px;height:24px;}
+.rb-scard h3{color:#fff;font-size:18px;font-weight:700;margin:0 0 8px;}
+.rb-scard p{color:rgba(255,255,255,.55);font-size:14.5px;margin:0;}
+.rb-iso{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--rb-dark-3);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 22px;max-width:480px;margin:0 auto;}
+.rb-iso .b{width:38px;height:38px;border-radius:50%;background:rgba(188,0,23,.2);color:#F3A6AD;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-iso .b svg{width:20px;height:20px;}
+.rb-iso span{color:rgba(255,255,255,.55);font-size:14px;}
+.rb-iso b{color:#fff;}
+@media(max-width:900px){.rb-scards{grid-template-columns:1fr;}}
 
 /* FAQ */
-.rb-faq { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-.rb-faq details {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--r-md); overflow: hidden;
-  transition: background .35s, border-color .3s;
-}
-.rb-faq details[open] { border-color: rgba(188,0,23,.3); }
-.rb-faq summary {
-  padding: 20px 24px; font-size: 15px; font-weight: 600;
-  color: var(--foreground); cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; align-items: center; gap: 16px;
-  transition: color .2s;
-}
-.rb-faq summary::-webkit-details-marker { display: none; }
-.rb-faq summary::after {
-  content: '+'; font-size: 20px; color: var(--rb-red);
-  font-weight: 700; flex-shrink: 0; transition: transform .3s;
-}
-.rb-faq details[open] summary::after { content: '−'; }
-.rb-faq summary:hover { color: var(--rb-red); }
-.rb-faq__body { padding: 0 24px 20px; font-size: 14px; color: #666; line-height: 1.7; }
-[data-theme="dark"] .rb-faq__body { color: rgba(255,255,255,.5); }
+.rb-faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.rb-faq details{background:var(--card);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;transition:background .35s,border-color .3s;}
+.rb-faq details[open]{border-color:rgba(188,0,23,.3);}
+.rb-faq summary{padding:20px 24px;font-size:15px;font-weight:600;color:var(--foreground);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s;}
+.rb-faq summary::-webkit-details-marker{display:none;}
+.rb-faq summary::after{content:'+';font-size:20px;color:var(--rb-red);font-weight:700;flex-shrink:0;}
+.rb-faq details[open] summary::after{content:'−';}
+.rb-faq summary:hover{color:var(--rb-red);}
+.rb-faq__body{padding:0 24px 20px;font-size:14px;color:#666;line-height:1.7;}
+[data-theme="dark"] .rb-faq__body{color:rgba(255,255,255,.5);}
 
-/* CTA BAND */
-.rb-cta-band {
-  background: linear-gradient(135deg, var(--rb-secondary) 0%, #1a242a 100%);
-  padding: 80px 0; position: relative; overflow: hidden;
-}
-.rb-cta-band::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 700px 300px at 10% 50%, rgba(188,0,23,.35), transparent 60%);
-  pointer-events: none;
-}
-[data-theme="dark"] .rb-cta-band { background: linear-gradient(135deg, #080c0f 0%, var(--rb-dark-3) 100%); }
-.rb-cta-band__inner {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 48px; position: relative; z-index: 1;
-}
-.rb-cta-band__title { font-size: clamp(24px, 3vw, 40px); font-weight: 700; color: #fff; letter-spacing: -0.02em; margin-bottom: 12px; line-height: 1.2; }
-.rb-cta-band__sub   { font-size: 16px; color: rgba(255,255,255,.6); max-width: 520px; }
+.rb-cta-band{background:linear-gradient(135deg,var(--rb-secondary) 0%,#1a242a 100%);padding:80px 0;position:relative;overflow:hidden;}
+.rb-cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 700px 300px at 10% 50%,rgba(188,0,23,.35),transparent 60%);pointer-events:none;}
+[data-theme="dark"] .rb-cta-band{background:linear-gradient(135deg,#080c0f 0%,var(--rb-dark-3) 100%);}
+.rb-cta-band__inner{display:flex;align-items:center;justify-content:space-between;gap:48px;position:relative;z-index:1;}
+.rb-cta-band__title{font-size:clamp(24px,3vw,40px);font-weight:700;color:#fff;letter-spacing:-0.02em;margin-bottom:12px;line-height:1.2;}
+.rb-cta-band__sub{font-size:16px;color:rgba(255,255,255,.6);max-width:520px;}
 
-/* FOOTER */
-.rb-footer { background: #1a242a; color: #fff; padding: 80px 0 32px; border-top: 6px solid var(--rb-red); }
-[data-theme="dark"] .rb-footer { background: #080c0f; }
-.rb-footer__grid { display: grid; grid-template-columns: 2fr 1fr 1.2fr 1fr; gap: 48px; margin-bottom: 64px; }
-.rb-footer__brand img { height: 36px; width: auto; display: block; margin-bottom: 24px; }
-.rb-footer__copy { color: #999; font-size: 14px; max-width: 320px; line-height: 1.6; }
-.rb-footer__col h6 { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--rb-red); margin-bottom: 20px; font-weight: 700; }
-.rb-footer__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
-.rb-footer__col a  { color: #ccc; font-size: 14px; transition: color .2s; }
-.rb-footer__col a:hover { color: var(--rb-red); }
-.rb-footer__bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; color: #777; font-size: 13px; }
-.rb-footer__legal { display: flex; gap: 20px; }
-.rb-footer__legal a { color: #777; font-size: 13px; transition: color .2s; }
-.rb-footer__legal a:hover { color: var(--rb-red); }
-.rb-footer__social { display: flex; gap: 12px; margin-top: 20px; }
-.rb-footer__social a {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.10);
-  display: inline-flex; align-items: center; justify-content: center;
-  color: #aaa; transition: background .2s, color .2s;
-}
-.rb-footer__social a:hover { background: var(--rb-red); color: #fff; border-color: var(--rb-red); }
+.rb-footer{background:#1a242a;color:#fff;padding:80px 0 32px;border-top:6px solid var(--rb-red);}
+[data-theme="dark"] .rb-footer{background:#080c0f;}
+.rb-footer__grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px;margin-bottom:64px;}
+.rb-footer__brand img{height:36px;width:auto;display:block;margin-bottom:24px;}
+.rb-footer__copy{color:#999;font-size:14px;max-width:320px;line-height:1.6;}
+.rb-footer__col h6{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--rb-red);margin-bottom:20px;font-weight:700;}
+.rb-footer__col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.rb-footer__col a{color:#ccc;font-size:14px;transition:color .2s;}
+.rb-footer__col a:hover{color:var(--rb-red);}
+.rb-footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;color:#777;font-size:13px;}
+.rb-footer__legal{display:flex;gap:20px;}
+.rb-footer__legal a{color:#777;font-size:13px;transition:color .2s;}
+.rb-footer__legal a:hover{color:var(--rb-red);}
+.rb-footer__social{display:flex;gap:12px;margin-top:20px;}
+.rb-footer__social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);display:inline-flex;align-items:center;justify-content:center;color:#aaa;transition:background .2s,color .2s;}
+.rb-footer__social a:hover{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
 
-/* USE CASE CARDS */
-.rb-usecases { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 16px; }
-.rb-usecase {
-  background: var(--card); border: 1px solid var(--border); border-radius: var(--r-md);
-  padding: 28px 20px; text-align: center;
-  transition: border-color .3s, transform .3s, background .35s;
+@media(max-width:900px){
+  .rb-compare{grid-template-columns:1fr 1fr;}
+  .rb-footer__grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .rb-cta-band__inner{flex-direction:column;text-align:center;}
 }
-.rb-usecase:hover { border-color: rgba(188,0,23,.4); transform: translateY(-4px); }
-.rb-usecase__num {
-  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
-  color: var(--rb-red); text-transform: uppercase; margin-bottom: 12px;
+@media(max-width:600px){
+  .rb-nav{padding:12px 20px;}.rb-nav__inner{gap:12px;}.rb-nav__logo{height:24px;}.rb-nav__actions .rb-btn{display:none;}
+  .container{padding:0 20px;}
+  .rb-section{padding:64px 0;}
+  .rb-compare{grid-template-columns:1fr;}
+  .rb-footer__grid{grid-template-columns:1fr;}
+  .rb-nav__links{display:none;}
 }
-.rb-usecase__title { font-size: 14px; font-weight: 700; color: var(--foreground); line-height: 1.4; }
-
-/* SECURITY GRID */
-.rb-security-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.rb-security-item {
-  background: var(--glass-bg); border: 1px solid var(--glass-border);
-  border-radius: var(--r-md); padding: 28px;
-  backdrop-filter: blur(20px);
-}
-.rb-security-item__icon { color: var(--rb-red); margin-bottom: 16px; }
-.rb-security-item__title { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--foreground); }
-.rb-security-item__desc { font-size: 13px; color: #777; line-height: 1.6; }
-[data-theme="dark"] .rb-security-item__desc { color: rgba(255,255,255,.45); }
-
-@media (max-width: 900px) {
-  .rb-feature { grid-template-columns: 1fr; direction: ltr; }
-  .rb-feature--rev { direction: ltr; }
-  .rb-footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .rb-pricing { grid-template-columns: 1fr 1fr; }
-  .rb-security-grid { grid-template-columns: 1fr 1fr; }
-  .rb-cta-band__inner { flex-direction: column; text-align: center; }
-}
-@media (max-width: 600px) {
-  .rb-nav { padding: 12px 20px; }
-  .rb-nav__inner { gap: 12px; }
-  .rb-nav__logo { height: 24px; }
-  .rb-nav__actions .rb-btn { display: none; }
-  .container { padding: 0 20px; }
-  .rb-section { padding: 64px 0; }
-  .rb-footer__grid { grid-template-columns: 1fr; }
-  .rb-pricing { grid-template-columns: 1fr; }
-  .rb-security-grid { grid-template-columns: 1fr; }
-  .rb-nav__links { display: none; }
-}
-
-/* SOLUTIONS TABS */
-.rb-solutions-card{display:grid;grid-template-columns:1fr 2fr;background:var(--card);border-radius:40px;border:1px solid var(--border);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.06);transition:background .35s,border-color .35s;}
-[data-theme="dark"] .rb-solutions-card{background:var(--rb-dark-2);box-shadow:0 30px 80px rgba(0,0,0,.35);}
-.rb-tablist{padding:32px;display:flex;flex-direction:column;gap:8px;}
-.rb-tab{background:transparent;border:none;padding:20px 24px;border-radius:18px;display:flex;align-items:center;justify-content:space-between;text-align:left;color:#999;transition:all .3s;cursor:pointer;font-family:inherit;}
-[data-theme="dark"] .rb-tab{color:rgba(255,255,255,.4);}
-.rb-tab__inner{display:flex;align-items:center;gap:16px;}
-.rb-tab svg{width:22px;height:22px;color:var(--rb-red);transition:transform .2s;}
-.rb-tab span.label{font-weight:800;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;}
-.rb-tab.active{background:var(--rb-red);color:#fff;box-shadow:0 12px 32px rgba(188,0,23,.25);}
-.rb-tab.active svg{color:#fff;}
-.rb-tab:not(.active):hover{background:rgba(0,0,0,.04);color:#000;}
-[data-theme="dark"] .rb-tab:not(.active):hover{background:rgba(255,255,255,.06);color:#fff;}
-.rb-tab__arrow{opacity:0;transition:opacity .2s;}
-.rb-tab.active .rb-tab__arrow{opacity:1;}
-.rb-tab-promo{margin-top:24px;padding:20px;border-radius:16px;background:rgba(188,0,23,.05);border:1px solid rgba(188,0,23,.12);}
-[data-theme="dark"] .rb-tab-promo{background:rgba(188,0,23,.08);border-color:rgba(188,0,23,.18);}
-.rb-tab-promo__eyebrow{font-size:10px;font-weight:700;color:var(--rb-red);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px;}
-.rb-tab-promo__text{font-size:13px;color:#666;transition:color .3s;}
-[data-theme="dark"] .rb-tab-promo__text{color:rgba(255,255,255,.45);}
-.rb-tabpanel{display:block;}
-.rb-panel{display:none;}
-.rb-panel.active{display:grid;grid-template-columns:1fr 340px;}
-.rb-tabpanel__copy{padding:48px 40px;}
-.rb-tabpanel__tag{display:inline-block;padding:6px 12px;background:rgba(188,0,23,.10);color:var(--rb-red);font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;border:1px solid rgba(188,0,23,.2);border-radius:9999px;margin-bottom:28px;}
-.rb-tabpanel__list{list-style:none;padding:0;margin:0 0 36px;display:flex;flex-direction:column;gap:18px;}
-.rb-tabpanel__list li{display:flex;align-items:flex-start;gap:14px;font-size:16px;color:#333;transition:color .3s;}
-[data-theme="dark"] .rb-tabpanel__list li{color:rgba(255,255,255,.75);}
-.rb-tabpanel__list svg{width:20px;height:20px;color:var(--rb-red);flex-shrink:0;margin-top:2px;}
-.rb-tabpanel__img{background-size:cover;background-position:center;filter:grayscale(.6) brightness(.7);transition:filter .5s;min-height:420px;border-radius:0 32px 32px 0;}
-.rb-tabpanel__img:hover{filter:none;}
-[data-theme="dark"] .rb-tabpanel__img{filter:grayscale(.5) brightness(.45);}
-[data-theme="dark"] .rb-tabpanel__img:hover{filter:brightness(.8);}
-@media(max-width:900px){.rb-solutions-card{grid-template-columns:1fr;}.rb-tablist{flex-direction:row;flex-wrap:wrap;}.rb-tabpanel__img{display:none;}.rb-panel.active{grid-template-columns:1fr;}}
-
-
-/* USE CASES ACCORDION */
-.rb-usecases-wrap { display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:32px; overflow:hidden; align-items:stretch; }
-.rb-accordion { background:var(--rb-dark-3); display:flex; flex-direction:column; }
-[data-theme="light"] .rb-accordion { background:#1B1F23; }
-.rb-acc-item { border-bottom:1px solid rgba(255,255,255,.07); border-left:3px solid transparent; cursor:pointer; transition:background .25s, border-color .25s; flex-shrink:0; }
-.rb-acc-item:last-child { border-bottom:none; flex-grow:1; }
-.rb-acc-item:not(.open):hover { background:rgba(255,255,255,.04); border-left-color:rgba(188,0,23,.4); }
-.rb-acc-item.open { background:rgba(188,0,23,.07); border-left-color:var(--rb-red); }
-.rb-acc-header { display:flex; align-items:center; gap:16px; padding:22px 24px 22px 20px; user-select:none; }
-.rb-acc-icon { width:22px; height:22px; color:var(--rb-red); flex-shrink:0; opacity:.7; transition:opacity .25s; }
-.rb-acc-item.open .rb-acc-icon { opacity:1; }
-.rb-acc-label { font-size:11px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,.6); line-height:1.35; flex:1; transition:color .25s; }
-.rb-acc-item.open .rb-acc-label { color:#fff; }
-.rb-acc-item:not(.open):hover .rb-acc-label { color:rgba(255,255,255,.85); }
-.rb-acc-chevron { margin-left:8px; flex-shrink:0; color:rgba(255,255,255,.25); transition:transform .35s cubic-bezier(.4,0,.2,1), color .25s; }
-.rb-acc-item.open .rb-acc-chevron { transform:rotate(180deg); color:rgba(255,255,255,.6); }
-.rb-acc-body { max-height:0; overflow:hidden; opacity:0; transition:max-height .4s cubic-bezier(.4,0,.2,1), opacity .3s ease, padding .35s ease; padding:0 24px 0 58px; }
-.rb-acc-item.open .rb-acc-body { max-height:200px; opacity:1; padding:0 24px 22px 58px; }
-.rb-acc-body p { font-size:14px; color:rgba(255,255,255,.5); line-height:1.75; }
-.rb-acc-img { background-size:cover; background-position:center; min-height:0; align-self:stretch; }
-@media(max-width:900px) {
-  .rb-usecases-wrap { grid-template-columns:1fr; }
-  .rb-acc-img { display:none; }
-}
-
 
 /* HAMBURGER */
 .rb-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--card);cursor:pointer;padding:0;color:var(--foreground);}
@@ -576,20 +383,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .rb-mobile-menu__btn--primary:hover{background:var(--rb-red-deep);}
 @media(max-width:600px){.rb-hamburger{display:flex;}}
 
-
-
-
-/* HERO VIDEO LAYOUT */
-.rb-hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1;width:100%;}
-.rb-hero__copy{display:flex;flex-direction:column;gap:0;}
-.rb-hero__video-wrap{display:flex;align-items:center;justify-content:center;}
-.rb-hero__video-wrap video{width:100%;aspect-ratio:1254/1080;max-width:520px;border-radius:20px;object-fit:cover;display:block;overflow:hidden;}
-@media(max-width:900px){
-  .rb-hero__grid{grid-template-columns:1fr;gap:32px;}
-  .rb-hero__video-wrap{display:none;}
-}
-
-
 /* LANGUAGE SWITCHER */
 .rb-lang{position:relative;}
 .rb-lang__menu{position:absolute;top:calc(100% + 10px);right:0;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:6px;min-width:148px;box-shadow:0 16px 40px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:opacity .2s,transform .18s;transform:translateY(-6px);z-index:200;}
@@ -599,14 +392,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 [data-theme="dark"] .rb-lang__opt{color:rgba(255,255,255,.75);}
 .rb-lang__opt:hover{background:rgba(188,0,23,.07);color:var(--rb-red);}
 .rb-lang__opt.rb-lang--active{color:var(--rb-red);background:rgba(188,0,23,.05);}
-/* Hide Google Translate toolbar */
 .goog-te-banner-frame,.goog-te-gadget,.goog-te-gadget-icon,#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,.goog-tooltip:hover,.skiptranslate{display:none !important;height:0 !important;}
 body{top:0 !important;}
 .goog-text-highlight{background:none !important;box-shadow:none !important;}
-
-/* CFO NAV BUTTON */
-.rb-btn--cfo{background:transparent;border-color:rgba(188,0,23,.35);color:var(--rb-red);font-size:13px;padding:10px 18px;}
-.rb-btn--cfo:hover{background:rgba(188,0,23,.06);border-color:var(--rb-red);}
 </style>
 </head>
 <body>
@@ -621,48 +409,36 @@ body{top:0 !important;}
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Productos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="saturn-studio.html">Saturn Studio</a>
-          <a href="rpa-studio.html">RPA Studio</a>
-          <a href="ai-studio.html">AI Studio</a>
-          <a href="orquestador.html">Orquestador</a>
-          <a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
+          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestador</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
         </div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown">
-          <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
-          <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
-        </div>
+        <div class="rb-nav__dropdown"><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Soporte y servicios <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown">
-          <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a>
-          <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
-          <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
-          <a href="#">Media kit</a>
-        </div>
+        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a><a href="#">Media kit</a></div>
       </li>
       <li><a href="contacto.html">Contáctanos</a></li>
     </ul>
     <div class="rb-nav__actions">
       <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
       <div class="rb-lang" id="rb-lang">
-      <button class="rb-iconbtn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false">
-        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-      </button>
-      <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
-        <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button">🇪🇸 Español</button>
-        <button class="rb-lang__opt" data-lang="en" type="button">🇺🇸 English</button>
-        <button class="rb-lang__opt" data-lang="pt" type="button">🇧🇷 Português</button>
+        <button class="rb-iconbtn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        </button>
+        <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
+          <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button">🇪🇸 Español</button>
+          <button class="rb-lang__opt" data-lang="en" type="button">🇺🇸 English</button>
+          <button class="rb-lang__opt" data-lang="pt" type="button">🇧🇷 Português</button>
+        </div>
       </div>
-    </div>
       <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
         <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
       </button>
-      <a href="cfo.html" class="rb-btn rb-btn--cfo">Para CFOs</a>
+      <a href="cfo.html" class="rb-btn rb-cfo-btn">Para CFOs</a>
       <a href="https://rocketbot.com/descargar" class="rb-btn rb-btn--primary" target="_blank" rel="noopener">Descarga</a>
     </div>
   </div>
@@ -700,345 +476,212 @@ body{top:0 !important;}
   </div>
 </div>
 
-
 <!-- HERO -->
 <section class="rb-hero">
   <div class="rb-hero__particles"></div>
-
   <div class="container">
-    <div class="rb-hero__grid">
-      <div class="rb-hero__copy">
-      <span class="rb-eyebrow"><span class="dot"></span>Rocketbot RPA Studio</span>
-      <h1 class="rb-hero__title">Automatiza procesos<br>con <strong>robots que ejecutan.</strong></h1>
-      <p class="rb-hero__sub">Reduce el trabajo manual, acelera tareas entre sistemas y ayuda a que tu operación avance con mayor velocidad y precisión.</p>
+    <div class="rb-hero__content">
+      <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Rocketbot · RPA Studio</span>
+      <h1 class="rb-hero__title">Robots de software que <span class="rb-hero__rot" id="heroRot">ejecutan</span> tus procesos</h1>
+      <p class="rb-hero__sub">Operan entre tus sistemas como lo haría una persona —sin tocar tu infraestructura y sin pedirte que programes— con menos trabajo manual, más velocidad y precisión.</p>
       <div class="rb-hero__ctas">
-        <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg">Pruébalo ahora</a>
-        <a href="#licenciamiento" class="rb-btn rb-btn--ghost rb-btn--lg">Ver planes</a>
-      </div>
-    </div>
-      <div class="rb-hero__video-wrap">
-        <video autoplay loop muted playsinline>
-          <source src="assets/images/anims/rpa.mp4" type="video/mp4">
-        </video>
+        <a class="rb-btn rb-btn--primary rb-btn--lg" href="contacto.html">Pruébalo ahora</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#demo" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver el demo</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CLIENTES -->
-<section class="rb-logos">
+<!-- CLIENTS -->
+<section class="rb-clients">
   <div class="container">
-    <p class="rb-logos__label">Clientes que confían en nosotros</p>
+    <p class="rb-clients__label">Empresas que confían en Rocketbot</p>
+    <div class="rb-marquee"><div class="rb-marquee__track">
+      <img src="assets/images/clientes/onyx.png" alt="Grupo Onyx"><img src="assets/images/clientes/agrosuper.png" alt="Agrosuper"><img src="assets/images/clientes/pit.png" alt="Pit"><img src="assets/images/clientes/proteccion.png" alt="Protección"><img src="assets/images/clientes/solar.png" alt="Solar Banco"><img src="assets/images/clientes/tecniseguros.png" alt="Tecniseguros">
+      <img src="assets/images/clientes/onyx.png" alt="Grupo Onyx"><img src="assets/images/clientes/agrosuper.png" alt="Agrosuper"><img src="assets/images/clientes/pit.png" alt="Pit"><img src="assets/images/clientes/proteccion.png" alt="Protección"><img src="assets/images/clientes/solar.png" alt="Solar Banco"><img src="assets/images/clientes/tecniseguros.png" alt="Tecniseguros">
+    </div></div>
   </div>
-  <div class="rb-logos__wrap">
-    <div class="rb-logos__track">
-      <img src="assets/images/clientes/onyx.png" alt="Grupo Onyx">
-      <img src="assets/images/clientes/agrosuper.png" alt="Agrosuper">
-      <img src="assets/images/clientes/pit.png" alt="Pit">
-      <img src="assets/images/clientes/proteccion.png" alt="Protección">
-      <img src="assets/images/clientes/solar.png" alt="Solar Banco">
-      <img src="assets/images/clientes/tecniseguros.png" alt="Tecn Seguros">
-      <img src="assets/images/clientes/onyx.png" alt="Grupo Onyx" aria-hidden="true">
-      <img src="assets/images/clientes/agrosuper.png" alt="Agrosuper" aria-hidden="true">
-      <img src="assets/images/clientes/pit.png" alt="Pit" aria-hidden="true">
-      <img src="assets/images/clientes/proteccion.png" alt="Protección" aria-hidden="true">
-      <img src="assets/images/clientes/solar.png" alt="Solar Banco" aria-hidden="true">
-      <img src="assets/images/clientes/tecniseguros.png" alt="Tecn Seguros" aria-hidden="true">
-      <img src="assets/images/clientes/onyx.png" alt="Grupo Onyx" aria-hidden="true">
-      <img src="assets/images/clientes/agrosuper.png" alt="Agrosuper" aria-hidden="true">
-      <img src="assets/images/clientes/pit.png" alt="Pit" aria-hidden="true">
-      <img src="assets/images/clientes/proteccion.png" alt="Protección" aria-hidden="true">
-      <img src="assets/images/clientes/solar.png" alt="Solar Banco" aria-hidden="true">
-      <img src="assets/images/clientes/tecniseguros.png" alt="Tecn Seguros" aria-hidden="true">
-      <img src="assets/images/clientes/onyx.png" alt="Grupo Onyx" aria-hidden="true">
-      <img src="assets/images/clientes/agrosuper.png" alt="Agrosuper" aria-hidden="true">
-      <img src="assets/images/clientes/pit.png" alt="Pit" aria-hidden="true">
-      <img src="assets/images/clientes/proteccion.png" alt="Protección" aria-hidden="true">
-      <img src="assets/images/clientes/solar.png" alt="Solar Banco" aria-hidden="true">
-      <img src="assets/images/clientes/tecniseguros.png" alt="Tecn Seguros" aria-hidden="true">
+</section>
+
+<!-- DEMO -->
+<section class="rb-section" id="demo">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow"><span class="dot"></span>Robot en ejecución</span>
+      <h2 class="rb-section__title">Míralo trabajar, <span>paso a paso</span></h2>
+      <p class="rb-section__sub">Un robot de RPA Studio operando un proceso real, con su registro de actividad en vivo. Elige un proceso.</p>
+    </div>
+    <div class="rb-exec-tabs" id="dTabs">
+      <button class="rb-exec-tab act" data-p="concil">Conciliación bancaria</button>
+      <button class="rb-exec-tab" data-p="oc">Carga de órdenes de compra</button>
+      <button class="rb-exec-tab" data-p="fact">Facturación electrónica</button>
+    </div>
+    <div class="rb-exec-win">
+      <div class="rb-exec-bar">
+        <div class="rb-exec-dots"><span></span><span></span><span></span></div>
+        <div class="ttl"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 17h6"/></svg></span><span id="rTitle">RPA Studio · Ejecución</span></div>
+        <span class="st run" id="rStatus"><span class="ld"></span>Ejecutando</span>
+      </div>
+      <div class="rb-exec-body">
+        <div class="rb-exec-steps">
+          <div class="pl">Pasos del robot</div>
+          <div class="rb-exec-list" id="rStepList"></div>
+        </div>
+        <div class="rb-exec-term">
+          <div class="rb-exec-term-h"><span class="d"></span><span id="rBot">rbt@rocketbot</span> · registro de actividad</div>
+          <div class="rb-exec-log" id="rLog"></div>
+        </div>
+      </div>
+      <div class="rb-exec-foot">
+        <button class="rb-btn rb-btn--primary" id="rRun" onclick="rPlay()">Ejecutar de nuevo</button>
+        <span class="sm">Trazabilidad completa de cada acción, lista para auditar.</span>
+      </div>
+    </div>
+    <p class="rb-exec-caption">Vista ilustrativa de un robot creado en RPA Studio.</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="rb-section rb-section--alt" id="producto">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow"><span class="dot"></span>Para todos</span>
+      <h2 class="rb-section__title">Automatizar procesos no debería ser <span>complicado.</span></h2>
+      <p class="rb-section__sub">RPA Studio permite crear robots con una interfaz visual e intuitiva, para que equipos técnicos y de negocio automaticen con la misma rapidez.</p>
+    </div>
+    <div class="rb-compare">
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></div><div class="rb-compare__title">Interfaz visual</div><div class="rb-compare__desc">Diseña automatizaciones arrastrando y conectando componentes, sin necesidad de programación avanzada.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 11V7a2 2 0 0 0-2-2h-4a2 2 0 0 1-4 0H5a2 2 0 0 0-2 2v4a2 2 0 0 1 0 4v4a2 2 0 0 0 2 2h4a2 2 0 0 1 4 0h4a2 2 0 0 0 2-2v-4a2 2 0 0 1 0-4z"/></svg></div><div class="rb-compare__title">Módulos listos para usar</div><div class="rb-compare__desc">Conecta aplicaciones, sistemas y plataformas mediante cientos de módulos prediseñados.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5 3 21l4.5-1.5M14 4l6 6M9 15l9.5-9.5a2.1 2.1 0 0 0-3-3L6 12M12 6c2.5-2.5 5.5-3 8-3-0 2.5-.5 5.5-3 8"/></svg></div><div class="rb-compare__title">Implementación rápida</div><div class="rb-compare__desc">Pon robots en producción en días o semanas, para que los procesos empiecen a generar valor de inmediato.</div></div>
     </div>
   </div>
 </section>
 
-<!-- INTRO -->
+<!-- ROBOT FLOW -->
 <section class="rb-section">
   <div class="container">
     <div class="rb-section__head">
-      <span class="rb-eyebrow">Para todos</span>
-      <h2 class="rb-section__title">Automatizar procesos no debería ser <span>complicado.</span></h2>
-      <div class="rb-section__rule" style="margin-bottom:24px;"></div>
-      <p class="rb-section__sub">Rocketbot RPA Studio permite crear robots mediante una interfaz visual e intuitiva para que tanto equipos técnicos como de negocio puedan automatizar procesos con mayor rapidez.</p>
+      <span class="rb-eyebrow"><span class="dot"></span>Cómo trabaja un robot</span>
+      <h2 class="rb-section__title">Cuatro pasos. <span>Cero trabajo manual.</span></h2>
+      <p class="rb-section__sub">Un robot de RPA Studio repite lo que hoy hace una persona entre sistemas — pero más rápido, sin errores de tipeo y con registro de todo.</p>
     </div>
-    <div class="rb-cards" style="grid-template-columns: repeat(3,1fr);">
-      <div class="rb-card">
-        <div class="rb-card__icon">
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-        </div>
-        <div class="rb-card__title">Interfaz visual</div>
-        <div class="rb-card__desc">Diseña automatizaciones arrastrando y conectando componentes, sin necesidad de programación avanzada.</div>
-      </div>
-      <div class="rb-card">
-        <div class="rb-card__icon">
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <div class="rb-card__title">Módulos listos para usar</div>
-        <div class="rb-card__desc">Conecta aplicaciones, sistemas y plataformas mediante cientos de módulos prediseñados.</div>
-      </div>
-      <div class="rb-card">
-        <div class="rb-card__icon">
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <div class="rb-card__title">Implementación rápida</div>
-        <div class="rb-card__desc">Pon robots en producción en días o semanas para que los procesos comiencen a generar valor rápidamente.</div>
-      </div>
+    <div class="rb-flow4" id="rflow"></div>
+    <div class="rb-flow4__detail">
+      <div class="ic" id="fIcon"></div>
+      <div class="nm" id="fName"></div>
+      <div class="tx" id="fText"></div>
     </div>
   </div>
 </section>
 
-<!-- CASOS DE USO ACCORDION -->
-<section class="rb-section rb-section--alt" id="casos">
+<!-- MCP / CLAUDE -->
+<section class="rb-section rb-section--space" id="ia">
   <div class="container">
-    <div class="rb-section__head rb-section__head--left">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>RPA Studio · MCP de Claude</span>
+      <h2 class="rb-section__title">Describe el proceso. <span style="color:#F3A6AD">Claude arma el robot.</span></h2>
+      <p class="rb-section__sub">A través del MCP (Model Context Protocol), describes en lenguaje natural lo que el robot debe hacer y Claude propone los pasos y comandos, listos para revisar, ajustar y ejecutar en RPA Studio.</p>
+    </div>
+    <div class="rb-mcp-grid">
+      <div class="rb-mcp-card">
+        <div class="rb-mcp-lbl">Instrucción a Claude</div>
+        <div class="rb-mcp-msg"><span class="rb-mcp-av user">Tú</span><div class="rb-mcp-bub" id="nmUser"></div></div>
+        <div class="rb-mcp-msg" id="nmBotRow" style="visibility:hidden"><span class="rb-mcp-av bot">C</span><div class="rb-mcp-bub" id="nmBot"></div></div>
+        <div class="rb-mcp-chips" id="nmChips">
+          <button class="rb-mcp-chip act" data-k="concil">Conciliación</button>
+          <button class="rb-mcp-chip" data-k="portal">Extracción de portal</button>
+          <button class="rb-mcp-chip" data-k="erp">Carga a ERP</button>
+        </div>
+        <div class="rb-mcp-bar"><span class="ph">Describe lo que debe hacer el robot…</span><button class="rb-btn rb-btn--primary" id="nmGen" onclick="nmPlay()">Generar robot</button></div>
+      </div>
+      <div class="rb-mcp-out">
+        <div class="rb-mcp-out-h"><span class="pin"></span><span id="nmTitle">Robot propuesto</span></div>
+        <div class="rb-mcp-screen" id="nmScreen"></div>
+        <div class="rb-mcp-pub" id="nmPub" style="display:none"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div>Robot listo para revisar y ejecutar<small id="nmConn"></small></div></div>
+      </div>
+    </div>
+    <div class="rb-mcp-points">
+      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h8M8 14h5"/><path d="M21 12a8 8 0 0 1-11.2 7.3L4 21l1.7-5.8A8 8 0 1 1 21 12z"/></svg></span><div><h4>Lenguaje natural</h4><p>Explica el proceso en una frase; Claude propone los pasos.</p></div></div>
+      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg></span><div><h4>Comandos sugeridos</h4><p>Genera la secuencia de comandos lista para abrir en el editor visual.</p></div></div>
+      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h4>Tú tienes el control</h4><p>Revisas y ajustas cada paso antes de ponerlo en producción.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRY EXPLORER -->
+<section class="rb-section rb-section--alt" id="industrias">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow"><span class="dot"></span>Casos reales</span>
       <h2 class="rb-section__title">Automatización lista para <span>tu industria</span></h2>
-      <p class="rb-section__sub">Más de 500 procesos implementados en empresas reales.</p>
+      <p class="rb-section__sub">Más de 500 procesos implementados en empresas reales. Elige tu industria y mira dónde RPA Studio ya está trabajando.</p>
     </div>
-    <div class="rb-usecases-wrap">
-
-      <!-- ACORDEÓN -->
-      <div class="rb-accordion">
-
-        <div class="rb-acc-item open" data-acc="1">
-          <div class="rb-acc-header">
-            <svg class="rb-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
-            <span class="rb-acc-label">Conciliaciones bancarias</span>
-            <svg class="rb-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-          </div>
-          <div class="rb-acc-body">
-            <p>Compara movimientos y registros contables automáticamente para detectar diferencias más rápido y acelerar los cierres financieros.</p>
-          </div>
+    <div class="rb-explorer">
+      <div class="rb-explorer__rail" role="tablist" aria-label="Industrias" id="rail"><div class="rb-explorer__rail-h">Industrias</div></div>
+      <div class="rb-explorer__panel" role="tabpanel">
+        <div class="rb-explorer__head">
+          <div class="big" id="eIcon"></div>
+          <div><h3 id="eName"></h3><p class="intro" id="eIntro"></p></div>
         </div>
-
-        <div class="rb-acc-item" data-acc="2">
-          <div class="rb-acc-header">
-            <svg class="rb-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            <span class="rb-acc-label">Facturas y pagos</span>
-            <svg class="rb-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-          </div>
-          <div class="rb-acc-body">
-            <p>Valida información, programa pagos y actualiza registros sin depender de procesos manuales.</p>
-          </div>
-        </div>
-
-        <div class="rb-acc-item" data-acc="3">
-          <div class="rb-acc-header">
-            <svg class="rb-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-            <span class="rb-acc-label">Reportes financieros y regulatorios</span>
-            <svg class="rb-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-          </div>
-          <div class="rb-acc-body">
-            <p>Consolida información de múltiples fuentes para generar reportes con mayor rapidez y trazabilidad.</p>
-          </div>
-        </div>
-
-        <div class="rb-acc-item" data-acc="4">
-          <div class="rb-acc-header">
-            <svg class="rb-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <span class="rb-acc-label">Presupuestos y proyecciones</span>
-            <svg class="rb-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-          </div>
-          <div class="rb-acc-body">
-            <p>Reúne información financiera automáticamente para facilitar la planificación y el seguimiento de resultados.</p>
-          </div>
-        </div>
-
-        <div class="rb-acc-item" data-acc="5">
-          <div class="rb-acc-header">
-            <svg class="rb-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-            <span class="rb-acc-label">Flujo de caja y tesorería</span>
-            <svg class="rb-acc-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-          </div>
-          <div class="rb-acc-body">
-            <p>Monitorea movimientos, genera proyecciones y mejora la visibilidad financiera en tiempo real.</p>
-          </div>
-        </div>
-
+        <div class="rb-explorer__cards" id="ecards"></div>
       </div>
-
-      <!-- IMAGEN -->
-      <div class="rb-acc-img" style="background-image:url('assets/images/rpa/usecases.jpg');"></div>
-
     </div>
   </div>
 </section>
 
-<!-- LICENCIAMIENTO -->
-<section class="rb-section" id="licenciamiento">
+<!-- SECURITY -->
+<section class="rb-section rb-section--space">
   <div class="container">
     <div class="rb-section__head">
-      <span class="rb-eyebrow">Planes</span>
-      <h2 class="rb-section__title">Licenciamiento <span>On-Premise</span></h2>
-      <div class="rb-section__rule" style="margin-bottom:24px;"></div>
-      <p class="rb-section__sub">Elige el plan adecuado para comenzar a automatizar procesos con Rocketbot RPA Studio.</p>
+      <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Seguridad</span>
+      <h2 class="rb-section__title">Para operar con confianza</h2>
+      <p class="rb-section__sub">RPA Studio incorpora controles de seguridad y trazabilidad para que automatices con visibilidad, control y cumplimiento.</p>
     </div>
-    <div class="rb-pricing" style="grid-template-columns: repeat(4,1fr);">
-      <div class="rb-price-card">
-        <div class="rb-price-card__name">STUDIO</div>
-        <div class="rb-price-card__price">Free</div>
-        <div class="rb-price-card__period">Gratis para siempre</div>
-        <hr class="rb-price-card__divider">
-        <ul class="rb-price-card__features">
-          <li>Windows 10+, Windows Server, Linux Ubuntu y macOS</li>
-          <li>Robots atendidos y desatendidos</li>
-          <li>Procesos en paralelo</li>
-          <li>Conexión con Orchestrator y Xperience</li>
-          <li>Soporte vía Slack</li>
-        </ul>
-        <a href="contacto.html" class="rb-btn rb-btn--ghost" style="margin-top:28px; justify-content:center;">Probar gratis</a>
+    <div class="rb-scards">
+      <div class="rb-scard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.4"/></svg></div>
+        <h3>Protección de la información</h3>
+        <p>Los datos se mantienen cifrados en tránsito y en reposo mediante mecanismos avanzados de protección.</p>
       </div>
-      <div class="rb-price-card">
-        <div class="rb-price-card__name">ON-PREMISE S</div>
-        <div class="rb-price-card__price">USD 2.640</div>
-        <div class="rb-price-card__period">por año</div>
-        <hr class="rb-price-card__divider">
-        <ul class="rb-price-card__features">
-          <li>Hasta 2 procesos en paralelo</li>
-          <li>Soporte vía Slack para 2 usuarios</li>
-          <li>Certificación BBRE1</li>
-        </ul>
-        <a href="contacto.html" class="rb-btn rb-btn--ghost" style="margin-top:28px; justify-content:center; text-align:center;">Hablar con un especialista</a>
+      <div class="rb-scard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M17 11l2 2 4-4"/></svg></div>
+        <h3>Control de acceso</h3>
+        <p>Define quién puede crear, modificar y ejecutar robots mediante roles y permisos configurables.</p>
       </div>
-      <div class="rb-price-card rb-price-card--featured">
-        <div class="rb-price-card__badge">Popular</div>
-        <div class="rb-price-card__name">ON-PREMISE M</div>
-        <div class="rb-price-card__price">USD 4.620</div>
-        <div class="rb-price-card__period">por año</div>
-        <hr class="rb-price-card__divider">
-        <ul class="rb-price-card__features">
-          <li>Hasta 4 procesos en paralelo</li>
-          <li>Soporte vía Slack para 4 usuarios</li>
-          <li>Certificación BBRE1</li>
-        </ul>
-        <a href="contacto.html" class="rb-btn rb-btn--primary" style="margin-top:28px; justify-content:center; text-align:center;">Hablar con un especialista</a>
-      </div>
-      <div class="rb-price-card">
-        <div class="rb-price-card__name">ON-PREMISE L</div>
-        <div class="rb-price-card__price">USD 7.590</div>
-        <div class="rb-price-card__period">por año</div>
-        <hr class="rb-price-card__divider">
-        <ul class="rb-price-card__features">
-          <li>Hasta 10 procesos en paralelo</li>
-          <li>Soporte vía Slack para 5 usuarios</li>
-          <li>Certificación BBRE1</li>
-        </ul>
-        <a href="contacto.html" class="rb-btn rb-btn--ghost" style="margin-top:28px; justify-content:center; text-align:center;">Hablar con un especialista</a>
+      <div class="rb-scard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/><path d="M12 8v4l3 2"/></svg></div>
+        <h3>Trazabilidad completa</h3>
+        <p>Cada ejecución queda registrada: qué ocurrió, cuándo y quién realizó cada acción.</p>
       </div>
     </div>
-    <p class="rb-price-note">Los precios indicados no incluyen impuestos aplicables.</p>
-  </div>
-</section>
-
-<!-- SEGURIDAD -->
-<section class="rb-section rb-section--alt">
-  <div class="container">
-    <div class="rb-section__head">
-      <span class="rb-eyebrow">Seguridad</span>
-      <h2 class="rb-section__title">Seguridad y <span>cumplimiento para operar con confianza</span></h2>
-      <div class="rb-section__rule" style="margin-bottom:24px;"></div>
-      <p class="rb-section__sub">Rocketbot RPA Studio incorpora controles de seguridad y trazabilidad para que puedas automatizar procesos con visibilidad, control y cumplimiento normativo.</p>
-    </div>
-    <div class="rb-security-grid">
-      <div class="rb-security-item">
-        <div class="rb-security-item__icon">
-          <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div class="rb-security-item__title">Protección de la información</div>
-        <div class="rb-security-item__desc">Los datos se mantienen protegidos tanto en tránsito como en reposo mediante mecanismos avanzados de cifrado.</div>
-      </div>
-      <div class="rb-security-item">
-        <div class="rb-security-item__icon">
-          <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        </div>
-        <div class="rb-security-item__title">Control de acceso</div>
-        <div class="rb-security-item__desc">Define quién puede crear, modificar y ejecutar robots mediante roles y permisos configurables.</div>
-      </div>
-      <div class="rb-security-item">
-        <div class="rb-security-item__icon">
-          <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
-        <div class="rb-security-item__title">Trazabilidad completa</div>
-        <div class="rb-security-item__desc">Cada ejecución queda registrada para que sepas qué ocurrió, cuándo ocurrió y quién realizó cada acción.</div>
-      </div>
+    <div class="rb-iso">
+      <div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg></div>
+      <span>Operación certificada bajo <b>ISO/IEC 27001</b> de gestión de seguridad de la información.</span>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="rb-section">
+<section class="rb-section" id="faq">
   <div class="container">
-    <div class="rb-section__head">
-      <span class="rb-eyebrow">FAQ</span>
-      <h2 class="rb-section__title">Preguntas <span>frecuentes</span></h2>
-      <div class="rb-section__rule" style="margin-bottom:24px;"></div>
-    </div>
-    <div class="rb-faq">
-      <details>
-        <summary>¿Qué es Rocketbot RPA Studio?</summary>
-        <div class="rb-faq__body">Rocketbot RPA Studio es una plataforma de automatización de procesos que permite crear robots para ejecutar tareas entre sistemas, aplicaciones y plataformas de forma más rápida, precisa y trazable.</div>
-      </details>
-      <details>
-        <summary>¿Qué diferencia a Rocketbot de otras soluciones?</summary>
-        <div class="rb-faq__body">Rocketbot es flexible, ofrece rápida implementación y precios accesibles sin cambios de infraestructura requeridos. Además, permite automatizar procesos sin modificar los sistemas que tu empresa ya utiliza.</div>
-      </details>
-      <details>
-        <summary>¿Necesito saber programar?</summary>
-        <div class="rb-faq__body">No. Su interfaz visual permite crear automatizaciones mediante componentes prediseñados. Para casos más avanzados también admite Python y JavaScript.</div>
-      </details>
-      <details>
-        <summary>¿Qué procesos puedo automatizar?</summary>
-        <div class="rb-faq__body">Conciliaciones bancarias, generación de reportes, validación de facturas, procesamiento de información, integración con Excel, gestión de correos y muchos otros procesos operativos.</div>
-      </details>
-      <details>
-        <summary>¿Funciona solo en Windows?</summary>
-        <div class="rb-faq__body">No. Rocketbot es compatible con Windows, Linux y macOS.</div>
-      </details>
-      <details>
-        <summary>¿Cómo se integra con mis sistemas actuales?</summary>
-        <div class="rb-faq__body">Mediante conectores, APIs o interacción directa con aplicaciones. Los robots pueden trabajar sobre sistemas existentes sin necesidad de realizar cambios complejos.</div>
-      </details>
-      <details>
-        <summary>¿Qué nivel de seguridad ofrece?</summary>
-        <div class="rb-faq__body">Rocketbot incorpora cifrado de datos, control de accesos y trazabilidad completa para que cada proceso opere con seguridad y cumplimiento normativo.</div>
-      </details>
-      <details>
-        <summary>¿Cuánto tiempo toma implementar un robot?</summary>
-        <div class="rb-faq__body">Dependiendo de la complejidad del proceso, un robot puede estar funcionando en cuestión de días o semanas.</div>
-      </details>
-      <details>
-        <summary>¿Cuándo se ven los resultados?</summary>
-        <div class="rb-faq__body">Muchos clientes comienzan a recuperar tiempo y eficiencia desde los primeros procesos automatizados. En proyectos maduros, la inversión suele recuperarse en pocos meses.</div>
-      </details>
-      <details>
-        <summary>¿Puedo escalar la automatización a medida que mi empresa crece?</summary>
-        <div class="rb-faq__body">Sí. Puedes comenzar con unos pocos procesos y escalar a cientos de robots administrados de forma centralizada a través del ecosistema Rocketbot.</div>
-      </details>
-    </div>
+    <div class="rb-section__head"><span class="rb-eyebrow"><span class="dot"></span>FAQ</span><h2 class="rb-section__title">Preguntas frecuentes</h2></div>
+    <div class="rb-faq" id="faqWrap"></div>
   </div>
 </section>
 
-<!-- CTA BAND -->
+<!-- FINAL CTA -->
 <section class="rb-cta-band">
   <div class="container">
     <div class="rb-cta-band__inner">
       <div>
         <h2 class="rb-cta-band__title">¿Listo para reducir el trabajo manual?</h2>
-        <p class="rb-cta-band__sub">Descubre cómo Rocketbot RPA Studio puede ayudarte a reducir el trabajo manual, acelerar procesos y liberar tiempo para actividades de mayor valor.</p>
+        <p class="rb-cta-band__sub">Descubre cómo RPA Studio puede acelerar tus procesos y liberar tiempo para lo que de verdad importa.</p>
       </div>
       <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg" style="white-space:nowrap;">Contáctanos</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="rb-footer">
   <div class="container">
     <div class="rb-footer__grid">
@@ -1060,111 +703,50 @@ body{top:0 !important;}
           </a>
         </div>
       </div>
-      <div class="rb-footer__col">
-        <h6>Productos</h6>
-        <ul>
-          <li><a href="saturn-studio.html">Saturn Studio</a></li>
-          <li><a href="rpa-studio.html">RPA Studio</a></li>
-          <li><a href="ai-studio.html">AI Studio</a></li>
-          <li><a href="orquestador.html">Orquestador</a></li>
-          <li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li>
-        </ul>
-      </div>
-      <div class="rb-footer__col">
-        <h6>Recursos</h6>
-        <ul>
-          <li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li>
-          <li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li>
-        </ul>
-        <h6 style="margin-top:28px;">Empresa</h6>
-        <ul>
-          <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="#">Políticas de privacidad</a></li>
-          <li><a href="#">Políticas de seguridad</a></li>
-          <li><a href="https://g2.com/products/rocketbot" target="_blank" rel="noopener">G2</a></li>
-          <li><a href="#">Trabaja con Nosotros</a></li>
-        </ul>
-      </div>
-      <div class="rb-footer__col">
-        <h6>Soporte y servicios</h6>
-        <ul>
-          <li><a href="#">Certificación</a></li>
-          <li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li>
-          <li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li>
-          <li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li>
-          <li><a href="#">Descargas</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Media kit</a></li>
-        </ul>
-      </div>
+      <div class="rb-footer__col"><h6>Productos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestador</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="#">Políticas de privacidad</a></li><li><a href="#">Políticas de seguridad</a></li><li><a href="https://g2.com/products/rocketbot" target="_blank" rel="noopener">G2</a></li><li><a href="#">Trabaja con Nosotros</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Soporte y servicios</h6><ul><li><a href="#">Certificación</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li><li><a href="#">Descargas</a></li><li><a href="#">FAQs</a></li><li><a href="#">Media kit</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">
       <span>© Rocketbot SpA | All rights reserved 2018 – 2025</span>
-      <div class="rb-footer__legal">
-        <a href="#">Políticas de privacidad</a>
-        <a href="#">Políticas de seguridad</a>
-      </div>
+      <div class="rb-footer__legal"><a href="#">Políticas de privacidad</a><a href="#">Políticas de seguridad</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-var LOGOS = { light: 'assets/logos/logo-header.png', dark: 'assets/logos/logo-header-white.png' };
-var html = document.documentElement;
-var navLogo = document.getElementById('nav-logo');
-var themeBtn = document.getElementById('theme-btn');
-var iconSun = document.getElementById('icon-sun');
-var iconMoon = document.getElementById('icon-moon');
-function applyTheme(theme) {
-  html.setAttribute('data-theme', theme);
-  if (navLogo) navLogo.src = LOGOS[theme];
-  if (iconSun) iconSun.style.display = theme === 'dark' ? 'none' : '';
-  if (iconMoon) iconMoon.style.display = theme === 'light' ? 'none' : '';
-  try { localStorage.setItem('rb-theme', theme); } catch(e) {}
-}
-(function() { var s='light'; try { s=localStorage.getItem('rb-theme')||'light'; } catch(e){} applyTheme(s); })();
-if (themeBtn) themeBtn.addEventListener('click', function() { applyTheme(html.getAttribute('data-theme')==='dark'?'light':'dark'); });
-(function() { var nav=document.getElementById('rb-nav'); if(!nav) return; function onScroll(){nav.classList.toggle('scrolled',window.scrollY>50);} onScroll(); window.addEventListener('scroll',onScroll,{passive:true}); })();
+var LOGOS={light:'assets/logos/logo-header.png',dark:'assets/logos/logo-header-white.png'};
+var html=document.documentElement,navLogo=document.getElementById('nav-logo'),themeBtn=document.getElementById('theme-btn'),iconSun=document.getElementById('icon-sun'),iconMoon=document.getElementById('icon-moon');
+function applyTheme(t){html.setAttribute('data-theme',t);if(navLogo)navLogo.src=LOGOS[t];if(iconSun)iconSun.style.display=t==='dark'?'none':'';if(iconMoon)iconMoon.style.display=t==='light'?'none':'';try{localStorage.setItem('rb-theme',t);}catch(e){}}
+(function(){var s='dark';try{s=localStorage.getItem('rb-theme')||'dark';}catch(e){}applyTheme(s);})();
+if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttribute('data-theme')==='dark'?'light':'dark');});
+(function(){var nav=document.getElementById('rb-nav');if(!nav)return;function onScroll(){nav.classList.toggle('scrolled',window.scrollY>50);}onScroll();window.addEventListener('scroll',onScroll,{passive:true});})();
 
-  // Accordion — animated with max-height CSS transition
-  document.querySelectorAll('.rb-acc-item').forEach(function(item) {
-    item.querySelector('.rb-acc-header').addEventListener('click', function() {
-      var isOpen = item.classList.contains('open');
-      item.closest('.rb-accordion').querySelectorAll('.rb-acc-item').forEach(function(i){ i.classList.remove('open'); });
-      if (!isOpen) item.classList.add('open');
+// Hamburger menu
+(function(){
+  var btn=document.getElementById('rb-hamburger');
+  var menu=document.getElementById('rb-mobile-menu');
+  if(!btn||!menu) return;
+  btn.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    btn.classList.toggle('open',open);
+    document.body.style.overflow=open?'hidden':'';
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow='';
     });
   });
-
-
-  // Hamburger menu
-  (function(){
-    var btn=document.getElementById('rb-hamburger');
-    var menu=document.getElementById('rb-mobile-menu');
-    if(!btn||!menu) return;
-    btn.addEventListener('click',function(){
-      var open=menu.classList.toggle('open');
-      btn.classList.toggle('open',open);
-      document.body.style.overflow=open?'hidden':'';
-    });
-    menu.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click',function(){
-        menu.classList.remove('open');
-        btn.classList.remove('open');
-        document.body.style.overflow='';
-      });
-    });
-  })();
+})();
 </script>
 
 <!-- Google Translate -->
 <div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
 <script>
 function googleTranslateElementInit(){
-  new google.translate.TranslateElement({
-    pageLanguage:'es',
-    includedLanguages:'es,en,pt',
-    autoDisplay:false
-  },'google_translate_element');
+  new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,pt',autoDisplay:false},'google_translate_element');
 }
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
@@ -1175,7 +757,6 @@ function googleTranslateElementInit(){
   var btn  = document.getElementById('rb-lang-btn');
   var menu = document.getElementById('rb-lang-menu');
   if(!btn || !menu) return;
-
   btn.addEventListener('click', function(e){
     e.stopPropagation();
     var open = menu.classList.toggle('open');
@@ -1185,7 +766,6 @@ function googleTranslateElementInit(){
     menu.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
   });
-
   function setLang(lang){
     try{ localStorage.setItem('rb-lang', lang); }catch(e){}
     menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
@@ -1193,7 +773,6 @@ function googleTranslateElementInit(){
     });
     menu.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
-
     if(lang === 'es'){
       var exp0 = new Date(0).toUTCString();
       document.cookie = 'googtrans=; path=/; expires=' + exp0;
@@ -1201,12 +780,9 @@ function googleTranslateElementInit(){
       location.reload();
       return;
     }
-    // Try live Google Translate select
     var sel = document.querySelector('.goog-te-combo');
-    if(sel){
-      sel.value = lang;
-      sel.dispatchEvent(new Event('change'));
-    } else {
+    if(sel){ sel.value = lang; sel.dispatchEvent(new Event('change')); }
+    else {
       var exp1 = new Date(); exp1.setFullYear(exp1.getFullYear()+1);
       var expStr = exp1.toUTCString();
       document.cookie = 'googtrans=/es/'+lang+'; path=/; expires='+expStr;
@@ -1214,12 +790,9 @@ function googleTranslateElementInit(){
       location.reload();
     }
   }
-
   menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
     o.addEventListener('click', function(){ setLang(o.dataset.lang); });
   });
-
-  // Restore saved preference
   var saved = 'es';
   try{ saved = localStorage.getItem('rb-lang') || 'es'; }catch(e){}
   menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
@@ -1231,44 +804,270 @@ function googleTranslateElementInit(){
 })();
 </script>
 
+<!-- PAGE-SPECIFIC INTERACTIVE DEMOS -->
+<script>
+const ICN = {
+  scan:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M3 12h18"/></svg>',
+  cpu:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>',
+  robot:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="11" rx="2.5"/><path d="M12 8V5.5"/><circle cx="12" cy="3.6" r="1.4"/><circle cx="9.3" cy="13" r="1"/><circle cx="14.7" cy="13" r="1"/><path d="M9.5 16.2h5M3.2 12v3M20.8 12v3"/></svg>',
+  log:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12l1.5 1.5L13 11M9 17l1.5 1.5L13 16"/></svg>',
+  bank:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><path d="M5 10v9M9.5 10v9M14.5 10v9M19 10v9M3 21h18"/></svg>',
+  shield:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg>',
+  cart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/><path d="M3 4h2l2.3 11.4a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L21 8H6"/></svg>',
+  factory:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V11l5 3.5V11l5 3.5V7l5 3.5V21"/><path d="M3 21h18M7 17.5h1.5M12 17.5h1.5"/></svg>',
+  pulse:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-5l-2 6-4-12-2 6H2"/></svg>',
+  truck:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3z"/><path d="M14 9h3.5L21 12.5V16h-7"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>',
+  signal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0"/><path d="M8.2 12a3.8 3.8 0 0 1 7.6 0"/><circle cx="12" cy="12" r="1.3"/><path d="M12 13.3V21"/></svg>',
+  civic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9h14v12M3 9l9-5 9 5"/><path d="M9 13v4M15 13v4"/></svg>'
+};
+const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+// ---------- robot flow ----------
+const STEPS = [
+  {nm:'Lee', step:'Captura', icon:'scan', tx:'Toma datos desde correos, Excel, páginas web o cualquier sistema, sin importar el formato.'},
+  {nm:'Procesa', step:'Decide', icon:'cpu', tx:'Aplica las reglas de negocio, valida la información y decide qué hacer con cada caso.'},
+  {nm:'Ejecuta', step:'Actúa', icon:'robot', tx:'Opera tus aplicaciones como lo haría una persona, sin modificar tu infraestructura.'},
+  {nm:'Registra', step:'Controla', icon:'log', tx:'Deja trazabilidad de cada acción: qué hizo, cuándo y con qué resultado.'}
+];
+const FPL = ['datos','decisión','acciones'];
+let fActive=0, fTimer=null; const fnodes=[], fconns=[];
+(function buildFlow(){
+  const flow=document.getElementById('rflow');
+  STEPS.forEach((s,i)=>{
+    const n=document.createElement('div'); n.className='rb-flow4__node'; n.setAttribute('role','button'); n.setAttribute('tabindex','0');
+    n.innerHTML='<div class="ic">'+ICN[s.icon]+'</div><div class="step">'+s.step+'</div><div class="nm">'+s.nm+'</div>';
+    n.addEventListener('mouseenter',()=>{setF(i);fPause();});
+    n.addEventListener('focus',()=>{setF(i);fPause();});
+    fnodes.push(n); flow.appendChild(n);
+    if(i<STEPS.length-1){
+      const c=document.createElement('div'); c.className='rb-flow4__conn'; c.dataset.target=i+1;
+      c.innerHTML='<div class="pl">'+FPL[i]+'</div><div class="track"><div class="line"></div><div class="pulse"></div><div class="chev"></div></div>';
+      fconns.push(c); flow.appendChild(c);
+    }
+  });
+})();
+function setF(i){
+  fActive=i; const s=STEPS[i];
+  fnodes.forEach((n,idx)=>n.classList.toggle('active',idx===i));
+  fconns.forEach(c=>c.classList.toggle('lit',+c.dataset.target===i));
+  const t=document.getElementById('fText'); t.style.opacity=0;
+  setTimeout(()=>{document.getElementById('fIcon').innerHTML=ICN[s.icon];document.getElementById('fName').textContent=s.nm;t.textContent=s.tx;t.style.opacity=1;},130);
+}
+function fPlay(){if(reduce)return;fPause();fTimer=setInterval(()=>setF((fActive+1)%STEPS.length),2600);}
+function fPause(){if(fTimer){clearInterval(fTimer);fTimer=null;}}
+setF(0); fPlay();
+document.getElementById('rflow').addEventListener('mouseleave',fPlay);
+
+// ---------- industry explorer ----------
+const INDUSTRIES=[
+  {name:'Banca y finanzas',icon:'bank',intro:'Alto volumen, cierres exigentes y reportería que no admite errores.',cases:[
+    {t:'Conciliación bancaria',area:'Finanzas',d:'Cruza el core, el ERP y las cartolas, y marca las diferencias.',tag:'Cierre más rápido'},
+    {t:'Onboarding y KYC',area:'Cumplimiento',d:'Valida identidad, consulta listas restrictivas y arma el expediente.',tag:'Disponible 24/7'},
+    {t:'Reportes regulatorios',area:'Cumplimiento',d:'Consolida los datos y genera los reportes a la CMF y la UAF.',tag:'Cumplimiento normativo'}]},
+  {name:'Seguros',icon:'shield',intro:'De la emisión de la póliza al pago del siniestro, con trazabilidad.',cases:[
+    {t:'Emisión de pólizas',area:'Operaciones',d:'Toma la solicitud, valida coberturas y emite en el sistema.',tag:'Reduce tiempo de ciclo'},
+    {t:'Liquidación de siniestros',area:'Operaciones',d:'Reúne documentos, valida la cobertura y arma el caso.',tag:'Cierre más rápido'},
+    {t:'Cobranza y recaudación',area:'Cobranza',d:'Concilia pagos, detecta morosidad y dispara la gestión de cobro.',tag:'Recaudación'}]},
+  {name:'Retail y consumo',icon:'cart',intro:'Operación omnicanal con miles de transacciones que deben cuadrar.',cases:[
+    {t:'Órdenes de compra',area:'Operaciones',d:'Captura las OC desde portales y correos y las carga al ERP.',tag:'Sin transcripción manual'},
+    {t:'Conciliación de e-commerce',area:'Finanzas',d:'Cruza ventas, pagos y pasarelas en el cierre diario.',tag:'Cierre más rápido'},
+    {t:'Reposición de inventario',area:'Operaciones',d:'Cruza ventas y stock para sugerir la reposición.',tag:'Evita quiebres'}]},
+  {name:'Manufactura y agro',icon:'factory',intro:'Planta, bodega y exportación conectadas con el ERP, sin re-tipeo.',cases:[
+    {t:'Cuentas por pagar',area:'Finanzas',d:'Concilia guías contra facturas de proveedores y prepara el pago.',tag:'Pagos a tiempo'},
+    {t:'Producción y mermas',area:'Operaciones',d:'Consolida los datos de planta y arma los reportes.',tag:'Trazabilidad'},
+    {t:'Certificados de exportación',area:'Comex',d:'Genera y valida la documentación de cada embarque.',tag:'Cumplimiento normativo'}]},
+  {name:'Salud y farma',icon:'pulse',intro:'Atención, facturación y cumplimiento sanitario de punta a punta.',cases:[
+    {t:'Agendamiento',area:'Atención',d:'Agenda, confirma y reprograma horas, y notifica al paciente.',tag:'Disponible 24/7'},
+    {t:'Facturación a aseguradoras',area:'Finanzas',d:'Arma y envía bonos y prestaciones, y gestiona los rechazos.',tag:'Menos rechazos'},
+    {t:'Carga de resultados',area:'Operaciones',d:'Ingresa exámenes y resultados al sistema clínico sin tipeo.',tag:'Sin transcripción manual'}]},
+  {name:'Logística y transporte',icon:'truck',intro:'Documentos, estados y liquidaciones al ritmo de la carga.',cases:[
+    {t:'Ingreso de guías',area:'Operaciones',d:'Digitaliza y carga guías y documentos de transporte.',tag:'Sin transcripción manual'},
+    {t:'Liquidación de fletes',area:'Finanzas',d:'Concilia fletes y liquida a transportistas según lo pactado.',tag:'Pagos a tiempo'},
+    {t:'Documentación aduanera',area:'Comex',d:'Prepara y valida la documentación de comercio exterior.',tag:'Cumplimiento normativo'}]},
+  {name:'Telecomunicaciones',icon:'signal',intro:'Altas, facturación masiva y SLAs siempre disponibles.',cases:[
+    {t:'Alta y baja de servicios',area:'Operaciones',d:'Provisiona y da de baja servicios en múltiples sistemas.',tag:'Reduce tiempo de ciclo'},
+    {t:'Interconexión',area:'Finanzas',d:'Liquida y concilia el tráfico de interconexión entre operadores.',tag:'Sin errores de cruce'},
+    {t:'Facturación masiva',area:'Finanzas',d:'Ejecuta el ciclo de facturación y emite notas de crédito.',tag:'Cierre más rápido'}]},
+  {name:'Sector público',icon:'civic',intro:'Trámites, presupuesto y transparencia sobre sistemas heredados.',cases:[
+    {t:'Tramitación de solicitudes',area:'Atención',d:'Recibe, valida y deriva las solicitudes ciudadanas entre áreas.',tag:'Reduce tiempo de ciclo'},
+    {t:'Sistemas heredados',area:'Operaciones',d:'Mueve y valida datos entre sistemas antiguos sin APIs.',tag:'Integra sistemas heredados'},
+    {t:'Transparencia',area:'Cumplimiento',d:'Consolida y publica los reportes de transparencia exigidos.',tag:'Cumplimiento normativo'}]}
+];
+const rail=document.getElementById('rail');
+INDUSTRIES.forEach((ind,i)=>{
+  const b=document.createElement('button'); b.className='rb-explorer__ind'; b.setAttribute('role','tab'); b.setAttribute('aria-selected',i===0);
+  b.innerHTML='<span class="ico">'+ICN[ind.icon]+'</span><span class="nm">'+ind.name+'</span>';
+  b.addEventListener('click',()=>selectInd(i));
+  rail.appendChild(b);
+});
+function selectInd(i){
+  const ind=INDUSTRIES[i];
+  [...rail.querySelectorAll('.rb-explorer__ind')].forEach((el,idx)=>{const on=idx===i;el.classList.toggle('active',on);el.setAttribute('aria-selected',on);});
+  document.getElementById('eIcon').innerHTML=ICN[ind.icon];
+  document.getElementById('eName').textContent=ind.name;
+  document.getElementById('eIntro').textContent=ind.intro;
+  const cards=document.getElementById('ecards'); cards.innerHTML='';
+  ind.cases.forEach((c,idx)=>{
+    const el=document.createElement('div'); el.className='rb-ecase';
+    el.innerHTML='<div class="area">'+c.area+'</div><div class="t">'+c.t+'</div><p class="d">'+c.d+'</p><div class="tag">'+c.tag+'</div>';
+    cards.appendChild(el);
+    if(reduce){el.classList.add('show');}else{el.style.animationDelay=(idx*70)+'ms';requestAnimationFrame(()=>el.classList.add('show'));}
+  });
+}
+selectInd(0);
+
+// ---------- FAQ ----------
+const FAQS=[
+  ['¿Qué es Rocketbot RPA Studio?','RPA Studio es una plataforma de automatización de procesos que permite crear robots para ejecutar tareas entre sistemas, aplicaciones y plataformas de forma más rápida, precisa y trazable.'],
+  ['¿Qué diferencia a Rocketbot de otras soluciones?','Es flexible, de rápida implementación y precios accesibles, sin cambios de infraestructura. Automatiza procesos sin modificar los sistemas que tu empresa ya utiliza.'],
+  ['¿Necesito saber programar?','No. Su interfaz visual permite crear automatizaciones con componentes prediseñados. Para casos más avanzados también admite Python y JavaScript.'],
+  ['¿Puedo crear robots con ayuda de IA?','Sí. A través del MCP de Claude describes el proceso en lenguaje natural y Claude propone los pasos y comandos del robot, que luego revisas, ajustas y ejecutas en RPA Studio. Tú mantienes el control de qué se pone en producción.'],
+  ['¿Qué procesos puedo automatizar?','Conciliaciones bancarias, generación de reportes, validación de facturas, procesamiento de información, integración con Excel, gestión de correos y muchos otros procesos operativos.'],
+  ['¿Funciona solo en Windows?','No. Rocketbot es compatible con Windows, Linux y macOS.'],
+  ['¿Cómo se integra con mis sistemas actuales?','Mediante conectores, APIs o interacción directa con aplicaciones. Los robots trabajan sobre sistemas existentes sin cambios complejos.'],
+  ['¿Qué nivel de seguridad ofrece?','Incorpora cifrado de datos, control de accesos y trazabilidad completa, con operación certificada bajo ISO/IEC 27001.'],
+  ['¿Cuánto tiempo toma implementar un robot?','Según la complejidad del proceso, un robot puede estar funcionando en cuestión de días o semanas.'],
+  ['¿Cuándo se ven los resultados?','Muchos clientes recuperan tiempo y eficiencia desde los primeros procesos automatizados. En proyectos maduros, la inversión suele recuperarse en pocos meses.'],
+  ['¿Puedo escalar a medida que mi empresa crece?','Sí. Puedes comenzar con unos pocos procesos y escalar a cientos de robots administrados de forma centralizada a través del ecosistema Rocketbot.']
+];
+const fw=document.getElementById('faqWrap');
+FAQS.forEach(function(pair){
+  var d=document.createElement('div');
+  d.innerHTML='<details><summary>'+pair[0]+'</summary><div class="rb-faq__body">'+pair[1]+'</div></details>';
+  fw.appendChild(d.firstElementChild);
+});
+
+// ---------- hero rotating word ----------
+(function(){
+  const rot=document.getElementById('heroRot'); if(!rot||reduce) return;
+  const WORDS=['ejecutan','concilian','reportan','integran','validan']; let wi=0;
+  setInterval(function(){
+    rot.classList.add('out');
+    setTimeout(function(){ wi=(wi+1)%WORDS.length; rot.textContent=WORDS[wi]; rot.classList.remove('out'); },300);
+  },2000);
+})();
+
+// ---------- execution demo ----------
+const RCHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>';
+const PROC={
+ concil:{title:'RPA Studio · Conciliación bancaria',bot:'rbt-fin-01',
+   steps:['Abrir el core bancario','Descargar la cartola','Cruzar con el ERP','Marcar diferencias','Generar el reporte'],
+   tl:[[null,'Iniciando robot RBT-FIN-01'],[0,'Abriendo core bancario'],[null,'Sesión iniciada [ok]'],[1,'Descargando cartola del día'],[null,'1.284 movimientos leídos'],[2,'Cruzando movimientos contra el ERP'],[null,'3 diferencias detectadas [wn]'],[3,'Marcando diferencias'],[4,'Generando reporte de conciliación'],[null,'Reporte enviado a Finanzas [ok]']],
+   ok:'Conciliación completada · 3 diferencias para revisión'},
+ oc:{title:'RPA Studio · Carga de órdenes de compra',bot:'rbt-ops-04',
+   steps:['Leer correos entrantes','Extraer datos de la OC','Validar contra el catálogo','Cargar en el ERP','Confirmar recepción'],
+   tl:[[null,'Iniciando robot RBT-OPS-04'],[0,'Revisando bandeja de correo'],[null,'12 órdenes nuevas'],[1,'Extrayendo datos de cada OC'],[2,'Validando productos y precios'],[null,'1 excepción derivada a revisión [wn]'],[3,'Cargando 11 órdenes al ERP'],[null,'Órdenes creadas [ok]'],[4,'Confirmando recepción']],
+   ok:'11 órdenes cargadas · 1 excepción derivada'},
+ fact:{title:'RPA Studio · Facturación electrónica',bot:'rbt-fac-02',
+   steps:['Leer ventas del día','Generar las facturas','Validar con el SII','Enviar al cliente','Registrar en contabilidad'],
+   tl:[[null,'Iniciando robot RBT-FAC-02'],[0,'Leyendo ventas del día'],[null,'487 documentos a emitir'],[1,'Generando facturas electrónicas'],[2,'Validando folios con el SII'],[null,'Documentos timbrados [ok]'],[3,'Enviando por correo a clientes'],[4,'Registrando en contabilidad'],[null,'Cierre del día completado [ok]']],
+   ok:'487 documentos emitidos y registrados'}
+};
+let rCur='concil', rToken=0, rTimers=[];
+function rSleep(ms){return new Promise(function(r){rTimers.push(setTimeout(r,ms));});}
+function rClear(){rTimers.forEach(clearTimeout); rTimers=[];}
+function logLine(t,txt){return '<div class="ln"><span class="tm">['+t+']</span><span class="tx">'+txt.replace('[ok]','<span class="ok">OK</span>').replace('[wn]','<span class="wn">REVISAR</span>')+'</span></div>';}
+function pad(n){return (n<10?'0':'')+n;}
+function rSteps(p){document.getElementById('rStepList').innerHTML=p.steps.map(s=>'<div class="rb-exec-step"><span class="dot">'+RCHK+'</span><span class="lbl">'+s+'</span></div>').join('');}
+function rActivate(i){const els=[].slice.call(document.querySelectorAll('#rStepList .rb-exec-step'));els.forEach((el,idx)=>{el.classList.toggle('active',idx===i);if(idx<i){el.classList.add('done');el.classList.remove('active');}});}
+function rDoneAll(){document.querySelectorAll('#rStepList .rb-exec-step').forEach(el=>{el.classList.remove('active');el.classList.add('done');});}
+function rSetStatus(run){const s=document.getElementById('rStatus');s.className='st '+(run?'run':'done');s.innerHTML='<span class="ld"></span>'+(run?'Ejecutando':'Completado');}
+async function rPlay(key){
+  rClear(); const my=++rToken; if(key) rCur=key; const p=PROC[rCur];
+  document.querySelectorAll('#dTabs .rb-exec-tab').forEach(t=>t.classList.toggle('act',t.getAttribute('data-p')===rCur));
+  document.getElementById('rTitle').textContent=p.title; document.getElementById('rBot').textContent=p.bot+'@rocketbot';
+  rSteps(p); document.getElementById('rLog').innerHTML=''; rSetStatus(true);
+  const btn=document.getElementById('rRun'); btn.disabled=true; btn.textContent='Ejecutando…';
+  const log=document.getElementById('rLog');
+  let h=10,m=2,s=1;
+  function stamp(){s+=1+Math.floor(Math.random()*3); if(s>59){s-=60;m++;} if(m>59){m-=60;h++;} return pad(h)+':'+pad(m)+':'+pad(s);}
+  if(reduce){
+    p.tl.forEach(e=>{if(e[0]!==null)rActivate(e[0]); log.innerHTML+=logLine(stamp(),e[1]);});
+    rDoneAll(); log.innerHTML+=logLine(stamp(),'<span class="ok">'+p.ok+'</span>'); rSetStatus(false); btn.disabled=false; btn.textContent='Ejecutar de nuevo'; return;
+  }
+  for(let i=0;i<p.tl.length;i++){ if(my!==rToken)return; const e=p.tl[i]; if(e[0]!==null)rActivate(e[0]); log.innerHTML+=logLine(stamp(),e[1]); log.scrollTop=log.scrollHeight; await rSleep(620); }
+  if(my!==rToken)return; rDoneAll(); rSetStatus(false);
+  log.innerHTML+=logLine(stamp(),'<span class="ok">'+p.ok+'</span>'); log.scrollTop=log.scrollHeight;
+  btn.disabled=false; btn.textContent='Ejecutar de nuevo';
+}
+document.querySelectorAll('#dTabs .rb-exec-tab').forEach(t=>t.addEventListener('click',()=>rPlay(t.getAttribute('data-p'))));
+let rSeen=false;
+new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!rSeen){rSeen=true;rPlay();}});},{threshold:0.3}).observe(document.querySelector('.rb-exec-win'));
+
+// ---------- MCP / Claude: instrucción -> robot ----------
+const NMCP={
+ concil:{title:'Robot · Conciliación',conn:'Core bancario + ERP',
+   prompt:'Crea un robot que descargue la cartola del banco, la cruce con el ERP y marque las diferencias.',
+   reply:'Listo. Propuse un robot de conciliación con 5 comandos; revísalo y ajústalo antes de ejecutarlo.',
+   cmds:['Abrir aplicación · Core bancario','Descargar archivo · Cartola del día','Leer datos · ERP','Comparar y validar · Detectar diferencias','Generar reporte · Enviar a Finanzas']},
+ portal:{title:'Robot · Extracción de portal',conn:'Portal web + Excel',
+   prompt:'Necesito un robot que entre a un portal, descargue los documentos del día y los guarde en una planilla.',
+   reply:'Generé un robot de extracción con navegación web, descarga y escritura en Excel.',
+   cmds:['Abrir navegador · Iniciar sesión','Navegar · Sección de documentos','Descargar archivos · Del día','Extraer datos · De cada documento','Escribir en Excel · Consolidado']},
+ erp:{title:'Robot · Carga a ERP',conn:'Correo + ERP',
+   prompt:'Arma un robot que tome las órdenes de compra del correo, las valide y las cargue al ERP.',
+   reply:'Creé un robot de carga con lectura de correo, validación y registro en el ERP.',
+   cmds:['Leer correo · Bandeja de entrada','Extraer datos · Orden de compra','Validar · Catálogo y precios','Ingresar al sistema · ERP','Confirmar · Notificar al solicitante']}
+};
+function nmcmd(c,i){const p=c.split(' · ');return '<div class="rb-mcp-cmd rb-mcp-reveal"><span class="n">'+(i+1)+'</span><div class="t">'+p[0]+'<small>'+(p[1]||'')+'</small></div></div>';}
+function nmBuild(c){
+  const conn='<div class="rb-mcp-conn rb-mcp-reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 17h6"/></svg>'+c.conn+'</div>';
+  document.getElementById('nmScreen').innerHTML=conn+c.cmds.map(nmcmd).join('');
+}
+let nmCur='concil', nmToken=0, nmTimers=[];
+function nmSleep(ms){return new Promise(function(r){nmTimers.push(setTimeout(r,ms));});}
+function nmClear(){nmTimers.forEach(clearTimeout); nmTimers=[];}
+async function nmPlay(key){
+  nmClear(); const my=++nmToken; if(key) nmCur=key; const c=NMCP[nmCur];
+  document.querySelectorAll('#nmChips .rb-mcp-chip').forEach(function(ch){ch.classList.toggle('act',ch.getAttribute('data-k')===nmCur);});
+  const user=document.getElementById('nmUser'); user.textContent=''; user.classList.add('typing');
+  document.getElementById('nmBotRow').style.visibility='hidden';
+  document.getElementById('nmTitle').textContent='Robot propuesto'; document.getElementById('nmScreen').innerHTML=''; document.getElementById('nmPub').style.display='none';
+  const btn=document.getElementById('nmGen'); btn.disabled=true; btn.textContent='Generando…';
+  if(reduce){
+    user.textContent=c.prompt; user.classList.remove('typing');
+    document.getElementById('nmBotRow').style.visibility='visible'; document.getElementById('nmBot').textContent=c.reply;
+    document.getElementById('nmTitle').textContent=c.title; nmBuild(c);
+    document.querySelectorAll('#nmScreen .rb-mcp-reveal').forEach(function(e){e.classList.add('in');});
+    document.getElementById('nmConn').textContent='Usa: '+c.conn; document.getElementById('nmPub').style.display='flex';
+    btn.disabled=false; btn.textContent='Generar de nuevo'; return;
+  }
+  for(let i=0;i<c.prompt.length;i++){ if(my!==nmToken)return; user.textContent+=c.prompt[i]; await nmSleep(19); }
+  user.classList.remove('typing'); await nmSleep(330); if(my!==nmToken)return;
+  document.getElementById('nmBotRow').style.visibility='visible';
+  document.getElementById('nmBot').innerHTML='<span class="rb-mcp-dots"><span></span><span></span><span></span></span>';
+  await nmSleep(1100); if(my!==nmToken)return;
+  document.getElementById('nmBot').textContent=c.reply; await nmSleep(260); if(my!==nmToken)return;
+  document.getElementById('nmTitle').textContent=c.title; nmBuild(c);
+  const blks=[].slice.call(document.querySelectorAll('#nmScreen .rb-mcp-reveal'));
+  for(let i=0;i<blks.length;i++){ if(my!==nmToken)return; blks[i].classList.add('in'); await nmSleep(300); }
+  if(my!==nmToken)return;
+  document.getElementById('nmConn').textContent='Usa: '+c.conn; document.getElementById('nmPub').style.display='flex';
+  btn.disabled=false; btn.textContent='Generar de nuevo';
+}
+document.querySelectorAll('#nmChips .rb-mcp-chip').forEach(function(ch){ ch.addEventListener('click',function(){ nmPlay(ch.getAttribute('data-k')); }); });
+let nmSeen=false;
+new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting && !nmSeen){ nmSeen=true; nmPlay(); } });},{threshold:0.3}).observe(document.querySelector('.rb-mcp-grid'));
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "RPA Studio",
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Windows",
-  "description": "Herramienta de automatización robótica de procesos (RPA) para empresas de Latinoamérica.",
+  "operatingSystem": "Web",
+  "description": "Robots de software que ejecutan procesos empresariales entre sistemas, sin programar y sin modificar la infraestructura existente.",
   "url": "https://rocketbot.com/rpa-studio",
   "offers": {
     "@type": "Offer",
     "url": "https://rocketbot.com/contacto"
   },
-  "provider": {
+  "publisher": {
     "@type": "Organization",
     "name": "Rocketbot",
     "url": "https://rocketbot.com"
   }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Inicio",
-      "item": "https://rocketbot.com"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "RPA Studio",
-      "item": "https://rocketbot.com/rpa-studio"
-    }
-  ]
 }
 </script>
 </body>
