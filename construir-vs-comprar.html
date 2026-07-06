@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) – GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2EHJ8S289M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2EHJ8S289M');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Construir con Claude o comprar la suite? | Rocketbot</title>
+<meta name="description" content="Los LLM abarataron escribir código, no automatizar. La diferencia está en operar, gobernar y mantener. No es la suite contra Claude: es Claude crudo contra Claude gobernado.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rocketbot.com/construir-vs-comprar">
+<link rel="icon" href="/assets/logos/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/logos/rocketbot-iso.png">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rocketbot">
+<meta property="og:title" content="¿Construir con Claude o comprar la suite? | Rocketbot">
+<meta property="og:description" content="No es la suite contra Claude: es Claude crudo contra Claude gobernado. Descubre qué te conviene según tu contexto.">
+<meta property="og:url" content="https://rocketbot.com/construir-vs-comprar">
+<meta property="og:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_LA">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@rocketbot">
+<meta name="twitter:title" content="¿Construir con Claude o comprar la suite? | Rocketbot">
+<meta name="twitter:description" content="No es la suite contra Claude: es Claude crudo contra Claude gobernado.">
+<meta name="twitter:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--rb-red:#BC0017;--rb-red-deep:#8E0011;--rb-red-soft:rgba(188,0,23,0.10);--rb-red-glow:rgba(188,0,23,0.30);--rb-blue:#2B7FFF;--rb-neon-cyan:#00D4FF;--rb-black:#000000;--rb-space:#02061B;--rb-dark-1:#0A0A0F;--rb-dark-2:#121218;--rb-dark-3:#1B1F23;--rb-secondary:#263238;--rb-gray-900:#0B0E11;--rb-gray-700:#404040;--rb-gray-500:#909090;--rb-off-white:#FAFAFA;--rb-white:#FFFFFF;--rb-green:#1D9E75;--rb-amber:#BA7517;--background:var(--rb-off-white);--foreground:var(--rb-gray-900);--card:rgba(255,255,255,0.70);--border:rgba(0,0,0,0.08);--muted:var(--rb-gray-500);--glass-bg:rgba(255,255,255,0.60);--glass-border:rgba(255,255,255,0.30);--glass-blur:20px;--r-md:16px;--r-lg:24px;--r-xl:32px;--r-2xl:40px;--r-pill:9999px;--font-sans:'Montserrat',system-ui,-apple-system,Segoe UI,sans-serif;}
+[data-theme="dark"]{--background:var(--rb-dark-1);--foreground:var(--rb-white);--card:rgba(20,20,30,0.80);--border:rgba(255,255,255,0.08);--glass-bg:rgba(20,20,35,0.60);--glass-border:rgba(255,255,255,0.10);}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{font-family:var(--font-sans);background:var(--background);color:var(--foreground);font-weight:400;line-height:1.4;-webkit-font-smoothing:antialiased;transition:background .35s,color .35s;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin:0;}
+p{margin:0;}
+ul{margin:0;padding:0;list-style:none;}
+.container{max-width:1280px;margin:0 auto;padding:0 32px;}
+
+.rb-nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 32px;transition:padding .3s,backdrop-filter .3s,background .3s,border-color .3s;}
+.rb-nav.scrolled{padding:10px 32px;background:linear-gradient(135deg,rgba(43,127,255,.12),rgba(188,0,23,.12),rgba(38,50,56,.18));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.15);box-shadow:0 4px 24px rgba(0,0,0,.08);}
+[data-theme="dark"] .rb-nav.scrolled{background:linear-gradient(135deg,rgba(43,127,255,.08),rgba(188,0,23,.10),rgba(10,10,15,.85));border-bottom-color:rgba(255,255,255,.08);}
+.rb-nav__inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;}
+.rb-nav__logo-wrap{display:flex;align-items:center;flex-shrink:0;}
+.rb-nav__logo{height:32px;width:auto;display:block;}
+.rb-nav__links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;}
+.rb-nav__links a,.rb-nav__links button{background:none;border:none;padding:0;font-size:14px;font-weight:500;color:#555;display:inline-flex;align-items:center;gap:4px;transition:color .2s;}
+[data-theme="dark"] .rb-nav__links a,[data-theme="dark"] .rb-nav__links button{color:rgba(255,255,255,.6);}
+.rb-nav__links a:hover,.rb-nav__links button:hover{color:#000;}
+[data-theme="dark"] .rb-nav__links a:hover,[data-theme="dark"] .rb-nav__links button:hover{color:#fff;}
+.rb-nav__actions{display:flex;align-items:center;gap:12px;}
+.rb-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--card);display:inline-flex;align-items:center;justify-content:center;color:#555;transition:color .2s,transform .2s,background .3s;}
+[data-theme="dark"] .rb-iconbtn{color:rgba(255,255,255,.6);}
+.rb-iconbtn:hover{color:var(--rb-red);transform:scale(1.05);}
+.rb-nav__item{position:relative;}
+.rb-nav__item--dropdown::before{content:'';position:absolute;top:100%;left:-32px;right:-32px;height:18px;z-index:101;}
+.rb-nav__item--dropdown > button{padding:8px 4px;}
+.rb-nav__item--dropdown:hover .rb-nav__dropdown{opacity:1;pointer-events:auto;transform:translate(-50%,0);}
+.rb-nav__dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%, -4px);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:8px;min-width:200px;box-shadow:0 20px 50px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:100;}
+[data-theme="dark"] .rb-nav__dropdown{background:var(--rb-dark-2);border-color:rgba(255,255,255,.08);}
+.rb-nav__dropdown a{display:block;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;color:#333;transition:background .15s,color .15s;}
+[data-theme="dark"] .rb-nav__dropdown a{color:rgba(255,255,255,.75);}
+.rb-nav__dropdown a:hover{background:rgba(188,0,23,.07);color:var(--rb-red);}
+.rb-nav__suite-li{display:flex;align-items:center;flex:0 0 auto;}
+.rb-nav__suite-hdr{display:inline-flex !important;align-items:center;gap:6px;padding:9px 18px !important;border-radius:9999px;white-space:nowrap;line-height:1;flex:0 0 auto;background:linear-gradient(110deg,#FF2942,#BC0017) !important;color:#fff !important;font-weight:800 !important;font-size:13px !important;box-shadow:0 6px 18px rgba(188,0,23,.45);transition:transform .2s,box-shadow .2s,filter .2s;}
+.rb-nav__suite-hdr:hover{color:#fff !important;transform:translateY(-1px);box-shadow:0 10px 26px rgba(188,0,23,.6);filter:brightness(1.06);}
+@media(max-width:1260px){.rb-nav__suite-li{display:none !important;}}
+.rb-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:12px 24px;border-radius:var(--r-pill);border:1px solid transparent;transition:transform .2s,box-shadow .25s,background .25s,color .2s;}
+.rb-btn--primary{background:var(--rb-red);color:#fff;box-shadow:0 4px 16px rgba(188,0,23,.25);}
+.rb-btn--primary:hover{background:var(--rb-red-deep);transform:translateY(-1px);box-shadow:0 10px 30px rgba(188,0,23,.45);}
+.rb-btn--ghost{background:transparent;border-color:var(--border);color:var(--foreground);}
+.rb-btn--ghost:hover{background:rgba(0,0,0,.04);}
+[data-theme="dark"] .rb-btn--ghost:hover{background:rgba(255,255,255,.07);}
+.rb-btn--lg{padding:14px 32px;font-size:15px;}
+.rb-btn--white{background:#fff;color:var(--rb-red);}
+.rb-btn--white:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2);}
+.rb-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--rb-red);background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.2);padding:8px 16px;border-radius:var(--r-pill);}
+.rb-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--rb-red);animation:rb-pulse 2s ease-in-out infinite;}
+.rb-eyebrow--light{color:#F3A6AD;background:rgba(243,166,173,.14);border-color:rgba(243,166,173,.25);}
+.rb-eyebrow--light .dot{background:#F3A6AD;}
+@keyframes rb-pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);}}
+.rb-cfo-btn{background:transparent;border-color:rgba(188,0,23,.35);color:var(--rb-red);font-size:13px;padding:10px 18px;}
+.rb-cfo-btn:hover{background:rgba(188,0,23,.06);border-color:var(--rb-red);}
+
+/* HERO */
+.rb-hero{position:relative;min-height:68vh;padding:140px 0 64px;overflow:hidden;display:flex;align-items:center;background:linear-gradient(160deg,#02061B 0%,#0A0A0F 60%,#1B1F23 100%);text-align:center;}
+.rb-hero__particles{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 75% 40%,rgba(188,0,23,.22) 0%,transparent 45%),radial-gradient(circle at 20% 60%,rgba(43,127,255,.12) 0%,transparent 40%);}
+.rb-hero__content{position:relative;z-index:1;max-width:800px;margin:0 auto;}
+.rb-hero__title{font-size:clamp(30px,4.6vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.12;margin:24px 0 18px;color:#fff;}
+.rb-hero__rot{display:inline-block;transition:opacity .3s ease,transform .3s ease;color:var(--rb-red);}
+.rb-hero__rot.out{opacity:0;transform:translateY(-8px);}
+.rb-hero__sub{font-size:18px;color:rgba(255,255,255,.6);line-height:1.6;max-width:680px;margin:0 auto 32px;font-weight:300;}
+.rb-hero__ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+
+.rb-section{padding:100px 0;position:relative;}
+.rb-section--alt{background:var(--rb-off-white);}
+[data-theme="dark"] .rb-section--alt{background:var(--rb-dark-2);}
+.rb-section__head{text-align:center;max-width:760px;margin:0 auto 56px;}
+.rb-section__title{font-size:clamp(28px,3.5vw,46px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin:16px 0;color:var(--foreground);}
+.rb-section__title span{color:var(--rb-red);}
+.rb-section__sub{font-size:17px;color:#555;transition:color .3s;line-height:1.6;}
+[data-theme="dark"] .rb-section__sub{color:rgba(255,255,255,.5);}
+
+/* INSIGHT 10/90 */
+.rb-insight{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;}
+.rb-insight h2{font-size:clamp(24px,3.2vw,36px);margin:18px 0 16px;line-height:1.15;color:var(--foreground);}
+.rb-insight h2 span{color:var(--rb-red);}
+.rb-insight p{color:var(--muted);font-size:16px;margin:0 0 14px;line-height:1.6;}
+.rb-split-bar{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:0 18px 44px -26px rgba(0,0,0,.35);}
+.rb-split-bar .row{margin-bottom:18px;}
+.rb-split-bar .row:last-child{margin-bottom:0;}
+.rb-split-bar .rl{display:flex;justify-content:space-between;font-size:13.5px;font-weight:600;margin-bottom:8px;color:var(--foreground);}
+.rb-split-bar .rl .pc{font-weight:800;}
+.rb-split-bar .track{height:14px;border-radius:8px;background:rgba(0,0,0,.06);overflow:hidden;}
+[data-theme="dark"] .rb-split-bar .track{background:rgba(255,255,255,.08);}
+.rb-split-bar .fill{height:100%;border-radius:8px;}
+.rb-split-bar .fill.code{width:10%;background:var(--rb-blue);}
+.rb-split-bar .fill.ops{width:90%;background:var(--rb-red);}
+.rb-split-bar .cap{font-size:12.5px;color:var(--muted);margin-top:7px;}
+@media(max-width:900px){.rb-insight{grid-template-columns:1fr;}}
+
+/* ICEBERG */
+.rb-ice{max-width:780px;margin:0 auto;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:0 24px 60px -30px rgba(0,0,0,.4);}
+.rb-ice-top{background:linear-gradient(180deg,rgba(43,127,255,.08),rgba(43,127,255,.02));padding:30px 30px 8px;text-align:center;}
+[data-theme="dark"] .rb-ice-top{background:linear-gradient(180deg,rgba(43,127,255,.12),rgba(43,127,255,.04));}
+.rb-ice-top .tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rb-blue);}
+.rb-ice-top h3{font-size:20px;margin:8px 0 4px;color:var(--foreground);}
+.rb-ice-top p{color:var(--muted);font-size:14px;margin:0;}
+.rb-ice-tip{width:120px;height:64px;margin:18px auto -1px;background:var(--card);border:2px solid rgba(43,127,255,.3);border-bottom:0;border-radius:12px 12px 0 0;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:var(--rb-blue);font-weight:600;clip-path:polygon(22% 0,78% 0,100% 100%,0 100%);}
+.rb-ice-wave{display:block;width:100%;height:26px;color:var(--rb-dark-3);}
+.rb-ice-bottom{background:var(--rb-dark-3);padding:26px 30px 32px;color:#fff;}
+.rb-ice-bottom .tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F3A6AD;text-align:center;display:block;}
+.rb-ice-bottom h3{color:#fff;text-align:center;font-size:19px;margin:8px 0 20px;}
+.rb-ice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.rb-ice-it{background:#232C32;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:14px;display:flex;gap:10px;align-items:flex-start;}
+.rb-ice-it svg{width:18px;height:18px;color:#F3A6AD;flex:0 0 auto;margin-top:1px;}
+.rb-ice-it span{font-size:13px;color:#E6E9EA;font-weight:600;line-height:1.35;}
+@media(max-width:960px){.rb-ice-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.rb-ice-grid{grid-template-columns:1fr;}}
+
+/* COMPARISON TABLE */
+.rb-cmp-wrap{overflow-x:auto;}
+.rb-cmp{width:100%;min-width:620px;border-collapse:separate;border-spacing:0;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(0,0,0,.35);}
+.rb-cmp th,.rb-cmp td{padding:15px 18px;text-align:left;font-size:14.5px;border-bottom:1px solid var(--border);vertical-align:middle;color:var(--foreground);}
+.rb-cmp thead th{background:rgba(0,0,0,.02);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);}
+[data-theme="dark"] .rb-cmp thead th{background:rgba(255,255,255,.03);}
+.rb-cmp thead th:last-child,.rb-cmp td:last-child{background:rgba(188,0,23,.05);}
+.rb-cmp thead th:last-child{color:var(--rb-red);}
+.rb-cmp tbody tr:last-child td{border-bottom:0;}
+.rb-cmp .cap{font-weight:600;color:var(--foreground);}
+.rb-cmp .st{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;}
+.rb-cmp .st .i{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-cmp .st .i svg{width:13px;height:13px;}
+.rb-cmp .st.yes .i{background:rgba(29,158,117,.15);color:var(--rb-green);}
+.rb-cmp .st.yes{color:var(--foreground);font-weight:600;}
+.rb-cmp .st.diy .i{background:rgba(186,117,23,.15);color:var(--rb-amber);}
+.rb-cmp .st.diy{color:var(--muted);}
+.rb-cmp .st.partial .i{background:rgba(43,127,255,.15);color:var(--rb-blue);}
+.rb-cmp .st.partial{color:var(--muted);}
+
+/* DECISION HELPER */
+.rb-bvb{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.rb-bvb-q{display:flex;flex-direction:column;gap:20px;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;}
+.rb-bq .ql{font-weight:700;font-size:14.5px;margin-bottom:10px;color:var(--foreground);}
+.rb-bq .opts{display:flex;gap:8px;flex-wrap:wrap;}
+.rb-bopt{padding:9px 14px;border-radius:10px;border:1px solid var(--border);background:var(--card);font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s;}
+.rb-bopt:hover{border-color:var(--rb-red);color:var(--rb-red);}
+.rb-bopt.act{background:var(--rb-red);border-color:var(--rb-red);color:#fff;}
+.rb-bvb-out{background:var(--rb-dark-3);color:#fff;border-radius:18px;padding:28px;position:sticky;top:88px;}
+.rb-bvb-lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:700;}
+.rb-bvb-meter{height:8px;border-radius:6px;background:linear-gradient(90deg,#2B7FFF,#BA7517,#BC0017);position:relative;margin:16px 0 10px;}
+.rb-bvb-meter .mk{position:absolute;top:-6px;width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--rb-dark-3);box-shadow:0 3px 10px rgba(0,0,0,.45);transform:translateX(-50%);transition:left .35s;left:50%;}
+.rb-bvb-ends{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.04em;font-weight:700;}
+.rb-bvb-verdict{font-weight:800;font-size:21px;margin:20px 0 8px;color:#fff;}
+.rb-bvb-body{color:rgba(255,255,255,.55);font-size:14px;line-height:1.6;}
+.rb-bvb-drivers{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.rb-bvb-drivers .dch{background:rgba(243,166,173,.13);border:1px solid rgba(243,166,173,.25);color:#F3A6AD;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;}
+@media(max-width:960px){.rb-bvb{grid-template-columns:1fr;}.rb-bvb-out{position:static;}}
+
+/* FEAT GRID */
+.rb-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.rb-compare__card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 24px;text-align:left;transition:border-color .3s,transform .3s;}
+.rb-compare__card:hover{border-color:rgba(188,0,23,.4);transform:translateY(-4px);}
+.rb-compare__icon{width:48px;height:48px;border-radius:12px;background:rgba(188,0,23,.08);border:1px solid rgba(188,0,23,.15);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--rb-red);}
+.rb-compare__title{font-size:16px;font-weight:800;margin-bottom:9px;color:var(--foreground);}
+.rb-compare__desc{font-size:14px;color:#777;line-height:1.6;}
+[data-theme="dark"] .rb-compare__desc{color:rgba(255,255,255,.5);}
+.rb-compare__tag{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--rb-red);background:rgba(188,0,23,.08);border-radius:999px;padding:4px 11px;}
+@media(max-width:900px){.rb-compare{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.rb-compare{grid-template-columns:1fr;}}
+
+/* CLAUDE INSIDE band */
+.rb-inside{background:linear-gradient(135deg,var(--rb-secondary) 0%,#1a242a 100%);border-radius:22px;padding:44px;color:#fff;text-align:center;position:relative;overflow:hidden;}
+[data-theme="dark"] .rb-inside{background:linear-gradient(135deg,#080c0f 0%,var(--rb-dark-3) 100%);}
+.rb-inside::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 700px 300px at 50% 0%,rgba(188,0,23,.3),transparent 60%);pointer-events:none;}
+.rb-inside > *{position:relative;}
+.rb-inside h2{color:#fff;font-size:clamp(24px,3.2vw,34px);margin:18px auto 14px;max-width:24ch;}
+.rb-inside p{color:rgba(255,255,255,.65);font-size:16px;max-width:60ch;margin:0 auto 22px;line-height:1.6;}
+.rb-inside .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.rb-inside .ich{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:9px 16px;font-size:13.5px;font-weight:600;color:#E6E9EA;}
+
+/* PROOF STRIP */
+.rb-proof-strip{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center;}
+.rb-stat-card{background:var(--rb-dark-3);color:#fff;border-radius:20px;padding:34px;text-align:center;}
+.rb-stat-card .big{font-weight:800;font-size:clamp(48px,8vw,72px);line-height:1;color:#fff;}
+.rb-stat-card .desc{color:rgba(255,255,255,.6);font-size:14.5px;margin:10px auto 12px;max-width:32ch;line-height:1.5;}
+.rb-stat-card .src{font-size:11.5px;color:rgba(255,255,255,.35);}
+.rb-proof-strip h2{font-size:clamp(24px,3.2vw,34px);margin:0 0 14px;color:var(--foreground);}
+.rb-proof-strip p{color:var(--muted);font-size:16px;margin:0 0 20px;line-height:1.6;}
+.rb-pcases{display:flex;gap:22px;flex-wrap:wrap;}
+.rb-pcase .m{font-weight:800;font-size:22px;color:var(--rb-red);}
+.rb-pcase .w{font-size:13px;color:var(--muted);}
+@media(max-width:900px){.rb-proof-strip{grid-template-columns:1fr;}}
+
+/* FAQ */
+.rb-faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.rb-faq details{background:var(--card);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;transition:background .35s,border-color .3s;}
+.rb-faq details[open]{border-color:rgba(188,0,23,.3);}
+.rb-faq summary{padding:20px 24px;font-size:15px;font-weight:600;color:var(--foreground);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s;}
+.rb-faq summary::-webkit-details-marker{display:none;}
+.rb-faq summary::after{content:'+';font-size:20px;color:var(--rb-red);font-weight:700;flex-shrink:0;}
+.rb-faq details[open] summary::after{content:'−';}
+.rb-faq summary:hover{color:var(--rb-red);}
+.rb-faq__body{padding:0 24px 20px;font-size:14px;color:#666;line-height:1.7;}
+[data-theme="dark"] .rb-faq__body{color:rgba(255,255,255,.5);}
+
+.rb-cta-band{background:linear-gradient(135deg,var(--rb-secondary) 0%,#1a242a 100%);padding:80px 0;position:relative;overflow:hidden;}
+.rb-cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 700px 300px at 10% 50%,rgba(188,0,23,.35),transparent 60%);pointer-events:none;}
+[data-theme="dark"] .rb-cta-band{background:linear-gradient(135deg,#080c0f 0%,var(--rb-dark-3) 100%);}
+.rb-cta-band__inner{display:flex;align-items:center;justify-content:space-between;gap:48px;position:relative;z-index:1;}
+.rb-cta-band__title{font-size:clamp(24px,3vw,40px);font-weight:700;color:#fff;letter-spacing:-0.02em;margin-bottom:12px;line-height:1.2;}
+.rb-cta-band__sub{font-size:16px;color:rgba(255,255,255,.6);max-width:520px;}
+
+.rb-footer{background:#1a242a;color:#fff;padding:80px 0 32px;border-top:6px solid var(--rb-red);}
+[data-theme="dark"] .rb-footer{background:#080c0f;}
+.rb-footer__grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px;margin-bottom:64px;}
+.rb-footer__brand img{height:36px;width:auto;display:block;margin-bottom:24px;}
+.rb-footer__copy{color:#999;font-size:14px;max-width:320px;line-height:1.6;}
+.rb-footer__col h6{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--rb-red);margin-bottom:20px;font-weight:700;}
+.rb-footer__col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.rb-footer__col a{color:#ccc;font-size:14px;transition:color .2s;}
+.rb-footer__col a:hover{color:var(--rb-red);}
+.rb-footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;color:#777;font-size:13px;}
+.rb-footer__legal{display:flex;gap:20px;}
+.rb-footer__legal a{color:#777;font-size:13px;transition:color .2s;}
+.rb-footer__legal a:hover{color:var(--rb-red);}
+.rb-footer__social{display:flex;gap:12px;margin-top:20px;}
+.rb-footer__social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);display:inline-flex;align-items:center;justify-content:center;color:#aaa;transition:background .2s,color .2s;}
+.rb-footer__social a:hover{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
+
+@media(max-width:900px){
+  .rb-footer__grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .rb-cta-band__inner{flex-direction:column;text-align:center;}
+}
+@media(max-width:600px){
+  .rb-nav{padding:12px 20px;}.rb-nav__inner{gap:12px;}.rb-nav__logo{height:24px;}.rb-nav__actions .rb-btn{display:none;}
+  .container{padding:0 20px;}
+  .rb-section{padding:64px 0;}
+  .rb-footer__grid{grid-template-columns:1fr;}
+  .rb-nav__links{display:none;}
+}
+
+/* HAMBURGER */
+.rb-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--card);cursor:pointer;padding:0;color:var(--foreground);}
+.rb-hamburger span{display:block;width:16px;height:2px;background:currentColor;border-radius:2px;transition:transform .3s,opacity .3s;}
+.rb-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.rb-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.rb-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+/* MOBILE MENU */
+.rb-mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;z-index:48;background:var(--background);padding:80px 28px 48px;display:flex;flex-direction:column;overflow-y:auto;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+[data-theme="dark"] .rb-mobile-menu{background:var(--rb-dark-1);}
+.rb-mobile-menu.open{transform:translateX(0);}
+.rb-mobile-menu__inner{display:flex;flex-direction:column;gap:28px;flex:1;}
+.rb-mobile-menu__section{display:flex;flex-direction:column;}
+.rb-mobile-menu__label{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--rb-red);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid rgba(188,0,23,.2);}
+.rb-mobile-menu__section a{display:block;font-size:16px;font-weight:600;color:var(--foreground);padding:11px 0;border-bottom:1px solid var(--border);transition:color .2s;}
+.rb-mobile-menu__section a:hover{color:var(--rb-red);}
+.rb-mobile-menu__actions{display:flex;flex-direction:column;gap:10px;margin-top:auto;padding-top:28px;}
+.rb-mobile-menu__btn{display:block;text-align:center;font-size:14px;font-weight:700;padding:13px 24px;border-radius:var(--r-pill);border:1px solid var(--border);color:var(--foreground);font-family:var(--font-sans);transition:background .2s,color .2s;}
+.rb-mobile-menu__btn--primary{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
+.rb-mobile-menu__btn--primary:hover{background:var(--rb-red-deep);}
+@media(max-width:600px){.rb-hamburger{display:flex;}}
+
+/* LANGUAGE SWITCHER */
+.rb-lang{position:relative;}
+.rb-lang__menu{position:absolute;top:calc(100% + 10px);right:0;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:6px;min-width:148px;box-shadow:0 16px 40px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:opacity .2s,transform .18s;transform:translateY(-6px);z-index:200;}
+[data-theme="dark"] .rb-lang__menu{background:var(--rb-dark-2);border-color:rgba(255,255,255,.08);}
+.rb-lang__menu.open{opacity:1;pointer-events:auto;transform:translateY(0);}
+.rb-lang__opt{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:9px;font-size:13px;font-weight:600;color:#333;cursor:pointer;transition:background .15s,color .15s;border:none;background:none;width:100%;font-family:inherit;text-align:left;}
+[data-theme="dark"] .rb-lang__opt{color:rgba(255,255,255,.75);}
+.rb-lang__opt:hover{background:rgba(188,0,23,.07);color:var(--rb-red);}
+.rb-lang__opt.rb-lang--active{color:var(--rb-red);background:rgba(188,0,23,.05);}
+.goog-te-banner-frame,.goog-te-gadget,.goog-te-gadget-icon,#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,.goog-tooltip:hover,.skiptranslate{display:none !important;height:0 !important;}
+body{top:0 !important;}
+.goog-text-highlight{background:none !important;box-shadow:none !important;}
+</style>
+</head>
+<body>
+
+<nav class="rb-nav" id="rb-nav">
+  <div class="rb-nav__inner">
+    <a href="index.html" class="rb-nav__logo-wrap">
+      <img id="nav-logo" src="assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
+    </a>
+    <ul class="rb-nav__links">
+      <li class="rb-nav__suite-li"><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
+      <li class="rb-nav__item rb-nav__item--dropdown">
+        <button type="button">Productos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown">
+          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestador</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
+        </div>
+      </li>
+      <li class="rb-nav__item rb-nav__item--dropdown">
+        <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
+      </li>
+      <li class="rb-nav__item rb-nav__item--dropdown">
+        <button type="button">Soporte y servicios <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a><a href="#">Media kit</a></div>
+      </li>
+      <li><a href="contacto.html">Contáctanos</a></li>
+    </ul>
+    <div class="rb-nav__actions">
+      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <div class="rb-lang" id="rb-lang">
+        <button class="rb-iconbtn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        </button>
+        <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
+          <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button">🇪🇸 Español</button>
+          <button class="rb-lang__opt" data-lang="en" type="button">🇺🇸 English</button>
+          <button class="rb-lang__opt" data-lang="pt" type="button">🇧🇷 Português</button>
+        </div>
+      </div>
+      <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
+        <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
+        <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+      </button>
+      <a href="cfo.html" class="rb-btn rb-cfo-btn">Para CFOs</a>
+      <a href="contacto.html" class="rb-btn rb-btn--primary">Hablemos de tu caso</a>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="rb-mobile-menu" id="rb-mobile-menu">
+  <div class="rb-mobile-menu__inner">
+    <div class="rb-mobile-menu__section">
+      <div class="rb-mobile-menu__label">Productos</div>
+      <a href="saturn-studio.html">Saturn Studio</a>
+      <a href="rpa-studio.html">RPA Studio</a>
+      <a href="ai-studio.html">AI Studio</a>
+      <a href="orquestador.html">Orquestador</a>
+      <a href="xperience.html">Xperience</a>
+      <a href="nexus.html">Nexus</a>
+    </div>
+    <div class="rb-mobile-menu__section">
+      <div class="rb-mobile-menu__label">Recursos</div>
+      <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
+      <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
+    </div>
+    <div class="rb-mobile-menu__section">
+      <div class="rb-mobile-menu__label">Soporte y servicios</div>
+      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a>
+      <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
+      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
+      <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Media kit</a>
+    </div>
+    <div class="rb-mobile-menu__actions">
+      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suite Rocketbot</a>
+      <a href="contacto.html" class="rb-mobile-menu__btn">Contáctanos</a>
+      <a href="https://rocketbot.com/descargar" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" target="_blank" rel="noopener">Descarga</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="rb-hero">
+  <div class="rb-hero__particles"></div>
+  <div class="container">
+    <div class="rb-hero__content">
+      <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Claude + Rocketbot</span>
+      <h1 class="rb-hero__title">Toda la inteligencia de Claude, sin construir <span class="rb-hero__rot" id="heroRot">el andamiaje</span></h1>
+      <p class="rb-hero__sub">Los modelos como Claude abarataron escribir código —y eso es genial. Pero en automatización empresarial, lo que más cuesta no es escribir: es operar, gobernar y mantener. La plataforma se encarga de esa parte, para que te quedes con la inteligencia y te saltes el trabajo pesado.</p>
+      <div class="rb-hero__ctas">
+        <a class="rb-btn rb-btn--primary rb-btn--lg" href="#decision">¿Construir o comprar? Decídelo</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#comparacion" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver la comparación</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHT 10/90 -->
+<section class="rb-section">
+  <div class="container">
+    <div class="rb-insight">
+      <div>
+        <span class="rb-eyebrow"><span class="dot"></span>El malentendido</span>
+        <h2>Claude baja el costo de <span>escribir código</span>. No el de automatizar.</h2>
+        <p>Escribir el script es la parte fácil —y la que un LLM resuelve genial. Pero en automatización empresarial, construir es apenas el comienzo: el costo real está en que corra solo, sin fallar, con permisos, trazabilidad y mantenimiento cuando los sistemas cambian.</p>
+        <p>Por eso "que Claude lo haga todo" suena simple y resulta caro: hace fácil la parte fácil y deja intacta la difícil.</p>
+      </div>
+      <div class="rb-split-bar">
+        <div class="row">
+          <div class="rl"><span>Escribir el código</span><span class="pc" style="color:var(--rb-blue)">~10%</span></div>
+          <div class="track"><div class="fill code"></div></div>
+          <div class="cap">Lo que un LLM acelera de verdad.</div>
+        </div>
+        <div class="row">
+          <div class="rl"><span>Operar, gobernar y mantener</span><span class="pc" style="color:var(--rb-red)">~90%</span></div>
+          <div class="track"><div class="fill ops"></div></div>
+          <div class="cap">Ejecución 24/7, errores, permisos, auditoría, integración y mantenimiento.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ICEBERG -->
+<section class="rb-section rb-section--alt">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow"><span class="dot"></span>El iceberg del "hágalo usted mismo"</span>
+      <h2 class="rb-section__title">Lo que ves es <span>una fracción</span> de lo que construyes</h2>
+      <p class="rb-section__sub">El prototipo que Claude te ayuda a escribir es la punta. Debajo está todo lo que igual tienes que construir y sostener para llevarlo a producción.</p>
+    </div>
+    <div class="rb-ice">
+      <div class="rb-ice-top">
+        <span class="tag">Sobre la superficie</span>
+        <h3>Lo que crees que construyes</h3>
+        <p>Un script que automatiza la tarea.</p>
+        <div class="rb-ice-tip">el script</div>
+      </div>
+      <svg class="rb-ice-wave" viewBox="0 0 1200 26" preserveAspectRatio="none"><path fill="currentColor" d="M0 14 Q150 2 300 14 T600 14 T900 14 T1200 14 V26 H0 Z"/></svg>
+      <div class="rb-ice-bottom">
+        <span class="tag">Bajo la superficie</span>
+        <h3>Lo que en realidad tienes que construir y mantener</h3>
+        <div class="rb-ice-grid">
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Ejecución 24/7 sin supervisión</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/></svg><span>Reintentos y manejo de errores</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Credenciales y permisos por rol</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v5H4zM4 13h10v7H4z"/></svg><span>Trazabilidad y auditoría</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg><span>Monitoreo y alertas</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg><span>Integración con sistemas sin API</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2z"/></svg><span>Mantenimiento cuando todo cambia</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><span>Seguridad y cumplimiento</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M19 8v6M16 11h6"/></svg><span>Que no dependa de una sola persona</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="rb-section" id="comparacion">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow"><span class="dot"></span>Honestamente</span>
+      <h2 class="rb-section__title">Lo que un LLM resuelve <span>y lo que no</span></h2>
+      <p class="rb-section__sub">Claude es excelente para escribir y prototipar. El resto, en el camino DIY, lo construyes y lo sostienes tú.</p>
+    </div>
+    <div class="rb-cmp-wrap">
+      <table class="rb-cmp" id="cmp">
+        <thead><tr><th>Capacidad</th><th>Claude crudo / DIY</th><th>Suite (con Claude adentro)</th></tr></thead>
+        <tbody id="cmpBody"></tbody>
+      </table>
+    </div>
+    <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:14px">No es que Claude "no pueda": es que tú tendrías que construir y mantener todo lo demás alrededor.</p>
+  </div>
+</section>
+
+<!-- DECISION HELPER -->
+<section class="rb-section rb-section--alt" id="decision">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow"><span class="dot"></span>Sin trampa</span>
+      <h2 class="rb-section__title">¿Construir tú mismo o <span>comprar?</span></h2>
+      <p class="rb-section__sub">Responde cuatro preguntas sobre tu situación. A veces el DIY es lo correcto; a veces no. Esto te ayuda a verlo.</p>
+    </div>
+    <div class="rb-bvb">
+      <div class="rb-bvb-q" id="bvbQ"></div>
+      <div class="rb-bvb-out">
+        <span class="rb-bvb-lbl">Recomendación</span>
+        <div class="rb-bvb-meter"><div class="mk" id="bvbMk"></div></div>
+        <div class="rb-bvb-ends"><span>Hazlo tú mismo</span><span>Plataforma</span></div>
+        <div class="rb-bvb-verdict" id="bvbVerdict"></div>
+        <div class="rb-bvb-body" id="bvbBody"></div>
+        <div class="rb-bvb-drivers" id="bvbDrivers"></div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:18px">Orientación general según tu contexto; la decisión final depende de tu operación específica.</p>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="rb-section" id="arquitectura">
+  <div class="container">
+    <div class="rb-section__head">
+      <span class="rb-eyebrow"><span class="dot"></span>La arquitectura correcta</span>
+      <h2 class="rb-section__title">No "IA para todo". <span>Cada cosa en su lugar.</span></h2>
+      <p class="rb-section__sub">En back-office de alto volumen quieres ejecución determinística y auditable, con IA acotada donde realmente aporta. Eso es exactamente lo que combina la suite.</p>
+    </div>
+    <div class="rb-compare">
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6"/><circle cx="9" cy="13" r="1" fill="currentColor"/><circle cx="15" cy="13" r="1" fill="currentColor"/></svg></div><div class="rb-compare__title">Determinístico para lo estructurado</div><div class="rb-compare__desc">Los robots ejecutan el ~80% repetitivo siempre igual: predecible, rápido y auditable, sin que un modelo improvise cada corrida.</div><span class="rb-compare__tag">RPA Studio</span></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-1 8H9a4 4 0 0 1-1-8V7a4 4 0 0 1 4-4z"/><path d="M9.5 16h5"/></svg></div><div class="rb-compare__title">IA acotada donde aporta</div><div class="rb-compare__desc">Agentes e IA para el ~20% de juicio: interpretar datos no estructurados y resolver excepciones, dentro de límites definidos.</div><span class="rb-compare__tag">AI Studio · Agentes</span></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="rb-compare__title">Gobierno sobre todo</div><div class="rb-compare__desc">Permisos por rol, trazabilidad de cada acción y supervisión humana. El control no es un extra: viene de fábrica.</div><span class="rb-compare__tag">Orquestador</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLAUDE INSIDE -->
+<section class="rb-section rb-section--alt">
+  <div class="container">
+    <div class="rb-inside">
+      <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>El punto que se pierde</span>
+      <h2>La suite no compite con Claude. Lo trae adentro.</h2>
+      <p>A través del MCP de Claude, describes lo que necesitas en lenguaje natural y la plataforma arma el flujo, el robot o el dashboard —ya gobernado, conectado y listo para operar. Te quedas con la inteligencia de Claude sin tener que construir el andamiaje a su alrededor.</p>
+      <div class="row">
+        <span class="ich">Claude en el Orquestador</span>
+        <span class="ich">Claude en Saturn Studio</span>
+        <span class="ich">Claude en Nexus</span>
+        <span class="ich">Compatible con cualquier IA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="rb-section">
+  <div class="container">
+    <div class="rb-proof-strip">
+      <div class="rb-stat-card">
+        <div class="big">95%</div>
+        <div class="desc">de las iniciativas de IA empresarial no llegan a generar un impacto medible en el negocio.</div>
+        <div class="src">Fuente: MIT, proyecto NANDA (2025)</div>
+      </div>
+      <div>
+        <h2>Casi todas mueren en la brecha.</h2>
+        <p>Entre "un script que anda en el demo" y "un sistema gobernado en producción" se cae la mayoría de las iniciativas. Lo que llega a producción se apoya en plataforma, no en heroísmo individual.</p>
+        <div class="rb-pcases">
+          <div class="rb-pcase"><div class="m">+USD 500K</div><div class="w">Protección · una sola operación</div></div>
+          <div class="rb-pcase"><div class="m">+USD 1.5M</div><div class="w">Agrosuper · ahorrados</div></div>
+          <div class="rb-pcase"><div class="m">+USD 500K</div><div class="w">Consorcio · ahorro anual</div></div>
+        </div>
+        <p style="margin-top:18px"><a href="cfo.html" style="color:var(--rb-red);font-weight:700">Ver el caso de negocio para CFOs →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="rb-section rb-section--alt" id="faq">
+  <div class="container">
+    <div class="rb-section__head"><span class="rb-eyebrow"><span class="dot"></span>FAQ</span><h2 class="rb-section__title">Las objeciones, de frente</h2></div>
+    <div class="rb-faq" id="faqWrap"></div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="rb-cta-band">
+  <div class="container">
+    <div class="rb-cta-band__inner">
+      <div>
+        <h2 class="rb-cta-band__title">Quédate con la inteligencia. Sáltate el andamiaje.</h2>
+        <p class="rb-cta-band__sub">Cuéntanos tu caso y vemos juntos, con honestidad, si te conviene construirlo o apoyarte en la plataforma.</p>
+      </div>
+      <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg" style="white-space:nowrap;">Hablemos de tu caso</a>
+    </div>
+  </div>
+</section>
+
+<footer class="rb-footer">
+  <div class="container">
+    <div class="rb-footer__grid">
+      <div class="rb-footer__brand">
+        <img src="assets/logos/logo-header-white.png" alt="Rocketbot">
+        <p class="rb-footer__copy">Plataforma de automatización de procesos y agentes inteligentes para recuperar tiempo y tomar mejores decisiones.</p>
+        <div class="rb-footer__social">
+          <a href="https://www.facebook.com/rocketbot.es" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/rocketbot_es/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/rocketrobot/posts/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@Rocketbot_Plataforma" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1a242a"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="rb-footer__col"><h6>Productos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestador</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="suite-rocketbot.html">Suite Rocketbot</a></li><li><a href="cfo.html">Para CFOs</a></li><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="#">Políticas de privacidad</a></li><li><a href="#">Políticas de seguridad</a></li><li><a href="https://g2.com/products/rocketbot" target="_blank" rel="noopener">G2</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Soporte y servicios</h6><ul><li><a href="#">Certificación</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li></ul></div>
+    </div>
+    <div class="rb-footer__bottom">
+      <span>© Rocketbot SpA | All rights reserved 2018 – 2025</span>
+      <div class="rb-footer__legal"><a href="#">Políticas de privacidad</a><a href="#">Políticas de seguridad</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+var LOGOS={light:'assets/logos/logo-header.png',dark:'assets/logos/logo-header-white.png'};
+var html=document.documentElement,navLogo=document.getElementById('nav-logo'),themeBtn=document.getElementById('theme-btn'),iconSun=document.getElementById('icon-sun'),iconMoon=document.getElementById('icon-moon');
+function applyTheme(t){html.setAttribute('data-theme',t);if(navLogo)navLogo.src=LOGOS[t];if(iconSun)iconSun.style.display=t==='dark'?'none':'';if(iconMoon)iconMoon.style.display=t==='light'?'none':'';try{localStorage.setItem('rb-theme',t);}catch(e){}}
+(function(){var s='dark';try{s=localStorage.getItem('rb-theme')||'dark';}catch(e){}applyTheme(s);})();
+if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttribute('data-theme')==='dark'?'light':'dark');});
+(function(){var nav=document.getElementById('rb-nav');if(!nav)return;function onScroll(){nav.classList.toggle('scrolled',window.scrollY>50);}onScroll();window.addEventListener('scroll',onScroll,{passive:true});})();
+
+// Hamburger menu
+(function(){
+  var btn=document.getElementById('rb-hamburger');
+  var menu=document.getElementById('rb-mobile-menu');
+  if(!btn||!menu) return;
+  btn.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    btn.classList.toggle('open',open);
+    document.body.style.overflow=open?'hidden':'';
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow='';
+    });
+  });
+})();
+</script>
+
+<!-- Google Translate -->
+<div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,pt',autoDisplay:false},'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+
+<script>
+/* Language Switcher */
+(function(){
+  var btn  = document.getElementById('rb-lang-btn');
+  var menu = document.getElementById('rb-lang-menu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', function(){
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  });
+  function setLang(lang){
+    try{ localStorage.setItem('rb-lang', lang); }catch(e){}
+    menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
+      o.classList.toggle('rb-lang--active', o.dataset.lang === lang);
+    });
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    if(lang === 'es'){
+      var exp0 = new Date(0).toUTCString();
+      document.cookie = 'googtrans=; path=/; expires=' + exp0;
+      document.cookie = 'googtrans=; path=/; domain=.' + location.hostname + '; expires=' + exp0;
+      location.reload();
+      return;
+    }
+    var sel = document.querySelector('.goog-te-combo');
+    if(sel){ sel.value = lang; sel.dispatchEvent(new Event('change')); }
+    else {
+      var exp1 = new Date(); exp1.setFullYear(exp1.getFullYear()+1);
+      var expStr = exp1.toUTCString();
+      document.cookie = 'googtrans=/es/'+lang+'; path=/; expires='+expStr;
+      document.cookie = 'googtrans=/es/'+lang+'; path=/; domain=.'+location.hostname+'; expires='+expStr;
+      location.reload();
+    }
+  }
+  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
+    o.addEventListener('click', function(){ setLang(o.dataset.lang); });
+  });
+  var saved = 'es';
+  try{ saved = localStorage.getItem('rb-lang') || 'es'; }catch(e){}
+  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
+    o.classList.toggle('rb-lang--active', o.dataset.lang === saved);
+  });
+  if(saved !== 'es' && document.cookie.indexOf('googtrans') === -1){
+    document.cookie = 'googtrans=/es/'+saved+'; path=/';
+  }
+})();
+</script>
+
+<!-- PAGE-SPECIFIC INTERACTIVE -->
+<script>
+const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+// hero rotating word
+(function(){
+  const rot=document.getElementById('heroRot'); if(!rot||reduce) return;
+  const WORDS=['el andamiaje','la orquestación','el gobierno','la trazabilidad','el mantenimiento']; let wi=0;
+  setInterval(function(){ rot.classList.add('out'); setTimeout(function(){ wi=(wi+1)%WORDS.length; rot.textContent=WORDS[wi]; rot.classList.remove('out'); },300); },2000);
+})();
+
+// comparison table
+const CHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>';
+const TOOL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2z"/></svg>';
+const DOT='<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>';
+function cell(kind,txt){return '<span class="st '+kind+'"><span class="i">'+(kind==='yes'?CHK:(kind==='diy'?TOOL:DOT))+'</span>'+txt+'</span>';}
+const CMP=[
+ ['Escribir y prototipar código',['yes','Excelente'],['yes','Incluido']],
+ ['Ejecutar 24/7 sin supervisión',['diy','Lo construyes tú'],['yes','De fábrica']],
+ ['Llegar a sistemas sin API (legacy/escritorio)',['diy','Frágil, lo construyes tú'],['yes','RPA Studio']],
+ ['Estructurar datos no estructurados',['partial','Puntual, sin gobierno'],['yes','AI Studio']],
+ ['Reintentos y manejo de errores',['diy','Lo construyes tú'],['yes','De fábrica']],
+ ['Credenciales y permisos por rol',['diy','Lo construyes tú'],['yes','De fábrica']],
+ ['Trazabilidad y auditoría',['diy','Lo construyes tú'],['yes','De fábrica']],
+ ['Mantenimiento al cambiar los sistemas',['diy','Lo asumes tú'],['yes','Plataforma + soporte']]
+];
+document.getElementById('cmpBody').innerHTML=CMP.map(r=>'<tr><td class="cap">'+r[0]+'</td><td>'+cell(r[1][0],r[1][1])+'</td><td>'+cell(r[2][0],r[2][1])+'</td></tr>').join('');
+
+// decision helper
+const QS=[
+ {g:'procesos',q:'¿Cuántos procesos quieres automatizar?',o:[['Pocos (1–3)',0],['Varios (4–15)',1],['Muchos (15+)',2]]},
+ {g:'api',q:'¿Tus sistemas tienen API?',o:[['Casi todos',0],['Algunos',1],['Muchos legacy sin API',2]]},
+ {g:'compliance',q:'¿Exigencias de cumplimiento / auditoría?',o:[['Bajas',0],['Medias',1],['Altas (banca, seguros, salud)',2]]},
+ {g:'equipo',q:'¿Equipo técnico dedicado a mantenerlo?',o:[['Sí, robusto',0],['Limitado',1],['No',2]]}
+];
+const DRIVERS={procesos:'Muchos procesos',api:'Sistemas legacy sin API',compliance:'Cumplimiento alto',equipo:'Sin equipo de mantenimiento'};
+const state={procesos:1,api:1,compliance:1,equipo:1};
+const qWrap=document.getElementById('bvbQ');
+qWrap.innerHTML=QS.map(function(it){
+  return '<div class="rb-bq" data-g="'+it.g+'"><div class="ql">'+it.q+'</div><div class="opts">'+it.o.map(function(o,i){return '<button class="rb-bopt'+(state[it.g]===o[1]?' act':'')+'" data-v="'+o[1]+'">'+o[0]+'</button>';}).join('')+'</div></div>';
+}).join('');
+function decide(){
+  const score=state.procesos+state.api+state.compliance+state.equipo; // 0..8
+  const pct=Math.round(score/8*100);
+  document.getElementById('bvbMk').style.left=pct+'%';
+  let v,b;
+  if(score<=2){ v='Hacerlo tú mismo puede tener sentido'; b='Con pocos procesos bien definidos, sistemas con API y un equipo capaz, Python + Claude puede ser más simple y económico. Empieza por ahí y crece desde la evidencia.'; }
+  else if(score<=5){ v='Depende: pesa el costo de mantenerlo'; b='Construirlo es viable, pero el verdadero costo aparece al operarlo y mantenerlo. Evalúa cuánto de tu equipo quedará amarrado a sostener la automatización en vez de avanzar.'; }
+  else { v='Una plataforma te conviene'; b='A esta escala, con sistemas sin API y exigencias de cumplimiento, reconstruir orquestación, gobierno y trazabilidad por tu cuenta sale caro. Una plataforma que ya trae todo eso —y a Claude adentro— protege tu inversión.'; }
+  document.getElementById('bvbVerdict').textContent=v;
+  document.getElementById('bvbBody').textContent=b;
+  const drivers=Object.keys(state).filter(k=>state[k]===2).map(k=>'<span class="dch">'+DRIVERS[k]+'</span>');
+  document.getElementById('bvbDrivers').innerHTML=drivers.length?('<span class="dch" style="background:transparent;border-color:transparent;color:rgba(255,255,255,.45);padding-left:0">Lo que inclina a plataforma:</span>'+drivers.join('')):'';
+}
+qWrap.querySelectorAll('.rb-bq').forEach(function(group){
+  const g=group.getAttribute('data-g');
+  group.querySelectorAll('.rb-bopt').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      group.querySelectorAll('.rb-bopt').forEach(x=>x.classList.remove('act'));
+      btn.classList.add('act'); state[g]=+btn.getAttribute('data-v'); decide();
+    });
+  });
+});
+decide();
+
+// FAQ
+const FAQS=[
+  ['¿No es más barato hacerlo con Python y Claude?','Para pocos procesos bien definidos y con API, puede serlo. A escala, el costo se traslada a operar y mantener: ejecución 24/7, errores, permisos, trazabilidad e integraciones que igual hay que construir y sostener.'],
+  ['¿La suite no me amarra a un proveedor?','Trae estándares abiertos, despliegue híbrido y es compatible con cualquier IA. El lock-in más caro suele ser el otro: la automatización casera que solo entiende quien la programó, y que se cae cuando esa persona no está.'],
+  ['¿Por qué no usar Claude para todo?','Para back-office de alto volumen quieres ejecución determinística y auditable, no un modelo improvisando cada corrida. Lo correcto es robots determinísticos para lo estructurado + IA acotada para el juicio, todo bajo gobierno.'],
+  ['¿La suite realmente usa Claude?','Sí. A través del MCP de Claude, la inteligencia del modelo opera dentro de la plataforma —gobernada, trazable y conectada. No es la suite contra Claude: es Claude gobernado.'],
+  ['Tengo un equipo técnico fuerte, ¿igual me conviene?','Quizá no para un piloto pequeño. La pregunta es si quieres que tu mejor talento construya y mantenga andamiaje, o que se enfoque en problemas de negocio mientras la plataforma sostiene la operación.']
+];
+const fw=document.getElementById('faqWrap');
+FAQS.forEach(function(pair){
+  var d=document.createElement('div');
+  d.innerHTML='<details><summary>'+pair[0]+'</summary><div class="rb-faq__body">'+pair[1]+'</div></details>';
+  fw.appendChild(d.firstElementChild);
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "¿Construir con Claude o comprar la suite?",
+  "url": "https://rocketbot.com/construir-vs-comprar",
+  "description": "Comparación honesta entre construir automatización con Claude/Python y adoptar la Suite Rocketbot, con Claude gobernado adentro.",
+  "provider": { "@type": "Organization", "name": "Rocketbot", "url": "https://rocketbot.com" }
+}
+</script>
+</body>
+</html>
