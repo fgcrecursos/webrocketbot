@@ -995,6 +995,32 @@ body{top:0 !important;}
 .rb-btn--cfo{background:transparent;border-color:rgba(188,0,23,.35);color:var(--rb-red);font-size:13px;padding:10px 18px;}
 .rb-btn--cfo:hover{background:rgba(188,0,23,.06);border-color:var(--rb-red);}
 
+/* HERO ROTATOR */
+#heroRot{display:inline-block;transition:opacity .3s ease,transform .3s ease;}
+#heroRot.out{opacity:0;transform:translateY(-8px);}
+
+/* RECONOCIMIENTO (Gartner) */
+.rb-rec{padding:100px 0;position:relative;}
+.rb-rec2{display:grid;grid-template-columns:.8fr 1.2fr;gap:34px;align-items:center;max-width:960px;margin:0 auto;}
+.rb-gbadge{background:var(--rb-secondary);color:#fff;border-radius:var(--r-lg);padding:30px;text-align:center;}
+[data-theme="dark"] .rb-gbadge{background:var(--rb-dark-3);}
+.rb-gbadge .score{font-weight:800;font-size:60px;line-height:1;}
+.rb-gbadge .stars{color:#BA7517;font-size:17px;letter-spacing:3px;margin:6px 0 8px;}
+.rb-gbadge .sub{color:rgba(255,255,255,.6);font-size:13.5px;}
+.rb-gbadge .src{color:rgba(255,255,255,.35);font-size:11.5px;margin-top:8px;}
+.rb-rcmp h3{font-size:18px;margin:0 0 16px;color:var(--foreground);}
+.rb-rcmp .row{display:grid;grid-template-columns:168px 1fr 40px;align-items:center;gap:12px;margin-bottom:12px;}
+.rb-rcmp .nm{font-weight:700;font-size:14px;color:var(--foreground);}
+.rb-rcmp .nm.us{color:var(--rb-red);}
+.rb-rcmp .bar{height:11px;background:var(--border);border-radius:6px;overflow:hidden;}
+.rb-rcmp .fill{height:100%;border-radius:6px;background:#ccc;}
+[data-theme="dark"] .rb-rcmp .fill{background:rgba(255,255,255,.18);}
+.rb-rcmp .fill.us{background:var(--rb-red);}
+.rb-rcmp .sc{font-weight:800;font-size:14px;text-align:right;color:var(--foreground);}
+.rb-rcmp .sc.us{color:var(--rb-red);}
+.rb-rcmp .note{font-size:12px;color:#999;margin-top:12px;}
+@media(max-width:760px){.rb-rec2{grid-template-columns:1fr;}}
+
 /* ═══════════════════════════════════════════════════════════════
    SECTION TRANSITIONS · LIGHT-MODE CONTRAST
 ═══════════════════════════════════════════════════════════════ */
@@ -1136,6 +1162,8 @@ body{top:0 !important;}
           <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div class="rb-nav__dropdown">
+          <a href="cfo.html">Para CFOs</a>
+          <a href="construir-vs-comprar.html">Construir o comprar</a>
           <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
           <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
         </div>
@@ -1195,6 +1223,8 @@ body{top:0 !important;}
     </div>
     <div class="rb-mobile-menu__section">
       <div class="rb-mobile-menu__label">Recursos</div>
+      <a href="cfo.html">Para CFOs</a>
+      <a href="construir-vs-comprar.html">Construir o comprar</a>
       <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
     </div>
@@ -1220,7 +1250,8 @@ body{top:0 !important;}
   <div class="container rb-hero__grid">
 
     <div>
-      <h1 class="rb-hero__title"><strong>Automatiza procesos.</strong><br>Recupera tiempo<br>para lo importante.</h1>
+      <span class="rb-eyebrow" style="margin-bottom:18px;display:inline-flex;"><span class="dot"></span>Suite de automatización · RPA + IA · Latinoamérica</span>
+      <h1 class="rb-hero__title">Automatiza tu operación.<br>Recupera el <strong id="heroRot">tiempo</strong>.</h1>
       <p class="rb-hero__sub">
         Deja atrás correos, excel y seguimiento manual. Tu equipo tendrá más tiempo para analizar, decidir y generar valor.
       </p>
@@ -1229,6 +1260,7 @@ body{top:0 !important;}
           Hablemos de mi operación
           <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
+        <a href="suite-rocketbot.html" class="rb-btn rb-btn--ghost rb-btn--lg">Conocer la suite</a>
       </div>
       <a href="cfo.html" class="rb-hero__cfo-link">
         <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2" fill="none"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
@@ -1459,7 +1491,7 @@ body{top:0 !important;}
       </div>
       <div>
         <div class="rb-solution__banner-title">Juntos, ayudan a que la operación avance.</div>
-        <p class="rb-solution__banner-desc">Mientras los robots ejecutan tareas, los agentes analizan información y gestionan excepciones. Así, tu equipo puede dedicar más tiempo a analizar, decidir y generar valor.</p>
+        <p class="rb-solution__banner-desc">Mientras los robots ejecutan tareas, los agentes analizan información y gestionan excepciones. Así, tu equipo puede dedicar más tiempo a analizar, decidir y generar valor. ¿Construir esto en casa o comprarlo listo? <a href="construir-vs-comprar.html" style="color:var(--rb-red);font-weight:700">Míralo en Construir o comprar →</a></p>
       </div>
     </div>
   </div>
@@ -1996,6 +2028,33 @@ body{top:0 !important;}
   </div>
 </section>
 
+<!-- ════════════════ RECONOCIMIENTO ════════════════ -->
+<section class="rb-rec rb-section--alt">
+  <div class="container">
+    <div class="rb-section__head rb-reveal">
+      <span class="rb-eyebrow"><span class="dot"></span>Reconocimiento</span>
+      <h2 class="rb-section__title">Mejor evaluados que <span>los gigantes globales.</span></h2>
+      <p class="rb-section__sub">En Gartner Peer Insights &mdash; rese&ntilde;as de usuarios verificados &mdash; Rocketbot supera la calificaci&oacute;n de UiPath, Automation Anywhere y Blue Prism.</p>
+    </div>
+    <div class="rb-rec2">
+      <div class="rb-gbadge">
+        <div class="score">4.7</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="sub">137 rese&ntilde;as en Gartner Peer Insights</div>
+        <div class="src">Actualizado oct 2025</div>
+      </div>
+      <div class="rb-rcmp">
+        <h3>Calificaci&oacute;n en Gartner Peer Insights</h3>
+        <div class="row"><span class="nm us">Rocketbot</span><span class="bar"><span class="fill us" style="width:94%"></span></span><span class="sc us">4.7</span></div>
+        <div class="row"><span class="nm">Automation Anywhere</span><span class="bar"><span class="fill" style="width:92%"></span></span><span class="sc">4.6</span></div>
+        <div class="row"><span class="nm">UiPath</span><span class="bar"><span class="fill" style="width:90%"></span></span><span class="sc">4.5</span></div>
+        <div class="row"><span class="nm">Blue Prism</span><span class="bar"><span class="fill" style="width:88%"></span></span><span class="sc">4.4</span></div>
+        <p class="note">Calificaci&oacute;n promedio de usuarios verificados en Gartner Peer Insights, mercado de Robotic Process Automation (datos a oct 2025).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════════ FOOTER ════════════════ -->
 <footer class="rb-footer">
   <div class="container">
@@ -2031,6 +2090,9 @@ body{top:0 !important;}
       <div class="rb-footer__col">
         <h6>Recursos</h6>
         <ul>
+          <li><a href="suite-rocketbot.html">Suite Rocketbot</a></li>
+          <li><a href="cfo.html">Para CFOs</a></li>
+          <li><a href="construir-vs-comprar.html">Construir o comprar</a></li>
           <li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li>
           <li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li>
         </ul>
@@ -2138,6 +2200,18 @@ themeBtn.addEventListener('click', function () {
       if (panel) panel.classList.add('active');
     });
   });
+})();
+
+// ─── Hero rotator ───
+(function(){
+  var rot=document.getElementById('heroRot');
+  var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!rot||reduce) return;
+  var WORDS=['tiempo','foco','control','margen'], wi=0;
+  setInterval(function(){
+    rot.classList.add('out');
+    setTimeout(function(){ wi=(wi+1)%WORDS.length; rot.textContent=WORDS[wi]; rot.classList.remove('out'); },300);
+  },2200);
 })();
 
   // Hamburger menu
