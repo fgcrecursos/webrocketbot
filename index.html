@@ -196,6 +196,8 @@ p { margin: 0; }
 [data-theme="dark"] .rb-btn--ghost:hover { background: rgba(255,255,255,.07); }
 .rb-btn--lg { padding: 14px 32px; font-size: 15px; }
 .rb-btn--square { border-radius: 10px; }
+.rb-btn--white { background:#fff; color:var(--rb-red); }
+.rb-btn--white:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.2); }
 
 /* ═══════════════════════════════════════════
    EYEBROW
@@ -902,22 +904,21 @@ p { margin: 0; }
    CTA BAND
 ═══════════════════════════════════════════ */
 .rb-cta-band {
-  background:linear-gradient(135deg, var(--rb-secondary) 0%, #1a242a 100%);
-  padding:80px 0 64px; position:relative; overflow:hidden;
+  background:linear-gradient(135deg, var(--rb-red) 0%, var(--rb-red-deep) 100%);
+  padding:80px 0 64px; position:relative; overflow:hidden; text-align:center;
 }
 .rb-cta-band::before {
   content:''; position:absolute; inset:0;
-  background:radial-gradient(ellipse 700px 300px at 10% 50%, rgba(188,0,23,.35), transparent 60%);
+  background:radial-gradient(ellipse 700px 300px at 50% 0%, rgba(255,255,255,.15), transparent 60%);
   pointer-events:none;
 }
-[data-theme="dark"] .rb-cta-band { background:linear-gradient(135deg, #080c0f 0%, var(--rb-dark-3) 100%); }
 .rb-cta-band__inner {
-  display:flex; align-items:center; justify-content:space-between;
-  gap:48px; position:relative; z-index:1;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:28px; position:relative; z-index:1; text-align:center;
 }
 .rb-cta-band__title { font-size:clamp(24px,3vw,40px); font-weight:700; color:#fff; letter-spacing:-0.02em; margin-bottom:14px; line-height:1.15; }
-.rb-cta-band__title span { color:var(--rb-red); display:block; }
-.rb-cta-band__sub   { font-size:16px; color:rgba(255,255,255,.6); max-width:520px; line-height:1.55; }
+.rb-cta-band__title span { color:#fff; display:block; }
+.rb-cta-band__sub   { font-size:16px; color:rgba(255,255,255,.85); max-width:560px; line-height:1.55; margin:0 auto; }
 
 /* Ratings strip */
 .rb-cta-ratings { position:relative; z-index:1; max-width:var(--max-w, 1200px); margin:32px auto 0; padding:24px 32px 0; display:flex; gap:32px; justify-content:center; align-items:center; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,.10); }
@@ -1985,7 +1986,7 @@ body{top:0 !important;}
       <h2 class="rb-cta-band__title">¿Cuánto está costando<span>no automatizar hoy?</span></h2>
       <p class="rb-cta-band__sub">En 30 minutos identificamos los procesos con mayor potencial de ahorro en tu organización — sin compromiso, sin PowerPoints, solo números reales.</p>
     </div>
-    <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg rb-reveal rb-reveal--zoom rb-reveal--delay-1">
+    <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg rb-reveal rb-reveal--zoom rb-reveal--delay-1">
       Agendar diagnóstico
       <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
     </a>
