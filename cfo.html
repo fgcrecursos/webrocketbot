@@ -100,7 +100,7 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-hero__particles{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 75% 40%,rgba(188,0,23,.22) 0%,transparent 45%),radial-gradient(circle at 20% 60%,rgba(43,127,255,.12) 0%,transparent 40%);}
 .rb-hero__content{position:relative;z-index:1;max-width:800px;margin:0 auto;}
 .rb-hero__title{font-size:clamp(30px,4.6vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.12;margin:24px 0 18px;color:#fff;}
-.rb-hero__rot{display:inline-block;transition:opacity .3s ease,transform .3s ease;color:var(--rb-red);}
+.rb-hero__rot{display:inline-block;white-space:nowrap;transition:opacity .3s ease,transform .3s ease;color:var(--rb-red);}
 .rb-hero__rot.out{opacity:0;transform:translateY(-8px);}
 .rb-hero__sub{font-size:18px;color:rgba(255,255,255,.6);line-height:1.6;max-width:680px;margin:0 auto 32px;font-weight:300;}
 .rb-hero__ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
@@ -435,13 +435,13 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Qué estás financiando</span>
       <h2 class="rb-section__title">No financias robots sueltos. <span>Financias una capacidad.</span></h2>
-      <p class="rb-section__sub">Una sola plataforma —la Suite Rocketbot— que cubre el proceso completo: desde capturar la información hasta ejecutar la acción y mostrar el resultado.</p>
+      <p class="rb-section__sub">Una sola plataforma, la Suite Rocketbot, que cubre el proceso completo: desde capturar la información hasta ejecutar la acción y mostrar el resultado.</p>
     </div>
     <div class="rb-compare rb-compare--four">
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><div class="rb-compare__title">Una plataforma, no seis herramientas</div><div class="rb-compare__desc">RPA, IA, agentes, orquestación, formularios y dashboards en una sola inversión integrada.</div></div>
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5 3 21l4.5-1.5M14 4l6 6M9 15l9.5-9.5a2.1 2.1 0 0 0-3-3L6 12"/></svg></div><div class="rb-compare__title">Resultados en semanas</div><div class="rb-compare__desc">Los primeros procesos entran en producción en días o semanas, no en proyectos de años.</div></div>
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div><div class="rb-compare__title">Escala con tu retorno</div><div class="rb-compare__desc">Empieza con unos pocos procesos y crece a cientos a medida que el caso se prueba solo.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/><path d="M8 12h8"/></svg></div><div class="rb-compare__title">Sobre lo que ya tienes</div><div class="rb-compare__desc">Se integra con tus sistemas actuales —incluso los que no tienen API— sin reemplazar tu infraestructura.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/><path d="M8 12h8"/></svg></div><div class="rb-compare__title">Sobre lo que ya tienes</div><div class="rb-compare__desc">Se integra con tus sistemas actuales, incluso los que no tienen API, sin reemplazar tu infraestructura.</div></div>
     </div>
   </div>
 </section>
@@ -710,7 +710,7 @@ const FAQS=[
   ['¿Cuánto cuesta implementar una estrategia de automatización?','Depende del alcance: cuántos procesos, su complejidad y el nivel de capacidad que necesites. En lugar de una licencia suelta, financias una plataforma que escala. Construimos contigo una proyección de inversión y retorno a la medida de tu organización.'],
   ['¿En cuánto tiempo se ve el retorno?','Los primeros procesos suelen entrar en producción en días o semanas, y muchas organizaciones recuperan tiempo y eficiencia desde los primeros. En proyectos maduros, la inversión suele recuperarse en pocos meses.'],
   ['¿Qué riesgo de implementación asumo?','El principal riesgo de estos proyectos no es la tecnología, sino la falta de estrategia. Por eso trabajamos sobre una plataforma probada, con gobierno y trazabilidad desde el inicio, y acompañamiento de un equipo regional.'],
-  ['¿Necesito cambiar mi infraestructura?','No. La suite se integra con tus sistemas actuales —incluso los que no tienen API— y admite despliegue híbrido u on-premise, según tus políticas de seguridad.'],
+  ['¿Necesito cambiar mi infraestructura?','No. La suite se integra con tus sistemas actuales, incluso los que no tienen API, y admite despliegue híbrido u on-premise, según tus políticas de seguridad.'],
   ['¿Es seguro para datos sensibles?','La operación está certificada bajo ISO 27001 a nivel de la suite, con permisos por rol, trazabilidad de cada acción y supervisión humana sobre los agentes.'],
   ['¿Por qué Rocketbot y no un proveedor global?','Además de una plataforma completa y costos accesibles, aportamos conocimiento regional: normativa local, soporte cercano y experiencia en empresas de la región.'],
   ['¿Conviene empezar grande o con un piloto acotado?','Recomendamos empezar con unos pocos procesos de alto impacto, probar el caso con números reales y escalar desde ahí. La plataforma crece contigo.']

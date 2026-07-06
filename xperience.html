@@ -102,6 +102,8 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-hero__content{position:relative;z-index:1;max-width:780px;margin:0 auto;}
 .rb-hero__title{font-size:clamp(32px,5vw,56px);font-weight:800;letter-spacing:-0.03em;line-height:1.08;margin:24px 0 18px;color:#fff;}
 .rb-hero__title strong{color:var(--rb-red);font-weight:inherit;}
+.rb-hero__rot{display:inline-block;white-space:nowrap;color:var(--rb-red);transition:opacity .3s ease,transform .3s ease;}
+.rb-hero__rot.out{opacity:0;transform:translateY(-8px);}
 .rb-hero__sub{font-size:18px;color:rgba(255,255,255,.6);line-height:1.6;max-width:640px;margin:0 auto 32px;font-weight:300;}
 .rb-hero__ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
 
@@ -438,8 +440,8 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-hero__content">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Rocketbot · Xperience</span>
-      <h1 class="rb-hero__title">Formularios que no solo recogen datos. <strong>Disparan procesos.</strong></h1>
-      <p class="rb-hero__sub">Crea formularios públicos o privados sin código. Cada envío activa una automatización completa — ideal para trabajo en terreno, atención al cliente y autoservicio.</p>
+      <h1 class="rb-hero__title">Formularios que no solo recogen datos. <strong>Disparan <span class="rb-hero__rot" id="heroRot">procesos</span>.</strong></h1>
+      <p class="rb-hero__sub">Crea formularios públicos o privados sin código. Cada envío activa una automatización completa, ideal para trabajo en terreno, atención al cliente y autoservicio.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="contacto.html">Pruébalo ahora</a>
         <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#demo" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver el demo</a>
@@ -523,7 +525,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Sin código</span>
       <h2 class="rb-section__title">Crea el formulario que necesitas <span>en minutos</span></h2>
-      <p class="rb-section__sub">Un constructor visual para diseñar formularios con la lógica y los controles que cada proceso requiere — sin programar.</p>
+      <p class="rb-section__sub">Un constructor visual para diseñar formularios con la lógica y los controles que cada proceso requiere, sin programar.</p>
     </div>
     <div class="rb-compare rb-compare--four">
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></div><div class="rb-compare__title">Constructor visual</div><div class="rb-compare__desc">Arma formularios arrastrando campos, sin escribir una línea de código.</div></div>
@@ -540,7 +542,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Xperience · MCP de Claude</span>
       <h2 class="rb-section__title">Describe el formulario. <span style="color:#F3A6AD">Claude lo crea.</span></h2>
-      <p class="rb-section__sub">A través del MCP (Model Context Protocol) de Claude, conectas Xperience y generas formularios con solo dar instrucciones en lenguaje natural — campos, validaciones y la automatización que disparan, listos.</p>
+      <p class="rb-section__sub">A través del MCP (Model Context Protocol) de Claude, conectas Xperience y generas formularios con solo dar instrucciones en lenguaje natural: campos, validaciones y la automatización que disparan, listos.</p>
     </div>
     <div class="rb-mcp-grid">
       <div class="rb-mcp-card">
@@ -631,7 +633,7 @@ body{top:0 !important;}
     <div class="rb-cta-band__inner">
       <div>
         <h2 class="rb-cta-band__title">¿Tus procesos siguen comenzando con correos y planillas?</h2>
-        <p class="rb-cta-band__sub">Con Xperience, cada proceso arranca con un formulario inteligente — más rápido, ordenado y trazable, y con la automatización ya en marcha.</p>
+        <p class="rb-cta-band__sub">Con Xperience, cada proceso arranca con un formulario inteligente, más rápido, ordenado y trazable, y con la automatización ya en marcha.</p>
       </div>
       <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Contáctanos</a>
     </div>
@@ -918,7 +920,7 @@ const FAQS=[
   ['¿Necesito saber programar?','No. Xperience tiene un constructor visual con campos, validaciones y lógica condicional, pensado para que cualquier persona arme su formulario.'],
   ['¿Qué tipos de campo puedo incluir?','Texto, listas desplegables, casillas, fechas, botones, carga de archivos, firma y más, con lógica condicional para personalizar la experiencia.'],
   ['¿Puedo crear formularios con inteligencia artificial?','Sí. A través del MCP de Claude conectas Xperience y generas formularios dando instrucciones en lenguaje natural: Claude arma los campos, las validaciones y los deja enlazados a la automatización que disparan.'],
-  ['¿Sirve para trabajo en terreno?','Sí. El personal completa el formulario desde el celular —avances, evidencias, reportes— y cada envío actualiza el proceso al instante.'],
+  ['¿Sirve para trabajo en terreno?','Sí. El personal completa el formulario desde el celular (avances, evidencias, reportes) y cada envío actualiza el proceso al instante.'],
   ['¿Cómo se conecta con mis procesos?','El formulario actúa como punto de entrada: dispara robots, agentes o integraciones, y luego monitoreas cada ejecución desde el Orquestador.'],
   ['¿Puedo integrarlo con otros sistemas?','Sí. Conecta los formularios con robots, automatizaciones y sistemas externos mediante integraciones y APIs.'],
   ['¿Dónde hago seguimiento de cada solicitud?','Desde el Orquestador, con visibilidad y trazabilidad completas de cada ejecución y su resultado.']
@@ -929,6 +931,18 @@ FAQS.forEach(function(pair){
   d.innerHTML='<details><summary>'+pair[0]+'</summary><div class="rb-faq__body">'+pair[1]+'</div></details>';
   fw.appendChild(d.firstElementChild);
 });
+
+/* ===== Hero rotating word ===== */
+(function(){
+  var rot=document.getElementById('heroRot');
+  var reduceH=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!rot||reduceH) return;
+  var WORDS=['procesos','robots','flujos','aprobaciones'], wi=0;
+  setInterval(function(){
+    rot.classList.add('out');
+    setTimeout(function(){ wi=(wi+1)%WORDS.length; rot.textContent=WORDS[wi]; rot.classList.remove('out'); },300);
+  },2200);
+})();
 </script>
 
 <script type="application/ld+json">

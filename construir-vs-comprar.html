@@ -100,7 +100,7 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-hero__particles{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 75% 40%,rgba(188,0,23,.22) 0%,transparent 45%),radial-gradient(circle at 20% 60%,rgba(43,127,255,.12) 0%,transparent 40%);}
 .rb-hero__content{position:relative;z-index:1;max-width:800px;margin:0 auto;}
 .rb-hero__title{font-size:clamp(30px,4.6vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.12;margin:24px 0 18px;color:#fff;}
-.rb-hero__rot{display:inline-block;transition:opacity .3s ease,transform .3s ease;color:var(--rb-red);}
+.rb-hero__rot{display:inline-block;white-space:nowrap;transition:opacity .3s ease,transform .3s ease;color:var(--rb-red);}
 .rb-hero__rot.out{opacity:0;transform:translateY(-8px);}
 .rb-hero__sub{font-size:18px;color:rgba(255,255,255,.6);line-height:1.6;max-width:680px;margin:0 auto 32px;font-weight:300;}
 .rb-hero__ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
@@ -393,7 +393,7 @@ body{top:0 !important;}
     <div class="rb-hero__content">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Claude + Rocketbot</span>
       <h1 class="rb-hero__title">Toda la inteligencia de Claude, sin construir <span class="rb-hero__rot" id="heroRot">el andamiaje</span></h1>
-      <p class="rb-hero__sub">Los modelos como Claude abarataron escribir código —y eso es genial. Pero en automatización empresarial, lo que más cuesta no es escribir: es operar, gobernar y mantener. La plataforma se encarga de esa parte, para que te quedes con la inteligencia y te saltes el trabajo pesado.</p>
+      <p class="rb-hero__sub">Los modelos como Claude abarataron escribir código, y eso es genial. Pero en automatización empresarial, lo que más cuesta no es escribir: es operar, gobernar y mantener. La plataforma se encarga de esa parte, para que te quedes con la inteligencia y te saltes el trabajo pesado.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="#decision">¿Construir o comprar? Decídelo</a>
         <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#comparacion" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver la comparación</a>
@@ -409,7 +409,7 @@ body{top:0 !important;}
       <div>
         <span class="rb-eyebrow"><span class="dot"></span>El malentendido</span>
         <h2>Claude baja el costo de <span>escribir código</span>. No el de automatizar.</h2>
-        <p>Escribir el script es la parte fácil —y la que un LLM resuelve genial. Pero en automatización empresarial, construir es apenas el comienzo: el costo real está en que corra solo, sin fallar, con permisos, trazabilidad y mantenimiento cuando los sistemas cambian.</p>
+        <p>Escribir el script es la parte fácil, y la que un LLM resuelve genial. Pero en automatización empresarial, construir es apenas el comienzo: el costo real está en que corra solo, sin fallar, con permisos, trazabilidad y mantenimiento cuando los sistemas cambian.</p>
         <p>Por eso "que Claude lo haga todo" suena simple y resulta caro: hace fácil la parte fácil y deja intacta la difícil.</p>
       </div>
       <div class="rb-split-bar">
@@ -526,7 +526,7 @@ body{top:0 !important;}
     <div class="rb-inside">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>El punto que se pierde</span>
       <h2>La suite no compite con Claude. Lo trae adentro.</h2>
-      <p>A través del MCP de Claude, describes lo que necesitas en lenguaje natural y la plataforma arma el flujo, el robot o el dashboard —ya gobernado, conectado y listo para operar. Te quedas con la inteligencia de Claude sin tener que construir el andamiaje a su alrededor.</p>
+      <p>A través del MCP de Claude, describes lo que necesitas en lenguaje natural y la plataforma arma el flujo, el robot o el dashboard, ya gobernado, conectado y listo para operar. Te quedas con la inteligencia de Claude sin tener que construir el andamiaje a su alrededor.</p>
       <div class="row">
         <span class="ich">Claude en el Orquestador</span>
         <span class="ich">Claude en Saturn Studio</span>
@@ -751,7 +751,7 @@ function decide(){
   let v,b;
   if(score<=2){ v='Hacerlo tú mismo puede tener sentido'; b='Con pocos procesos bien definidos, sistemas con API y un equipo capaz, Python + Claude puede ser más simple y económico. Empieza por ahí y crece desde la evidencia.'; }
   else if(score<=5){ v='Depende: pesa el costo de mantenerlo'; b='Construirlo es viable, pero el verdadero costo aparece al operarlo y mantenerlo. Evalúa cuánto de tu equipo quedará amarrado a sostener la automatización en vez de avanzar.'; }
-  else { v='Una plataforma te conviene'; b='A esta escala, con sistemas sin API y exigencias de cumplimiento, reconstruir orquestación, gobierno y trazabilidad por tu cuenta sale caro. Una plataforma que ya trae todo eso —y a Claude adentro— protege tu inversión.'; }
+  else { v='Una plataforma te conviene'; b='A esta escala, con sistemas sin API y exigencias de cumplimiento, reconstruir orquestación, gobierno y trazabilidad por tu cuenta sale caro. Una plataforma que ya trae todo eso, y a Claude adentro, protege tu inversión.'; }
   document.getElementById('bvbVerdict').textContent=v;
   document.getElementById('bvbBody').textContent=b;
   const drivers=Object.keys(state).filter(k=>state[k]===2).map(k=>'<span class="dch">'+DRIVERS[k]+'</span>');
@@ -773,7 +773,7 @@ const FAQS=[
   ['¿No es más barato hacerlo con Python y Claude?','Para pocos procesos bien definidos y con API, puede serlo. A escala, el costo se traslada a operar y mantener: ejecución 24/7, errores, permisos, trazabilidad e integraciones que igual hay que construir y sostener.'],
   ['¿La suite no me amarra a un proveedor?','Trae estándares abiertos, despliegue híbrido y es compatible con cualquier IA. El lock-in más caro suele ser el otro: la automatización casera que solo entiende quien la programó, y que se cae cuando esa persona no está.'],
   ['¿Por qué no usar Claude para todo?','Para back-office de alto volumen quieres ejecución determinística y auditable, no un modelo improvisando cada corrida. Lo correcto es robots determinísticos para lo estructurado + IA acotada para el juicio, todo bajo gobierno.'],
-  ['¿La suite realmente usa Claude?','Sí. A través del MCP de Claude, la inteligencia del modelo opera dentro de la plataforma —gobernada, trazable y conectada. No es la suite contra Claude: es Claude gobernado.'],
+  ['¿La suite realmente usa Claude?','Sí. A través del MCP de Claude, la inteligencia del modelo opera dentro de la plataforma, gobernada, trazable y conectada. No es la suite contra Claude: es Claude gobernado.'],
   ['Tengo un equipo técnico fuerte, ¿igual me conviene?','Quizá no para un piloto pequeño. La pregunta es si quieres que tu mejor talento construya y mantenga andamiaje, o que se enfoque en problemas de negocio mientras la plataforma sostiene la operación.']
 ];
 const fw=document.getElementById('faqWrap');
