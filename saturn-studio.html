@@ -37,7 +37,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--rb-red:#BC0017;--rb-red-deep:#8E0011;--rb-red-soft:rgba(188,0,23,0.10);--rb-red-glow:rgba(188,0,23,0.30);--rb-blue:#2B7FFF;--rb-neon-cyan:#00D4FF;--rb-black:#000000;--rb-space:#02061B;--rb-dark-1:#0A0A0F;--rb-dark-2:#121218;--rb-dark-3:#1B1F23;--rb-secondary:#263238;--rb-gray-900:#0B0E11;--rb-gray-700:#404040;--rb-gray-500:#909090;--rb-off-white:#FAFAFA;--rb-white:#FFFFFF;--rb-green:#1D9E75;--rb-amber:#BA7517;--background:var(--rb-off-white);--foreground:var(--rb-gray-900);--card:rgba(255,255,255,0.70);--border:rgba(0,0,0,0.08);--muted:var(--rb-gray-500);--glass-bg:rgba(255,255,255,0.60);--glass-border:rgba(255,255,255,0.30);--glass-blur:20px;--r-md:16px;--r-lg:24px;--r-xl:32px;--r-2xl:40px;--r-pill:9999px;--font-sans:'Montserrat',system-ui,-apple-system,Segoe UI,sans-serif;}
+:root{--rb-red:#BC0017;--rb-red-deep:#8E0011;--rb-red-soft:rgba(188,0,23,0.10);--rb-red-glow:rgba(188,0,23,0.30);--rb-blue:#2B7FFF;--rb-neon-cyan:#00D4FF;--rb-black:#000000;--rb-space:#02061B;--rb-dark-1:#0A0A0F;--rb-dark-2:#121218;--rb-dark-3:#1B1F23;--rb-secondary:#263238;--rb-gray-900:#0B0E11;--rb-gray-700:#404040;--rb-gray-500:#909090;--rb-off-white:#FAFAFA;--rb-white:#FFFFFF;--rb-green:#1D9E75;--rb-green-deep:#0F5C42;--rb-amber:#BA7517;--background:var(--rb-off-white);--foreground:var(--rb-gray-900);--card:rgba(255,255,255,0.70);--border:rgba(0,0,0,0.08);--muted:var(--rb-gray-500);--glass-bg:rgba(255,255,255,0.60);--glass-border:rgba(255,255,255,0.30);--glass-blur:20px;--r-md:16px;--r-lg:24px;--r-xl:32px;--r-2xl:40px;--r-pill:9999px;--font-sans:'Montserrat',system-ui,-apple-system,Segoe UI,sans-serif;}
 [data-theme="dark"]{--background:var(--rb-dark-1);--foreground:var(--rb-white);--card:rgba(20,20,30,0.80);--border:rgba(255,255,255,0.08);--glass-bg:rgba(20,20,35,0.60);--glass-border:rgba(255,255,255,0.10);}
 *,*::before,*::after{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
@@ -81,6 +81,8 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:12px 24px;border-radius:var(--r-pill);border:1px solid transparent;transition:transform .2s,box-shadow .25s,background .25s,color .2s;}
 .rb-btn--primary{background:var(--rb-red);color:#fff;box-shadow:0 4px 16px rgba(188,0,23,.25);}
 .rb-btn--primary:hover{background:var(--rb-red-deep);transform:translateY(-1px);box-shadow:0 10px 30px rgba(188,0,23,.45);}
+.rb-btn--green{background:var(--rb-green-deep);color:#fff;box-shadow:0 4px 16px rgba(15,92,66,.35);}
+.rb-btn--green:hover{background:#0A4632;transform:translateY(-1px);box-shadow:0 10px 30px rgba(15,92,66,.5);}
 .rb-btn--ghost{background:transparent;border-color:var(--border);color:var(--foreground);}
 .rb-btn--ghost:hover{background:rgba(0,0,0,.04);}
 [data-theme="dark"] .rb-btn--ghost:hover{background:rgba(255,255,255,.07);}
@@ -277,6 +279,21 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-mcp-title{color:#fff !important;white-space:nowrap;}
 .rb-mcp-title span{color:#BC0017 !important;}
 @media(max-width:768px){.rb-mcp-title{white-space:normal;}}
+
+/* BRAND PAIR (Rocketbot + Claude badge) */
+.rb-brandpair{position:relative;width:150px;height:132px;margin:0 auto 20px;}
+.rb-brandpair__halo{position:absolute;inset:-30%;border-radius:50%;background:radial-gradient(circle,rgba(188,0,23,.5) 0%,rgba(188,0,23,.14) 45%,transparent 72%);filter:blur(18px);}
+.rb-brandpair__tile{position:absolute;width:78px;height:78px;border-radius:18px;background:linear-gradient(145deg,#5a0611,#2a0308);box-shadow:0 10px 26px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06) inset,0 0 24px rgba(188,0,23,.4);display:flex;align-items:center;justify-content:center;}
+.rb-brandpair__tile--a{left:6px;bottom:0;transform:rotate(-11deg);z-index:1;}
+.rb-brandpair__tile--a img{width:40px;height:40px;object-fit:contain;}
+.rb-brandpair__tile--b{right:6px;top:0;transform:rotate(9deg);z-index:2;}
+.rb-brandpair__tile--b span{color:#FF7A85;font-weight:800;font-size:15px;letter-spacing:-.01em;text-shadow:0 0 12px rgba(255,90,100,.6);}
+.rb-brandpair__flare{position:absolute;left:50%;top:52%;width:46px;height:46px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#fff 0%,rgba(255,255,255,.5) 35%,transparent 70%);z-index:3;mix-blend-mode:screen;animation:rb-pulse 3s ease-in-out infinite;}
+.rb-brandpair__dust{position:absolute;border-radius:50%;background:#fff;box-shadow:0 0 6px 1px rgba(255,255,255,.7);animation:rb-pulse 3.2s ease-in-out infinite;}
+.rb-brandpair__dust--1{width:4px;height:4px;left:2%;top:14%;animation-delay:.3s;}
+.rb-brandpair__dust--2{width:3px;height:3px;left:92%;top:60%;animation-delay:1s;}
+.rb-brandpair__dust--3{width:3px;height:3px;left:70%;top:96%;animation-delay:1.7s;}
+@media(prefers-reduced-motion:reduce){.rb-brandpair__flare,.rb-brandpair__dust{animation:none;}}
 
 /* MCP / CLAUDE PANEL (dark) */
 .rb-mcp-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch;}
@@ -563,7 +580,7 @@ body{top:0 !important;}
       </div>
       <div class="rb-wf-canvas"><div class="rb-wf-flow" id="sFlow"></div></div>
       <div class="rb-wf-foot">
-        <button class="rb-btn rb-btn--primary" id="sRun" onclick="sPlay()">Ejecutar de nuevo</button>
+        <button class="rb-btn rb-btn--green" id="sRun" onclick="sPlay()">Ejecutar de nuevo</button>
         <span class="sm">Cada nodo conecta un sistema, una IA o un producto de tu suite. Trazabilidad de punta a punta.</span>
       </div>
     </div>
@@ -643,6 +660,13 @@ body{top:0 !important;}
 <section class="rb-section rb-section--space" id="ia">
   <div class="container">
     <div class="rb-section__head">
+      <div class="rb-brandpair" aria-hidden="true">
+        <div class="rb-brandpair__halo"></div>
+        <div class="rb-brandpair__tile rb-brandpair__tile--a"><img src="assets/logos/rocketbot-iso-white.png" alt=""></div>
+        <div class="rb-brandpair__tile rb-brandpair__tile--b"><span>Claude</span></div>
+        <div class="rb-brandpair__flare"></div>
+        <div class="rb-brandpair__dust rb-brandpair__dust--1"></div><div class="rb-brandpair__dust rb-brandpair__dust--2"></div><div class="rb-brandpair__dust rb-brandpair__dust--3"></div>
+      </div>
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Saturn Studio · MCP de Claude</span>
       <h2 class="rb-section__title rb-mcp-title">Describe el flujo. <span>Claude lo arma.</span></h2>
       <p class="rb-section__sub">A través del MCP (Model Context Protocol), describes lo que el flujo debe hacer y Claude propone los nodos (disparadores, IA, RPA, integraciones) listos para revisar y ejecutar en Saturn.</p>
@@ -657,7 +681,7 @@ body{top:0 !important;}
           <button class="rb-mcp-chip" data-k="fact">Cuentas por pagar</button>
           <button class="rb-mcp-chip" data-k="sync">Sincronizar datos</button>
         </div>
-        <div class="rb-mcp-bar"><span class="ph">Describe lo que debe hacer el flujo…</span><button class="rb-btn rb-btn--primary" id="nmGen" onclick="nmPlay()">Generar flujo</button></div>
+        <div class="rb-mcp-bar"><span class="ph">Describe lo que debe hacer el flujo…</span><button class="rb-btn rb-btn--green" id="nmGen" onclick="nmPlay()">Generar flujo</button></div>
       </div>
       <div class="rb-mcp-out">
         <div class="rb-mcp-out-h"><span class="pin"></span><span id="nmTitle">Flujo propuesto</span></div>
