@@ -108,6 +108,31 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-hero__sub{font-size:19px;color:rgba(255,255,255,.6);line-height:1.6;max-width:640px;margin-bottom:32px;font-weight:300;}
 .rb-hero__ctas{display:flex;gap:14px;flex-wrap:wrap;}
 
+/* HERO GRID + SATURN VISUAL */
+.rb-hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative;z-index:1;}
+.rb-hero__visual{display:flex;align-items:center;justify-content:center;}
+@media(max-width:960px){.rb-hero__grid{grid-template-columns:1fr;}.rb-hero__visual{display:none;}}
+
+.rb-sat{position:relative;width:100%;max-width:460px;aspect-ratio:1/1;}
+.rb-sat__halo{position:absolute;inset:-10%;border-radius:50%;background:radial-gradient(circle at 42% 38%,rgba(188,0,23,.35) 0%,transparent 45%),radial-gradient(circle at 60% 62%,rgba(43,127,255,.22) 0%,transparent 50%);filter:blur(34px);}
+.rb-sat__sphere{position:absolute;left:50%;top:50%;width:50%;height:50%;transform:translate(-50%,-50%);border-radius:50%;z-index:3;background:radial-gradient(circle at 34% 30%,#3a4550 0%,#20262c 32%,#0c0f13 62%,#050608 100%);box-shadow:inset -18px -14px 40px rgba(0,0,0,.6),inset 10px 8px 26px rgba(255,255,255,.05),0 0 60px rgba(188,0,23,.28);}
+.rb-sat__shade{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 68% 68%,rgba(188,0,23,.35),transparent 60%);mix-blend-mode:screen;}
+.rb-sat__ring{position:absolute;left:50%;top:50%;width:92%;height:26%;border-radius:50%;transform:translate(-50%,-50%) rotate(-16deg);}
+.rb-sat__ring--back{z-index:2;border:2px solid rgba(255,255,255,.16);box-shadow:0 0 22px rgba(43,127,255,.18);}
+.rb-sat__ring--front{z-index:4;height:26%;overflow:hidden;clip-path:polygon(0 46%,100% 46%,100% 100%,0 100%);}
+.rb-sat__ring--front .rb-sat__ringline{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,.22);box-shadow:0 0 16px rgba(188,0,23,.35);}
+.rb-sat__comet{position:absolute;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,#fff,var(--rb-red) 60%,transparent 72%);box-shadow:0 0 18px 4px rgba(188,0,23,.85);offset-path:ellipse(46% 13% at 50% 50%);animation:rb-sat-orbit 9s linear infinite;}
+.rb-sat__ring--front .rb-sat__comet{animation-delay:-2.25s;}
+@keyframes rb-sat-orbit{from{offset-distance:0%;}to{offset-distance:100%;}}
+.rb-sat__dust{position:absolute;inset:0;z-index:5;pointer-events:none;}
+.rb-sat__dust span{position:absolute;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px rgba(255,255,255,.6);animation:rb-pulse 3.4s ease-in-out infinite;}
+.rb-sat__dust span:nth-child(1){width:5px;height:5px;left:8%;top:28%;animation-delay:0s;}
+.rb-sat__dust span:nth-child(2){width:4px;height:4px;left:20%;top:78%;animation-delay:.6s;}
+.rb-sat__dust span:nth-child(3){width:6px;height:6px;left:88%;top:20%;animation-delay:1.2s;}
+.rb-sat__dust span:nth-child(4){width:3px;height:3px;left:92%;top:70%;animation-delay:1.8s;}
+.rb-sat__dust span:nth-child(5){width:4px;height:4px;left:50%;top:8%;animation-delay:2.4s;}
+@media(prefers-reduced-motion:reduce){.rb-sat__comet{animation:none;offset-distance:0%;}.rb-sat__dust span{animation:none;}}
+
 /* CLIENTS MARQUEE */
 .rb-clients{padding:34px 0;background:var(--rb-off-white);}
 [data-theme="dark"] .rb-clients{background:var(--rb-dark-2);}
@@ -479,7 +504,7 @@ body{top:0 !important;}
 <!-- HERO -->
 <section class="rb-hero">
   <div class="rb-hero__particles"></div>
-  <div class="container">
+  <div class="container rb-hero__grid">
     <div class="rb-hero__content">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Rocketbot · Saturn Studio</span>
       <h1 class="rb-hero__title"><span class="rb-hero__ln">Conecta y automatiza</span><br><span class="rb-hero__ln"><strong><span class="rb-hero__rot" id="heroRot">procesos</span></strong> sin código</span></h1>
@@ -487,6 +512,20 @@ body{top:0 !important;}
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="contacto.html">Pruébalo ahora</a>
         <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#demo" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver el demo</a>
+      </div>
+    </div>
+    <div class="rb-hero__visual" aria-hidden="true">
+      <div class="rb-sat">
+        <div class="rb-sat__halo"></div>
+        <div class="rb-sat__ring rb-sat__ring--back">
+          <div class="rb-sat__comet"></div>
+        </div>
+        <div class="rb-sat__sphere"><div class="rb-sat__shade"></div></div>
+        <div class="rb-sat__ring rb-sat__ring--front">
+          <div class="rb-sat__ringline"></div>
+          <div class="rb-sat__comet"></div>
+        </div>
+        <div class="rb-sat__dust"><span></span><span></span><span></span><span></span><span></span></div>
       </div>
     </div>
   </div>
