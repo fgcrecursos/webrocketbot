@@ -114,8 +114,10 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);}
 .rb-marquee__track{display:flex;align-items:center;gap:56px;width:max-content;animation:rb-marq 26s linear infinite;}
 @keyframes rb-marq{to{transform:translateX(-50%);}}
-.rb-marquee img{height:28px;opacity:.5;filter:grayscale(1);}
-[data-theme="dark"] .rb-marquee img{opacity:.6;filter:grayscale(1) brightness(2);}
+.rb-marquee img{height:46px;opacity:.62;filter:grayscale(1);transition:opacity .2s,filter .2s;}
+.rb-marquee img:hover{opacity:1;filter:grayscale(0);}
+[data-theme="dark"] .rb-marquee img{opacity:.72;filter:grayscale(1) brightness(2);}
+[data-theme="dark"] .rb-marquee img:hover{opacity:1;filter:brightness(2);}
 @media(prefers-reduced-motion:reduce){.rb-marquee__track{animation:none;}}
 
 .rb-section{padding:100px 0;position:relative;}
@@ -153,10 +155,12 @@ ul{margin:0;padding:0;list-style:none;}
 @keyframes rb-spulse{0%,100%{opacity:1;}50%{opacity:.3;}}
 .rb-wf-canvas{padding:34px 22px;overflow-x:auto;background-color:rgba(0,0,0,.015);background-image:radial-gradient(circle,rgba(120,120,120,.18) 1px,transparent 1px);background-size:22px 22px;}
 [data-theme="dark"] .rb-wf-canvas{background-color:rgba(255,255,255,.015);}
-.rb-wf-flow{display:flex;align-items:center;min-width:max-content;justify-content:center;margin:0 auto;}
-.rb-wf-node{width:150px;background:var(--card);border:1px solid var(--border);border-radius:13px;padding:14px;box-shadow:0 6px 16px rgba(0,0,0,.08);transition:border-color .3s,box-shadow .3s,transform .3s;flex:0 0 auto;}
-.rb-wf-node .chip{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
-.rb-wf-node .chip svg{width:18px;height:18px;}
+.rb-wf-flow{display:flex;align-items:stretch;width:100%;justify-content:center;margin:0 auto;}
+.rb-wf-node{flex:1 1 0;min-width:132px;background:var(--card);border:1px solid var(--border);border-radius:13px;padding:16px 14px;box-shadow:0 6px 16px rgba(0,0,0,.08);transition:border-color .3s,box-shadow .3s,transform .3s;display:flex;flex-direction:column;}
+.rb-wf-node .chip{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;flex:0 0 auto;}
+.rb-wf-node .chip svg{width:20px;height:20px;}
+.rb-wf-node .chip.logo{background:#fff;padding:6px;border:1px solid var(--border);}
+.rb-wf-node .chip.logo img{width:100%;height:100%;object-fit:contain;}
 .rb-wf-node .t{font-weight:700;font-size:14px;color:var(--foreground);}
 .rb-wf-node .s{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.35;}
 .chip.rb{background:rgba(188,0,23,.12);color:var(--rb-red);}
@@ -166,7 +170,7 @@ ul{margin:0;padding:0;list-style:none;}
 .chip.out{background:rgba(29,158,117,.14);color:var(--rb-green);}
 .rb-wf-node.active{border-color:var(--rb-blue);box-shadow:0 0 0 4px rgba(43,127,255,.16),0 10px 22px rgba(0,0,0,.14);transform:translateY(-2px);}
 .rb-wf-node.done{border-color:rgba(29,158,117,.5);}
-.rb-wf-edge{width:60px;flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.rb-wf-edge{flex:0 1 64px;min-width:34px;display:flex;flex-direction:column;align-items:center;justify-content:center;align-self:center;}
 .rb-wf-edge .lab{font-size:10px;font-family:monospace;color:var(--muted);margin-bottom:7px;opacity:0;transition:opacity .3s;white-space:nowrap;}
 .rb-wf-edge .track{position:relative;width:100%;height:2px;background:var(--border);border-radius:2px;}
 .rb-wf-edge .track::after{content:"";position:absolute;right:-1px;top:-3px;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid var(--border);}
@@ -196,6 +200,8 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-eco__chip:hover{border-color:var(--rb-red);transform:translateY(-2px);}
 .rb-eco__chip.act{border-color:var(--rb-red);background:rgba(188,0,23,.06);box-shadow:0 8px 20px rgba(188,0,23,.1);}
 .rb-eco__chip .ic{width:34px;height:34px;border-radius:9px;background:rgba(188,0,23,.1);color:var(--rb-red);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;}
+.rb-eco__chip .ic.logo,.rb-eco__detail .ic.logo{background:#fff;border:1px solid var(--border);padding:6px;}
+.rb-eco__chip .ic.logo img,.rb-eco__detail .ic.logo img{width:100%;height:100%;object-fit:contain;}
 .rb-eco__chip .ic svg{width:18px;height:18px;}
 .rb-eco__chip .nm{font-weight:700;font-size:13px;color:var(--foreground);}
 .rb-eco__detail{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;gap:14px;align-items:flex-start;min-height:96px;}
@@ -225,6 +231,24 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-chips{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;max-width:880px;margin:0 auto;}
 .rb-chip{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:10px 18px;font-weight:600;font-size:14px;color:var(--foreground);box-shadow:0 4px 12px rgba(0,0,0,.04);}
 .rb-chip--more{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
+/* INTEGRATIONS MARQUEE */
+.rb-int__title-nowrap{white-space:nowrap;}
+@media(max-width:768px){.rb-int__title-nowrap{white-space:normal;}}
+.rb-int__tracks{display:flex;flex-direction:column;gap:16px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
+.rb-int__track{display:flex;gap:16px;width:max-content;}
+.rb-int__track--left{animation:rb-int-left 40s linear infinite;}
+.rb-int__track--right{animation:rb-int-right 40s linear infinite;}
+@keyframes rb-int-left{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@keyframes rb-int-right{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
+.rb-int__tracks:hover .rb-int__track{animation-play-state:paused;}
+.rb-int__logo{width:80px;height:80px;border-radius:18px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:14px;transition:background .25s,border-color .25s,transform .2s;}
+.rb-int__logo:hover{border-color:rgba(188,0,23,.5);transform:scale(1.08);}
+.rb-int__logo img{width:100%;height:100%;object-fit:contain;}
+@media(prefers-reduced-motion:reduce){.rb-int__track{animation:none;}}
+/* MCP title one line, red */
+.rb-mcp-title{color:#BC0017 !important;white-space:nowrap;}
+.rb-mcp-title span{color:#BC0017 !important;}
+@media(max-width:768px){.rb-mcp-title{white-space:normal;}}
 
 /* MCP / CLAUDE PANEL (dark) */
 .rb-mcp-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch;}
@@ -455,7 +479,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-hero__content">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Rocketbot · Saturn Studio</span>
-      <h1 class="rb-hero__title">Conecta y automatiza <strong><span class="rb-hero__rot" id="heroRot">tus flujos</span></strong> sin código</h1>
+      <h1 class="rb-hero__title">Conecta y automatiza sin código <strong><span class="rb-hero__rot" id="heroRot">tus flujos</span></strong></h1>
       <p class="rb-hero__sub">Saturn Studio une automatización, IA y agentes inteligentes para que la información fluya entre tus sistemas, personas y datos, con control y trazabilidad en cada paso.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="contacto.html">Pruébalo ahora</a>
@@ -481,7 +505,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Flujos en acción</span>
-      <h2 class="rb-section__title">Diseña el flujo, <span>Saturn lo ejecuta</span></h2>
+      <h2 class="rb-section__title">Diseña el flujo,<br><span>Saturn lo ejecuta</span></h2>
       <p class="rb-section__sub">Un flujo no-code conectando tu ecosistema, con los datos pasando de un nodo al siguiente. Elige un caso y míralo correr.</p>
     </div>
     <div class="rb-wf-tabs" id="sTabs">
@@ -532,10 +556,10 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Beneficios</span>
-      <h2 class="rb-section__title">Procesos que avanzan <span>sin seguimiento manual</span></h2>
+      <h2 class="rb-section__title">Procesos que avanzan<br><span>sin seguimiento manual</span></h2>
     </div>
     <div class="rb-benefits4">
-      <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 7h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8"/></svg></div><div class="rb-benefit4__title">Menos costos operativos</div><div class="rb-benefit4__desc">Reduce el esfuerzo, los errores y el tiempo dedicado a tareas manuales.</div></div>
+      <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="rb-benefit4__title">Menos costos operativos</div><div class="rb-benefit4__desc">Reduce el esfuerzo, los errores y el tiempo dedicado a tareas manuales.</div></div>
       <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg></div><div class="rb-benefit4__title">Procesos más rápidos</div><div class="rb-benefit4__desc">Automatiza de principio a fin: el trabajo fluye entre sistemas, personas y datos.</div></div>
       <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/><path d="M12 8v4l3 2"/></svg></div><div class="rb-benefit4__title">Control y trazabilidad</div><div class="rb-benefit4__desc">Cada acción queda registrada: qué ocurrió, cuándo y por qué.</div></div>
       <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-1 8H9a4 4 0 0 1-1-8V7a4 4 0 0 1 4-4z"/><path d="M9.5 16h5"/></svg></div><div class="rb-benefit4__title">Agentes con contexto</div><div class="rb-benefit4__desc">No solo siguen instrucciones: interpretan el objetivo y gestionan excepciones.</div></div>
@@ -548,7 +572,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Diferenciadores</span>
-      <h2 class="rb-section__title">Agentes que actúan, <span>tú al mando</span></h2>
+      <h2 class="rb-section__title">Agentes que actúan,<br><span>tú al mando</span></h2>
     </div>
     <div class="rb-compare">
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="rb-compare__title">Autonomía con control</div><div class="rb-compare__desc">Los agentes deciden y ejecutan dentro de los límites que defines; cada paso queda supervisado y registrado.</div></div>
@@ -563,12 +587,13 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>+38 integraciones nativas</span>
-      <h2 class="rb-section__title">Conéctate con <span>tus plataformas favoritas</span></h2>
+      <h2 class="rb-section__title rb-int__title-nowrap">Conéctate con <span>tus plataformas favoritas</span></h2>
       <p class="rb-section__sub">Y con cualquier API REST, base de datos o modelo de IA que ya uses.</p>
     </div>
-    <div class="rb-chips">
-      <span class="rb-chip">SAP</span><span class="rb-chip">Salesforce</span><span class="rb-chip">Microsoft 365</span><span class="rb-chip">Google Workspace</span><span class="rb-chip">Oracle</span><span class="rb-chip">ServiceNow</span><span class="rb-chip">WhatsApp</span><span class="rb-chip">Telegram</span><span class="rb-chip">Gmail</span><span class="rb-chip">Slack</span><span class="rb-chip">REST API</span><span class="rb-chip">PostgreSQL</span><span class="rb-chip">Google Sheets</span><span class="rb-chip">LLMs / OpenAI</span><span class="rb-chip rb-chip--more">+38 nativas</span>
-    </div>
+  </div>
+  <div class="rb-int__tracks">
+    <div class="rb-int__track rb-int__track--left"><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo1.png" alt="Integración 1" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo2.png" alt="Integración 2" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo3.png" alt="Integración 3" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo4.png" alt="Integración 4" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo5.png" alt="Integración 5" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo6.png" alt="Integración 6" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo7.png" alt="Integración 7" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo8.png" alt="Integración 8" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo9.png" alt="Integración 9" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo10.png" alt="Integración 10" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo11.png" alt="Integración 11" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo12.png" alt="Integración 12" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo13.png" alt="Integración 13" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo14.png" alt="Integración 14" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo15.png" alt="Integración 15" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo16.png" alt="Integración 16" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo17.png" alt="Integración 17" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo18.png" alt="Integración 18" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo19.png" alt="Integración 19" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo1.png" alt="Integración 1" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo2.png" alt="Integración 2" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo3.png" alt="Integración 3" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo4.png" alt="Integración 4" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo5.png" alt="Integración 5" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo6.png" alt="Integración 6" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo7.png" alt="Integración 7" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo8.png" alt="Integración 8" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo9.png" alt="Integración 9" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo10.png" alt="Integración 10" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo11.png" alt="Integración 11" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo12.png" alt="Integración 12" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo13.png" alt="Integración 13" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo14.png" alt="Integración 14" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo15.png" alt="Integración 15" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo16.png" alt="Integración 16" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo17.png" alt="Integración 17" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo18.png" alt="Integración 18" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo19.png" alt="Integración 19" loading="lazy"></div></div>
+    <div class="rb-int__track rb-int__track--right"><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo20.png" alt="Integración 20" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo21.png" alt="Integración 21" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo22.png" alt="Integración 22" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo23.png" alt="Integración 23" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo24.png" alt="Integración 24" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo25.png" alt="Integración 25" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo26.png" alt="Integración 26" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo27.png" alt="Integración 27" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo28.png" alt="Integración 28" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo29.png" alt="Integración 29" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo30.png" alt="Integración 30" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo31.png" alt="Integración 31" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo32.png" alt="Integración 32" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo33.png" alt="Integración 33" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo34.png" alt="Integración 34" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo35.png" alt="Integración 35" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo36.png" alt="Integración 36" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo37.png" alt="Integración 37" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo38.png" alt="Integración 38" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo20.png" alt="Integración 20" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo21.png" alt="Integración 21" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo22.png" alt="Integración 22" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo23.png" alt="Integración 23" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo24.png" alt="Integración 24" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo25.png" alt="Integración 25" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo26.png" alt="Integración 26" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo27.png" alt="Integración 27" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo28.png" alt="Integración 28" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo29.png" alt="Integración 29" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo30.png" alt="Integración 30" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo31.png" alt="Integración 31" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo32.png" alt="Integración 32" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo33.png" alt="Integración 33" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo34.png" alt="Integración 34" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo35.png" alt="Integración 35" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo36.png" alt="Integración 36" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo37.png" alt="Integración 37" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo38.png" alt="Integración 38" loading="lazy"></div></div>
   </div>
 </section>
 
@@ -577,7 +602,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Saturn Studio · MCP de Claude</span>
-      <h2 class="rb-section__title">Describe el flujo. <span style="color:#F3A6AD">Claude lo arma.</span></h2>
+      <h2 class="rb-section__title rb-mcp-title">Describe el flujo. <span>Claude lo arma.</span></h2>
       <p class="rb-section__sub">A través del MCP (Model Context Protocol), describes lo que el flujo debe hacer y Claude propone los nodos (disparadores, IA, RPA, integraciones) listos para revisar y ejecutar en Saturn.</p>
     </div>
     <div class="rb-mcp-grid">
@@ -807,10 +832,12 @@ const SWF={
 let sCur='onb', sToken=0, sTimers=[];
 function sSleep(ms){return new Promise(function(r){sTimers.push(setTimeout(r,ms));});}
 function sClear(){sTimers.forEach(clearTimeout); sTimers=[];}
+const PLOGO={'Xperience':'assets/logos/products/xperience.png','AI Studio':'assets/logos/products/ai-studio.png','RPA Studio':'assets/logos/products/rpa-studio.png','Nexus':'assets/logos/products/nexus.png','Orquestador':'assets/logos/products/orchestrator.png','Saturn Studio':'assets/logos/products/saturn-studio.png'};
 function sBuild(w){
   let h='';
   w.nodes.forEach((n,i)=>{
-    h+='<div class="rb-wf-node" data-n="'+i+'"><div class="chip '+n.k+'">'+SI[n.ic]+'</div><div class="t">'+n.t+'</div><div class="s">'+n.s+'</div></div>';
+    var chip=PLOGO[n.t]?'<div class="chip logo"><img src="'+PLOGO[n.t]+'" alt="'+n.t+'"></div>':'<div class="chip '+n.k+'">'+SI[n.ic]+'</div>';
+    h+='<div class="rb-wf-node" data-n="'+i+'">'+chip+'<div class="t">'+n.t+'</div><div class="s">'+n.s+'</div></div>';
     if(i<w.nodes.length-1) h+='<div class="rb-wf-edge" data-e="'+i+'"><div class="lab">'+w.edges[i]+'</div><div class="track"><div class="dot"></div></div></div>';
   });
   document.getElementById('sFlow').innerHTML=h;
@@ -853,11 +880,12 @@ const ECO=[
  {ic:'api',nm:'+38 Integraciones',d:'Conéctate con todo: SAP, Salesforce, Microsoft 365, Google, Oracle, ServiceNow, WhatsApp, y cualquier API o LLM.'}
 ];
 const en=document.getElementById('ecoNodes');
-en.innerHTML=ECO.map((e,i)=>'<div class="rb-eco__chip'+(i===0?' act':'')+'" data-i="'+i+'"><div class="ic">'+SI[e.ic]+'</div><div class="nm">'+e.nm+'</div></div>').join('');
+function ecoIc(e){return PLOGO[e.nm]?'<div class="ic logo"><img src="'+PLOGO[e.nm]+'" alt="'+e.nm+'"></div>':'<div class="ic">'+SI[e.ic]+'</div>';}
+en.innerHTML=ECO.map((e,i)=>'<div class="rb-eco__chip'+(i===0?' act':'')+'" data-i="'+i+'">'+ecoIc(e)+'<div class="nm">'+e.nm+'</div></div>').join('');
 function ecoSel(i){
   document.querySelectorAll('#ecoNodes .rb-eco__chip').forEach((el,idx)=>el.classList.toggle('act',idx===i));
   const e=ECO[i];
-  document.getElementById('ecoDetail').innerHTML='<div class="ic">'+SI[e.ic]+'</div><div><h4>'+e.nm+'</h4><p>'+e.d+'</p></div>';
+  document.getElementById('ecoDetail').innerHTML=ecoIc(e)+'<div><h4>'+e.nm+'</h4><p>'+e.d+'</p></div>';
 }
 document.querySelectorAll('#ecoNodes .rb-eco__chip').forEach(c=>c.addEventListener('click',()=>ecoSel(+c.getAttribute('data-i'))));
 ecoSel(0);
