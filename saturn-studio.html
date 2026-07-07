@@ -482,7 +482,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-hero__content">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Rocketbot · Saturn Studio</span>
-      <h1 class="rb-hero__title"><span class="rb-hero__ln">Conecta y automatiza</span><br><span class="rb-hero__ln"><strong><span class="rb-hero__rot" id="heroRot">tus flujos</span></strong> sin código</span></h1>
+      <h1 class="rb-hero__title"><span class="rb-hero__ln">Conecta y automatiza</span><br><span class="rb-hero__ln"><strong><span class="rb-hero__rot" id="heroRot">procesos</span></strong> sin código</span></h1>
       <p class="rb-hero__sub">Saturn Studio une automatización, IA y agentes inteligentes para que la información fluya entre tus sistemas, personas y datos, con control y trazabilidad en cada paso.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="contacto.html">Pruébalo ahora</a>
@@ -802,7 +802,7 @@ const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 // ---- hero rotating word ----
 (function(){
   const rot=document.getElementById('heroRot'); if(!rot||reduce) return;
-  const WORDS=['tus flujos','la IA','tus sistemas','tu ecosistema']; let wi=0;
+  const WORDS=['procesos','flujos','agentes','robots']; let wi=0;
   setInterval(function(){ rot.classList.add('out'); setTimeout(function(){ wi=(wi+1)%WORDS.length; rot.textContent=WORDS[wi]; rot.classList.remove('out'); },300); },2000);
 })();
 
