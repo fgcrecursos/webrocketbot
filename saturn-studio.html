@@ -263,7 +263,8 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-chip--more{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
 /* INTEGRATIONS MARQUEE */
 .rb-int__title-nowrap{white-space:nowrap;}
-@media(max-width:768px){.rb-int__title-nowrap{white-space:normal;}}
+.rb-section__head:has(.rb-int__title-nowrap){max-width:980px;}
+@media(max-width:900px){.rb-int__title-nowrap{white-space:normal;}.rb-section__head:has(.rb-int__title-nowrap){max-width:720px;}}
 .rb-int__tracks{display:flex;flex-direction:column;gap:16px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
 .rb-int__track{display:flex;gap:16px;width:max-content;}
 .rb-int__track--left{animation:rb-int-left 40s linear infinite;}
