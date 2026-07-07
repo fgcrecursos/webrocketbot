@@ -100,8 +100,10 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-hero{position:relative;min-height:88vh;padding:140px 0 76px;overflow:hidden;display:flex;align-items:center;background:linear-gradient(160deg,#02061B 0%,#0A0A0F 60%,#1B1F23 100%);}
 .rb-hero__particles{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 75% 40%,rgba(188,0,23,.22) 0%,transparent 45%),radial-gradient(circle at 20% 60%,rgba(43,127,255,.12) 0%,transparent 40%),radial-gradient(circle at 50% 80%,rgba(0,212,255,.06) 0%,transparent 35%);}
 .rb-hero__content{position:relative;z-index:1;max-width:800px;}
-.rb-hero__title{font-size:clamp(30px,4.4vw,54px);font-weight:800;letter-spacing:-0.03em;line-height:1.08;margin:24px 0 18px;color:#fff;}
+.rb-hero__title{font-size:clamp(28px,3.8vw,48px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin:24px 0 18px;color:#fff;}
 .rb-hero__title strong{color:var(--rb-red);font-weight:inherit;}
+.rb-hero__lead{white-space:nowrap;}
+@media(max-width:600px){.rb-hero__lead{white-space:normal;}}
 .rb-hero__rot{display:inline-block;white-space:nowrap;transition:opacity .3s ease,transform .3s ease;color:var(--rb-red);}
 .rb-hero__rot.out{opacity:0;transform:translateY(-8px);}
 .rb-hero__sub{font-size:19px;color:rgba(255,255,255,.6);line-height:1.6;max-width:640px;margin-bottom:32px;font-weight:300;}
@@ -481,7 +483,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-hero__content">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Rocketbot · Saturn Studio</span>
-      <h1 class="rb-hero__title">Conecta y automatiza sin código<br><strong><span class="rb-hero__rot" id="heroRot">tus flujos</span></strong></h1>
+      <h1 class="rb-hero__title"><span class="rb-hero__lead">Conecta y automatiza sin código</span><br><strong><span class="rb-hero__rot" id="heroRot">tus flujos</span></strong></h1>
       <p class="rb-hero__sub">Saturn Studio une automatización, IA y agentes inteligentes para que la información fluya entre tus sistemas, personas y datos, con control y trazabilidad en cada paso.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="contacto.html">Pruébalo ahora</a>
