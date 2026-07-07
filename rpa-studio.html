@@ -37,7 +37,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--rb-red:#BC0017;--rb-red-deep:#8E0011;--rb-red-soft:rgba(188,0,23,0.10);--rb-red-glow:rgba(188,0,23,0.30);--rb-blue:#2B7FFF;--rb-neon-cyan:#00D4FF;--rb-black:#000000;--rb-space:#02061B;--rb-dark-1:#0A0A0F;--rb-dark-2:#121218;--rb-dark-3:#1B1F23;--rb-secondary:#263238;--rb-gray-900:#0B0E11;--rb-gray-700:#404040;--rb-gray-500:#909090;--rb-off-white:#FAFAFA;--rb-white:#FFFFFF;--rb-green:#1D9E75;--rb-amber:#BA7517;--background:var(--rb-off-white);--foreground:var(--rb-gray-900);--card:rgba(255,255,255,0.70);--border:rgba(0,0,0,0.08);--muted:var(--rb-gray-500);--glass-bg:rgba(255,255,255,0.60);--glass-border:rgba(255,255,255,0.30);--glass-blur:20px;--r-md:16px;--r-lg:24px;--r-xl:32px;--r-2xl:40px;--r-pill:9999px;--font-sans:'Montserrat',system-ui,-apple-system,Segoe UI,sans-serif;}
+:root{--rb-red:#BC0017;--rb-red-deep:#8E0011;--rb-red-soft:rgba(188,0,23,0.10);--rb-red-glow:rgba(188,0,23,0.30);--rb-blue:#2B7FFF;--rb-neon-cyan:#00D4FF;--rb-black:#000000;--rb-space:#02061B;--rb-dark-1:#0A0A0F;--rb-dark-2:#121218;--rb-dark-3:#1B1F23;--rb-secondary:#263238;--rb-gray-900:#0B0E11;--rb-gray-700:#404040;--rb-gray-500:#909090;--rb-off-white:#FAFAFA;--rb-white:#FFFFFF;--rb-green:#1D9E75;--rb-green-deep:#0F5C42;--rb-amber:#BA7517;--background:var(--rb-off-white);--foreground:var(--rb-gray-900);--card:rgba(255,255,255,0.70);--border:rgba(0,0,0,0.08);--muted:var(--rb-gray-500);--glass-bg:rgba(255,255,255,0.60);--glass-border:rgba(255,255,255,0.30);--glass-blur:20px;--r-md:16px;--r-lg:24px;--r-xl:32px;--r-2xl:40px;--r-pill:9999px;--font-sans:'Montserrat',system-ui,-apple-system,Segoe UI,sans-serif;}
 [data-theme="dark"]{--background:var(--rb-dark-1);--foreground:var(--rb-white);--card:rgba(20,20,30,0.80);--border:rgba(255,255,255,0.08);--glass-bg:rgba(20,20,35,0.60);--glass-border:rgba(255,255,255,0.10);}
 *,*::before,*::after{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
@@ -81,6 +81,8 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:12px 24px;border-radius:var(--r-pill);border:1px solid transparent;transition:transform .2s,box-shadow .25s,background .25s,color .2s;}
 .rb-btn--primary{background:var(--rb-red);color:#fff;box-shadow:0 4px 16px rgba(188,0,23,.25);}
 .rb-btn--primary:hover{background:var(--rb-red-deep);transform:translateY(-1px);box-shadow:0 10px 30px rgba(188,0,23,.45);}
+.rb-btn--green{background:var(--rb-green-deep);color:#fff;box-shadow:0 4px 16px rgba(15,92,66,.35);}
+.rb-btn--green:hover{background:#0A4632;transform:translateY(-1px);box-shadow:0 10px 30px rgba(15,92,66,.5);}
 .rb-btn--ghost{background:transparent;border-color:var(--border);color:var(--foreground);}
 .rb-btn--ghost:hover{background:rgba(0,0,0,.04);}
 [data-theme="dark"] .rb-btn--ghost:hover{background:rgba(255,255,255,.07);}
@@ -113,8 +115,11 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);}
 .rb-marquee__track{display:flex;align-items:center;gap:56px;width:max-content;animation:rb-marq 26s linear infinite;}
 @keyframes rb-marq{to{transform:translateX(-50%);}}
-.rb-marquee img{height:28px;opacity:.5;filter:grayscale(1);}
-[data-theme="dark"] .rb-marquee img{opacity:.6;filter:grayscale(1) brightness(2);}
+.rb-marquee__track{gap:72px;}
+.rb-marquee img{height:72px;width:auto;object-fit:contain;opacity:.62;filter:grayscale(1);transition:opacity .2s,filter .2s;}
+.rb-marquee img:hover{opacity:1;filter:grayscale(0);}
+[data-theme="dark"] .rb-marquee img{opacity:.78;filter:grayscale(1) brightness(2);}
+[data-theme="dark"] .rb-marquee img:hover{opacity:1;filter:brightness(2);}
 @media(prefers-reduced-motion:reduce){.rb-marquee__track{animation:none;}}
 
 .rb-section{padding:100px 0;position:relative;}
@@ -123,6 +128,9 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-section--space{background:linear-gradient(135deg,#02061B,#0A0A0F);color:#fff;position:relative;overflow:hidden;}
 .rb-section--space::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 800px 400px at 50% 30%,rgba(188,0,23,.14),transparent 60%);pointer-events:none;}
 .rb-section__head{text-align:center;max-width:720px;margin:0 auto 56px;}
+.rb-title-nowrap{white-space:nowrap;}
+.rb-section__head:has(.rb-title-nowrap){max-width:860px;}
+@media(max-width:900px){.rb-title-nowrap{white-space:normal;}.rb-section__head:has(.rb-title-nowrap){max-width:720px;}}
 .rb-section__title{font-size:clamp(28px,3.5vw,46px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin:16px 0;color:var(--foreground);}
 .rb-section__title span{color:var(--rb-red);}
 .rb-section--space .rb-section__title{color:#fff;}
@@ -305,11 +313,13 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-scard .ic svg{width:24px;height:24px;}
 .rb-scard h3{color:#fff;font-size:18px;font-weight:700;margin:0 0 8px;}
 .rb-scard p{color:rgba(255,255,255,.55);font-size:14.5px;margin:0;}
-.rb-iso{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--rb-dark-3);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 22px;max-width:480px;margin:0 auto;}
-.rb-iso .b{width:38px;height:38px;border-radius:50%;background:rgba(188,0,23,.2);color:#F3A6AD;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
-.rb-iso .b svg{width:20px;height:20px;}
-.rb-iso span{color:rgba(255,255,255,.55);font-size:14px;}
+.rb-iso{display:flex;align-items:center;justify-content:center;gap:16px;background:linear-gradient(135deg,rgba(188,0,23,.22),rgba(188,0,23,.06));border:1px solid rgba(188,0,23,.5);box-shadow:0 0 0 1px rgba(188,0,23,.18),0 12px 30px -12px rgba(188,0,23,.55);border-radius:16px;padding:20px 26px;max-width:620px;margin:0 auto 30px;}
+.rb-iso .b{width:44px;height:44px;border-radius:50%;background:var(--rb-red);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-iso .b svg{width:22px;height:22px;}
+.rb-iso span{color:rgba(255,255,255,.75);font-size:14.5px;}
 .rb-iso b{color:#fff;}
+.rb-iso .badge{margin-left:6px;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--rb-red);border-radius:999px;padding:3px 9px;flex:0 0 auto;white-space:nowrap;}
+@media(max-width:600px){.rb-iso{flex-direction:column;text-align:center;}}
 @media(max-width:900px){.rb-scards{grid-template-columns:1fr;}}
 
 /* FAQ */
@@ -532,7 +542,7 @@ body{top:0 !important;}
         </div>
       </div>
       <div class="rb-exec-foot">
-        <button class="rb-btn rb-btn--primary" id="rRun" onclick="rPlay()">Ejecutar de nuevo</button>
+        <button class="rb-btn rb-btn--green" id="rRun" onclick="rPlay()">Ejecutar de nuevo</button>
         <span class="sm">Trazabilidad completa de cada acción, lista para auditar.</span>
       </div>
     </div>
@@ -561,7 +571,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Cómo trabaja un robot</span>
-      <h2 class="rb-section__title">Cuatro pasos. <span>Cero trabajo manual.</span></h2>
+      <h2 class="rb-section__title">Cuatro pasos.<br><span>Cero trabajo manual.</span></h2>
       <p class="rb-section__sub">Un robot de RPA Studio repite lo que hoy hace una persona entre sistemas, pero más rápido, sin errores de tipeo y con registro de todo.</p>
     </div>
     <div class="rb-flow4" id="rflow"></div>
@@ -591,7 +601,7 @@ body{top:0 !important;}
           <button class="rb-mcp-chip" data-k="portal">Extracción de portal</button>
           <button class="rb-mcp-chip" data-k="erp">Carga a ERP</button>
         </div>
-        <div class="rb-mcp-bar"><span class="ph">Describe lo que debe hacer el robot…</span><button class="rb-btn rb-btn--primary" id="nmGen" onclick="nmPlay()">Generar robot</button></div>
+        <div class="rb-mcp-bar"><span class="ph">Describe lo que debe hacer el robot…</span><button class="rb-btn rb-btn--green" id="nmGen" onclick="nmPlay()">Generar robot</button></div>
       </div>
       <div class="rb-mcp-out">
         <div class="rb-mcp-out-h"><span class="pin"></span><span id="nmTitle">Robot propuesto</span></div>
@@ -612,7 +622,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Casos reales</span>
-      <h2 class="rb-section__title">Automatización lista para <span>tu industria</span></h2>
+      <h2 class="rb-section__title rb-title-nowrap">Automatización lista para <span>tu industria</span></h2>
       <p class="rb-section__sub">Más de 500 procesos implementados en empresas reales. Elige tu industria y mira dónde RPA Studio ya está trabajando.</p>
     </div>
     <div class="rb-explorer">
@@ -636,6 +646,11 @@ body{top:0 !important;}
       <h2 class="rb-section__title">Para operar con confianza</h2>
       <p class="rb-section__sub">RPA Studio incorpora controles de seguridad y trazabilidad para que automatices con visibilidad, control y cumplimiento.</p>
     </div>
+    <div class="rb-iso">
+      <div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg></div>
+      <span>Operación certificada bajo <b>ISO/IEC 27001</b> de gestión de seguridad de la información.</span>
+      <span class="badge">Certificado</span>
+    </div>
     <div class="rb-scards">
       <div class="rb-scard">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.4"/></svg></div>
@@ -652,10 +667,6 @@ body{top:0 !important;}
         <h3>Trazabilidad completa</h3>
         <p>Cada ejecución queda registrada: qué ocurrió, cuándo y quién realizó cada acción.</p>
       </div>
-    </div>
-    <div class="rb-iso">
-      <div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg></div>
-      <span>Operación certificada bajo <b>ISO/IEC 27001</b> de gestión de seguridad de la información.</span>
     </div>
   </div>
 </section>
