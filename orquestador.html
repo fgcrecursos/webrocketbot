@@ -433,6 +433,18 @@ ul{margin:0;padding:0;list-style:none;}
 .goog-te-banner-frame,.goog-te-gadget,.goog-te-gadget-icon,#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,.goog-tooltip:hover,.skiptranslate{display:none !important;height:0 !important;}
 body{top:0 !important;}
 .goog-text-highlight{background:none !important;box-shadow:none !important;}
+
+/* CLAUDE BRAND BADGE */
+.rb-brandpair{position:relative;width:150px;height:110px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;}
+.rb-brandpair__halo{position:absolute;inset:-20% -30%;border-radius:50%;background:radial-gradient(circle,rgba(188,0,23,.5) 0%,rgba(188,0,23,.14) 45%,transparent 72%);filter:blur(18px);}
+.rb-brandpair__tile--solo{position:relative;z-index:2;width:104px;height:88px;border-radius:20px;background:linear-gradient(145deg,#5a0611,#2a0308);box-shadow:0 10px 26px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06) inset,0 0 30px rgba(188,0,23,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;}
+.rb-brandpair__tile--solo .ic{width:22px;height:22px;color:#FF7A85;filter:drop-shadow(0 0 6px rgba(255,90,100,.6));}
+.rb-brandpair__tile--solo span{color:#FF7A85;font-weight:800;font-size:16px;letter-spacing:-.01em;text-shadow:0 0 12px rgba(255,90,100,.6);}
+.rb-brandpair__dust{position:absolute;border-radius:50%;background:#fff;box-shadow:0 0 6px 1px rgba(255,255,255,.7);animation:rb-pulse 3.2s ease-in-out infinite;}
+.rb-brandpair__dust--1{width:4px;height:4px;left:2%;top:14%;animation-delay:.3s;}
+.rb-brandpair__dust--2{width:3px;height:3px;left:92%;top:60%;animation-delay:1s;}
+.rb-brandpair__dust--3{width:3px;height:3px;left:70%;top:96%;animation-delay:1.7s;}
+@media(prefers-reduced-motion:reduce){.rb-brandpair__dust{animation:none;}}
 </style>
 </head>
 <body>
@@ -660,6 +672,7 @@ body{top:0 !important;}
 <section class="rb-section" id="ia">
   <div class="container">
     <div class="rb-section__head">
+      <div class="rb-brandpair" aria-hidden="true"><div class="rb-brandpair__halo"></div><div class="rb-brandpair__tile--solo"><svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 5L19 8.5l-5.2 1.5L12 15l-1.8-5L5 8.5 10.2 7z"/></svg><span>Claude</span></div><div class="rb-brandpair__dust rb-brandpair__dust--1"></div><div class="rb-brandpair__dust rb-brandpair__dust--2"></div><div class="rb-brandpair__dust rb-brandpair__dust--3"></div></div>
       <span class="rb-eyebrow"><span class="dot"></span>Orquestador · MCP de Claude</span>
       <h2 class="rb-section__title">Conecta cualquier IA a tu <span>operación</span></h2>
       <p class="rb-section__sub">A través del MCP (Model Context Protocol), Claude, o la IA que prefieras, consulta el estado y las métricas del Orquestador, genera dashboards y ejecuta acciones por API. Todo dentro de los límites que tú defines.</p>
