@@ -37,7 +37,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--rb-red:#BC0017;--rb-red-deep:#8E0011;--rb-red-soft:rgba(188,0,23,0.10);--rb-red-glow:rgba(188,0,23,0.30);--rb-blue:#2B7FFF;--rb-neon-cyan:#00D4FF;--rb-black:#000000;--rb-space:#02061B;--rb-dark-1:#0A0A0F;--rb-dark-2:#121218;--rb-dark-3:#1B1F23;--rb-secondary:#263238;--rb-gray-900:#0B0E11;--rb-gray-700:#404040;--rb-gray-500:#909090;--rb-off-white:#FAFAFA;--rb-white:#FFFFFF;--rb-green:#1D9E75;--rb-amber:#BA7517;--background:var(--rb-off-white);--foreground:var(--rb-gray-900);--card:rgba(255,255,255,0.70);--border:rgba(0,0,0,0.08);--muted:var(--rb-gray-500);--glass-bg:rgba(255,255,255,0.60);--glass-border:rgba(255,255,255,0.30);--glass-blur:20px;--r-md:16px;--r-lg:24px;--r-xl:32px;--r-2xl:40px;--r-pill:9999px;--font-sans:'Montserrat',system-ui,-apple-system,Segoe UI,sans-serif;}
+:root{--rb-red:#BC0017;--rb-red-deep:#8E0011;--rb-red-soft:rgba(188,0,23,0.10);--rb-red-glow:rgba(188,0,23,0.30);--rb-blue:#2B7FFF;--rb-neon-cyan:#00D4FF;--rb-black:#000000;--rb-space:#02061B;--rb-dark-1:#0A0A0F;--rb-dark-2:#121218;--rb-dark-3:#1B1F23;--rb-secondary:#263238;--rb-gray-900:#0B0E11;--rb-gray-700:#404040;--rb-gray-500:#909090;--rb-off-white:#FAFAFA;--rb-white:#FFFFFF;--rb-green:#1D9E75;--rb-green-deep:#0F5C42;--rb-amber:#BA7517;--background:var(--rb-off-white);--foreground:var(--rb-gray-900);--card:rgba(255,255,255,0.70);--border:rgba(0,0,0,0.08);--muted:var(--rb-gray-500);--glass-bg:rgba(255,255,255,0.60);--glass-border:rgba(255,255,255,0.30);--glass-blur:20px;--r-md:16px;--r-lg:24px;--r-xl:32px;--r-2xl:40px;--r-pill:9999px;--font-sans:'Montserrat',system-ui,-apple-system,Segoe UI,sans-serif;}
 [data-theme="dark"]{--background:var(--rb-dark-1);--foreground:var(--rb-white);--card:rgba(20,20,30,0.80);--border:rgba(255,255,255,0.08);--glass-bg:rgba(20,20,35,0.60);--glass-border:rgba(255,255,255,0.10);}
 *,*::before,*::after{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
@@ -81,6 +81,8 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:12px 24px;border-radius:var(--r-pill);border:1px solid transparent;transition:transform .2s,box-shadow .25s,background .25s,color .2s;}
 .rb-btn--primary{background:var(--rb-red);color:#fff;box-shadow:0 4px 16px rgba(188,0,23,.25);}
 .rb-btn--primary:hover{background:var(--rb-red-deep);transform:translateY(-1px);box-shadow:0 10px 30px rgba(188,0,23,.45);}
+.rb-btn--green{background:var(--rb-green-deep);color:#fff;box-shadow:0 4px 16px rgba(15,92,66,.35);}
+.rb-btn--green:hover{background:#0A4632;transform:translateY(-1px);box-shadow:0 10px 30px rgba(15,92,66,.5);}
 .rb-btn--ghost{background:transparent;border-color:var(--border);color:var(--foreground);}
 .rb-btn--ghost:hover{background:rgba(0,0,0,.04);}
 [data-theme="dark"] .rb-btn--ghost:hover{background:rgba(255,255,255,.07);}
@@ -130,6 +132,9 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-section__title{font-size:clamp(28px,3.5vw,46px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin:16px 0;color:var(--foreground);}
 .rb-section__title span{color:var(--rb-red);}
 .rb-section--space .rb-section__title{color:#fff;}
+.rb-mcp-title{white-space:nowrap;}
+.rb-mcp-title span{color:#BC0017 !important;}
+@media(max-width:768px){.rb-mcp-title{white-space:normal;}}
 .rb-section__sub{font-size:17px;color:#555;transition:color .3s;line-height:1.6;}
 [data-theme="dark"] .rb-section__sub{color:rgba(255,255,255,.5);}
 .rb-section--space .rb-section__sub{color:rgba(255,255,255,.6);}
@@ -145,7 +150,7 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-xform-head h3{font-size:18px;font-weight:800;margin:0;color:var(--foreground);}
 .rb-xbadge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:999px;white-space:nowrap;}
 .rb-xbadge.pub{background:rgba(29,158,117,.14);color:var(--rb-green);}
-.rb-xbadge.priv{background:rgba(188,0,23,.1);color:var(--rb-red);}
+.rb-xbadge.priv{background:rgba(43,127,255,.14);color:var(--rb-blue);}
 .rb-xbadge svg{width:13px;height:13px;}
 .rb-xfield{margin-bottom:14px;}
 .rb-xfield label{display:block;font-size:13px;font-weight:600;color:var(--foreground);margin-bottom:6px;}
@@ -198,11 +203,11 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-mode .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
 .rb-mode .ic svg{width:26px;height:26px;}
 .rb-mode.pub .ic{background:rgba(29,158,117,.14);color:var(--rb-green);}
-.rb-mode.priv .ic{background:rgba(188,0,23,.1);color:var(--rb-red);}
+.rb-mode.priv .ic{background:rgba(43,127,255,.14);color:var(--rb-blue);}
 .rb-mode h3{font-size:20px;font-weight:800;margin:0 0 6px;display:flex;align-items:center;gap:10px;color:var(--foreground);}
 .rb-mode .tag{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:999px;}
 .rb-mode.pub .tag{background:rgba(29,158,117,.14);color:var(--rb-green);}
-.rb-mode.priv .tag{background:rgba(188,0,23,.1);color:var(--rb-red);}
+.rb-mode.priv .tag{background:rgba(43,127,255,.14);color:var(--rb-blue);}
 .rb-mode p{color:var(--muted);font-size:15px;margin:0;line-height:1.55;}
 @media(max-width:900px){.rb-modes{grid-template-columns:1fr;}}
 
@@ -242,7 +247,7 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-mcp-out-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:4px;}
 .rb-mcp-out-head h4{font-size:16px;font-weight:800;color:#fff;margin:0;}
 .rb-mcp-badge{font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap;}
-.rb-mcp-badge.priv{background:rgba(243,166,173,.16);color:#F3A6AD;}
+.rb-mcp-badge.priv{background:rgba(43,127,255,.18);color:#8FBFFF;}
 .rb-mcp-badge.pub{background:rgba(120,210,170,.16);color:#7FD4AD;}
 .rb-mcp-out .sub{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:16px;}
 .rb-mcp-field{display:flex;align-items:center;gap:11px;padding:10px 12px;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(255,255,255,.03);margin-bottom:9px;opacity:0;transform:translateY(7px);transition:opacity .35s ease,transform .35s ease;}
@@ -255,7 +260,7 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-mcp-trigger.in{opacity:1;transform:none;}
 .rb-mcp-trigger svg{width:16px;height:16px;flex:0 0 auto;}
 .rb-mcp-points{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;}
-.rb-mcp-point{display:flex;gap:12px;align-items:flex-start;}
+.rb-mcp-point{display:flex;gap:12px;align-items:flex-start;background:var(--rb-dark-3);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;}
 .rb-mcp-point .ic{width:38px;height:38px;border-radius:10px;background:rgba(243,166,173,.13);color:#F3A6AD;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
 .rb-mcp-point .ic svg{width:19px;height:19px;}
 .rb-mcp-point h4{font-size:14.5px;font-weight:700;color:#fff;margin:2px 0 4px;}
@@ -443,7 +448,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-hero__content">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Rocketbot · Xperience</span>
-      <h1 class="rb-hero__title">Formularios que no solo recogen datos. <strong>Disparan <span class="rb-hero__rot" id="heroRot">procesos</span>.</strong></h1>
+      <h1 class="rb-hero__title">Formularios que no solo<br>recogen datos.<br><strong>Disparan <span class="rb-hero__rot" id="heroRot">procesos</span>.</strong></h1>
       <p class="rb-hero__sub">Crea formularios públicos o privados sin código. Cada envío activa una automatización completa, ideal para trabajo en terreno, atención al cliente y autoservicio.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="contacto.html">Pruébalo ahora</a>
@@ -469,7 +474,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Del formulario a la automatización</span>
-      <h2 class="rb-section__title">Un envío. <span>Un proceso completo.</span></h2>
+      <h2 class="rb-section__title">Un envío.<br><span>Un proceso completo.</span></h2>
       <p class="rb-section__sub">Mira cómo un formulario dispara la automatización detrás. Elige un caso real, completa y envía.</p>
     </div>
     <div class="rb-xtabs" id="xTabs">
@@ -504,7 +509,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Acceso</span>
-      <h2 class="rb-section__title">Públicos o privados, <span>tú decides</span></h2>
+      <h2 class="rb-section__title">Públicos o privados,<br><span>tú decides</span></h2>
       <p class="rb-section__sub">El mismo formulario puede estar abierto a cualquiera o protegido con usuario y contraseña, según quién deba completarlo.</p>
     </div>
     <div class="rb-modes">
@@ -527,7 +532,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Sin código</span>
-      <h2 class="rb-section__title">Crea el formulario que necesitas <span>en minutos</span></h2>
+      <h2 class="rb-section__title">Crea el formulario que necesitas<br><span>en minutos</span></h2>
       <p class="rb-section__sub">Un constructor visual para diseñar formularios con la lógica y los controles que cada proceso requiere, sin programar.</p>
     </div>
     <div class="rb-compare rb-compare--four">
@@ -544,7 +549,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Xperience · MCP de Claude</span>
-      <h2 class="rb-section__title">Describe el formulario. <span style="color:#F3A6AD">Claude lo crea.</span></h2>
+      <h2 class="rb-section__title rb-mcp-title">Describe el formulario. <span>Claude lo crea.</span></h2>
       <p class="rb-section__sub">A través del MCP (Model Context Protocol) de Claude, conectas Xperience y generas formularios con solo dar instrucciones en lenguaje natural: campos, validaciones y la automatización que disparan, listos.</p>
     </div>
     <div class="rb-mcp-grid">
@@ -559,7 +564,7 @@ body{top:0 !important;}
         </div>
         <div class="rb-mcp-bar">
           <span class="ph">Escribe lo que necesitas…</span>
-          <button class="rb-btn rb-btn--primary" id="mGen" onclick="mcpPlay()">Generar formulario</button>
+          <button class="rb-btn rb-btn--green" id="mGen" onclick="mcpPlay()">Generar formulario</button>
         </div>
       </div>
       <div class="rb-mcp-out">
@@ -585,7 +590,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Para quién</span>
-      <h2 class="rb-section__title">Pensado para <span>quien está en la acción</span></h2>
+      <h2 class="rb-section__title">Pensado para<br><span>quien está en la acción</span></h2>
       <p class="rb-section__sub">Donde una persona necesita iniciar o ejecutar un proceso con datos validados, Xperience es el punto de entrada.</p>
     </div>
     <div class="rb-compare">
@@ -601,7 +606,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Cómo funciona</span>
-      <h2 class="rb-section__title">De la idea al proceso, <span>en cuatro pasos</span></h2>
+      <h2 class="rb-section__title">De la idea al proceso,<br><span>en cuatro pasos</span></h2>
     </div>
     <div class="rb-compare rb-compare--four">
       <div class="rb-compare__card" style="text-align:left;"><div class="rb-compare__icon" style="border-radius:11px;margin:0 0 16px;">1</div><div class="rb-compare__title" style="text-align:left;">Diseña tu formulario</div><div class="rb-compare__desc">Crea campos, validaciones y lógica condicional con la interfaz visual, sin código.</div></div>
@@ -811,7 +816,7 @@ function xReset(){
   document.getElementById('xFields').innerHTML=c.fields.map(xField).join('');
   document.getElementById('xSteps').innerHTML=c.steps.map(s=>'<div class="rb-xstep"><span class="dot">'+ICON_CHECK+'</span><span class="lbl">'+s+'</span></div>').join('');
   document.getElementById('xDone').style.display='none';
-  const btn=document.getElementById('xSubmit'); btn.disabled=false; btn.textContent='Enviar formulario';
+  const btn=document.getElementById('xSubmit'); btn.disabled=false; btn.textContent='Enviar formulario'; btn.classList.remove('rb-btn--green');
 }
 function sleep(ms){return new Promise(function(r){xTimers.push(setTimeout(r,ms));});}
 function xClear(){xTimers.forEach(clearTimeout); xTimers=[];}
@@ -831,7 +836,7 @@ async function xPlay(){
   if(reduce){
     c.fields.forEach(function(f,i){ const root=fes[i]; if(f.t==='check'){root.querySelector('.box').classList.add('checked');} else {const box=root.querySelector('.rb-xinput'); box.classList.add('filled'); if(f.t==='file')box.querySelector('.xfic').innerHTML=ICON_OK; box.querySelector('.xval').textContent=f.v;} });
     document.querySelectorAll('#xSteps .rb-xstep').forEach(function(s){s.classList.add('done');});
-    document.getElementById('xDone').style.display='flex'; btn.textContent='Enviado ✓'; btn.disabled=true; return;
+    document.getElementById('xDone').style.display='flex'; btn.textContent='Enviado ✓'; btn.disabled=true; btn.classList.add('rb-btn--green'); return;
   }
   btn.disabled=true; btn.textContent='Completando…';
   for(let i=0;i<c.fields.length;i++){ if(my!==xToken)return; await xFill(fes[i],c.fields[i],my); await sleep(200); if(my!==xToken)return; }
@@ -841,7 +846,7 @@ async function xPlay(){
   for(let i=0;i<steps.length;i++){ if(my!==xToken)return; if(i>0){steps[i-1].classList.remove('active');steps[i-1].classList.add('done');} steps[i].classList.add('active'); await sleep(760); }
   if(my!==xToken)return;
   steps[steps.length-1].classList.remove('active'); steps[steps.length-1].classList.add('done');
-  document.getElementById('xDone').style.display='flex'; btn.textContent='Enviado ✓';
+  document.getElementById('xDone').style.display='flex'; btn.textContent='Enviado ✓'; btn.classList.add('rb-btn--green');
 }
 document.querySelectorAll('#xTabs .rb-xtab').forEach(function(t){
   t.addEventListener('click',function(){
