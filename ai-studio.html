@@ -223,19 +223,27 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-mchip{font-size:12.5px;font-weight:600;color:var(--foreground);background:rgba(0,0,0,.04);border:1px solid var(--border);border-radius:999px;padding:6px 13px;display:flex;align-items:center;gap:7px;}
 [data-theme="dark"] .rb-mchip{background:rgba(255,255,255,.06);}
 .rb-mchip svg{width:13px;height:13px;color:var(--rb-green);}
-.rb-mviz{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px;box-shadow:0 18px 50px -22px rgba(0,0,0,.25);}
-.rb-mviz svg{width:100%;height:auto;}
-.rb-mviz .conn{fill:none;stroke:var(--border);stroke-width:2;transition:stroke .3s,opacity .3s;opacity:.6;}
-.rb-mviz .conn.on{stroke:var(--rb-red);opacity:1;}
-.rb-mviz .srcbox{fill:var(--card);stroke:var(--border);stroke-width:1.5;transition:stroke .3s;}
-.rb-mviz .srcbox.on{stroke:var(--rb-red);}
-.rb-mviz .srcicon{color:var(--muted);transition:color .3s;}
-.rb-mviz .srcicon.on{color:var(--rb-red);}
-.rb-mviz .srclabel{font-weight:700;font-size:13px;fill:var(--muted);transition:fill .3s;}
-.rb-mviz .srclabel.on{fill:var(--foreground);}
-.rb-mviz .srcsub{font-size:11px;fill:var(--muted);}
-.rb-mviz .dot{fill:var(--rb-red);opacity:0;}
-@keyframes rb-mflow{0%{offset-distance:0%;opacity:0}15%{opacity:1}85%{opacity:1}100%{offset-distance:100%;opacity:0}}
+.rb-mviz{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:0 18px 50px -22px rgba(0,0,0,.25);display:grid;grid-template-columns:auto auto 1fr;gap:0;align-items:stretch;}
+.rb-mviz__hub{align-self:center;justify-self:start;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:#BC0017;border-radius:16px;padding:16px 18px;width:110px;text-align:center;}
+.rb-mviz__hubtile{width:26px;height:26px;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;padding:4px;}
+.rb-mviz__hubtile img{width:100%;height:100%;object-fit:contain;}
+.rb-mviz__hubtxt strong{display:block;color:#fff;font-size:14px;font-weight:700;}
+.rb-mviz__hubtxt span{display:block;color:rgba(255,255,255,.8);font-size:11px;margin-top:3px;}
+.rb-mviz__link{position:relative;width:64px;}
+.rb-mviz__link::before{content:'';position:absolute;left:50%;top:10%;bottom:10%;width:2px;background:var(--border);transform:translateX(-50%);}
+.rb-mviz__linkdot{position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;background:var(--rb-red);transform:translate(-50%,-50%);box-shadow:0 0 0 4px rgba(188,0,23,.16);transition:top .4s cubic-bezier(.4,0,.2,1);}
+@media(prefers-reduced-motion:no-preference){.rb-mviz__linkdot{animation:rb-pulse 2.4s ease-in-out infinite;}}
+.rb-mviz__cards{display:flex;flex-direction:column;gap:14px;justify-content:center;min-width:0;}
+.rb-mviz__card{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;background:var(--card);border:1.5px solid var(--border);transition:border-color .3s;min-width:0;}
+.rb-mviz__card.on{border-color:var(--rb-red);}
+.rb-mviz__card .srcicon{flex:0 0 auto;width:22px;height:22px;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:color .3s;}
+.rb-mviz__card .srcicon svg{width:20px;height:20px;}
+.rb-mviz__card .srcicon.on{color:var(--rb-red);}
+.rb-mviz__card .srctxt{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.rb-mviz__card .srclabel{font-weight:700;font-size:13.5px;color:var(--muted);transition:color .3s;}
+.rb-mviz__card .srclabel.on{color:var(--foreground);}
+.rb-mviz__card .srcsub{font-size:11.5px;color:var(--muted);line-height:1.4;}
+@media(max-width:640px){.rb-mviz{grid-template-columns:1fr;}.rb-mviz__hub{justify-self:center;width:auto;margin-bottom:14px;}.rb-mviz__link{display:none;}}
 @media(max-width:900px){.rb-models-grid{grid-template-columns:1fr;gap:30px;}}
 
 /* PROMPTS */
@@ -612,20 +620,25 @@ body{top:0 !important;}
         <div class="rb-mdetail"><p id="mDesc"></p><div class="rb-mchips" id="mChips"></div></div>
       </div>
       <div class="rb-mviz">
-        <svg viewBox="0 0 460 330" aria-hidden="true">
-          <path class="conn" id="c-rocketbot" d="M150 165 C 215 165, 215 60, 290 60"/>
-          <path class="conn" id="c-cloud"     d="M150 165 C 215 165, 215 165, 290 165"/>
-          <path class="conn" id="c-onprem"    d="M150 165 C 215 165, 215 270, 290 270"/>
-          <circle class="dot" id="mdot" r="4.5"/>
-          <rect x="22" y="129" width="120" height="72" rx="16" fill="#BC0017"/>
-          <rect x="70" y="138" width="24" height="24" rx="6" fill="#fff"/>
-          <image href="assets/logos/products/ai-studio.png" x="73" y="141" width="18" height="18"/>
-          <text x="82" y="172" text-anchor="middle" fill="#fff" font-family="Montserrat,sans-serif" font-weight="700" font-size="14">AI Studio</text>
-          <text x="82" y="189" text-anchor="middle" fill="rgba(255,255,255,.8)" font-family="Montserrat,sans-serif" font-size="11">motor de IA</text>
-          <g id="s-rocketbot"><rect class="srcbox on" x="290" y="30" width="150" height="60" rx="14"/><g class="srcicon on" transform="translate(304,48)" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M11 0l1.5 4.3L17 6l-4.5 1.7L11 12 9.5 7.7 5 6l4.5-1.7z"/></g><text class="srclabel on" x="332" y="55">Modelos Rocketbot</text><text class="srcsub" x="332" y="72" font-family="Montserrat,sans-serif">incluidos, listos para usar</text></g>
-          <g id="s-cloud"><rect class="srcbox" x="290" y="135" width="150" height="60" rx="14"/><g class="srcicon" transform="translate(304,154)" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18a4 4 0 0 1 .5-8 5.5 5.5 0 0 1 10.6-1.4A3.8 3.8 0 0 1 17 18z"/></g><text class="srclabel" x="332" y="160">Tu modelo · Cloud</text><text class="srcsub" x="332" y="177" font-family="Montserrat,sans-serif">tu proveedor, tus llaves</text></g>
-          <g id="s-onprem"><rect class="srcbox" x="290" y="240" width="150" height="60" rx="14"/><g class="srcicon" transform="translate(304,258)" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="20" height="7" rx="2"/><rect x="2" y="12" width="20" height="7" rx="2"/><path d="M6 4.5h0M6 15.5h0"/></g><text class="srclabel" x="332" y="265">Tu modelo · On-premise</text><text class="srcsub" x="332" y="282" font-family="Montserrat,sans-serif">en tu infraestructura</text></g>
-        </svg>
+        <div class="rb-mviz__hub">
+          <div class="rb-mviz__hubtile"><img src="assets/logos/products/ai-studio.png" alt="AI Studio"></div>
+          <div class="rb-mviz__hubtxt"><strong>AI Studio</strong><span>motor de IA</span></div>
+        </div>
+        <div class="rb-mviz__link"><span class="rb-mviz__linkdot" id="mdot"></span></div>
+        <div class="rb-mviz__cards" id="mcards">
+          <div class="rb-mviz__card srcbox on" id="s-rocketbot">
+            <span class="srcicon on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 5L19 8.5l-5.2 1.5L12 15l-1.8-5L5 8.5 10.2 7z"/><path d="M19 14l.9 2.5L22 17.5l-2.1.6L19 21l-.9-2.4L16 17.5l2.1-1z"/></svg></span>
+            <div class="srctxt"><span class="srclabel on">Modelos Rocketbot</span><span class="srcsub">incluidos, listos para usar</span></div>
+          </div>
+          <div class="rb-mviz__card srcbox" id="s-cloud">
+            <span class="srcicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19a5 5 0 0 1 .6-10A6.5 6.5 0 0 1 20 10.5 4.5 4.5 0 0 1 19 19z"/></svg></span>
+            <div class="srctxt"><span class="srclabel">Tu modelo · Cloud</span><span class="srcsub">tu proveedor, tus llaves</span></div>
+          </div>
+          <div class="rb-mviz__card srcbox" id="s-onprem">
+            <span class="srcicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h0M7 17.5h0"/></svg></span>
+            <div class="srctxt"><span class="srclabel">Tu modelo · On-premise</span><span class="srcsub">en tu propia infraestructura</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -985,7 +998,7 @@ const MODELS=[
 ];
 const mseg=document.getElementById('mseg');
 MODELS.forEach((m,i)=>{const b=document.createElement('button');b.className='rb-mopt'+(i===0?' active':'');b.innerHTML='<span class="mi">'+M_ICN[m.icon]+'</span><span class="rb-mopt__text"><span class="mt">'+m.title+'</span><span class="ms">'+m.sub+'</span></span>';b.addEventListener('click',()=>selectModel(i));mseg.appendChild(b);});
-function setOn(key,on){document.getElementById('c-'+key).classList.toggle('on',on);const s=document.getElementById('s-'+key);s.querySelector('.srcbox').classList.toggle('on',on);s.querySelector('.srcicon').classList.toggle('on',on);s.querySelector('.srclabel').classList.toggle('on',on);}
+function setOn(key,on){const s=document.getElementById('s-'+key);s.classList.toggle('on',on);s.querySelector('.srcicon').classList.toggle('on',on);s.querySelector('.srclabel').classList.toggle('on',on);}
 function selectModel(i){
   const m=MODELS[i];
   [...mseg.children].forEach((el,idx)=>el.classList.toggle('active',idx===i));
@@ -993,12 +1006,13 @@ function selectModel(i){
   document.getElementById('mChips').innerHTML=m.chips.map(c=>'<span class="rb-mchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>'+c+'</span>').join('');
   MODELS.forEach((mm,idx)=>setOn(mm.key,idx===i));
   const dot=document.getElementById('mdot');
-  if(reduce){dot.style.opacity=0;return;}
-  const d=document.getElementById('c-'+m.key).getAttribute('d');
-  dot.style.offsetPath="path('"+d+"')";dot.style.webkitOffsetPath="path('"+d+"')";
-  dot.style.animation='none';void dot.getBoundingClientRect();dot.style.animation='rb-mflow 2.2s linear infinite';
+  const card=document.getElementById('s-'+m.key);
+  const cardRect=card.getBoundingClientRect();
+  const linkRect=dot.parentElement.getBoundingClientRect();
+  dot.style.top=(cardRect.top+cardRect.height/2-linkRect.top)+'px';
 }
 selectModel(0);
+window.addEventListener('resize',()=>{const i=MODELS.findIndex((mm,idx)=>mseg.children[idx].classList.contains('active'));if(i>=0)selectModel(i);});
 
 // industry explorer
 const IND_ICN={
