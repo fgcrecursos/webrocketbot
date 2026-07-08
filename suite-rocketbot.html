@@ -509,7 +509,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-suite-hero__inner">
       <span class="rb-eyebrow"><span class="dot"></span>La suite completa de automatización</span>
-      <h1>Seis productos. Un <span class="rb-suite-hero__rot" id="heroRot">proceso</span>. Cero fricción.</h1>
+      <h1>Seis productos.<br>Un <span class="rb-suite-hero__rot" id="heroRot">objetivo</span></h1>
       <p class="rb-suite-hero__lede">No son herramientas sueltas. Es una sola plataforma orquestada que conecta formularios, robots, IA, control y reportes para automatizar tus procesos de negocio de principio a fin.</p>
       <div class="rb-suite-hero__ctas">
         <a class="rb-btn rb-btn--white rb-btn--lg" href="contacto.html">Agendar reunión comercial</a>
@@ -1095,7 +1095,7 @@ function googleTranslateElementInit(){
   var rot=document.getElementById('heroRot');
   var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   if(!rot||reduce) return;
-  var WORDS=['proceso','flujo','objetivo','equipo'], wi=0;
+  var WORDS=['objetivo','equipo','proceso','flujo'], wi=0;
   setInterval(function(){
     rot.classList.add('out');
     setTimeout(function(){ wi=(wi+1)%WORDS.length; rot.textContent=WORDS[wi]; rot.classList.remove('out'); },300);

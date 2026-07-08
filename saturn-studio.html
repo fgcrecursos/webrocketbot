@@ -282,19 +282,16 @@ ul{margin:0;padding:0;list-style:none;}
 @media(max-width:768px){.rb-mcp-title{white-space:normal;}}
 
 /* BRAND PAIR (Rocketbot + Claude badge) */
-.rb-brandpair{position:relative;width:150px;height:132px;margin:0 auto 20px;}
-.rb-brandpair__halo{position:absolute;inset:-30%;border-radius:50%;background:radial-gradient(circle,rgba(188,0,23,.5) 0%,rgba(188,0,23,.14) 45%,transparent 72%);filter:blur(18px);}
-.rb-brandpair__tile{position:absolute;width:78px;height:78px;border-radius:18px;background:linear-gradient(145deg,#5a0611,#2a0308);box-shadow:0 10px 26px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06) inset,0 0 24px rgba(188,0,23,.4);display:flex;align-items:center;justify-content:center;}
-.rb-brandpair__tile--a{left:6px;bottom:0;transform:rotate(-11deg);z-index:1;}
-.rb-brandpair__tile--a img{width:40px;height:40px;object-fit:contain;}
-.rb-brandpair__tile--b{right:6px;top:0;transform:rotate(9deg);z-index:2;}
-.rb-brandpair__tile--b span{color:#FF7A85;font-weight:800;font-size:15px;letter-spacing:-.01em;text-shadow:0 0 12px rgba(255,90,100,.6);}
-.rb-brandpair__flare{position:absolute;left:50%;top:52%;width:46px;height:46px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#fff 0%,rgba(255,255,255,.5) 35%,transparent 70%);z-index:3;mix-blend-mode:screen;animation:rb-pulse 3s ease-in-out infinite;}
+.rb-brandpair{position:relative;width:150px;height:110px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;}
+.rb-brandpair__halo{position:absolute;inset:-20% -30%;border-radius:50%;background:radial-gradient(circle,rgba(188,0,23,.5) 0%,rgba(188,0,23,.14) 45%,transparent 72%);filter:blur(18px);}
+.rb-brandpair__tile--solo{position:relative;z-index:2;width:104px;height:88px;border-radius:20px;background:linear-gradient(145deg,#5a0611,#2a0308);box-shadow:0 10px 26px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06) inset,0 0 30px rgba(188,0,23,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;}
+.rb-brandpair__tile--solo .ic{width:22px;height:22px;color:#FF7A85;filter:drop-shadow(0 0 6px rgba(255,90,100,.6));}
+.rb-brandpair__tile--solo span{color:#FF7A85;font-weight:800;font-size:16px;letter-spacing:-.01em;text-shadow:0 0 12px rgba(255,90,100,.6);}
 .rb-brandpair__dust{position:absolute;border-radius:50%;background:#fff;box-shadow:0 0 6px 1px rgba(255,255,255,.7);animation:rb-pulse 3.2s ease-in-out infinite;}
 .rb-brandpair__dust--1{width:4px;height:4px;left:2%;top:14%;animation-delay:.3s;}
 .rb-brandpair__dust--2{width:3px;height:3px;left:92%;top:60%;animation-delay:1s;}
 .rb-brandpair__dust--3{width:3px;height:3px;left:70%;top:96%;animation-delay:1.7s;}
-@media(prefers-reduced-motion:reduce){.rb-brandpair__flare,.rb-brandpair__dust{animation:none;}}
+@media(prefers-reduced-motion:reduce){.rb-brandpair__dust{animation:none;}}
 
 /* MCP / CLAUDE PANEL (dark) */
 .rb-mcp-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch;}
@@ -668,9 +665,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <div class="rb-brandpair" aria-hidden="true">
         <div class="rb-brandpair__halo"></div>
-        <div class="rb-brandpair__tile rb-brandpair__tile--a"><img src="assets/logos/rocketbot-iso-white.png" alt=""></div>
-        <div class="rb-brandpair__tile rb-brandpair__tile--b"><span>Claude</span></div>
-        <div class="rb-brandpair__flare"></div>
+        <div class="rb-brandpair__tile--solo"><svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 5L19 8.5l-5.2 1.5L12 15l-1.8-5L5 8.5 10.2 7z"/></svg><span>Claude</span></div>
         <div class="rb-brandpair__dust rb-brandpair__dust--1"></div><div class="rb-brandpair__dust rb-brandpair__dust--2"></div><div class="rb-brandpair__dust rb-brandpair__dust--3"></div>
       </div>
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Saturn Studio · MCP de Claude</span>
