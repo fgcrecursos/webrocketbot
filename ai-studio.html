@@ -231,9 +231,13 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-mviz__hubtxt span{display:block;color:rgba(255,255,255,.8);font-size:11px;margin-top:3px;}
 .rb-mviz__link{position:relative;width:64px;}
 .rb-mviz__link::before{content:'';position:absolute;left:50%;top:10%;bottom:10%;width:2px;background:var(--border);transform:translateX(-50%);}
-.rb-mviz__linkdot{position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;background:var(--rb-red);transform:translate(-50%,-50%);box-shadow:0 0 0 4px rgba(188,0,23,.16);transition:top .4s cubic-bezier(.4,0,.2,1);}
+.rb-mviz__linkdot{position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;background:var(--rb-red);transform:translate(-50%,-50%);box-shadow:0 0 0 4px rgba(188,0,23,.16);transition:top .4s cubic-bezier(.4,0,.2,1);z-index:2;}
 @keyframes rb-mdot-pulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:1;}50%{transform:translate(-50%,-50%) scale(1.4);opacity:.6;}}
 @media(prefers-reduced-motion:no-preference){.rb-mviz__linkdot{animation:rb-mdot-pulse 1.8s ease-in-out infinite;}}
+.rb-mviz__flow{position:absolute;left:50%;top:8%;width:5px;height:5px;border-radius:50%;background:var(--rb-red);transform:translateX(-50%);box-shadow:0 0 8px 2px rgba(188,0,23,.55);opacity:0;z-index:1;}
+@keyframes rb-mviz-flow{0%{top:8%;opacity:0;}10%{opacity:.9;}88%{opacity:.9;}100%{top:92%;opacity:0;}}
+@media(prefers-reduced-motion:no-preference){.rb-mviz__flow{animation:rb-mviz-flow 2.6s linear infinite;}}
+.rb-mviz__flow--2{animation-delay:1.3s;}
 .rb-mviz__cards{display:flex;flex-direction:column;gap:14px;justify-content:center;min-width:0;}
 .rb-mviz__card{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;background:var(--card);border:1.5px solid var(--border);transition:border-color .3s;min-width:0;}
 .rb-mviz__card.on{border-color:var(--rb-red);}
@@ -625,7 +629,7 @@ body{top:0 !important;}
           <div class="rb-mviz__hubtile"><img src="assets/logos/products/ai-studio.png" alt="AI Studio"></div>
           <div class="rb-mviz__hubtxt"><strong>AI Studio</strong><span>motor de IA</span></div>
         </div>
-        <div class="rb-mviz__link"><span class="rb-mviz__linkdot" id="mdot"></span></div>
+        <div class="rb-mviz__link"><span class="rb-mviz__flow"></span><span class="rb-mviz__flow rb-mviz__flow--2"></span><span class="rb-mviz__linkdot" id="mdot"></span></div>
         <div class="rb-mviz__cards" id="mcards">
           <div class="rb-mviz__card srcbox on" id="s-rocketbot">
             <span class="srcicon on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 5L19 8.5l-5.2 1.5L12 15l-1.8-5L5 8.5 10.2 7z"/><path d="M19 14l.9 2.5L22 17.5l-2.1.6L19 21l-.9-2.4L16 17.5l2.1-1z"/></svg></span>
