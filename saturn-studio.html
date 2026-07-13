@@ -279,7 +279,8 @@ ul{margin:0;padding:0;list-style:none;}
 /* MCP title one line: white + red */
 .rb-mcp-title{color:#fff !important;white-space:nowrap;}
 .rb-mcp-title span{color:#BC0017 !important;}
-@media(max-width:768px){.rb-mcp-title{white-space:normal;}}
+.rb-section__head:has(.rb-mcp-title){max-width:900px;}
+@media(max-width:900px){.rb-mcp-title{white-space:normal;}.rb-section__head:has(.rb-mcp-title){max-width:720px;}}
 
 /* BRAND PAIR (Rocketbot + Claude badge) */
 .rb-brandpair{position:relative;width:150px;height:110px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;}

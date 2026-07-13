@@ -153,7 +153,8 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-section--space .rb-section__title{color:#fff;}
 .rb-mcp-title{white-space:nowrap;}
 .rb-mcp-title span{color:#BC0017 !important;}
-@media(max-width:768px){.rb-mcp-title{white-space:normal;}}
+.rb-section__head:has(.rb-mcp-title){max-width:1000px;}
+@media(max-width:900px){.rb-mcp-title{white-space:normal;}.rb-section__head:has(.rb-mcp-title){max-width:720px;}}
 .rb-section__sub{font-size:17px;color:#555;transition:color .3s;line-height:1.6;}
 [data-theme="dark"] .rb-section__sub{color:rgba(255,255,255,.5);}
 .rb-section--space .rb-section__sub{color:rgba(255,255,255,.6);}
