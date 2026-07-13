@@ -419,6 +419,9 @@ p { margin: 0; }
 .rb-section { padding:120px 0; position:relative; }
 .rb-section__head { text-align:center; max-width:720px; margin:0 auto 64px; }
 .rb-section__head--left { text-align:left; margin:0 0 64px; }
+.rb-title-nowrap { white-space:nowrap; }
+.rb-section__head:has(.rb-title-nowrap) { max-width:900px; }
+@media(max-width:900px){ .rb-title-nowrap{ white-space:normal; } .rb-section__head:has(.rb-title-nowrap){ max-width:720px; } }
 .rb-section__title {
   font-size:clamp(32px,4vw,56px); font-weight:700;
   letter-spacing:-0.02em; line-height:1.1; margin:16px 0;
@@ -1260,7 +1263,7 @@ body{top:0 !important;}
 
     <div>
       <span class="rb-eyebrow" style="margin-bottom:18px;display:inline-flex;"><span class="dot"></span>Suite de automatización · RPA + IA · Latinoamérica</span>
-      <h1 class="rb-hero__title">Automatiza tu operación.<br>Recupera el <strong id="heroRot">tiempo</strong>.</h1>
+      <h1 class="rb-hero__title">Automatiza tu&nbsp;operación.<br>Recupera el <strong id="heroRot">tiempo</strong>.</h1>
       <p class="rb-hero__sub">
         Deja atrás correos, excel y seguimiento manual. Tu equipo tendrá más tiempo para analizar, decidir y generar valor.
       </p>
@@ -1378,7 +1381,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head rb-reveal">
       <span class="rb-eyebrow">El Problema</span>
-      <h2 class="rb-section__title">Tres problemas que hoy están<br><span>frenando tu operación.</span></h2>
+      <h2 class="rb-section__title"><span class="rb-title-nowrap">Tres problemas que hoy están</span><br><span>frenando tu operación.</span></h2>
     </div>
     <div class="rb-problem__cards rb-stagger rb-stagger--scale">
 
