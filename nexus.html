@@ -109,21 +109,35 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-hero__visual{display:flex;align-items:center;justify-content:center;}
 @media(max-width:960px){.rb-hero__grid{grid-template-columns:1fr;}.rb-hero__visual{display:none;}}
 
-/* NEXUS VISUAL - DASHBOARD BUILDER */
+/* NEXUS VISUAL - LOGO NETWORK -> DASHBOARD */
 .rb-nx{position:relative;width:100%;max-width:460px;aspect-ratio:1/1;}
 .rb-nx__bg{position:absolute;inset:-15%;border-radius:50%;background:radial-gradient(circle at 50% 40%,rgba(188,0,23,.2) 0%,transparent 48%);filter:blur(35px);}
-.rb-nx__card{position:absolute;background:rgba(188,0,23,.1);border:2px solid rgba(188,0,23,.3);border-radius:10px;display:flex;flex-direction:column;gap:6px;padding:10px;animation:rb-nx-arrange 3s ease-in-out infinite;}
-.rb-nx__card::before{content:'';flex:0 0 8px;background:var(--rb-red);border-radius:3px;}
-.rb-nx__card::after{content:'';flex:1;background:repeating-linear-gradient(0deg,rgba(188,0,23,.2),rgba(188,0,23,.2) 3px,transparent 3px,transparent 6px);border-radius:2px;}
-.rb-nx__card--1{width:80px;height:100px;left:10%;top:15%;animation-delay:0s;}
-.rb-nx__card--2{width:80px;height:100px;right:10%;top:15%;animation-delay:.6s;}
-.rb-nx__card--3{width:80px;height:100px;left:50%;bottom:15%;transform:translateX(-50%);animation-delay:1.2s;}
-@keyframes rb-nx-arrange{0%,100%{opacity:0;transform:translate(0,20px) scale(.8);}40%{opacity:1;transform:translate(0,0) scale(1);}80%{opacity:1;transform:translate(0,0) scale(1);}100%{opacity:0;transform:translate(0,-20px) scale(.8);}}
-.rb-nx__dashboard{position:absolute;left:50%;top:50%;width:180px;height:200px;background:rgba(188,0,23,.12);border:2px solid var(--rb-red);border-radius:14px;transform:translate(-50%,-50%);padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;animation:rb-nx-build 3s ease-in-out infinite;opacity:0;}
-.rb-nx__dashboard::before{content:'';position:absolute;top:0;left:0;right:0;height:24px;background:linear-gradient(90deg,rgba(188,0,23,.3),rgba(188,0,23,.15),rgba(188,0,23,.3));border-bottom:1px solid rgba(188,0,23,.2);border-radius:12px 12px 0 0;}
-.rb-nx__dashboard > div{background:rgba(188,0,23,.15);border:1px solid rgba(188,0,23,.25);border-radius:6px;}
-@keyframes rb-nx-build{0%,100%{opacity:0;transform:translate(-50%,-50%) scale(.8);}40%{opacity:0;}60%{opacity:1;transform:translate(-50%,-50%) scale(1);}80%{opacity:1;}}
-@media(prefers-reduced-motion:reduce){.rb-nx__card{animation:none;}.rb-nx__dashboard{animation:none;}}
+.rb-nx__line{position:absolute;height:2px;background:linear-gradient(90deg,rgba(188,0,23,.12),rgba(188,0,23,.75));transform-origin:left center;border-radius:2px;z-index:1;}
+.rb-nx__line--1{left:20%;top:15%;width:49.5%;transform:rotate(45deg);}
+.rb-nx__line--2{left:55%;top:50%;width:31.6%;transform:rotate(-71.6deg);}
+.rb-nx__line--3{left:20%;top:15%;width:55.2%;transform:rotate(84.8deg);}
+.rb-nx__line--4{left:55%;top:50%;width:36.1%;transform:rotate(56.3deg);}
+.rb-nx__node{position:absolute;width:26px;height:26px;border-radius:50%;background:rgba(188,0,23,.15);border:2.5px solid var(--rb-red);z-index:2;animation:rb-nx-node-pulse 2.6s ease-in-out infinite;transform:translate(-50%,-50%);}
+.rb-nx__node--1{left:20%;top:15%;animation-delay:0s;}
+.rb-nx__node--2{left:65%;top:20%;animation-delay:.8s;}
+.rb-nx__node--3{left:55%;top:50%;animation-delay:.4s;}
+.rb-nx__node--4{left:25%;top:70%;animation-delay:1.2s;}
+.rb-nx__node--5{left:75%;top:80%;width:18px;height:18px;animation-delay:1.6s;}
+@keyframes rb-nx-node-pulse{0%,100%{box-shadow:0 0 0 0 rgba(188,0,23,.4);}50%{box-shadow:0 0 0 10px rgba(188,0,23,0);}}
+.rb-nx__dot{position:absolute;width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px rgba(188,0,23,.8);z-index:2;}
+.rb-nx__dot--1{animation:rb-nx-d1 2.6s ease-in-out infinite;}
+.rb-nx__dot--2{animation:rb-nx-d2 2.6s ease-in-out infinite .6s;}
+.rb-nx__dot--3{animation:rb-nx-d3 2.6s ease-in-out infinite 1.2s;}
+@keyframes rb-nx-d1{0%{left:20%;top:15%;opacity:0;}8%{opacity:1;}45%{left:55%;top:50%;opacity:1;}55%{opacity:0;}100%{opacity:0;}}
+@keyframes rb-nx-d2{0%{left:55%;top:50%;opacity:0;}8%{opacity:1;}45%{left:65%;top:20%;opacity:1;}55%{opacity:0;}100%{opacity:0;}}
+@keyframes rb-nx-d3{0%{left:55%;top:50%;opacity:0;}8%{opacity:1;}45%{left:75%;top:80%;opacity:1;}55%{opacity:0;}100%{opacity:0;}}
+.rb-nx__dashboard{position:absolute;right:-6%;bottom:2%;width:150px;background:rgba(20,20,30,.9);border:2px solid var(--rb-red);border-radius:12px;padding:10px;box-shadow:0 20px 40px -16px rgba(0,0,0,.6);animation:rb-nx-rise 3.2s ease-in-out infinite;z-index:3;}
+.rb-nx__dashboard .hd{display:flex;gap:4px;margin-bottom:8px;}
+.rb-nx__dashboard .hd span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.25);}
+.rb-nx__dashboard .bars{display:flex;align-items:flex-end;gap:6px;height:44px;}
+.rb-nx__dashboard .bars i{flex:1;background:var(--rb-red);border-radius:3px 3px 0 0;opacity:.85;font-style:normal;}
+@keyframes rb-nx-rise{0%,100%{opacity:0;transform:translateY(16px) scale(.92);}25%,85%{opacity:1;transform:translateY(0) scale(1);}}
+@media(prefers-reduced-motion:reduce){.rb-nx__node,.rb-nx__dot,.rb-nx__dashboard{animation:none;opacity:1;}}
 
 /* CLIENTS MARQUEE */
 .rb-clients{padding:34px 0;background:var(--rb-off-white);}
@@ -469,11 +483,11 @@ tr.rb-fflash-warn{animation:rb-fwarn 1.1s ease;}
 .rb-sec-chips{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;}
 .rb-sec-chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:600;color:#E6E9EA;display:flex;align-items:center;gap:10px;}
 .rb-sec-chip svg{width:18px;height:18px;color:#F3A6AD;flex:0 0 auto;}
-.rb-sec-chip--iso{background:linear-gradient(135deg,rgba(38,50,53,.45),rgba(38,50,53,.18));border-color:rgba(38,50,53,.65);box-shadow:0 0 0 1px rgba(38,50,53,.3),0 10px 24px -10px rgba(38,50,53,.65);position:relative;}
-.rb-sec-chip--iso .ic{width:24px;height:24px;border-radius:50%;background:#263235;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
-.rb-sec-chip--iso .ic svg{width:13px;height:13px;color:#fff;}
+.rb-sec-chip--iso{background:linear-gradient(135deg,rgba(38,50,53,.6),rgba(0,212,255,.08));border:1px solid rgba(0,212,255,.5);box-shadow:0 0 0 1px rgba(0,212,255,.15),0 0 26px -6px rgba(0,212,255,.55);position:relative;}
+.rb-sec-chip--iso .ic{width:24px;height:24px;border-radius:50%;background:#263235;border:1px solid rgba(0,212,255,.6);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-sec-chip--iso .ic svg{width:13px;height:13px;color:var(--rb-neon-cyan);}
 .rb-sec-chip--iso span{color:#fff;}
-.rb-sec-chip--iso .badge{margin-left:auto;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#263235;border-radius:999px;padding:3px 8px;flex:0 0 auto;}
+.rb-sec-chip--iso .badge{margin-left:auto;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#02061B;background:var(--rb-neon-cyan);border-radius:999px;padding:3px 8px;flex:0 0 auto;box-shadow:0 0 12px rgba(0,212,255,.6);}
 @media(max-width:900px){.rb-sec-band{grid-template-columns:1fr;padding:28px;}.rb-sec-chips{grid-template-columns:1fr 1fr;}}
 
 /* FAQ */
@@ -665,10 +679,22 @@ body{top:0 !important;}
     <div class="rb-hero__visual" aria-hidden="true">
       <div class="rb-nx">
         <div class="rb-nx__bg"></div>
-        <div class="rb-nx__card rb-nx__card--1"></div>
-        <div class="rb-nx__card rb-nx__card--2"></div>
-        <div class="rb-nx__card rb-nx__card--3"></div>
-        <div class="rb-nx__dashboard"></div>
+        <div class="rb-nx__line rb-nx__line--1"></div>
+        <div class="rb-nx__line rb-nx__line--2"></div>
+        <div class="rb-nx__line rb-nx__line--3"></div>
+        <div class="rb-nx__line rb-nx__line--4"></div>
+        <div class="rb-nx__dot rb-nx__dot--1"></div>
+        <div class="rb-nx__dot rb-nx__dot--2"></div>
+        <div class="rb-nx__dot rb-nx__dot--3"></div>
+        <div class="rb-nx__node rb-nx__node--1"></div>
+        <div class="rb-nx__node rb-nx__node--2"></div>
+        <div class="rb-nx__node rb-nx__node--3"></div>
+        <div class="rb-nx__node rb-nx__node--4"></div>
+        <div class="rb-nx__node rb-nx__node--5"></div>
+        <div class="rb-nx__dashboard">
+          <div class="hd"><span></span><span></span><span></span></div>
+          <div class="bars"><i style="height:40%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:90%"></i><i style="height:35%"></i></div>
+        </div>
       </div>
     </div>
   </div>

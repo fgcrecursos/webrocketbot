@@ -111,23 +111,28 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-hero__visual{display:flex;align-items:center;justify-content:center;}
 @media(max-width:960px){.rb-hero__grid{grid-template-columns:1fr;}.rb-hero__visual{display:none;}}
 
-/* RPA VISUAL - ROBOT EXECUTING TASKS */
+/* RPA VISUAL - REPETITIVE TASK LOOP */
 .rb-rpa{position:relative;width:100%;max-width:460px;aspect-ratio:1/1;}
-.rb-rpa__bg{position:absolute;inset:-15%;border-radius:50%;background:radial-gradient(circle at 40% 35%,rgba(188,0,23,.22) 0%,transparent 45%);filter:blur(40px);}
-.rb-rpa__screen{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:200px;height:240px;background:rgba(188,0,23,.08);border:2px solid rgba(188,0,23,.3);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;}
-.rb-rpa__task{height:28px;background:rgba(188,0,23,.15);border-radius:8px;border:1px solid rgba(188,0,23,.25);position:relative;overflow:hidden;}
-.rb-rpa__task::after{content:'';position:absolute;left:-100%;top:0;height:100%;width:30%;background:linear-gradient(90deg,transparent,rgba(188,0,23,.6),transparent);animation:rb-rpa-scan 2s ease-in-out infinite;}
-.rb-rpa__task--1::after{animation-delay:0s;}
-.rb-rpa__task--2::after{animation-delay:.4s;}
-.rb-rpa__task--3::after{animation-delay:.8s;}
-@keyframes rb-rpa-scan{from{left:-100%;}to{left:100%;}}
-.rb-rpa__robot{position:absolute;right:-40px;bottom:30px;width:80px;height:100px;background:linear-gradient(135deg,rgba(188,0,23,.2),rgba(188,0,23,.08));border:2px solid rgba(188,0,23,.3);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:12px;animation:rb-rpa-float 3s ease-in-out infinite;}
-.rb-rpa__robot::before{content:'';position:absolute;top:20px;width:30px;height:30px;border-radius:50%;background:rgba(188,0,23,.25);border:2px solid var(--rb-red);}
-.rb-rpa__robot::after{content:'';position:absolute;bottom:12px;width:60%;height:6px;background:var(--rb-red);border-radius:3px;box-shadow:0 0 8px rgba(188,0,23,.5);}
-@keyframes rb-rpa-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-.rb-rpa__pulse{position:absolute;left:50%;top:50%;width:280px;height:280px;border:2px solid rgba(188,0,23,.2);border-radius:50%;transform:translate(-50%,-50%);animation:rb-rpa-pulse 2.5s ease-in-out infinite;}
-@keyframes rb-rpa-pulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.3;}50%{transform:translate(-50%,-50%) scale(1.2);opacity:.1;}}
-@media(prefers-reduced-motion:reduce){.rb-rpa__task::after{animation:none;}.rb-rpa__robot{animation:none;}}
+.rb-rpa__bg{position:absolute;inset:-10%;border-radius:50%;background:radial-gradient(circle at 42% 38%,rgba(188,0,23,.32) 0%,transparent 45%),radial-gradient(circle at 60% 62%,rgba(43,127,255,.14) 0%,transparent 50%);filter:blur(34px);}
+.rb-rpa__track{position:absolute;left:50%;top:50%;width:78%;height:78%;transform:translate(-50%,-50%);border-radius:50%;border:2px dashed rgba(188,0,23,.28);}
+.rb-rpa__core{position:absolute;left:50%;top:50%;width:96px;height:96px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 34% 30%,#3a4550 0%,#20262c 32%,#0c0f13 62%,#050608 100%);box-shadow:inset -12px -10px 30px rgba(0,0,0,.6),inset 8px 6px 18px rgba(255,255,255,.05),0 0 50px rgba(188,0,23,.35);display:flex;align-items:center;justify-content:center;z-index:3;}
+.rb-rpa__core svg{width:42px;height:42px;color:var(--rb-red);}
+.rb-rpa__task{position:absolute;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.05);border:1.5px solid rgba(188,0,23,.4);display:flex;align-items:center;justify-content:center;color:var(--rb-red);offset-path:circle(39% at 50% 50%);animation:rb-rpa-orbit 7s linear infinite;z-index:2;}
+.rb-rpa__task svg{width:17px;height:17px;}
+.rb-rpa__task .chk{opacity:0;position:absolute;width:17px;height:17px;color:#fff;}
+.rb-rpa__task--1{animation-delay:0s;}
+.rb-rpa__task--2{animation-delay:-2.33s;}
+.rb-rpa__task--3{animation-delay:-4.66s;}
+@keyframes rb-rpa-orbit{
+  0%{offset-distance:0%;}
+  46%{background:rgba(255,255,255,.05);border-color:rgba(188,0,23,.4);}
+  50%{background:var(--rb-green);border-color:var(--rb-green);}
+  54%{background:rgba(255,255,255,.05);border-color:rgba(188,0,23,.4);}
+  100%{offset-distance:100%;}
+}
+.rb-rpa__pulse{position:absolute;left:50%;top:50%;width:78%;height:78%;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 0 rgba(188,0,23,.25);animation:rb-rpa-pulse 3.5s ease-out infinite;}
+@keyframes rb-rpa-pulse{0%{box-shadow:0 0 0 0 rgba(188,0,23,.25);}100%{box-shadow:0 0 0 24px rgba(188,0,23,0);}}
+@media(prefers-reduced-motion:reduce){.rb-rpa__task,.rb-rpa__pulse{animation:none;}}
 
 /* CLIENTS MARQUEE */
 .rb-clients{padding:34px 0;background:var(--rb-off-white);}
@@ -334,12 +339,12 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-scard .ic svg{width:24px;height:24px;}
 .rb-scard h3{color:#fff;font-size:18px;font-weight:700;margin:0 0 8px;}
 .rb-scard p{color:rgba(255,255,255,.55);font-size:14.5px;margin:0;}
-.rb-iso{display:flex;align-items:center;justify-content:center;gap:16px;background:linear-gradient(135deg,rgba(38,50,53,.45),rgba(38,50,53,.14));border:1px solid rgba(38,50,53,.6);box-shadow:0 0 0 1px rgba(38,50,53,.25),0 12px 30px -12px rgba(38,50,53,.65);border-radius:16px;padding:20px 26px;max-width:620px;margin:0 auto 30px;}
-.rb-iso .b{width:44px;height:44px;border-radius:50%;background:#263235;color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-iso{display:flex;align-items:center;justify-content:center;gap:16px;background:linear-gradient(135deg,rgba(38,50,53,.6),rgba(0,212,255,.08));border:1px solid rgba(0,212,255,.5);box-shadow:0 0 0 1px rgba(0,212,255,.15),0 0 30px -6px rgba(0,212,255,.55);border-radius:16px;padding:20px 26px;max-width:620px;margin:0 auto 30px;}
+.rb-iso .b{width:44px;height:44px;border-radius:50%;background:#263235;border:1px solid rgba(0,212,255,.6);color:var(--rb-neon-cyan);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
 .rb-iso .b svg{width:22px;height:22px;}
 .rb-iso span{color:rgba(255,255,255,.75);font-size:14.5px;}
-.rb-iso b{color:#fff;}
-.rb-iso .badge{margin-left:6px;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#263235;border-radius:999px;padding:3px 9px;flex:0 0 auto;white-space:nowrap;}
+.rb-iso b{color:var(--rb-neon-cyan);}
+.rb-iso .badge{margin-left:6px;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#02061B;background:var(--rb-neon-cyan);border-radius:999px;padding:3px 9px;flex:0 0 auto;white-space:nowrap;box-shadow:0 0 12px rgba(0,212,255,.6);}
 @media(max-width:600px){.rb-iso{flex-direction:column;text-align:center;}}
 @media(max-width:900px){.rb-scards{grid-template-columns:1fr;}}
 
@@ -534,13 +539,12 @@ body{top:0 !important;}
     <div class="rb-hero__visual" aria-hidden="true">
       <div class="rb-rpa">
         <div class="rb-rpa__bg"></div>
-        <div class="rb-rpa__screen">
-          <div class="rb-rpa__task rb-rpa__task--1"></div>
-          <div class="rb-rpa__task rb-rpa__task--2"></div>
-          <div class="rb-rpa__task rb-rpa__task--3"></div>
-        </div>
-        <div class="rb-rpa__robot"></div>
         <div class="rb-rpa__pulse"></div>
+        <div class="rb-rpa__track"></div>
+        <div class="rb-rpa__core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg></div>
+        <div class="rb-rpa__task rb-rpa__task--1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
+        <div class="rb-rpa__task rb-rpa__task--2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
+        <div class="rb-rpa__task rb-rpa__task--3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
       </div>
     </div>
   </div>

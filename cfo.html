@@ -182,9 +182,10 @@ ul{margin:0;padding:0;list-style:none;}
 /* PROOF cards */
 .rb-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .rb-pcard{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;flex-direction:column;}
-.rb-pcard .top{display:flex;align-items:center;margin-bottom:14px;}
-.rb-pcard .top .logo{height:44px;width:auto;max-width:150px;border-radius:10px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:8px 14px;}
+.rb-pcard .top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;}
+.rb-pcard .top .logo{height:64px;width:auto;max-width:170px;border-radius:10px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:10px 16px;flex:0 0 auto;}
 .rb-pcard .top .logo img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+.rb-pcard .sec-t{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em;text-align:right;}
 .rb-pcard .ctx{font-size:13.5px;color:var(--muted);margin:0 0 16px;line-height:1.55;}
 .rb-pcard .pmetrics{display:grid;grid-template-columns:1fr 1fr;gap:14px;border-top:1px solid var(--border);padding-top:16px;margin-top:auto;}
 .rb-pcard .pm .m{font-weight:800;font-size:23px;color:var(--rb-red);line-height:1;}
@@ -202,11 +203,11 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-sec-chips{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;}
 .rb-sec-chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:600;color:#E6E9EA;display:flex;align-items:center;gap:10px;}
 .rb-sec-chip svg{width:18px;height:18px;color:#F3A6AD;flex:0 0 auto;}
-.rb-sec-chip--iso{background:linear-gradient(135deg,rgba(38,50,53,.45),rgba(38,50,53,.18));border-color:rgba(38,50,53,.65);box-shadow:0 0 0 1px rgba(38,50,53,.3),0 10px 24px -10px rgba(38,50,53,.65);position:relative;}
-.rb-sec-chip--iso .ic{width:24px;height:24px;border-radius:50%;background:#263235;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
-.rb-sec-chip--iso .ic svg{width:13px;height:13px;color:#fff;}
+.rb-sec-chip--iso{background:linear-gradient(135deg,rgba(38,50,53,.6),rgba(0,212,255,.08));border:1px solid rgba(0,212,255,.5);box-shadow:0 0 0 1px rgba(0,212,255,.15),0 0 26px -6px rgba(0,212,255,.55);position:relative;}
+.rb-sec-chip--iso .ic{width:24px;height:24px;border-radius:50%;background:#263235;border:1px solid rgba(0,212,255,.6);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-sec-chip--iso .ic svg{width:13px;height:13px;color:var(--rb-neon-cyan);}
 .rb-sec-chip--iso span{color:#fff;}
-.rb-sec-chip--iso .badge{margin-left:auto;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#263235;border-radius:999px;padding:3px 8px;flex:0 0 auto;}
+.rb-sec-chip--iso .badge{margin-left:auto;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#02061B;background:var(--rb-neon-cyan);border-radius:999px;padding:3px 8px;flex:0 0 auto;box-shadow:0 0 12px rgba(0,212,255,.6);}
 @media(max-width:900px){.rb-sec-band{grid-template-columns:1fr;padding:28px;}.rb-sec-chips{grid-template-columns:1fr 1fr;}}
 
 /* FAQ */
@@ -486,7 +487,7 @@ body{top:0 !important;}
     </div>
     <div class="rb-proof">
       <div class="rb-pcard">
-        <div class="top"><span class="logo"><img src="assets/logos/clients/proteccion-v2.png" alt="Protección"></span></div>
+        <div class="top"><span class="logo"><img src="assets/logos/clients/proteccion-v2.png" alt="Protección"></span><span class="sec-t">Servicios Financieros<br>Grupo SURA</span></div>
         <p class="ctx">Migración de pólizas de una nueva unidad de negocio que manualmente habría tomado semanas, resuelta en días con 80 robots ejecutando en simultáneo.</p>
         <div class="pmetrics">
           <div class="pm"><div class="m">+USD 500K</div><div class="ml">ahorrados en una sola operación</div></div>
@@ -495,7 +496,7 @@ body{top:0 !important;}
         <p class="qt">"Rocketbot nos permitió demostrar el poder de la automatización."<b>Andrea Muñetón · Líder de Automatización Digital</b></p>
       </div>
       <div class="rb-pcard">
-        <div class="top"><span class="logo"><img src="assets/logos/clients/agrosuper.png" alt="Agrosuper"></span></div>
+        <div class="top"><span class="logo"><img src="assets/logos/clients/agrosuper.png" alt="Agrosuper"></span><span class="sec-t">Consumo Masivo<br>Agroindustria</span></div>
         <p class="ctx">Miles de horas en procesos administrativos liberadas para que los equipos se enfocaran en actividades de mayor valor.</p>
         <div class="pmetrics">
           <div class="pm"><div class="m">+USD 1.5M</div><div class="ml">ahorrados</div></div>
@@ -504,7 +505,7 @@ body{top:0 !important;}
         <p class="qt">"Logramos un 80% de beneficio económico frente a lo que gastábamos antes."<b>Daniela Merino · Jefe de Automatización RPA</b></p>
       </div>
       <div class="rb-pcard">
-        <div class="top"><span class="logo"><img src="assets/logos/clients/consorcio.png" alt="Consorcio"></span></div>
+        <div class="top"><span class="logo"><img src="assets/logos/clients/consorcio.png" alt="Consorcio"></span><span class="sec-t">Seguros<br>Chile</span></div>
         <p class="ctx">Procesos operativos de alta carga manual que mejoraron la eficiencia y la capacidad de respuesta al cliente.</p>
         <div class="pmetrics">
           <div class="pm"><div class="m">+USD 500K</div><div class="ml">de ahorro anual generado</div></div>
