@@ -104,6 +104,29 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-hero__sub{font-size:18px;color:rgba(255,255,255,.6);line-height:1.6;max-width:600px;margin:0 auto 32px;font-weight:300;}
 .rb-hero__ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
 
+/* AI VISUAL - DATA NODES */
+.rb-ai{position:relative;width:100%;max-width:400px;aspect-ratio:1/1;margin:24px auto 0;height:320px;}
+.rb-ai__bg{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(43,127,255,.25) 0%,transparent 45%);filter:blur(35px);}
+.rb-ai__node{position:absolute;width:48px;height:48px;border-radius:50%;background:rgba(43,127,255,.12);border:2px solid rgba(43,127,255,.5);display:flex;align-items:center;justify-content:center;}
+.rb-ai__node::after{content:'';width:12px;height:12px;border-radius:50%;background:var(--rb-blue);box-shadow:0 0 12px rgba(43,127,255,.6);}
+.rb-ai__node--1{left:50%;top:10%;transform:translate(-50%,0);animation:rb-ai-float 4s ease-in-out infinite;}
+.rb-ai__node--2{left:15%;top:50%;transform:translate(0,-50%);animation:rb-ai-float 5s ease-in-out infinite .5s;}
+.rb-ai__node--3{right:15%;top:50%;transform:translate(0,-50%);animation:rb-ai-float 5.5s ease-in-out infinite 1s;}
+.rb-ai__node--4{left:30%;bottom:15%;transform:translate(0,0);animation:rb-ai-float 4.5s ease-in-out infinite 1.5s;}
+.rb-ai__node--5{right:30%;bottom:15%;transform:translate(0,0);animation:rb-ai-float 4.8s ease-in-out infinite 2s;}
+@keyframes rb-ai-float{0%,100%{transform:translate(var(--tx,0),var(--ty,0));opacity:.6;}50%{opacity:1;}}
+.rb-ai__node--1{--tx:-50%;--ty:0;}
+.rb-ai__node--2{--tx:0;--ty:-50%;}
+.rb-ai__node--3{--tx:0;--ty:-50%;}
+.rb-ai__node--4{--tx:0;}
+.rb-ai__node--5{--tx:0;}
+.rb-ai__line{position:absolute;background:linear-gradient(90deg,transparent,rgba(43,127,255,.4),transparent);height:1px;animation:rb-ai-pulse 3s ease-in-out infinite;}
+.rb-ai__line--1{left:50%;top:50%;width:140px;transform:translate(-70px,-50%) rotate(-45deg);animation-delay:0s;}
+.rb-ai__line--2{left:50%;top:50%;width:140px;transform:translate(-70px,-50%) rotate(45deg);animation-delay:.6s;}
+.rb-ai__line--3{left:50%;top:50%;width:100px;transform:translate(-50px,-50%) rotate(0deg);animation-delay:1.2s;}
+@keyframes rb-ai-pulse{0%,100%{opacity:0;}50%{opacity:1;}}
+@media(prefers-reduced-motion:reduce){.rb-ai__node{animation:none;}}
+
 /* CLIENTS MARQUEE */
 .rb-clients{padding:34px 0;background:var(--rb-off-white);}
 [data-theme="dark"] .rb-clients{background:var(--rb-dark-2);}
@@ -503,6 +526,17 @@ body{top:0 !important;}
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="contacto.html">Pruébalo ahora</a>
         <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Contactar a ventas</a>
+      </div>
+      <div class="rb-ai" aria-hidden="true">
+        <div class="rb-ai__bg"></div>
+        <div class="rb-ai__line rb-ai__line--1"></div>
+        <div class="rb-ai__line rb-ai__line--2"></div>
+        <div class="rb-ai__line rb-ai__line--3"></div>
+        <div class="rb-ai__node rb-ai__node--1"></div>
+        <div class="rb-ai__node rb-ai__node--2"></div>
+        <div class="rb-ai__node rb-ai__node--3"></div>
+        <div class="rb-ai__node rb-ai__node--4"></div>
+        <div class="rb-ai__node rb-ai__node--5"></div>
       </div>
     </div>
   </div>

@@ -109,6 +109,24 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-hero__sub{font-size:18px;color:rgba(255,255,255,.6);line-height:1.6;max-width:640px;margin:0 auto 32px;font-weight:300;}
 .rb-hero__ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
 
+/* ORQUESTADOR VISUAL - ORCHESTRATED ELEMENTS */
+.rb-orch{position:relative;width:100%;max-width:380px;aspect-ratio:1/1;margin:24px auto 0;height:300px;}
+.rb-orch__bg{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 45% 45%,rgba(188,0,23,.2) 0%,transparent 50%);filter:blur(30px);}
+.rb-orch__bar{position:absolute;height:2px;background:linear-gradient(90deg,transparent,rgba(188,0,23,.5),transparent);left:50%;top:50%;transform-origin:left center;}
+.rb-orch__bar--1{width:180px;transform:translate(-50%,-50%) rotate(0deg);animation:rb-orch-swing 3s ease-in-out infinite;}
+.rb-orch__bar--2{width:160px;transform:translate(-50%,-50%) rotate(120deg);animation:rb-orch-swing 3.5s ease-in-out infinite;}
+.rb-orch__bar--3{width:140px;transform:translate(-50%,-50%) rotate(240deg);animation:rb-orch-swing 4s ease-in-out infinite;}
+@keyframes rb-orch-swing{0%,100%{transform:translate(-50%,-50%) rotate(var(--angle,0deg));filter:brightness(1);}50%{filter:brightness(1.4);}}
+.rb-orch__bar--1{--angle:0deg;}
+.rb-orch__bar--2{--angle:120deg;}
+.rb-orch__bar--3{--angle:240deg;}
+.rb-orch__dot{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--rb-red);left:50%;top:50%;animation:rb-orch-pulse 2s ease-in-out infinite;}
+.rb-orch__dot--1{transform:translate(-50%,-50%) translateY(-80px);animation-delay:0s;}
+.rb-orch__dot--2{transform:translate(-50%,-50%) translateY(-80px) rotate(120deg);animation-delay:.3s;}
+.rb-orch__dot--3{transform:translate(-50%,-50%) translateY(-80px) rotate(240deg);animation-delay:.6s;}
+@keyframes rb-orch-pulse{0%,100%{opacity:.3;r:4px;}50%{opacity:1;r:7px;}}
+@media(prefers-reduced-motion:reduce){.rb-orch__bar{animation:none;}}
+
 /* CLIENTS MARQUEE */
 .rb-clients{padding:34px 0;background:var(--rb-off-white);}
 [data-theme="dark"] .rb-clients{background:var(--rb-dark-2);}
@@ -537,6 +555,15 @@ body{top:0 !important;}
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://login.rocketbot.com">Pruébalo ahora</a>
         <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#consola" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver la consola</a>
+      </div>
+      <div class="rb-orch" aria-hidden="true">
+        <div class="rb-orch__bg"></div>
+        <div class="rb-orch__bar rb-orch__bar--1"></div>
+        <div class="rb-orch__bar rb-orch__bar--2"></div>
+        <div class="rb-orch__bar rb-orch__bar--3"></div>
+        <div class="rb-orch__dot rb-orch__dot--1"></div>
+        <div class="rb-orch__dot rb-orch__dot--2"></div>
+        <div class="rb-orch__dot rb-orch__dot--3"></div>
       </div>
     </div>
   </div>

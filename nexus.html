@@ -106,6 +106,25 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-hero__sub{font-size:18px;color:rgba(255,255,255,.6);line-height:1.6;max-width:660px;margin:0 auto 32px;font-weight:300;}
 .rb-hero__ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
 
+/* NEXUS VISUAL - CONNECTED NODES */
+.rb-nx{position:relative;width:100%;max-width:380px;aspect-ratio:1/1;margin:24px auto 0;height:300px;}
+.rb-nx__bg{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 45%,rgba(188,0,23,.2) 0%,transparent 48%);filter:blur(32px);}
+.rb-nx__grid{position:absolute;inset:0;}
+.rb-nx__node{position:absolute;width:32px;height:32px;border-radius:50%;border:2px solid rgba(188,0,23,.4);background:rgba(188,0,23,.08);display:flex;align-items:center;justify-content:center;}
+.rb-nx__node::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--rb-red);opacity:.6;}
+.rb-nx__node--1{left:15%;top:20%;animation:rb-nx-pulse 3s ease-in-out infinite;}
+.rb-nx__node--2{left:50%;top:10%;animation:rb-nx-pulse 3.2s ease-in-out infinite .3s;}
+.rb-nx__node--3{right:15%;top:25%;animation:rb-nx-pulse 3.4s ease-in-out infinite .6s;}
+.rb-nx__node--4{left:25%;bottom:20%;animation:rb-nx-pulse 3.6s ease-in-out infinite .9s;}
+.rb-nx__node--5{right:25%;bottom:15%;animation:rb-nx-pulse 3.3s ease-in-out infinite 1.2s;}
+@keyframes rb-nx-pulse{0%,100%{border-color:rgba(188,0,23,.4);box-shadow:0 0 0 0 rgba(188,0,23,.3);}50%{border-color:var(--rb-red);box-shadow:0 0 0 8px rgba(188,0,23,.1);}}
+.rb-nx__line{position:absolute;height:1px;background:linear-gradient(90deg,transparent,rgba(188,0,23,.4),transparent);animation:rb-nx-line 2.5s ease-in-out infinite;}
+.rb-nx__line--1{left:25%;right:35%;top:25%;animation-delay:0s;}
+.rb-nx__line--2{left:60%;right:15%;top:30%;animation-delay:.4s;}
+.rb-nx__line--3{left:30%;right:45%;bottom:25%;animation-delay:.8s;}
+@keyframes rb-nx-line{0%,100%{opacity:0;}50%{opacity:1;}}
+@media(prefers-reduced-motion:reduce){.rb-nx__node{animation:none;}}
+
 /* CLIENTS MARQUEE */
 .rb-clients{padding:34px 0;background:var(--rb-off-white);}
 [data-theme="dark"] .rb-clients{background:var(--rb-dark-2);}
@@ -631,6 +650,19 @@ body{top:0 !important;}
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="contacto.html">Pruébalo ahora</a>
         <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#demo" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver el demo</a>
+      </div>
+      <div class="rb-nx" aria-hidden="true">
+        <div class="rb-nx__bg"></div>
+        <div class="rb-nx__grid">
+          <div class="rb-nx__node rb-nx__node--1"></div>
+          <div class="rb-nx__node rb-nx__node--2"></div>
+          <div class="rb-nx__node rb-nx__node--3"></div>
+          <div class="rb-nx__node rb-nx__node--4"></div>
+          <div class="rb-nx__node rb-nx__node--5"></div>
+          <div class="rb-nx__line rb-nx__line--1"></div>
+          <div class="rb-nx__line rb-nx__line--2"></div>
+          <div class="rb-nx__line rb-nx__line--3"></div>
+        </div>
       </div>
     </div>
   </div>
