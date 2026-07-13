@@ -106,24 +106,21 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-hero__sub{font-size:18px;color:rgba(255,255,255,.6);line-height:1.6;max-width:660px;margin:0 auto 32px;font-weight:300;}
 .rb-hero__ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
 
-/* NEXUS VISUAL - CONNECTED NODES */
-.rb-nx{position:relative;width:100%;max-width:380px;aspect-ratio:1/1;margin:24px auto 0;height:300px;}
-.rb-nx__bg{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 45%,rgba(188,0,23,.2) 0%,transparent 48%);filter:blur(32px);}
-.rb-nx__grid{position:absolute;inset:0;}
-.rb-nx__node{position:absolute;width:32px;height:32px;border-radius:50%;border:2px solid rgba(188,0,23,.4);background:rgba(188,0,23,.08);display:flex;align-items:center;justify-content:center;}
-.rb-nx__node::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--rb-red);opacity:.6;}
-.rb-nx__node--1{left:15%;top:20%;animation:rb-nx-pulse 3s ease-in-out infinite;}
-.rb-nx__node--2{left:50%;top:10%;animation:rb-nx-pulse 3.2s ease-in-out infinite .3s;}
-.rb-nx__node--3{right:15%;top:25%;animation:rb-nx-pulse 3.4s ease-in-out infinite .6s;}
-.rb-nx__node--4{left:25%;bottom:20%;animation:rb-nx-pulse 3.6s ease-in-out infinite .9s;}
-.rb-nx__node--5{right:25%;bottom:15%;animation:rb-nx-pulse 3.3s ease-in-out infinite 1.2s;}
-@keyframes rb-nx-pulse{0%,100%{border-color:rgba(188,0,23,.4);box-shadow:0 0 0 0 rgba(188,0,23,.3);}50%{border-color:var(--rb-red);box-shadow:0 0 0 8px rgba(188,0,23,.1);}}
-.rb-nx__line{position:absolute;height:1px;background:linear-gradient(90deg,transparent,rgba(188,0,23,.4),transparent);animation:rb-nx-line 2.5s ease-in-out infinite;}
-.rb-nx__line--1{left:25%;right:35%;top:25%;animation-delay:0s;}
-.rb-nx__line--2{left:60%;right:15%;top:30%;animation-delay:.4s;}
-.rb-nx__line--3{left:30%;right:45%;bottom:25%;animation-delay:.8s;}
-@keyframes rb-nx-line{0%,100%{opacity:0;}50%{opacity:1;}}
-@media(prefers-reduced-motion:reduce){.rb-nx__node{animation:none;}}
+/* NEXUS VISUAL - DASHBOARD BUILDER */
+.rb-nx{position:relative;width:100%;max-width:460px;aspect-ratio:1/1;}
+.rb-nx__bg{position:absolute;inset:-15%;border-radius:50%;background:radial-gradient(circle at 50% 40%,rgba(188,0,23,.2) 0%,transparent 48%);filter:blur(35px);}
+.rb-nx__card{position:absolute;background:rgba(188,0,23,.1);border:2px solid rgba(188,0,23,.3);border-radius:10px;display:flex;flex-direction:column;gap:6px;padding:10px;animation:rb-nx-arrange 3s ease-in-out infinite;}
+.rb-nx__card::before{content:'';flex:0 0 8px;background:var(--rb-red);border-radius:3px;}
+.rb-nx__card::after{content:'';flex:1;background:repeating-linear-gradient(0deg,rgba(188,0,23,.2),rgba(188,0,23,.2) 3px,transparent 3px,transparent 6px);border-radius:2px;}
+.rb-nx__card--1{width:80px;height:100px;left:10%;top:15%;animation-delay:0s;}
+.rb-nx__card--2{width:80px;height:100px;right:10%;top:15%;animation-delay:.6s;}
+.rb-nx__card--3{width:80px;height:100px;left:50%;bottom:15%;transform:translateX(-50%);animation-delay:1.2s;}
+@keyframes rb-nx-arrange{0%,100%{opacity:0;transform:translate(0,20px) scale(.8);}40%{opacity:1;transform:translate(0,0) scale(1);}80%{opacity:1;transform:translate(0,0) scale(1);}100%{opacity:0;transform:translate(0,-20px) scale(.8);}}
+.rb-nx__dashboard{position:absolute;left:50%;top:50%;width:180px;height:200px;background:rgba(188,0,23,.12);border:2px solid var(--rb-red);border-radius:14px;transform:translate(-50%,-50%);padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;animation:rb-nx-build 3s ease-in-out infinite;opacity:0;}
+.rb-nx__dashboard::before{content:'';position:absolute;top:0;left:0;right:0;height:24px;background:linear-gradient(90deg,rgba(188,0,23,.3),rgba(188,0,23,.15),rgba(188,0,23,.3));border-bottom:1px solid rgba(188,0,23,.2);border-radius:12px 12px 0 0;}
+.rb-nx__dashboard > div{background:rgba(188,0,23,.15);border:1px solid rgba(188,0,23,.25);border-radius:6px;}
+@keyframes rb-nx-build{0%,100%{opacity:0;transform:translate(-50%,-50%) scale(.8);}40%{opacity:0;}60%{opacity:1;transform:translate(-50%,-50%) scale(1);}80%{opacity:1;}}
+@media(prefers-reduced-motion:reduce){.rb-nx__card{animation:none;}.rb-nx__dashboard{animation:none;}}
 
 /* CLIENTS MARQUEE */
 .rb-clients{padding:34px 0;background:var(--rb-off-white);}
@@ -642,7 +639,7 @@ body{top:0 !important;}
 <!-- HERO -->
 <section class="rb-hero">
   <div class="rb-hero__particles"></div>
-  <div class="container">
+  <div class="container rb-hero__grid">
     <div class="rb-hero__content">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Rocketbot · Nexus</span>
       <h1 class="rb-hero__title">Convierte los datos de tus bots en <span class="rb-hero__rot" id="heroRot">aplicaciones</span> que tu equipo usa</h1>
@@ -651,18 +648,14 @@ body{top:0 !important;}
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="contacto.html">Pruébalo ahora</a>
         <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#demo" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver el demo</a>
       </div>
-      <div class="rb-nx" aria-hidden="true">
+    </div>
+    <div class="rb-hero__visual" aria-hidden="true">
+      <div class="rb-nx">
         <div class="rb-nx__bg"></div>
-        <div class="rb-nx__grid">
-          <div class="rb-nx__node rb-nx__node--1"></div>
-          <div class="rb-nx__node rb-nx__node--2"></div>
-          <div class="rb-nx__node rb-nx__node--3"></div>
-          <div class="rb-nx__node rb-nx__node--4"></div>
-          <div class="rb-nx__node rb-nx__node--5"></div>
-          <div class="rb-nx__line rb-nx__line--1"></div>
-          <div class="rb-nx__line rb-nx__line--2"></div>
-          <div class="rb-nx__line rb-nx__line--3"></div>
-        </div>
+        <div class="rb-nx__card rb-nx__card--1"></div>
+        <div class="rb-nx__card rb-nx__card--2"></div>
+        <div class="rb-nx__card rb-nx__card--3"></div>
+        <div class="rb-nx__dashboard"></div>
       </div>
     </div>
   </div>

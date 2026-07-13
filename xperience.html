@@ -109,22 +109,21 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-hero__sub{font-size:18px;color:rgba(255,255,255,.6);line-height:1.6;max-width:640px;margin:0 auto 32px;font-weight:300;}
 .rb-hero__ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
 
-/* XPERIENCE VISUAL - DATA FLOW */
-.rb-xp{position:relative;width:100%;max-width:380px;aspect-ratio:1/1;margin:24px auto 0;height:300px;}
-.rb-xp__bg{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 40%,rgba(188,0,23,.22) 0%,transparent 50%);filter:blur(35px);}
-.rb-xp__form{position:absolute;left:20%;top:50%;width:50px;height:50px;border-radius:12px;background:rgba(188,0,23,.15);border:2px solid rgba(188,0,23,.4);display:flex;align-items:center;justify-content:center;transform:translateY(-50%);}
-.rb-xp__form::after{content:'';width:20px;height:20px;border-radius:50%;background:var(--rb-red);box-shadow:0 0 10px rgba(188,0,23,.6);}
-.rb-xp__auto{position:absolute;right:20%;top:50%;width:50px;height:50px;border-radius:12px;background:rgba(188,0,23,.1);border:2px solid rgba(188,0,23,.3);display:flex;align-items:center;justify-content:center;transform:translateY(-50%);}
-.rb-xp__auto::after{content:'';width:20px;height:20px;border-radius:6px;background:var(--rb-red);box-shadow:0 0 10px rgba(188,0,23,.5);}
-.rb-xp__flow{position:absolute;left:35%;top:50%;width:30%;height:2px;transform:translateY(-50%);overflow:hidden;}
-.rb-xp__line{position:absolute;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(188,0,23,.6),transparent);animation:rb-xp-flow 2s ease-in-out infinite;}
-.rb-xp__dot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--rb-red);top:-3px;animation:rb-xp-travel 2s ease-in-out infinite;}
-@keyframes rb-xp-flow{from{transform:translateX(-100%);}to{transform:translateX(100%);}}
-@keyframes rb-xp-travel{0%{left:-5px;opacity:0;}10%{opacity:1;}90%{opacity:1;}100%{left:calc(100% + 5px);opacity:0;}}
-.rb-xp__pulse--1{position:absolute;left:20%;top:50%;width:12px;height:12px;border-radius:50%;border:2px solid var(--rb-red);transform:translate(-50%,-50%);animation:rb-xp-pulse 2s ease-in-out infinite;}
-.rb-xp__pulse--2{position:absolute;right:20%;top:50%;width:12px;height:12px;border-radius:50%;border:2px solid var(--rb-red);transform:translate(50%,-50%);animation:rb-xp-pulse 2s ease-in-out infinite .3s;}
-@keyframes rb-xp-pulse{0%,100%{width:12px;height:12px;opacity:.3;}50%{width:18px;height:18px;opacity:1;}}
-@media(prefers-reduced-motion:reduce){.rb-xp__line{animation:none;}}
+/* XPERIENCE VISUAL - FORM SUBMISSION */
+.rb-xp{position:relative;width:100%;max-width:460px;aspect-ratio:1/1;}
+.rb-xp__bg{position:absolute;inset:-15%;border-radius:50%;background:radial-gradient(circle at 50% 40%,rgba(188,0,23,.22) 0%,transparent 48%);filter:blur(35px);}
+.rb-xp__form{position:absolute;left:15%;top:50%;width:110px;height:140px;background:rgba(188,0,23,.1);border:2px solid rgba(188,0,23,.35);border-radius:12px;padding:12px;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;animation:rb-xp-form-glow 2s ease-in-out infinite;}
+.rb-xp__field{flex:0 0 12px;background:rgba(188,0,23,.25);border-radius:4px;}
+.rb-xp__btn{flex:0 0 24px;background:var(--rb-red);border-radius:6px;animation:rb-xp-click 2s ease-in-out infinite;}
+@keyframes rb-xp-form-glow{0%,100%{box-shadow:0 0 0 rgba(188,0,23,.2);}40%{box-shadow:0 0 20px rgba(188,0,23,.3);}}
+@keyframes rb-xp-click{0%,100%{transform:scale(1);}40%{transform:scale(1.1);}}
+.rb-xp__arrow{position:absolute;left:50%;top:50%;width:80px;height:2px;background:linear-gradient(90deg,transparent,var(--rb-red),transparent);transform:translate(-50%,-50%);animation:rb-xp-arrow 2s ease-in-out infinite;}
+@keyframes rb-xp-arrow{0%,100%{opacity:.3;}40%{opacity:1;}60%{opacity:1;}100%{opacity:.3;}}
+.rb-xp__process{position:absolute;right:15%;top:50%;width:110px;height:140px;background:rgba(188,0,23,.08);border:2px solid var(--rb-red);border-radius:12px;padding:12px;transform:translateY(-50%) scaleX(0);display:flex;flex-direction:column;gap:8px;animation:rb-xp-process 2s ease-in-out infinite;}
+.rb-xp__process::before{content:'';flex:0 0 12px;background:var(--rb-red);border-radius:4px;}
+.rb-xp__process::after{content:'';flex:1;background:repeating-linear-gradient(0deg,var(--rb-red),var(--rb-red) 4px,transparent 4px,transparent 8px);border-radius:2px;opacity:.6;}
+@keyframes rb-xp-process{0%,100%{transform:translateY(-50%) scaleX(0);opacity:0;}40%{transform:translateY(-50%) scaleX(0);}60%{transform:translateY(-50%) scaleX(1);opacity:1;}80%{transform:translateY(-50%) scaleX(1);opacity:1;}100%{opacity:0;}}
+@media(prefers-reduced-motion:reduce){.rb-xp__form{animation:none;}.rb-xp__btn{animation:none;}.rb-xp__arrow{animation:none;}.rb-xp__process{animation:none;}}
 
 /* CLIENTS MARQUEE */
 .rb-clients{padding:34px 0;background:var(--rb-off-white);}
@@ -474,7 +473,7 @@ body{top:0 !important;}
 <!-- HERO -->
 <section class="rb-hero">
   <div class="rb-hero__particles"></div>
-  <div class="container">
+  <div class="container rb-hero__grid">
     <div class="rb-hero__content">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Rocketbot · Xperience</span>
       <h1 class="rb-hero__title">Formularios que no solo<br>recogen datos.<br><strong>Disparan <span class="rb-hero__rot" id="heroRot">procesos</span>.</strong></h1>
@@ -483,16 +482,17 @@ body{top:0 !important;}
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="contacto.html">Pruébalo ahora</a>
         <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#demo" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver el demo</a>
       </div>
-      <div class="rb-xp" aria-hidden="true">
+    </div>
+    <div class="rb-hero__visual" aria-hidden="true">
+      <div class="rb-xp">
         <div class="rb-xp__bg"></div>
-        <div class="rb-xp__form"></div>
-        <div class="rb-xp__flow">
-          <div class="rb-xp__line"></div>
-          <div class="rb-xp__dot"></div>
+        <div class="rb-xp__form">
+          <div class="rb-xp__field"></div>
+          <div class="rb-xp__field"></div>
+          <div class="rb-xp__btn"></div>
         </div>
-        <div class="rb-xp__auto"></div>
-        <div class="rb-xp__pulse--1"></div>
-        <div class="rb-xp__pulse--2"></div>
+        <div class="rb-xp__arrow"></div>
+        <div class="rb-xp__process"></div>
       </div>
     </div>
   </div>
