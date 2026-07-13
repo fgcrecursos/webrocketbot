@@ -109,6 +109,9 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-section--alt{background:var(--rb-off-white);}
 [data-theme="dark"] .rb-section--alt{background:var(--rb-dark-2);}
 .rb-section__head{text-align:center;max-width:760px;margin:0 auto 56px;}
+.rb-title-nowrap{white-space:nowrap;}
+.rb-section__head:has(.rb-title-nowrap){max-width:900px;}
+@media(max-width:900px){.rb-title-nowrap{white-space:normal;}.rb-section__head:has(.rb-title-nowrap){max-width:760px;}}
 .rb-section__title{font-size:clamp(28px,3.5vw,46px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin:16px 0;color:var(--foreground);}
 .rb-section__title span{color:var(--rb-red);}
 .rb-section__sub{font-size:17px;color:#555;transition:color .3s;line-height:1.6;}
@@ -445,8 +448,8 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>El iceberg del "hágalo usted mismo"</span>
-      <h2 class="rb-section__title">Lo que ves es <span>una fracción</span> de lo que construyes</h2>
-      <p class="rb-section__sub">El prototipo que Claude te ayuda a escribir es la punta. Debajo está todo lo que igual tienes que construir y sostener para llevarlo a producción.</p>
+      <h2 class="rb-section__title">Lo que ves es <span>una fracción</span><br>de lo que construyes.</h2>
+      <p class="rb-section__sub">El prototipo que Claude te ayuda a escribir es la punta. Debajo está todo lo que igual tienes que construir y sostener para llevarlo a&nbsp;producción.</p>
     </div>
     <div class="rb-ice">
       <div class="rb-ice-top">
@@ -480,8 +483,8 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Honestamente</span>
-      <h2 class="rb-section__title">Lo que un LLM resuelve <span>y lo que no</span></h2>
-      <p class="rb-section__sub">Claude es excelente para escribir y prototipar. El resto, en el camino DIY, lo construyes y lo sostienes tú.</p>
+      <h2 class="rb-section__title rb-title-nowrap">Lo que un LLM resuelve <span>y lo que no</span></h2>
+      <p class="rb-section__sub">Claude es excelente para escribir y prototipar. El resto, en el camino DIY, lo construyes y lo sostienes&nbsp;tú.</p>
     </div>
     <div class="rb-cmp-wrap">
       <table class="rb-cmp" id="cmp">
@@ -499,7 +502,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Sin trampa</span>
       <h2 class="rb-section__title">¿Construir tú mismo o <span>comprar?</span></h2>
-      <p class="rb-section__sub">Responde cuatro preguntas sobre tu situación. A veces el DIY es lo correcto; a veces no. Esto te ayuda a verlo.</p>
+      <p class="rb-section__sub">Responde cuatro preguntas sobre tu situación. A veces el DIY es lo correcto; a veces no. Esto te ayuda a&nbsp;verlo.</p>
     </div>
     <div class="rb-bvb">
       <div class="rb-bvb-q" id="bvbQ"></div>
@@ -521,8 +524,8 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>La arquitectura correcta</span>
-      <h2 class="rb-section__title">No "IA para todo". <span>Cada cosa en su lugar.</span></h2>
-      <p class="rb-section__sub">En back-office de alto volumen quieres ejecución determinística y auditable, con IA acotada donde realmente aporta. Eso es exactamente lo que combina la suite.</p>
+      <h2 class="rb-section__title">No "IA para todo".<br><span>Cada cosa en su lugar.</span></h2>
+      <p class="rb-section__sub">En back-office de alto volumen quieres ejecución determinística y auditable, con IA acotada donde realmente aporta. Eso es exactamente lo que combina la&nbsp;suite.</p>
     </div>
     <div class="rb-compare">
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6"/><circle cx="9" cy="13" r="1" fill="currentColor"/><circle cx="15" cy="13" r="1" fill="currentColor"/></svg></div><div class="rb-compare__title">Determinístico para lo estructurado</div><div class="rb-compare__desc">Los robots ejecutan el ~80% repetitivo siempre igual: predecible, rápido y auditable, sin que un modelo improvise cada corrida.</div><span class="rb-compare__tag">RPA Studio</span></div>

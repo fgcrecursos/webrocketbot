@@ -145,6 +145,9 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-section--space{background:linear-gradient(135deg,#02061B,#0A0A0F);color:#fff;position:relative;overflow:hidden;}
 .rb-section--space::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 800px 400px at 50% 30%,rgba(188,0,23,.14),transparent 60%);pointer-events:none;}
 .rb-section__head{text-align:center;max-width:720px;margin:0 auto 56px;}
+.rb-title-nowrap{white-space:nowrap;}
+.rb-section__head:has(.rb-title-nowrap){max-width:900px;}
+@media(max-width:900px){.rb-title-nowrap{white-space:normal;}.rb-section__head:has(.rb-title-nowrap){max-width:720px;}}
 .rb-section__title{font-size:clamp(28px,3.5vw,46px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin:16px 0;color:var(--foreground);}
 .rb-section__title span{color:var(--rb-red);}
 .rb-section--space .rb-section__title{color:#fff;}
@@ -402,6 +405,8 @@ tr.rb-fflash-warn{animation:rb-fwarn 1.1s ease;}
 .rb-intg-chip{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px 16px;font-weight:700;font-size:13.5px;color:var(--foreground);display:flex;align-items:center;gap:9px;}
 .rb-intg-chip .ic{width:26px;height:26px;border-radius:7px;background:var(--rb-red);color:#fff;display:flex;align-items:center;justify-content:center;}
 .rb-intg-chip .ic svg{width:15px;height:15px;}
+.rb-intg-chip .ic.logo,.rb-intg-nexus .ic.logo,.rb-intg-item .ic.logo{background:#fff;border:1px solid var(--border);padding:4px;}
+.rb-intg-chip .ic.logo img,.rb-intg-nexus .ic.logo img,.rb-intg-item .ic.logo img{width:100%;height:100%;object-fit:contain;display:block;}
 .rb-intg-arrow{color:var(--rb-red);margin:4px 0;}
 .rb-intg-arrow svg{width:24px;height:24px;}
 .rb-intg-nexus{background:var(--rb-secondary);color:#fff;border-radius:14px;padding:18px;display:inline-flex;align-items:center;gap:11px;font-weight:800;font-size:18px;}
@@ -464,6 +469,11 @@ tr.rb-fflash-warn{animation:rb-fwarn 1.1s ease;}
 .rb-sec-chips{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;}
 .rb-sec-chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:600;color:#E6E9EA;display:flex;align-items:center;gap:10px;}
 .rb-sec-chip svg{width:18px;height:18px;color:#F3A6AD;flex:0 0 auto;}
+.rb-sec-chip--iso{background:linear-gradient(135deg,rgba(38,50,53,.45),rgba(38,50,53,.18));border-color:rgba(38,50,53,.65);box-shadow:0 0 0 1px rgba(38,50,53,.3),0 10px 24px -10px rgba(38,50,53,.65);position:relative;}
+.rb-sec-chip--iso .ic{width:24px;height:24px;border-radius:50%;background:#263235;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-sec-chip--iso .ic svg{width:13px;height:13px;color:#fff;}
+.rb-sec-chip--iso span{color:#fff;}
+.rb-sec-chip--iso .badge{margin-left:auto;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#263235;border-radius:999px;padding:3px 8px;flex:0 0 auto;}
 @media(max-width:900px){.rb-sec-band{grid-template-columns:1fr;padding:28px;}.rb-sec-chips{grid-template-columns:1fr 1fr;}}
 
 /* FAQ */
@@ -681,7 +691,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Aplicaciones reales</span>
       <h2 class="rb-section__title">Esto se construye en Nexus, <span>sin código frontend</span></h2>
-      <p class="rb-section__sub">Tres ejemplos armados con los datos de tus robots. Cambia de pestaña para verlos.</p>
+      <p class="rb-section__sub">Tres ejemplos armados con los datos de tus robots. Cambia de pestaña para&nbsp;verlos.</p>
     </div>
     <div class="rb-ntabs" id="nTabs">
       <button class="rb-ntab act" data-p="robots">Contabilización de facturas</button>
@@ -763,8 +773,8 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>El problema que resuelve</span>
-      <h2 class="rb-section__title">De datos atrapados a <span>apps operativas</span></h2>
-      <p class="rb-section__sub">Los datos de tus bots ya existen. Nexus los vuelve visibles y accionables para todo el equipo.</p>
+      <h2 class="rb-section__title rb-title-nowrap">De datos atrapados a <span>apps operativas</span></h2>
+      <p class="rb-section__sub">Los datos de tus bots ya existen. Nexus los vuelve visibles y accionables para todo el&nbsp;equipo.</p>
     </div>
     <div class="rb-cmp">
       <div class="rb-cmp-col bad">
@@ -790,8 +800,8 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Cómo funciona</span>
-      <h2 class="rb-section__title">Todo se organiza en <span>Aplicaciones</span></h2>
-      <p class="rb-section__sub">Sin tecnicismos: cada aplicación reúne sus pantallas, datos y acciones en un solo lugar.</p>
+      <h2 class="rb-section__title rb-title-nowrap">Todo se organiza en <span>Aplicaciones</span></h2>
+      <p class="rb-section__sub">Sin tecnicismos: cada aplicación reúne sus pantallas, datos y acciones en un solo&nbsp;lugar.</p>
     </div>
     <div class="rb-anat">
       <div class="rb-anat-tree">
@@ -818,8 +828,8 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <div class="rb-brandpair" aria-hidden="true"><div class="rb-brandpair__halo"></div><div class="rb-brandpair__tile--solo"><svg class="ic" viewBox="0 0 100 100" fill="currentColor"><path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"/></svg><span>Claude</span></div><div class="rb-brandpair__dust rb-brandpair__dust--1"></div><div class="rb-brandpair__dust rb-brandpair__dust--2"></div><div class="rb-brandpair__dust rb-brandpair__dust--3"></div></div>
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Nexus · MCP de Claude</span>
-      <h2 class="rb-section__title">Describe la app. <span style="color:#F3A6AD">Claude la construye.</span></h2>
-      <p class="rb-section__sub">A través del MCP (Model Context Protocol), generas dashboards, portales y herramientas con solo describir lo que necesitas: Claude arma las pantallas, elige los componentes y conecta los datos.</p>
+      <h2 class="rb-section__title">Describe la app.<br><span style="color:#F3A6AD">Claude la construye.</span></h2>
+      <p class="rb-section__sub">A través del MCP (Model Context Protocol), generas dashboards, portales y herramientas con solo describir lo que necesitas: Claude arma las pantallas, elige los componentes y conecta los&nbsp;datos.</p>
     </div>
     <div class="rb-mcp-grid">
       <div class="rb-mcp-card">
@@ -852,8 +862,8 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>+40 componentes</span>
-      <h2 class="rb-section__title">Listos para usar, <span>organizados por tipo</span></h2>
-      <p class="rb-section__sub">Arma cualquier pantalla combinando componentes visuales sin escribir código frontend.</p>
+      <h2 class="rb-section__title">Listos para usar,<br><span>organizados por tipo.</span></h2>
+      <p class="rb-section__sub">Arma cualquier pantalla combinando componentes visuales sin escribir código&nbsp;frontend.</p>
     </div>
     <div class="rb-comp-grid">
       <div class="rb-comp">
@@ -892,23 +902,23 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Parte de la Suite</span>
-      <h2 class="rb-section__title">El <span>frontend nativo</span> de todo tu ecosistema</h2>
-      <p class="rb-section__sub">Los robots de RPA Studio, Saturn Studio y el Orquestador alimentan a Nexus, que se conecta además a tus bases de datos y sistemas.</p>
+      <h2 class="rb-section__title">El <span>frontend nativo</span><br>de todo tu ecosistema.</h2>
+      <p class="rb-section__sub">Los robots de RPA Studio, Saturn Studio y el Orquestador alimentan a Nexus, que se conecta además a tus bases de datos y&nbsp;sistemas.</p>
     </div>
     <div class="rb-intg">
       <div class="rb-intg-diagram">
         <div class="rb-intg-src">
-          <span class="rb-intg-chip"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 17h6"/></svg></span>RPA Studio</span>
-          <span class="rb-intg-chip"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h5a3 3 0 0 1 3 3v6"/></svg></span>Saturn Studio</span>
-          <span class="rb-intg-chip"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4-8 4-8-4z"/><path d="M4 12l8 4 8-4"/></svg></span>Orquestador</span>
+          <span class="rb-intg-chip"><span class="ic logo"><img src="assets/logos/products/rpa-studio.png" alt="RPA Studio"></span>RPA Studio</span>
+          <span class="rb-intg-chip"><span class="ic logo"><img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio"></span>Saturn Studio</span>
+          <span class="rb-intg-chip"><span class="ic logo"><img src="assets/logos/products/orchestrator.png" alt="Orquestador"></span>Orquestador</span>
         </div>
         <div class="rb-intg-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
-        <div class="rb-intg-nexus"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.5 7.6L11 15M16.5 7.6L13 15"/></svg></span><div>Nexus<small>dashboards · portales · herramientas</small></div></div>
+        <div class="rb-intg-nexus"><span class="ic logo"><img src="assets/logos/products/nexus.png" alt="Nexus"></span><div>Nexus<small>dashboards · portales · herramientas</small></div></div>
       </div>
       <div class="rb-intg-list">
-        <div class="rb-intg-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 17h6"/></svg></span><div><h4>Robots de RPA Studio</h4><p>Datos y resultados de los robots de escritorio que ejecutan tus procesos.</p></div></div>
-        <div class="rb-intg-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4-8 4-8-4z"/><path d="M4 12l8 4 8-4"/></svg></span><div><h4>Rocketbot Orquestador</h4><p>Métricas de ejecución, estado de robots y alertas de falla.</p></div></div>
-        <div class="rb-intg-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h5a3 3 0 0 1 3 3v6"/></svg></span><div><h4>Saturn Studio</h4><p>Accede a los datos procesados en la nube e inicia bots.</p></div></div>
+        <div class="rb-intg-item"><span class="ic logo"><img src="assets/logos/products/rpa-studio.png" alt="RPA Studio"></span><div><h4>Robots de RPA Studio</h4><p>Datos y resultados de los robots de escritorio que ejecutan tus procesos.</p></div></div>
+        <div class="rb-intg-item"><span class="ic logo"><img src="assets/logos/products/orchestrator.png" alt="Orquestador"></span><div><h4>Rocketbot Orquestador</h4><p>Métricas de ejecución, estado de robots y alertas de falla.</p></div></div>
+        <div class="rb-intg-item"><span class="ic logo"><img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio"></span><div><h4>Saturn Studio</h4><p>Accede a los datos procesados en la nube e inicia bots.</p></div></div>
         <div class="rb-intg-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><div><h4>Gateway On-Premises</h4><p>Conexión segura a tu infraestructura interna, sin VPN.</p></div></div>
         <div class="rb-intg-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><div><h4>Bases de datos de los bots</h4><p>Consulta MySQL, PostgreSQL y Supabase donde guardan los resultados.</p></div></div>
       </div>
@@ -921,8 +931,8 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Casos por vertical</span>
-      <h2 class="rb-section__title">Una herramienta para <span>cada área</span></h2>
-      <p class="rb-section__sub">Ejemplos de aplicaciones que los equipos construyen en Nexus sobre sus automatizaciones.</p>
+      <h2 class="rb-section__title">Una herramienta<br><span>para cada área.</span></h2>
+      <p class="rb-section__sub">Ejemplos de aplicaciones que los equipos construyen en Nexus sobre&nbsp;sus&nbsp;automatizaciones.</p>
     </div>
     <div class="rb-vert-grid">
       <div class="rb-vert"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="7"/><rect x="13" y="7" width="3" height="11"/></svg></div><h3>Finanzas y Contabilidad</h3><p>Dashboard de conciliación bancaria en tiempo real, con alertas ante diferencias y drill-down por cuenta, fecha o banco.</p><span class="tag">+ Portal de aprobación de pagos</span></div>
@@ -940,7 +950,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Roles y permisos</span>
-      <h2 class="rb-section__title">Control de acceso por <span>rol y por cliente</span></h2>
+      <h2 class="rb-section__title">Control de acceso por<br><span>rol y por cliente.</span></h2>
     </div>
     <div class="rb-roles">
       <div class="rb-role admin"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><circle cx="12" cy="11" r="2"/><path d="M12 13v3"/></svg></div><h3>Admin</h3><p>Crea y configura la aplicación y gestiona los usuarios.</p></div>
@@ -956,8 +966,8 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Propuesta de valor</span>
-      <h2 class="rb-section__title">Equipos que adoptan Nexus <span>reportan</span></h2>
-      <p class="rb-section__sub">Apps web operativas a partir de los datos que ya procesan tus bots, sin equipo de desarrollo y en horas, no semanas.</p>
+      <h2 class="rb-section__title">Equipos que adoptan<br><span>Nexus reportan.</span></h2>
+      <p class="rb-section__sub">Apps web operativas a partir de los datos que ya procesan tus bots, sin equipo de desarrollo y en horas, no&nbsp;semanas.</p>
     </div>
     <div class="rb-res-grid">
       <div class="rb-res"><div class="v">80%</div><p>menos tiempo en generación de reportes manuales</p></div>
@@ -980,7 +990,7 @@ body{top:0 !important;}
         <div class="rb-sec-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Credenciales cifradas</div>
         <div class="rb-sec-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg>Aislamiento por organización</div>
         <div class="rb-sec-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>Gateway On-Premises sin VPN</div>
-        <div class="rb-sec-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>ISO 27001 (Suite Rocketbot)</div>
+        <div class="rb-sec-chip rb-sec-chip--iso"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>ISO 27001 (Suite Rocketbot)</span><span class="badge">Certificado</span></div>
       </div>
     </div>
   </div>

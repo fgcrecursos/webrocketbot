@@ -297,6 +297,8 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-suite-chips{display:flex;flex-wrap:wrap;gap:10px;position:relative;}
 .rb-schip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:11px;padding:12px 14px;font-size:13.5px;font-weight:600;color:#E6E9EA;}
 .rb-schip svg{width:17px;height:17px;color:#F3A6AD;}
+.rb-schip .logo{width:18px;height:18px;border-radius:5px;background:#fff;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;padding:2px;}
+.rb-schip .logo img{width:100%;height:100%;object-fit:contain;display:block;}
 @media(max-width:900px){.rb-suite-band{grid-template-columns:1fr;padding:30px;}}
 
 /* FAQ */
@@ -520,7 +522,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Del formulario a la automatización</span>
       <h2 class="rb-section__title">Un envío.<br><span>Un proceso completo.</span></h2>
-      <p class="rb-section__sub">Mira cómo un formulario dispara la automatización detrás. Elige un caso real, completa y envía.</p>
+      <p class="rb-section__sub">Mira cómo un formulario dispara la automatización detrás. Elige un caso real, completa y&nbsp;envía.</p>
     </div>
     <div class="rb-xtabs" id="xTabs">
       <button class="rb-xtab act" data-case="salud">Declaración de Salud</button>
@@ -555,7 +557,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Acceso</span>
       <h2 class="rb-section__title">Públicos o privados,<br><span>tú decides</span></h2>
-      <p class="rb-section__sub">El mismo formulario puede estar abierto a cualquiera o protegido con usuario y contraseña, según quién deba completarlo.</p>
+      <p class="rb-section__sub">El mismo formulario puede estar abierto a cualquiera o protegido con usuario y contraseña, según quién deba&nbsp;completarlo.</p>
     </div>
     <div class="rb-modes">
       <div class="rb-mode pub">
@@ -577,8 +579,8 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Sin código</span>
-      <h2 class="rb-section__title">Crea el formulario que necesitas<br><span>en minutos</span></h2>
-      <p class="rb-section__sub">Un constructor visual para diseñar formularios con la lógica y los controles que cada proceso requiere, sin programar.</p>
+      <h2 class="rb-section__title">Crea el formulario que<br><span>necesitas en minutos.</span></h2>
+      <p class="rb-section__sub">Un constructor visual para diseñar formularios con la lógica y los controles que cada proceso requiere, sin&nbsp;programar.</p>
     </div>
     <div class="rb-compare rb-compare--four">
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></div><div class="rb-compare__title">Constructor visual</div><div class="rb-compare__desc">Arma formularios arrastrando campos, sin escribir una línea de código.</div></div>
@@ -596,7 +598,7 @@ body{top:0 !important;}
       <div class="rb-brandpair" aria-hidden="true"><div class="rb-brandpair__halo"></div><div class="rb-brandpair__tile--solo"><svg class="ic" viewBox="0 0 100 100" fill="currentColor"><path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"/></svg><span>Claude</span></div><div class="rb-brandpair__dust rb-brandpair__dust--1"></div><div class="rb-brandpair__dust rb-brandpair__dust--2"></div><div class="rb-brandpair__dust rb-brandpair__dust--3"></div></div>
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Xperience · MCP de Claude</span>
       <h2 class="rb-section__title rb-mcp-title">Describe el formulario. <span>Claude lo crea.</span></h2>
-      <p class="rb-section__sub">A través del MCP (Model Context Protocol) de Claude, conectas Xperience y generas formularios con solo dar instrucciones en lenguaje natural: campos, validaciones y la automatización que disparan, listos.</p>
+      <p class="rb-section__sub">A través del MCP (Model Context Protocol) de Claude, conectas Xperience y generas formularios con solo dar instrucciones en lenguaje natural: campos, validaciones y la automatización que disparan,&nbsp;listos.</p>
     </div>
     <div class="rb-mcp-grid">
       <div class="rb-mcp-card">
@@ -637,7 +639,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Para quién</span>
       <h2 class="rb-section__title">Pensado para<br><span>quien está en la acción</span></h2>
-      <p class="rb-section__sub">Donde una persona necesita iniciar o ejecutar un proceso con datos validados, Xperience es el punto de entrada.</p>
+      <p class="rb-section__sub">Donde una persona necesita iniciar o ejecutar un proceso con datos validados, Xperience es el punto de&nbsp;entrada.</p>
     </div>
     <div class="rb-compare">
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div class="rb-compare__title">Trabajo en terreno</div><div class="rb-compare__desc">El personal carga avances, evidencias y reportes desde el celular; cada envío actualiza el proceso al instante.</div></div>
@@ -672,10 +674,10 @@ body{top:0 !important;}
         <p>Cada formulario es el punto de entrada de un proceso: dispara robots, agentes o flujos, y lo monitoreas de punta a punta desde el Orquestador, con trazabilidad y reintentos.</p>
       </div>
       <div class="rb-suite-chips">
-        <span class="rb-schip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 17h6"/></svg>RPA Studio</span>
-        <span class="rb-schip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-1 8H9a4 4 0 0 1-1-8V7a4 4 0 0 1 4-4z"/><path d="M9.5 16h5"/></svg>AI Studio</span>
-        <span class="rb-schip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h5a3 3 0 0 1 3 3v6"/></svg>Saturn Studio</span>
-        <span class="rb-schip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4-8 4-8-4z"/><path d="M4 12l8 4 8-4"/></svg>Orquestador</span>
+        <span class="rb-schip"><span class="logo"><img src="assets/logos/products/rpa-studio.png" alt="RPA Studio"></span>RPA Studio</span>
+        <span class="rb-schip"><span class="logo"><img src="assets/logos/products/ai-studio.png" alt="AI Studio"></span>AI Studio</span>
+        <span class="rb-schip"><span class="logo"><img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio"></span>Saturn Studio</span>
+        <span class="rb-schip"><span class="logo"><img src="assets/logos/products/orchestrator.png" alt="Orquestador"></span>Orquestador</span>
       </div>
     </div>
   </div>
@@ -686,7 +688,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-cta-band__inner">
       <div>
-        <h2 class="rb-cta-band__title">¿Tus procesos siguen comenzando con correos y planillas?</h2>
+        <h2 class="rb-cta-band__title">¿Sigues iniciando tus procesos con correos y planillas?</h2>
         <p class="rb-cta-band__sub">Con Xperience, cada proceso arranca con un formulario inteligente, más rápido, ordenado y trazable, y con la automatización ya en marcha.</p>
       </div>
       <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Contáctanos</a>

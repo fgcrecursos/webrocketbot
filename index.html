@@ -1014,11 +1014,19 @@ body{top:0 !important;}
 .rb-rcmp .nm{font-weight:700;font-size:14px;color:var(--foreground);}
 .rb-rcmp .nm.us{color:var(--rb-red);}
 .rb-rcmp .bar{height:11px;background:var(--border);border-radius:6px;overflow:hidden;}
-.rb-rcmp .fill{height:100%;border-radius:6px;background:#ccc;}
+.rb-rcmp .fill{height:100%;border-radius:6px;background:#ccc;width:0%;transition:width 1.3s cubic-bezier(.16,.84,.44,1);}
+.rb-rcmp .row:nth-child(3) .fill{transition-delay:.05s;}
+.rb-rcmp .row:nth-child(4) .fill{transition-delay:.15s;}
+.rb-rcmp .row:nth-child(5) .fill{transition-delay:.25s;}
 [data-theme="dark"] .rb-rcmp .fill{background:rgba(255,255,255,.18);}
 .rb-rcmp .fill.us{background:var(--rb-red);}
+@keyframes rb-gartner-glow{0%,100%{box-shadow:0 0 0 rgba(188,0,23,0);}50%{box-shadow:0 0 14px 2px rgba(188,0,23,.55);}}
+.rb-rcmp.is-visible .fill.us{animation:rb-gartner-glow 1.3s ease-in-out 1.3s 2;}
+.rb-rcmp .nm.us{display:inline-flex;align-items:center;gap:5px;}
+.rb-rcmp .nm.us svg{width:14px;height:14px;color:#BA7517;}
 .rb-rcmp .sc{font-weight:800;font-size:14px;text-align:right;color:var(--foreground);}
 .rb-rcmp .sc.us{color:var(--rb-red);}
+@media(prefers-reduced-motion:reduce){.rb-rcmp .fill{transition:none;animation:none;}}
 .rb-rcmp .note{font-size:12px;color:#999;margin-top:12px;}
 @media(max-width:760px){.rb-rec2{grid-template-columns:1fr;}}
 
@@ -1370,7 +1378,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head rb-reveal">
       <span class="rb-eyebrow">El Problema</span>
-      <h2 class="rb-section__title">Tres problemas que hoy están <span>frenando tu operación.</span></h2>
+      <h2 class="rb-section__title">Tres problemas que hoy están<br><span>frenando tu operación.</span></h2>
     </div>
     <div class="rb-problem__cards rb-stagger rb-stagger--scale">
 
@@ -1616,7 +1624,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head rb-section__head--left rb-reveal">
       <h2 class="rb-section__title">Automatización lista para <span>tu industria</span></h2>
-      <p class="rb-section__sub">Más de 500 procesos implementados en organizaciones de toda Latinoamérica. Selecciona tu sector.</p>
+      <p class="rb-section__sub">Más de 500 procesos implementados en organizaciones de toda Latinoamérica. Selecciona tu&nbsp;sector.</p>
     </div>
 
     <!-- Tabs horizontales -->
@@ -1863,7 +1871,7 @@ body{top:0 !important;}
     <div class="rb-section__head rb-reveal">
       <span class="rb-eyebrow">Casos de éxito</span>
       <h2 class="rb-section__title">Automatización con <span>resultados reales.</span></h2>
-      <p class="rb-section__sub">No son proyecciones. Son resultados obtenidos por empresas que hoy operan con procesos automatizados en producción.</p>
+      <p class="rb-section__sub">No son proyecciones. Son resultados obtenidos por empresas que hoy operan con procesos automatizados en&nbsp;producción.</p>
     </div>
 
     <div class="rb-testimonials rb-stagger rb-stagger--horizontal">
@@ -1872,10 +1880,6 @@ body{top:0 !important;}
       <article class="rb-testi">
         <div class="rb-testi__head">
           <div class="rb-testi__logo"><img src="assets/logos/clients/proteccion-v2.png" alt="Protección"></div>
-          <div>
-            <div class="rb-testi__company">Protección</div>
-            <div class="rb-testi__sector">Servicios Financieros · Grupo SURA</div>
-          </div>
         </div>
         <p class="rb-testi__desc">La migración de pólizas de una nueva unidad de negocio debía completarse en tiempo récord. Un proceso que manualmente habría tomado semanas se resolvió en días gracias a la automatización de procesos.</p>
         <div class="rb-testi__metrics">
@@ -1902,10 +1906,6 @@ body{top:0 !important;}
       <article class="rb-testi">
         <div class="rb-testi__head">
           <div class="rb-testi__logo"><img src="assets/logos/clients/agrosuper.png" alt="Agrosuper"></div>
-          <div>
-            <div class="rb-testi__company">Agrosuper</div>
-            <div class="rb-testi__sector">Consumo Masivo · Agroindustria</div>
-          </div>
         </div>
         <p class="rb-testi__desc">Miles de horas se destinaban a procesos administrativos que consumían tiempo valioso y dificultaban el crecimiento. La automatización permitió que los equipos se enfocaran en actividades de mayor valor.</p>
         <div class="rb-testi__metrics">
@@ -1932,10 +1932,6 @@ body{top:0 !important;}
       <article class="rb-testi">
         <div class="rb-testi__head">
           <div class="rb-testi__logo"><img src="assets/logos/clients/consorcio.png" alt="Consorcio"></div>
-          <div>
-            <div class="rb-testi__company">Consorcio</div>
-            <div class="rb-testi__sector">Seguros · Chile</div>
-          </div>
         </div>
         <p class="rb-testi__desc">Procesos operativos con alta carga manual impactaban tiempos de respuesta y experiencia de cliente. La automatización ayudó a mejorar la eficiencia operativa y la capacidad de respuesta.</p>
         <div class="rb-testi__metrics">
@@ -2034,8 +2030,8 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head rb-reveal">
       <span class="rb-eyebrow"><span class="dot"></span>Reconocimiento</span>
-      <h2 class="rb-section__title">Mejor evaluados que <span>los gigantes globales.</span></h2>
-      <p class="rb-section__sub">En Gartner Peer Insights (rese&ntilde;as de usuarios verificados) Rocketbot supera la calificaci&oacute;n de UiPath, Automation Anywhere y Blue Prism.</p>
+      <h2 class="rb-section__title">Mejor evaluados que<br><span>los gigantes globales.</span></h2>
+      <p class="rb-section__sub">En Gartner Peer Insights (rese&ntilde;as de usuarios verificados) Rocketbot supera la calificaci&oacute;n de UiPath, Automation Anywhere y Blue&nbsp;Prism.</p>
     </div>
     <div class="rb-rec2">
       <div class="rb-gbadge">
@@ -2044,12 +2040,12 @@ body{top:0 !important;}
         <div class="sub">137 rese&ntilde;as en Gartner Peer Insights</div>
         <div class="src">Actualizado oct 2025</div>
       </div>
-      <div class="rb-rcmp">
+      <div class="rb-rcmp rb-reveal">
         <h3>Calificaci&oacute;n en Gartner Peer Insights</h3>
-        <div class="row"><span class="nm us">Rocketbot</span><span class="bar"><span class="fill us" style="width:94%"></span></span><span class="sc us">4.7</span></div>
-        <div class="row"><span class="nm">Automation Anywhere</span><span class="bar"><span class="fill" style="width:92%"></span></span><span class="sc">4.6</span></div>
-        <div class="row"><span class="nm">UiPath</span><span class="bar"><span class="fill" style="width:90%"></span></span><span class="sc">4.5</span></div>
-        <div class="row"><span class="nm">Blue Prism</span><span class="bar"><span class="fill" style="width:88%"></span></span><span class="sc">4.4</span></div>
+        <div class="row"><span class="nm us">Rocketbot<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 3h12v2h3v2a4 4 0 0 1-4 4c-.3 1.9-1.7 3.4-3.5 3.9V17H16v2H8v-2h2.5v-2.1C8.7 14.4 7.3 12.9 7 11a4 4 0 0 1-4-4V5h3V3zm-2 4a2 2 0 0 0 2 2V5H4v2zm16 0V5h-2v4a2 2 0 0 0 2-2z"/></svg></span><span class="bar"><span class="fill us" data-w="94"></span></span><span class="sc us">4.7</span></div>
+        <div class="row"><span class="nm">Automation Anywhere</span><span class="bar"><span class="fill" data-w="92"></span></span><span class="sc">4.6</span></div>
+        <div class="row"><span class="nm">UiPath</span><span class="bar"><span class="fill" data-w="90"></span></span><span class="sc">4.5</span></div>
+        <div class="row"><span class="nm">Blue Prism</span><span class="bar"><span class="fill" data-w="88"></span></span><span class="sc">4.4</span></div>
         <p class="note">Calificaci&oacute;n promedio de usuarios verificados en Gartner Peer Insights, mercado de Robotic Process Automation (datos a oct 2025).</p>
       </div>
     </div>
@@ -2186,6 +2182,25 @@ themeBtn.addEventListener('click', function () {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
   els.forEach(function (el) { io.observe(el); });
+})();
+
+// ─── Gartner bars fill-in ───
+(function () {
+  var el = document.querySelector('.rb-rcmp');
+  if (!el) return;
+  function fillBars() {
+    el.querySelectorAll('.fill').forEach(function (f) {
+      f.style.width = (f.dataset.w || 0) + '%';
+    });
+    el.classList.add('is-visible');
+  }
+  if (!('IntersectionObserver' in window)) { fillBars(); return; }
+  var io2 = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { fillBars(); io2.unobserve(entry.target); }
+    });
+  }, { threshold: 0.3 });
+  io2.observe(el);
 })();
 
 // ─── Industry tabs ───

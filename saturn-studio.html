@@ -116,24 +116,26 @@ ul{margin:0;padding:0;list-style:none;}
 @media(max-width:960px){.rb-hero__grid{grid-template-columns:1fr;}.rb-hero__visual{display:none;}}
 
 .rb-sat{position:relative;width:100%;max-width:460px;aspect-ratio:1/1;}
-.rb-sat__halo{position:absolute;inset:-10%;border-radius:50%;background:radial-gradient(circle at 42% 38%,rgba(188,0,23,.35) 0%,transparent 45%),radial-gradient(circle at 60% 62%,rgba(43,127,255,.22) 0%,transparent 50%);filter:blur(34px);}
-.rb-sat__sphere{position:absolute;left:50%;top:50%;width:50%;height:50%;transform:translate(-50%,-50%);border-radius:50%;z-index:3;background:radial-gradient(circle at 34% 30%,#3a4550 0%,#20262c 32%,#0c0f13 62%,#050608 100%);box-shadow:inset -18px -14px 40px rgba(0,0,0,.6),inset 10px 8px 26px rgba(255,255,255,.05),0 0 60px rgba(188,0,23,.28);}
+.rb-sat__halo{position:absolute;inset:-10%;border-radius:50%;background:radial-gradient(circle at 42% 38%,rgba(188,0,23,.35) 0%,transparent 45%),radial-gradient(circle at 60% 62%,rgba(43,127,255,.22) 0%,transparent 50%);filter:blur(34px);animation:rb-sat-halo 16s ease-in-out infinite;will-change:transform;}
+@keyframes rb-sat-halo{0%,100%{transform:rotate(0deg) scale(1);}50%{transform:rotate(6deg) scale(1.05);}}
+.rb-sat__sphere{position:absolute;left:50%;top:50%;width:50%;height:50%;transform:translate(-50%,-50%);border-radius:50%;z-index:3;background:radial-gradient(circle at 34% 30%,#3a4550 0%,#20262c 32%,#0c0f13 62%,#050608 100%);box-shadow:inset -18px -14px 40px rgba(0,0,0,.6),inset 10px 8px 26px rgba(255,255,255,.05),0 0 60px rgba(188,0,23,.28);animation:rb-sat-breathe 7s ease-in-out infinite;will-change:transform;}
+@keyframes rb-sat-breathe{0%,100%{transform:translate(-50%,-50%) scale(1);}50%{transform:translate(-50%,-50%) scale(1.015);}}
 .rb-sat__shade{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 68% 68%,rgba(188,0,23,.35),transparent 60%);mix-blend-mode:screen;}
 .rb-sat__ring{position:absolute;left:50%;top:50%;width:92%;height:26%;border-radius:50%;transform:translate(-50%,-50%) rotate(-16deg);}
 .rb-sat__ring--back{z-index:2;border:2px solid rgba(255,255,255,.16);box-shadow:0 0 22px rgba(43,127,255,.18);}
 .rb-sat__ring--front{z-index:4;height:26%;overflow:hidden;clip-path:polygon(0 46%,100% 46%,100% 100%,0 100%);}
 .rb-sat__ring--front .rb-sat__ringline{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,.22);box-shadow:0 0 16px rgba(188,0,23,.35);}
-.rb-sat__comet{position:absolute;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,#fff,var(--rb-red) 60%,transparent 72%);box-shadow:0 0 18px 4px rgba(188,0,23,.85);offset-path:ellipse(46% 13% at 50% 50%);animation:rb-sat-orbit 9s linear infinite;}
-.rb-sat__ring--front .rb-sat__comet{animation-delay:-2.25s;}
+.rb-sat__comet{position:absolute;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,#fff,var(--rb-red) 60%,transparent 72%);box-shadow:0 0 22px 6px rgba(188,0,23,.8),0 0 8px 2px rgba(255,255,255,.5);offset-path:ellipse(46% 13% at 50% 50%);offset-rotate:0deg;animation:rb-sat-orbit 12s linear infinite;will-change:offset-distance;}
+.rb-sat__ring--front .rb-sat__comet{animation-delay:-3s;}
 @keyframes rb-sat-orbit{from{offset-distance:0%;}to{offset-distance:100%;}}
 .rb-sat__dust{position:absolute;inset:0;z-index:5;pointer-events:none;}
-.rb-sat__dust span{position:absolute;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px rgba(255,255,255,.6);animation:rb-pulse 3.4s ease-in-out infinite;}
+.rb-sat__dust span{position:absolute;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px rgba(255,255,255,.6);animation:rb-pulse 3.4s ease-in-out infinite;will-change:opacity,transform;}
 .rb-sat__dust span:nth-child(1){width:5px;height:5px;left:8%;top:28%;animation-delay:0s;}
 .rb-sat__dust span:nth-child(2){width:4px;height:4px;left:20%;top:78%;animation-delay:.6s;}
 .rb-sat__dust span:nth-child(3){width:6px;height:6px;left:88%;top:20%;animation-delay:1.2s;}
 .rb-sat__dust span:nth-child(4){width:3px;height:3px;left:92%;top:70%;animation-delay:1.8s;}
 .rb-sat__dust span:nth-child(5){width:4px;height:4px;left:50%;top:8%;animation-delay:2.4s;}
-@media(prefers-reduced-motion:reduce){.rb-sat__comet{animation:none;offset-distance:0%;}.rb-sat__dust span{animation:none;}}
+@media(prefers-reduced-motion:reduce){.rb-sat__comet{animation:none;offset-distance:0%;}.rb-sat__dust span{animation:none;}.rb-sat__halo{animation:none;}.rb-sat__sphere{animation:none;}}
 
 /* CLIENTS MARQUEE */
 .rb-clients{padding:34px 0;background:var(--rb-off-white);}
@@ -348,11 +350,11 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-sec-chips{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;}
 .rb-sec-chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:600;color:#E6E9EA;display:flex;align-items:center;gap:10px;}
 .rb-sec-chip svg{width:18px;height:18px;color:#F3A6AD;flex:0 0 auto;}
-.rb-sec-chip--iso{background:linear-gradient(135deg,rgba(188,0,23,.22),rgba(188,0,23,.08));border-color:rgba(188,0,23,.55);box-shadow:0 0 0 1px rgba(188,0,23,.2),0 10px 24px -10px rgba(188,0,23,.55);position:relative;}
-.rb-sec-chip--iso .ic{width:24px;height:24px;border-radius:50%;background:var(--rb-red);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-sec-chip--iso{background:linear-gradient(135deg,rgba(38,50,53,.45),rgba(38,50,53,.18));border-color:rgba(38,50,53,.65);box-shadow:0 0 0 1px rgba(38,50,53,.3),0 10px 24px -10px rgba(38,50,53,.65);position:relative;}
+.rb-sec-chip--iso .ic{width:24px;height:24px;border-radius:50%;background:#263235;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
 .rb-sec-chip--iso .ic svg{width:13px;height:13px;color:#fff;}
 .rb-sec-chip--iso span{color:#fff;}
-.rb-sec-chip--iso .badge{margin-left:auto;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--rb-red);border-radius:999px;padding:3px 8px;flex:0 0 auto;}
+.rb-sec-chip--iso .badge{margin-left:auto;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#263235;border-radius:999px;padding:3px 8px;flex:0 0 auto;}
 
 /* FAQ */
 .rb-faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
@@ -569,7 +571,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Flujos en acción</span>
       <h2 class="rb-section__title">Diseña el flujo,<br><span>Saturn lo ejecuta</span></h2>
-      <p class="rb-section__sub">Un flujo no-code conectando tu ecosistema, con los datos pasando de un nodo al siguiente. Elige un caso y míralo correr.</p>
+      <p class="rb-section__sub">Un flujo no-code conectando tu ecosistema, con los datos pasando de un nodo al siguiente. Elige un caso y míralo&nbsp;correr.</p>
     </div>
     <div class="rb-wf-tabs" id="sTabs">
       <button class="rb-wf-tab act" data-p="onb">Onboarding de cliente</button>
@@ -598,7 +600,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Tu ecosistema, conectado</span>
       <h2 class="rb-section__title">Saturn en el <span>centro de todo</span></h2>
-      <p class="rb-section__sub">Saturn no automatiza solo: orquesta cada producto Rocketbot y tus sistemas para llegar donde otras plataformas no llegan.</p>
+      <p class="rb-section__sub">Saturn no automatiza solo: orquesta cada producto Rocketbot y tus sistemas para llegar donde otras plataformas no&nbsp;llegan.</p>
     </div>
     <div class="rb-eco">
       <div class="rb-eco__center">
@@ -651,7 +653,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>+38 integraciones nativas</span>
       <h2 class="rb-section__title rb-int__title-nowrap">Conéctate con <span>tus plataformas favoritas</span></h2>
-      <p class="rb-section__sub">Y con cualquier API REST, base de datos o modelo de IA que ya uses.</p>
+      <p class="rb-section__sub">Y con cualquier API REST, base de datos o modelo de IA que ya&nbsp;uses.</p>
     </div>
   </div>
   <div class="rb-int__tracks">
@@ -671,7 +673,7 @@ body{top:0 !important;}
       </div>
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Saturn Studio · MCP de Claude</span>
       <h2 class="rb-section__title rb-mcp-title">Describe el flujo. <span>Claude lo arma.</span></h2>
-      <p class="rb-section__sub">A través del MCP (Model Context Protocol), describes lo que el flujo debe hacer y Claude propone los nodos (disparadores, IA, RPA, integraciones) listos para revisar y ejecutar en Saturn.</p>
+      <p class="rb-section__sub">A través del MCP (Model Context Protocol), describes lo que el flujo debe hacer y Claude propone los nodos (disparadores, IA, RPA, integraciones) listos para revisar y ejecutar en&nbsp;Saturn.</p>
     </div>
     <div class="rb-mcp-grid">
       <div class="rb-mcp-card">
@@ -1017,7 +1019,7 @@ new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersectin
 const FAQS=[
   ['¿Qué es Saturn Studio?','Es la plataforma no-code para crear flujos y agentes inteligentes que conectan tus sistemas, la IA y la automatización en una sola operación, con control y trazabilidad.'],
   ['¿Necesito saber programar?','No. Saturn es visual y no-code; para casos avanzados admite lógica e integraciones por API.'],
-  ['¿Con qué se integra?','Con +38 integraciones nativas (SAP, Salesforce, Microsoft 365, Google Workspace, Oracle, ServiceNow, WhatsApp y más) y con cualquier API REST, base de datos o modelo de IA.'],
+  ['¿Con qué se integra?','Potencia tu ecosistema con más de 100 integraciones nativas desde modelos de IA como OpenAI, Claude y Gemini, hasta herramientas líderes de productividad (Microsoft 365, Google Workspace), comunicación (WhatsApp, Slack), CRM (Salesforce, HubSpot) y desarrollo (AWS, GitHub). Además, conéctate sin límites a cualquier API REST, base de datos o modelo de inteligencia artificial del mercado.'],
   ['¿Cómo se conecta con el resto de Rocketbot?','Saturn orquesta toda la suite: usa RPA Studio para llegar donde no hay API, AI Studio para estructurar datos no estructurados, Xperience para disparar flujos desde formularios, el Orquestador para gobernar y escalar, y Nexus para visualizar resultados.'],
   ['¿Los agentes actúan solos?','Actúan con autonomía dentro de los límites que defines, con supervisión humana y trazabilidad de cada acción.'],
   ['¿Puedo crear flujos con ayuda de IA?','Sí. A través del MCP de Claude describes el flujo en lenguaje natural y Claude propone los nodos, que luego revisas y ejecutas en Saturn.'],

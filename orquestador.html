@@ -227,53 +227,59 @@ ul{margin:0;padding:0;list-style:none;}
 [data-theme="dark"] .rb-compare__desc{color:rgba(255,255,255,.45);}
 
 /* INTERACTIVE ARCHITECTURE */
-.rb-arch{max-width:940px;margin:0 auto;}
+.rb-arch{max-width:1080px;margin:0 auto;}
 #gobernanza{padding:64px 0;}
-.rb-arch-plane{background:var(--rb-dark-3);border-radius:16px;padding:18px;position:relative;overflow:hidden;box-shadow:0 26px 64px -28px rgba(0,0,0,.6);}
+.rb-arch-cols{display:grid;grid-template-columns:1fr 56px 1fr;gap:0;align-items:stretch;}
+.rb-arch-plane{background:var(--rb-dark-3);border-radius:16px;padding:16px;position:relative;overflow:hidden;box-shadow:0 26px 64px -28px rgba(0,0,0,.6);}
 .rb-arch-plane::before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:var(--rb-red);}
-.rb-arch-plane .ph{display:flex;align-items:center;gap:12px;margin-bottom:14px;cursor:pointer;border-radius:12px;transition:opacity .15s;}
+.rb-arch-plane .ph{display:flex;align-items:center;gap:12px;margin-bottom:12px;cursor:pointer;border-radius:12px;transition:opacity .15s;}
 .rb-arch-plane .ph:hover{opacity:.86;}
-.rb-arch-plane .ph .ic{width:40px;height:40px;border-radius:11px;background:var(--rb-red);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
-.rb-arch-plane .ph .ic svg{width:22px;height:22px;}
+.rb-arch-plane .ph .ic{width:36px;height:36px;border-radius:11px;background:var(--rb-red);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-arch-plane .ph .ic svg{width:20px;height:20px;}
 .rb-arch-plane .ph .ic--logo{background:#fff;padding:6px;}
-.rb-arch-plane .ph .ic img{width:22px;height:22px;object-fit:contain;}
-.rb-arch-plane .ph .lab{font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#F3A6AD;}
-.rb-arch-plane .ph h3{color:#fff;font-size:19px;font-weight:800;margin:2px 0 0;}
-.rb-arch-chips{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
-.rb-achip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:11px;padding:10px 8px;text-align:center;color:#E6E9EA;font-size:12px;font-weight:600;line-height:1.2;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;}
-.rb-achip svg{width:18px;height:18px;color:#F3A6AD;}
+.rb-arch-plane .ph .ic img{width:20px;height:20px;object-fit:contain;}
+.rb-arch-plane .ph .lab{font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#F3A6AD;}
+.rb-arch-plane .ph h3{color:#fff;font-size:17px;font-weight:800;margin:2px 0 0;}
+.rb-arch-chips{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.rb-achip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:8px 10px;text-align:left;color:#E6E9EA;font-size:11.5px;font-weight:600;line-height:1.2;display:flex;flex-direction:row;align-items:center;gap:8px;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;}
+.rb-achip svg{width:16px;height:16px;color:#F3A6AD;flex:0 0 auto;}
 .rb-achip:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.28);transform:translateY(-1px);}
 .rb-achip.act{background:var(--rb-red);border-color:var(--rb-red);color:#fff;}
 .rb-achip.act svg{color:#fff;}
-.rb-arch-flow{display:flex;justify-content:center;gap:10px;padding:10px 0;position:relative;flex-wrap:wrap;}
-.rb-arch-flow::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:repeating-linear-gradient(var(--border) 0 6px,transparent 6px 12px);transform:translateX(-50%);z-index:0;}
-.rb-aflow{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:600;color:var(--foreground);}
-.rb-aflow svg{width:15px;height:15px;color:var(--rb-red);flex:0 0 auto;}
-.rb-arch-base{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;}
-.rb-arch-base .blab{font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:2px 4px 10px;}
-.rb-arch-cards{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;}
-.rb-acard{background:rgba(0,0,0,.03);border:1px solid var(--border);border-radius:13px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:7px;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s,background .15s;}
+.rb-arch-mid{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;position:relative;padding:10px 0;}
+.rb-arch-mid::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:repeating-linear-gradient(var(--border) 0 6px,transparent 6px 12px);transform:translateX(-50%);z-index:0;}
+.rb-aflow{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--card);border:1px solid var(--border);border-radius:50%;color:var(--rb-red);}
+.rb-aflow svg{width:17px;height:17px;flex:0 0 auto;}
+.rb-arch-mid .lbl{position:relative;z-index:1;font-size:9.5px;font-weight:700;letter-spacing:.04em;color:var(--muted);text-align:center;max-width:70px;line-height:1.2;}
+.rb-arch-base{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;display:flex;flex-direction:column;}
+.rb-arch-base .blab{font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:2px 4px 10px;}
+.rb-arch-cards{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.rb-acard{background:rgba(0,0,0,.03);border:1px solid var(--border);border-radius:11px;padding:8px 10px;display:flex;flex-direction:row;align-items:center;text-align:left;gap:8px;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s,background .15s;}
 [data-theme="dark"] .rb-acard{background:rgba(255,255,255,.03);}
 .rb-acard:hover{transform:translateY(-2px);border-color:var(--rb-red);}
 .rb-acard.act{border-color:var(--rb-red);background:var(--card);box-shadow:0 0 0 2px rgba(188,0,23,.16);}
-.rb-acard .ic{width:36px;height:36px;border-radius:11px;background:var(--card);border:1px solid var(--border);color:var(--rb-red);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
-.rb-acard .ic svg{width:19px;height:19px;}
-.rb-acard .ic img{width:19px;height:19px;object-fit:contain;}
-.rb-acard .nm{font-weight:700;font-size:13px;color:var(--foreground);}
-.rb-acard .ds{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.25;}
-.rb-arch-infra{margin-top:10px;background:rgba(0,0,0,.03);border:1px dashed var(--border);border-radius:12px;padding:10px;text-align:center;font-size:12.5px;font-weight:700;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;transition:border-color .15s,color .15s;}
+.rb-acard .ic{width:30px;height:30px;border-radius:9px;background:var(--card);border:1px solid var(--border);color:var(--rb-red);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-acard .ic svg{width:16px;height:16px;}
+.rb-acard .ic img{width:16px;height:16px;object-fit:contain;}
+.rb-acard .nm{font-weight:700;font-size:12px;color:var(--foreground);line-height:1.2;}
+.rb-acard .ds{font-size:10.5px;color:var(--muted);margin-top:1px;line-height:1.2;}
+.rb-arch-infra{margin-top:auto;padding-top:10px;background:rgba(0,0,0,.03);border:1px dashed var(--border);border-radius:12px;padding:9px 10px;text-align:center;font-size:11.5px;font-weight:700;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:border-color .15s,color .15s;margin-top:6px;}
 [data-theme="dark"] .rb-arch-infra{background:rgba(255,255,255,.03);}
 .rb-arch-infra:hover,.rb-arch-infra.act{border-color:var(--rb-red);color:var(--foreground);border-style:solid;}
-.rb-arch-infra svg{width:16px;height:16px;color:var(--rb-red);}
-.rb-ia-hint{font-size:12px;color:var(--muted);text-align:center;margin:10px 0 0;display:flex;align-items:center;justify-content:center;gap:6px;}
+.rb-arch-infra svg{width:15px;height:15px;color:var(--rb-red);flex:0 0 auto;}
+.rb-ia-hint{font-size:12px;color:var(--muted);text-align:center;margin:12px 0 0;display:flex;align-items:center;justify-content:center;gap:6px;}
 .rb-ia-hint svg{width:14px;height:14px;color:var(--rb-red);}
-.rb-ia-detail{margin-top:10px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--rb-red);border-radius:14px;padding:14px 18px;min-height:64px;box-shadow:0 10px 30px -18px rgba(0,0,0,.3);}
+.rb-ia-detail{margin-top:12px;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--rb-red);border-radius:14px;padding:14px 18px;min-height:64px;box-shadow:0 10px 30px -18px rgba(0,0,0,.3);}
 .rb-ia-detail .dt-tag{font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--rb-red);}
 .rb-ia-detail h4{font-size:17px;font-weight:800;color:var(--foreground);margin:4px 0 5px;}
 .rb-ia-detail p{color:var(--muted);font-size:13.5px;margin:0;line-height:1.5;}
-@media(max-width:980px){.rb-arch-cards{grid-template-columns:repeat(4,1fr);}}
-@media(max-width:760px){.rb-arch-chips{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:560px){.rb-arch-cards{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:760px){
+  .rb-arch-cols{grid-template-columns:1fr;}
+  .rb-arch-mid{flex-direction:row;justify-content:center;padding:14px 0;}
+  .rb-arch-mid::before{left:0;right:0;top:50%;bottom:auto;width:auto;height:2px;transform:translateY(-50%);}
+  .rb-arch-mid .lbl{max-width:120px;}
+  .rb-aflow{transform:rotate(90deg);}
+}
 
 /* MCP / CLAUDE (Orquestador demo) */
 .rb-omcp{background:var(--rb-dark-3);border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
@@ -354,9 +360,9 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-statpill .lbl{color:rgba(255,255,255,.55);font-size:13px;}
 .rb-statpill .b{width:36px;height:36px;border-radius:50%;background:rgba(188,0,23,.2);color:#F3A6AD;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
 .rb-statpill .b svg{width:19px;height:19px;}
-.rb-statpill--iso{background:linear-gradient(135deg,rgba(188,0,23,.28),rgba(188,0,23,.08));border-color:rgba(188,0,23,.55);box-shadow:0 0 0 1px rgba(188,0,23,.2),0 12px 30px -12px rgba(188,0,23,.6);}
-.rb-statpill--iso .b{background:var(--rb-red);color:#fff;}
-.rb-statpill__badge{margin-left:4px;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--rb-red);border-radius:999px;padding:3px 8px;white-space:nowrap;}
+.rb-statpill--iso{background:linear-gradient(135deg,rgba(38,50,53,.5),rgba(38,50,53,.18));border-color:rgba(38,50,53,.65);box-shadow:0 0 0 1px rgba(38,50,53,.3),0 12px 30px -12px rgba(38,50,53,.7);}
+.rb-statpill--iso .b{background:#263235;color:#fff;}
+.rb-statpill__badge{margin-left:4px;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#263235;border-radius:999px;padding:3px 8px;white-space:nowrap;}
 @media(max-width:900px){.rb-sec-cols{grid-template-columns:1fr;}}
 
 /* RECOGNITION stats */
@@ -585,7 +591,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Consola en vivo</span>
       <h2 class="rb-section__title">Toda tu operación, <span>bajo control</span></h2>
-      <p class="rb-section__sub">Programa ejecuciones, monitorea cada robot y deja que el Orquestador reintente automáticamente ante errores, con un registro de auditoría de todo lo que ocurre.</p>
+      <p class="rb-section__sub">Programa ejecuciones, monitorea cada robot y deja que el Orquestador reintente automáticamente ante errores, con un registro de auditoría de todo lo que&nbsp;ocurre.</p>
     </div>
     <div class="rb-console">
       <div class="rb-console__bar">
@@ -619,7 +625,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Despliegue</span>
       <h2 class="rb-section__title">Controla tus automatizaciones <span>desde un solo lugar</span></h2>
-      <p class="rb-section__sub">Programa ejecuciones, monitorea procesos y administra robots en tiempo real desde una consola centralizada que crece con tu operación.</p>
+      <p class="rb-section__sub">Programa ejecuciones, monitorea procesos y administra robots en tiempo real desde una consola centralizada que crece con tu&nbsp;operación.</p>
     </div>
     <div class="rb-compare rb-compare--four">
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M12 13v4M10 15h4"/></svg></div><div class="rb-compare__title">Programación exacta</div><div class="rb-compare__desc">Ejecuta robots en el momento y la frecuencia que tu operación necesita.</div></div>
@@ -635,10 +641,11 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Gobernanza</span>
-      <h2 class="rb-section__title">El gobierno técnico<br><span class="rb-title-nowrap">sobre robots, agentes y aplicaciones</span></h2>
-      <p class="rb-section__sub">Una capa de control central que ejecuta, supervisa y audita cada automatización (robots, agentes y aplicaciones) sin importar la tecnología en que se construyeron.</p>
+      <h2 class="rb-section__title">Un solo control<br><span class="rb-title-nowrap">para robots, agentes y aplicaciones</span></h2>
+      <p class="rb-section__sub">Una capa de control central que ejecuta, supervisa y audita cada automatización (robots, agentes y aplicaciones) sin importar la tecnología en que se&nbsp;construyeron.</p>
     </div>
     <div class="rb-arch" id="arch">
+      <div class="rb-arch-cols">
       <div class="rb-arch-plane">
         <div class="ph" data-key="orquestador">
           <div class="ic ic--logo"><img src="assets/logos/products/orchestrator.png" alt="Orquestador"></div>
@@ -655,9 +662,11 @@ body{top:0 !important;}
           <div class="rb-achip" data-key="monitoreo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg>Monitoreo</div>
         </div>
       </div>
-      <div class="rb-arch-flow">
-        <span class="rb-aflow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Control, políticas y ejecución</span>
-        <span class="rb-aflow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Estado, telemetría y auditoría</span>
+      <div class="rb-arch-mid">
+        <span class="rb-aflow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="lbl">Control, políticas y ejecución</span>
+        <span class="rb-aflow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></span>
+        <span class="lbl">Estado, telemetría y auditoría</span>
       </div>
       <div class="rb-arch-base">
         <div class="blab">Robots, agentes y aplicaciones</div>
@@ -672,6 +681,7 @@ body{top:0 !important;}
         </div>
         <div class="rb-arch-infra" data-key="infra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h0M7 17h0"/></svg>En la nube · Infraestructura AWS · Alta disponibilidad</div>
       </div>
+      </div>
       <div class="rb-ia-detail" id="iaDetail"></div>
       <div class="rb-ia-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l11 7-5 1 3 6-2 1-3-6-4 4z"/></svg>Toca cada elemento para ver qué hace</div>
     </div>
@@ -684,7 +694,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow"><span class="dot"></span>Sin límites</span>
       <h2 class="rb-section__title">Orquesta cualquier tecnología, <span>no solo Rocketbot</span></h2>
-      <p class="rb-section__sub">Desde una sola consola ejecutas tus robots y disparas cualquier aplicación instalada en la máquina, enviándole los parámetros que necesite. En el caso de los robots, además ejecutan acciones de punta a punta.</p>
+      <p class="rb-section__sub">Desde una sola consola ejecutas tus robots y disparas cualquier aplicación instalada en la máquina, enviándole los parámetros que necesite. En el caso de los robots, además ejecutan acciones de punta a&nbsp;punta.</p>
     </div>
     <div class="rb-compare">
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><div class="rb-compare__title">Todo tu RPA, en un lugar</div><div class="rb-compare__desc">Robots de Rocketbot, Python y automatizaciones de UI, e incluso robots de otras plataformas como Automation Anywhere.</div></div>
@@ -700,8 +710,8 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <div class="rb-brandpair" aria-hidden="true"><div class="rb-brandpair__halo"></div><div class="rb-brandpair__tile--solo"><svg class="ic" viewBox="0 0 100 100" fill="currentColor"><path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"/></svg><span>Claude</span></div><div class="rb-brandpair__dust rb-brandpair__dust--1"></div><div class="rb-brandpair__dust rb-brandpair__dust--2"></div><div class="rb-brandpair__dust rb-brandpair__dust--3"></div></div>
       <span class="rb-eyebrow"><span class="dot"></span>Orquestador · MCP de Claude</span>
-      <h2 class="rb-section__title">Conecta cualquier IA a tu <span>operación</span></h2>
-      <p class="rb-section__sub">A través del MCP (Model Context Protocol), Claude, o la IA que prefieras, consulta el estado y las métricas del Orquestador, genera dashboards y ejecuta acciones por API. Todo dentro de los límites que tú defines.</p>
+      <h2 class="rb-section__title">Conecta cualquier IA<br><span>a tu operación.</span></h2>
+      <p class="rb-section__sub">A través del MCP (Model Context Protocol), Claude, o la IA que prefieras, consulta el estado y las métricas del Orquestador, genera dashboards y ejecuta acciones por API. Todo dentro de los límites que tú&nbsp;defines.</p>
     </div>
     <div class="rb-omcp">
       <div class="rb-om-card">
@@ -744,7 +754,7 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Infraestructura</span>
       <h2 class="rb-section__title">Seguridad y resiliencia para operar con confianza</h2>
-      <p class="rb-section__sub">El Orquestador es una plataforma SaaS sobre AWS, con arquitectura de microservicios, seguridad en capas, alta disponibilidad y procesos certificados bajo ISO 27001.</p>
+      <p class="rb-section__sub">El Orquestador es una plataforma SaaS sobre AWS, con arquitectura de microservicios, seguridad en capas, alta disponibilidad y procesos certificados bajo ISO&nbsp;27001.</p>
     </div>
     <div class="rb-sec-cols">
       <div class="rb-scard2">
