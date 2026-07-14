@@ -559,8 +559,8 @@ body{top:0 !important;}
   <div class="container">
     <p class="rb-clients__label">Empresas que confían en Rocketbot</p>
     <div class="rb-marquee"><div class="rb-marquee__track">
-      <img src="assets/images/clientes/onyx.png" alt="Grupo Onyx"><img src="assets/images/clientes/agrosuper.png" alt="Agrosuper"><img src="assets/images/clientes/pit.png" alt="Pit"><img src="assets/images/clientes/proteccion.png" alt="Protección"><img src="assets/images/clientes/solar.png" alt="Solar Banco"><img src="assets/images/clientes/tecniseguros.png" alt="Tecniseguros">
-      <img src="assets/images/clientes/onyx.png" alt="Grupo Onyx"><img src="assets/images/clientes/agrosuper.png" alt="Agrosuper"><img src="assets/images/clientes/pit.png" alt="Pit"><img src="assets/images/clientes/proteccion.png" alt="Protección"><img src="assets/images/clientes/solar.png" alt="Solar Banco"><img src="assets/images/clientes/tecniseguros.png" alt="Tecniseguros">
+      <img src="assets/images/clientes/onyx.png" alt="Grupo Onyx" loading="lazy" decoding="async"><img src="assets/images/clientes/agrosuper.png" alt="Agrosuper" loading="lazy" decoding="async"><img src="assets/images/clientes/pit.png" alt="Pit" loading="lazy" decoding="async"><img src="assets/images/clientes/proteccion.png" alt="Protección" loading="lazy" decoding="async"><img src="assets/images/clientes/solar.png" alt="Solar Banco" loading="lazy" decoding="async"><img src="assets/images/clientes/tecniseguros.png" alt="Tecniseguros" loading="lazy" decoding="async">
+      <img src="assets/images/clientes/onyx.png" alt="Grupo Onyx" loading="lazy" decoding="async"><img src="assets/images/clientes/agrosuper.png" alt="Agrosuper" loading="lazy" decoding="async"><img src="assets/images/clientes/pit.png" alt="Pit" loading="lazy" decoding="async"><img src="assets/images/clientes/proteccion.png" alt="Protección" loading="lazy" decoding="async"><img src="assets/images/clientes/solar.png" alt="Solar Banco" loading="lazy" decoding="async"><img src="assets/images/clientes/tecniseguros.png" alt="Tecniseguros" loading="lazy" decoding="async">
     </div></div>
   </div>
 </section>
@@ -604,7 +604,7 @@ body{top:0 !important;}
     </div>
     <div class="rb-eco">
       <div class="rb-eco__center">
-        <div class="rb-eco__planet"><img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio"></div>
+        <div class="rb-eco__planet"><img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio" loading="lazy" decoding="async"></div>
         <h3>Saturn Studio</h3>
         <p>El motor de flujos y agentes que conecta todo: tus apps, tus datos, la IA y cada producto de la suite.</p>
       </div>
@@ -744,7 +744,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-footer__grid">
       <div class="rb-footer__brand">
-        <img src="assets/logos/logo-header-white.png" alt="Rocketbot">
+        <img src="assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
         <p class="rb-footer__copy">Plataforma de automatización de procesos y agentes inteligentes para recuperar tiempo y tomar mejores decisiones.</p>
         <div class="rb-footer__social">
           <a href="https://www.facebook.com/rocketbot.es" target="_blank" rel="noopener" aria-label="Facebook">
@@ -906,7 +906,7 @@ const PLOGO={'Xperience':'assets/logos/products/xperience.png','AI Studio':'asse
 function sBuild(w){
   let h='';
   w.nodes.forEach((n,i)=>{
-    var chip=PLOGO[n.t]?'<div class="chip logo"><img src="'+PLOGO[n.t]+'" alt="'+n.t+'"></div>':'<div class="chip '+n.k+'">'+SI[n.ic]+'</div>';
+    var chip=PLOGO[n.t]?'<div class="chip logo"><img src="'+PLOGO[n.t]+'" alt="'+n.t+'" loading="lazy" decoding="async"></div>':'<div class="chip '+n.k+'">'+SI[n.ic]+'</div>';
     h+='<div class="rb-wf-node" data-n="'+i+'">'+chip+'<div class="t">'+n.t+'</div><div class="s">'+n.s+'</div></div>';
     if(i<w.nodes.length-1) h+='<div class="rb-wf-edge" data-e="'+i+'"><div class="lab">'+w.edges[i]+'</div><div class="track"><div class="dot"></div></div></div>';
   });
@@ -950,7 +950,7 @@ const ECO=[
  {ic:'api',nm:'+38 Integraciones',d:'Conéctate con todo: SAP, Salesforce, Microsoft 365, Google, Oracle, ServiceNow, WhatsApp, y cualquier API o LLM.'}
 ];
 const en=document.getElementById('ecoNodes');
-function ecoIc(e){return PLOGO[e.nm]?'<div class="ic logo"><img src="'+PLOGO[e.nm]+'" alt="'+e.nm+'"></div>':'<div class="ic">'+SI[e.ic]+'</div>';}
+function ecoIc(e){return PLOGO[e.nm]?'<div class="ic logo"><img src="'+PLOGO[e.nm]+'" alt="'+e.nm+'" loading="lazy" decoding="async"></div>':'<div class="ic">'+SI[e.ic]+'</div>';}
 en.innerHTML=ECO.map((e,i)=>'<div class="rb-eco__chip'+(i===0?' act':'')+'" data-i="'+i+'">'+ecoIc(e)+'<div class="nm">'+e.nm+'</div></div>').join('');
 function ecoSel(i){
   document.querySelectorAll('#ecoNodes .rb-eco__chip').forEach((el,idx)=>el.classList.toggle('act',idx===i));

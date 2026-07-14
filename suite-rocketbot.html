@@ -607,12 +607,12 @@ body{top:0 !important;}
       <div class="rb-pipe__lbl">Control</div>
     </div>
     <div class="rb-pipe__rail" id="rb-rail">
-      <div class="rb-pstage" data-stage="0"><div class="rb-pstage__head"><img class="rb-pstage__logo" src="assets/logos/products/xperience.png" alt="Xperience"><span class="rb-pstage__num">Xperience</span></div><h4>Entrada</h4><p data-copy></p></div>
-      <div class="rb-pstage" data-stage="1"><div class="rb-pstage__head"><img class="rb-pstage__logo" src="assets/logos/products/saturn-studio.png" alt="Saturn Studio"><span class="rb-pstage__num">Saturn Studio</span></div><h4>Orquestaci&#243;n</h4><p data-copy></p></div>
-      <div class="rb-pstage" data-stage="2"><div class="rb-pstage__head"><img class="rb-pstage__logo" src="assets/logos/products/rpa-studio.png" alt="RPA Studio"><span class="rb-pstage__num">RPA Studio</span></div><h4>Ejecuci&#243;n</h4><p data-copy></p></div>
-      <div class="rb-pstage" data-stage="3"><div class="rb-pstage__head"><img class="rb-pstage__logo" src="assets/logos/products/ai-studio.png" alt="AI Studio"><span class="rb-pstage__num">AI Studio</span></div><h4>Inteligencia</h4><p data-copy></p></div>
-      <div class="rb-pstage" data-stage="4"><div class="rb-pstage__head"><img class="rb-pstage__logo" src="assets/logos/products/orchestrator.png" alt="Orquestador"><span class="rb-pstage__num">Orquestador</span></div><h4>Control</h4><p data-copy></p></div>
-      <div class="rb-pstage" data-stage="5"><div class="rb-pstage__head"><img class="rb-pstage__logo" src="assets/logos/products/nexus.png" alt="Nexus"><span class="rb-pstage__num">Nexus</span></div><h4>Visibilidad</h4><p data-copy></p></div>
+      <div class="rb-pstage" data-stage="0"><div class="rb-pstage__head"><img class="rb-pstage__logo" src="assets/logos/products/xperience.png" alt="Xperience" loading="lazy" decoding="async"><span class="rb-pstage__num">Xperience</span></div><h4>Entrada</h4><p data-copy></p></div>
+      <div class="rb-pstage" data-stage="1"><div class="rb-pstage__head"><img class="rb-pstage__logo" src="assets/logos/products/saturn-studio.png" alt="Saturn Studio" loading="lazy" decoding="async"><span class="rb-pstage__num">Saturn Studio</span></div><h4>Orquestaci&#243;n</h4><p data-copy></p></div>
+      <div class="rb-pstage" data-stage="2"><div class="rb-pstage__head"><img class="rb-pstage__logo" src="assets/logos/products/rpa-studio.png" alt="RPA Studio" loading="lazy" decoding="async"><span class="rb-pstage__num">RPA Studio</span></div><h4>Ejecuci&#243;n</h4><p data-copy></p></div>
+      <div class="rb-pstage" data-stage="3"><div class="rb-pstage__head"><img class="rb-pstage__logo" src="assets/logos/products/ai-studio.png" alt="AI Studio" loading="lazy" decoding="async"><span class="rb-pstage__num">AI Studio</span></div><h4>Inteligencia</h4><p data-copy></p></div>
+      <div class="rb-pstage" data-stage="4"><div class="rb-pstage__head"><img class="rb-pstage__logo" src="assets/logos/products/orchestrator.png" alt="Orquestador" loading="lazy" decoding="async"><span class="rb-pstage__num">Orquestador</span></div><h4>Control</h4><p data-copy></p></div>
+      <div class="rb-pstage" data-stage="5"><div class="rb-pstage__head"><img class="rb-pstage__logo" src="assets/logos/products/nexus.png" alt="Nexus" loading="lazy" decoding="async"><span class="rb-pstage__num">Nexus</span></div><h4>Visibilidad</h4><p data-copy></p></div>
     </div>
     <p class="rb-pipe__note"><b>El punto:</b> ning&#250;n producto trabaja solo. La informaci&#243;n entra una vez y fluye por toda la suite sin saltos manuales entre sistemas.</p>
   </div>
@@ -855,7 +855,7 @@ body{top:0 !important;}
   <div class="container">
     <div class="rb-footer__grid">
       <div class="rb-footer__brand">
-        <img src="assets/logos/logo-header-white.png" alt="Rocketbot">
+        <img src="assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
         <p class="rb-footer__copy">Plataforma de automatización de procesos y agentes inteligentes para recuperar tiempo y tomar mejores decisiones.</p>
         <div class="rb-footer__social">
           <a href="https://www.facebook.com/rocketbot.es" target="_blank" rel="noopener" aria-label="Facebook">
@@ -1071,7 +1071,7 @@ function googleTranslateElementInit(){
     el.className='rb-al2'+(L.brain?' brain':'');
     el.dataset.i=i;
     var inner='<div class="atag">'+L.tag+'</div><h3><span class="lic">'+AL_ICONS[L.icon]+'</span>'+L.name+'</h3><div class="lrole">'+L.role+'</div>';
-    if(L.prods){inner+='<div class="rb-al2-prods">'+ORDER.map(function(k){var p=PROD[k];return '<span class="rb-al2-prod"><img class="rb-al2-prod__logo" src="'+p.logo+'" alt="'+p.n+'"><span>'+p.n+'</span></span>';}).join('')+'</div>';}
+    if(L.prods){inner+='<div class="rb-al2-prods">'+ORDER.map(function(k){var p=PROD[k];return '<span class="rb-al2-prod"><img class="rb-al2-prod__logo" src="'+p.logo+'" alt="'+p.n+'" loading="lazy" decoding="async"><span>'+p.n+'</span></span>';}).join('')+'</div>';}
     el.innerHTML=inner;
     el.addEventListener('mouseenter',function(){aSet(i);aPause();});
     el.addEventListener('click',function(){aSet(i);});
