@@ -1026,8 +1026,6 @@ body{top:0 !important;}
 .rb-rcmp .fill.us{background:var(--rb-red);}
 @keyframes rb-gartner-glow{0%,100%{box-shadow:0 0 0 rgba(188,0,23,0);}50%{box-shadow:0 0 14px 2px rgba(188,0,23,.55);}}
 .rb-rcmp.is-visible .fill.us{animation:rb-gartner-glow 1.3s ease-in-out 1.3s 2;}
-.rb-rcmp .nm.us{display:inline-flex;align-items:center;gap:5px;}
-.rb-rcmp .nm.us svg{width:14px;height:14px;color:#BA7517;}
 .rb-rcmp .sc{font-weight:800;font-size:14px;text-align:right;color:var(--foreground);}
 .rb-rcmp .sc.us{color:var(--rb-red);}
 @media(prefers-reduced-motion:reduce){.rb-rcmp .fill{transition:none;animation:none;}}
@@ -2049,7 +2047,7 @@ body{top:0 !important;}
       </div>
       <div class="rb-rcmp rb-reveal">
         <h3>Calificaci&oacute;n en Gartner Peer Insights</h3>
-        <div class="row"><span class="nm us">Rocketbot<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 3h12v2h3v2a4 4 0 0 1-4 4c-.3 1.9-1.7 3.4-3.5 3.9V17H16v2H8v-2h2.5v-2.1C8.7 14.4 7.3 12.9 7 11a4 4 0 0 1-4-4V5h3V3zm-2 4a2 2 0 0 0 2 2V5H4v2zm16 0V5h-2v4a2 2 0 0 0 2-2z"/></svg></span><span class="bar"><span class="fill us" data-w="94"></span></span><span class="sc us">4.7</span></div>
+        <div class="row"><span class="nm us">Rocketbot</span><span class="bar"><span class="fill us" data-w="94"></span></span><span class="sc us">4.7</span></div>
         <div class="row"><span class="nm">Automation Anywhere</span><span class="bar"><span class="fill" data-w="92"></span></span><span class="sc">4.6</span></div>
         <div class="row"><span class="nm">UiPath</span><span class="bar"><span class="fill" data-w="90"></span></span><span class="sc">4.5</span></div>
         <div class="row"><span class="nm">Blue Prism</span><span class="bar"><span class="fill" data-w="88"></span></span><span class="sc">4.4</span></div>
@@ -2195,19 +2193,24 @@ themeBtn.addEventListener('click', function () {
 (function () {
   var el = document.querySelector('.rb-rcmp');
   if (!el) return;
+  var done = false;
   function fillBars() {
+    if (done) return;
+    done = true;
     el.querySelectorAll('.fill').forEach(function (f) {
       f.style.width = (f.dataset.w || 0) + '%';
     });
     el.classList.add('is-visible');
   }
-  if (!('IntersectionObserver' in window)) { fillBars(); return; }
-  var io2 = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) { fillBars(); io2.unobserve(entry.target); }
-    });
-  }, { threshold: 0.3 });
-  io2.observe(el);
+  function checkVisible() {
+    if (done) return;
+    var r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) fillBars();
+  }
+  checkVisible();
+  window.addEventListener('scroll', checkVisible, { passive: true });
+  window.addEventListener('resize', checkVisible);
+  setTimeout(fillBars, 4000);
 })();
 
 // ─── Industry tabs ───
