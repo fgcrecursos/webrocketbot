@@ -245,6 +245,24 @@ body{top:0 !important;}
 .rb-suite-trust__i span{font-size:12px;color:rgba(255,255,255,.55);}
 .rb-suite-trust__sep{width:1px;height:34px;background:rgba(255,255,255,.14);}
 @media(max-width:640px){.rb-suite-trust__sep{display:none;}}
+/* suite hero orbital visual */
+.rb-suite-hero__grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;}
+.rb-suite-hero__grid .rb-suite-hero__inner{max-width:none;}
+.rb-suite-hero__visual{display:flex;align-items:center;justify-content:center;}
+.rb-suite-orbit{position:relative;width:100%;max-width:420px;aspect-ratio:1/1;}
+.rb-suite-orbit__glow{position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 50% 42%,rgba(188,0,23,.4),transparent 62%);filter:blur(28px);}
+.rb-suite-orbit__ring{position:absolute;inset:9%;border-radius:50%;border:1.5px dashed rgba(255,255,255,.28);animation:rb-suite-ringspin 60s linear infinite;}
+@keyframes rb-suite-ringspin{to{transform:rotate(360deg);}}
+.rb-suite-orbit__core{position:absolute;left:50%;top:50%;width:50%;height:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 50% 30%,#E11026 0%,#BC0017 34%,#5c0510 66%,#10161a 100%);box-shadow:inset -10px -14px 40px rgba(0,0,0,.55),inset 8px 8px 26px rgba(255,255,255,.08),0 0 60px rgba(188,0,23,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10%;text-align:center;}
+.rb-suite-orbit__core .lbl{font-size:clamp(11px,1.5vw,15px);font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.02em;}
+.rb-suite-orbit__core img{width:82%;max-width:170px;height:auto;display:block;}
+.rb-suite-orbit__item{position:absolute;left:50%;top:50%;width:clamp(48px,14%,62px);height:clamp(48px,14%,62px);margin:0;animation:rb-suite-orbit 44s linear infinite;animation-delay:calc(var(--i) * -7.333s);}
+@keyframes rb-suite-orbit{from{transform:translate(-50%,-50%) rotate(0deg) translateX(168px) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg) translateX(168px) rotate(-360deg);}}
+.rb-suite-orbit__item img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(188,0,23,.45));animation:rb-suite-float 5s ease-in-out infinite;animation-delay:calc(var(--i) * -.8s);}
+@keyframes rb-suite-float{0%,100%{transform:scale(1);}50%{transform:scale(1.07);}}
+@media(max-width:1040px){@keyframes rb-suite-orbit{from{transform:translate(-50%,-50%) rotate(0deg) translateX(140px) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg) translateX(140px) rotate(-360deg);}}}
+@media(max-width:900px){.rb-suite-hero__grid{grid-template-columns:1fr;gap:20px;}.rb-suite-hero__visual{order:-1;width:100%;}.rb-suite-orbit{max-width:300px;margin:0 auto;}@keyframes rb-suite-orbit{from{transform:translate(-50%,-50%) rotate(0deg) translateX(118px) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg) translateX(118px) rotate(-360deg);}}}
+@media(prefers-reduced-motion:reduce){.rb-suite-orbit__ring,.rb-suite-orbit__item,.rb-suite-orbit__item img{animation:none;}}
 /* compare */
 .rb-cmp{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
 .rb-cmp__card{border-radius:var(--r-lg);padding:32px;border:1px solid var(--border);background:var(--card);}
@@ -532,7 +550,7 @@ body{top:0 !important;}
 
 <!-- HERO -->
 <section class="rb-suite-hero">
-  <div class="container">
+  <div class="container rb-suite-hero__grid">
     <div class="rb-suite-hero__inner">
       <span class="rb-eyebrow"><span class="dot"></span>La suite completa de automatización</span>
       <h1>Seis productos.<br>Un <span class="rb-suite-hero__rot" id="heroRot">objetivo</span></h1>
@@ -549,6 +567,19 @@ body{top:0 !important;}
         <div class="rb-suite-trust__i"><b>4.7 &#9733;</b><span>Rese&#241;as en G2</span></div>
         <div class="rb-suite-trust__sep"></div>
         <div class="rb-suite-trust__i"><b>700+</b><span>Clientes en 21 pa&#237;ses</span></div>
+      </div>
+    </div>
+    <div class="rb-suite-hero__visual" aria-hidden="true">
+      <div class="rb-suite-orbit">
+        <div class="rb-suite-orbit__glow"></div>
+        <div class="rb-suite-orbit__ring"></div>
+        <div class="rb-suite-orbit__item" style="--i:0"><img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio"></div>
+        <div class="rb-suite-orbit__item" style="--i:1"><img src="assets/logos/products/ai-studio.png" alt="AI Studio"></div>
+        <div class="rb-suite-orbit__item" style="--i:2"><img src="assets/logos/products/orchestrator.png" alt="Orquestador"></div>
+        <div class="rb-suite-orbit__item" style="--i:3"><img src="assets/logos/products/xperience.png" alt="Xperience"></div>
+        <div class="rb-suite-orbit__item" style="--i:4"><img src="assets/logos/products/nexus.png" alt="Nexus"></div>
+        <div class="rb-suite-orbit__item" style="--i:5"><img src="assets/logos/products/rpa-studio.png" alt="RPA Studio"></div>
+        <div class="rb-suite-orbit__core"><span class="lbl">Suite</span><img src="assets/logos/logo-header-white.png" alt="Rocketbot"></div>
       </div>
     </div>
   </div>
