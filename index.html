@@ -1018,7 +1018,7 @@ body{top:0 !important;}
 .rb-rcmp .nm{font-weight:700;font-size:14px;color:var(--foreground);}
 .rb-rcmp .nm.us{color:var(--rb-red);}
 .rb-rcmp .bar{height:11px;background:var(--border);border-radius:6px;overflow:hidden;}
-.rb-rcmp .fill{height:100%;border-radius:6px;background:#ccc;width:0%;transition:width 1.3s cubic-bezier(.16,.84,.44,1);}
+.rb-rcmp .fill{display:inline-block;height:100%;width:100%;border-radius:6px;background:#ccc;transform-origin:left center;transform:scaleX(0);transition:transform 1.3s cubic-bezier(.16,.84,.44,1);}
 .rb-rcmp .row:nth-child(3) .fill{transition-delay:.05s;}
 .rb-rcmp .row:nth-child(4) .fill{transition-delay:.15s;}
 .rb-rcmp .row:nth-child(5) .fill{transition-delay:.25s;}
@@ -2198,7 +2198,7 @@ themeBtn.addEventListener('click', function () {
     if (done) return;
     done = true;
     el.querySelectorAll('.fill').forEach(function (f) {
-      f.style.width = (f.dataset.w || 0) + '%';
+      f.style.transform = 'scaleX(' + ((f.dataset.w || 0) / 100) + ')';
     });
     el.classList.add('is-visible');
   }
