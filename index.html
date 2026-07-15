@@ -358,13 +358,12 @@ p { margin: 0; }
   width: max-content;
 }
 .rb-logos__track img {
-  height: 36px; width: auto; opacity: 0.45;
-  filter: grayscale(1);
+  max-height: 36px; max-width: 130px; width: auto; height: auto; object-fit: contain; opacity: 0.45;
   transition: opacity .3s, filter .3s; flex-shrink: 0;
 }
-.rb-logos__track img:hover { opacity: 1; filter: none; }
-[data-theme="dark"] .rb-logos__track img { filter: grayscale(1) invert(1); opacity: 0.35; }
-[data-theme="dark"] .rb-logos__track img:hover { filter: invert(1); opacity: 0.85; }
+.rb-logos__track img:hover { opacity: 1; }
+[data-theme="dark"] .rb-logos__track img { filter: invert(1); opacity: 0.4; }
+[data-theme="dark"] .rb-logos__track img:hover { opacity: 0.9; }
 @keyframes rb-marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
 /* ═══════════════════════════════════════════
@@ -1319,25 +1318,31 @@ body{top:0 !important;}
 <section class="rb-logos">
   <div class="rb-logos__label">Empresas líderes confían en Rocketbot</div>
   <div class="rb-logos__track">
-    <img src="assets/clients/LOGO AGROSUPER NEGRO.png" alt="Agrosuper" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO ENTEL NEGRO.png"     alt="Entel" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO LATAM NEGRO.png"     alt="Latam" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO MOVISTAR NEGRO.png"  alt="Movistar" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO OXXO NEGRO.png"      alt="Oxxo" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO SAMSUNG NEGRO.png"   alt="Samsung" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO TOYOTA NEGRO.png"    alt="Toyota" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO VOLVO NEGRO.png"     alt="Volvo" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO ZURICH NEGRO.png"    alt="Zurich" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
     <!-- duplicate set for seamless marquee loop -->
-    <img src="assets/clients/LOGO AGROSUPER NEGRO.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO ENTEL NEGRO.png"     alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO LATAM NEGRO.png"     alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO MOVISTAR NEGRO.png"  alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO OXXO NEGRO.png"      alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO SAMSUNG NEGRO.png"   alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO TOYOTA NEGRO.png"    alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO VOLVO NEGRO.png"     alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/LOGO ZURICH NEGRO.png"    alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/lafise.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/alpina.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/sharp.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/movistar.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/sabadell.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/zurich.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/produbanco.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/entel.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/adecco.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/verisure.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/pronaca.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="assets/clients/marquee/agrosuper.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </div>
 </section>
 

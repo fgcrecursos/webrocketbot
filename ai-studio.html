@@ -144,10 +144,10 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-marquee__track{display:flex;align-items:center;gap:56px;width:max-content;animation:rb-marq 26s linear infinite;}
 @keyframes rb-marq{to{transform:translateX(-50%);}}
 .rb-marquee__track{gap:72px;}
-.rb-marquee img{height:72px;width:auto;object-fit:contain;opacity:.62;filter:grayscale(1);transition:opacity .2s,filter .2s;}
-.rb-marquee img:hover{opacity:1;filter:grayscale(0);}
-[data-theme="dark"] .rb-marquee img{opacity:.78;filter:grayscale(1) brightness(2);}
-[data-theme="dark"] .rb-marquee img:hover{opacity:1;filter:brightness(2);}
+.rb-marquee img{max-height:72px;max-width:190px;width:auto;height:auto;object-fit:contain;opacity:.55;transition:opacity .2s;}
+.rb-marquee img:hover{opacity:1;}
+[data-theme="dark"] .rb-marquee img{filter:invert(1);opacity:.5;}
+[data-theme="dark"] .rb-marquee img:hover{opacity:.95;}
 @media(prefers-reduced-motion:reduce){.rb-marquee__track{animation:none;}}
 
 .rb-section{padding:100px 0;position:relative;}
@@ -553,8 +553,8 @@ body{top:0 !important;}
   <div class="container">
     <p class="rb-clients__label">Empresas que confían en Rocketbot</p>
     <div class="rb-marquee"><div class="rb-marquee__track">
-      <img src="assets/images/clientes/onyx.png" alt="Grupo Onyx" loading="lazy" decoding="async"><img src="assets/images/clientes/agrosuper.png" alt="Agrosuper" loading="lazy" decoding="async"><img src="assets/images/clientes/pit.png" alt="Pit" loading="lazy" decoding="async"><img src="assets/images/clientes/proteccion.png" alt="Protección" loading="lazy" decoding="async"><img src="assets/images/clientes/solar.png" alt="Solar Banco" loading="lazy" decoding="async"><img src="assets/images/clientes/tecniseguros.png" alt="Tecniseguros" loading="lazy" decoding="async">
-      <img src="assets/images/clientes/onyx.png" alt="Grupo Onyx" loading="lazy" decoding="async"><img src="assets/images/clientes/agrosuper.png" alt="Agrosuper" loading="lazy" decoding="async"><img src="assets/images/clientes/pit.png" alt="Pit" loading="lazy" decoding="async"><img src="assets/images/clientes/proteccion.png" alt="Protección" loading="lazy" decoding="async"><img src="assets/images/clientes/solar.png" alt="Solar Banco" loading="lazy" decoding="async"><img src="assets/images/clientes/tecniseguros.png" alt="Tecniseguros" loading="lazy" decoding="async">
+      <img src="assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
+      <img src="assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
     </div></div>
   </div>
 </section>
