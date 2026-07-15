@@ -66,7 +66,7 @@ ul{margin:0;padding:0;list-style:none;}
 [data-theme="dark"] .rb-iconbtn{color:rgba(255,255,255,.6);}
 .rb-iconbtn:hover{color:var(--rb-red);transform:scale(1.05);}
 .rb-nav__item{position:relative;}
-.rb-nav__item--dropdown::before{content:'';position:absolute;top:100%;left:-32px;right:-32px;height:18px;z-index:101;}
+.rb-nav__item--dropdown::before{content:'';position:absolute;top:100%;left:-60px;right:-60px;height:20px;z-index:101;}
 .rb-nav__item--dropdown > button{padding:8px 4px;}
 .rb-nav__item--dropdown:hover .rb-nav__dropdown{opacity:1;pointer-events:auto;transform:translate(-50%,0);}
 .rb-nav__dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%, -4px);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:8px;min-width:200px;box-shadow:0 20px 50px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:100;}
@@ -74,6 +74,7 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-nav__dropdown a{display:block;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;color:#333;transition:background .15s,color .15s;}
 [data-theme="dark"] .rb-nav__dropdown a{color:rgba(255,255,255,.75);}
 .rb-nav__dropdown a:hover{background:rgba(188,0,23,.07);color:var(--rb-red);}
+.rb-nav__dropdown a.is-current{background:rgba(188,0,23,.1);color:var(--rb-red);font-weight:700;}
 .rb-nav__suite-li{display:flex;align-items:center;flex:0 0 auto;}
 .rb-nav__suite-hdr{display:inline-flex !important;align-items:center;gap:6px;padding:9px 18px !important;border-radius:9999px;white-space:nowrap;line-height:1;flex:0 0 auto;background:linear-gradient(110deg,#FF2942,#BC0017) !important;color:#fff !important;font-weight:800 !important;font-size:13px !important;box-shadow:0 6px 18px rgba(188,0,23,.45);transition:transform .2s,box-shadow .2s,filter .2s;}
 .rb-nav__suite-hdr:hover{color:#fff !important;transform:translateY(-1px);box-shadow:0 10px 26px rgba(188,0,23,.6);filter:brightness(1.06);}
@@ -219,13 +220,6 @@ ul{margin:0;padding:0;list-style:none;}
 @media(max-width:640px){.rb-proof{grid-template-columns:1fr;}}
 
 /* NO-CODE */
-.rb-nc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:900px;margin:8px auto 0;}
-.rb-nc-item{text-align:center;}
-.rb-nc-item .ic{width:54px;height:54px;border-radius:15px;background:var(--card);border:1px solid var(--border);color:var(--rb-red);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;box-shadow:0 8px 22px -12px rgba(0,0,0,.3);}
-.rb-nc-item .ic svg{width:27px;height:27px;}
-.rb-nc-item h3{font-size:17px;font-weight:700;margin:0 0 6px;color:var(--foreground);}
-.rb-nc-item p{color:var(--muted);font-size:14.5px;line-height:1.55;margin:0;}
-@media(max-width:760px){.rb-nc-grid{grid-template-columns:1fr;gap:24px;}}
 
 /* generic card grids reused for control/modules */
 .rb-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
@@ -287,7 +281,8 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-pcx{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
 .rb-pcx:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(0,0,0,.12);}
 .rb-pcx .top{display:flex;align-items:center;gap:13px;margin-bottom:14px;}
-.rb-pcx .ic{width:46px;height:46px;border-radius:12px;background:rgba(188,0,23,.1);color:var(--rb-red);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rb-pcx .ic{width:46px;height:46px;border-radius:12px;background:rgba(188,0,23,.1);color:var(--rb-red);display:flex;align-items:center;justify-content:center;flex:0 0 auto;padding:9px;}
+.rb-pcx .ic img{width:100%;height:100%;object-fit:contain;display:block;}
 .rb-pcx .ic svg{width:24px;height:24px;}
 .rb-pcx h3{font-size:19px;font-weight:700;margin:0;color:var(--foreground);}
 .rb-pcx .auto{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--rb-green);background:rgba(29,158,117,.12);padding:4px 10px;border-radius:999px;margin-left:auto;}
@@ -601,22 +596,10 @@ body{top:0 !important;}
       <h2 class="rb-section__title">No necesitas saber <span>programar.</span></h2>
       <p class="rb-section__sub">AI Studio se usa desde una interfaz visual e intuitiva. Si sabes qué información necesitas, ya sabes usarlo: cualquier persona de tu equipo, de negocio o de&nbsp;TI.</p>
     </div>
-    <div class="rb-nc-grid">
-      <div class="rb-nc-item">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l6.5 17 2.2-7.3L19 10.5z"/><path d="M13 13l6 6"/></svg></div>
-        <h3>Interfaz 100% visual</h3>
-        <p>Selecciona y configura desde la pantalla. Sin editores de código ni configuraciones técnicas.</p>
-      </div>
-      <div class="rb-nc-item">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/><path d="M19 5 5 19"/></svg></div>
-        <h3>Cero programación</h3>
-        <p>No escribes ni una sola línea de código para empezar a extraer información.</p>
-      </div>
-      <div class="rb-nc-item">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6M21 20a6 6 0 0 0-4-5.7"/></svg></div>
-        <h3>Para cualquier persona</h3>
-        <p>Equipos de negocio y técnicos lo usan por igual, sin depender de TI para arrancar.</p>
-      </div>
+    <div class="rb-compare">
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l6.5 17 2.2-7.3L19 10.5z"/><path d="M13 13l6 6"/></svg></div><div class="rb-compare__title">Interfaz 100% visual</div><div class="rb-compare__desc">Selecciona y configura desde la pantalla. Sin editores de código ni configuraciones técnicas.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/><path d="M19 5 5 19"/></svg></div><div class="rb-compare__title">Cero programación</div><div class="rb-compare__desc">No escribes ni una sola línea de código para empezar a extraer información.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6M21 20a6 6 0 0 0-4-5.7"/></svg></div><div class="rb-compare__title">Para cualquier persona</div><div class="rb-compare__desc">Equipos de negocio y técnicos lo usan por igual, sin depender de TI para arrancar.</div></div>
     </div>
   </div>
 </section>
@@ -710,7 +693,7 @@ body{top:0 !important;}
       </div>
       <div class="rb-pcx">
         <div class="top">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5L19 8.5l-5.2 1.5L12 15l-1.8-5L5 8.5 10.2 7z"/><path d="M19 14l.9 2.5L22 17.5l-2.1.6L19 21l-.9-2.4L16 17.5l2.1-1z"/></svg></div>
+          <div class="ic"><img src="assets/logos/products/ai-studio.png" alt="AI Studio" loading="lazy" decoding="async"></div>
           <h3>Generados por IA</h3>
           <span class="auto">Automático</span>
         </div>
@@ -1150,6 +1133,16 @@ FAQS.forEach(function(pair){
     "url": "https://rocketbot.com"
   }
 }
+</script>
+<script>
+// Highlight current page link inside nav dropdowns
+(function(){
+  var here = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.rb-nav__dropdown a[href]').forEach(function(a){
+    var href = a.getAttribute('href').split('/').pop();
+    if (href === here) a.classList.add('is-current');
+  });
+})();
 </script>
 </body>
 </html>

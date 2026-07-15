@@ -66,7 +66,7 @@ ul{margin:0;padding:0;list-style:none;}
 [data-theme="dark"] .rb-iconbtn{color:rgba(255,255,255,.6);}
 .rb-iconbtn:hover{color:var(--rb-red);transform:scale(1.05);}
 .rb-nav__item{position:relative;}
-.rb-nav__item--dropdown::before{content:'';position:absolute;top:100%;left:-32px;right:-32px;height:18px;z-index:101;}
+.rb-nav__item--dropdown::before{content:'';position:absolute;top:100%;left:-60px;right:-60px;height:20px;z-index:101;}
 .rb-nav__item--dropdown > button{padding:8px 4px;}
 .rb-nav__item--dropdown:hover .rb-nav__dropdown{opacity:1;pointer-events:auto;transform:translate(-50%,0);}
 .rb-nav__dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%, -4px);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:8px;min-width:200px;box-shadow:0 20px 50px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:100;}
@@ -74,6 +74,7 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-nav__dropdown a{display:block;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;color:#333;transition:background .15s,color .15s;}
 [data-theme="dark"] .rb-nav__dropdown a{color:rgba(255,255,255,.75);}
 .rb-nav__dropdown a:hover{background:rgba(188,0,23,.07);color:var(--rb-red);}
+.rb-nav__dropdown a.is-current{background:rgba(188,0,23,.1);color:var(--rb-red);font-weight:700;}
 .rb-nav__suite-li{display:flex;align-items:center;flex:0 0 auto;}
 .rb-nav__suite-hdr{display:inline-flex !important;align-items:center;gap:6px;padding:9px 18px !important;border-radius:9999px;white-space:nowrap;line-height:1;flex:0 0 auto;background:linear-gradient(110deg,#FF2942,#BC0017) !important;color:#fff !important;font-weight:800 !important;font-size:13px !important;box-shadow:0 6px 18px rgba(188,0,23,.45);transition:transform .2s,box-shadow .2s,filter .2s;}
 .rb-nav__suite-hdr:hover{color:#fff !important;transform:translateY(-1px);box-shadow:0 10px 26px rgba(188,0,23,.6);filter:brightness(1.06);}
@@ -98,7 +99,7 @@ ul{margin:0;padding:0;list-style:none;}
 /* HERO */
 .rb-hero{position:relative;min-height:68vh;padding:140px 0 64px;overflow:hidden;display:flex;align-items:center;background:linear-gradient(160deg,#02061B 0%,#0A0A0F 60%,#1B1F23 100%);text-align:center;}
 .rb-hero__particles{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 75% 40%,rgba(188,0,23,.22) 0%,transparent 45%),radial-gradient(circle at 20% 60%,rgba(43,127,255,.12) 0%,transparent 40%);}
-.rb-hero__content{position:relative;z-index:1;max-width:800px;margin:0 auto;}
+.rb-hero__content{position:relative;z-index:1;max-width:840px;margin:0 auto;}
 .rb-hero__title{font-size:clamp(30px,4.6vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.12;margin:24px 0 18px;color:#fff;}
 .rb-hero__rot{display:inline-block;white-space:nowrap;transition:opacity .3s ease,transform .3s ease;color:var(--rb-red);}
 .rb-hero__rot.out{opacity:0;transform:translateY(-8px);}
@@ -225,7 +226,9 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-proof-strip p{color:var(--muted);font-size:16px;margin:0 0 20px;line-height:1.6;}
 .rb-pcases{display:flex;gap:22px;flex-wrap:wrap;}
 .rb-pcase .m{font-weight:800;font-size:22px;color:var(--rb-red);}
-.rb-pcase .w{font-size:13px;color:var(--muted);}
+.rb-pcase .w{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px;}
+.rb-pcase .w img{height:15px;width:auto;max-width:72px;object-fit:contain;object-position:left center;}
+[data-theme="dark"] .rb-pcase .w img{filter:invert(1);}
 @media(max-width:900px){.rb-proof-strip{grid-template-columns:1fr;}}
 
 /* FAQ */
@@ -406,7 +409,7 @@ body{top:0 !important;}
   <div class="rb-hero__particles"></div>
   <div class="container">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title">Toda la inteligencia de Claude, sin construir <span class="rb-hero__rot" id="heroRot">el andamiaje</span></h1>
+      <h1 class="rb-hero__title">Toda la inteligencia de Claude,<br>sin construir <span class="rb-hero__rot" id="heroRot">el andamiaje</span></h1>
       <p class="rb-hero__sub">Los modelos como Claude abarataron escribir código, y eso es genial. Pero en automatización empresarial, lo que más cuesta no es escribir: es operar, gobernar y mantener. La plataforma se encarga de esa parte, para que te quedes con la inteligencia y te saltes el trabajo pesado.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="#decision">¿Construir o comprar? Decídelo</a>
@@ -559,9 +562,9 @@ body{top:0 !important;}
         <h2>Casi todas mueren en la brecha.</h2>
         <p>Entre "un script que anda en el demo" y "un sistema gobernado en producción" se cae la mayoría de las iniciativas. Lo que llega a producción se apoya en plataforma, no en heroísmo individual.</p>
         <div class="rb-pcases">
-          <div class="rb-pcase"><div class="m">+USD 500K</div><div class="w">Protección · ahorrados</div></div>
-          <div class="rb-pcase"><div class="m">+USD 1.5M</div><div class="w">Agrosuper · ahorrados</div></div>
-          <div class="rb-pcase"><div class="m">+USD 500K</div><div class="w">Consorcio · ahorrados</div></div>
+          <div class="rb-pcase"><div class="m">+USD 500K</div><div class="w"><img src="assets/logos/clients/proteccion.svg" alt="Protección" loading="lazy" decoding="async"> · ahorrados</div></div>
+          <div class="rb-pcase"><div class="m">+USD 1.5M</div><div class="w"><img src="assets/logos/clients/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async"> · ahorrados</div></div>
+          <div class="rb-pcase"><div class="m">+USD 500K</div><div class="w"><img src="assets/logos/clients/consorcio.svg" alt="Consorcio" loading="lazy" decoding="async"> · ahorrados</div></div>
         </div>
         <p style="margin-top:18px"><a href="cfo.html" style="color:var(--rb-red);font-weight:700">Ver el caso de negocio para CFOs →</a></p>
       </div>
@@ -802,6 +805,16 @@ FAQS.forEach(function(pair){
   "description": "Comparación honesta entre construir automatización con Claude/Python y adoptar la Suite Rocketbot, con Claude gobernado adentro.",
   "provider": { "@type": "Organization", "name": "Rocketbot", "url": "https://rocketbot.com" }
 }
+</script>
+<script>
+// Highlight current page link inside nav dropdowns
+(function(){
+  var here = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.rb-nav__dropdown a[href]').forEach(function(a){
+    var href = a.getAttribute('href').split('/').pop();
+    if (href === here) a.classList.add('is-current');
+  });
+})();
 </script>
 </body>
 </html>
