@@ -829,7 +829,7 @@ p { margin: 0; }
 .rb-testimonials { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:24px; }
 .rb-testi {
   background:var(--card); border:1px solid var(--border);
-  border-radius:24px; padding:32px 28px;
+  border-radius:16px; padding:24px;
   display:flex; flex-direction:column;
   transition:border-color .3s, transform .3s, box-shadow .3s;
 }
@@ -837,33 +837,24 @@ p { margin: 0; }
 [data-theme="dark"] .rb-testi { background:rgba(255,255,255,.03); border-color:rgba(255,255,255,.08); }
 [data-theme="dark"] .rb-testi:hover { box-shadow:0 16px 40px rgba(0,0,0,.35); }
 
-.rb-testi__head { display:flex; align-items:center; gap:14px; margin-bottom:22px; }
-.rb-testi__logo { width:76px; height:76px; border-radius:14px; background:var(--rb-secondary); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; padding:10px; flex-shrink:0; }
+.rb-testi__head { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px; }
+.rb-testi__logo { height:64px; width:auto; max-width:170px; border-radius:10px; background:var(--rb-secondary); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; padding:10px 16px; flex:0 0 auto; }
 .rb-testi__logo img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
-.rb-testi__company { font-size:18px; font-weight:800; color:var(--foreground); letter-spacing:-.01em; line-height:1.2; margin-bottom:3px; }
-.rb-testi__sector { font-size:12px; color:#888; font-weight:500; }
-[data-theme="dark"] .rb-testi__sector { color:rgba(255,255,255,.4); }
+.rb-testi__sector { font-size:11px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.05em; text-align:right; }
 
-.rb-testi__desc { font-size:13.5px; color:#555; line-height:1.6; margin-bottom:22px; }
-[data-theme="dark"] .rb-testi__desc { color:rgba(255,255,255,.55); }
+.rb-testi__desc { font-size:13.5px; color:var(--muted); margin:0 0 16px; line-height:1.55; }
 
-.rb-testi__metrics { display:flex; flex-direction:column; gap:10px; margin-bottom:22px; }
-.rb-testi__metric { display:grid; grid-template-columns:auto 1fr; align-items:center; gap:14px; background:rgba(188,0,23,.05); border:1px solid rgba(188,0,23,.12); border-radius:12px; padding:12px 16px; transition:transform .3s, background .3s; }
-[data-theme="dark"] .rb-testi__metric { background:rgba(188,0,23,.08); border-color:rgba(188,0,23,.18); }
-.rb-testi:hover .rb-testi__metric { transform:translateX(2px); }
-.rb-testi__val { font-size:clamp(22px,2.6vw,30px); font-weight:900; color:var(--rb-red); letter-spacing:-.03em; line-height:1; }
-.rb-testi__mlabel { font-size:12px; color:#555; line-height:1.45; }
-[data-theme="dark"] .rb-testi__mlabel { color:rgba(255,255,255,.55); }
+.rb-testi__metrics { display:grid; grid-template-columns:1fr 1fr; gap:14px; border-top:1px solid var(--border); padding-top:16px; margin-top:auto; }
+.rb-testi__metric { }
+.rb-testi__val { font-weight:800; font-size:23px; color:var(--rb-red); line-height:1; }
+.rb-testi__mlabel { font-size:12px; color:var(--muted); margin-top:5px; line-height:1.35; }
 
-.rb-testi__quote { margin-top:auto; padding:18px 20px; background:rgba(188,0,23,.04); border-left:3px solid var(--rb-red); border-radius:0 10px 10px 0; }
-[data-theme="dark"] .rb-testi__quote { background:rgba(188,0,23,.07); }
-.rb-testi__quote p { font-size:12.5px; font-style:italic; color:#555; line-height:1.55; margin:0 0 8px; }
-[data-theme="dark"] .rb-testi__quote p { color:rgba(255,255,255,.6); }
-.rb-testi__author { font-size:11px; font-weight:700; color:var(--foreground); line-height:1.4; }
-.rb-testi__author span { font-weight:500; color:#888; display:block; margin-top:2px; }
+.rb-testi__quote { margin-top:16px; border-left:3px solid var(--border); padding-left:12px; }
+.rb-testi__quote p { font-size:13px; font-style:italic; color:var(--foreground); line-height:1.5; margin:0 0 8px; }
+.rb-testi__author { font-size:11.5px; font-weight:700; color:var(--muted); line-height:1.4; }
+.rb-testi__author span { font-weight:500; color:var(--muted); display:block; margin-top:2px; }
 .rb-testi__video-link { display:inline-flex; align-items:center; gap:7px; margin-top:16px; font-size:12.5px; font-weight:600; color:var(--rb-red); text-decoration:none; opacity:.85; transition:opacity .2s; }
 .rb-testi__video-link:hover { opacity:1; }
-[data-theme="dark"] .rb-testi__author span { color:rgba(255,255,255,.4); }
 
 /* Bottom CTA banner */
 .rb-summit-cta {
@@ -1880,7 +1871,7 @@ body{top:0 !important;}
           <div class="rb-testi__logo"><img src="assets/logos/clients/proteccion-v2.png" alt="Protección" loading="lazy" decoding="async"></div>
           <div class="rb-testi__sector">Servicios Financieros · Grupo SURA</div>
         </div>
-        <p class="rb-testi__desc">La migración de pólizas de una nueva unidad de negocio debía completarse en tiempo récord. Un proceso que manualmente habría tomado semanas se resolvió en días gracias a la automatización de procesos.</p>
+        <p class="rb-testi__desc">La migración de pólizas de una nueva unidad de negocio, que manualmente habría tomado semanas, se resolvió en 4 días gracias a la automatización de procesos.</p>
         <div class="rb-testi__metrics">
           <div class="rb-testi__metric">
             <div class="rb-testi__val">+USD 500K</div>
@@ -1889,10 +1880,6 @@ body{top:0 !important;}
           <div class="rb-testi__metric">
             <div class="rb-testi__val">80</div>
             <div class="rb-testi__mlabel">robots en producción</div>
-          </div>
-          <div class="rb-testi__metric">
-            <div class="rb-testi__val">4 días</div>
-            <div class="rb-testi__mlabel">para completar la operación</div>
           </div>
         </div>
         <div class="rb-testi__quote">
@@ -1943,10 +1930,6 @@ body{top:0 !important;}
           <div class="rb-testi__metric">
             <div class="rb-testi__val">+60</div>
             <div class="rb-testi__mlabel">automatizaciones en producción</div>
-          </div>
-          <div class="rb-testi__metric">
-            <div class="rb-testi__val">100%</div>
-            <div class="rb-testi__mlabel">de uso de licencias</div>
           </div>
         </div>
         <div class="rb-testi__quote">
