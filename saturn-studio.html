@@ -459,13 +459,19 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-dlmodal__oshead{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:800;color:var(--foreground);padding:14px 0;text-transform:uppercase;letter-spacing:.03em;cursor:pointer;list-style:none;}
 .rb-dlmodal__oshead::-webkit-details-marker{display:none;}
 .rb-dlmodal__oshead svg:not(.rb-dlmodal__oschev){width:17px;height:17px;color:var(--rb-red);flex:0 0 auto;}
-.rb-dlmodal__oschev{margin-left:auto;width:16px;height:16px;color:var(--muted);flex:0 0 auto;transition:transform .25s ease;}
+.rb-dlmodal__oschev{margin-left:auto;width:16px;height:16px;color:var(--muted);flex:0 0 auto;transition:transform .35s cubic-bezier(.4,0,.2,1);}
 .rb-dlmodal__osgroup[open] .rb-dlmodal__oschev{transform:rotate(180deg);}
-.rb-dlmodal__vwrap{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .35s ease,opacity .25s ease;}
-.rb-dlmodal__osgroup[open] .rb-dlmodal__vwrap{grid-template-rows:1fr;opacity:1;transition:grid-template-rows .35s ease,opacity .3s ease .05s;}
+.rb-dlmodal__oshead:hover{color:var(--rb-red);}
+.rb-dlmodal__oshead:hover svg:not(.rb-dlmodal__oschev){color:var(--rb-red);}
+.rb-dlmodal__vwrap{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .4s cubic-bezier(.4,0,.2,1),opacity .3s ease;}
+.rb-dlmodal__osgroup[open] .rb-dlmodal__vwrap{grid-template-rows:1fr;opacity:1;transition:grid-template-rows .4s cubic-bezier(.4,0,.2,1),opacity .35s ease .08s;}
 .rb-dlmodal__vlist{display:flex;flex-direction:column;gap:8px;overflow:hidden;padding:2px 0 14px;min-height:0;}
-.rb-dlmodal__vrow{transform:translateY(-6px);transition:transform .3s ease;}
-.rb-dlmodal__osgroup[open] .rb-dlmodal__vrow{transform:translateY(0);}
+.rb-dlmodal__vrow{transform:translateY(-8px);opacity:0;transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .3s ease;}
+.rb-dlmodal__osgroup[open] .rb-dlmodal__vrow{transform:translateY(0);opacity:1;}
+.rb-dlmodal__osgroup[open] .rb-dlmodal__vrow:nth-child(1){transition-delay:.04s;}
+.rb-dlmodal__osgroup[open] .rb-dlmodal__vrow:nth-child(2){transition-delay:.08s;}
+.rb-dlmodal__osgroup[open] .rb-dlmodal__vrow:nth-child(3){transition-delay:.12s;}
+.rb-dlmodal__osgroup[open] .rb-dlmodal__vrow:nth-child(4){transition-delay:.16s;}
 .rb-dlmodal__vrow{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card);}
 .rb-dlmodal__vinfo{flex:1 1 auto;min-width:0;}
 .rb-dlmodal__vver{font-size:13.5px;font-weight:700;color:var(--foreground);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
@@ -589,7 +595,7 @@ body{top:0 !important;}
           <div class="rb-dlmodal__ptitle"><img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
           <p class="rb-dlmodal__pdesc">Descarga el instalador para tu sistema operativo. En el sitio de descarga encontrarás todas las versiones disponibles y sus notas de lanzamiento.</p>
           <div class="rb-dlmodal__os">
-            <details class="rb-dlmodal__osgroup" open>
+            <details class="rb-dlmodal__osgroup">
               <summary class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7H3V5.5ZM11.4 4.3 21 3v8.4h-9.6V4.3ZM3 12.4h7.5v7.1L3 18.5v-6.1ZM11.4 12.4H21V21l-9.6-1.3v-7.3Z"/></svg>Windows<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
               <div class="rb-dlmodal__vwrap">
                 <div class="rb-dlmodal__vlist">
