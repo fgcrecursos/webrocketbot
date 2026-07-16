@@ -283,6 +283,35 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-mobile-menu__btn--primary:hover{background:var(--rb-red-deep);}
 @media(max-width:600px){.rb-hamburger{display:flex;}}
 
+/* DOWNLOAD MODAL */
+.rb-dlmodal{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .25s;}
+.rb-dlmodal.is-open{opacity:1;pointer-events:auto;}
+.rb-dlmodal__backdrop{position:absolute;inset:0;background:rgba(10,10,15,.6);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);}
+.rb-dlmodal__panel{position:relative;background:var(--background);border:1px solid var(--border);border-radius:var(--r-lg);width:100%;max-width:760px;max-height:85vh;overflow:auto;padding:32px;box-shadow:0 40px 100px -20px rgba(0,0,0,.4);transform:translateY(12px) scale(.98);transition:transform .25s;}
+.rb-dlmodal.is-open .rb-dlmodal__panel{transform:translateY(0) scale(1);}
+.rb-dlmodal__close{position:absolute;top:20px;right:20px;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--foreground);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s;}
+.rb-dlmodal__close:hover{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
+.rb-dlmodal__title{font-size:22px;font-weight:800;margin:0 0 4px;color:var(--foreground);}
+.rb-dlmodal__sub{font-size:13.5px;color:var(--muted);margin:0 0 28px;}
+.rb-dlmodal__body{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:start;}
+.rb-dlmodal__label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.rb-dlmodal__side{display:flex;flex-direction:column;gap:8px;}
+.rb-dlmodal__pill{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--foreground);font-size:13.5px;font-weight:700;text-align:left;cursor:pointer;transition:background .15s,border-color .15s,color .15s;}
+.rb-dlmodal__pill img{width:20px;height:20px;object-fit:contain;flex:0 0 auto;}
+.rb-dlmodal__pill.is-active{background:var(--rb-red);border-color:var(--rb-red);color:#fff;}
+.rb-dlmodal__pill:not(.is-active):hover{border-color:var(--rb-red);color:var(--rb-red);}
+.rb-dlmodal__program{display:none;}
+.rb-dlmodal__program.is-active{display:block;}
+.rb-dlmodal__ptitle{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:800;color:var(--foreground);margin-bottom:10px;}
+.rb-dlmodal__ptitle img{width:32px;height:32px;object-fit:contain;}
+.rb-dlmodal__pdesc{font-size:13.5px;color:var(--muted);line-height:1.6;margin:0 0 22px;}
+.rb-dlmodal__os{display:flex;flex-direction:column;gap:10px;}
+.rb-dlmodal__osbtn{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:14px;border:1px solid var(--border);background:var(--card);color:var(--foreground);font-size:14px;font-weight:700;transition:border-color .15s,transform .15s,box-shadow .15s;}
+.rb-dlmodal__osbtn:hover{border-color:var(--rb-red);transform:translateY(-1px);box-shadow:0 10px 26px -12px rgba(188,0,23,.4);}
+.rb-dlmodal__osbtn svg{width:20px;height:20px;flex:0 0 auto;color:var(--rb-red);}
+.rb-dlmodal__osbtn .dl-ic{margin-left:auto;width:16px;height:16px;color:var(--muted);flex:0 0 auto;}
+@media(max-width:640px){.rb-dlmodal__body{grid-template-columns:1fr;}.rb-dlmodal__side{flex-direction:row;flex-wrap:wrap;}}
+
 /* LANGUAGE SWITCHER */
 .rb-lang{position:relative;}
 .rb-lang__menu{position:absolute;top:calc(100% + 10px);right:0;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:6px;min-width:148px;box-shadow:0 16px 40px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:opacity .2s,transform .18s;transform:translateY(-6px);z-index:200;}
@@ -370,7 +399,48 @@ body{top:0 !important;}
     <div class="rb-mobile-menu__actions">
       <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suite Rocketbot</a>
       <a href="contacto.html" class="rb-mobile-menu__btn">Contáctanos</a>
-      <a href="https://rocketbot.com/descargar" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" target="_blank" rel="noopener">Descarga</a>
+      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Descarga</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ DOWNLOAD MODAL ════════════════════ -->
+<div class="rb-dlmodal" id="rbDlModal" aria-hidden="true">
+  <div class="rb-dlmodal__backdrop" data-dl-close></div>
+  <div class="rb-dlmodal__panel" role="dialog" aria-modal="true" aria-labelledby="rbDlTitle">
+    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Cerrar">&times;</button>
+    <h2 id="rbDlTitle" class="rb-dlmodal__title">Descarga Rocketbot</h2>
+    <p class="rb-dlmodal__sub">Elige el programa y tu sistema operativo.</p>
+    <div class="rb-dlmodal__body">
+      <div class="rb-dlmodal__side">
+        <div class="rb-dlmodal__label">Programas</div>
+        <button type="button" class="rb-dlmodal__pill is-active" data-dl-pill="rpa">
+          <img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
+        </button>
+      </div>
+      <div class="rb-dlmodal__main">
+        <div class="rb-dlmodal__program is-active" data-dl-panel="rpa">
+          <div class="rb-dlmodal__ptitle"><img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
+          <p class="rb-dlmodal__pdesc">Descarga el instalador para tu sistema operativo. En el sitio de descarga encontrarás todas las versiones disponibles y sus notas de lanzamiento.</p>
+          <div class="rb-dlmodal__os">
+            <a class="rb-dlmodal__osbtn" href="https://rocketbot.com/es/rocketbot-studio-rpa/#descarga" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7H3V5.5ZM11.4 4.3 21 3v8.4h-9.6V4.3ZM3 12.4h7.5v7.1L3 18.5v-6.1ZM11.4 12.4H21V21l-9.6-1.3v-7.3Z"/></svg>
+              Windows
+              <svg class="dl-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>
+            </a>
+            <a class="rb-dlmodal__osbtn" href="https://rocketbot.com/es/rocketbot-studio-rpa/#descarga" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.7 12.7c0-2.4 2-3.6 2.1-3.7-1.1-1.6-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.7 0-2-.9-3.2-.8-1.7 0-3.2 1-4.1 2.5-1.7 3-.4 7.5 1.3 10 .8 1.2 1.8 2.5 3.1 2.5 1.2-.1 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.7-1-2.7-4.1v-.2ZM14.4 5.5c.6-.8 1.1-1.9.9-3-1 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-.9 2.9 1.1.1 2.2-.5 2.8-1.3Z"/></svg>
+              macOS
+              <svg class="dl-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>
+            </a>
+            <a class="rb-dlmodal__osbtn" href="https://rocketbot.com/es/rocketbot-studio-rpa/#descarga" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2c.3 1.3.6 2.3 1.4 3.4.7 1 1.8 1.8 2 3.2.2 1.1-.2 2-.7 2.8.6.2 1.4.8 1.7 1.7.4 1.2-.2 2.5-1.3 3.1.3.4.5 1 .3 1.6-.4 1.2-2.2 1.7-3.7 1.7-1 0-1.8-.3-2.7-.3-.9 0-1.7.4-2.7.3-1.5 0-3.3-.5-3.7-1.7-.2-.6 0-1.2.3-1.6-1.1-.6-1.7-1.9-1.3-3.1.3-.9 1.1-1.5 1.7-1.7-.5-.8-.9-1.7-.7-2.8.2-1.4 1.3-2.2 2-3.2.8-1.1 1.1-2.1 1.4-3.4h4.7Z"/></svg>
+              Linux
+              <svg class="dl-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -611,7 +681,38 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
     });
   });
 })();
-</script>
+
+
+// Download modal
+(function(){
+  var modal=document.getElementById('rbDlModal');
+  if(!modal) return;
+  var openBtns=document.querySelectorAll('[data-dl-open]');
+  var closeEls=modal.querySelectorAll('[data-dl-close]');
+  var pills=modal.querySelectorAll('[data-dl-pill]');
+  function openModal(){
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  openBtns.forEach(function(b){ b.addEventListener('click',openModal); });
+  closeEls.forEach(function(el){ el.addEventListener('click',closeModal); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeModal(); });
+  pills.forEach(function(p){
+    p.addEventListener('click',function(){
+      var key=p.getAttribute('data-dl-pill');
+      pills.forEach(function(o){ o.classList.toggle('is-active', o===p); });
+      modal.querySelectorAll('[data-dl-panel]').forEach(function(panel){
+        panel.classList.toggle('is-active', panel.getAttribute('data-dl-panel')===key);
+      });
+    });
+  });
+})();</script>
 
 <!-- Google Translate -->
 <div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
