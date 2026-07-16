@@ -1198,14 +1198,16 @@ function selectInd(i){
 selectInd(0);
 
 const FAQS=[
-  ['¿Qué tipos de información puedo procesar?','AI Studio trabaja con correos, documentos (PDF), imágenes y archivos de audio para extraer y estructurar información automáticamente.'],
-  ['¿Necesito entrenar la IA antes de utilizarla?','No. AI Studio puede comenzar a extraer información desde el primer día, sin grandes volúmenes de entrenamiento previo.'],
-  ['¿Puedo usar mis propios modelos de IA?','Sí. Usa los modelos que Rocketbot incluye o conecta los tuyos: en la nube, con tu proveedor y tus llaves, o en tu propia infraestructura on-premise para mantener la soberanía de tus datos.'],
-  ['¿Puedo definir qué campos extraer?','Sí. Creas plantillas a tu medida y defines todos los campos que necesites, incluso anidados o en forma de tablas y listas.'],
-  ['¿Cómo envío la información para procesarla?','Cargas archivos directamente, los envías por correo, los conectas desde Google Drive o los incorporas mediante procesos automatizados.'],
-  ['¿Qué formatos de audio e imagen son compatibles?','Audio en MP3 y WAV (hasta 25 MB por archivo) e imágenes en PNG, JPEG, WEBP y GIF no animado.'],
-  ['¿Qué puedo hacer con la información extraída?','Enviarla a hojas de cálculo, bases de datos o sistemas empresariales vía API y Webhooks, o utilizarla para activar procesos con Rocketbot.'],
-  ['¿Qué nivel de seguridad ofrece?','Cifrado de datos, control de accesos y trazabilidad, con operación certificada bajo ISO/IEC 27001 y la opción de procesar on-premise.']
+  ['¿Qué tipos de información puede procesar AI Studio?','AI Studio utiliza inteligencia artificial para comprender y extraer información de correos electrónicos, documentos PDF, imágenes y archivos de audio, convirtiéndola automáticamente en datos estructurados listos para tus procesos.'],
+  ['¿Necesito entrenar la IA antes de empezar?','No. AI Studio puede comenzar a procesar y extraer información desde el primer día, sin necesidad de entrenar modelos con grandes volúmenes de datos.'],
+  ['¿Puedo utilizar mis propios modelos de inteligencia artificial?','Sí. Puedes usar los modelos incluidos en Rocketbot o conectar los tuyos, ya sea mediante tu proveedor en la nube, con tus propias API Keys o desplegados en infraestructura on-premise para mantener el control y la soberanía de tus datos.'],
+  ['¿Puedo definir exactamente qué información extraer?','Sí. Puedes crear plantillas personalizadas y definir los campos que deseas extraer, incluyendo tablas, listas, estructuras anidadas y otros formatos complejos.'],
+  ['¿Cómo envío la información para procesarla?','Puedes cargar archivos manualmente, recibirlos por correo electrónico, conectarlos desde servicios como Google Drive o incorporarlos automáticamente mediante flujos de automatización con Rocketbot.'],
+  ['¿Qué formatos de documentos, imágenes y audio son compatibles?','AI Studio procesa documentos PDF, imágenes en formatos PNG, JPEG, WEBP y GIF no animado, además de archivos de audio MP3 y WAV de hasta 25 MB por archivo.'],
+  ['¿Qué puedo hacer con la información extraída?','Puedes enviarla automáticamente a ERPs, CRMs, bases de datos, hojas de cálculo, APIs, Webhooks o utilizarla para iniciar nuevos procesos y automatizaciones dentro del ecosistema Rocketbot.'],
+  ['¿Qué nivel de seguridad ofrece AI Studio?','AI Studio incorpora cifrado de datos, control de accesos, trazabilidad completa y la posibilidad de operar en infraestructura on-premise. Además, forma parte de la Suite Rocketbot, certificada bajo la norma ISO/IEC 27001 para la gestión de seguridad de la información.'],
+  ['¿Qué diferencia a AI Studio de un OCR tradicional?','Un OCR solo convierte una imagen en texto. AI Studio comprende el contenido, identifica la información relevante, la organiza en datos estructurados y la deja lista para integrarse con tus sistemas y procesos de negocio.'],
+  ['¿Puede integrarse con mis sistemas actuales?','Sí. AI Studio se integra con ERPs, CRMs, bases de datos, APIs REST, Webhooks y el resto de la Suite Rocketbot para que la información fluya automáticamente entre todos tus sistemas.']
 ];
 const fw=document.getElementById('faqWrap');
 FAQS.forEach(function(pair){
