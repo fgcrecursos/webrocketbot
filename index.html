@@ -367,6 +367,17 @@ p { margin: 0; }
 @keyframes rb-marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
 /* ═══════════════════════════════════════════
+   VIDEO INSTITUCIONAL
+═══════════════════════════════════════════ */
+.rb-video { padding: 70px 0; }
+.rb-video__wrap {
+  position: relative; width: 100%; max-width: 900px; margin: 0 auto;
+  aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden;
+  box-shadow: 0 30px 80px -30px rgba(0,0,0,.35);
+}
+.rb-video__wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ═══════════════════════════════════════════
    STATS BAR
 ═══════════════════════════════════════════ */
 .rb-statsbar {
@@ -1343,6 +1354,15 @@ body{top:0 !important;}
     <img src="assets/clients/marquee/verisure.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <img src="assets/clients/marquee/pronaca.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <img src="assets/clients/marquee/agrosuper.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<!-- ════════════════ VIDEO INSTITUCIONAL ════════════════ -->
+<section class="rb-video">
+  <div class="container">
+    <div class="rb-video__wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/jdIGKecVtxM" title="Video institucional Rocketbot" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
   </div>
 </section>
 
