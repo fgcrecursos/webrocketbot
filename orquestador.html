@@ -477,13 +477,16 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-dlmodal__pdesc{font-size:13.5px;color:var(--muted);line-height:1.6;margin:0 0 22px;}
 .rb-dlmodal__os{display:flex;flex-direction:column;gap:10px;}
 .rb-dlmodal__osgroup{border:1px solid var(--border);border-radius:14px;padding:2px 14px;}
-.rb-dlmodal__osgroup .rb-dlmodal__vlist{padding:2px 0 14px;}
 .rb-dlmodal__oshead{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:800;color:var(--foreground);padding:14px 0;text-transform:uppercase;letter-spacing:.03em;cursor:pointer;list-style:none;}
 .rb-dlmodal__oshead::-webkit-details-marker{display:none;}
 .rb-dlmodal__oshead svg:not(.rb-dlmodal__oschev){width:17px;height:17px;color:var(--rb-red);flex:0 0 auto;}
-.rb-dlmodal__oschev{margin-left:auto;width:16px;height:16px;color:var(--muted);flex:0 0 auto;transition:transform .2s;}
+.rb-dlmodal__oschev{margin-left:auto;width:16px;height:16px;color:var(--muted);flex:0 0 auto;transition:transform .25s ease;}
 .rb-dlmodal__osgroup[open] .rb-dlmodal__oschev{transform:rotate(180deg);}
-.rb-dlmodal__vlist{display:flex;flex-direction:column;gap:8px;}
+.rb-dlmodal__vwrap{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .35s ease,opacity .25s ease;}
+.rb-dlmodal__osgroup[open] .rb-dlmodal__vwrap{grid-template-rows:1fr;opacity:1;transition:grid-template-rows .35s ease,opacity .3s ease .05s;}
+.rb-dlmodal__vlist{display:flex;flex-direction:column;gap:8px;overflow:hidden;padding:2px 0 14px;min-height:0;}
+.rb-dlmodal__vrow{transform:translateY(-6px);transition:transform .3s ease;}
+.rb-dlmodal__osgroup[open] .rb-dlmodal__vrow{transform:translateY(0);}
 .rb-dlmodal__vrow{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card);}
 .rb-dlmodal__vinfo{flex:1 1 auto;min-width:0;}
 .rb-dlmodal__vver{font-size:13.5px;font-weight:700;color:var(--foreground);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
@@ -621,7 +624,8 @@ body{top:0 !important;}
           <div class="rb-dlmodal__os">
             <details class="rb-dlmodal__osgroup" open>
               <summary class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7H3V5.5ZM11.4 4.3 21 3v8.4h-9.6V4.3ZM3 12.4h7.5v7.1L3 18.5v-6.1ZM11.4 12.4H21V21l-9.6-1.3v-7.3Z"/></svg>Windows<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-              <div class="rb-dlmodal__vlist">
+              <div class="rb-dlmodal__vwrap">
+                <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Última versión</span></div>
@@ -650,11 +654,13 @@ body{top:0 !important;}
                   </div>
                   <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
+                </div>
               </div>
             </details>
             <details class="rb-dlmodal__osgroup">
               <summary class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.7 12.7c0-2.4 2-3.6 2.1-3.7-1.1-1.6-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.7 0-2-.9-3.2-.8-1.7 0-3.2 1-4.1 2.5-1.7 3-.4 7.5 1.3 10 .8 1.2 1.8 2.5 3.1 2.5 1.2-.1 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.7-1-2.7-4.1v-.2ZM14.4 5.5c.6-.8 1.1-1.9.9-3-1 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-.9 2.9 1.1.1 2.2-.5 2.8-1.3Z"/></svg>macOS<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-              <div class="rb-dlmodal__vlist">
+              <div class="rb-dlmodal__vwrap">
+                <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Última versión</span></div>
@@ -669,11 +675,13 @@ body{top:0 !important;}
                   </div>
                   <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
+                </div>
               </div>
             </details>
             <details class="rb-dlmodal__osgroup">
               <summary class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2c.3 1.3.6 2.3 1.4 3.4.7 1 1.8 1.8 2 3.2.2 1.1-.2 2-.7 2.8.6.2 1.4.8 1.7 1.7.4 1.2-.2 2.5-1.3 3.1.3.4.5 1 .3 1.6-.4 1.2-2.2 1.7-3.7 1.7-1 0-1.8-.3-2.7-.3-.9 0-1.7.4-2.7.3-1.5 0-3.3-.5-3.7-1.7-.2-.6 0-1.2.3-1.6-1.1-.6-1.7-1.9-1.3-3.1.3-.9 1.1-1.5 1.7-1.7-.5-.8-.9-1.7-.7-2.8.2-1.4 1.3-2.2 2-3.2.8-1.1 1.1-2.1 1.4-3.4h4.7Z"/></svg>Linux<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-              <div class="rb-dlmodal__vlist">
+              <div class="rb-dlmodal__vwrap">
+                <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Última versión</span></div>
@@ -694,6 +702,7 @@ body{top:0 !important;}
                     <div class="rb-dlmodal__vmeta">118.1 MB · TAR.XZ · MD5 b2d9a94de8299615e525ea26d5d543a2</div>
                   </div>
                   <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                </div>
                 </div>
               </div>
             </details>
