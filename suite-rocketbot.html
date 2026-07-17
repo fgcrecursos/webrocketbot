@@ -309,6 +309,9 @@ body{top:0 !important;}
 .rb-suite-orbit__core img{width:100%;height:auto;display:block;filter:drop-shadow(0 0 30px rgba(188,0,23,.55));}
 .rb-suite-orbit__item{position:absolute;left:50%;top:50%;width:clamp(48px,14%,62px);height:clamp(48px,14%,62px);margin:0;animation:rb-suite-orbit 44s linear infinite;animation-delay:calc(var(--i) * -7.333s);}
 @keyframes rb-suite-orbit{from{transform:translate(-50%,-50%) rotate(0deg) translateX(168px) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg) translateX(168px) rotate(-360deg);}}
+.rb-video{padding:70px 0;}
+.rb-video__wrap{position:relative;width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.35);}
+.rb-video__wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 .rb-suite-orbit__item img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(188,0,23,.45));animation:rb-suite-float 5s ease-in-out infinite;animation-delay:calc(var(--i) * -.8s);}
 @keyframes rb-suite-float{0%,100%{transform:scale(1);}50%{transform:scale(1.07);}}
 @media(max-width:1040px){@keyframes rb-suite-orbit{from{transform:translate(-50%,-50%) rotate(0deg) translateX(140px) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg) translateX(140px) rotate(-360deg);}}}
@@ -705,7 +708,7 @@ body{top:0 !important;}
       <p class="rb-suite-hero__lede">No son herramientas sueltas. Es una sola plataforma orquestada que conecta formularios, robots, IA, control y reportes para automatizar tus procesos de negocio de principio a fin.</p>
       <div class="rb-suite-hero__ctas">
         <a class="rb-btn rb-btn--white rb-btn--lg" href="contacto.html">Agendar reunión comercial</a>
-        <a class="rb-btn rb-btn--outline-white rb-btn--lg" href="#proceso">Ver la suite en acción</a>
+        <a class="rb-btn rb-btn--outline-white rb-btn--lg" href="#video">Ver la suite en acción</a>
       </div>
       <div class="rb-suite-trust">
         <div class="rb-suite-trust__i"><b>ISO 27001</b><span>Certificación activa</span></div>
@@ -727,6 +730,18 @@ body{top:0 !important;}
         <div class="rb-suite-orbit__item" style="--i:5"><img src="assets/logos/products/rpa-studio.png" alt="RPA Studio"></div>
         <div class="rb-suite-orbit__core"><img src="assets/logos/logo-header-white.png" alt="Rocketbot"></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="rb-video" id="video">
+  <div class="container">
+    <div class="rb-section__head">
+      <h2 class="rb-section__title">Rocketbot Suite</h2>
+    </div>
+    <div class="rb-video__wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/jdIGKecVtxM" title="Rocketbot Suite" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -877,14 +892,14 @@ body{top:0 !important;}
     <div class="rb-section__head">
       <h2 class="rb-section__title">Un plan que crece al ritmo<br><span>de tu operaci&#243;n.</span></h2>
       <p class="rb-section__sub">Empieza con procesos espec&#237;ficos y escala hacia una suite completa. Avanza a tu ritmo, con el alcance que tu operaci&#243;n&nbsp;necesita.</p>
-      <p class="rb-section__sub" style="margin-top:8px;font-size:13px;">Precios en dólares estadounidenses (USD).</p>
+      <p class="rb-section__sub" style="margin-top:8px;font-size:13px;">Precios en dólares estadounidenses (U$D).</p>
     </div>
     <div class="rb-tiers">
       <div class="rb-tier">
         <div class="rb-tier__num">02 &middot; Entry 1</div>
         <h3>Entry 1</h3>
         <p class="rb-tier__desc">Para un equipo pequeño que empieza a escalar su automatización.</p>
-        <div class="rb-tier__price">USD 7.990<span class="per">/año</span></div>
+        <div class="rb-tier__price">U$D 7.990<span class="per">/año</span></div>
         <div class="rb-tier__pl">Ideal para: equipo pequeño escalando</div>
         <ul>
           <li><span class="tk">&#10003;</span> 25M Créditos de AI Studio</li>
@@ -900,7 +915,7 @@ body{top:0 !important;}
         <div class="rb-tier__num">03 &middot; Standard</div>
         <h3>Standard</h3>
         <p class="rb-tier__desc">Para una empresa mediana lista para escalar su operación.</p>
-        <div class="rb-tier__price">USD 14.990<span class="per">/mes</span></div>
+        <div class="rb-tier__price">U$D 14.990<span class="per">/año</span></div>
         <div class="rb-tier__pl">Ideal para: empresa mediana lista para escalar</div>
         <ul>
           <li><span class="tk">&#10003;</span> 50M Créditos de AI Studio</li>
@@ -915,7 +930,7 @@ body{top:0 !important;}
         <div class="rb-tier__num">04 &middot; Enterprise</div>
         <h3>Enterprise</h3>
         <p class="rb-tier__desc">Para una gran empresa avanzando hacia la hiperautomatización.</p>
-        <div class="rb-tier__price">USD 24.990<span class="per">/mes</span></div>
+        <div class="rb-tier__price">U$D 24.990<span class="per">/año</span></div>
         <div class="rb-tier__pl">Ideal para: gran empresa hacia la hiperautomatización</div>
         <ul>
           <li><span class="tk">&#10003;</span> 100M Créditos de AI Studio</li>
@@ -930,7 +945,7 @@ body{top:0 !important;}
         <div class="rb-tier__num">05 &middot; Corporate</div>
         <h3>Corporate</h3>
         <p class="rb-tier__desc">Para una operación agéntica a escala corporativa.</p>
-        <div class="rb-tier__price">USD 49.990<span class="per">/mes</span></div>
+        <div class="rb-tier__price">U$D 49.990<span class="per">/año</span></div>
         <div class="rb-tier__pl">Ideal para: operación agéntica a escala corporativa</div>
         <ul>
           <li><span class="tk">&#10003;</span> 250M Créditos de AI Studio</li>
