@@ -620,7 +620,26 @@ body{top:0 !important;}
 
 /* ═══════════ Fondo espacial global ═══════════ */
 .rb-cosmos{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;}
-[data-theme="light"] .rb-cosmos{opacity:.2;}
+/* en tema claro se invierten: puntos oscuros sobre fondo claro.
+   Los background-size no cambian, si no se rompe el ciclo del parallax. */
+[data-theme="light"] .rb-cosmos{opacity:.75;}
+[data-theme="light"] .rb-cosmos__layer--1{
+  background-image:radial-gradient(1.5px 1.5px at 40px 60px,rgba(38,50,56,.5),transparent),
+                   radial-gradient(1.2px 1.2px at 170px 212px,rgba(38,50,56,.36),transparent),
+                   radial-gradient(1px 1px at 302px 92px,rgba(38,50,56,.3),transparent),
+                   radial-gradient(1.4px 1.4px at 120px 330px,rgba(188,0,23,.3),transparent),
+                   radial-gradient(1px 1px at 360px 278px,rgba(43,127,255,.3),transparent);}
+[data-theme="light"] .rb-cosmos__layer--2{
+  background-image:radial-gradient(1.2px 1.2px at 88px 140px,rgba(38,50,56,.32),transparent),
+                   radial-gradient(1px 1px at 250px 40px,rgba(188,0,23,.24),transparent),
+                   radial-gradient(1.3px 1.3px at 430px 300px,rgba(38,50,56,.34),transparent),
+                   radial-gradient(1px 1px at 540px 460px,rgba(43,127,255,.26),transparent),
+                   radial-gradient(1.1px 1.1px at 330px 480px,rgba(38,50,56,.26),transparent);}
+[data-theme="light"] .rb-cosmos__layer--3{
+  background-image:radial-gradient(1.9px 1.9px at 96px 84px,rgba(38,50,56,.5),transparent),
+                   radial-gradient(1.7px 1.7px at 244px 228px,rgba(188,0,23,.34),transparent);}
+[data-theme="light"] .rb-cosmos__ship{filter:drop-shadow(0 1px 3px rgba(0,0,0,.35));}
+[data-theme="light"] .rb-cosmos__rocket{animation-name:rb-cos-fly;}
 /* el alto extra absorbe el desplazamiento del parallax (máx. un tile) */
 .rb-cosmos__layer{position:absolute;top:0;left:0;right:0;height:calc(100% + 680px);}
 .rb-cosmos__layer--1{background-size:420px 380px;transform:translate3d(0,var(--rb-cy1,0px),0);
@@ -664,6 +683,68 @@ body{top:0 !important;}
 @media(prefers-reduced-motion:reduce){
   .rb-cosmos__layer{animation:none;transform:none;}
   .rb-cosmos__rocket{display:none;}
+}
+
+/* ═══════════ Ajustes de UX/UI en mobile ═══════════ */
+/* La nav se desbordaba: logo + hamburguesa + idioma + tema no entraban en 375px. */
+@media(max-width:600px){
+  .rb-nav{padding:12px 14px;}
+  .rb-nav__inner{gap:8px;}
+  .rb-nav__logo{height:22px;}
+  .rb-nav__actions{gap:8px;}
+  .rb-hamburger,.rb-iconbtn{width:34px;height:34px;}
+  .rb-lang__btn{width:auto;min-width:0;padding:0 8px;gap:4px;}
+  .rb-lang__btn .rb-lang__chev{display:none;}
+  .rb-lang__menu{min-width:134px;}
+}
+@media(max-width:360px){
+  .rb-nav{padding:12px 10px;}
+  .rb-nav__logo{height:19px;}
+}
+
+/* Los reveals laterales dejaban 28px de scroll horizontal hasta que se
+   disparaban. En mobile entran desde abajo, sin desplazamiento lateral. */
+@media(max-width:768px){
+  .rb-reveal--left,.rb-reveal--right{transform:translateY(28px);}
+  .rb-stagger--horizontal > *{transform:translateY(24px);}
+}
+
+/* Grids y flex con min-width:auto: los hijos no podían encoger y el
+   contenedor con overflow:hidden les cortaba el contenido. */
+@media(max-width:900px){
+  .rb-sec-band > *,.rb-sec-chips > *,.rb-sec-chip{min-width:0;}
+  .rb-calc > *,.rb-xwrap > *,.rb-appwin > *,.rb-aw-bar > *{min-width:0;}
+}
+@media(max-width:640px){
+  .rb-sec-band{padding:22px;}
+  .rb-sec-chips{grid-template-columns:1fr;}
+}
+
+/* Tablas anchas: que se puedan desplazar en vez de quedar cortadas. */
+@media(max-width:900px){
+  .rb-ntable-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+}
+
+/* Barra de la ventana de app: el usuario empujaba el título fuera del marco. */
+@media(max-width:600px){
+  .rb-aw-title{min-width:0;overflow:hidden;}
+  .rb-aw-title span:last-child{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .rb-aw-user{display:none;}
+}
+
+/* Al saltar a una sección, el ancla quedaba tapada por la nav fija. */
+html{scroll-padding-top:92px;}
+@media(max-width:600px){html{scroll-padding-top:72px;}}
+
+/* Enlaces sueltos de 14-18px de alto: área de toque más cómoda. */
+@media(max-width:768px){
+  .rb-arch__card-link,.rb-testi__video-link{display:inline-flex;align-items:center;min-height:34px;}
+}
+
+/* CTAs largos: que envuelvan en vez de desbordar. */
+@media(max-width:600px){
+  .rb-btn--lg{padding:14px 20px;font-size:14px;}
+  .rb-roi-cta .rb-btn{max-width:100%;white-space:normal;text-align:center;}
 }
 </style>
 </head>
