@@ -1,62 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://rocketbot.com/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/"/>
   </url>
-
   <url>
-    <loc>https://rocketbot.com/saturn-studio</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://rocketbot.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/"/>
   </url>
-
+  <url>
+    <loc>https://rocketbot.com/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/suite-rocketbot</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/suite-rocketbot"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/suite-rocketbot"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/suite-rocketbot"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/suite-rocketbot"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/en/suite-rocketbot</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/suite-rocketbot"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/suite-rocketbot"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/suite-rocketbot"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/suite-rocketbot"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/pt/suite-rocketbot</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/suite-rocketbot"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/suite-rocketbot"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/suite-rocketbot"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/suite-rocketbot"/>
+  </url>
   <url>
     <loc>https://rocketbot.com/rpa-studio</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/rpa-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/rpa-studio"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/rpa-studio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/rpa-studio"/>
   </url>
-
+  <url>
+    <loc>https://rocketbot.com/en/rpa-studio</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/rpa-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/rpa-studio"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/rpa-studio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/rpa-studio"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/pt/rpa-studio</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/rpa-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/rpa-studio"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/rpa-studio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/rpa-studio"/>
+  </url>
   <url>
     <loc>https://rocketbot.com/ai-studio</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/ai-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/ai-studio"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/ai-studio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/ai-studio"/>
   </url>
-
+  <url>
+    <loc>https://rocketbot.com/en/ai-studio</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/ai-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/ai-studio"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/ai-studio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/ai-studio"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/pt/ai-studio</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/ai-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/ai-studio"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/ai-studio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/ai-studio"/>
+  </url>
   <url>
     <loc>https://rocketbot.com/orquestador</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/orquestador"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/orquestador"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/orquestador"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/orquestador"/>
   </url>
-
+  <url>
+    <loc>https://rocketbot.com/en/orquestador</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/orquestador"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/orquestador"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/orquestador"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/orquestador"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/pt/orquestador</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/orquestador"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/orquestador"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/orquestador"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/orquestador"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/nexus</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/nexus"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/nexus"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/nexus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/nexus"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/en/nexus</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/nexus"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/nexus"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/nexus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/nexus"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/pt/nexus</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/nexus"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/nexus"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/nexus"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/nexus"/>
+  </url>
   <url>
     <loc>https://rocketbot.com/xperience</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/xperience"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/xperience"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/xperience"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/xperience"/>
   </url>
-
   <url>
-    <loc>https://rocketbot.com/blog</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://rocketbot.com/en/xperience</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/xperience"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/xperience"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/xperience"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/xperience"/>
   </url>
-
+  <url>
+    <loc>https://rocketbot.com/pt/xperience</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/xperience"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/xperience"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/xperience"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/xperience"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/saturn-studio</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/saturn-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/saturn-studio"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/saturn-studio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/saturn-studio"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/en/saturn-studio</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/saturn-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/saturn-studio"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/saturn-studio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/saturn-studio"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/pt/saturn-studio</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/saturn-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/saturn-studio"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/saturn-studio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/saturn-studio"/>
+  </url>
   <url>
     <loc>https://rocketbot.com/cfo</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/cfo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/cfo"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/cfo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/cfo"/>
   </url>
-
-  <!-- contacto.html excluida del sitemap (noindex) -->
-
+  <url>
+    <loc>https://rocketbot.com/en/cfo</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/cfo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/cfo"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/cfo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/cfo"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/pt/cfo</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/cfo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/cfo"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/cfo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/cfo"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/construir-vs-comprar</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/construir-vs-comprar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/construir-vs-comprar"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/construir-vs-comprar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/construir-vs-comprar"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/en/construir-vs-comprar</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/construir-vs-comprar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/construir-vs-comprar"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/construir-vs-comprar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/construir-vs-comprar"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/pt/construir-vs-comprar</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/construir-vs-comprar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/construir-vs-comprar"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/construir-vs-comprar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/construir-vs-comprar"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/blog</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/blog"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/blog"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/pt/blog</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/blog"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/contacto</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/contacto"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/contacto"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/contacto"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/en/contacto</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/contacto"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/contacto"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/contacto"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/pt/contacto</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/contacto"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/contacto"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/contacto"/>
+  </url>
 </urlset>

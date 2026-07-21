@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="pt-BR" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <!-- ── Rocketbot i18n: protege los nombres de producto de Google Translate
@@ -30,7 +30,7 @@ window.RB_I18N=(function(){
     return s;
   }
   var API={
-    lang:detect(),
+    lang:'pt',
     pick:function(map){ return map[API.lang]||map.es; },
     onLang:function(fn){ subs.push(fn); },
     setLang:function(l){
@@ -102,7 +102,6 @@ window.RB_I18N=(function(){
   };
   return API;
 })();
-document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); }catch(e){} });
 </script>
 <!-- Google tag (gtag.js) – GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EHJ8S289M"></script>
@@ -113,10 +112,10 @@ document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); 
   gtag('config', 'G-2EHJ8S289M');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Studio | Convierte información en datos estructurados · Rocketbot</title>
-<meta name="description" content="AI Studio convierte correos, documentos, imágenes y audios en datos estructurados listos para usar. Usa los modelos de Rocketbot o conecta los tuyos, en la nube u on-premise.">
+<title>AI Studio | Transforme informação em dados estruturados · Rocketbot</title>
+<meta name="description" content="O AI Studio transforma e-mails, documentos, imagens e áudios em dados estruturados prontos para usar. Use os modelos da Rocketbot ou conecte os seus, na nuvem ou on-premise.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://rocketbot.com/ai-studio">
+<link rel="canonical" href="https://rocketbot.com/pt/ai-studio">
 <link rel="alternate" hreflang="es" href="https://rocketbot.com/ai-studio">
 <link rel="alternate" hreflang="en" href="https://rocketbot.com/en/ai-studio">
 <link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/ai-studio">
@@ -126,18 +125,18 @@ document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rocketbot">
-<meta property="og:title" content="AI Studio | Convierte información en datos estructurados · Rocketbot">
-<meta property="og:description" content="Correos, documentos, imágenes y audios convertidos en datos estructurados, precisos y consistentes, listos para tus sistemas y flujos de automatización.">
-<meta property="og:url" content="https://rocketbot.com/ai-studio">
+<meta property="og:title" content="AI Studio | Transforme informação em dados estruturados · Rocketbot">
+<meta property="og:description" content="E-mails, documentos, imagens e áudios convertidos em dados estruturados, precisos e consistentes, prontos para os seus sistemas e fluxos de automação.">
+<meta property="og:url" content="https://rocketbot.com/pt/ai-studio">
 <meta property="og:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="es_LA">
+<meta property="og:locale" content="pt_BR">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rocketbot">
-<meta name="twitter:title" content="AI Studio | Convierte información en datos estructurados · Rocketbot">
-<meta name="twitter:description" content="Correos, documentos, imágenes y audios convertidos en datos estructurados, listos para tus sistemas.">
+<meta name="twitter:title" content="AI Studio | Transforme informação em dados estruturados · Rocketbot">
+<meta name="twitter:description" content="E-mails, documentos, imagens e áudios convertidos em dados estruturados, prontos para os seus sistemas.">
 <meta name="twitter:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -757,28 +756,28 @@ html{scroll-padding-top:92px;}
 <nav class="rb-nav" id="rb-nav">
   <div class="rb-nav__inner">
     <a href="index.html" class="rb-nav__logo-wrap">
-      <img id="nav-logo" src="assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
+      <img id="nav-logo" src="/assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
     </a>
     <ul class="rb-nav__links">
-      <li class="rb-nav__suite-li"><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
+      <li class="rb-nav__suite-li"><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suíte</a></li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Productos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button">Produtos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestador</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
+          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestrador</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
         </div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="cfo.html">Para CFOs</a><a href="construir-vs-comprar.html">Construir o comprar</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
+        <div class="rb-nav__dropdown"><a href="cfo.html">Para CFOs</a><a href="construir-vs-comprar.html">Construir ou comprar</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Soporte y servicios <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a><a href="#">Media kit</a></div>
+        <button type="button">Suporte e serviços <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Fórum</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a><a href="#">Media kit</a></div>
       </li>
-      <li><a href="contacto.html">Contáctanos</a></li>
+      <li><a href="contacto.html">Fale conosco</a></li>
     </ul>
     <div class="rb-nav__actions">
-      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menu"><span></span><span></span><span></span></button>
       <div class="rb-lang" id="rb-lang">
         <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
@@ -787,12 +786,12 @@ html{scroll-padding-top:92px;}
           <button class="rb-lang__opt" data-lang="pt" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span>Português</button>
         </div>
       </div>
-      <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
+      <button class="rb-iconbtn" id="theme-btn" title="Mudar tema" type="button">
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
         <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
       </button>
       <a href="cfo.html" class="rb-btn rb-cfo-btn">Para CFOs</a>
-      <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Descarga</button>
+      <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Download</button>
     </div>
   </div>
 </nav>
@@ -801,11 +800,11 @@ html{scroll-padding-top:92px;}
 <div class="rb-mobile-menu" id="rb-mobile-menu">
   <div class="rb-mobile-menu__inner">
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Productos</div>
+      <div class="rb-mobile-menu__label">Produtos</div>
       <a href="saturn-studio.html">Saturn Studio</a>
       <a href="rpa-studio.html">RPA Studio</a>
       <a href="ai-studio.html">AI Studio</a>
-      <a href="orquestador.html">Orquestador</a>
+      <a href="orquestador.html">Orquestrador</a>
       <a href="xperience.html">Xperience</a>
       <a href="nexus.html">Nexus</a>
     </div>
@@ -815,16 +814,16 @@ html{scroll-padding-top:92px;}
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Soporte y servicios</div>
-      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a>
+      <div class="rb-mobile-menu__label">Suporte e serviços</div>
+      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Fórum</a>
       <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
-      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
+      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Media kit</a>
     </div>
     <div class="rb-mobile-menu__actions">
-      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suite Rocketbot</a>
-      <a href="contacto.html" class="rb-mobile-menu__btn">Contáctanos</a>
-      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Descarga</button>
+      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suíte Rocketbot</a>
+      <a href="contacto.html" class="rb-mobile-menu__btn">Fale conosco</a>
+      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Download</button>
     </div>
   </div>
 </div>
@@ -833,35 +832,35 @@ html{scroll-padding-top:92px;}
 <div class="rb-dlmodal" id="rbDlModal" aria-hidden="true">
   <div class="rb-dlmodal__backdrop" data-dl-close></div>
   <div class="rb-dlmodal__panel" role="dialog" aria-modal="true" aria-labelledby="rbDlTitle">
-    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Cerrar">&times;</button>
-    <h2 id="rbDlTitle" class="rb-dlmodal__title">Descarga Rocketbot</h2>
-    <p class="rb-dlmodal__sub">Elige el programa y tu sistema operativo.</p>
+    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Fechar">&times;</button>
+    <h2 id="rbDlTitle" class="rb-dlmodal__title">Baixe o Rocketbot</h2>
+    <p class="rb-dlmodal__sub">Escolha o produto e o seu sistema operacional.</p>
     <div class="rb-dlmodal__body">
       <div class="rb-dlmodal__side">
-        <div class="rb-dlmodal__label">Programas</div>
+        <div class="rb-dlmodal__label">Produtos</div>
         <button type="button" class="rb-dlmodal__pill is-active" data-dl-pill="rpa">
-          <img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
+          <img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
         </button>
 
         <div class="rb-dlmodal__req">
           <div class="rb-dlmodal__reqgrp">
             <div class="rb-dlmodal__reqttl">Requisitos mínimos</div>
-            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i3-4340 o AMD FX-6300</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>10 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>4 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Processador</span><strong translate="no">Intel Core i3-4340 ou AMD FX-6300</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Armazenamento</span><strong>10 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memória</span><strong>4 GB RAM</strong></div>
           </div>
           <div class="rb-dlmodal__reqgrp rb-dlmodal__reqgrp--rec">
-            <div class="rb-dlmodal__reqttl">Configuración recomendada</div>
-            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i5</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>175 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>8 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Configuração recomendada</div>
+            <div class="rb-dlmodal__reqrow"><span>Processador</span><strong translate="no">Intel Core i5</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Armazenamento</span><strong>175 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memória</span><strong>8 GB RAM</strong></div>
           </div>
         </div>
       </div>
       <div class="rb-dlmodal__main">
         <div class="rb-dlmodal__program is-active" data-dl-panel="rpa">
-          <div class="rb-dlmodal__ptitle"><img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
-          <p class="rb-dlmodal__pdesc">Descarga el instalador para tu sistema operativo. En el sitio de descarga encontrarás todas las versiones disponibles y sus notas de lanzamiento.</p>
+          <div class="rb-dlmodal__ptitle"><img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
+          <p class="rb-dlmodal__pdesc">Baixe o instalador do seu sistema operacional. No site de download você encontra todas as versões disponíveis e suas notas de lançamento.</p>
           <div class="rb-dlmodal__os">
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7H3V5.5ZM11.4 4.3 21 3v8.4h-9.6V4.3ZM3 12.4h7.5v7.1L3 18.5v-6.1ZM11.4 12.4H21V21l-9.6-1.3v-7.3Z"/></svg>Windows<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -869,31 +868,31 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Última versão</span></div>
                     <div class="rb-dlmodal__vmeta">354 MB · ZIP · MD5 153fd4432f30564ecd16b146dcfaac31</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2025.07.01 <span class="rb-dlmodal__vtag">Python 3.13</span></div>
                     <div class="rb-dlmodal__vmeta">356 MB · ZIP · MD5 9f0e2c18051b020d71387821f3abdf82</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2024.05.28</div>
                     <div class="rb-dlmodal__vmeta">458 MB · ZIP · MD5 b4034aaf4759f710f6754df5bbd81be2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2023.11.10</div>
                     <div class="rb-dlmodal__vmeta">358 MB · ZIP · MD5 a18cc70a91134e73d2da277f973fa87a</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 </div>
               </div>
@@ -904,17 +903,17 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Última versão</span></div>
                     <div class="rb-dlmodal__vmeta">248 MB · ZIP · MD5 ff4ea3d2e49aa4e3294158f04ad81922</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Mac ARM · v2025.07.01</div>
                     <div class="rb-dlmodal__vmeta">533 MB · ZIP · MD5 3635e4cd1ec90eb5bac453c6b813bf29</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 </div>
               </div>
@@ -925,24 +924,24 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Última versão</span></div>
                     <div class="rb-dlmodal__vmeta">434 MB · ZIP · MD5 6312df8b82977e4e08d48826deb95b34</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">RHEL · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">166.2 MB · TAR.GZ · MD5 6d98a8f63cec705d181a011dfb69c90c</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Ubuntu · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">118.1 MB · TAR.XZ · MD5 b2d9a94de8299615e525ea26d5d543a2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 </div>
               </div>
@@ -959,11 +958,11 @@ html{scroll-padding-top:92px;}
   <div class="rb-hero__particles"></div>
   <div class="container rb-hero__grid">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title">Dale sentido a cualquier <span class="rb-hero__rot" id="rot">correo</span></h1>
-      <p class="rb-hero__sub">AI Studio utiliza inteligencia artificial para comprender correos, documentos, imágenes y audios, extraer la información relevante y convertirla en datos estructurados listos para automatizar procesos, integrar sistemas y tomar mejores decisiones.</p>
+      <h1 class="rb-hero__title">Dê sentido a qualquer <span class="rb-hero__rot" id="rot">e-mail</span></h1>
+      <p class="rb-hero__sub">O AI Studio usa inteligência artificial para compreender e-mails, documentos, imagens e áudios, extrair a informação relevante e convertê-la em dados estruturados, prontos para automatizar processos, integrar sistemas e apoiar decisões melhores.</p>
       <div class="rb-hero__ctas">
-        <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://aistudio.rocketbot.com/#/">Pruébalo ahora</a>
-        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Contactar a ventas</a>
+        <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://aistudio.rocketbot.com/#/">Teste agora</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Falar com vendas</a>
       </div>
     </div>
     <div class="rb-hero__visual" aria-hidden="true">
@@ -987,10 +986,10 @@ html{scroll-padding-top:92px;}
 <!-- CLIENTS -->
 <section class="rb-clients">
   <div class="container">
-    <p class="rb-clients__label">Empresas que confían en Rocketbot</p>
+    <p class="rb-clients__label">Empresas que confiam na Rocketbot</p>
     <div class="rb-marquee"><div class="rb-marquee__track">
-      <img src="assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
-      <img src="assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
+      <img src="/assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="/assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="/assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="/assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="/assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="/assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="/assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="/assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
+      <img src="/assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="/assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="/assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="/assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="/assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="/assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="/assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="/assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
     </div></div>
   </div>
 </section>
@@ -999,8 +998,8 @@ html{scroll-padding-top:92px;}
 <section class="rb-section" id="extraccion">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Convierte información no estructurada<br><span>en datos listos para automatizar</span></h2>
-      <p class="rb-section__sub">AI Studio extrae la información relevante de documentos, correos, imágenes y audios, la estructura automáticamente y la entrega en un formato listo para integrarse con tus sistemas, APIs y flujos de&nbsp;automatización.</p>
+      <h2 class="rb-section__title">Transforme informação não estruturada<br><span>em dados prontos para automatizar</span></h2>
+      <p class="rb-section__sub">O AI Studio extrai a informação relevante de documentos, e-mails, imagens e áudios, estrutura tudo automaticamente e entrega em um formato pronto para integrar aos seus sistemas, APIs e fluxos de&nbsp;automação.</p>
     </div>
     <div class="rb-show-tabs" id="stabs"></div>
     <div class="rb-show-grid">
@@ -1010,7 +1009,7 @@ html{scroll-padding-top:92px;}
       </div>
       <div class="rb-pcard">
         <div class="rb-otabs">
-          <button class="rb-otab active" id="tabVista"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h12"/></svg>Datos</button>
+          <button class="rb-otab active" id="tabVista"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h12"/></svg>Dados</button>
           <button class="rb-otab" id="tabJson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4H6a2 2 0 0 0-2 2v4l-2 2 2 2v4a2 2 0 0 0 2 2h2M16 4h2a2 2 0 0 1 2 2v4l2 2-2 2v4a2 2 0 0 1-2 2h-2"/></svg>JSON</button>
           <button class="rb-copy" id="copyBtn" style="margin-left:auto;align-self:center;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span id="copyTxt">Copiar</span></button>
         </div>
@@ -1018,9 +1017,9 @@ html{scroll-padding-top:92px;}
       </div>
     </div>
     <div class="rb-proof">
-      <div class="rb-pstat"><div class="n">+500</div><div class="l">procesos implementados en empresas reales</div></div>
-      <div class="rb-pstat"><div class="n">4 en 1</div><div class="l">correo, documento, imagen y audio</div></div>
-      <div class="rb-pstat"><div class="n">Día 1</div><div class="l">extrae sin entrenamiento previo</div></div>
+      <div class="rb-pstat"><div class="n">+500</div><div class="l">processos implementados em empresas reais</div></div>
+      <div class="rb-pstat"><div class="n">4 em 1</div><div class="l">e-mail, documento, imagem e áudio</div></div>
+      <div class="rb-pstat"><div class="n">Dia 1</div><div class="l">extrai sem treinamento prévio</div></div>
     </div>
   </div>
 </section>
@@ -1029,13 +1028,13 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--alt">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">No necesitas saber <span>programar.</span></h2>
-      <p class="rb-section__sub">AI Studio permite crear procesos de extracción desde una interfaz visual e intuitiva. Equipos de negocio y TI pueden configurarlo sin escribir&nbsp;código.</p>
+      <h2 class="rb-section__title">Você não precisa saber <span>programar.</span></h2>
+      <p class="rb-section__sub">O AI Studio permite criar processos de extração em uma interface visual e intuitiva. Times de negócio e de TI conseguem configurar sem escrever&nbsp;código.</p>
     </div>
     <div class="rb-compare">
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l6.5 17 2.2-7.3L19 10.5z"/><path d="M13 13l6 6"/></svg></div><div class="rb-compare__title">Interfaz 100% visual</div><div class="rb-compare__desc">Configura la extracción desde una interfaz visual, sin editores de código ni configuraciones complejas.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/><path d="M19 5 5 19"/></svg></div><div class="rb-compare__title">Cero programación</div><div class="rb-compare__desc">Crea plantillas, define campos y procesa información sin escribir una sola línea de código.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6M21 20a6 6 0 0 0-4-5.7"/></svg></div><div class="rb-compare__title">Para equipos de negocio y TI</div><div class="rb-compare__desc">Analistas, operaciones y equipos técnicos pueden usar AI Studio sin depender del desarrollo para empezar.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l6.5 17 2.2-7.3L19 10.5z"/><path d="M13 13l6 6"/></svg></div><div class="rb-compare__title">Interface 100% visual</div><div class="rb-compare__desc">Configure a extração em uma interface visual, sem editores de código nem configurações complexas.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/><path d="M19 5 5 19"/></svg></div><div class="rb-compare__title">Zero programação</div><div class="rb-compare__desc">Crie modelos, defina campos e processe informação sem escrever uma única linha de código.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6M21 20a6 6 0 0 0-4-5.7"/></svg></div><div class="rb-compare__title">Para times de negócio e de TI</div><div class="rb-compare__desc">Analistas, operações e times técnicos podem usar o AI Studio sem depender do desenvolvimento para começar.</div></div>
     </div>
   </div>
 </section>
@@ -1044,13 +1043,13 @@ html{scroll-padding-top:92px;}
 <section class="rb-section">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Tú defines <span>qué extraer</span></h2>
-      <p class="rb-section__sub">Define exactamente qué información necesitas de cada documento. AI Studio la extrae siempre con la misma estructura, lista para integrarla con tus procesos y&nbsp;sistemas.</p>
+      <h2 class="rb-section__title">Você define <span>o que extrair</span></h2>
+      <p class="rb-section__sub">Defina exatamente qual informação você precisa de cada documento. O AI Studio extrai sempre com a mesma estrutura, pronta para integrar aos seus processos e&nbsp;sistemas.</p>
     </div>
     <div class="rb-compare">
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><div class="rb-compare__title">Plantillas a tu medida</div><div class="rb-compare__desc">Crea plantillas para cada tipo de documento o proceso y reutilízalas. Obtén extracciones consistentes en cada ejecución.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg></div><div class="rb-compare__title">Campos ilimitados</div><div class="rb-compare__desc">Extrae todos los campos que necesites: simples, anidados, tablas o listas. Tú defines la estructura de los datos.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a2 2 0 0 1 2-2h2M16 3h2a2 2 0 0 1 2 2v2M20 17v2a2 2 0 0 1-2 2h-2M8 21H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg></div><div class="rb-compare__title">Integra y exporta</div><div class="rb-compare__desc">Envía los datos a Google Sheets, bases de datos, APIs, Webhooks o activa procesos automáticamente con Rocketbot.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><div class="rb-compare__title">Modelos sob medida</div><div class="rb-compare__desc">Crie modelos para cada tipo de documento ou processo e reutilize. Você obtém extrações consistentes a cada execução.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg></div><div class="rb-compare__title">Campos ilimitados</div><div class="rb-compare__desc">Extraia todos os campos que precisar: simples, aninhados, tabelas ou listas. Você define a estrutura dos dados.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a2 2 0 0 1 2-2h2M16 3h2a2 2 0 0 1 2 2v2M20 17v2a2 2 0 0 1-2 2h-2M8 21H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg></div><div class="rb-compare__title">Integre e exporte</div><div class="rb-compare__desc">Envie os dados para Google Sheets, bancos de dados, APIs e webhooks, ou dispare processos automaticamente com a Rocketbot.</div></div>
     </div>
   </div>
 </section>
@@ -1059,14 +1058,14 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--alt" id="modulos">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Procesa información.<br><span>Activa operaciones.</span></h2>
-      <p class="rb-section__sub">Cada tipo de información requiere una forma distinta de entenderla. AI Studio cuenta con módulos especializados para convertir correos, documentos, imágenes y audios en datos listos para automatizar&nbsp;procesos.</p>
+      <h2 class="rb-section__title">Processe informação.<br><span>Dispare operações.</span></h2>
+      <p class="rb-section__sub">Cada tipo de informação exige uma forma diferente de ser entendida. O AI Studio tem módulos especializados para transformar e-mails, documentos, imagens e áudios em dados prontos para automatizar&nbsp;processos.</p>
     </div>
     <div class="rb-compare rb-compare--four">
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg></div><div class="rb-compare__title">Correos</div><div class="rb-compare__desc"><b>Convierte correos en acciones.</b> Lee el contenido, extrae la información relevante y activa procesos automáticamente.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 16l-5-5L5 21"/></svg></div><div class="rb-compare__title">Imágenes</div><div class="rb-compare__desc"><b>OCR inteligente para imágenes.</b> Extrae texto y datos desde imágenes, formularios y documentos escaneados con OCR avanzado.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><div class="rb-compare__title">Audio</div><div class="rb-compare__desc"><b>De voz a datos.</b> Transcribe, interpreta e identifica la información clave para activar procesos automáticamente.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg></div><div class="rb-compare__title">Documentos</div><div class="rb-compare__desc"><b>Documentos listos para usar.</b> Extrae y estructura información desde PDFs y otros documentos para integrarla con tus sistemas.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg></div><div class="rb-compare__title">E-mails</div><div class="rb-compare__desc"><b>Transforme e-mails em ações.</b> Lê o conteúdo, extrai a informação relevante e dispara processos automaticamente.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 16l-5-5L5 21"/></svg></div><div class="rb-compare__title">Imagens</div><div class="rb-compare__desc"><b>OCR inteligente para imagens.</b> Extrai texto e dados de imagens, formulários e documentos digitalizados com OCR avançado.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><div class="rb-compare__title">Áudio</div><div class="rb-compare__desc"><b>De voz para dados.</b> Transcreve, interpreta e identifica a informação-chave para disparar processos automaticamente.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg></div><div class="rb-compare__title">Documentos</div><div class="rb-compare__desc"><b>Documentos prontos para usar.</b> Extrai e estrutura informação de PDFs e outros documentos para integrar aos seus sistemas.</div></div>
     </div>
   </div>
 </section>
@@ -1075,8 +1074,8 @@ html{scroll-padding-top:92px;}
 <section class="rb-section" id="modelos">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Usa nuestros modelos,<br><span>o conecta los tuyos.</span></h2>
-      <p class="rb-section__sub">AI Studio te da libertad para elegir. Empieza con los modelos que Rocketbot incluye o conecta tus propios modelos en la nube o en tu infraestructura&nbsp;on-premise.</p>
+      <h2 class="rb-section__title">Use os nossos modelos,<br><span>ou conecte os seus.</span></h2>
+      <p class="rb-section__sub">O AI Studio dá liberdade de escolha. Comece com os modelos que a Rocketbot inclui ou conecte os seus próprios modelos, na nuvem ou na sua infraestrutura&nbsp;on-premise.</p>
     </div>
     <div class="rb-models-grid">
       <div>
@@ -1085,22 +1084,22 @@ html{scroll-padding-top:92px;}
       </div>
       <div class="rb-mviz">
         <div class="rb-mviz__hub">
-          <div class="rb-mviz__hubtile"><img src="assets/logos/products/ai-studio.png" alt="AI Studio" loading="lazy" decoding="async"></div>
+          <div class="rb-mviz__hubtile"><img src="/assets/logos/products/ai-studio.png" alt="AI Studio" loading="lazy" decoding="async"></div>
           <div class="rb-mviz__hubtxt"><strong>AI Studio</strong><span>motor de IA</span></div>
         </div>
         <div class="rb-mviz__link"><span class="rb-mviz__flow"></span><span class="rb-mviz__flow rb-mviz__flow--2"></span><span class="rb-mviz__linkdot" id="mdot"></span></div>
         <div class="rb-mviz__cards" id="mcards">
           <div class="rb-mviz__card srcbox on" id="s-rocketbot">
             <span class="srcicon on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 5L19 8.5l-5.2 1.5L12 15l-1.8-5L5 8.5 10.2 7z"/><path d="M19 14l.9 2.5L22 17.5l-2.1.6L19 21l-.9-2.4L16 17.5l2.1-1z"/></svg></span>
-            <div class="srctxt"><span class="srclabel on">Modelos Rocketbot</span><span class="srcsub">incluidos, listos para usar</span></div>
+            <div class="srctxt"><span class="srclabel on">Modelos Rocketbot</span><span class="srcsub">inclusos, prontos para usar</span></div>
           </div>
           <div class="rb-mviz__card srcbox" id="s-cloud">
             <span class="srcicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19a5 5 0 0 1 .6-10A6.5 6.5 0 0 1 20 10.5 4.5 4.5 0 0 1 19 19z"/></svg></span>
-            <div class="srctxt"><span class="srclabel">Tu modelo · Cloud</span><span class="srcsub">tu proveedor, tus llaves</span></div>
+            <div class="srctxt"><span class="srclabel">Seu modelo · Cloud</span><span class="srcsub">seu provedor, suas chaves</span></div>
           </div>
           <div class="rb-mviz__card srcbox" id="s-onprem">
             <span class="srcicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h0M7 17.5h0"/></svg></span>
-            <div class="srctxt"><span class="srclabel">Tu modelo · On-premise</span><span class="srcsub">en tu propia infraestructura</span></div>
+            <div class="srctxt"><span class="srclabel">Seu modelo · On-premise</span><span class="srcsub">na sua própria infraestrutura</span></div>
           </div>
         </div>
       </div>
@@ -1112,31 +1111,31 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--alt" id="prompts">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Control total.<br><span>Menos trabajo.</span></h2>
-      <p class="rb-section__sub">Escribe tus propios prompts o deja que AI Studio los genere automáticamente para acelerar la extracción de&nbsp;información.</p>
+      <h2 class="rb-section__title">Controle total.<br><span>Menos trabalho.</span></h2>
+      <p class="rb-section__sub">Escreva os seus próprios prompts ou deixe o AI Studio gerá-los automaticamente para acelerar a extração de&nbsp;informação.</p>
     </div>
     <div class="rb-prompt-grid">
       <div class="rb-pcx">
         <div class="top">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
-          <h3>Tus propios prompts</h3>
+          <h3>Seus próprios prompts</h3>
         </div>
-        <p>Define exactamente qué datos extraer y cómo interpretarlos. Ideal para procesos que requieren reglas específicas o validaciones personalizadas.</p>
+        <p>Defina exatamente quais dados extrair e como interpretá-los. Ideal para processos que exigem regras específicas ou validações personalizadas.</p>
         <div class="rb-promptbox">
-          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Tu prompt</div>
-          <div class="pt">Extrae el número de factura, el RUT del proveedor, la fecha, el neto, el IVA y el total. Devuelve los montos como números en CLP.</div>
+          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Seu prompt</div>
+          <div class="pt">Extraia o número da nota fiscal, o CNPJ do fornecedor, a data, o valor líquido, os impostos e o total. Devolva os valores como números em BRL.</div>
         </div>
       </div>
       <div class="rb-pcx">
         <div class="top">
-          <div class="ic"><img src="assets/logos/products/ai-studio.png" alt="AI Studio" loading="lazy" decoding="async"></div>
-          <h3>Generados por IA</h3>
+          <div class="ic"><img src="/assets/logos/products/ai-studio.png" alt="AI Studio" loading="lazy" decoding="async"></div>
+          <h3>Gerados por IA</h3>
           <span class="auto">Automático</span>
         </div>
-        <p>¿Prefieres no escribir prompts? AI Studio los genera automáticamente según el tipo de documento para que empieces a extraer información desde el primer minuto.</p>
+        <p>Prefere não escrever prompts? O AI Studio gera automaticamente conforme o tipo de documento, para você começar a extrair informação já no primeiro minuto.</p>
         <div class="rb-promptbox">
-          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5L19 8.5l-5.2 1.5L12 15l-1.8-5L5 8.5 10.2 7z"/></svg>Generado por IA</div>
-          <div class="pt">Identifica el tipo de documento y extrae sus campos clave: emisor, receptor, folio, fechas, montos e impuestos. Normaliza fechas a AAAA-MM-DD y montos a número.</div>
+          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5L19 8.5l-5.2 1.5L12 15l-1.8-5L5 8.5 10.2 7z"/></svg>Gerado por IA</div>
+          <div class="pt">Identifique o tipo de documento e extraia os seus campos-chave: emissor, destinatário, número, datas, valores e impostos. Normalize as datas para AAAA-MM-DD e os valores para número.</div>
         </div>
       </div>
     </div>
@@ -1147,11 +1146,11 @@ html{scroll-padding-top:92px;}
 <section class="rb-section" id="industrias">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Extracción inteligente<br><span>para cada industria</span></h2>
-      <p class="rb-section__sub">Cada industria recibe información en formatos diferentes. Descubre cómo AI Studio la comprende, la estructura y la convierte en datos listos para tus procesos de&nbsp;negocio.</p>
+      <h2 class="rb-section__title">Extração inteligente<br><span>para cada setor</span></h2>
+      <p class="rb-section__sub">Cada setor recebe informação em formatos diferentes. Veja como o AI Studio a compreende, a estrutura e a transforma em dados prontos para os seus processos de&nbsp;negócio.</p>
     </div>
     <div class="rb-explorer">
-      <div class="rb-explorer__rail" role="tablist" aria-label="Industrias" id="rail"><div class="rb-explorer__rail-h">Industrias</div></div>
+      <div class="rb-explorer__rail" role="tablist" aria-label="Setores" id="rail"><div class="rb-explorer__rail-h">Setores</div></div>
       <div class="rb-explorer__panel" role="tabpanel">
         <div class="rb-explorer__head">
           <div class="big" id="eIcon"></div>
@@ -1167,13 +1166,13 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--alt" id="proceso">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Cómo funciona</h2>
-      <p class="rb-section__sub">Convierte documentos en datos estructurados en tres&nbsp;pasos.</p>
+      <h2 class="rb-section__title">Como funciona</h2>
+      <p class="rb-section__sub">Transforme documentos em dados estruturados em três&nbsp;passos.</p>
     </div>
     <div class="rb-steps">
-      <div class="rb-step"><div class="num">1</div><h3>Define la información que necesitas</h3><p>Selecciona los campos que deseas extraer de documentos, correos, imágenes o audios mediante una interfaz visual y plantillas personalizadas.</p></div>
-      <div class="rb-step"><div class="num">2</div><h3>Conecta o carga la información</h3><p>Procesa archivos desde tu computador, Google Drive, correo electrónico o flujos automatizados con Rocketbot.</p></div>
-      <div class="rb-step"><div class="num">3</div><h3>Obtén datos listos para usar</h3><p>AI Studio interpreta el contenido, estructura la información y la entrega lista para integrarse con ERPs, CRMs, APIs, bases de datos o procesos de automatización.</p></div>
+      <div class="rb-step"><div class="num">1</div><h3>Defina a informação que você precisa</h3><p>Selecione os campos que quer extrair de documentos, e-mails, imagens ou áudios usando uma interface visual e modelos personalizados.</p></div>
+      <div class="rb-step"><div class="num">2</div><h3>Conecte ou carregue a informação</h3><p>Processe arquivos do seu computador, do Google Drive, do e-mail ou de fluxos automatizados com a Rocketbot.</p></div>
+      <div class="rb-step"><div class="num">3</div><h3>Receba dados prontos para usar</h3><p>O AI Studio interpreta o conteúdo, estrutura a informação e a entrega pronta para integrar com ERPs, CRMs, APIs, bancos de dados ou processos de automação.</p></div>
     </div>
   </div>
 </section>
@@ -1182,18 +1181,18 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--space">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Protege tu información en cada proceso</h2>
-      <p class="rb-section__sub">AI Studio incorpora controles de seguridad, cifrado y gobierno para procesar información con confianza, mantener el control de tus datos y cumplir con los estándares de seguridad de tu&nbsp;organización.</p>
+      <h2 class="rb-section__title">Proteja a sua informação em cada etapa</h2>
+      <p class="rb-section__sub">O AI Studio incorpora controles de segurança, criptografia e governança para processar informação com confiança, manter o controle dos seus dados e atender aos padrões de segurança da sua&nbsp;organização.</p>
     </div>
     <div class="rb-iso">
       <div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg></div>
-      <span>Operación certificada bajo <b>ISO/IEC 27001</b> de gestión de seguridad de la información.</span>
+      <span>Operação certificada pela <b>ISO/IEC 27001</b> de gestão de segurança da informação.</span>
       <span class="badge">Certificado</span>
     </div>
     <div class="rb-scards">
-      <div class="rb-scard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.4"/></svg></div><h3>Cifrado de datos</h3><p>Protege la información mediante cifrado en tránsito y en reposo para garantizar la seguridad durante todo el procesamiento.</p></div>
-      <div class="rb-scard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M17 11l2 2 4-4"/></svg></div><h3>Control de acceso</h3><p>Define quién puede crear plantillas, procesar documentos y acceder a la información mediante roles y permisos configurables.</p></div>
-      <div class="rb-scard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/><path d="M12 8v4l3 2"/></svg></div><h3>Soberanía de datos</h3><p>Utiliza tus propios modelos de inteligencia artificial y procesa la información en infraestructura on-premise cuando tu organización requiera mantener el control de sus datos.</p></div>
+      <div class="rb-scard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.4"/></svg></div><h3>Criptografia de dados</h3><p>Protege a informação com criptografia em trânsito e em repouso, garantindo segurança durante todo o processamento.</p></div>
+      <div class="rb-scard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M17 11l2 2 4-4"/></svg></div><h3>Controle de acesso</h3><p>Defina quem pode criar modelos, processar documentos e acessar a informação por meio de papéis e permissões configuráveis.</p></div>
+      <div class="rb-scard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/><path d="M12 8v4l3 2"/></svg></div><h3>Soberania de dados</h3><p>Use os seus próprios modelos de inteligência artificial e processe a informação em infraestrutura on-premise sempre que a sua organização precisar manter o controle dos dados.</p></div>
     </div>
   </div>
 </section>
@@ -1203,10 +1202,10 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-cta-band__inner">
       <div>
-        <h2 class="rb-cta-band__title">¿Listo para dejar atrás el procesamiento manual?</h2>
-        <p class="rb-cta-band__sub">Descubre cómo AI Studio transforma correos, documentos, imágenes y audios en información lista para usar.</p>
+        <h2 class="rb-cta-band__title">Pronto para deixar o processamento manual para trás?</h2>
+        <p class="rb-cta-band__sub">Veja como o AI Studio transforma e-mails, documentos, imagens e áudios em informação pronta para usar.</p>
       </div>
-      <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Contáctanos</a>
+      <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Fale conosco</a>
     </div>
   </div>
 </section>
@@ -1214,7 +1213,7 @@ html{scroll-padding-top:92px;}
 <!-- FAQ -->
 <section class="rb-section" id="faq">
   <div class="container">
-    <div class="rb-section__head"><h2 class="rb-section__title">Preguntas frecuentes</h2></div>
+    <div class="rb-section__head"><h2 class="rb-section__title">Perguntas frequentes</h2></div>
     <div class="rb-faq" id="faqWrap"></div>
   </div>
 </section>
@@ -1223,8 +1222,8 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-footer__grid">
       <div class="rb-footer__brand">
-        <img src="assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
-        <p class="rb-footer__copy">Plataforma de automatización de procesos y agentes inteligentes para recuperar tiempo y tomar mejores decisiones.</p>
+        <img src="/assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
+        <p class="rb-footer__copy">Plataforma de automação de processos e agentes inteligentes para recuperar tempo e tomar decisões melhores.</p>
         <div class="rb-footer__social">
           <a href="https://www.facebook.com/rocketbot.es" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -1240,19 +1239,19 @@ html{scroll-padding-top:92px;}
           </a>
         </div>
       </div>
-      <div class="rb-footer__col"><h6>Productos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestador</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="#">Políticas de privacidad</a></li><li><a href="#">Políticas de seguridad</a></li><li><a href="#">Trabaja con Nosotros</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Soporte y servicios</h6><ul><li><a href="#">Certificación</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li><li><a href="#">Descargas</a></li><li><a href="#">FAQs</a></li><li><a href="#">Media kit</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Produtos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestrador</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contato</a></li><li><a href="#">Políticas de privacidade</a></li><li><a href="#">Políticas de segurança</a></li><li><a href="#">Trabalhe conosco</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Suporte e serviços</h6><ul><li><a href="#">Certificação</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Fórum</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a></li><li><a href="#">Downloads</a></li><li><a href="#">Perguntas frequentes</a></li><li><a href="#">Media kit</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">
       <span>© Rocketbot SpA | All rights reserved 2018 – 2025</span>
-      <div class="rb-footer__legal"><a href="#">Políticas de privacidad</a><a href="#">Políticas de seguridad</a></div>
+      <div class="rb-footer__legal"><a href="#">Políticas de privacidade</a><a href="#">Políticas de segurança</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-var LOGOS={light:'assets/logos/logo-header.png',dark:'assets/logos/logo-header-white.png'};
+var LOGOS={light:'/assets/logos/logo-header.png',dark:'/assets/logos/logo-header-white.png'};
 var html=document.documentElement,navLogo=document.getElementById('nav-logo'),themeBtn=document.getElementById('theme-btn'),iconSun=document.getElementById('icon-sun'),iconMoon=document.getElementById('icon-moon');
 function applyTheme(t){html.setAttribute('data-theme',t);if(navLogo)navLogo.src=LOGOS[t];if(iconSun)iconSun.style.display=t==='dark'?'none':'';if(iconMoon)iconMoon.style.display=t==='light'?'none':'';try{localStorage.setItem('rb-theme',t);}catch(e){}}
 (function(){var s='dark';try{s=localStorage.getItem('rb-theme')||'dark';}catch(e){}applyTheme(s);})();
@@ -1335,24 +1334,14 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
   });
 })();</script>
 
-<!-- Nombres de producto protegidos antes de cargar el traductor -->
-<script>try{ RB_I18N.shield(); }catch(e){}</script>
-
-<!-- Google Translate -->
-<div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
-<script>
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,pt',autoDisplay:false},'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 
 <script>
-/* Language Switcher */
+/* Selector de idioma: navega entre /  /en/  /pt/ */
 (function(){
   var btn  = document.getElementById('rb-lang-btn');
   var menu = document.getElementById('rb-lang-menu');
   if(!btn || !menu) return;
+  var CUR='pt', PAGE='ai-studio.html';
   btn.addEventListener('click', function(e){
     e.stopPropagation();
     var open = menu.classList.toggle('open');
@@ -1362,44 +1351,15 @@ function googleTranslateElementInit(){
     menu.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
   });
-  function setLang(lang){
-    try{ if(window.RB_I18N) RB_I18N.setLang(lang); }catch(e){}
-    if(btn) btn.setAttribute('data-active', lang);
-    try{ localStorage.setItem('rb-lang', lang); }catch(e){}
-    menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-      o.classList.toggle('rb-lang--active', o.dataset.lang === lang);
+  function url(l){ return l==='es' ? '/'+PAGE : '/'+l+'/'+PAGE; }
+  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
+    o.classList.toggle('rb-lang--active', o.dataset.lang===CUR);
+    o.addEventListener('click', function(){
+      try{ localStorage.setItem('rb-lang', o.dataset.lang); }catch(e){}
+      location.href = url(o.dataset.lang);
     });
-    menu.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-    if(lang === 'es'){
-      var exp0 = new Date(0).toUTCString();
-      document.cookie = 'googtrans=; path=/; expires=' + exp0;
-      document.cookie = 'googtrans=; path=/; domain=.' + location.hostname + '; expires=' + exp0;
-      location.reload();
-      return;
-    }
-    var sel = document.querySelector('.goog-te-combo');
-    if(sel){ sel.value = lang; sel.dispatchEvent(new Event('change')); }
-    else {
-      var exp1 = new Date(); exp1.setFullYear(exp1.getFullYear()+1);
-      var expStr = exp1.toUTCString();
-      document.cookie = 'googtrans=/es/'+lang+'; path=/; expires='+expStr;
-      document.cookie = 'googtrans=/es/'+lang+'; path=/; domain=.'+location.hostname+'; expires='+expStr;
-      location.reload();
-    }
-  }
-  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-    o.addEventListener('click', function(){ setLang(o.dataset.lang); });
   });
-  var saved = 'es';
-  try{ saved = localStorage.getItem('rb-lang') || 'es'; }catch(e){}
-  btn.setAttribute('data-active', (window.RB_I18N && RB_I18N.lang) || saved);
-  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-    o.classList.toggle('rb-lang--active', o.dataset.lang === saved);
-  });
-  if(saved !== 'es' && document.cookie.indexOf('googtrans') === -1){
-    document.cookie = 'googtrans=/es/'+saved+'; path=/';
-  }
+  btn.setAttribute('data-active', CUR);
 })();
 </script>
 
@@ -1422,15 +1382,15 @@ const CHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-wid
 
 const CASES=[
   {key:'factura', mod:'doc', tag:'Documento · PDF', label:'factura.pdf',
-   raw:'<div class="rtitle">Factura electrónica N° 88213</div><div class="rbody">Proveedor: Distribuidora Andes SpA<br>RUT 76.123.456-7 · Fecha 12/06/2026<br>OC asociada: OC-2025-0471<br>Resma papel carta x20 · Tóner HP 26A x4 · Silla ergonómica x2 · Cable de red Cat6 x10<br>Neto $534.200 · IVA $101.498 · Total $635.698 CLP</div>',
+   raw:'<div class="rtitle">Factura electrónica N° 88213</div><div class="rbody">Proveedor: Distribuidora Andes SpA<br>RUT 76.123.456-7 · Fecha 12/06/2026<br>OC asociada: OC-2025-0471<br>Resma papel carta x20 · Tóner HP 26A x4 · Silla ergonómica x2 · Cabo de rede Cat6 x10<br>Neto $534.200 · IVA $101.498 · Total $635.698 CLP</div>',
    fields:[['Tipo','Factura electrónica'],['N° documento','88213'],['Proveedor','Distribuidora Andes SpA'],['RUT','76.123.456-7'],['Fecha','2026-06-12'],['OC asociada','OC-2025-0471'],['Neto','$534.200'],['IVA','$101.498'],['Total','$635.698']],
-   table:{cap:'Ítems',cols:['Descripción','Cant.','P. unit.','Total'],rows:[['Resma papel carta','20','$2.990','$59.800'],['Tóner HP 26A','4','$64.900','$259.600'],['Silla ergonómica','2','$89.900','$179.800'],['Cable de red Cat6','10','$3.500','$35.000']]},
-   data:{tipoDocumento:'Factura electrónica',numero:'88213',proveedor:'Distribuidora Andes SpA',rut:'76.123.456-7',fecha:'2026-06-12',ocAsociada:'OC-2025-0471',items:[{descripcion:'Resma papel carta',cantidad:20,precioUnitario:2990,total:59800},{descripcion:'Tóner HP 26A',cantidad:4,precioUnitario:64900,total:259600},{descripcion:'Silla ergonómica',cantidad:2,precioUnitario:89900,total:179800},{descripcion:'Cable de red Cat6',cantidad:10,precioUnitario:3500,total:35000}],neto:534200,iva:101498,total:635698,moneda:'CLP'}},
+   table:{cap:'Ítems',cols:['Descripción','Cant.','P. unit.','Total'],rows:[['Resma papel carta','20','$2.990','$59.800'],['Tóner HP 26A','4','$64.900','$259.600'],['Silla ergonómica','2','$89.900','$179.800'],['Cabo de rede Cat6','10','$3.500','$35.000']]},
+   data:{tipoDocumento:'Factura electrónica',numero:'88213',proveedor:'Distribuidora Andes SpA',rut:'76.123.456-7',fecha:'2026-06-12',ocAsociada:'OC-2025-0471',items:[{descripcion:'Resma papel carta',cantidad:20,precioUnitario:2990,total:59800},{descripcion:'Tóner HP 26A',cantidad:4,precioUnitario:64900,total:259600},{descripcion:'Silla ergonómica',cantidad:2,precioUnitario:89900,total:179800},{descripcion:'Cabo de rede Cat6',cantidad:10,precioUnitario:3500,total:35000}],neto:534200,iva:101498,total:635698,moneda:'CLP'}},
   {key:'correo', mod:'mail', tag:'Correo', label:'reclamo-4471',
    raw:'<div class="rmeta"><b>De:</b> maria.soto@empresa.cl</div><div class="rmeta"><b>Asunto:</b> Problema con factura 4471</div><div class="rbody" style="margin-top:10px">Hola, recibí la factura 4471 con un monto incorrecto: dice $1.290.000 pero cotizamos $1.190.000. Necesito la corrección antes del viernes para poder pagar. Gracias, María.</div>',
-   fields:[['Tipo','Reclamo de facturación'],['Cliente','María Soto'],['Email','maria.soto@empresa.cl'],['Documento','Factura 4471'],['Monto en disputa','$100.000'],['Plazo','2026-06-26'],['Prioridad','Alta'],['Acción sugerida','Emitir nota de crédito']],
+   fields:[['Tipo','Reclamo de facturación'],['Cliente','Maria Soto'],['Email','maria.soto@empresa.cl'],['Documento','Factura 4471'],['Monto en disputa','$100.000'],['Plazo','2026-06-26'],['Prioridad','Alta'],['Acción sugerida','Emitir nota de crédito']],
    table:null,
-   data:{tipo:'Reclamo de facturación',cliente:'María Soto',email:'maria.soto@empresa.cl',documento:'Factura 4471',montoEnDisputa:100000,moneda:'CLP',plazo:'2026-06-26',prioridad:'alta',accionSugerida:'Emitir nota de crédito'}},
+   data:{tipo:'Reclamo de facturación',cliente:'Maria Soto',email:'maria.soto@empresa.cl',documento:'Factura 4471',montoEnDisputa:100000,moneda:'CLP',plazo:'2026-06-26',prioridad:'alta',accionSugerida:'Emitir nota de crédito'}},
   {key:'comprobante', mod:'img', tag:'Imagen · OCR', label:'comprobante.jpg',
    raw:'<div class="rtitle">Comprobante de transferencia</div><div class="rbody">Banco: BancoEstado<br>Cuenta origen: ****4471<br>Destino: Proveedor XYZ SpA<br>Monto: $2.450.000<br>18/06/2026 14:32<br>N° operación: 9982304</div>',
    fields:[['Tipo','Comprobante de transferencia'],['Banco','BancoEstado'],['Cuenta origen','****4471'],['Destino','Proveedor XYZ SpA'],['Monto','$2.450.000'],['Fecha y hora','2026-06-18 14:32'],['N° operación','9982304']],
@@ -1438,9 +1398,9 @@ const CASES=[
    data:{tipo:'Comprobante de transferencia',banco:'BancoEstado',cuentaOrigen:'****4471',destino:'Proveedor XYZ SpA',monto:2450000,moneda:'CLP',fechaHora:'2026-06-18T14:32:00',numeroOperacion:'9982304'}},
   {key:'llamada', mod:'mic', tag:'Audio · 2:14', label:'llamada.mp3',
    raw:'<div class="rtitle">Transcripción de llamada</div><div class="rbody">«…buenas, llamo porque mi pedido 5530 no ha llegado y necesito reagendar la entrega para el lunes en la mañana, mi número es el 9 8765 4321…»</div>',
-   fields:[['Motivo','Reagendar entrega'],['Pedido','5530'],['Nueva fecha','Lunes AM'],['Teléfono','+56 9 8765 4321'],['Sentimiento','Molesto'],['Acción sugerida','Crear ticket de logística']],
+   fields:[['Motivo','Reagendar entrega'],['Pedido','5530'],['Nueva fecha','Lunes AM'],['Teléfono','+56 9 8765 4321'],['Sentimiento','Molesto'],['Acción sugerida','Criar chamado de logística']],
    table:null,
-   data:{motivo:'Reagendar entrega',pedido:'5530',nuevaFecha:'lunes AM',telefono:'+56 9 8765 4321',sentimiento:'molesto',accionSugerida:'Crear ticket de logística'}},
+   data:{motivo:'Reagendar entrega',pedido:'5530',nuevaFecha:'lunes AM',telefono:'+56 9 8765 4321',sentimiento:'molesto',accionSugerida:'Criar chamado de logística'}},
   {key:'cartola', mod:'doc', tag:'Documento · PDF', label:'cartola.pdf',
    raw:'<div class="rtitle">Cartola bancaria — Junio 2026</div><div class="rbody">Titular: Constructora Lillo Ltda.<br>Cuenta: ****8821 · Periodo: 01–30 jun 2026<br>Saldo inicial $12.450.320 · Saldo final $11.823.670<br>4 movimientos · Abonos $3.200.000 · Cargos $3.826.650</div>',
    fields:[['Titular','Constructora Lillo Ltda.'],['Cuenta','****8821'],['Periodo','2026-06-01 — 2026-06-30'],['Saldo inicial','$12.450.320'],['Saldo final','$11.823.670'],['Total abonos','$3.200.000'],['Total cargos','$3.826.650']],
@@ -1515,7 +1475,7 @@ const M_ICN={
 };
 const MODELS=[
   {key:'rocketbot',icon:'spark',title:'Modelos incluidos',sub:'Listos para usar, sin configuración',desc:'Rocketbot incluye modelos de IA ya integrados, para que empieces a extraer información desde el primer día, sin configurar nada ni montar infraestructura.',chips:['Cero configuración','Sin infraestructura propia','Actualizados por Rocketbot']},
-  {key:'cloud',icon:'cloud',title:'Tu modelo · Cloud',sub:'Tu proveedor, tus llaves',desc:'Conecta tus propios modelos en la nube y úsalos dentro de AI Studio bajo tus llaves y tus políticas, con la libertad de cambiar de proveedor cuando lo necesites.',chips:['Tu proveedor y tus llaves','Control de costos','Cambias de modelo cuando quieras']},
+  {key:'cloud',icon:'cloud',title:'Seu modelo · Cloud',sub:'Seu provedor, suas chaves',desc:'Conecta tus propios modelos en la nube y úsalos dentro de AI Studio bajo tus llaves y tus políticas, con la libertad de cambiar de proveedor cuando lo necesites.',chips:['Tu proveedor y tus llaves','Control de costos','Cambias de modelo cuando quieras']},
   {key:'onprem',icon:'server',title:'Tu modelo · On-premise',sub:'En tu propia infraestructura',desc:'¿Datos sensibles o sector regulado? Despliega y conecta tus modelos en tu propia infraestructura: la información nunca sale de tu entorno.',chips:['Soberanía de datos','Cumplimiento normativo','Sin salida de datos al exterior']}
 ];
 const mseg=document.getElementById('mseg');
@@ -1564,7 +1524,7 @@ const INDUSTRIES=[
     {t:'Facturas de proveedores',area:'Documento',d:'Extrae la información necesaria para automatizar cuentas por pagar.',tag:'Pagos oportunos'},
     {t:'Certificados',area:'Imagen',d:'Interpreta certificados de calidad y exportación para validar su contenido.',tag:'Cumplimiento normativo'},
     {t:'Reportes de planta',area:'Documento',d:'Convierte reportes operativos en datos listos para análisis y automatización.',tag:'Mayor visibilidad'}]},
-  {name:'Salud y farma',icon:'pulse',intro:'Procesa información clínica y administrativa con rapidez y precisión.',cases:[
+  {name:'Saúde e farma',icon:'pulse',intro:'Procesa información clínica y administrativa con rapidez y precisión.',cases:[
     {t:'Órdenes y recetas',area:'Documento',d:'Extrae automáticamente la información relevante de órdenes médicas y recetas.',tag:'Datos estructurados'},
     {t:'Bonos y prestaciones',area:'Imagen',d:'Obtiene la información necesaria para agilizar la facturación.',tag:'Menos rechazos'},
     {t:'Llamadas de pacientes',area:'Audio',d:'Transcribe conversaciones y detecta automáticamente la intención del paciente.',tag:'Atención más rápida'}]},
@@ -1576,7 +1536,7 @@ const INDUSTRIES=[
     {t:'Contratos y altas',area:'Documento',d:'Extrae automáticamente la información necesaria para provisionar nuevos servicios.',tag:'Implementación más rápida'},
     {t:'Reclamos por correo',area:'Correo',d:'Clasifica solicitudes según prioridad y tipo de incidencia.',tag:'Cumplimiento de SLA'},
     {t:'Llamadas de soporte',area:'Audio',d:'Transcribe conversaciones y propone la mejor resolución.',tag:'Mayor productividad'}]},
-  {name:'Sector público',icon:'civic',intro:'Moderniza la gestión documental sobre sistemas heredados.',cases:[
+  {name:'Setor público',icon:'civic',intro:'Moderniza la gestión documental sobre sistemas heredados.',cases:[
     {t:'Solicitudes ciudadanas',area:'Documento',d:'Extrae automáticamente la información de formularios y solicitudes.',tag:'Reduce el tiempo de ciclo'},
     {t:'Documentos históricos',area:'Imagen',d:'Digitaliza documentos antiguos y recupera su información mediante IA.',tag:'OCR inteligente'},
     {t:'Expedientes',area:'Documento',d:'Organiza y estructura expedientes completos para facilitar su consulta.',tag:'Mayor trazabilidad'}]}

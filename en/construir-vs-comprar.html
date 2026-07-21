@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <!-- ── Rocketbot i18n: protege los nombres de producto de Google Translate
@@ -30,7 +30,7 @@ window.RB_I18N=(function(){
     return s;
   }
   var API={
-    lang:detect(),
+    lang:'en',
     pick:function(map){ return map[API.lang]||map.es; },
     onLang:function(fn){ subs.push(fn); },
     setLang:function(l){
@@ -102,7 +102,6 @@ window.RB_I18N=(function(){
   };
   return API;
 })();
-document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); }catch(e){} });
 </script>
 <!-- Google tag (gtag.js) – GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EHJ8S289M"></script>
@@ -113,10 +112,10 @@ document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); 
   gtag('config', 'G-2EHJ8S289M');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>¿Construir con Claude o comprar la suite? | Rocketbot</title>
-<meta name="description" content="Los LLM abarataron escribir código, no automatizar. La diferencia está en operar, gobernar y mantener. No es la suite contra Claude: es Claude crudo contra Claude gobernado.">
+<title>Build with Claude or buy the suite? | Rocketbot</title>
+<meta name="description" content="LLMs made writing code cheap, not automating. The difference is running, governing and maintaining it. This isn't the suite versus Claude: it's raw Claude versus governed Claude.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://rocketbot.com/construir-vs-comprar">
+<link rel="canonical" href="https://rocketbot.com/en/construir-vs-comprar">
 <link rel="alternate" hreflang="es" href="https://rocketbot.com/construir-vs-comprar">
 <link rel="alternate" hreflang="en" href="https://rocketbot.com/en/construir-vs-comprar">
 <link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/construir-vs-comprar">
@@ -126,18 +125,18 @@ document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rocketbot">
-<meta property="og:title" content="¿Construir con Claude o comprar la suite? | Rocketbot">
-<meta property="og:description" content="No es la suite contra Claude: es Claude crudo contra Claude gobernado. Descubre qué te conviene según tu contexto.">
-<meta property="og:url" content="https://rocketbot.com/construir-vs-comprar">
+<meta property="og:title" content="Build with Claude or buy the suite? | Rocketbot">
+<meta property="og:description" content="This isn't the suite versus Claude: it's raw Claude versus governed Claude. Find out which suits your situation.">
+<meta property="og:url" content="https://rocketbot.com/en/construir-vs-comprar">
 <meta property="og:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="es_LA">
+<meta property="og:locale" content="en_US">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rocketbot">
-<meta name="twitter:title" content="¿Construir con Claude o comprar la suite? | Rocketbot">
-<meta name="twitter:description" content="No es la suite contra Claude: es Claude crudo contra Claude gobernado.">
+<meta name="twitter:title" content="Build with Claude or buy the suite? | Rocketbot">
+<meta name="twitter:description" content="This isn't the suite versus Claude: it's raw Claude versus governed Claude.">
 <meta name="twitter:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -577,42 +576,42 @@ html{scroll-padding-top:92px;}
 <nav class="rb-nav" id="rb-nav">
   <div class="rb-nav__inner">
     <a href="index.html" class="rb-nav__logo-wrap">
-      <img id="nav-logo" src="assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
+      <img id="nav-logo" src="/assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
     </a>
     <ul class="rb-nav__links">
       <li class="rb-nav__suite-li"><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Productos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button">Products <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestador</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
+          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orchestrator</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
         </div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="cfo.html">Para CFOs</a><a href="construir-vs-comprar.html">Construir o comprar</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
+        <button type="button">Resources <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="cfo.html">For CFOs</a><a href="construir-vs-comprar.html">Build or buy</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Soporte y servicios <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a><a href="#">Media kit</a></div>
+        <button type="button">Support &amp; services <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a><a href="#">Media kit</a></div>
       </li>
-      <li><a href="contacto.html">Contáctanos</a></li>
+      <li><a href="contacto.html">Talk to us</a></li>
     </ul>
     <div class="rb-nav__actions">
-      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
       <div class="rb-lang" id="rb-lang">
-        <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Language" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
           <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span>Español</button>
           <button class="rb-lang__opt" data-lang="en" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span>English</button>
           <button class="rb-lang__opt" data-lang="pt" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span>Português</button>
         </div>
       </div>
-      <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
+      <button class="rb-iconbtn" id="theme-btn" title="Switch theme" type="button">
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
         <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
       </button>
-      <a href="cfo.html" class="rb-btn rb-cfo-btn">Para CFOs</a>
-      <a href="contacto.html" class="rb-btn rb-btn--primary">Hablemos de tu caso</a>
+      <a href="cfo.html" class="rb-btn rb-cfo-btn">For CFOs</a>
+      <a href="contacto.html" class="rb-btn rb-btn--primary">Let's talk about your case</a>
     </div>
   </div>
 </nav>
@@ -621,30 +620,30 @@ html{scroll-padding-top:92px;}
 <div class="rb-mobile-menu" id="rb-mobile-menu">
   <div class="rb-mobile-menu__inner">
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Productos</div>
+      <div class="rb-mobile-menu__label">Products</div>
       <a href="saturn-studio.html">Saturn Studio</a>
       <a href="rpa-studio.html">RPA Studio</a>
       <a href="ai-studio.html">AI Studio</a>
-      <a href="orquestador.html">Orquestador</a>
+      <a href="orquestador.html">Orchestrator</a>
       <a href="xperience.html">Xperience</a>
       <a href="nexus.html">Nexus</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Recursos</div>
+      <div class="rb-mobile-menu__label">Resources</div>
       <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Soporte y servicios</div>
-      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a>
+      <div class="rb-mobile-menu__label">Support &amp; services</div>
+      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a>
       <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
-      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
+      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Media kit</a>
     </div>
     <div class="rb-mobile-menu__actions">
-      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suite Rocketbot</a>
-      <a href="contacto.html" class="rb-mobile-menu__btn">Contáctanos</a>
-      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Descarga</button>
+      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Rocketbot Suite</a>
+      <a href="contacto.html" class="rb-mobile-menu__btn">Talk to us</a>
+      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Download</button>
     </div>
   </div>
 </div>
@@ -653,35 +652,35 @@ html{scroll-padding-top:92px;}
 <div class="rb-dlmodal" id="rbDlModal" aria-hidden="true">
   <div class="rb-dlmodal__backdrop" data-dl-close></div>
   <div class="rb-dlmodal__panel" role="dialog" aria-modal="true" aria-labelledby="rbDlTitle">
-    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Cerrar">&times;</button>
-    <h2 id="rbDlTitle" class="rb-dlmodal__title">Descarga Rocketbot</h2>
-    <p class="rb-dlmodal__sub">Elige el programa y tu sistema operativo.</p>
+    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Close">&times;</button>
+    <h2 id="rbDlTitle" class="rb-dlmodal__title">Download Rocketbot</h2>
+    <p class="rb-dlmodal__sub">Pick your product and operating system.</p>
     <div class="rb-dlmodal__body">
       <div class="rb-dlmodal__side">
-        <div class="rb-dlmodal__label">Programas</div>
+        <div class="rb-dlmodal__label">Products</div>
         <button type="button" class="rb-dlmodal__pill is-active" data-dl-pill="rpa">
-          <img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
+          <img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
         </button>
 
         <div class="rb-dlmodal__req">
           <div class="rb-dlmodal__reqgrp">
-            <div class="rb-dlmodal__reqttl">Requisitos mínimos</div>
-            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i3-4340 o AMD FX-6300</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>10 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>4 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Minimum requirements</div>
+            <div class="rb-dlmodal__reqrow"><span>Processor</span><strong translate="no">Intel Core i3-4340 or AMD FX-6300</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Storage</span><strong>10 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memory</span><strong>4 GB RAM</strong></div>
           </div>
           <div class="rb-dlmodal__reqgrp rb-dlmodal__reqgrp--rec">
-            <div class="rb-dlmodal__reqttl">Configuración recomendada</div>
-            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i5</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>175 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>8 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Recommended setup</div>
+            <div class="rb-dlmodal__reqrow"><span>Processor</span><strong translate="no">Intel Core i5</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Storage</span><strong>175 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memory</span><strong>8 GB RAM</strong></div>
           </div>
         </div>
       </div>
       <div class="rb-dlmodal__main">
         <div class="rb-dlmodal__program is-active" data-dl-panel="rpa">
-          <div class="rb-dlmodal__ptitle"><img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
-          <p class="rb-dlmodal__pdesc">Descarga el instalador para tu sistema operativo. En el sitio de descarga encontrarás todas las versiones disponibles y sus notas de lanzamiento.</p>
+          <div class="rb-dlmodal__ptitle"><img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
+          <p class="rb-dlmodal__pdesc">Download the installer for your operating system. The download site lists every available version along with its release notes.</p>
           <div class="rb-dlmodal__os">
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7H3V5.5ZM11.4 4.3 21 3v8.4h-9.6V4.3ZM3 12.4h7.5v7.1L3 18.5v-6.1ZM11.4 12.4H21V21l-9.6-1.3v-7.3Z"/></svg>Windows<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -689,31 +688,31 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Latest version</span></div>
                     <div class="rb-dlmodal__vmeta">354 MB · ZIP · MD5 153fd4432f30564ecd16b146dcfaac31</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2025.07.01 <span class="rb-dlmodal__vtag">Python 3.13</span></div>
                     <div class="rb-dlmodal__vmeta">356 MB · ZIP · MD5 9f0e2c18051b020d71387821f3abdf82</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2024.05.28</div>
                     <div class="rb-dlmodal__vmeta">458 MB · ZIP · MD5 b4034aaf4759f710f6754df5bbd81be2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2023.11.10</div>
                     <div class="rb-dlmodal__vmeta">358 MB · ZIP · MD5 a18cc70a91134e73d2da277f973fa87a</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 </div>
               </div>
@@ -724,17 +723,17 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Latest version</span></div>
                     <div class="rb-dlmodal__vmeta">248 MB · ZIP · MD5 ff4ea3d2e49aa4e3294158f04ad81922</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Mac ARM · v2025.07.01</div>
                     <div class="rb-dlmodal__vmeta">533 MB · ZIP · MD5 3635e4cd1ec90eb5bac453c6b813bf29</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 </div>
               </div>
@@ -745,24 +744,24 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Latest version</span></div>
                     <div class="rb-dlmodal__vmeta">434 MB · ZIP · MD5 6312df8b82977e4e08d48826deb95b34</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">RHEL · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">166.2 MB · TAR.GZ · MD5 6d98a8f63cec705d181a011dfb69c90c</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Ubuntu · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">118.1 MB · TAR.XZ · MD5 b2d9a94de8299615e525ea26d5d543a2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 </div>
               </div>
@@ -779,11 +778,11 @@ html{scroll-padding-top:92px;}
   <div class="rb-hero__particles"></div>
   <div class="container">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title">Toda la inteligencia de Claude,<br>sin construir<span class="rb-hero__rot" id="heroRot">el andamiaje</span></h1>
-      <p class="rb-hero__sub">Los modelos como Claude abarataron escribir código, y eso es genial. Pero en automatización empresarial, lo que más cuesta no es escribir: es operar, gobernar y mantener. La plataforma se encarga de esa parte, para que te quedes con la inteligencia y te saltes el trabajo pesado.</p>
+      <h1 class="rb-hero__title">All of Claude's intelligence,<br>without building<span class="rb-hero__rot" id="heroRot">the scaffolding</span></h1>
+      <p class="rb-hero__sub">Models like Claude made writing code cheap, and that's genuinely great. But in enterprise automation, the expensive part isn't writing: it's running, governing and maintaining. The platform takes care of that part, so you keep the intelligence and skip the heavy lifting.</p>
       <div class="rb-hero__ctas">
-        <a class="rb-btn rb-btn--primary rb-btn--lg" href="#decision">¿Construir o comprar? Decídelo</a>
-        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#comparacion" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver la comparación</a>
+        <a class="rb-btn rb-btn--primary rb-btn--lg" href="#decision">Build or buy? Decide it</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#comparacion" style="border-color:rgba(255,255,255,.25);color:#fff;">See the comparison</a>
       </div>
     </div>
   </div>
@@ -794,20 +793,20 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-insight">
       <div>
-        <h2>Claude baja el costo de <span>escribir código</span>. No el de automatizar.</h2>
-        <p>Escribir el script es la parte fácil, y la que un LLM resuelve genial. Pero en automatización empresarial, construir es apenas el comienzo: el costo real está en que corra solo, sin fallar, con permisos, trazabilidad y mantenimiento cuando los sistemas cambian.</p>
-        <p>Por eso "que Claude lo haga todo" suena simple y resulta caro: hace fácil la parte fácil y deja intacta la difícil.</p>
+        <h2>Claude lowers the cost of <span>writing code</span>. Not of automating.</h2>
+        <p>Writing the script is the easy part, and the part an LLM handles brilliantly. But in enterprise automation, building is barely the beginning: the real cost is making it run on its own, without failing, with permissions, traceability and maintenance when the systems change.</p>
+        <p>That's why "let Claude do it all" sounds simple and turns out expensive: it makes the easy part easy and leaves the hard part untouched.</p>
       </div>
       <div class="rb-split-bar">
         <div class="row">
-          <div class="rl"><span>Escribir el código</span><span class="pc" style="color:var(--rb-blue)">~10%</span></div>
+          <div class="rl"><span>Writing the code</span><span class="pc" style="color:var(--rb-blue)">~10%</span></div>
           <div class="track"><div class="fill code"></div></div>
-          <div class="cap">Lo que un LLM acelera de verdad.</div>
+          <div class="cap">What an LLM genuinely speeds up.</div>
         </div>
         <div class="row">
-          <div class="rl"><span>Operar, gobernar y mantener</span><span class="pc" style="color:var(--rb-red)">~90%</span></div>
+          <div class="rl"><span>Running, governing and maintaining</span><span class="pc" style="color:var(--rb-red)">~90%</span></div>
           <div class="track"><div class="fill ops"></div></div>
-          <div class="cap">Ejecución 24/7, errores, permisos, auditoría, integración y mantenimiento.</div>
+          <div class="cap">24/7 execution, errors, permissions, audit, integration and maintenance.</div>
         </div>
       </div>
     </div>
@@ -818,30 +817,30 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--alt">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Lo que ves es <span>una fracción</span><br>de lo que construyes.</h2>
-      <p class="rb-section__sub">El prototipo que Claude te ayuda a escribir es la punta. Debajo está todo lo que igual tienes que construir y sostener para llevarlo a&nbsp;producción.</p>
+      <h2 class="rb-section__title">What you see is <span>a fraction</span><br>of what you build.</h2>
+      <p class="rb-section__sub">The prototype Claude helps you write is the tip. Underneath sits everything you still have to build and keep alive to get it into&nbsp;production.</p>
     </div>
     <div class="rb-ice">
       <div class="rb-ice-top">
-        <span class="tag">Sobre la superficie</span>
-        <h3>Lo que crees que construyes</h3>
-        <p>Un script que automatiza la tarea.</p>
-        <div class="rb-ice-tip">el script</div>
+        <span class="tag">Above the surface</span>
+        <h3>What you think you're building</h3>
+        <p>A script that automates the task.</p>
+        <div class="rb-ice-tip">the script</div>
       </div>
       <svg class="rb-ice-wave" viewBox="0 0 1200 26" preserveAspectRatio="none"><path fill="currentColor" d="M0 14 Q150 2 300 14 T600 14 T900 14 T1200 14 V26 H0 Z"/></svg>
       <div class="rb-ice-bottom">
-        <span class="tag">Bajo la superficie</span>
-        <h3>Lo que en realidad tienes que construir y mantener</h3>
+        <span class="tag">Below the surface</span>
+        <h3>What you actually have to build and maintain</h3>
         <div class="rb-ice-grid">
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Ejecución 24/7 sin supervisión</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/></svg><span>Reintentos y manejo de errores</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Credenciales y permisos por rol</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v5H4zM4 13h10v7H4z"/></svg><span>Trazabilidad y auditoría</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg><span>Monitoreo y alertas</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg><span>Integración con sistemas sin API</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2z"/></svg><span>Mantenimiento cuando todo cambia</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><span>Seguridad y cumplimiento</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M19 8v6M16 11h6"/></svg><span>Que no dependa de una sola persona</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>24/7 execution with no supervision</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/></svg><span>Retries and error handling</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Credentials and role-based permissions</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v5H4zM4 13h10v7H4z"/></svg><span>Traceability and audit</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg><span>Monitoring and alerts</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg><span>Integration with systems that have no API</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2z"/></svg><span>Maintenance when everything changes</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><span>Security and compliance</span></div>
+          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M19 8v6M16 11h6"/></svg><span>Making sure it doesn't rest on one person</span></div>
         </div>
       </div>
     </div>
@@ -852,16 +851,16 @@ html{scroll-padding-top:92px;}
 <section class="rb-section" id="comparacion">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title rb-title-nowrap">Lo que un LLM resuelve <span>y lo que no</span></h2>
-      <p class="rb-section__sub">Claude es excelente para escribir y prototipar. El resto, en el camino DIY, lo construyes y lo sostienes&nbsp;tú.</p>
+      <h2 class="rb-section__title rb-title-nowrap">What an LLM solves <span>and what it doesn't</span></h2>
+      <p class="rb-section__sub">Claude is excellent at writing and prototyping. On the DIY path, everything else is yours to build and&nbsp;keep running.</p>
     </div>
     <div class="rb-cmp-wrap">
       <table class="rb-cmp" id="cmp">
-        <thead><tr><th>Capacidad</th><th>Claude crudo / DIY</th><th>Suite (con Claude adentro)</th></tr></thead>
+        <thead><tr><th>Capability</th><th>Raw Claude / DIY</th><th>Suite (with Claude inside)</th></tr></thead>
         <tbody id="cmpBody"></tbody>
       </table>
     </div>
-    <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:14px">No es que Claude "no pueda": es que tú tendrías que construir y mantener todo lo demás alrededor.</p>
+    <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:14px">It's not that Claude "can't": it's that you'd have to build and maintain everything else around it.</p>
   </div>
 </section>
 
@@ -869,21 +868,21 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--alt" id="decision">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">¿Construir tú mismo o <span>comprar?</span></h2>
-      <p class="rb-section__sub">Responde cuatro preguntas sobre tu situación. A veces el DIY es lo correcto; a veces no. Esto te ayuda a&nbsp;verlo.</p>
+      <h2 class="rb-section__title">Build it yourself or <span>buy?</span></h2>
+      <p class="rb-section__sub">Answer four questions about your situation. Sometimes DIY is the right call; sometimes it isn't. This helps you&nbsp;see which.</p>
     </div>
     <div class="rb-bvb">
       <div class="rb-bvb-q" id="bvbQ"></div>
       <div class="rb-bvb-out">
-        <span class="rb-bvb-lbl">Recomendación</span>
+        <span class="rb-bvb-lbl">Recommendation</span>
         <div class="rb-bvb-meter"><div class="mk" id="bvbMk"></div></div>
-        <div class="rb-bvb-ends"><span>Hazlo tú mismo</span><span>Plataforma</span></div>
+        <div class="rb-bvb-ends"><span>Do it yourself</span><span>Platform</span></div>
         <div class="rb-bvb-verdict" id="bvbVerdict"></div>
         <div class="rb-bvb-body" id="bvbBody"></div>
         <div class="rb-bvb-drivers" id="bvbDrivers"></div>
       </div>
     </div>
-    <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:18px">Orientación general según tu contexto; la decisión final depende de tu operación específica.</p>
+    <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:18px">General guidance based on your context; the final call depends on your specific operation.</p>
   </div>
 </section>
 
@@ -891,13 +890,13 @@ html{scroll-padding-top:92px;}
 <section class="rb-section" id="arquitectura">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">No "IA para todo".<br><span>Cada cosa en su lugar.</span></h2>
-      <p class="rb-section__sub">En back-office de alto volumen quieres ejecución determinística y auditable, con IA acotada donde realmente aporta. Eso es exactamente lo que combina la&nbsp;suite.</p>
+      <h2 class="rb-section__title">Not "AI for everything".<br><span>Each thing in its place.</span></h2>
+      <p class="rb-section__sub">In high-volume back office you want deterministic, auditable execution, with AI kept to where it genuinely helps. That's exactly what the suite&nbsp;combines.</p>
     </div>
     <div class="rb-compare">
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6"/><circle cx="9" cy="13" r="1" fill="currentColor"/><circle cx="15" cy="13" r="1" fill="currentColor"/></svg></div><div class="rb-compare__title">Determinístico para lo estructurado</div><div class="rb-compare__desc">Los robots ejecutan el ~80% repetitivo siempre igual: predecible, rápido y auditable, sin que un modelo improvise cada corrida.</div><span class="rb-compare__tag">RPA Studio</span></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-1 8H9a4 4 0 0 1-1-8V7a4 4 0 0 1 4-4z"/><path d="M9.5 16h5"/></svg></div><div class="rb-compare__title">IA acotada donde aporta</div><div class="rb-compare__desc">Agentes e IA para el ~20% de juicio: interpretar datos no estructurados y resolver excepciones, dentro de límites definidos.</div><span class="rb-compare__tag">AI Studio · Agentes</span></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="rb-compare__title">Gobierno sobre todo</div><div class="rb-compare__desc">Permisos por rol, trazabilidad de cada acción y supervisión humana. El control no es un extra: viene de fábrica.</div><span class="rb-compare__tag">Orquestador</span></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6"/><circle cx="9" cy="13" r="1" fill="currentColor"/><circle cx="15" cy="13" r="1" fill="currentColor"/></svg></div><div class="rb-compare__title">Deterministic for the structured part</div><div class="rb-compare__desc">Robots run the repetitive ~80% the same way every time: predictable, fast and auditable, with no model improvising on each run.</div><span class="rb-compare__tag">RPA Studio</span></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-1 8H9a4 4 0 0 1-1-8V7a4 4 0 0 1 4-4z"/><path d="M9.5 16h5"/></svg></div><div class="rb-compare__title">AI where it adds value</div><div class="rb-compare__desc">Agents and AI for the ~20% that needs judgement: reading unstructured data and resolving exceptions, within defined limits.</div><span class="rb-compare__tag">AI Studio · Agents</span></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="rb-compare__title">Governance over everything</div><div class="rb-compare__desc">Role-based permissions, traceability of every action and human oversight. Control isn't an add-on: it comes built in.</div><span class="rb-compare__tag">Orchestrator</span></div>
     </div>
   </div>
 </section>
@@ -907,13 +906,13 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-inside">
       <div class="rb-brandpair" aria-hidden="true"><div class="rb-brandpair__halo"></div><div class="rb-brandpair__tile--solo"><svg class="ic" viewBox="0 0 100 100" fill="currentColor"><path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"/></svg><span>Claude</span></div><div class="rb-brandpair__dust rb-brandpair__dust--1"></div><div class="rb-brandpair__dust rb-brandpair__dust--2"></div><div class="rb-brandpair__dust rb-brandpair__dust--3"></div></div>
-      <h2>La suite no compite con Claude. Lo incluye.</h2>
-      <p>A través del MCP de Claude, describes lo que necesitas en lenguaje natural y la plataforma arma el flujo, el robot o el dashboard, ya gobernado, conectado y listo para operar. Te quedas con la inteligencia de Claude sin tener que construir el andamiaje a su alrededor.</p>
+      <h2>The suite doesn't compete with Claude. It includes it.</h2>
+      <p>Through Claude's MCP, you describe what you need in plain language and the platform assembles the flow, the robot or the dashboard — already governed, connected and ready to run. You keep Claude's intelligence without having to build the scaffolding around it.</p>
       <div class="row">
-        <span class="ich">Claude en el Orquestador</span>
-        <span class="ich">Claude en Saturn Studio</span>
-        <span class="ich">Claude en Nexus</span>
-        <span class="ich">Compatible con cualquier IA</span>
+        <span class="ich">Claude in the Orchestrator</span>
+        <span class="ich">Claude in Saturn Studio</span>
+        <span class="ich">Claude in Nexus</span>
+        <span class="ich">Works with any AI</span>
       </div>
     </div>
   </div>
@@ -925,18 +924,18 @@ html{scroll-padding-top:92px;}
     <div class="rb-proof-strip">
       <div class="rb-stat-card">
         <div class="big">95%</div>
-        <div class="desc">de las iniciativas de IA empresarial no llegan a generar un impacto medible en el negocio.</div>
-        <div class="src">Fuente: MIT, proyecto NANDA (2025)</div>
+        <div class="desc">of enterprise AI initiatives never produce measurable business impact.</div>
+        <div class="src">Source: MIT, Project NANDA (2025)</div>
       </div>
       <div>
-        <h2>Casi todas mueren en la brecha.</h2>
-        <p>Entre "un script que anda en el demo" y "un sistema gobernado en producción" se cae la mayoría de las iniciativas. Lo que llega a producción se apoya en plataforma, no en heroísmo individual.</p>
+        <h2>Almost all of them die in the gap.</h2>
+        <p>Most initiatives fall somewhere between "a script that works in the demo" and "a governed system in production". What reaches production leans on a platform, not on individual heroics.</p>
         <div class="rb-pcases">
-          <div class="rb-pcase"><div class="m">+USD 500K</div><div class="w"><img src="assets/logos/clients/proteccion.svg" alt="Protección" loading="lazy" decoding="async"> · ahorrados</div></div>
-          <div class="rb-pcase"><div class="m">+USD 1.5M</div><div class="w"><img src="assets/logos/clients/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async"> · ahorrados</div></div>
-          <div class="rb-pcase"><div class="m">+USD 500K</div><div class="w"><img src="assets/logos/clients/consorcio.svg" alt="Consorcio" loading="lazy" decoding="async"> · ahorrados</div></div>
+          <div class="rb-pcase"><div class="m">+USD 500K</div><div class="w"><img src="/assets/logos/clients/proteccion.svg" alt="Protección" loading="lazy" decoding="async"> · saved</div></div>
+          <div class="rb-pcase"><div class="m">+USD 1.5M</div><div class="w"><img src="/assets/logos/clients/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async"> · saved</div></div>
+          <div class="rb-pcase"><div class="m">+USD 500K</div><div class="w"><img src="/assets/logos/clients/consorcio.svg" alt="Consorcio" loading="lazy" decoding="async"> · saved</div></div>
         </div>
-        <p style="margin-top:18px"><a href="cfo.html" style="color:var(--rb-red);font-weight:700">Ver el caso de negocio para CFOs →</a></p>
+        <p style="margin-top:18px"><a href="cfo.html" style="color:var(--rb-red);font-weight:700">See the business case for CFOs →</a></p>
       </div>
     </div>
   </div>
@@ -947,10 +946,10 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-cta-band__inner">
       <div>
-        <h2 class="rb-cta-band__title">Quédate con la inteligencia. Sáltate el andamiaje.</h2>
-        <p class="rb-cta-band__sub">Cuéntanos tu caso y vemos juntos, con honestidad, si te conviene construirlo o apoyarte en la plataforma.</p>
+        <h2 class="rb-cta-band__title">Keep the intelligence. Skip the scaffolding.</h2>
+        <p class="rb-cta-band__sub">Tell us about your case and we'll look honestly, together, at whether you should build it or lean on the platform.</p>
       </div>
-      <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Hablemos de tu caso</a>
+      <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Let's talk about your case</a>
     </div>
   </div>
 </section>
@@ -958,7 +957,7 @@ html{scroll-padding-top:92px;}
 <!-- FAQ -->
 <section class="rb-section rb-section--alt" id="faq">
   <div class="container">
-    <div class="rb-section__head"><h2 class="rb-section__title">Las objeciones, de frente</h2></div>
+    <div class="rb-section__head"><h2 class="rb-section__title">The objections, head-on</h2></div>
     <div class="rb-faq" id="faqWrap"></div>
   </div>
 </section>
@@ -967,8 +966,8 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-footer__grid">
       <div class="rb-footer__brand">
-        <img src="assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
-        <p class="rb-footer__copy">Plataforma de automatización de procesos y agentes inteligentes para recuperar tiempo y tomar mejores decisiones.</p>
+        <img src="/assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
+        <p class="rb-footer__copy">A process automation and intelligent agent platform built to win back time and support better decisions.</p>
         <div class="rb-footer__social">
           <a href="https://www.facebook.com/rocketbot.es" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -984,19 +983,19 @@ html{scroll-padding-top:92px;}
           </a>
         </div>
       </div>
-      <div class="rb-footer__col"><h6>Productos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestador</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="suite-rocketbot.html">Suite Rocketbot</a></li><li><a href="cfo.html">Para CFOs</a></li><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="#">Políticas de privacidad</a></li><li><a href="#">Políticas de seguridad</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Soporte y servicios</h6><ul><li><a href="#">Certificación</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Products</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orchestrator</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Resources</h6><ul><li><a href="suite-rocketbot.html">Rocketbot Suite</a></li><li><a href="cfo.html">For CFOs</a></li><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Company</h6><ul><li><a href="contacto.html">Contact</a></li><li><a href="#">Privacy policy</a></li><li><a href="#">Security policy</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Support &amp; services</h6><ul><li><a href="#">Certification</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">
       <span>© Rocketbot SpA | All rights reserved 2018 – 2025</span>
-      <div class="rb-footer__legal"><a href="#">Políticas de privacidad</a><a href="#">Políticas de seguridad</a></div>
+      <div class="rb-footer__legal"><a href="#">Privacy policy</a><a href="#">Security policy</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-var LOGOS={light:'assets/logos/logo-header.png',dark:'assets/logos/logo-header-white.png'};
+var LOGOS={light:'/assets/logos/logo-header.png',dark:'/assets/logos/logo-header-white.png'};
 var html=document.documentElement,navLogo=document.getElementById('nav-logo'),themeBtn=document.getElementById('theme-btn'),iconSun=document.getElementById('icon-sun'),iconMoon=document.getElementById('icon-moon');
 function applyTheme(t){html.setAttribute('data-theme',t);if(navLogo)navLogo.src=LOGOS[t];if(iconSun)iconSun.style.display=t==='dark'?'none':'';if(iconMoon)iconMoon.style.display=t==='light'?'none':'';try{localStorage.setItem('rb-theme',t);}catch(e){}}
 (function(){var s='dark';try{s=localStorage.getItem('rb-theme')||'dark';}catch(e){}applyTheme(s);})();
@@ -1079,24 +1078,14 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
   });
 })();</script>
 
-<!-- Nombres de producto protegidos antes de cargar el traductor -->
-<script>try{ RB_I18N.shield(); }catch(e){}</script>
-
-<!-- Google Translate -->
-<div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
-<script>
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,pt',autoDisplay:false},'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 
 <script>
-/* Language Switcher */
+/* Selector de idioma: navega entre /  /en/  /pt/ */
 (function(){
   var btn  = document.getElementById('rb-lang-btn');
   var menu = document.getElementById('rb-lang-menu');
   if(!btn || !menu) return;
+  var CUR='en', PAGE='construir-vs-comprar.html';
   btn.addEventListener('click', function(e){
     e.stopPropagation();
     var open = menu.classList.toggle('open');
@@ -1106,44 +1095,15 @@ function googleTranslateElementInit(){
     menu.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
   });
-  function setLang(lang){
-    try{ if(window.RB_I18N) RB_I18N.setLang(lang); }catch(e){}
-    if(btn) btn.setAttribute('data-active', lang);
-    try{ localStorage.setItem('rb-lang', lang); }catch(e){}
-    menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-      o.classList.toggle('rb-lang--active', o.dataset.lang === lang);
+  function url(l){ return l==='es' ? '/'+PAGE : '/'+l+'/'+PAGE; }
+  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
+    o.classList.toggle('rb-lang--active', o.dataset.lang===CUR);
+    o.addEventListener('click', function(){
+      try{ localStorage.setItem('rb-lang', o.dataset.lang); }catch(e){}
+      location.href = url(o.dataset.lang);
     });
-    menu.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-    if(lang === 'es'){
-      var exp0 = new Date(0).toUTCString();
-      document.cookie = 'googtrans=; path=/; expires=' + exp0;
-      document.cookie = 'googtrans=; path=/; domain=.' + location.hostname + '; expires=' + exp0;
-      location.reload();
-      return;
-    }
-    var sel = document.querySelector('.goog-te-combo');
-    if(sel){ sel.value = lang; sel.dispatchEvent(new Event('change')); }
-    else {
-      var exp1 = new Date(); exp1.setFullYear(exp1.getFullYear()+1);
-      var expStr = exp1.toUTCString();
-      document.cookie = 'googtrans=/es/'+lang+'; path=/; expires='+expStr;
-      document.cookie = 'googtrans=/es/'+lang+'; path=/; domain=.'+location.hostname+'; expires='+expStr;
-      location.reload();
-    }
-  }
-  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-    o.addEventListener('click', function(){ setLang(o.dataset.lang); });
   });
-  var saved = 'es';
-  try{ saved = localStorage.getItem('rb-lang') || 'es'; }catch(e){}
-  btn.setAttribute('data-active', (window.RB_I18N && RB_I18N.lang) || saved);
-  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-    o.classList.toggle('rb-lang--active', o.dataset.lang === saved);
-  });
-  if(saved !== 'es' && document.cookie.indexOf('googtrans') === -1){
-    document.cookie = 'googtrans=/es/'+saved+'; path=/';
-  }
+  btn.setAttribute('data-active', CUR);
 })();
 </script>
 
@@ -1167,7 +1127,7 @@ const TOOL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-wi
 const DOT='<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>';
 function cell(kind,txt){return '<span class="st '+kind+'"><span class="i">'+(kind==='yes'?CHK:(kind==='diy'?TOOL:DOT))+'</span>'+txt+'</span>';}
 const CMP=[
- ['Escribir y prototipar código',['yes','Excelente'],['yes','Incluido']],
+ ['Writing and prototyping code',['yes','Excelente'],['yes','Incluido']],
  ['Ejecutar 24/7 sin supervisión',['diy','Lo construyes tú'],['yes','De fábrica']],
  ['Llegar a sistemas sin API (legacy/escritorio)',['diy','Frágil, lo construyes tú'],['yes','RPA Studio']],
  ['Estructurar datos no estructurados',['partial','Puntual, sin gobierno'],['yes','AI Studio']],

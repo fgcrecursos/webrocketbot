@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <!-- ── Rocketbot i18n: protege los nombres de producto de Google Translate
@@ -30,7 +30,7 @@ window.RB_I18N=(function(){
     return s;
   }
   var API={
-    lang:detect(),
+    lang:'en',
     pick:function(map){ return map[API.lang]||map.es; },
     onLang:function(fn){ subs.push(fn); },
     setLang:function(l){
@@ -102,7 +102,6 @@ window.RB_I18N=(function(){
   };
   return API;
 })();
-document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); }catch(e){} });
 </script>
 <!-- Google tag (gtag.js) – GA4 | reemplaza G-2EHJ8S289M con tu Measurement ID -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EHJ8S289M"></script>
@@ -113,10 +112,10 @@ document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); 
   gtag('config', 'G-2EHJ8S289M');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rocketbot | Suite de Automatización Empresarial RPA e IA para Latinoamérica</title>
-<meta name="description" content="Suite completa de automatización empresarial end-to-end. Agentes digitales con RPA e IA disponibles 24/7. Saturn Studio, RPA Studio, AI Studio, Orquestador y Xperience.">
+<title>Rocketbot | Enterprise RPA &amp; AI Automation Suite for Latin America</title>
+<meta name="description" content="A complete end-to-end enterprise automation suite. Digital agents powered by RPA and AI, working 24/7. Saturn Studio, RPA Studio, AI Studio, Orchestrator and Xperience.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://rocketbot.com/">
+<link rel="canonical" href="https://rocketbot.com/en/">
 <link rel="alternate" hreflang="es" href="https://rocketbot.com/">
 <link rel="alternate" hreflang="en" href="https://rocketbot.com/en/">
 <link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/">
@@ -126,18 +125,18 @@ document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rocketbot">
-<meta property="og:title" content="Rocketbot | Suite de Automatización Empresarial RPA e IA para Latinoamérica">
-<meta property="og:description" content="Suite completa de automatización empresarial end-to-end. Agentes digitales con RPA e IA disponibles 24/7. Saturn Studio, RPA Studio, AI Studio, Orquestador y Xperience.">
-<meta property="og:url" content="https://rocketbot.com/">
+<meta property="og:title" content="Rocketbot | Enterprise RPA &amp; AI Automation Suite for Latin America">
+<meta property="og:description" content="A complete end-to-end enterprise automation suite. Digital agents powered by RPA and AI, working 24/7. Saturn Studio, RPA Studio, AI Studio, Orchestrator and Xperience.">
+<meta property="og:url" content="https://rocketbot.com/en/">
 <meta property="og:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="es_LA">
+<meta property="og:locale" content="en_US">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rocketbot">
-<meta name="twitter:title" content="Rocketbot | Suite de Automatización Empresarial RPA e IA para Latinoamérica">
-<meta name="twitter:description" content="Suite completa de automatización empresarial end-to-end. Agentes digitales con RPA e IA disponibles 24/7. Saturn Studio, RPA Studio, AI Studio, Orquestador y Xperience.">
+<meta name="twitter:title" content="Rocketbot | Enterprise RPA &amp; AI Automation Suite for Latin America">
+<meta name="twitter:description" content="A complete end-to-end enterprise automation suite. Digital agents powered by RPA and AI, working 24/7. Saturn Studio, RPA Studio, AI Studio, Orchestrator and Xperience.">
 <meta name="twitter:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1453,7 +1452,7 @@ html{scroll-padding-top:92px;}
   <div class="rb-nav__inner">
     <a href="#" class="rb-nav__logo-wrap">
       <img id="nav-logo"
-           src="assets/logos/logo-header.png"
+           src="/assets/logos/logo-header.png"
            alt="Rocketbot"
            class="rb-nav__logo">
     </a>
@@ -1461,53 +1460,53 @@ html{scroll-padding-top:92px;}
     <ul class="rb-nav__links">
       <li class="rb-nav__suite-li"><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Productos
+        <button type="button">Products
           <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div class="rb-nav__dropdown">
           <a href="saturn-studio.html">Saturn Studio</a>
           <a href="rpa-studio.html">RPA Studio</a>
           <a href="ai-studio.html">AI Studio</a>
-          <a href="orquestador.html">Orquestador</a>
+          <a href="orquestador.html">Orchestrator</a>
           <a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
         </div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Recursos
+        <button type="button">Resources
           <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div class="rb-nav__dropdown">
-          <a href="cfo.html">Para CFOs</a>
-          <a href="construir-vs-comprar.html">Construir o comprar</a>
+          <a href="cfo.html">For CFOs</a>
+          <a href="construir-vs-comprar.html">Build or buy</a>
           <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
           <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
         </div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Soporte y servicios
+        <button type="button">Support &amp; services
           <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div class="rb-nav__dropdown">
-          <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a>
+          <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a>
           <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
-          <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
+          <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a>
           <a href="https://rocketbot.com/media-kit" target="_blank" rel="noopener">Media kit</a>
         </div>
       </li>
-      <li><a href="contacto.html">Contáctanos</a></li>
+      <li><a href="contacto.html">Talk to us</a></li>
     </ul>
 
     <div class="rb-nav__actions">
-      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
       <div class="rb-lang" id="rb-lang">
-      <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Language" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
       <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
         <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span>Español</button>
         <button class="rb-lang__opt" data-lang="en" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span>English</button>
         <button class="rb-lang__opt" data-lang="pt" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span>Português</button>
       </div>
     </div>
-      <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
+      <button class="rb-iconbtn" id="theme-btn" title="Switch theme" type="button">
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="4"/>
           <path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/>
@@ -1516,8 +1515,8 @@ html{scroll-padding-top:92px;}
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
         </svg>
       </button>
-      <a href="cfo.html" class="rb-btn rb-btn--cfo">Para CFOs</a>
-      <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Descarga</button>
+      <a href="cfo.html" class="rb-btn rb-btn--cfo">For CFOs</a>
+      <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Download</button>
     </div>
   </div>
 </nav>
@@ -1526,32 +1525,32 @@ html{scroll-padding-top:92px;}
 <div class="rb-mobile-menu" id="rb-mobile-menu">
   <div class="rb-mobile-menu__inner">
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Productos</div>
+      <div class="rb-mobile-menu__label">Products</div>
       <a href="saturn-studio.html">Saturn Studio</a>
       <a href="rpa-studio.html">RPA Studio</a>
       <a href="ai-studio.html">AI Studio</a>
-      <a href="orquestador.html">Orquestador</a>
+      <a href="orquestador.html">Orchestrator</a>
       <a href="xperience.html">Xperience</a>
       <a href="nexus.html">Nexus</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Recursos</div>
-      <a href="cfo.html">Para CFOs</a>
-      <a href="construir-vs-comprar.html">Construir o comprar</a>
+      <div class="rb-mobile-menu__label">Resources</div>
+      <a href="cfo.html">For CFOs</a>
+      <a href="construir-vs-comprar.html">Build or buy</a>
       <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Soporte y servicios</div>
-      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a>
+      <div class="rb-mobile-menu__label">Support &amp; services</div>
+      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a>
       <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
-      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
+      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Media kit</a>
     </div>
     <div class="rb-mobile-menu__actions">
-      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suite Rocketbot</a>
-      <a href="contacto.html" class="rb-mobile-menu__btn">Contáctanos</a>
-      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Descarga</button>
+      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Rocketbot Suite</a>
+      <a href="contacto.html" class="rb-mobile-menu__btn">Talk to us</a>
+      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Download</button>
     </div>
   </div>
 </div>
@@ -1560,35 +1559,35 @@ html{scroll-padding-top:92px;}
 <div class="rb-dlmodal" id="rbDlModal" aria-hidden="true">
   <div class="rb-dlmodal__backdrop" data-dl-close></div>
   <div class="rb-dlmodal__panel" role="dialog" aria-modal="true" aria-labelledby="rbDlTitle">
-    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Cerrar">&times;</button>
-    <h2 id="rbDlTitle" class="rb-dlmodal__title">Descarga Rocketbot</h2>
-    <p class="rb-dlmodal__sub">Elige el programa y tu sistema operativo.</p>
+    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Close">&times;</button>
+    <h2 id="rbDlTitle" class="rb-dlmodal__title">Download Rocketbot</h2>
+    <p class="rb-dlmodal__sub">Pick your product and operating system.</p>
     <div class="rb-dlmodal__body">
       <div class="rb-dlmodal__side">
-        <div class="rb-dlmodal__label">Programas</div>
+        <div class="rb-dlmodal__label">Products</div>
         <button type="button" class="rb-dlmodal__pill is-active" data-dl-pill="rpa">
-          <img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
+          <img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
         </button>
 
         <div class="rb-dlmodal__req">
           <div class="rb-dlmodal__reqgrp">
-            <div class="rb-dlmodal__reqttl">Requisitos mínimos</div>
-            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i3-4340 o AMD FX-6300</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>10 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>4 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Minimum requirements</div>
+            <div class="rb-dlmodal__reqrow"><span>Processor</span><strong translate="no">Intel Core i3-4340 or AMD FX-6300</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Storage</span><strong>10 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memory</span><strong>4 GB RAM</strong></div>
           </div>
           <div class="rb-dlmodal__reqgrp rb-dlmodal__reqgrp--rec">
-            <div class="rb-dlmodal__reqttl">Configuración recomendada</div>
-            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i5</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>175 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>8 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Recommended setup</div>
+            <div class="rb-dlmodal__reqrow"><span>Processor</span><strong translate="no">Intel Core i5</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Storage</span><strong>175 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memory</span><strong>8 GB RAM</strong></div>
           </div>
         </div>
       </div>
       <div class="rb-dlmodal__main">
         <div class="rb-dlmodal__program is-active" data-dl-panel="rpa">
-          <div class="rb-dlmodal__ptitle"><img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
-          <p class="rb-dlmodal__pdesc">Descarga el instalador para tu sistema operativo. En el sitio de descarga encontrarás todas las versiones disponibles y sus notas de lanzamiento.</p>
+          <div class="rb-dlmodal__ptitle"><img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
+          <p class="rb-dlmodal__pdesc">Download the installer for your operating system. The download site lists every available version along with its release notes.</p>
           <div class="rb-dlmodal__os">
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7H3V5.5ZM11.4 4.3 21 3v8.4h-9.6V4.3ZM3 12.4h7.5v7.1L3 18.5v-6.1ZM11.4 12.4H21V21l-9.6-1.3v-7.3Z"/></svg>Windows<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -1596,31 +1595,31 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Latest version</span></div>
                     <div class="rb-dlmodal__vmeta">354 MB · ZIP · MD5 153fd4432f30564ecd16b146dcfaac31</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2025.07.01 <span class="rb-dlmodal__vtag">Python 3.13</span></div>
                     <div class="rb-dlmodal__vmeta">356 MB · ZIP · MD5 9f0e2c18051b020d71387821f3abdf82</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2024.05.28</div>
                     <div class="rb-dlmodal__vmeta">458 MB · ZIP · MD5 b4034aaf4759f710f6754df5bbd81be2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2023.11.10</div>
                     <div class="rb-dlmodal__vmeta">358 MB · ZIP · MD5 a18cc70a91134e73d2da277f973fa87a</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 </div>
               </div>
@@ -1631,17 +1630,17 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Latest version</span></div>
                     <div class="rb-dlmodal__vmeta">248 MB · ZIP · MD5 ff4ea3d2e49aa4e3294158f04ad81922</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Mac ARM · v2025.07.01</div>
                     <div class="rb-dlmodal__vmeta">533 MB · ZIP · MD5 3635e4cd1ec90eb5bac453c6b813bf29</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 </div>
               </div>
@@ -1652,24 +1651,24 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Latest version</span></div>
                     <div class="rb-dlmodal__vmeta">434 MB · ZIP · MD5 6312df8b82977e4e08d48826deb95b34</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">RHEL · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">166.2 MB · TAR.GZ · MD5 6d98a8f63cec705d181a011dfb69c90c</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Ubuntu · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">118.1 MB · TAR.XZ · MD5 b2d9a94de8299615e525ea26d5d543a2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 </div>
               </div>
@@ -1687,20 +1686,20 @@ html{scroll-padding-top:92px;}
   <div class="container rb-hero__grid">
 
     <div>
-      <h1 class="rb-hero__title">Automatiza tu&nbsp;operación.<br>Recupera el<strong id="heroRot">tiempo</strong></h1>
+      <h1 class="rb-hero__title">Automate your&nbsp;operation.<br>Win back your<strong id="heroRot">time</strong></h1>
       <p class="rb-hero__sub">
-        Deja atrás correos, excel y seguimiento manual. Tu equipo tendrá más tiempo para analizar, decidir y generar valor.
+        Leave behind the email chains, spreadsheets and manual follow-up. Your team gets its time back to analyse, decide and create value.
       </p>
       <div class="rb-hero__ctas">
         <a href="contacto.html" class="rb-btn rb-btn--primary rb-btn--lg rb-btn--square">
-          Hablemos de mi operación
+          Let's talk about my operation
           <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
-        <a href="suite-rocketbot.html" class="rb-btn rb-btn--ghost rb-btn--lg">Conocer la suite</a>
+        <a href="suite-rocketbot.html" class="rb-btn rb-btn--ghost rb-btn--lg">Explore the suite</a>
       </div>
       <a href="cfo.html" class="rb-hero__cfo-link">
         <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2" fill="none"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-        ¿Eres CFO o gerente de Finanzas? Descubre cómo ganar tiempo para tu equipo. →
+        Are you a CFO or finance leader? See how to give your team its time back. →
       </a>
     </div>
 
@@ -1741,7 +1740,7 @@ html{scroll-padding-top:92px;}
       <div class="rb-orb__pulse"></div>
       <!-- Always white iso on red core -->
       <div class="rb-orb__core">
-        <img src="assets/logos/rocketbot-iso-white.png" alt="Rocketbot">
+        <img src="/assets/logos/rocketbot-iso-white.png" alt="Rocketbot">
       </div>
     </div>
 
@@ -1750,33 +1749,33 @@ html{scroll-padding-top:92px;}
 
 <!-- ════════════════ SOCIAL PROOF ════════════════ -->
 <section class="rb-logos">
-  <div class="rb-logos__label">Empresas líderes confían en Rocketbot</div>
+  <div class="rb-logos__label">Leading companies trust Rocketbot</div>
   <div class="rb-logos__track">
-    <img src="assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
     <!-- duplicate set for seamless marquee loop -->
-    <img src="assets/clients/marquee/lafise.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/alpina.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/sharp.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/movistar.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/sabadell.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/zurich.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/produbanco.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/entel.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/adecco.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/verisure.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/pronaca.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    <img src="assets/clients/marquee/agrosuper.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/lafise.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/alpina.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/sharp.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/movistar.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/sabadell.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/zurich.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/produbanco.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/entel.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/adecco.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/verisure.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/pronaca.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="/assets/clients/marquee/agrosuper.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -1785,23 +1784,23 @@ html{scroll-padding-top:92px;}
   <div class="container rb-statsbar__inner">
     <div class="rb-statsbar__item">
       <div class="rb-statsbar__v">2.5M</div>
-      <div class="rb-statsbar__l">Ahorros generados en operaciones reales</div>
-      <div class="rb-statsbar__d">Menos tiempo perdido en tareas manuales. Más tiempo dedicado a generar resultados.</div>
+      <div class="rb-statsbar__l">Saved across real-world operations</div>
+      <div class="rb-statsbar__d">Less time lost to manual work. More time spent producing results.</div>
     </div>
     <div class="rb-statsbar__item">
       <div class="rb-statsbar__v">21</div>
-      <div class="rb-statsbar__l">Países</div>
-      <div class="rb-statsbar__d">Empresas de toda Latinoamérica operando con más visibilidad y control.</div>
+      <div class="rb-statsbar__l">Countries</div>
+      <div class="rb-statsbar__d">Companies across Latin America running with more visibility and control.</div>
     </div>
     <div class="rb-statsbar__item">
       <div class="rb-statsbar__v">700</div>
-      <div class="rb-statsbar__l">Clientes</div>
-      <div class="rb-statsbar__d">Empresas que dejaron de depender de correos, planillas y seguimiento manual para avanzar.</div>
+      <div class="rb-statsbar__l">Customers</div>
+      <div class="rb-statsbar__d">Companies that stopped depending on email, spreadsheets and manual follow-up to move forward.</div>
     </div>
     <div class="rb-statsbar__item">
       <div class="rb-statsbar__v">14K</div>
-      <div class="rb-statsbar__l">Usuarios</div>
-      <div class="rb-statsbar__d">Personas que hoy pueden enfocarse más en analizar y decidir que en consolidar información.</div>
+      <div class="rb-statsbar__l">Users</div>
+      <div class="rb-statsbar__d">People who now spend more time analysing and deciding than consolidating information.</div>
     </div>
   </div>
 </section>
@@ -1810,7 +1809,7 @@ html{scroll-padding-top:92px;}
 <section class="rb-problem">
   <div class="container">
     <div class="rb-section__head rb-reveal">
-      <h2 class="rb-section__title"><span class="rb-title-nowrap">Tres problemas que hoy están</span><br><span>frenando tu operación.</span></h2>
+      <h2 class="rb-section__title"><span class="rb-title-nowrap">Three problems holding</span><br><span>your operation back today.</span></h2>
     </div>
     <div class="rb-problem__cards rb-stagger rb-stagger--scale">
 
@@ -1818,12 +1817,12 @@ html{scroll-padding-top:92px;}
         <div class="rb-problem__icon">
           <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </div>
-        <div class="rb-problem__label">Fragilidad operacional</div>
-        <h3 class="rb-problem__title">Los procesos dependen de personas, no de sistemas</h3>
-        <p class="rb-problem__desc">Cuando una tarea depende de una persona específica, cualquier ausencia, cambio o error puede afectar toda la operación.</p>
+        <div class="rb-problem__label">Operational fragility</div>
+        <h3 class="rb-problem__title">Processes depend on people, not systems</h3>
+        <p class="rb-problem__desc">When a task depends on one specific person, any absence, handover or mistake can put the whole operation at risk.</p>
         <span class="rb-problem__hover-tag">
           <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          Rocketbot lo resuelve
+          How Rocketbot solves it
         </span>
       </div>
 
@@ -1831,12 +1830,12 @@ html{scroll-padding-top:92px;}
         <div class="rb-problem__icon">
           <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
         </div>
-        <div class="rb-problem__label">Escala sin control</div>
-        <h3 class="rb-problem__title">Cada nuevo proceso implica más trabajo</h3>
-        <p class="rb-problem__desc">A medida que la empresa crece, también aumentan los correos, las planillas y el seguimiento manual. El equipo termina dedicando más tiempo a coordinar que a avanzar.</p>
+        <div class="rb-problem__label">Growth you can't keep up with</div>
+        <h3 class="rb-problem__title">Every new process means more work</h3>
+        <p class="rb-problem__desc">As the company grows, so do the emails, the spreadsheets and the manual follow-up. The team ends up spending more time coordinating than actually moving forward.</p>
         <span class="rb-problem__hover-tag">
           <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          Rocketbot lo resuelve
+          How Rocketbot solves it
         </span>
       </div>
 
@@ -1844,12 +1843,12 @@ html{scroll-padding-top:92px;}
         <div class="rb-problem__icon">
           <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <div class="rb-problem__label">Velocidad atrapada en lo manual</div>
-        <h3 class="rb-problem__title">La información llega tarde</h3>
-        <p class="rb-problem__desc">Cuando los datos están repartidos entre sistemas, archivos y correos, las decisiones también se retrasan.</p>
+        <div class="rb-problem__label">Speed trapped in manual work</div>
+        <h3 class="rb-problem__title">Information arrives too late</h3>
+        <p class="rb-problem__desc">When data is scattered across systems, files and inboxes, decisions get delayed too.</p>
         <span class="rb-problem__hover-tag">
           <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          Rocketbot lo resuelve
+          How Rocketbot solves it
         </span>
       </div>
 
@@ -1861,31 +1860,31 @@ html{scroll-padding-top:92px;}
 <section class="rb-inef">
   <div class="container">
     <div class="rb-inef__head">
-      <h2 class="rb-inef__title">El costo de seguir haciendo las cosas de forma manual</h2>
+      <h2 class="rb-inef__title">What it costs to keep doing things by hand</h2>
     </div>
     <div class="rb-inef__grid rb-reveal rb-reveal--blur rb-reveal--slow">
       <div class="rb-inef__item">
         <div class="rb-inef__val">40%</div>
-        <div class="rb-inef__desc">del tiempo de los equipos se dedica a tareas operativas que podrían automatizarse.</div>
+        <div class="rb-inef__desc">of team time goes to operational tasks that could be automated.</div>
       </div>
       <div class="rb-inef__item">
         <div class="rb-inef__val">33%</div>
-        <div class="rb-inef__desc">de las decisiones se toman con información incompleta o desactualizada.</div>
+        <div class="rb-inef__desc">of decisions are made on incomplete or out-of-date information.</div>
       </div>
       <div class="rb-inef__item">
         <div class="rb-inef__val">70%</div>
-        <div class="rb-inef__desc">de los errores operativos están relacionados con procesos manuales.</div>
+        <div class="rb-inef__desc">of operational errors trace back to manual processes.</div>
       </div>
       <div class="rb-inef__item">
-        <div class="rb-inef__val">2 a 4</div>
-        <div class="rb-inef__desc">semanas se pueden perder consolidando información entre sistemas, archivos y correos.</div>
+        <div class="rb-inef__val">2 to 4</div>
+        <div class="rb-inef__desc">weeks can disappear into consolidating information across systems, files and inboxes.</div>
       </div>
       <div class="rb-inef__item">
         <div class="rb-inef__val">USD 0</div>
-        <div class="rb-inef__desc">Es el valor estratégico de dedicar horas a procesar información en lugar de analizarla.</div>
+        <div class="rb-inef__desc">That's the strategic value of spending hours processing information instead of analysing it.</div>
       </div>
     </div>
-    <p class="rb-inef__remate"><strong>Automatizar no se trata solo de tecnología.</strong><em>Se trata de recuperar tiempo, reducir errores y tomar mejores decisiones.</em></p>
+    <p class="rb-inef__remate"><strong>Automation isn't only about technology.</strong><em>It's about winning back time, cutting errors and making better decisions.</em></p>
   </div>
 </section>
 
@@ -1893,34 +1892,34 @@ html{scroll-padding-top:92px;}
 <section class="rb-solution">
   <div class="container">
     <div class="rb-solution__head">
-      <h2 class="rb-solution__title">Rocketbot hace que el trabajo<br><span>avance por sí solo.</span></h2>
-      <p class="rb-solution__lead">No reemplaza tus sistemas. Se integra con ellos para que la información fluya, los procesos avancen y tu equipo pueda enfocarse en tareas de mayor valor.</p>
+      <h2 class="rb-solution__title">Rocketbot keeps the work<br><span>moving on its own.</span></h2>
+      <p class="rb-solution__lead">It doesn't replace your systems. It plugs into them so information flows, processes keep moving and your team can focus on higher-value work.</p>
     </div>
     <div class="rb-solution__cols">
       <div class="rb-solution__col rb-reveal rb-reveal--left">
         <div class="rb-solution__col-icon">
           <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
         </div>
-        <div class="rb-solution__col-tag">Robots · Cómo ejecuta</div>
-        <h3 class="rb-solution__col-title">Hacen el trabajo<br>operativo</h3>
-        <p class="rb-solution__col-desc">Los robots ejecutan tareas de forma automática, conectando sistemas y procesos sin depender de correos, planillas o seguimiento manual.</p>
+        <div class="rb-solution__col-tag">Robots · How it runs</div>
+        <h3 class="rb-solution__col-title">They do the operational<br>work</h3>
+        <p class="rb-solution__col-desc">Robots run tasks automatically, connecting systems and processes without relying on emails, spreadsheets or manual follow-up.</p>
         <ul class="rb-solution__checks">
-          <li>Operan 24/7 sin interrupciones</li>
-          <li>Se integran con los sistemas que ya utilizas</li>
-          <li>Reducen errores y retrasos operativos</li>
+          <li>They run 24/7, without interruptions</li>
+          <li>They integrate with the systems you already use</li>
+          <li>They cut operational errors and delays</li>
         </ul>
       </div>
       <div class="rb-solution__col rb-reveal rb-reveal--right">
         <div class="rb-solution__col-icon">
           <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2"/><circle cx="16" cy="8" r="2"/><circle cx="8" cy="16" r="2"/><circle cx="16" cy="16" r="2"/></svg>
         </div>
-        <div class="rb-solution__col-tag">Agentes · Cómo decide</div>
-        <h3 class="rb-solution__col-title">Analizan la información<br>y actúan</h3>
-        <p class="rb-solution__col-desc">Los agentes interpretan datos, entienden el contexto y ayudan a que los procesos sigan avanzando sin intervención constante de las personas.</p>
+        <div class="rb-solution__col-tag">Agents · How it decides</div>
+        <h3 class="rb-solution__col-title">They read the information<br>and act</h3>
+        <p class="rb-solution__col-desc">Agents interpret data, understand context and keep processes moving without constant human intervention.</p>
         <ul class="rb-solution__checks">
-          <li>Detectan excepciones y generan alertas</li>
-          <li>Procesan información en segundos</li>
-          <li>Operan según las reglas de tu organización</li>
+          <li>They spot exceptions and raise alerts</li>
+          <li>They process information in seconds</li>
+          <li>They follow your organisation's own rules</li>
         </ul>
       </div>
     </div>
@@ -1929,8 +1928,8 @@ html{scroll-padding-top:92px;}
         <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.5-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.5 6-4z"/><path d="M12 12c2 2.5 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.5-6 4z"/></svg>
       </div>
       <div>
-        <div class="rb-solution__banner-title">Juntos, ayudan a que la operación avance.</div>
-        <p class="rb-solution__banner-desc">Mientras los robots ejecutan tareas, los agentes analizan información y gestionan excepciones. Así, tu equipo puede dedicar más tiempo a analizar, decidir y generar valor. ¿Construir esto en casa o comprarlo listo? <a href="construir-vs-comprar.html" style="color:var(--rb-red);font-weight:700">Míralo en Construir o comprar →</a></p>
+        <div class="rb-solution__banner-title">Together, they keep the operation moving.</div>
+        <p class="rb-solution__banner-desc">While robots run the tasks, agents read the information and handle the exceptions. That frees your team to spend more time analysing, deciding and creating value. Build this in-house or buy it ready? <a href="construir-vs-comprar.html" style="color:var(--rb-red);font-weight:700">See it in Build or buy →</a></p>
       </div>
     </div>
   </div>
@@ -1940,29 +1939,29 @@ html{scroll-padding-top:92px;}
 <section class="rb-arch" id="plataforma" style="background:linear-gradient(180deg,transparent,rgba(188,0,23,.02),transparent);">
   <div class="container">
     <div class="rb-arch__head">
-      <h2 class="rb-arch__title">Toda tu operación conectada <span>en un solo lugar.</span></h2>
-      <p class="rb-arch__intro">Cada producto cumple un rol específico para que la información entre, los procesos avancen y los resultados lleguen sin fricción.</p>
+      <h2 class="rb-arch__title">Your entire operation connected <span>in one place.</span></h2>
+      <p class="rb-arch__intro">Each product plays a specific role so information comes in, processes move forward and results arrive without friction.</p>
     </div>
 
     <!-- CAPA 1: ENTRADA -->
     <div class="rb-arch__layer rb-reveal rb-reveal--flip">
       <div class="rb-arch__layer-header">
         <div class="rb-arch__layer-num">1</div>
-        <span class="rb-arch__layer-label rb-arch__layer-label--entrada">CAPA DE ENTRADA</span>
-        <span class="rb-arch__layer-title">Así comienza el trabajo</span>
+        <span class="rb-arch__layer-label rb-arch__layer-label--entrada">INPUT LAYER</span>
+        <span class="rb-arch__layer-title">Where the work begins</span>
       </div>
       <div class="rb-arch__cards rb-arch__cards--single">
         <div class="rb-arch__card">
-          <img class="rb-arch__card-logo" src="assets/logos/products/xperience.png" alt="Xperience" loading="lazy" decoding="async">
+          <img class="rb-arch__card-logo" src="/assets/logos/products/xperience.png" alt="Xperience" loading="lazy" decoding="async">
           <div>
             <div class="rb-arch__card-product">Xperience</div>
-            <div class="rb-arch__card-role">Formularios inteligentes</div>
-            <p class="rb-arch__card-desc">Captura y valida información desde el inicio para que cada proceso avance con datos completos y correctos.</p>
+            <div class="rb-arch__card-role">Smart forms</div>
+            <p class="rb-arch__card-desc">Capture and validate information from the start, so every process moves forward with complete, correct data.</p>
             <div class="rb-arch__card-cfo">
-              <span class="rb-arch__card-cfo-label">El resultado</span>
-              Cualquier área puede iniciar un proceso de forma simple y ordenada.
+              <span class="rb-arch__card-cfo-label">The result</span>
+              Any team can kick off a process simply and in an orderly way.
             </div>
-            <a class="rb-arch__card-link" href="xperience.html">Ver más →</a>
+            <a class="rb-arch__card-link" href="xperience.html">Learn more →</a>
           </div>
         </div>
       </div>
@@ -1972,42 +1971,42 @@ html{scroll-padding-top:92px;}
     <div class="rb-arch__layer rb-reveal rb-reveal--flip">
       <div class="rb-arch__layer-header">
         <div class="rb-arch__layer-num">2</div>
-        <span class="rb-arch__layer-label rb-arch__layer-label--ejecucion">CAPA DE EJECUCIÓN</span>
-        <span class="rb-arch__layer-title">Donde el trabajo sucede</span>
+        <span class="rb-arch__layer-label rb-arch__layer-label--ejecucion">EXECUTION LAYER</span>
+        <span class="rb-arch__layer-title">Where the work happens</span>
       </div>
       <div class="rb-arch__cards rb-arch__cards--three">
         <div class="rb-arch__card rb-arch__card--featured">
-          <img class="rb-arch__card-logo" src="assets/logos/products/saturn-studio.png" alt="Saturn Studio" loading="lazy" decoding="async">
+          <img class="rb-arch__card-logo" src="/assets/logos/products/saturn-studio.png" alt="Saturn Studio" loading="lazy" decoding="async">
           <div class="rb-arch__card-product">Saturn Studio</div>
-          <div class="rb-arch__card-role">Orquestación de procesos</div>
-          <p class="rb-arch__card-desc">Conecta personas, sistemas, automatización e IA para coordinar procesos de principio a fin.</p>
+          <div class="rb-arch__card-role">Process orchestration</div>
+          <p class="rb-arch__card-desc">Connects people, systems, automation and AI to coordinate processes end to end.</p>
           <div class="rb-arch__card-cfo">
-            <span class="rb-arch__card-cfo-label">El resultado</span>
-            Los procesos avanzan sin depender de correos, planillas o seguimiento manual.
+            <span class="rb-arch__card-cfo-label">The result</span>
+            Processes move forward without relying on emails, spreadsheets or manual follow-up.
           </div>
-          <a class="rb-arch__card-link" href="saturn-studio.html">Ver más →</a>
+          <a class="rb-arch__card-link" href="saturn-studio.html">Learn more →</a>
         </div>
         <div class="rb-arch__card">
-          <img class="rb-arch__card-logo" src="assets/logos/products/rpa-studio.png" alt="RPA Studio" loading="lazy" decoding="async">
+          <img class="rb-arch__card-logo" src="/assets/logos/products/rpa-studio.png" alt="RPA Studio" loading="lazy" decoding="async">
           <div class="rb-arch__card-product">RPA Studio</div>
-          <div class="rb-arch__card-role">Automatización de tareas</div>
-          <p class="rb-arch__card-desc">Ejecuta acciones dentro de cualquier sistema, sin cambiar la infraestructura existente.</p>
+          <div class="rb-arch__card-role">Task automation</div>
+          <p class="rb-arch__card-desc">Runs actions inside any system, without changing your existing infrastructure.</p>
           <div class="rb-arch__card-cfo">
-            <span class="rb-arch__card-cfo-label">El resultado</span>
-            Los equipos dedican menos tiempo a tareas operativas y más tiempo a actividades de valor.
+            <span class="rb-arch__card-cfo-label">The result</span>
+            Teams spend less time on operational tasks and more on work that matters.
           </div>
-          <a class="rb-arch__card-link" href="rpa-studio.html">Ver más →</a>
+          <a class="rb-arch__card-link" href="rpa-studio.html">Learn more →</a>
         </div>
         <div class="rb-arch__card">
-          <img class="rb-arch__card-logo" src="assets/logos/products/ai-studio.png" alt="AI Studio" loading="lazy" decoding="async">
+          <img class="rb-arch__card-logo" src="/assets/logos/products/ai-studio.png" alt="AI Studio" loading="lazy" decoding="async">
           <div class="rb-arch__card-product">AI Studio</div>
-          <div class="rb-arch__card-role">Comprensión inteligente de documentos</div>
-          <p class="rb-arch__card-desc">Extrae y organiza información de documentos, correos y archivos de forma automática.</p>
+          <div class="rb-arch__card-role">Intelligent document understanding</div>
+          <p class="rb-arch__card-desc">Automatically extracts and organises information from documents, emails and files.</p>
           <div class="rb-arch__card-cfo">
-            <span class="rb-arch__card-cfo-label">El resultado</span>
-            La información está disponible cuando se necesita, sin revisión manual constante.
+            <span class="rb-arch__card-cfo-label">The result</span>
+            The information is there when you need it, without constant manual review.
           </div>
-          <a class="rb-arch__card-link" href="ai-studio.html">Ver más →</a>
+          <a class="rb-arch__card-link" href="ai-studio.html">Learn more →</a>
         </div>
       </div>
     </div>
@@ -2016,31 +2015,31 @@ html{scroll-padding-top:92px;}
     <div class="rb-arch__layer rb-reveal rb-reveal--flip">
       <div class="rb-arch__layer-header">
         <div class="rb-arch__layer-num">3</div>
-        <span class="rb-arch__layer-label rb-arch__layer-label--control">CAPA DE CONTROL</span>
-        <span class="rb-arch__layer-title">Visibilidad para tomar decisiones</span>
+        <span class="rb-arch__layer-label rb-arch__layer-label--control">CONTROL LAYER</span>
+        <span class="rb-arch__layer-title">The visibility to decide</span>
       </div>
       <div class="rb-arch__cards rb-arch__cards--two">
         <div class="rb-arch__card">
-          <img class="rb-arch__card-logo" src="assets/logos/products/orchestrator.png" alt="Orquestador" loading="lazy" decoding="async">
-          <div class="rb-arch__card-product">Orquestador</div>
-          <div class="rb-arch__card-role">Centro de monitoreo</div>
-          <p class="rb-arch__card-desc">Supervisa procesos, automatizaciones y agentes desde un único lugar.</p>
+          <img class="rb-arch__card-logo" src="/assets/logos/products/orchestrator.png" alt="Orchestrator" loading="lazy" decoding="async">
+          <div class="rb-arch__card-product">Orchestrator</div>
+          <div class="rb-arch__card-role">Monitoring centre</div>
+          <p class="rb-arch__card-desc">Supervise processes, automations and agents from a single place.</p>
           <div class="rb-arch__card-cfo">
-            <span class="rb-arch__card-cfo-label">El resultado</span>
-            Control y trazabilidad de toda la operación.
+            <span class="rb-arch__card-cfo-label">The result</span>
+            Control and traceability across the whole operation.
           </div>
-          <a class="rb-arch__card-link" href="orquestador.html">Ver más →</a>
+          <a class="rb-arch__card-link" href="orquestador.html">Learn more →</a>
         </div>
         <div class="rb-arch__card">
-          <img class="rb-arch__card-logo" src="assets/logos/products/nexus.png" alt="Nexus" loading="lazy" decoding="async">
+          <img class="rb-arch__card-logo" src="/assets/logos/products/nexus.png" alt="Nexus" loading="lazy" decoding="async">
           <div class="rb-arch__card-product">Nexus</div>
-          <div class="rb-arch__card-role">Dashboard ejecutivo</div>
-          <p class="rb-arch__card-desc">Consolida información en tiempo real para que los equipos trabajen con datos actualizados.</p>
+          <div class="rb-arch__card-role">Executive dashboard</div>
+          <p class="rb-arch__card-desc">Consolidates information in real time so teams work with current data.</p>
           <div class="rb-arch__card-cfo">
-            <span class="rb-arch__card-cfo-label">El resultado</span>
-            Los números llegan listos para analizar, sin tener que prepararlos manualmente.
+            <span class="rb-arch__card-cfo-label">The result</span>
+            The numbers arrive ready to analyse, with no manual prep.
           </div>
-          <a class="rb-arch__card-link" href="nexus.html">Ver más →</a>
+          <a class="rb-arch__card-link" href="nexus.html">Learn more →</a>
         </div>
       </div>
     </div>
@@ -2052,19 +2051,19 @@ html{scroll-padding-top:92px;}
 <section class="rb-section" id="soluciones" style="background:linear-gradient(180deg,transparent,rgba(188,0,23,.02),transparent);">
   <div class="container">
     <div class="rb-section__head rb-section__head--left rb-reveal">
-      <h2 class="rb-section__title">Automatización lista para <span>tu industria</span></h2>
-      <p class="rb-section__sub">Más de 500 procesos implementados en organizaciones de toda Latinoamérica. Selecciona tu&nbsp;sector.</p>
+      <h2 class="rb-section__title">Automation ready for <span>your industry</span></h2>
+      <p class="rb-section__sub">More than 500 processes deployed in organisations across Latin America. Pick your&nbsp;sector.</p>
     </div>
 
     <!-- Tabs horizontales -->
     <div class="rb-ind-tabs rb-stagger rb-stagger--horizontal">
       <button class="rb-ind-tab active" data-ind="banca" type="button">
         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
-        Banca y financieras
+        Banking &amp; finance
       </button>
       <button class="rb-ind-tab" data-ind="seguros" type="button">
         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Seguros
+        Insurance
       </button>
       <button class="rb-ind-tab" data-ind="retail" type="button">
         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
@@ -2072,11 +2071,11 @@ html{scroll-padding-top:92px;}
       </button>
       <button class="rb-ind-tab" data-ind="consumo" type="button">
         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg>
-        Consumo masivo
+        Consumer goods
       </button>
       <button class="rb-ind-tab" data-ind="industrial" type="button">
         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-        Industrial
+        Manufacturing
       </button>
     </div>
 
@@ -2086,29 +2085,29 @@ html{scroll-padding-top:92px;}
         <div class="rb-ind-panel__icon">
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
         </div>
-        <div class="rb-ind-panel__eyebrow">Banca y Financieras</div>
-        <h3 class="rb-ind-panel__title">Cumplimiento, velocidad y control en operaciones críticas</h3>
-        <p class="rb-ind-panel__desc">Las conciliaciones, reportes regulatorios y procesos financieros siguen consumiendo horas de trabajo en muchas organizaciones. Cuando la información no llega a tiempo, el riesgo aumenta.</p>
-        <div class="rb-ind-panel__kpi">→ Clientes reducen hasta 90% el costo de procesos como conciliación bancaria y generación de reportes regulatorios.</div>
+        <div class="rb-ind-panel__eyebrow">Banking &amp; Finance</div>
+        <h3 class="rb-ind-panel__title">Compliance, speed and control in critical operations</h3>
+        <p class="rb-ind-panel__desc">Reconciliations, regulatory reporting and financial processes still eat up hours of work in many organisations. When the information doesn't arrive on time, the risk goes up.</p>
+        <div class="rb-ind-panel__kpi">→ Customers cut the cost of processes like bank reconciliation and regulatory reporting by up to 90%.</div>
       </div>
       <div class="rb-ind-panel__right">
-        <div class="rb-ind-panel__processes-label">Procesos que ya automatizamos</div>
+        <div class="rb-ind-panel__processes-label">Processes we've already automated</div>
         <ul class="rb-ind-panel__list">
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Conciliación bancaria automática</strong><span>De días a horas, con mayor control y trazabilidad.</span></div>
+            <div><strong>Automated bank reconciliation</strong><span>From days to hours, with more control and traceability.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Generación de reportes regulatorios</strong><span>Preparación y envío de reportes para organismos reguladores con menos trabajo manual.</span></div>
+            <div><strong>Regulatory report generation</strong><span>Preparing and filing reports for regulators with far less manual work.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Incorporación de nuevos clientes</strong><span>Validación de documentos y creación de cuentas en minutos.</span></div>
+            <div><strong>New customer onboarding</strong><span>Document validation and account creation in minutes.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Procesamiento de créditos</strong><span>Evaluación, aprobación y notificación más ágil.</span></div>
+            <div><strong>Loan processing</strong><span>Faster assessment, approval and notification.</span></div>
           </li>
         </ul>
       </div>
@@ -2120,29 +2119,29 @@ html{scroll-padding-top:92px;}
         <div class="rb-ind-panel__icon">
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <div class="rb-ind-panel__eyebrow">Seguros</div>
-        <h3 class="rb-ind-panel__title">Menos tiempo en gestión, más tiempo para el cliente</h3>
-        <p class="rb-ind-panel__desc">Entre pólizas, renovaciones y siniestros, los equipos dedican gran parte de su tiempo a revisar información, validar documentos y hacer seguimiento. Rocketbot ayuda a que esos procesos avancen con mayor rapidez y control.</p>
-        <div class="rb-ind-panel__kpi">→ Reducción de hasta 70% en tiempos de procesamiento de siniestros.</div>
+        <div class="rb-ind-panel__eyebrow">Insurance</div>
+        <h3 class="rb-ind-panel__title">Less time on admin, more time for the customer</h3>
+        <p class="rb-ind-panel__desc">Between policies, renewals and claims, teams spend much of their day reviewing information, validating documents and chasing updates. Rocketbot helps those processes move faster and with more control.</p>
+        <div class="rb-ind-panel__kpi">→ Up to 70% reduction in claims processing times.</div>
       </div>
       <div class="rb-ind-panel__right">
-        <div class="rb-ind-panel__processes-label">Procesos que ya automatizamos</div>
+        <div class="rb-ind-panel__processes-label">Processes we've already automated</div>
         <ul class="rb-ind-panel__list">
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Gestión de siniestros</strong><span>Recepción, validación y seguimiento más ágil de cada caso.</span></div>
+            <div><strong>Claims handling</strong><span>Faster intake, validation and follow-up on every case.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Renovación de pólizas</strong><span>Notificaciones y actualizaciones automáticas.</span></div>
+            <div><strong>Policy renewals</strong><span>Automatic notifications and updates.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Extracción de datos de documentos</strong><span>Procesamiento de formularios y contratos en segundos.</span></div>
+            <div><strong>Data extraction from documents</strong><span>Forms and contracts processed in seconds.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Reportes regulatorios automáticos</strong><span>Cumplimiento normativo con menos esfuerzo operativo.</span></div>
+            <div><strong>Automated regulatory reporting</strong><span>Meet requirements with less operational effort.</span></div>
           </li>
         </ul>
       </div>
@@ -2155,28 +2154,28 @@ html{scroll-padding-top:92px;}
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         </div>
         <div class="rb-ind-panel__eyebrow">Retail</div>
-        <h3 class="rb-ind-panel__title">Más pedidos. La misma capacidad de respuesta.</h3>
-        <p class="rb-ind-panel__desc">Cuando aumentan los pedidos, también aumentan los controles, conciliaciones y tareas operativas. Rocketbot ayuda a que la operación avance sin depender de correos, planillas o seguimiento manual.</p>
-        <div class="rb-ind-panel__kpi">→ Clientes del sector reducen tiempos de cierre operativo en más de 60%.</div>
+        <h3 class="rb-ind-panel__title">More orders. The same ability to respond.</h3>
+        <p class="rb-ind-panel__desc">When orders go up, so do the checks, reconciliations and operational tasks. Rocketbot keeps the operation moving without relying on emails, spreadsheets or manual follow-up.</p>
+        <div class="rb-ind-panel__kpi">→ Customers in the sector cut operational close times by more than 60%.</div>
       </div>
       <div class="rb-ind-panel__right">
-        <div class="rb-ind-panel__processes-label">Procesos que ya automatizamos</div>
+        <div class="rb-ind-panel__processes-label">Processes we've already automated</div>
         <ul class="rb-ind-panel__list">
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Gestión de inventarios</strong><span>Actualización automática entre múltiples sistemas.</span></div>
+            <div><strong>Inventory management</strong><span>Automatic updates across multiple systems.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Procesamiento de pedidos</strong><span>De la orden al despacho con menos tareas manuales.</span></div>
+            <div><strong>Order processing</strong><span>From order to dispatch with fewer manual steps.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Conciliación de pagos</strong><span>Cierres más rápidos y con menos errores.</span></div>
+            <div><strong>Payment reconciliation</strong><span>Faster closes with fewer errors.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Reportes operativos</strong><span>Información actualizada para una mejor toma de decisiones.</span></div>
+            <div><strong>Operational reporting</strong><span>Current information for better decisions.</span></div>
           </li>
         </ul>
       </div>
@@ -2188,29 +2187,29 @@ html{scroll-padding-top:92px;}
         <div class="rb-ind-panel__icon">
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg>
         </div>
-        <div class="rb-ind-panel__eyebrow">Consumo Masivo</div>
-        <h3 class="rb-ind-panel__title">De la planificación al despacho, con menos fricción</h3>
-        <p class="rb-ind-panel__desc">Órdenes, inventarios, facturación y distribución generan miles de movimientos diarios. Cuando la información está repartida entre sistemas y equipos, avanzar toma más tiempo del necesario.</p>
-        <div class="rb-ind-panel__kpi">→ Hasta 80% de reducción en tiempos de procesamiento de órdenes.</div>
+        <div class="rb-ind-panel__eyebrow">Consumer Goods</div>
+        <h3 class="rb-ind-panel__title">From planning to dispatch, with less friction</h3>
+        <p class="rb-ind-panel__desc">Orders, inventory, invoicing and distribution generate thousands of movements a day. When the information is split across systems and teams, everything takes longer than it should.</p>
+        <div class="rb-ind-panel__kpi">→ Up to 80% reduction in order processing times.</div>
       </div>
       <div class="rb-ind-panel__right">
-        <div class="rb-ind-panel__processes-label">Procesos que ya automatizamos</div>
+        <div class="rb-ind-panel__processes-label">Processes we've already automated</div>
         <ul class="rb-ind-panel__list">
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Gestión de órdenes de compra</strong><span>Automatización del proceso de solicitud y gestión de pedidos.</span></div>
+            <div><strong>Purchase order management</strong><span>Automating the request and order management process.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Control de stock y reposición</strong><span>Alertas y acciones automáticas para mantener la continuidad operativa.</span></div>
+            <div><strong>Stock control and replenishment</strong><span>Automatic alerts and actions to keep the operation running.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Facturación y cobranza</strong><span>Emisión y seguimiento más eficiente de facturas.</span></div>
+            <div><strong>Invoicing and collections</strong><span>More efficient invoice issuing and follow-up.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Reportes de ventas y distribución</strong><span>Datos actualizados para decisiones más ágiles.</span></div>
+            <div><strong>Sales and distribution reporting</strong><span>Current data for faster decisions.</span></div>
           </li>
         </ul>
       </div>
@@ -2222,29 +2221,29 @@ html{scroll-padding-top:92px;}
         <div class="rb-ind-panel__icon">
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
         </div>
-        <div class="rb-ind-panel__eyebrow">Industrial</div>
-        <h3 class="rb-ind-panel__title">Más tiempo en la operación. Menos tiempo en tareas administrativas.</h3>
-        <p class="rb-ind-panel__desc">Reportes, órdenes de trabajo y gestión documental suelen consumir tiempo valioso de los equipos. Rocketbot ayuda a reducir esa carga para que las personas puedan enfocarse en la operación.</p>
-        <div class="rb-ind-panel__kpi">→ Reducción de carga administrativa en planta de hasta 65%.</div>
+        <div class="rb-ind-panel__eyebrow">Manufacturing</div>
+        <h3 class="rb-ind-panel__title">More time on the operation. Less time on paperwork.</h3>
+        <p class="rb-ind-panel__desc">Reports, work orders and document management tend to eat up valuable team time. Rocketbot lightens that load so people can focus on the operation itself.</p>
+        <div class="rb-ind-panel__kpi">→ Up to 65% less administrative load on the plant floor.</div>
       </div>
       <div class="rb-ind-panel__right">
-        <div class="rb-ind-panel__processes-label">Procesos que ya automatizamos</div>
+        <div class="rb-ind-panel__processes-label">Processes we've already automated</div>
         <ul class="rb-ind-panel__list">
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Órdenes de trabajo automatizadas</strong><span>Generación y seguimiento de tareas de forma más eficiente.</span></div>
+            <div><strong>Automated work orders</strong><span>More efficient task creation and follow-up.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Gestión de proveedores</strong><span>Cotizaciones, aprobaciones y pagos con menos seguimiento manual.</span></div>
+            <div><strong>Supplier management</strong><span>Quotes, approvals and payments with less manual chasing.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Reportes de producción</strong><span>Información consolidada en tiempo real.</span></div>
+            <div><strong>Production reporting</strong><span>Consolidated information in real time.</span></div>
           </li>
           <li>
             <svg class="rb-ind-panel__list-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Compliance y auditorías</strong><span>Trazabilidad y control de cada operación.</span></div>
+            <div><strong>Compliance and audits</strong><span>Traceability and control over every operation.</span></div>
           </li>
         </ul>
       </div>
@@ -2257,39 +2256,39 @@ html{scroll-padding-top:92px;}
 <section class="rb-impact">
   <div class="container">
     <div class="rb-impact__head rb-reveal">
-      <h2 class="rb-impact__title">El impacto de automatizar procesos</h2>
-      <p class="rb-impact__sub">Resultados reales de automatización en empresas que hoy operan con procesos más eficientes.</p>
+      <h2 class="rb-impact__title">The impact of automating processes</h2>
+      <p class="rb-impact__sub">Real automation results from companies now running leaner processes.</p>
     </div>
     <div class="rb-impact__grid rb-stagger rb-stagger--scale">
       <div class="rb-impact__card">
-        <div class="rb-impact__val">6 meses</div>
-        <div class="rb-impact__card-title">Tiempo promedio para recuperar la inversión</div>
-        <p class="rb-impact__card-desc">Los resultados comienzan a verse en meses, no en años.</p>
-        <div class="rb-impact__card-cta">→ Beneficios visibles desde las primeras etapas del proyecto.</div>
+        <div class="rb-impact__val">6 months</div>
+        <div class="rb-impact__card-title">Average time to recover the investment</div>
+        <p class="rb-impact__card-desc">Results start showing in months, not years.</p>
+        <div class="rb-impact__card-cta">→ Visible benefits from the earliest stages of the project.</div>
       </div>
       <div class="rb-impact__card">
         <div class="rb-impact__val">80%</div>
-        <div class="rb-impact__card-title">Menos tiempo consolidando información. Más tiempo tomando decisiones.</div>
-        <p class="rb-impact__card-desc">Los equipos dejan de dedicar horas a tareas operativas, seguimiento manual y trabajo administrativo.</p>
-        <div class="rb-impact__card-cta">→ Más tiempo para analizar, decidir y generar valor.</div>
+        <div class="rb-impact__card-title">Less time consolidating information. More time making decisions.</div>
+        <p class="rb-impact__card-desc">Teams stop pouring hours into operational tasks, manual follow-up and admin work.</p>
+        <div class="rb-impact__card-cta">→ More time to analyse, decide and create value.</div>
       </div>
       <div class="rb-impact__card">
         <div class="rb-impact__val">90%</div>
-        <div class="rb-impact__card-title">Reducción del costo por proceso automatizado</div>
-        <p class="rb-impact__card-desc">Menos correos, menos seguimiento manual y menos esfuerzo operativo en cada proceso.</p>
-        <div class="rb-impact__card-cta">→ Más eficiencia en toda la operación.</div>
+        <div class="rb-impact__card-title">Lower cost per automated process</div>
+        <p class="rb-impact__card-desc">Fewer emails, less manual chasing and less operational effort in every process.</p>
+        <div class="rb-impact__card-cta">→ More efficiency across the whole operation.</div>
       </div>
       <div class="rb-impact__card rb-impact__card--highlight">
         <div class="rb-impact__val">USD 2.5M</div>
-        <div class="rb-impact__card-title">Ahorrados por cliente al año</div>
-        <p class="rb-impact__card-desc">Medido en empresas con estrategias de automatización maduras y procesos operando a escala.</p>
+        <div class="rb-impact__card-title">Saved per customer per year</div>
+        <p class="rb-impact__card-desc">Measured in companies with mature automation strategies and processes running at scale.</p>
         <div class="rb-impact__card-badge">
           <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          Dato real basado en nuestros clientes con mayor nivel de adopción
+          Real figure, based on our most advanced customers
         </div>
       </div>
     </div>
-    <p class="rb-impact__quote rb-reveal rb-reveal--blur rb-reveal--delay-2"><strong>La automatización no genera resultados de un día para otro.</strong> Comienza con los primeros procesos automatizados y crece a medida que la operación gana velocidad, control y visibilidad.</p>
+    <p class="rb-impact__quote rb-reveal rb-reveal--blur rb-reveal--delay-2"><strong>Automation doesn't deliver results overnight.</strong> It starts with the first automated processes and grows as the operation gains speed, control and visibility.</p>
   </div>
 </section>
 
@@ -2297,8 +2296,8 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--alt" id="testimonios">
   <div class="container">
     <div class="rb-section__head rb-reveal">
-      <h2 class="rb-section__title">Automatización con <span>resultados reales.</span></h2>
-      <p class="rb-section__sub">No son proyecciones. Son resultados obtenidos por empresas que hoy operan con procesos automatizados en&nbsp;producción.</p>
+      <h2 class="rb-section__title">Automation with <span>real results.</span></h2>
+      <p class="rb-section__sub">These aren't projections. They're results from companies running automated processes in&nbsp;production today.</p>
     </div>
 
     <div class="rb-testimonials rb-stagger rb-stagger--horizontal">
@@ -2306,81 +2305,81 @@ html{scroll-padding-top:92px;}
       <!-- Protección -->
       <article class="rb-testi">
         <div class="rb-testi__head">
-          <div class="rb-testi__logo"><img src="assets/logos/clients/proteccion.svg" alt="Protección" loading="lazy" decoding="async"></div>
-          <div class="rb-testi__sector">Servicios Financieros · Grupo SURA</div>
+          <div class="rb-testi__logo"><img src="/assets/logos/clients/proteccion.svg" alt="Protección" loading="lazy" decoding="async"></div>
+          <div class="rb-testi__sector">Financial Services · Grupo SURA</div>
         </div>
-        <p class="rb-testi__desc">La migración de pólizas de una nueva unidad de negocio, que manualmente habría tomado semanas, se resolvió en 4 días gracias a la automatización de procesos.</p>
+        <p class="rb-testi__desc">Migrating the policies of a new business unit — weeks of work by hand — was done in 4 days thanks to process automation.</p>
         <div class="rb-testi__metrics">
           <div class="rb-testi__metric">
             <div class="rb-testi__val">+USD 500K</div>
-            <div class="rb-testi__mlabel">ahorrados</div>
+            <div class="rb-testi__mlabel">saved</div>
           </div>
           <div class="rb-testi__metric">
             <div class="rb-testi__val">80</div>
-            <div class="rb-testi__mlabel">robots en producción</div>
+            <div class="rb-testi__mlabel">robots in production</div>
           </div>
         </div>
         <div class="rb-testi__quote">
-          <p>"Rocketbot nos permitió abordar este desafío demostrando el poder de la automatización."</p>
-          <div class="rb-testi__author">Andrea Muñetón<span>Líder de Automatización Digital</span></div>
+          <p>"Rocketbot let us take on this challenge and show what automation is really capable of."</p>
+          <div class="rb-testi__author">Andrea Muñetón<span>Digital Automation Lead</span></div>
         </div>
         <a href="https://www.youtube.com/watch?v=n0a8jpqqeog&t=2s" target="_blank" rel="noopener" class="rb-testi__video-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
-          Ver caso completo
+          Read the full story
         </a>
       </article>
 
       <!-- Agrosuper -->
       <article class="rb-testi">
         <div class="rb-testi__head">
-          <div class="rb-testi__logo"><img src="assets/logos/clients/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async"></div>
-          <div class="rb-testi__sector">Consumo Masivo · Agroindustria</div>
+          <div class="rb-testi__logo"><img src="/assets/logos/clients/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async"></div>
+          <div class="rb-testi__sector">Consumer Goods · Agribusiness</div>
         </div>
-        <p class="rb-testi__desc">Miles de horas se destinaban a procesos administrativos que consumían tiempo valioso y dificultaban el crecimiento. La automatización permitió que los equipos se enfocaran en actividades de mayor valor.</p>
+        <p class="rb-testi__desc">Thousands of hours went into administrative processes that ate up valuable time and held back growth. Automation let the teams shift to higher-value work.</p>
         <div class="rb-testi__metrics">
           <div class="rb-testi__metric">
             <div class="rb-testi__val">+USD 1.5M</div>
-            <div class="rb-testi__mlabel">ahorrados</div>
+            <div class="rb-testi__mlabel">saved</div>
           </div>
           <div class="rb-testi__metric">
             <div class="rb-testi__val">+100</div>
-            <div class="rb-testi__mlabel">robots en producción</div>
+            <div class="rb-testi__mlabel">robots in production</div>
           </div>
         </div>
         <div class="rb-testi__quote">
-          <p>"Desde que nosotros por ejemplo tomamos el equipo de automatización a como estaba antes pudimos lograr generar un 80% de beneficio económico en base a lo que gastábamos antes."</p>
-          <div class="rb-testi__author">Daniela Merino<span>Jefe Automatización Inteligente RPA</span></div>
+          <p>"From the moment we took over the automation team as it was, we managed to deliver 80% economic benefit compared with what we were spending before."</p>
+          <div class="rb-testi__author">Daniela Merino<span>Head of Intelligent RPA Automation</span></div>
         </div>
         <a href="https://www.youtube.com/watch?v=EmiCOrY090g" target="_blank" rel="noopener" class="rb-testi__video-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
-          Ver caso completo
+          Read the full story
         </a>
       </article>
 
       <!-- Consorcio -->
       <article class="rb-testi">
         <div class="rb-testi__head">
-          <div class="rb-testi__logo"><img src="assets/logos/clients/consorcio.svg" alt="Consorcio" loading="lazy" decoding="async"></div>
-          <div class="rb-testi__sector">Seguros · Chile</div>
+          <div class="rb-testi__logo"><img src="/assets/logos/clients/consorcio.svg" alt="Consorcio" loading="lazy" decoding="async"></div>
+          <div class="rb-testi__sector">Insurance · Chile</div>
         </div>
-        <p class="rb-testi__desc">Procesos operativos con alta carga manual impactaban tiempos de respuesta y experiencia de cliente. La automatización ayudó a mejorar la eficiencia operativa y la capacidad de respuesta.</p>
+        <p class="rb-testi__desc">Operational processes with a heavy manual load were hurting response times and customer experience. Automation helped improve both efficiency and responsiveness.</p>
         <div class="rb-testi__metrics">
           <div class="rb-testi__metric">
             <div class="rb-testi__val">+USD 500K</div>
-            <div class="rb-testi__mlabel">ahorrados</div>
+            <div class="rb-testi__mlabel">saved</div>
           </div>
           <div class="rb-testi__metric">
             <div class="rb-testi__val">+60</div>
-            <div class="rb-testi__mlabel">automatizaciones en producción</div>
+            <div class="rb-testi__mlabel">automations in production</div>
           </div>
         </div>
         <div class="rb-testi__quote">
-          <p>"La automatización no solo mejora la eficiencia. También permite crecer con mayor control y visibilidad."</p>
-          <div class="rb-testi__author">Equipo Consorcio<span>Operaciones · Seguros</span></div>
+          <p>"Automation doesn't just improve efficiency. It also lets you grow with more control and visibility."</p>
+          <div class="rb-testi__author">Consorcio team<span>Operations · Insurance</span></div>
         </div>
         <a href="https://www.youtube.com/watch?v=cBRBhqL18f0&list=PLCGiQoj-joyfv34JtpH4vI0MnmPXiorWf&index=13" target="_blank" rel="noopener" class="rb-testi__video-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
-          Ver caso completo
+          Read the full story
         </a>
       </article>
 
@@ -2392,10 +2391,10 @@ html{scroll-padding-top:92px;}
         <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
       </div>
       <div class="rb-summit-cta__text">
-        <div class="rb-summit-cta__title">¿Tu empresa podría ser el próximo caso?</div>
-        <p class="rb-summit-cta__desc">Más de 700 empresas en 21 países ya automatizan procesos y operaciones con Rocketbot. El primer paso es identificar dónde se está perdiendo tiempo, visibilidad y capacidad de decisión.</p>
+        <div class="rb-summit-cta__title">Could your company be the next story?</div>
+        <p class="rb-summit-cta__desc">More than 700 companies across 21 countries already automate their processes and operations with Rocketbot. The first step is finding where time, visibility and decision-making capacity are being lost.</p>
       </div>
-      <a href="contacto.html" class="rb-btn rb-btn--primary">Hablemos</a>
+      <a href="contacto.html" class="rb-btn rb-btn--primary">Let's talk</a>
     </div>
 
   </div>
@@ -2405,11 +2404,11 @@ html{scroll-padding-top:92px;}
 <section class="rb-cta-band">
   <div class="container rb-cta-band__inner">
     <div class="rb-reveal">
-      <h2 class="rb-cta-band__title">¿Cuánto está costando<span>no automatizar hoy?</span></h2>
-      <p class="rb-cta-band__sub">En 30 minutos identificamos los procesos con mayor potencial de ahorro en tu organización, sin compromiso, sin PowerPoints, solo números reales.</p>
+      <h2 class="rb-cta-band__title">What is it costing you<span>not to automate today?</span></h2>
+      <p class="rb-cta-band__sub">In 30 minutes we identify the processes with the greatest savings potential in your organisation. No commitment, no slide decks — just real numbers.</p>
     </div>
     <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg rb-reveal rb-reveal--zoom rb-reveal--delay-1">
-      Agendar diagnóstico
+      Book a diagnostic
       <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
     </a>
   </div>
@@ -2417,7 +2416,7 @@ html{scroll-padding-top:92px;}
   <!-- Gartner rating -->
   <div class="container rb-cta-ratings rb-stagger rb-stagger--horizontal">
     <div class="rb-cta-rating">
-      <div class="rb-cta-rating__logo"><img src="assets/logos/gartner-logo.png" alt="Gartner" loading="lazy" decoding="async"></div>
+      <div class="rb-cta-rating__logo"><img src="/assets/logos/gartner-logo.png" alt="Gartner" loading="lazy" decoding="async"></div>
       <div class="rb-cta-rating__info">
         <div class="rb-cta-rating__score">
           4.7
@@ -2429,7 +2428,7 @@ html{scroll-padding-top:92px;}
             <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 22 12 17 5 22 7 14 2 9 9 9"/></svg>
           </span>
         </div>
-        <div class="rb-cta-rating__label">Calificación en Gartner Peer Insights</div>
+        <div class="rb-cta-rating__label">Rating on Gartner Peer Insights</div>
       </div>
     </div>
   </div>
@@ -2439,23 +2438,23 @@ html{scroll-padding-top:92px;}
 <section class="rb-rec rb-section--alt">
   <div class="container">
     <div class="rb-section__head rb-reveal">
-      <h2 class="rb-section__title">Mejor evaluados que<br><span>los gigantes globales.</span></h2>
-      <p class="rb-section__sub">En Gartner Peer Insights (rese&ntilde;as de usuarios verificados) Rocketbot supera la calificaci&oacute;n de UiPath, Automation Anywhere y Blue&nbsp;Prism.</p>
+      <h2 class="rb-section__title">Rated higher than<br><span>the global giants.</span></h2>
+      <p class="rb-section__sub">On Gartner Peer Insights (reviews from verified users) Rocketbot outranks UiPath, Automation Anywhere and Blue&nbsp;Prism.</p>
     </div>
     <div class="rb-rec2">
       <div class="rb-gbadge">
         <div class="score">4.7</div>
         <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="sub">137 rese&ntilde;as en Gartner Peer Insights</div>
-        <div class="src">Actualizado oct 2025</div>
+        <div class="sub">137 reviews on Gartner Peer Insights</div>
+        <div class="src">Updated Oct 2025</div>
       </div>
       <div class="rb-rcmp rb-reveal">
-        <h3>Calificaci&oacute;n en Gartner Peer Insights</h3>
+        <h3>Rating on Gartner Peer Insights</h3>
         <div class="row"><span class="nm us">Rocketbot</span><span class="bar"><span class="fill us" data-w="94"></span></span><span class="sc us">4.7</span></div>
         <div class="row"><span class="nm">Automation Anywhere</span><span class="bar"><span class="fill" data-w="92"></span></span><span class="sc">4.6</span></div>
         <div class="row"><span class="nm">UiPath</span><span class="bar"><span class="fill" data-w="90"></span></span><span class="sc">4.5</span></div>
         <div class="row"><span class="nm">Blue Prism</span><span class="bar"><span class="fill" data-w="88"></span></span><span class="sc">4.4</span></div>
-        <p class="note">Calificaci&oacute;n promedio de usuarios verificados en Gartner Peer Insights, mercado de Robotic Process Automation (datos a oct 2025).</p>
+        <p class="note">Average rating from verified users on Gartner Peer Insights, Robotic Process Automation market (data as of Oct 2025).</p>
       </div>
     </div>
   </div>
@@ -2466,8 +2465,8 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-footer__grid">
       <div class="rb-footer__brand">
-        <img src="assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
-        <p class="rb-footer__copy">Plataforma de automatización de procesos y agentes inteligentes para recuperar tiempo y tomar mejores decisiones.</p>
+        <img src="/assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
+        <p class="rb-footer__copy">A process automation and intelligent agent platform built to win back time and support better decisions.</p>
         <div class="rb-footer__social">
           <a href="https://www.facebook.com/rocketbot.es" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -2484,40 +2483,40 @@ html{scroll-padding-top:92px;}
         </div>
       </div>
       <div class="rb-footer__col">
-        <h6>Productos</h6>
+        <h6>Products</h6>
         <ul>
           <li><a href="saturn-studio.html">Saturn Studio</a></li>
           <li><a href="rpa-studio.html">RPA Studio</a></li>
           <li><a href="ai-studio.html">AI Studio</a></li>
-          <li><a href="orquestador.html">Orquestador</a></li>
+          <li><a href="orquestador.html">Orchestrator</a></li>
           <li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li>
         </ul>
       </div>
       <div class="rb-footer__col">
-        <h6>Recursos</h6>
+        <h6>Resources</h6>
         <ul>
-          <li><a href="suite-rocketbot.html">Suite Rocketbot</a></li>
-          <li><a href="cfo.html">Para CFOs</a></li>
-          <li><a href="construir-vs-comprar.html">Construir o comprar</a></li>
+          <li><a href="suite-rocketbot.html">Rocketbot Suite</a></li>
+          <li><a href="cfo.html">For CFOs</a></li>
+          <li><a href="construir-vs-comprar.html">Build or buy</a></li>
           <li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li>
           <li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li>
         </ul>
-        <h6 style="margin-top:28px;">Empresa</h6>
+        <h6 style="margin-top:28px;">Company</h6>
         <ul>
-          <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="#">Políticas de privacidad</a></li>
-          <li><a href="#">Políticas de seguridad</a></li>
-          <li><a href="#">Trabaja con Nosotros</a></li>
+          <li><a href="contacto.html">Contact</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Security policy</a></li>
+          <li><a href="#">Work with us</a></li>
         </ul>
       </div>
       <div class="rb-footer__col">
-        <h6>Soporte y servicios</h6>
+        <h6>Support &amp; services</h6>
         <ul>
-          <li><a href="#">Certificación</a></li>
-          <li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li>
+          <li><a href="#">Certification</a></li>
+          <li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a></li>
           <li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li>
-          <li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li>
-          <li><a href="#">Descargas</a></li>
+          <li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="#">Downloads</a></li>
           <li><a href="#">FAQs</a></li>
           <li><a href="#">Media kit</a></li>
         </ul>
@@ -2526,8 +2525,8 @@ html{scroll-padding-top:92px;}
     <div class="rb-footer__bottom">
       <span>© Rocketbot SpA | All rights reserved 2018 – 2025</span>
       <div class="rb-footer__legal">
-        <a href="#">Políticas de privacidad</a>
-        <a href="#">Políticas de seguridad</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Security policy</a>
       </div>
     </div>
   </div>
@@ -2536,8 +2535,8 @@ html{scroll-padding-top:92px;}
 <script>
 // ─── Logo paths per theme ───
 var LOGOS = {
-  light: 'assets/logos/logo-header.png',
-  dark:  'assets/logos/logo-header-white.png'
+  light: '/assets/logos/logo-header.png',
+  dark:  '/assets/logos/logo-header-white.png'
 };
 
 var html     = document.documentElement;
@@ -2722,29 +2721,14 @@ themeBtn.addEventListener('click', function () {
   })();
 </script>
 
-<!-- Nombres de producto protegidos antes de cargar el traductor -->
-<script>try{ RB_I18N.shield(); }catch(e){}</script>
-
-<!-- Google Translate -->
-<div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
-<script>
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement({
-    pageLanguage:'es',
-    includedLanguages:'es,en,pt',
-    autoDisplay:false
-  },'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 
 <script>
-/* Language Switcher */
+/* Selector de idioma: navega entre /  /en/  /pt/ */
 (function(){
   var btn  = document.getElementById('rb-lang-btn');
   var menu = document.getElementById('rb-lang-menu');
   if(!btn || !menu) return;
-
+  var CUR='en', PAGE='index.html';
   btn.addEventListener('click', function(e){
     e.stopPropagation();
     var open = menu.classList.toggle('open');
@@ -2754,52 +2738,15 @@ function googleTranslateElementInit(){
     menu.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
   });
-
-  function setLang(lang){
-    try{ if(window.RB_I18N) RB_I18N.setLang(lang); }catch(e){}
-    if(btn) btn.setAttribute('data-active', lang);
-    try{ localStorage.setItem('rb-lang', lang); }catch(e){}
-    menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-      o.classList.toggle('rb-lang--active', o.dataset.lang === lang);
+  function url(l){ return l==='es' ? '/'+PAGE : '/'+l+'/'+PAGE; }
+  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
+    o.classList.toggle('rb-lang--active', o.dataset.lang===CUR);
+    o.addEventListener('click', function(){
+      try{ localStorage.setItem('rb-lang', o.dataset.lang); }catch(e){}
+      location.href = url(o.dataset.lang);
     });
-    menu.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-
-    if(lang === 'es'){
-      var exp0 = new Date(0).toUTCString();
-      document.cookie = 'googtrans=; path=/; expires=' + exp0;
-      document.cookie = 'googtrans=; path=/; domain=.' + location.hostname + '; expires=' + exp0;
-      location.reload();
-      return;
-    }
-    // Try live Google Translate select
-    var sel = document.querySelector('.goog-te-combo');
-    if(sel){
-      sel.value = lang;
-      sel.dispatchEvent(new Event('change'));
-    } else {
-      var exp1 = new Date(); exp1.setFullYear(exp1.getFullYear()+1);
-      var expStr = exp1.toUTCString();
-      document.cookie = 'googtrans=/es/'+lang+'; path=/; expires='+expStr;
-      document.cookie = 'googtrans=/es/'+lang+'; path=/; domain=.'+location.hostname+'; expires='+expStr;
-      location.reload();
-    }
-  }
-
-  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-    o.addEventListener('click', function(){ setLang(o.dataset.lang); });
   });
-
-  // Restore saved preference
-  var saved = 'es';
-  try{ saved = localStorage.getItem('rb-lang') || 'es'; }catch(e){}
-  btn.setAttribute('data-active', (window.RB_I18N && RB_I18N.lang) || saved);
-  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-    o.classList.toggle('rb-lang--active', o.dataset.lang === saved);
-  });
-  if(saved !== 'es' && document.cookie.indexOf('googtrans') === -1){
-    document.cookie = 'googtrans=/es/'+saved+'; path=/';
-  }
+  btn.setAttribute('data-active', CUR);
 })();
 </script>
 

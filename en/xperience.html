@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <!-- ── Rocketbot i18n: protege los nombres de producto de Google Translate
@@ -30,7 +30,7 @@ window.RB_I18N=(function(){
     return s;
   }
   var API={
-    lang:detect(),
+    lang:'en',
     pick:function(map){ return map[API.lang]||map.es; },
     onLang:function(fn){ subs.push(fn); },
     setLang:function(l){
@@ -102,7 +102,6 @@ window.RB_I18N=(function(){
   };
   return API;
 })();
-document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); }catch(e){} });
 </script>
 <!-- Google tag (gtag.js) – GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EHJ8S289M"></script>
@@ -113,10 +112,10 @@ document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); 
   gtag('config', 'G-2EHJ8S289M');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Xperience | Formularios que disparan automatizaciones · Rocketbot</title>
-<meta name="description" content="Crea formularios públicos o privados sin código. Cada envío dispara una automatización completa. Ideal para trabajo en terreno, atención al cliente y autoservicio.">
+<title>Xperience | Forms that trigger automations · Rocketbot</title>
+<meta name="description" content="Build public or private forms with no code. Every submission triggers a complete automation. Ideal for field work, customer service and self-service.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://rocketbot.com/xperience">
+<link rel="canonical" href="https://rocketbot.com/en/xperience">
 <link rel="alternate" hreflang="es" href="https://rocketbot.com/xperience">
 <link rel="alternate" hreflang="en" href="https://rocketbot.com/en/xperience">
 <link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/xperience">
@@ -126,18 +125,18 @@ document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rocketbot">
-<meta property="og:title" content="Xperience | Formularios que disparan automatizaciones · Rocketbot">
-<meta property="og:description" content="Formularios públicos o privados sin código. Cada envío activa una automatización completa, de punta a punta.">
-<meta property="og:url" content="https://rocketbot.com/xperience">
+<meta property="og:title" content="Xperience | Forms that trigger automations · Rocketbot">
+<meta property="og:description" content="Public or private forms with no code. Every submission triggers a complete automation, end to end.">
+<meta property="og:url" content="https://rocketbot.com/en/xperience">
 <meta property="og:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="es_LA">
+<meta property="og:locale" content="en_US">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rocketbot">
-<meta name="twitter:title" content="Xperience | Formularios que disparan automatizaciones · Rocketbot">
-<meta name="twitter:description" content="Formularios públicos o privados sin código. Cada envío activa una automatización completa.">
+<meta name="twitter:title" content="Xperience | Forms that trigger automations · Rocketbot">
+<meta name="twitter:description" content="Public or private forms with no code. Every submission triggers a complete automation.">
 <meta name="twitter:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -650,42 +649,42 @@ html{scroll-padding-top:92px;}
 <nav class="rb-nav" id="rb-nav">
   <div class="rb-nav__inner">
     <a href="index.html" class="rb-nav__logo-wrap">
-      <img id="nav-logo" src="assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
+      <img id="nav-logo" src="/assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
     </a>
     <ul class="rb-nav__links">
       <li class="rb-nav__suite-li"><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Productos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button">Products <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestador</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
+          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orchestrator</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
         </div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="cfo.html">Para CFOs</a><a href="construir-vs-comprar.html">Construir o comprar</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
+        <button type="button">Resources <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="cfo.html">For CFOs</a><a href="construir-vs-comprar.html">Build or buy</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Soporte y servicios <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a><a href="#">Media kit</a></div>
+        <button type="button">Support &amp; services <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a><a href="#">Media kit</a></div>
       </li>
-      <li><a href="contacto.html">Contáctanos</a></li>
+      <li><a href="contacto.html">Talk to us</a></li>
     </ul>
     <div class="rb-nav__actions">
-      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
       <div class="rb-lang" id="rb-lang">
-        <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Language" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
           <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span>Español</button>
           <button class="rb-lang__opt" data-lang="en" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span>English</button>
           <button class="rb-lang__opt" data-lang="pt" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span>Português</button>
         </div>
       </div>
-      <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
+      <button class="rb-iconbtn" id="theme-btn" title="Switch theme" type="button">
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
         <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
       </button>
-      <a href="cfo.html" class="rb-btn rb-cfo-btn">Para CFOs</a>
-      <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Descarga</button>
+      <a href="cfo.html" class="rb-btn rb-cfo-btn">For CFOs</a>
+      <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Download</button>
     </div>
   </div>
 </nav>
@@ -694,30 +693,30 @@ html{scroll-padding-top:92px;}
 <div class="rb-mobile-menu" id="rb-mobile-menu">
   <div class="rb-mobile-menu__inner">
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Productos</div>
+      <div class="rb-mobile-menu__label">Products</div>
       <a href="saturn-studio.html">Saturn Studio</a>
       <a href="rpa-studio.html">RPA Studio</a>
       <a href="ai-studio.html">AI Studio</a>
-      <a href="orquestador.html">Orquestador</a>
+      <a href="orquestador.html">Orchestrator</a>
       <a href="xperience.html">Xperience</a>
       <a href="nexus.html">Nexus</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Recursos</div>
+      <div class="rb-mobile-menu__label">Resources</div>
       <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Soporte y servicios</div>
-      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a>
+      <div class="rb-mobile-menu__label">Support &amp; services</div>
+      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a>
       <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
-      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
+      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Media kit</a>
     </div>
     <div class="rb-mobile-menu__actions">
-      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suite Rocketbot</a>
-      <a href="contacto.html" class="rb-mobile-menu__btn">Contáctanos</a>
-      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Descarga</button>
+      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Rocketbot Suite</a>
+      <a href="contacto.html" class="rb-mobile-menu__btn">Talk to us</a>
+      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Download</button>
     </div>
   </div>
 </div>
@@ -726,35 +725,35 @@ html{scroll-padding-top:92px;}
 <div class="rb-dlmodal" id="rbDlModal" aria-hidden="true">
   <div class="rb-dlmodal__backdrop" data-dl-close></div>
   <div class="rb-dlmodal__panel" role="dialog" aria-modal="true" aria-labelledby="rbDlTitle">
-    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Cerrar">&times;</button>
-    <h2 id="rbDlTitle" class="rb-dlmodal__title">Descarga Rocketbot</h2>
-    <p class="rb-dlmodal__sub">Elige el programa y tu sistema operativo.</p>
+    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Close">&times;</button>
+    <h2 id="rbDlTitle" class="rb-dlmodal__title">Download Rocketbot</h2>
+    <p class="rb-dlmodal__sub">Pick your product and operating system.</p>
     <div class="rb-dlmodal__body">
       <div class="rb-dlmodal__side">
-        <div class="rb-dlmodal__label">Programas</div>
+        <div class="rb-dlmodal__label">Products</div>
         <button type="button" class="rb-dlmodal__pill is-active" data-dl-pill="rpa">
-          <img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
+          <img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
         </button>
 
         <div class="rb-dlmodal__req">
           <div class="rb-dlmodal__reqgrp">
-            <div class="rb-dlmodal__reqttl">Requisitos mínimos</div>
-            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i3-4340 o AMD FX-6300</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>10 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>4 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Minimum requirements</div>
+            <div class="rb-dlmodal__reqrow"><span>Processor</span><strong translate="no">Intel Core i3-4340 or AMD FX-6300</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Storage</span><strong>10 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memory</span><strong>4 GB RAM</strong></div>
           </div>
           <div class="rb-dlmodal__reqgrp rb-dlmodal__reqgrp--rec">
-            <div class="rb-dlmodal__reqttl">Configuración recomendada</div>
-            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i5</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>175 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>8 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Recommended setup</div>
+            <div class="rb-dlmodal__reqrow"><span>Processor</span><strong translate="no">Intel Core i5</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Storage</span><strong>175 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memory</span><strong>8 GB RAM</strong></div>
           </div>
         </div>
       </div>
       <div class="rb-dlmodal__main">
         <div class="rb-dlmodal__program is-active" data-dl-panel="rpa">
-          <div class="rb-dlmodal__ptitle"><img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
-          <p class="rb-dlmodal__pdesc">Descarga el instalador para tu sistema operativo. En el sitio de descarga encontrarás todas las versiones disponibles y sus notas de lanzamiento.</p>
+          <div class="rb-dlmodal__ptitle"><img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
+          <p class="rb-dlmodal__pdesc">Download the installer for your operating system. The download site lists every available version along with its release notes.</p>
           <div class="rb-dlmodal__os">
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7H3V5.5ZM11.4 4.3 21 3v8.4h-9.6V4.3ZM3 12.4h7.5v7.1L3 18.5v-6.1ZM11.4 12.4H21V21l-9.6-1.3v-7.3Z"/></svg>Windows<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -762,31 +761,31 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Latest version</span></div>
                     <div class="rb-dlmodal__vmeta">354 MB · ZIP · MD5 153fd4432f30564ecd16b146dcfaac31</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2025.07.01 <span class="rb-dlmodal__vtag">Python 3.13</span></div>
                     <div class="rb-dlmodal__vmeta">356 MB · ZIP · MD5 9f0e2c18051b020d71387821f3abdf82</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2024.05.28</div>
                     <div class="rb-dlmodal__vmeta">458 MB · ZIP · MD5 b4034aaf4759f710f6754df5bbd81be2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2023.11.10</div>
                     <div class="rb-dlmodal__vmeta">358 MB · ZIP · MD5 a18cc70a91134e73d2da277f973fa87a</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 </div>
               </div>
@@ -797,17 +796,17 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Latest version</span></div>
                     <div class="rb-dlmodal__vmeta">248 MB · ZIP · MD5 ff4ea3d2e49aa4e3294158f04ad81922</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Mac ARM · v2025.07.01</div>
                     <div class="rb-dlmodal__vmeta">533 MB · ZIP · MD5 3635e4cd1ec90eb5bac453c6b813bf29</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 </div>
               </div>
@@ -818,24 +817,24 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Latest version</span></div>
                     <div class="rb-dlmodal__vmeta">434 MB · ZIP · MD5 6312df8b82977e4e08d48826deb95b34</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">RHEL · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">166.2 MB · TAR.GZ · MD5 6d98a8f63cec705d181a011dfb69c90c</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Ubuntu · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">118.1 MB · TAR.XZ · MD5 b2d9a94de8299615e525ea26d5d543a2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 </div>
               </div>
@@ -852,11 +851,11 @@ html{scroll-padding-top:92px;}
   <div class="rb-hero__particles"></div>
   <div class="container rb-hero__grid">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title">Formularios que no solo<br>recogen datos.<br><strong>Disparan<span class="rb-hero__rot" id="heroRot">procesos</span>.</strong></h1>
-      <p class="rb-hero__sub">Diseña formularios sin código que validan información y activan robots, agentes y flujos automáticamente desde un solo envío.</p>
+      <h1 class="rb-hero__title">Forms that don't just<br>collect data.<br><strong>They trigger<span class="rb-hero__rot" id="heroRot">processes</span>.</strong></h1>
+      <p class="rb-hero__sub">Design no-code forms that validate information and automatically set robots, agents and flows in motion from a single submission.</p>
       <div class="rb-hero__ctas">
-        <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://noc-design.myrb.io/forms/login">Pruébalo ahora</a>
-        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Contactar a ventas</a>
+        <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://noc-design.myrb.io/forms/login">Try it now</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Contact sales</a>
       </div>
     </div>
     <div class="rb-hero__visual" aria-hidden="true">
@@ -877,10 +876,10 @@ html{scroll-padding-top:92px;}
 <!-- CLIENTS -->
 <section class="rb-clients">
   <div class="container">
-    <p class="rb-clients__label">Empresas que confían en Rocketbot</p>
+    <p class="rb-clients__label">Companies that trust Rocketbot</p>
     <div class="rb-marquee"><div class="rb-marquee__track">
-      <img src="assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
-      <img src="assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
+      <img src="/assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="/assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="/assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="/assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="/assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="/assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="/assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="/assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
+      <img src="/assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="/assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="/assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="/assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="/assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="/assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="/assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="/assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
     </div></div>
   </div>
 </section>
@@ -889,30 +888,30 @@ html{scroll-padding-top:92px;}
 <section class="rb-section" id="demo">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Cada envío activa<br><span>un proceso automatizado</span></h2>
-      <p class="rb-section__sub">Mucho más que un formulario online. Cada envío valida la información, ejecuta robots, agentes o flujos y actualiza tus sistemas automáticamente, sin intervención&nbsp;manual.</p>
+      <h2 class="rb-section__title">Every submission triggers<br><span>an automated process</span></h2>
+      <p class="rb-section__sub">Far more than an online form. Every submission validates the information, runs robots, agents or flows and updates your systems automatically, with no manual&nbsp;steps.</p>
     </div>
     <div class="rb-xtabs" id="xTabs">
-      <button class="rb-xtab act" data-case="salud">Declaración de Salud</button>
-      <button class="rb-xtab" data-case="credito">Solicitud de crédito</button>
-      <button class="rb-xtab" data-case="obra">Seguimiento de obra</button>
+      <button class="rb-xtab act" data-case="salud">Health declaration</button>
+      <button class="rb-xtab" data-case="credito">Loan application</button>
+      <button class="rb-xtab" data-case="obra">Site progress report</button>
     </div>
     <div class="rb-xwrap">
       <div class="rb-xform">
         <div class="rb-xform-head">
-          <h3 id="xFormTitle">Declaración de Salud</h3>
+          <h3 id="xFormTitle">Health declaration</h3>
           <span class="rb-xbadge pub" id="xFormBadge"></span>
         </div>
         <div id="xFields"></div>
-        <button class="rb-btn rb-btn--primary rb-xsubmit" id="xSubmit" onclick="xPlay()">Enviar formulario</button>
+        <button class="rb-btn rb-btn--primary rb-xsubmit" id="xSubmit" onclick="xPlay()">Submit form</button>
       </div>
       <div class="rb-xpipe">
-        <div class="pl">Proceso automatizado</div>
+        <div class="pl">Automated process</div>
         <div class="rb-xpipe-steps" id="xSteps"></div>
         <div class="rb-xdone" id="xDone" style="display:none">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
-          <div class="tx">Proceso completado<b>Sin intervención manual ni correos de por medio.</b></div>
-          <span class="again" onclick="xPlay()">Probar de nuevo</span>
+          <div class="tx">Process complete<b>No manual steps, no emails in between.</b></div>
+          <span class="again" onclick="xPlay()">Try again</span>
         </div>
       </div>
     </div>
@@ -923,19 +922,19 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--alt">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Formularios públicos o privados,<br><span>según tu proceso</span></h2>
-      <p class="rb-section__sub">Publica formularios abiertos para clientes o protégelos con autenticación y permisos por rol para procesos internos. Tú decides quién puede acceder y completar cada&nbsp;formulario.</p>
+      <h2 class="rb-section__title">Public or private forms,<br><span>to suit your process</span></h2>
+      <p class="rb-section__sub">Publish open forms for customers, or protect them with authentication and role-based permissions for internal processes. You decide who can open and complete each&nbsp;form.</p>
     </div>
     <div class="rb-modes">
       <div class="rb-mode pub">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
-        <h3>Formularios públicos <span class="tag">Link abierto</span></h3>
-        <p>Comparte un enlace para que cualquier persona complete solicitudes, registros, encuestas o declaraciones, sin crear una cuenta.</p>
+        <h3>Public forms <span class="tag">Open link</span></h3>
+        <p>Share a link so anyone can complete requests, registrations, surveys or declarations, without creating an account.</p>
       </div>
       <div class="rb-mode priv">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.4"/></svg></div>
-        <h3>Formularios privados <span class="tag">Usuario, contraseña y permisos</span></h3>
-        <p>Restringe el acceso con autenticación y roles. Ideal para colaboradores, atención al cliente, equipos de terreno y procesos internos.</p>
+        <h3>Private forms <span class="tag">Username, password and permissions</span></h3>
+        <p>Restrict access with authentication and roles. Ideal for employees, customer service, field teams and internal processes.</p>
       </div>
     </div>
   </div>
@@ -945,14 +944,14 @@ html{scroll-padding-top:92px;}
 <section class="rb-section">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Crea formularios<br><span>inteligentes en minutos.</span></h2>
-      <p class="rb-section__sub">Diseña formularios empresariales con una interfaz visual. Agrega validaciones, lógica condicional, permisos y captura de archivos para convertir cada envío en el inicio de un proceso&nbsp;automatizado.</p>
+      <h2 class="rb-section__title">Build smart forms<br><span>in minutes.</span></h2>
+      <p class="rb-section__sub">Design enterprise forms through a visual interface. Add validation, conditional logic, permissions and file capture to turn every submission into the start of an automated&nbsp;process.</p>
     </div>
     <div class="rb-compare rb-compare--four">
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></div><div class="rb-compare__title">Constructor visual</div><div class="rb-compare__desc">Diseña formularios arrastrando campos y configurando el proceso desde una interfaz intuitiva, sin escribir código.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8 7l8 4M8 17l8-4"/></svg></div><div class="rb-compare__title">Lógica condicional y validaciones</div><div class="rb-compare__desc">Muestra campos según las respuestas, valida la información y adapta el formulario automáticamente a cada caso.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div><div class="rb-compare__title">Todos los campos que necesitas</div><div class="rb-compare__desc">Texto, listas, fechas, firmas, imágenes, archivos, ubicación, casillas, tablas y mucho más para cualquier proceso.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg></div><div class="rb-compare__title">Permisos y acceso seguro</div><div class="rb-compare__desc">Publica formularios abiertos o protegidos con usuarios, contraseñas y permisos por rol para controlar quién puede acceder.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></div><div class="rb-compare__title">Visual builder</div><div class="rb-compare__desc">Design forms by dragging fields and configuring the process from an intuitive interface, with no code.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8 7l8 4M8 17l8-4"/></svg></div><div class="rb-compare__title">Conditional logic and validation</div><div class="rb-compare__desc">Show fields based on the answers, validate the information and adapt the form automatically to each case.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div><div class="rb-compare__title">Every field you need</div><div class="rb-compare__desc">Text, lists, dates, signatures, images, files, location, checkboxes, tables and much more, for any process.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg></div><div class="rb-compare__title">Permissions and secure access</div><div class="rb-compare__desc">Publish forms openly or protect them with users, passwords and role-based permissions to control who gets in.</div></div>
     </div>
   </div>
 </section>
@@ -962,38 +961,38 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-section__head">
       <div class="rb-brandpair" aria-hidden="true"><div class="rb-brandpair__halo"></div><div class="rb-brandpair__tile--solo"><svg class="ic" viewBox="0 0 100 100" fill="currentColor"><path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"/></svg><span>Claude</span></div><div class="rb-brandpair__dust rb-brandpair__dust--1"></div><div class="rb-brandpair__dust rb-brandpair__dust--2"></div><div class="rb-brandpair__dust rb-brandpair__dust--3"></div></div>
-      <h2 class="rb-section__title rb-mcp-title">Describe el proceso.<br><span>Claude crea el formulario.</span></h2>
-      <p class="rb-section__sub">Con MCP (Model Context Protocol), describe en lenguaje natural el proceso que necesitas. Claude genera el formulario con sus campos, validaciones y lógica, y lo conecta automáticamente al robot, agente o flujo que debe&nbsp;ejecutarse.</p>
+      <h2 class="rb-section__title rb-mcp-title">Describe the process.<br><span>Claude builds the form.</span></h2>
+      <p class="rb-section__sub">With MCP (Model Context Protocol), describe the process you need in plain language. Claude generates the form with its fields, validation and logic, and automatically wires it to the robot, agent or flow that should&nbsp;run.</p>
     </div>
     <div class="rb-mcp-grid">
       <div class="rb-mcp-card">
-        <div class="rb-mcp-lbl">Instrucción a Claude</div>
-        <div class="rb-mcp-msg"><span class="rb-mcp-av user">Tú</span><div class="rb-mcp-bub" id="mUser"></div></div>
+        <div class="rb-mcp-lbl">Instruction to Claude</div>
+        <div class="rb-mcp-msg"><span class="rb-mcp-av user">You</span><div class="rb-mcp-bub" id="mUser"></div></div>
         <div class="rb-mcp-msg" id="mBotRow" style="visibility:hidden"><span class="rb-mcp-av bot">C</span><div class="rb-mcp-bub" id="mBot"></div></div>
         <div class="rb-mcp-chips" id="mChips">
-          <button class="rb-mcp-chip act" data-k="salud">Declaración de salud</button>
-          <button class="rb-mcp-chip" data-k="credito">Solicitud de crédito</button>
-          <button class="rb-mcp-chip" data-k="obra">Reporte de obra</button>
+          <button class="rb-mcp-chip act" data-k="salud">Health declaration</button>
+          <button class="rb-mcp-chip" data-k="credito">Loan application</button>
+          <button class="rb-mcp-chip" data-k="obra">Site report</button>
         </div>
         <div class="rb-mcp-bar">
-          <span class="ph">Escribe lo que necesitas…</span>
-          <button class="rb-btn rb-btn--green" id="mGen" onclick="mcpPlay()">Generar formulario</button>
+          <span class="ph">Write what you need…</span>
+          <button class="rb-btn rb-btn--green" id="mGen" onclick="mcpPlay()">Generate form</button>
         </div>
       </div>
       <div class="rb-mcp-out">
-        <div class="rb-mcp-out-head"><h4 id="mTitle">Declaración de Salud</h4><span class="rb-mcp-badge priv" id="mBadge">Privado</span></div>
-        <div class="sub">Generado por Claude · conectado a tu automatización</div>
+        <div class="rb-mcp-out-head"><h4 id="mTitle">Health declaration</h4><span class="rb-mcp-badge priv" id="mBadge">Private</span></div>
+        <div class="sub">Generated by Claude · connected to your automation</div>
         <div id="mFields"></div>
         <div class="rb-mcp-trigger" id="mTrigger">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg>
-          <span>Dispara: <span class="tt"></span></span>
+          <span>Triggers: <span class="tt"></span></span>
         </div>
       </div>
     </div>
     <div class="rb-mcp-points">
-      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h8M8 14h5"/><path d="M21 12a8 8 0 0 1-11.2 7.3L4 21l1.7-5.8A8 8 0 1 1 21 12z"/></svg></span><div><h4>Lenguaje natural</h4><p>Describe el proceso en una frase. Claude entiende el contexto y construye el formulario automáticamente.</p></div></div>
-      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h9M3 6h.01M3 12h.01M3 18h.01"/></svg></span><div><h4>Campos y validaciones automáticas</h4><p>Genera campos, reglas, listas, validaciones y lógica condicional según el proceso que describiste.</p></div></div>
-      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg></span><div><h4>Automatización lista para usar</h4><p>El formulario queda conectado al robot, agente o flujo correspondiente para ejecutar el proceso desde el primer envío.</p></div></div>
+      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h8M8 14h5"/><path d="M21 12a8 8 0 0 1-11.2 7.3L4 21l1.7-5.8A8 8 0 1 1 21 12z"/></svg></span><div><h4>Plain language</h4><p>Describe the process in one sentence. Claude understands the context and builds the form automatically.</p></div></div>
+      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h9M3 6h.01M3 12h.01M3 18h.01"/></svg></span><div><h4>Automatic fields and validation</h4><p>Generates fields, rules, lists, validation and conditional logic to match the process you described.</p></div></div>
+      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg></span><div><h4>Automation ready to go</h4><p>The form comes wired to the matching robot, agent or flow, so the process runs from the very first submission.</p></div></div>
     </div>
   </div>
 </section>
@@ -1002,13 +1001,13 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--alt" id="casos">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Diseñado para los procesos<br><span>que mueven tu operación</span></h2>
-      <p class="rb-section__sub">Donde exista una persona capturando información para iniciar, aprobar o ejecutar un proceso, Xperience convierte ese ingreso en una automatización&nbsp;completa.</p>
+      <h2 class="rb-section__title">Designed for the processes<br><span>that move your operation</span></h2>
+      <p class="rb-section__sub">Wherever a person captures information to start, approve or run a process, Xperience turns that entry into a complete&nbsp;automation.</p>
     </div>
     <div class="rb-compare">
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div class="rb-compare__title">Trabajo en terreno</div><div class="rb-compare__desc">Captura inspecciones, evidencias, mantenimientos y reportes desde cualquier dispositivo, actualizando el proceso en tiempo real.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v3a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 2zM20 13v3a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2z"/><path d="M12 20a3 3 0 0 0 3-3"/></svg></div><div class="rb-compare__title">Atención al cliente</div><div class="rb-compare__desc">Registra solicitudes con datos validados e inicia automáticamente el flujo de atención, sin tareas manuales ni dependencias de TI.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div><div class="rb-compare__title">Autoservicio digital</div><div class="rb-compare__desc">Permite que clientes, proveedores o colaboradores completen formularios en cualquier momento. Cada envío activa la automatización y mantiene el proceso en movimiento las 24 horas.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div class="rb-compare__title">Field work</div><div class="rb-compare__desc">Capture inspections, evidence, maintenance and reports from any device, updating the process in real time.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v3a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 2zM20 13v3a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2z"/><path d="M12 20a3 3 0 0 0 3-3"/></svg></div><div class="rb-compare__title">Customer service</div><div class="rb-compare__desc">Log requests with validated data and start the service flow automatically, with no manual tasks and no waiting on IT.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div><div class="rb-compare__title">Digital self-service</div><div class="rb-compare__desc">Let customers, suppliers or employees complete forms at any time. Every submission triggers the automation and keeps the process moving around the clock.</div></div>
     </div>
   </div>
 </section>
@@ -1017,13 +1016,13 @@ html{scroll-padding-top:92px;}
 <section class="rb-section" id="como">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Del formulario al proceso,<br><span>en cuatro pasos</span></h2>
+      <h2 class="rb-section__title">From form to process,<br><span>in four steps</span></h2>
     </div>
     <div class="rb-compare rb-compare--four">
-      <div class="rb-compare__card" style="text-align:left;"><div class="rb-step-num">1</div><div class="rb-compare__title" style="text-align:left;">Diseña tu formulario</div><div class="rb-compare__desc">Crea formularios con una interfaz visual, agrega campos, validaciones y lógica condicional sin necesidad de programar.</div></div>
-      <div class="rb-compare__card" style="text-align:left;"><div class="rb-step-num">2</div><div class="rb-compare__title" style="text-align:left;">Conecta la automatización</div><div class="rb-compare__desc">Define qué robot, agente de IA o flujo de trabajo se ejecutará automáticamente con cada envío.</div></div>
-      <div class="rb-compare__card" style="text-align:left;"><div class="rb-step-num">3</div><div class="rb-compare__title" style="text-align:left;">Publica y recopila información</div><div class="rb-compare__desc">Comparte el formulario de forma pública o privada. Cada respuesta inicia el proceso automatizado y envía la información a tus sistemas.</div></div>
-      <div class="rb-compare__card" style="text-align:left;"><div class="rb-step-num">4</div><div class="rb-compare__title" style="text-align:left;">Supervisa cada ejecución</div><div class="rb-compare__desc">Monitorea el estado, la trazabilidad y el resultado de cada proceso desde el Orquestador, con control completo de la operación.</div></div>
+      <div class="rb-compare__card" style="text-align:left;"><div class="rb-step-num">1</div><div class="rb-compare__title" style="text-align:left;">Design your form</div><div class="rb-compare__desc">Build forms with a visual interface, adding fields, validation and conditional logic with no coding required.</div></div>
+      <div class="rb-compare__card" style="text-align:left;"><div class="rb-step-num">2</div><div class="rb-compare__title" style="text-align:left;">Connect the automation</div><div class="rb-compare__desc">Define which robot, AI agent or workflow will run automatically with every submission.</div></div>
+      <div class="rb-compare__card" style="text-align:left;"><div class="rb-step-num">3</div><div class="rb-compare__title" style="text-align:left;">Publish and collect information</div><div class="rb-compare__desc">Share the form publicly or privately. Every response starts the automated process and sends the information to your systems.</div></div>
+      <div class="rb-compare__card" style="text-align:left;"><div class="rb-step-num">4</div><div class="rb-compare__title" style="text-align:left;">Supervise every run</div><div class="rb-compare__desc">Monitor the status, traceability and outcome of every process from the Orchestrator, with full control of the operation.</div></div>
     </div>
   </div>
 </section>
@@ -1033,14 +1032,14 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-suite-band">
       <div>
-        <h2>Parte de la Suite Rocketbot</h2>
-        <p>Xperience es el punto de entrada de la automatización. Cada formulario puede activar robots, agentes de IA o flujos de trabajo y conectar toda la Suite Rocketbot para ejecutar, monitorear y controlar el proceso de principio a fin.</p>
+        <h2>Part of the Rocketbot Suite</h2>
+        <p>Xperience is automation's front door. Every form can set robots, AI agents or workflows in motion and bring the whole Rocketbot Suite together to run, monitor and control the process from start to finish.</p>
       </div>
       <div class="rb-suite-chips">
-        <span class="rb-schip"><span class="logo"><img src="assets/logos/products/rpa-studio.png" alt="RPA Studio" loading="lazy" decoding="async"></span>RPA Studio</span>
-        <span class="rb-schip"><span class="logo"><img src="assets/logos/products/ai-studio.png" alt="AI Studio" loading="lazy" decoding="async"></span>AI Studio</span>
-        <span class="rb-schip"><span class="logo"><img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio" loading="lazy" decoding="async"></span>Saturn Studio</span>
-        <span class="rb-schip"><span class="logo"><img src="assets/logos/products/orchestrator.png" alt="Orquestador" loading="lazy" decoding="async"></span>Orquestador</span>
+        <span class="rb-schip"><span class="logo"><img src="/assets/logos/products/rpa-studio.png" alt="RPA Studio" loading="lazy" decoding="async"></span>RPA Studio</span>
+        <span class="rb-schip"><span class="logo"><img src="/assets/logos/products/ai-studio.png" alt="AI Studio" loading="lazy" decoding="async"></span>AI Studio</span>
+        <span class="rb-schip"><span class="logo"><img src="/assets/logos/products/saturn-studio.png" alt="Saturn Studio" loading="lazy" decoding="async"></span>Saturn Studio</span>
+        <span class="rb-schip"><span class="logo"><img src="/assets/logos/products/orchestrator.png" alt="Orchestrator" loading="lazy" decoding="async"></span>Orchestrator</span>
       </div>
     </div>
   </div>
@@ -1051,10 +1050,10 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-cta-band__inner">
       <div>
-        <h2 class="rb-cta-band__title">¿Sigues iniciando tus procesos con correos y planillas?</h2>
-        <p class="rb-cta-band__sub">Con Xperience, cada proceso arranca con un formulario inteligente, más rápido, ordenado y trazable, y con la automatización ya en marcha.</p>
+        <h2 class="rb-cta-band__title">Still kicking off your processes with emails and spreadsheets?</h2>
+        <p class="rb-cta-band__sub">With Xperience, every process starts with a smart form — faster, tidier and traceable, with the automation already running.</p>
       </div>
-      <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Contáctanos</a>
+      <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Talk to us</a>
     </div>
   </div>
 </section>
@@ -1062,7 +1061,7 @@ html{scroll-padding-top:92px;}
 <!-- FAQ -->
 <section class="rb-section" id="faq">
   <div class="container">
-    <div class="rb-section__head"><h2 class="rb-section__title">Preguntas frecuentes</h2></div>
+    <div class="rb-section__head"><h2 class="rb-section__title">Frequently asked questions</h2></div>
     <div class="rb-faq" id="faqWrap"></div>
   </div>
 </section>
@@ -1071,8 +1070,8 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-footer__grid">
       <div class="rb-footer__brand">
-        <img src="assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
-        <p class="rb-footer__copy">Plataforma de automatización de procesos y agentes inteligentes para recuperar tiempo y tomar mejores decisiones.</p>
+        <img src="/assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
+        <p class="rb-footer__copy">A process automation and intelligent agent platform built to win back time and support better decisions.</p>
         <div class="rb-footer__social">
           <a href="https://www.facebook.com/rocketbot.es" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -1088,19 +1087,19 @@ html{scroll-padding-top:92px;}
           </a>
         </div>
       </div>
-      <div class="rb-footer__col"><h6>Productos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestador</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="#">Políticas de privacidad</a></li><li><a href="#">Políticas de seguridad</a></li><li><a href="#">Trabaja con Nosotros</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Soporte y servicios</h6><ul><li><a href="#">Certificación</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li><li><a href="#">Descargas</a></li><li><a href="#">FAQs</a></li><li><a href="#">Media kit</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Products</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orchestrator</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Resources</h6><ul><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Company</h6><ul><li><a href="contacto.html">Contact</a></li><li><a href="#">Privacy policy</a></li><li><a href="#">Security policy</a></li><li><a href="#">Work with us</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Support &amp; services</h6><ul><li><a href="#">Certification</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a></li><li><a href="#">Downloads</a></li><li><a href="#">FAQs</a></li><li><a href="#">Media kit</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">
       <span>© Rocketbot SpA | All rights reserved 2018 – 2025</span>
-      <div class="rb-footer__legal"><a href="#">Políticas de privacidad</a><a href="#">Políticas de seguridad</a></div>
+      <div class="rb-footer__legal"><a href="#">Privacy policy</a><a href="#">Security policy</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-var LOGOS={light:'assets/logos/logo-header.png',dark:'assets/logos/logo-header-white.png'};
+var LOGOS={light:'/assets/logos/logo-header.png',dark:'/assets/logos/logo-header-white.png'};
 var html=document.documentElement,navLogo=document.getElementById('nav-logo'),themeBtn=document.getElementById('theme-btn'),iconSun=document.getElementById('icon-sun'),iconMoon=document.getElementById('icon-moon');
 function applyTheme(t){html.setAttribute('data-theme',t);if(navLogo)navLogo.src=LOGOS[t];if(iconSun)iconSun.style.display=t==='dark'?'none':'';if(iconMoon)iconMoon.style.display=t==='light'?'none':'';try{localStorage.setItem('rb-theme',t);}catch(e){}}
 (function(){var s='dark';try{s=localStorage.getItem('rb-theme')||'dark';}catch(e){}applyTheme(s);})();
@@ -1183,24 +1182,14 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
   });
 })();</script>
 
-<!-- Nombres de producto protegidos antes de cargar el traductor -->
-<script>try{ RB_I18N.shield(); }catch(e){}</script>
-
-<!-- Google Translate -->
-<div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
-<script>
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,pt',autoDisplay:false},'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 
 <script>
-/* Language Switcher */
+/* Selector de idioma: navega entre /  /en/  /pt/ */
 (function(){
   var btn  = document.getElementById('rb-lang-btn');
   var menu = document.getElementById('rb-lang-menu');
   if(!btn || !menu) return;
+  var CUR='en', PAGE='xperience.html';
   btn.addEventListener('click', function(e){
     e.stopPropagation();
     var open = menu.classList.toggle('open');
@@ -1210,44 +1199,15 @@ function googleTranslateElementInit(){
     menu.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
   });
-  function setLang(lang){
-    try{ if(window.RB_I18N) RB_I18N.setLang(lang); }catch(e){}
-    if(btn) btn.setAttribute('data-active', lang);
-    try{ localStorage.setItem('rb-lang', lang); }catch(e){}
-    menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-      o.classList.toggle('rb-lang--active', o.dataset.lang === lang);
+  function url(l){ return l==='es' ? '/'+PAGE : '/'+l+'/'+PAGE; }
+  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
+    o.classList.toggle('rb-lang--active', o.dataset.lang===CUR);
+    o.addEventListener('click', function(){
+      try{ localStorage.setItem('rb-lang', o.dataset.lang); }catch(e){}
+      location.href = url(o.dataset.lang);
     });
-    menu.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-    if(lang === 'es'){
-      var exp0 = new Date(0).toUTCString();
-      document.cookie = 'googtrans=; path=/; expires=' + exp0;
-      document.cookie = 'googtrans=; path=/; domain=.' + location.hostname + '; expires=' + exp0;
-      location.reload();
-      return;
-    }
-    var sel = document.querySelector('.goog-te-combo');
-    if(sel){ sel.value = lang; sel.dispatchEvent(new Event('change')); }
-    else {
-      var exp1 = new Date(); exp1.setFullYear(exp1.getFullYear()+1);
-      var expStr = exp1.toUTCString();
-      document.cookie = 'googtrans=/es/'+lang+'; path=/; expires='+expStr;
-      document.cookie = 'googtrans=/es/'+lang+'; path=/; domain=.'+location.hostname+'; expires='+expStr;
-      location.reload();
-    }
-  }
-  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-    o.addEventListener('click', function(){ setLang(o.dataset.lang); });
   });
-  var saved = 'es';
-  try{ saved = localStorage.getItem('rb-lang') || 'es'; }catch(e){}
-  btn.setAttribute('data-active', (window.RB_I18N && RB_I18N.lang) || saved);
-  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-    o.classList.toggle('rb-lang--active', o.dataset.lang === saved);
-  });
-  if(saved !== 'es' && document.cookie.indexOf('googtrans') === -1){
-    document.cookie = 'googtrans=/es/'+saved+'; path=/';
-  }
+  btn.setAttribute('data-active', CUR);
 })();
 </script>
 
@@ -1257,7 +1217,7 @@ const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
 // ---- showcase: form -> automation ----
 const XC={
- salud:{title:'Declaración de Salud',badge:['Público · link abierto','pub'],
+ salud:{title:'Declaración de Salud',badge:['Public · link abierto','pub'],
    fields:[{l:'RUT',t:'text',p:'12.345.678-9',v:'12.345.678-9'},{l:'Nombre completo',t:'text',p:'Nombre y apellido',v:'María González'},{l:'¿Síntomas en las últimas 48 horas?',t:'select',p:'Selecciona una opción',v:'No'},{l:'Temperatura (°C)',t:'text',p:'36.5',v:'36.4'},{l:'Declaro que la información es verídica',t:'check'}],
    steps:['Recepción del formulario','Validación de datos','Evaluación de respuestas','Registro de la declaración','Notificación a prevención']},
  credito:{title:'Solicitud de Crédito',badge:['Privado · requiere acceso','priv'],
@@ -1368,7 +1328,7 @@ async function mcpPlay(key){
   const user=document.getElementById('mUser'); user.textContent=''; user.classList.add('typing');
   document.getElementById('mBotRow').style.visibility='hidden';
   document.getElementById('mTitle').textContent=c.title;
-  const bd=document.getElementById('mBadge'); bd.className='rb-mcp-badge '+(c.priv?'priv':'pub'); bd.textContent=c.priv?'Privado':'Público';
+  const bd=document.getElementById('mBadge'); bd.className='rb-mcp-badge '+(c.priv?'priv':'pub'); bd.textContent=c.priv?'Privado':'Public';
   document.getElementById('mFields').innerHTML=c.fields.map(mcpField).join('');
   const trg=document.getElementById('mTrigger'); trg.classList.remove('in'); trg.querySelector('.tt').textContent=c.trigger;
   const btn=document.getElementById('mGen'); btn.disabled=true; btn.textContent='Generando…';

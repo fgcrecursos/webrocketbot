@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <!-- ── Rocketbot i18n: protege los nombres de producto de Google Translate
@@ -30,7 +30,7 @@ window.RB_I18N=(function(){
     return s;
   }
   var API={
-    lang:detect(),
+    lang:'en',
     pick:function(map){ return map[API.lang]||map.es; },
     onLang:function(fn){ subs.push(fn); },
     setLang:function(l){
@@ -102,7 +102,6 @@ window.RB_I18N=(function(){
   };
   return API;
 })();
-document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); }catch(e){} });
 </script>
 <!-- Google tag (gtag.js) – GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EHJ8S289M"></script>
@@ -113,10 +112,10 @@ document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); 
   gtag('config', 'G-2EHJ8S289M');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Saturn Studio | Automatización inteligente sin código · Rocketbot</title>
-<meta name="description" content="Crea flujos y agentes inteligentes sin código. Saturn Studio conecta automatización, IA y todo el ecosistema Rocketbot (RPA Studio, AI Studio, Xperience) con +38 integraciones nativas.">
+<title>Saturn Studio | Intelligent automation without code · Rocketbot</title>
+<meta name="description" content="Build intelligent flows and agents with no code. Saturn Studio connects automation, AI and the whole Rocketbot ecosystem (RPA Studio, AI Studio, Xperience) with 38+ native integrations.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://rocketbot.com/saturn-studio">
+<link rel="canonical" href="https://rocketbot.com/en/saturn-studio">
 <link rel="alternate" hreflang="es" href="https://rocketbot.com/saturn-studio">
 <link rel="alternate" hreflang="en" href="https://rocketbot.com/en/saturn-studio">
 <link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/saturn-studio">
@@ -126,18 +125,18 @@ document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rocketbot">
-<meta property="og:title" content="Saturn Studio | Automatización inteligente sin código · Rocketbot">
-<meta property="og:description" content="Crea flujos y agentes inteligentes sin código. Saturn Studio conecta automatización, IA y todo el ecosistema Rocketbot con +38 integraciones nativas.">
-<meta property="og:url" content="https://rocketbot.com/saturn-studio">
+<meta property="og:title" content="Saturn Studio | Intelligent automation without code · Rocketbot">
+<meta property="og:description" content="Build intelligent flows and agents with no code. Saturn Studio connects automation, AI and the whole Rocketbot ecosystem with 38+ native integrations.">
+<meta property="og:url" content="https://rocketbot.com/en/saturn-studio">
 <meta property="og:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="es_LA">
+<meta property="og:locale" content="en_US">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rocketbot">
-<meta name="twitter:title" content="Saturn Studio | Automatización inteligente sin código · Rocketbot">
-<meta name="twitter:description" content="Crea flujos y agentes inteligentes sin código. Saturn Studio conecta automatización, IA y todo el ecosistema Rocketbot con +38 integraciones nativas.">
+<meta name="twitter:title" content="Saturn Studio | Intelligent automation without code · Rocketbot">
+<meta name="twitter:description" content="Build intelligent flows and agents with no code. Saturn Studio connects automation, AI and the whole Rocketbot ecosystem with 38+ native integrations.">
 <meta name="twitter:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -698,42 +697,42 @@ html{scroll-padding-top:92px;}
 <nav class="rb-nav" id="rb-nav">
   <div class="rb-nav__inner">
     <a href="index.html" class="rb-nav__logo-wrap">
-      <img id="nav-logo" src="assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
+      <img id="nav-logo" src="/assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
     </a>
     <ul class="rb-nav__links">
       <li class="rb-nav__suite-li"><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Productos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button">Products <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestador</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
+          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orchestrator</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
         </div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="cfo.html">Para CFOs</a><a href="construir-vs-comprar.html">Construir o comprar</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
+        <button type="button">Resources <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="cfo.html">For CFOs</a><a href="construir-vs-comprar.html">Build or buy</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Soporte y servicios <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a><a href="#">Media kit</a></div>
+        <button type="button">Support &amp; services <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a><a href="#">Media kit</a></div>
       </li>
-      <li><a href="contacto.html">Contáctanos</a></li>
+      <li><a href="contacto.html">Talk to us</a></li>
     </ul>
     <div class="rb-nav__actions">
-      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
       <div class="rb-lang" id="rb-lang">
-        <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Language" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
           <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span>Español</button>
           <button class="rb-lang__opt" data-lang="en" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span>English</button>
           <button class="rb-lang__opt" data-lang="pt" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span>Português</button>
         </div>
       </div>
-      <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
+      <button class="rb-iconbtn" id="theme-btn" title="Switch theme" type="button">
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
         <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
       </button>
-      <a href="cfo.html" class="rb-btn rb-cfo-btn">Para CFOs</a>
-      <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Descarga</button>
+      <a href="cfo.html" class="rb-btn rb-cfo-btn">For CFOs</a>
+      <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Download</button>
     </div>
   </div>
 </nav>
@@ -742,30 +741,30 @@ html{scroll-padding-top:92px;}
 <div class="rb-mobile-menu" id="rb-mobile-menu">
   <div class="rb-mobile-menu__inner">
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Productos</div>
+      <div class="rb-mobile-menu__label">Products</div>
       <a href="saturn-studio.html">Saturn Studio</a>
       <a href="rpa-studio.html">RPA Studio</a>
       <a href="ai-studio.html">AI Studio</a>
-      <a href="orquestador.html">Orquestador</a>
+      <a href="orquestador.html">Orchestrator</a>
       <a href="xperience.html">Xperience</a>
       <a href="nexus.html">Nexus</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Recursos</div>
+      <div class="rb-mobile-menu__label">Resources</div>
       <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Soporte y servicios</div>
-      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a>
+      <div class="rb-mobile-menu__label">Support &amp; services</div>
+      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a>
       <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
-      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
+      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Media kit</a>
     </div>
     <div class="rb-mobile-menu__actions">
-      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suite Rocketbot</a>
-      <a href="contacto.html" class="rb-mobile-menu__btn">Contáctanos</a>
-      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Descarga</button>
+      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Rocketbot Suite</a>
+      <a href="contacto.html" class="rb-mobile-menu__btn">Talk to us</a>
+      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Download</button>
     </div>
   </div>
 </div>
@@ -774,35 +773,35 @@ html{scroll-padding-top:92px;}
 <div class="rb-dlmodal" id="rbDlModal" aria-hidden="true">
   <div class="rb-dlmodal__backdrop" data-dl-close></div>
   <div class="rb-dlmodal__panel" role="dialog" aria-modal="true" aria-labelledby="rbDlTitle">
-    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Cerrar">&times;</button>
-    <h2 id="rbDlTitle" class="rb-dlmodal__title">Descarga Rocketbot</h2>
-    <p class="rb-dlmodal__sub">Elige el programa y tu sistema operativo.</p>
+    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Close">&times;</button>
+    <h2 id="rbDlTitle" class="rb-dlmodal__title">Download Rocketbot</h2>
+    <p class="rb-dlmodal__sub">Pick your product and operating system.</p>
     <div class="rb-dlmodal__body">
       <div class="rb-dlmodal__side">
-        <div class="rb-dlmodal__label">Programas</div>
+        <div class="rb-dlmodal__label">Products</div>
         <button type="button" class="rb-dlmodal__pill is-active" data-dl-pill="rpa">
-          <img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
+          <img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
         </button>
 
         <div class="rb-dlmodal__req">
           <div class="rb-dlmodal__reqgrp">
-            <div class="rb-dlmodal__reqttl">Requisitos mínimos</div>
-            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i3-4340 o AMD FX-6300</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>10 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>4 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Minimum requirements</div>
+            <div class="rb-dlmodal__reqrow"><span>Processor</span><strong translate="no">Intel Core i3-4340 or AMD FX-6300</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Storage</span><strong>10 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memory</span><strong>4 GB RAM</strong></div>
           </div>
           <div class="rb-dlmodal__reqgrp rb-dlmodal__reqgrp--rec">
-            <div class="rb-dlmodal__reqttl">Configuración recomendada</div>
-            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i5</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>175 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>8 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Recommended setup</div>
+            <div class="rb-dlmodal__reqrow"><span>Processor</span><strong translate="no">Intel Core i5</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Storage</span><strong>175 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memory</span><strong>8 GB RAM</strong></div>
           </div>
         </div>
       </div>
       <div class="rb-dlmodal__main">
         <div class="rb-dlmodal__program is-active" data-dl-panel="rpa">
-          <div class="rb-dlmodal__ptitle"><img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
-          <p class="rb-dlmodal__pdesc">Descarga el instalador para tu sistema operativo. En el sitio de descarga encontrarás todas las versiones disponibles y sus notas de lanzamiento.</p>
+          <div class="rb-dlmodal__ptitle"><img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
+          <p class="rb-dlmodal__pdesc">Download the installer for your operating system. The download site lists every available version along with its release notes.</p>
           <div class="rb-dlmodal__os">
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7H3V5.5ZM11.4 4.3 21 3v8.4h-9.6V4.3ZM3 12.4h7.5v7.1L3 18.5v-6.1ZM11.4 12.4H21V21l-9.6-1.3v-7.3Z"/></svg>Windows<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -810,31 +809,31 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Latest version</span></div>
                     <div class="rb-dlmodal__vmeta">354 MB · ZIP · MD5 153fd4432f30564ecd16b146dcfaac31</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2025.07.01 <span class="rb-dlmodal__vtag">Python 3.13</span></div>
                     <div class="rb-dlmodal__vmeta">356 MB · ZIP · MD5 9f0e2c18051b020d71387821f3abdf82</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2024.05.28</div>
                     <div class="rb-dlmodal__vmeta">458 MB · ZIP · MD5 b4034aaf4759f710f6754df5bbd81be2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2023.11.10</div>
                     <div class="rb-dlmodal__vmeta">358 MB · ZIP · MD5 a18cc70a91134e73d2da277f973fa87a</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 </div>
               </div>
@@ -845,17 +844,17 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Latest version</span></div>
                     <div class="rb-dlmodal__vmeta">248 MB · ZIP · MD5 ff4ea3d2e49aa4e3294158f04ad81922</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Mac ARM · v2025.07.01</div>
                     <div class="rb-dlmodal__vmeta">533 MB · ZIP · MD5 3635e4cd1ec90eb5bac453c6b813bf29</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 </div>
               </div>
@@ -866,24 +865,24 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Última versión</span></div>
+                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Latest version</span></div>
                     <div class="rb-dlmodal__vmeta">434 MB · ZIP · MD5 6312df8b82977e4e08d48826deb95b34</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">RHEL · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">166.2 MB · TAR.GZ · MD5 6d98a8f63cec705d181a011dfb69c90c</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Ubuntu · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">118.1 MB · TAR.XZ · MD5 b2d9a94de8299615e525ea26d5d543a2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
                 </div>
                 </div>
               </div>
@@ -900,11 +899,11 @@ html{scroll-padding-top:92px;}
   <div class="rb-hero__particles"></div>
   <div class="container rb-hero__grid">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title"><span class="rb-hero__ln">Conecta y automatiza</span><br><span class="rb-hero__ln"><strong><span class="rb-hero__rot" id="heroRot">procesos</span></strong>sin código</span></h1>
-      <p class="rb-hero__sub">Saturn Studio conecta automatización, inteligencia artificial y agentes inteligentes para ejecutar procesos de principio a fin, integrados con tus sistemas y con control y trazabilidad en cada paso.</p>
+      <h1 class="rb-hero__title"><span class="rb-hero__ln">Connect and automate</span><br><span class="rb-hero__ln"><strong><span class="rb-hero__rot" id="heroRot">processes</span></strong>without code</span></h1>
+      <p class="rb-hero__sub">Saturn Studio brings together automation, artificial intelligence and intelligent agents to run processes end to end, integrated with your systems and with control and traceability at every step.</p>
       <div class="rb-hero__ctas">
-        <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://studio.rocketbot.com/">Pruébalo ahora</a>
-        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Contactar a ventas</a>
+        <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://studio.rocketbot.com/">Try it now</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Contact sales</a>
       </div>
     </div>
     <div class="rb-hero__visual" aria-hidden="true">
@@ -927,10 +926,10 @@ html{scroll-padding-top:92px;}
 <!-- CLIENTS -->
 <section class="rb-clients">
   <div class="container">
-    <p class="rb-clients__label">Empresas que confían en Rocketbot</p>
+    <p class="rb-clients__label">Companies that trust Rocketbot</p>
     <div class="rb-marquee"><div class="rb-marquee__track">
-      <img src="assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
-      <img src="assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
+      <img src="/assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="/assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="/assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="/assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="/assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="/assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="/assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="/assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
+      <img src="/assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="/assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="/assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="/assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="/assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="/assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="/assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="/assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
     </div></div>
   </div>
 </section>
@@ -939,27 +938,27 @@ html{scroll-padding-top:92px;}
 <section class="rb-section" id="demo">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Diseña el proceso.<br><span>Saturn se encarga del resto.</span></h2>
-      <p class="rb-section__sub">Selecciona un caso y descubre cómo Saturn conecta sistemas, inteligencia artificial y automatización para ejecutar procesos completos de principio a fin, con control y trazabilidad en cada&nbsp;etapa.</p>
+      <h2 class="rb-section__title">Design the process.<br><span>Saturn handles the rest.</span></h2>
+      <p class="rb-section__sub">Pick a case and see how Saturn connects systems, artificial intelligence and automation to run complete processes end to end, with control and traceability at every&nbsp;stage.</p>
     </div>
     <div class="rb-wf-tabs" id="sTabs">
-      <button class="rb-wf-tab act" data-p="onb">Onboarding de cliente</button>
-      <button class="rb-wf-tab" data-p="cxp">Cuentas por pagar</button>
-      <button class="rb-wf-tab" data-p="att">Atención inteligente</button>
+      <button class="rb-wf-tab act" data-p="onb">Customer onboarding</button>
+      <button class="rb-wf-tab" data-p="cxp">Accounts payable</button>
+      <button class="rb-wf-tab" data-p="att">Intelligent service</button>
     </div>
     <div class="rb-wf-win">
       <div class="rb-wf-bar">
         <div class="rb-wf-dots"><span></span><span></span><span></span></div>
-        <div class="ttl"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 6H14a2.5 2.5 0 0 1 2.5 2.5V15M6 8.5V15a2.5 2.5 0 0 0 2.5 2.5H15"/></svg></span><span id="sTitle">Flujo · Onboarding de cliente</span></div>
-        <span class="st run" id="sStatus"><span class="ld"></span>Ejecutando</span>
+        <div class="ttl"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 6H14a2.5 2.5 0 0 1 2.5 2.5V15M6 8.5V15a2.5 2.5 0 0 0 2.5 2.5H15"/></svg></span><span id="sTitle">Flow · Customer onboarding</span></div>
+        <span class="st run" id="sStatus"><span class="ld"></span>Running</span>
       </div>
       <div class="rb-wf-canvas"><div class="rb-wf-flow" id="sFlow"></div></div>
       <div class="rb-wf-foot">
-        <button class="rb-btn rb-btn--green" id="sRun" onclick="sPlay()">Ejecutar de nuevo</button>
-        <span class="sm">Cada paso conecta sistemas, IA y automatización para ejecutar el proceso con control y trazabilidad de principio a fin.</span>
+        <button class="rb-btn rb-btn--green" id="sRun" onclick="sPlay()">Run again</button>
+        <span class="sm">Each step connects systems, AI and automation to run the process with control and traceability from start to finish.</span>
       </div>
     </div>
-    <p class="rb-wf-caption">Vista ilustrativa de un flujo creado en Saturn Studio.</p>
+    <p class="rb-wf-caption">Illustrative view of a flow built in Saturn Studio.</p>
   </div>
 </section>
 
@@ -967,14 +966,14 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--alt" id="ecosistema">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Saturn en el <span>centro de toda tu operaci&#243;n</span></h2>
-      <p class="rb-section__sub">Saturn Studio no automatiza procesos de forma aislada. Orquesta AI Studio, RPA Studio, Xperience, Orquestador, Nexus y tus sistemas para ejecutar procesos inteligentes de principio a fin, con control, trazabilidad e integraci&#243;n desde una sola&nbsp;plataforma.</p>
+      <h2 class="rb-section__title">Saturn at the <span>centre of your whole operation</span></h2>
+      <p class="rb-section__sub">Saturn Studio doesn't automate processes in isolation. It orchestrates AI Studio, RPA Studio, Xperience, the Orchestrator, Nexus and your own systems to run intelligent processes end to end, with control, traceability and integration from a single&nbsp;platform.</p>
     </div>
     <div class="rb-eco">
       <div class="rb-eco__center">
-        <div class="rb-eco__planet"><img src="assets/logos/products/saturn-studio.png" alt="Saturn Studio" loading="lazy" decoding="async"></div>
+        <div class="rb-eco__planet"><img src="/assets/logos/products/saturn-studio.png" alt="Saturn Studio" loading="lazy" decoding="async"></div>
         <h3>Saturn Studio</h3>
-        <p>El motor que coordina cada proceso conectando tus sistemas, tus datos, la inteligencia artificial y toda la Suite Rocketbot.</p>
+        <p>The engine that coordinates every process, connecting your systems, your data, artificial intelligence and the whole Rocketbot Suite.</p>
       </div>
       <div>
         <div class="rb-eco__nodes" id="ecoNodes"></div>
@@ -988,13 +987,13 @@ html{scroll-padding-top:92px;}
 <section class="rb-section">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Procesos inteligentes<br><span>que impulsan tu operaci&#243;n</span></h2>
+      <h2 class="rb-section__title">Intelligent processes<br><span>that drive your operation</span></h2>
     </div>
     <div class="rb-benefits4">
-      <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="rb-benefit4__title">Menos esfuerzo operativo</div><div class="rb-benefit4__desc">Reduce tareas repetitivas, errores y tiempos de ejecuci&#243;n para que tu equipo se enfoque en actividades de mayor valor.</div></div>
-      <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg></div><div class="rb-benefit4__title">Procesos m&#225;s &#225;giles</div><div class="rb-benefit4__desc">Conecta sistemas, personas e inteligencia artificial para ejecutar procesos de principio a fin, sin interrupciones.</div></div>
-      <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/><path d="M12 8v4l3 2"/></svg></div><div class="rb-benefit4__title">Control y trazabilidad</div><div class="rb-benefit4__desc">Supervisa cada ejecuci&#243;n en tiempo real con visibilidad completa sobre cada decisi&#243;n, acci&#243;n y resultado.</div></div>
-      <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-1 8H9a4 4 0 0 1-1-8V7a4 4 0 0 1 4-4z"/><path d="M9.5 16h5"/></svg></div><div class="rb-benefit4__title">Agentes que entienden el contexto</div><div class="rb-benefit4__desc">Van m&#225;s all&#225; de ejecutar instrucciones: analizan la informaci&#243;n, toman decisiones y gestionan excepciones cuando el proceso lo requiere.</div></div>
+      <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="rb-benefit4__title">Less operational effort</div><div class="rb-benefit4__desc">Cuts repetitive tasks, errors and run times so your team can focus on higher-value work.</div></div>
+      <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg></div><div class="rb-benefit4__title">Faster processes</div><div class="rb-benefit4__desc">Connects systems, people and artificial intelligence to run processes end to end, without interruptions.</div></div>
+      <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/><path d="M12 8v4l3 2"/></svg></div><div class="rb-benefit4__title">Control and traceability</div><div class="rb-benefit4__desc">Supervise every run in real time, with full visibility of each decision, action and outcome.</div></div>
+      <div class="rb-benefit4"><div class="rb-benefit4__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-1 8H9a4 4 0 0 1-1-8V7a4 4 0 0 1 4-4z"/><path d="M9.5 16h5"/></svg></div><div class="rb-benefit4__title">Agents that understand context</div><div class="rb-benefit4__desc">They go beyond following instructions: they read the information, make decisions and handle exceptions when the process calls for it.</div></div>
     </div>
   </div>
 </section>
@@ -1003,13 +1002,13 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--alt">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Automatizaci&#243;n inteligente,<br><span>siempre bajo tu control</span></h2>
-      <p class="rb-section__sub">Saturn Studio combina inteligencia artificial, automatizaci&#243;n y supervisi&#243;n humana para ejecutar procesos completos con mayor velocidad, control y capacidad de&nbsp;adaptaci&#243;n.</p>
+      <h2 class="rb-section__title">Intelligent automation,<br><span>always under your control</span></h2>
+      <p class="rb-section__sub">Saturn Studio combines artificial intelligence, automation and human oversight to run complete processes with more speed, more control and more room to&nbsp;adapt.</p>
     </div>
     <div class="rb-compare">
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="rb-compare__title">Autonomía con control</div><div class="rb-compare__desc">Los agentes analizan, deciden y ejecutan dentro de las reglas que defines. Cada acción queda supervisada, registrada y lista para auditar.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a3.5 3.5 0 0 1 3.5 3.5v4"/></svg></div><div class="rb-compare__title">Una sola plataforma</div><div class="rb-compare__desc">Conecta inteligencia artificial, automatización y tus sistemas desde un solo lugar, sin integrar múltiples herramientas ni cambiar tu operación.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/><path d="M3.5 9h17"/></svg></div><div class="rb-compare__title">Se adapta a cada proceso</div><div class="rb-compare__desc">Interpreta la información, responde al contexto y gestiona excepciones para que tus procesos sigan avanzando cuando las condiciones cambian.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="rb-compare__title">Autonomy with control</div><div class="rb-compare__desc">Agents analyse, decide and act within the rules you set. Every action is supervised, logged and ready to audit.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a3.5 3.5 0 0 1 3.5 3.5v4"/></svg></div><div class="rb-compare__title">One single platform</div><div class="rb-compare__desc">Connect artificial intelligence, automation and your systems from one place, with no juggling multiple tools and no change to your operation.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/><path d="M3.5 9h17"/></svg></div><div class="rb-compare__title">Adapts to each process</div><div class="rb-compare__desc">It reads the information, responds to context and handles exceptions so your processes keep moving when conditions change.</div></div>
     </div>
   </div>
 </section>
@@ -1018,13 +1017,13 @@ html{scroll-padding-top:92px;}
 <section class="rb-section">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title rb-int__title-nowrap">Conecta Saturn con <span>toda tu operaci&#243;n</span></h2>
-      <p class="rb-section__sub">Integra SAP, Salesforce, Microsoft 365, Google, Oracle, ServiceNow, WhatsApp y m&#225;s de 38 plataformas. Adem&#225;s, conecta cualquier API REST, base de datos, modelo de IA o sistema&nbsp;propio.</p>
+      <h2 class="rb-section__title rb-int__title-nowrap">Connect Saturn to <span>your whole operation</span></h2>
+      <p class="rb-section__sub">Integrate SAP, Salesforce, Microsoft 365, Google, Oracle, ServiceNow, WhatsApp and more than 38 platforms. Plus any REST API, database, AI model or in-house&nbsp;system.</p>
     </div>
   </div>
   <div class="rb-int__tracks">
-    <div class="rb-int__track rb-int__track--left"><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo1.png" alt="Integración 1" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo2.png" alt="Integración 2" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo3.png" alt="Integración 3" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo4.png" alt="Integración 4" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo5.png" alt="Integración 5" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo6.png" alt="Integración 6" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo7.png" alt="Integración 7" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo8.png" alt="Integración 8" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo9.png" alt="Integración 9" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo10.png" alt="Integración 10" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo11.png" alt="Integración 11" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo12.png" alt="Integración 12" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo13.png" alt="Integración 13" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo14.png" alt="Integración 14" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo15.png" alt="Integración 15" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo16.png" alt="Integración 16" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo17.png" alt="Integración 17" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo18.png" alt="Integración 18" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo19.png" alt="Integración 19" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo1.png" alt="Integración 1" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo2.png" alt="Integración 2" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo3.png" alt="Integración 3" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo4.png" alt="Integración 4" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo5.png" alt="Integración 5" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo6.png" alt="Integración 6" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo7.png" alt="Integración 7" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo8.png" alt="Integración 8" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo9.png" alt="Integración 9" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo10.png" alt="Integración 10" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo11.png" alt="Integración 11" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo12.png" alt="Integración 12" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo13.png" alt="Integración 13" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo14.png" alt="Integración 14" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo15.png" alt="Integración 15" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo16.png" alt="Integración 16" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo17.png" alt="Integración 17" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo18.png" alt="Integración 18" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo19.png" alt="Integración 19" loading="lazy"></div></div>
-    <div class="rb-int__track rb-int__track--right"><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo20.png" alt="Integración 20" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo21.png" alt="Integración 21" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo22.png" alt="Integración 22" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo23.png" alt="Integración 23" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo24.png" alt="Integración 24" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo25.png" alt="Integración 25" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo26.png" alt="Integración 26" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo27.png" alt="Integración 27" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo28.png" alt="Integración 28" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo29.png" alt="Integración 29" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo30.png" alt="Integración 30" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo31.png" alt="Integración 31" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo32.png" alt="Integración 32" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo33.png" alt="Integración 33" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo34.png" alt="Integración 34" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo35.png" alt="Integración 35" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo36.png" alt="Integración 36" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo37.png" alt="Integración 37" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo38.png" alt="Integración 38" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo20.png" alt="Integración 20" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo21.png" alt="Integración 21" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo22.png" alt="Integración 22" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo23.png" alt="Integración 23" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo24.png" alt="Integración 24" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo25.png" alt="Integración 25" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo26.png" alt="Integración 26" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo27.png" alt="Integración 27" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo28.png" alt="Integración 28" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo29.png" alt="Integración 29" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo30.png" alt="Integración 30" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo31.png" alt="Integración 31" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo32.png" alt="Integración 32" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo33.png" alt="Integración 33" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo34.png" alt="Integración 34" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo35.png" alt="Integración 35" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo36.png" alt="Integración 36" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo37.png" alt="Integración 37" loading="lazy"></div><div class="rb-int__logo"><img src="assets/images/saturn/integrations/logo38.png" alt="Integración 38" loading="lazy"></div></div>
+    <div class="rb-int__track rb-int__track--left"><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo1.png" alt="Integration 1" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo2.png" alt="Integration 2" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo3.png" alt="Integration 3" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo4.png" alt="Integration 4" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo5.png" alt="Integration 5" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo6.png" alt="Integration 6" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo7.png" alt="Integration 7" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo8.png" alt="Integration 8" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo9.png" alt="Integration 9" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo10.png" alt="Integration 10" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo11.png" alt="Integration 11" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo12.png" alt="Integration 12" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo13.png" alt="Integration 13" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo14.png" alt="Integration 14" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo15.png" alt="Integration 15" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo16.png" alt="Integration 16" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo17.png" alt="Integration 17" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo18.png" alt="Integration 18" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo19.png" alt="Integration 19" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo1.png" alt="Integration 1" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo2.png" alt="Integration 2" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo3.png" alt="Integration 3" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo4.png" alt="Integration 4" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo5.png" alt="Integration 5" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo6.png" alt="Integration 6" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo7.png" alt="Integration 7" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo8.png" alt="Integration 8" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo9.png" alt="Integration 9" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo10.png" alt="Integration 10" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo11.png" alt="Integration 11" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo12.png" alt="Integration 12" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo13.png" alt="Integration 13" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo14.png" alt="Integration 14" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo15.png" alt="Integration 15" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo16.png" alt="Integration 16" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo17.png" alt="Integration 17" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo18.png" alt="Integration 18" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo19.png" alt="Integration 19" loading="lazy"></div></div>
+    <div class="rb-int__track rb-int__track--right"><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo20.png" alt="Integration 20" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo21.png" alt="Integration 21" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo22.png" alt="Integration 22" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo23.png" alt="Integration 23" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo24.png" alt="Integration 24" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo25.png" alt="Integration 25" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo26.png" alt="Integration 26" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo27.png" alt="Integration 27" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo28.png" alt="Integration 28" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo29.png" alt="Integration 29" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo30.png" alt="Integration 30" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo31.png" alt="Integration 31" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo32.png" alt="Integration 32" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo33.png" alt="Integration 33" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo34.png" alt="Integration 34" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo35.png" alt="Integration 35" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo36.png" alt="Integration 36" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo37.png" alt="Integration 37" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo38.png" alt="Integration 38" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo20.png" alt="Integration 20" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo21.png" alt="Integration 21" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo22.png" alt="Integration 22" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo23.png" alt="Integration 23" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo24.png" alt="Integration 24" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo25.png" alt="Integration 25" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo26.png" alt="Integration 26" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo27.png" alt="Integration 27" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo28.png" alt="Integration 28" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo29.png" alt="Integration 29" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo30.png" alt="Integration 30" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo31.png" alt="Integration 31" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo32.png" alt="Integration 32" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo33.png" alt="Integration 33" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo34.png" alt="Integration 34" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo35.png" alt="Integration 35" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo36.png" alt="Integration 36" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo37.png" alt="Integration 37" loading="lazy"></div><div class="rb-int__logo"><img src="/assets/images/saturn/integrations/logo38.png" alt="Integration 38" loading="lazy"></div></div>
   </div>
 </section>
 
@@ -1037,31 +1036,31 @@ html{scroll-padding-top:92px;}
         <div class="rb-brandpair__tile--solo"><svg class="ic" viewBox="0 0 100 100" fill="currentColor"><path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"/></svg><span>Claude</span></div>
         <div class="rb-brandpair__dust rb-brandpair__dust--1"></div><div class="rb-brandpair__dust rb-brandpair__dust--2"></div><div class="rb-brandpair__dust rb-brandpair__dust--3"></div>
       </div>
-      <h2 class="rb-section__title rb-mcp-title">De una idea a un proceso<br><span>listo para ejecutar.</span></h2>
-      <p class="rb-section__sub">Describe lo que necesitas en lenguaje natural. Gracias al MCP, Claude propone la estructura del proceso y Saturn Studio la convierte en una automatización lista para revisar, adaptar y poner en&nbsp;marcha.</p>
+      <h2 class="rb-section__title rb-mcp-title">From an idea to a process<br><span>ready to run.</span></h2>
+      <p class="rb-section__sub">Describe what you need in plain language. Thanks to MCP, Claude proposes the structure of the process and Saturn Studio turns it into an automation ready to review, adapt and put to&nbsp;work.</p>
     </div>
     <div class="rb-mcp-grid">
       <div class="rb-mcp-card">
-        <div class="rb-mcp-lbl">Instrucción a Claude</div>
-        <div class="rb-mcp-msg"><span class="rb-mcp-av user">Tú</span><div class="rb-mcp-bub" id="nmUser"></div></div>
+        <div class="rb-mcp-lbl">Instruction to Claude</div>
+        <div class="rb-mcp-msg"><span class="rb-mcp-av user">You</span><div class="rb-mcp-bub" id="nmUser"></div></div>
         <div class="rb-mcp-msg" id="nmBotRow" style="visibility:hidden"><span class="rb-mcp-av bot">C</span><div class="rb-mcp-bub" id="nmBot"></div></div>
         <div class="rb-mcp-chips" id="nmChips">
           <button class="rb-mcp-chip act" data-k="onb">Onboarding</button>
-          <button class="rb-mcp-chip" data-k="fact">Cuentas por pagar</button>
-          <button class="rb-mcp-chip" data-k="sync">Sincronizar datos</button>
+          <button class="rb-mcp-chip" data-k="fact">Accounts payable</button>
+          <button class="rb-mcp-chip" data-k="sync">Sync data</button>
         </div>
-        <div class="rb-mcp-bar"><span class="ph">Describe lo que debe hacer el flujo…</span><button class="rb-btn rb-btn--green" id="nmGen" onclick="nmPlay()">Generar flujo</button></div>
+        <div class="rb-mcp-bar"><span class="ph">Describe what the flow should do…</span><button class="rb-btn rb-btn--green" id="nmGen" onclick="nmPlay()">Generate flow</button></div>
       </div>
       <div class="rb-mcp-out">
-        <div class="rb-mcp-out-h"><span class="pin"></span><span id="nmTitle">Flujo propuesto</span></div>
+        <div class="rb-mcp-out-h"><span class="pin"></span><span id="nmTitle">Proposed flow</span></div>
         <div class="rb-mcp-screen" id="nmScreen"></div>
-        <div class="rb-mcp-pub" id="nmPub" style="display:none"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div>Flujo listo para revisar y ejecutar<small id="nmConn"></small></div></div>
+        <div class="rb-mcp-pub" id="nmPub" style="display:none"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><div>Flow ready to review and run<small id="nmConn"></small></div></div>
       </div>
     </div>
     <div class="rb-mcp-points">
-      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h8M8 14h5"/><path d="M21 12a8 8 0 0 1-11.2 7.3L4 21l1.7-5.8A8 8 0 1 1 21 12z"/></svg></span><div><h4>Lenguaje natural</h4><p>Explica el proceso en una frase; Claude propone los nodos.</p></div></div>
-      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 6H14a2.5 2.5 0 0 1 2.5 2.5V15M6 8.5V15a2.5 2.5 0 0 0 2.5 2.5H15"/></svg></span><div><h4>Conecta tu ecosistema</h4><p>Suma RPA, AI Studio, Xperience e integraciones según lo que pidas.</p></div></div>
-      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h4>Tú tienes el control</h4><p>Revisas y ajustas cada nodo antes de poner el flujo en marcha.</p></div></div>
+      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h8M8 14h5"/><path d="M21 12a8 8 0 0 1-11.2 7.3L4 21l1.7-5.8A8 8 0 1 1 21 12z"/></svg></span><div><h4>Plain language</h4><p>Explain the process in one sentence; Claude proposes the nodes.</p></div></div>
+      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 6H14a2.5 2.5 0 0 1 2.5 2.5V15M6 8.5V15a2.5 2.5 0 0 0 2.5 2.5H15"/></svg></span><div><h4>Connect your ecosystem</h4><p>Adds RPA, AI Studio, Xperience and integrations based on what you ask for.</p></div></div>
+      <div class="rb-mcp-point"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h4>You stay in control</h4><p>You review and adjust every node before putting the flow to work.</p></div></div>
     </div>
   </div>
 </section>
@@ -1071,14 +1070,14 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-sec-band">
       <div>
-        <h2>Agentes inteligentes que actúan bajo tus reglas</h2>
-        <p>Los agentes ejecutan procesos de forma autónoma dentro de los límites que defines. Cada decisión, acción y resultado queda registrado con trazabilidad completa para mantener el control, facilitar auditorías y cumplir con los requisitos de seguridad y gobierno.</p>
+        <h2>Intelligent agents that act by your rules</h2>
+        <p>Agents run processes autonomously within the limits you define. Every decision, action and outcome is logged with full traceability, so you keep control, audits stay simple and security and governance requirements are met.</p>
       </div>
       <div class="rb-sec-chips">
-        <div class="rb-sec-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M17 11l2 2 4-4"/></svg>Supervisión humana</div>
-        <div class="rb-sec-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/><path d="M12 8v4l3 2"/></svg>Trazabilidad de cada acción</div>
-        <div class="rb-sec-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Permisos y roles</div>
-        <div class="rb-sec-chip rb-sec-chip--iso"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span>ISO 27001 (Suite Rocketbot)</span><span class="badge">Certificado</span></div>
+        <div class="rb-sec-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M17 11l2 2 4-4"/></svg>Human oversight</div>
+        <div class="rb-sec-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/><path d="M12 8v4l3 2"/></svg>Traceability of every action</div>
+        <div class="rb-sec-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Permissions and roles</div>
+        <div class="rb-sec-chip rb-sec-chip--iso"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span>ISO 27001 (Rocketbot Suite)</span><span class="badge">Certified</span></div>
       </div>
     </div>
   </div>
@@ -1089,10 +1088,10 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-cta-band__inner">
       <div>
-        <h2 class="rb-cta-band__title">¿Tus procesos dependen de demasiadas decisiones manuales?</h2>
-        <p class="rb-cta-band__sub">Descubre cómo Saturn Studio hace que los procesos avancen entre sistemas, datos y equipos, con más eficiencia y control.</p>
+        <h2 class="rb-cta-band__title">Do your processes hinge on too many manual decisions?</h2>
+        <p class="rb-cta-band__sub">See how Saturn Studio keeps processes moving across systems, data and teams, with more efficiency and more control.</p>
       </div>
-      <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Contáctanos</a>
+      <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Talk to us</a>
     </div>
   </div>
 </section>
@@ -1100,7 +1099,7 @@ html{scroll-padding-top:92px;}
 <!-- FAQ -->
 <section class="rb-section" id="faq">
   <div class="container">
-    <div class="rb-section__head"><h2 class="rb-section__title">Preguntas frecuentes</h2></div>
+    <div class="rb-section__head"><h2 class="rb-section__title">Frequently asked questions</h2></div>
     <div class="rb-faq" id="faqWrap"></div>
   </div>
 </section>
@@ -1109,8 +1108,8 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-footer__grid">
       <div class="rb-footer__brand">
-        <img src="assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
-        <p class="rb-footer__copy">Plataforma de automatización de procesos y agentes inteligentes para recuperar tiempo y tomar mejores decisiones.</p>
+        <img src="/assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
+        <p class="rb-footer__copy">A process automation and intelligent agent platform built to win back time and support better decisions.</p>
         <div class="rb-footer__social">
           <a href="https://www.facebook.com/rocketbot.es" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -1126,19 +1125,19 @@ html{scroll-padding-top:92px;}
           </a>
         </div>
       </div>
-      <div class="rb-footer__col"><h6>Productos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestador</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="#">Políticas de privacidad</a></li><li><a href="#">Políticas de seguridad</a></li><li><a href="#">Trabaja con Nosotros</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Soporte y servicios</h6><ul><li><a href="#">Certificación</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li><li><a href="#">Descargas</a></li><li><a href="#">FAQs</a></li><li><a href="#">Media kit</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Products</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orchestrator</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Resources</h6><ul><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Company</h6><ul><li><a href="contacto.html">Contact</a></li><li><a href="#">Privacy policy</a></li><li><a href="#">Security policy</a></li><li><a href="#">Work with us</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Support &amp; services</h6><ul><li><a href="#">Certification</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a></li><li><a href="#">Downloads</a></li><li><a href="#">FAQs</a></li><li><a href="#">Media kit</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">
       <span>© Rocketbot SpA | All rights reserved 2018 – 2025</span>
-      <div class="rb-footer__legal"><a href="#">Políticas de privacidad</a><a href="#">Políticas de seguridad</a></div>
+      <div class="rb-footer__legal"><a href="#">Privacy policy</a><a href="#">Security policy</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-var LOGOS={light:'assets/logos/logo-header.png',dark:'assets/logos/logo-header-white.png'};
+var LOGOS={light:'/assets/logos/logo-header.png',dark:'/assets/logos/logo-header-white.png'};
 var html=document.documentElement,navLogo=document.getElementById('nav-logo'),themeBtn=document.getElementById('theme-btn'),iconSun=document.getElementById('icon-sun'),iconMoon=document.getElementById('icon-moon');
 function applyTheme(t){html.setAttribute('data-theme',t);if(navLogo)navLogo.src=LOGOS[t];if(iconSun)iconSun.style.display=t==='dark'?'none':'';if(iconMoon)iconMoon.style.display=t==='light'?'none':'';try{localStorage.setItem('rb-theme',t);}catch(e){}}
 (function(){var s='dark';try{s=localStorage.getItem('rb-theme')||'dark';}catch(e){}applyTheme(s);})();
@@ -1221,24 +1220,14 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
   });
 })();</script>
 
-<!-- Nombres de producto protegidos antes de cargar el traductor -->
-<script>try{ RB_I18N.shield(); }catch(e){}</script>
-
-<!-- Google Translate -->
-<div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
-<script>
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,pt',autoDisplay:false},'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 
 <script>
-/* Language Switcher */
+/* Selector de idioma: navega entre /  /en/  /pt/ */
 (function(){
   var btn  = document.getElementById('rb-lang-btn');
   var menu = document.getElementById('rb-lang-menu');
   if(!btn || !menu) return;
+  var CUR='en', PAGE='saturn-studio.html';
   btn.addEventListener('click', function(e){
     e.stopPropagation();
     var open = menu.classList.toggle('open');
@@ -1248,44 +1237,15 @@ function googleTranslateElementInit(){
     menu.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
   });
-  function setLang(lang){
-    try{ if(window.RB_I18N) RB_I18N.setLang(lang); }catch(e){}
-    if(btn) btn.setAttribute('data-active', lang);
-    try{ localStorage.setItem('rb-lang', lang); }catch(e){}
-    menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-      o.classList.toggle('rb-lang--active', o.dataset.lang === lang);
+  function url(l){ return l==='es' ? '/'+PAGE : '/'+l+'/'+PAGE; }
+  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
+    o.classList.toggle('rb-lang--active', o.dataset.lang===CUR);
+    o.addEventListener('click', function(){
+      try{ localStorage.setItem('rb-lang', o.dataset.lang); }catch(e){}
+      location.href = url(o.dataset.lang);
     });
-    menu.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-    if(lang === 'es'){
-      var exp0 = new Date(0).toUTCString();
-      document.cookie = 'googtrans=; path=/; expires=' + exp0;
-      document.cookie = 'googtrans=; path=/; domain=.' + location.hostname + '; expires=' + exp0;
-      location.reload();
-      return;
-    }
-    var sel = document.querySelector('.goog-te-combo');
-    if(sel){ sel.value = lang; sel.dispatchEvent(new Event('change')); }
-    else {
-      var exp1 = new Date(); exp1.setFullYear(exp1.getFullYear()+1);
-      var expStr = exp1.toUTCString();
-      document.cookie = 'googtrans=/es/'+lang+'; path=/; expires='+expStr;
-      document.cookie = 'googtrans=/es/'+lang+'; path=/; domain=.'+location.hostname+'; expires='+expStr;
-      location.reload();
-    }
-  }
-  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-    o.addEventListener('click', function(){ setLang(o.dataset.lang); });
   });
-  var saved = 'es';
-  try{ saved = localStorage.getItem('rb-lang') || 'es'; }catch(e){}
-  btn.setAttribute('data-active', (window.RB_I18N && RB_I18N.lang) || saved);
-  menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
-    o.classList.toggle('rb-lang--active', o.dataset.lang === saved);
-  });
-  if(saved !== 'es' && document.cookie.indexOf('googtrans') === -1){
-    document.cookie = 'googtrans=/es/'+saved+'; path=/';
-  }
+  btn.setAttribute('data-active', CUR);
 })();
 </script>
 
@@ -1323,7 +1283,7 @@ const SWF={
    nodes:[{ic:'form',k:'rb',t:'Xperience',s:'Solicitud recibida'},{ic:'ai',k:'rb',t:'AI Studio',s:'Estructura el documento'},{ic:'agent',k:'ai',t:'Agente IA',s:'Evalúa y decide'},{ic:'robot',k:'rb',t:'RPA Studio',s:'Carga en sistema legacy'},{ic:'bell',k:'out',t:'Notificación',s:'Avisa por WhatsApp'}],
    edges:['datos','JSON','decisión','registro']},
  cxp:{name:'Cuentas por pagar',
-   nodes:[{ic:'mail',k:'ext',t:'Correo',s:'Llega la factura'},{ic:'ai',k:'rb',t:'AI Studio',s:'Extrae datos del PDF'},{ic:'agent',k:'ai',t:'Agente IA',s:'Concilia con la OC'},{ic:'robot',k:'rb',t:'RPA Studio',s:'Ingresa al ERP'},{ic:'dash',k:'rb',t:'Nexus',s:'Actualiza el dashboard'}],
+   nodes:[{ic:'mail',k:'ext',t:'Correo',s:'The invoice arrives'},{ic:'ai',k:'rb',t:'AI Studio',s:'Extract data from the PDF'},{ic:'agent',k:'ai',t:'Agente IA',s:'Concilia con la OC'},{ic:'robot',k:'rb',t:'RPA Studio',s:'Ingresa al ERP'},{ic:'dash',k:'rb',t:'Nexus',s:'Actualiza el dashboard'}],
    edges:['factura','JSON','conciliado','registro']},
  att:{name:'Atención inteligente',
    nodes:[{ic:'form',k:'rb',t:'Xperience',s:'Consulta del cliente'},{ic:'agent',k:'ai',t:'Agente IA',s:'Interpreta la intención'},{ic:'api',k:'ext',t:'API externa',s:'Consulta el sistema'},{ic:'robot',k:'rb',t:'RPA Studio',s:'Acción donde no hay API'},{ic:'chat',k:'out',t:'Respuesta',s:'Responde al cliente'}],
@@ -1332,7 +1292,7 @@ const SWF={
 let sCur='onb', sToken=0, sTimers=[];
 function sSleep(ms){return new Promise(function(r){sTimers.push(setTimeout(r,ms));});}
 function sClear(){sTimers.forEach(clearTimeout); sTimers=[];}
-const PLOGO={'Xperience':'assets/logos/products/xperience.png','AI Studio':'assets/logos/products/ai-studio.png','RPA Studio':'assets/logos/products/rpa-studio.png','Nexus':'assets/logos/products/nexus.png','Orquestador':'assets/logos/products/orchestrator.png','Saturn Studio':'assets/logos/products/saturn-studio.png'};
+const PLOGO={'Xperience':'/assets/logos/products/xperience.png','AI Studio':'/assets/logos/products/ai-studio.png','RPA Studio':'/assets/logos/products/rpa-studio.png','Nexus':'/assets/logos/products/nexus.png','Orquestador':'/assets/logos/products/orchestrator.png','Saturn Studio':'/assets/logos/products/saturn-studio.png'};
 function sBuild(w){
   let h='';
   w.nodes.forEach((n,i)=>{
