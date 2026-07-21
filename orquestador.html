@@ -639,112 +639,6 @@ body{top:0 !important;}
 .rb-brandpair__dust--3{width:3px;height:3px;left:70%;top:96%;animation-delay:1.7s;}
 @media(prefers-reduced-motion:reduce){.rb-brandpair__dust{animation:none;}}
 
-/* ═══════════ Transiciones espaciales entre secciones ═══════════ */
-.rb-spacetrans{position:relative;z-index:2;height:150px;margin:-45px 0;overflow:hidden;pointer-events:none;
-  background:radial-gradient(ellipse 75% 130% at 50% 50%,rgba(2,6,27,.92) 0%,rgba(2,6,27,.45) 42%,rgba(2,6,27,0) 74%);}
-[data-theme="light"] .rb-spacetrans{background:radial-gradient(ellipse 75% 130% at 50% 50%,rgba(2,6,27,.07) 0%,rgba(2,6,27,0) 70%);}
-/* las animaciones sólo corren mientras la banda está en pantalla */
-.rb-spacetrans *,.rb-spacetrans *::before,.rb-spacetrans *::after{animation-play-state:paused;}
-.rb-spacetrans.is-live *,.rb-spacetrans.is-live *::before,.rb-spacetrans.is-live *::after{animation-play-state:running;}
-
-/* ── nebulosa ── */
-.rb-spacetrans__neb{position:absolute;inset:-30% 0;
-  background:radial-gradient(ellipse 30% 65% at 24% 55%,rgba(188,0,23,.20),transparent 68%),
-             radial-gradient(ellipse 26% 60% at 76% 42%,rgba(43,127,255,.13),transparent 68%);
-  filter:blur(10px);animation:rb-sx-neb 14s ease-in-out infinite;}
-@keyframes rb-sx-neb{0%,100%{opacity:.7;transform:scale(1);}50%{opacity:1;transform:scale(1.08);}}
-
-/* ── campo de estrellas: 3 capas tileadas, sin nodos extra ── */
-.rb-spacetrans__stars,.rb-spacetrans__stars::before,.rb-spacetrans__stars::after{content:'';position:absolute;inset:0;}
-.rb-spacetrans__stars{
-  background-image:radial-gradient(1.6px 1.6px at 24px 34px,rgba(255,255,255,.95),transparent),
-                   radial-gradient(1.3px 1.3px at 108px 88px,rgba(255,255,255,.8),transparent),
-                   radial-gradient(1.1px 1.1px at 190px 26px,rgba(255,255,255,.7),transparent),
-                   radial-gradient(1.5px 1.5px at 268px 112px,rgba(255,255,255,.85),transparent),
-                   radial-gradient(1px 1px at 330px 62px,rgba(255,255,255,.6),transparent);
-  background-size:380px 150px;animation:rb-sx-drift1 70s linear infinite,rb-sx-tw1 5s ease-in-out infinite;}
-.rb-spacetrans__stars::before{
-  background-image:radial-gradient(1.2px 1.2px at 60px 18px,rgba(255,255,255,.7),transparent),
-                   radial-gradient(1px 1px at 150px 96px,rgba(255,255,255,.55),transparent),
-                   radial-gradient(1.4px 1.4px at 232px 52px,rgba(255,214,214,.75),transparent),
-                   radial-gradient(1px 1px at 400px 130px,rgba(255,255,255,.5),transparent),
-                   radial-gradient(1.2px 1.2px at 470px 40px,rgba(180,210,255,.7),transparent);
-  background-size:540px 150px;animation:rb-sx-drift2 110s linear infinite,rb-sx-tw2 7s ease-in-out infinite;}
-.rb-spacetrans__stars::after{
-  background-image:radial-gradient(2px 2px at 84px 70px,#fff,transparent),
-                   radial-gradient(1.8px 1.8px at 216px 22px,rgba(255,190,190,.9),transparent);
-  background-size:300px 150px;animation:rb-sx-drift3 45s linear infinite,rb-sx-tw3 3.4s ease-in-out infinite;}
-@keyframes rb-sx-drift1{to{background-position:-380px 0;}}
-@keyframes rb-sx-drift2{to{background-position:-540px 0;}}
-@keyframes rb-sx-drift3{to{background-position:-300px 0;}}
-@keyframes rb-sx-tw1{0%,100%{opacity:.85;}50%{opacity:.45;}}
-@keyframes rb-sx-tw2{0%,100%{opacity:.55;}50%{opacity:.95;}}
-@keyframes rb-sx-tw3{0%,100%{opacity:1;}50%{opacity:.3;}}
-
-/* ── estrellas fugaces ── */
-.rb-spacetrans__shoot{position:absolute;top:22%;left:-18%;width:170px;height:2px;border-radius:2px;opacity:0;
-  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.18) 30%,rgba(255,255,255,.9));
-  animation:rb-sx-shoot 7s cubic-bezier(.25,0,.15,1) infinite;}
-.rb-spacetrans__shoot::after{content:'';position:absolute;right:-3px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;
-  background:#fff;box-shadow:0 0 10px 2px rgba(255,255,255,.9),0 0 22px 7px rgba(43,127,255,.45);}
-.rb-spacetrans__shoot--b{top:64%;left:-24%;width:140px;animation-name:rb-sx-shoot-b;animation-duration:8.5s;animation-delay:3.4s;}
-.rb-spacetrans__shoot--b::after{box-shadow:0 0 10px 2px rgba(255,255,255,.9),0 0 22px 7px rgba(188,0,23,.5);}
-.rb-spacetrans__shoot--c{top:42%;left:-30%;width:200px;animation-duration:9.5s;animation-delay:6s;}
-@keyframes rb-sx-shoot{0%{transform:translate3d(0,0,0) rotate(12deg);opacity:0;}5%{opacity:1;}45%{opacity:1;}
-  60%,100%{transform:translate3d(135vw,72px,0) rotate(12deg);opacity:0;}}
-@keyframes rb-sx-shoot-b{0%{transform:translate3d(0,0,0) rotate(-9deg);opacity:0;}5%{opacity:1;}45%{opacity:1;}
-  60%,100%{transform:translate3d(140vw,-54px,0) rotate(-9deg);opacity:0;}}
-
-/* ── cohete ── */
-.rb-spacetrans__rocket{position:absolute;left:-10%;top:64%;width:46px;height:46px;margin-top:-23px;
-  animation:rb-sx-fly 9s cubic-bezier(.42,0,.58,1) infinite;}
-@keyframes rb-sx-fly{0%{transform:translate3d(0,0,0);opacity:0;}6%{opacity:1;}88%{opacity:1;}
-  100%{transform:translate3d(125vw,-96px,0);opacity:0;}}
-.rb-spacetrans__bob{position:absolute;inset:0;animation:rb-sx-bob 2.1s ease-in-out infinite alternate;}
-@keyframes rb-sx-bob{from{transform:translateY(-4px) rotate(-2deg);}to{transform:translateY(4px) rotate(2deg);}}
-.rb-spacetrans__ship{position:absolute;inset:0;width:100%;height:100%;transform:rotate(42deg);
-  filter:drop-shadow(0 0 9px rgba(188,0,23,.55));}
-.rb-spacetrans__flame{position:absolute;left:50%;top:50%;width:13px;height:44px;
-  transform:translate(-50%,-50%) rotate(42deg) translateY(28px);}
-.rb-spacetrans__flame::before{content:'';position:absolute;inset:0;transform-origin:50% 0;
-  background:linear-gradient(180deg,rgba(255,236,170,.95),rgba(255,150,40,.8) 28%,rgba(188,0,23,.6) 58%,rgba(188,0,23,0) 100%);
-  border-radius:50% 50% 46% 46%/22% 22% 78% 78%;filter:blur(2.4px);
-  animation:rb-sx-flame .16s ease-in-out infinite alternate;}
-@keyframes rb-sx-flame{from{transform:scale(1,1);opacity:.95;}to{transform:scale(.82,.72);opacity:.6;}}
-/* cohete en sentido inverso */
-.rb-spacetrans__rocket--rtl{left:auto;right:-10%;top:36%;animation-name:rb-sx-fly-rtl;animation-duration:11s;}
-.rb-spacetrans__rocket--rtl .rb-spacetrans__ship{transform:rotate(-42deg);}
-.rb-spacetrans__rocket--rtl .rb-spacetrans__flame{transform:translate(-50%,-50%) rotate(-42deg) translateY(28px);}
-@keyframes rb-sx-fly-rtl{0%{transform:translate3d(0,0,0);opacity:0;}6%{opacity:1;}88%{opacity:1;}
-  100%{transform:translate3d(-125vw,-80px,0);opacity:0;}}
-
-/* ── planeta con satélite en órbita ── */
-.rb-spacetrans__orbit{position:absolute;right:11%;top:50%;width:104px;height:104px;margin-top:-52px;}
-.rb-spacetrans__orbit--left{right:auto;left:9%;width:86px;height:86px;margin-top:-43px;}
-.rb-spacetrans__ring{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(255,255,255,.16);
-  animation:rb-sx-orbit 16s linear infinite;}
-.rb-spacetrans__ring i{position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;border-radius:50%;
-  background:var(--rb-red);box-shadow:0 0 10px 2px rgba(188,0,23,.85);}
-@keyframes rb-sx-orbit{to{transform:rotate(360deg);}}
-.rb-spacetrans__planet{position:absolute;left:50%;top:50%;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;
-  background:radial-gradient(circle at 33% 30%,#6b7b8c,#263238 58%,#12161c);
-  box-shadow:inset -6px -4px 12px rgba(0,0,0,.65),0 0 24px rgba(43,127,255,.22);
-  animation:rb-sx-neb 9s ease-in-out infinite;}
-
-@media(max-width:768px){
-  .rb-spacetrans{height:104px;margin:-28px 0;}
-  .rb-spacetrans__rocket{width:34px;height:34px;margin-top:-17px;}
-  .rb-spacetrans__orbit{width:74px;height:74px;margin-top:-37px;right:6%;}
-  .rb-spacetrans__orbit--left{width:64px;height:64px;margin-top:-32px;left:5%;}
-  .rb-spacetrans__planet{width:28px;height:28px;margin:-14px 0 0 -14px;}
-  .rb-spacetrans__shoot{width:120px;}
-}
-@media(prefers-reduced-motion:reduce){
-  .rb-spacetrans{height:70px;margin:-22px 0;}
-  .rb-spacetrans *,.rb-spacetrans *::before,.rb-spacetrans *::after{animation:none !important;}
-  .rb-spacetrans__rocket,.rb-spacetrans__shoot{display:none;}
-}
-
 /* ── Selector de idioma con banderas ── */
 .rb-lang__btn{width:auto;min-width:56px;padding:0 10px;border-radius:19px;gap:6px;}
 .rb-lang__chev{width:11px;height:11px;flex:0 0 auto;opacity:.6;transition:transform .2s;}
@@ -764,6 +658,54 @@ body{top:0 !important;}
 [data-rb-padl]::before{content:"\00a0";}
 [data-rb-padr]::after{content:"\00a0";}
 #heroRot::before{content:"\00a0";}
+
+/* ═══════════ Fondo espacial global ═══════════ */
+.rb-cosmos{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;}
+[data-theme="light"] .rb-cosmos{opacity:.2;}
+/* el alto extra absorbe el desplazamiento del parallax (máx. un tile) */
+.rb-cosmos__layer{position:absolute;top:0;left:0;right:0;height:calc(100% + 680px);}
+.rb-cosmos__layer--1{background-size:420px 380px;transform:translate3d(0,var(--rb-cy1,0px),0);
+  background-image:radial-gradient(1.5px 1.5px at 40px 60px,rgba(255,255,255,.8),transparent),
+                   radial-gradient(1.2px 1.2px at 170px 212px,rgba(255,255,255,.55),transparent),
+                   radial-gradient(1px 1px at 302px 92px,rgba(255,255,255,.45),transparent),
+                   radial-gradient(1.4px 1.4px at 120px 330px,rgba(255,255,255,.62),transparent),
+                   radial-gradient(1px 1px at 360px 278px,rgba(190,215,255,.5),transparent);
+  animation:rb-cos-tw1 7s ease-in-out infinite;}
+.rb-cosmos__layer--2{background-size:600px 520px;transform:translate3d(0,var(--rb-cy2,0px),0);
+  background-image:radial-gradient(1.2px 1.2px at 88px 140px,rgba(255,255,255,.5),transparent),
+                   radial-gradient(1px 1px at 250px 40px,rgba(255,214,214,.45),transparent),
+                   radial-gradient(1.3px 1.3px at 430px 300px,rgba(255,255,255,.55),transparent),
+                   radial-gradient(1px 1px at 540px 460px,rgba(180,210,255,.42),transparent),
+                   radial-gradient(1.1px 1.1px at 330px 480px,rgba(255,255,255,.4),transparent);
+  animation:rb-cos-tw2 9.5s ease-in-out infinite;}
+.rb-cosmos__layer--3{background-size:340px 300px;transform:translate3d(0,var(--rb-cy3,0px),0);
+  background-image:radial-gradient(1.9px 1.9px at 96px 84px,rgba(255,255,255,.85),transparent),
+                   radial-gradient(1.7px 1.7px at 244px 228px,rgba(255,196,196,.6),transparent);
+  animation:rb-cos-tw3 5s ease-in-out infinite;}
+@keyframes rb-cos-tw1{0%,100%{opacity:.8;}50%{opacity:.55;}}
+@keyframes rb-cos-tw2{0%,100%{opacity:.55;}50%{opacity:.85;}}
+@keyframes rb-cos-tw3{0%,100%{opacity:.9;}50%{opacity:.5;}}
+
+/* cohete de fondo: cruza ~8s de cada 52s */
+.rb-cosmos__rocket{position:absolute;left:-80px;top:74%;width:28px;height:28px;opacity:0;
+  animation:rb-cos-fly 52s linear infinite;}
+@keyframes rb-cos-fly{0%{transform:translate3d(0,0,0);opacity:0;}1.5%{opacity:.3;}13%{opacity:.3;}
+  15%,100%{transform:translate3d(calc(100vw + 160px),-38vh,0);opacity:0;}}
+.rb-cosmos__ship{position:absolute;inset:0;width:100%;height:100%;transform:rotate(42deg);
+  filter:drop-shadow(0 0 6px rgba(188,0,23,.4));}
+.rb-cosmos__flame{position:absolute;left:50%;top:50%;width:8px;height:26px;
+  transform:translate(-50%,-50%) rotate(42deg) translateY(17px);}
+.rb-cosmos__flame::before{content:'';position:absolute;inset:0;transform-origin:50% 0;
+  background:linear-gradient(180deg,rgba(255,230,160,.8),rgba(255,140,40,.6) 30%,rgba(188,0,23,0) 100%);
+  border-radius:50% 50% 46% 46%/22% 22% 78% 78%;filter:blur(2px);
+  animation:rb-cos-flame .18s ease-in-out infinite alternate;}
+@keyframes rb-cos-flame{from{transform:scaleY(1);opacity:.9;}to{transform:scaleY(.75);opacity:.5;}}
+
+@media(max-width:768px){.rb-cosmos{opacity:.62;}.rb-cosmos__rocket{width:22px;height:22px;}}
+@media(prefers-reduced-motion:reduce){
+  .rb-cosmos__layer{animation:none;transform:none;}
+  .rb-cosmos__rocket{display:none;}
+}
 </style>
 </head>
 <body>
@@ -997,14 +939,6 @@ body{top:0 !important;}
 </section>
 
 <!-- CLIENTS -->
-<!-- transición espacial -->
-<div class="rb-spacetrans" aria-hidden="true">
-  <div class="rb-spacetrans__neb"></div>
-  <div class="rb-spacetrans__stars"></div>
-  <span class="rb-spacetrans__shoot"></span>
-  <span class="rb-spacetrans__shoot rb-spacetrans__shoot--b"></span>
-  <div class="rb-spacetrans__rocket"><div class="rb-spacetrans__bob"><span class="rb-spacetrans__flame"></span><svg class="rb-spacetrans__ship" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 21.5 2 30.2V37l6.5-4.6Z" fill="#8E0011"/><path d="M23.5 21.5 30 30.2V37l-6.5-4.6Z" fill="#8E0011"/><path d="M16 1.4c4.9 5 7.6 12 7.6 19.6v9.4l-2.4 2.8h-10.4L8.4 30.4V21C8.4 13.4 11.1 6.4 16 1.4Z" fill="#EDF1F6"/><path d="M16 1.4c2.9 3 5 6.9 6.2 11.2H9.8C11 8.3 13.1 4.4 16 1.4Z" fill="#BC0017"/><circle cx="16" cy="19.4" r="4.4" fill="#0A0A0F"/><circle cx="16" cy="19.4" r="3.1" fill="#2B7FFF"/><path d="M13.6 17.6a3.4 3.4 0 0 1 2.2-1.4" stroke="rgba(255,255,255,.75)" stroke-width="1.1" stroke-linecap="round"/><path d="M11.2 33.2h9.6l-1.5 3.4h-6.6Z" fill="#263238"/></svg></div></div>
-</div>
 <section class="rb-clients">
   <div class="container">
     <p class="rb-clients__label">Empresas que confían en Rocketbot</p>
@@ -1065,14 +999,6 @@ body{top:0 !important;}
 </section>
 
 <!-- GOBERNANZA -->
-<!-- transición espacial -->
-<div class="rb-spacetrans" aria-hidden="true">
-  <div class="rb-spacetrans__neb"></div>
-  <div class="rb-spacetrans__stars"></div>
-  <span class="rb-spacetrans__shoot"></span>
-  <span class="rb-spacetrans__shoot rb-spacetrans__shoot--b"></span>
-  <div class="rb-spacetrans__orbit"><span class="rb-spacetrans__ring"><i></i></span><span class="rb-spacetrans__planet"></span></div>
-</div>
 <section class="rb-section" id="gobernanza">
   <div class="container">
     <div class="rb-section__head">
@@ -1139,15 +1065,6 @@ body{top:0 !important;}
 </section>
 
 <!-- MCP / CLAUDE -->
-<!-- transición espacial -->
-<div class="rb-spacetrans" aria-hidden="true">
-  <div class="rb-spacetrans__neb"></div>
-  <div class="rb-spacetrans__stars"></div>
-  <span class="rb-spacetrans__shoot"></span>
-  <span class="rb-spacetrans__shoot rb-spacetrans__shoot--b"></span>
-  <div class="rb-spacetrans__rocket rb-spacetrans__rocket--rtl"><div class="rb-spacetrans__bob"><span class="rb-spacetrans__flame"></span><svg class="rb-spacetrans__ship" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 21.5 2 30.2V37l6.5-4.6Z" fill="#8E0011"/><path d="M23.5 21.5 30 30.2V37l-6.5-4.6Z" fill="#8E0011"/><path d="M16 1.4c4.9 5 7.6 12 7.6 19.6v9.4l-2.4 2.8h-10.4L8.4 30.4V21C8.4 13.4 11.1 6.4 16 1.4Z" fill="#EDF1F6"/><path d="M16 1.4c2.9 3 5 6.9 6.2 11.2H9.8C11 8.3 13.1 4.4 16 1.4Z" fill="#BC0017"/><circle cx="16" cy="19.4" r="4.4" fill="#0A0A0F"/><circle cx="16" cy="19.4" r="3.1" fill="#2B7FFF"/><path d="M13.6 17.6a3.4 3.4 0 0 1 2.2-1.4" stroke="rgba(255,255,255,.75)" stroke-width="1.1" stroke-linecap="round"/><path d="M11.2 33.2h9.6l-1.5 3.4h-6.6Z" fill="#263238"/></svg></div></div>
-  <div class="rb-spacetrans__orbit rb-spacetrans__orbit--left"><span class="rb-spacetrans__ring"><i></i></span><span class="rb-spacetrans__planet"></span></div>
-</div>
 <section class="rb-section rb-section--space" id="ia">
   <div class="container">
     <div class="rb-section__head">
@@ -1241,15 +1158,6 @@ body{top:0 !important;}
 </section>
 
 <!-- RECOGNITION -->
-<!-- transición espacial -->
-<div class="rb-spacetrans" aria-hidden="true">
-  <div class="rb-spacetrans__neb"></div>
-  <div class="rb-spacetrans__stars"></div>
-  <span class="rb-spacetrans__shoot"></span>
-  <span class="rb-spacetrans__shoot rb-spacetrans__shoot--b"></span>
-  <span class="rb-spacetrans__shoot rb-spacetrans__shoot--c"></span>
-  <div class="rb-spacetrans__orbit"><span class="rb-spacetrans__ring"><i></i></span><span class="rb-spacetrans__planet"></span></div>
-</div>
 <section class="rb-section">
   <div class="container">
     <div class="rb-section__head">
@@ -1277,14 +1185,6 @@ body{top:0 !important;}
 </section>
 
 <!-- FAQ -->
-<!-- transición espacial -->
-<div class="rb-spacetrans" aria-hidden="true">
-  <div class="rb-spacetrans__neb"></div>
-  <div class="rb-spacetrans__stars"></div>
-  <span class="rb-spacetrans__shoot"></span>
-  <span class="rb-spacetrans__shoot rb-spacetrans__shoot--b"></span>
-  <div class="rb-spacetrans__rocket"><div class="rb-spacetrans__bob"><span class="rb-spacetrans__flame"></span><svg class="rb-spacetrans__ship" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 21.5 2 30.2V37l6.5-4.6Z" fill="#8E0011"/><path d="M23.5 21.5 30 30.2V37l-6.5-4.6Z" fill="#8E0011"/><path d="M16 1.4c4.9 5 7.6 12 7.6 19.6v9.4l-2.4 2.8h-10.4L8.4 30.4V21C8.4 13.4 11.1 6.4 16 1.4Z" fill="#EDF1F6"/><path d="M16 1.4c2.9 3 5 6.9 6.2 11.2H9.8C11 8.3 13.1 4.4 16 1.4Z" fill="#BC0017"/><circle cx="16" cy="19.4" r="4.4" fill="#0A0A0F"/><circle cx="16" cy="19.4" r="3.1" fill="#2B7FFF"/><path d="M13.6 17.6a3.4 3.4 0 0 1 2.2-1.4" stroke="rgba(255,255,255,.75)" stroke-width="1.1" stroke-linecap="round"/><path d="M11.2 33.2h9.6l-1.5 3.4h-6.6Z" fill="#263238"/></svg></div></div>
-</div>
 <section class="rb-section rb-section--alt" id="faq">
   <div class="container">
     <div class="rb-section__head"><h2 class="rb-section__title">Preguntas frecuentes</h2></div>
@@ -1711,19 +1611,31 @@ omObs.observe(document.querySelector('.rb-omcp'));
   });
 })();
 </script>
+<!-- fondo espacial global -->
+<div class="rb-cosmos" aria-hidden="true">
+  <span class="rb-cosmos__layer rb-cosmos__layer--1"></span>
+  <span class="rb-cosmos__layer rb-cosmos__layer--2"></span>
+  <span class="rb-cosmos__layer rb-cosmos__layer--3"></span>
+  <div class="rb-cosmos__rocket"><span class="rb-cosmos__flame"></span><svg class="rb-cosmos__ship" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 21.5 2 30.2V37l6.5-4.6Z" fill="#8E0011"/><path d="M23.5 21.5 30 30.2V37l-6.5-4.6Z" fill="#8E0011"/><path d="M16 1.4c4.9 5 7.6 12 7.6 19.6v9.4l-2.4 2.8h-10.4L8.4 30.4V21C8.4 13.4 11.1 6.4 16 1.4Z" fill="#EDF1F6"/><path d="M16 1.4c2.9 3 5 6.9 6.2 11.2H9.8C11 8.3 13.1 4.4 16 1.4Z" fill="#BC0017"/><circle cx="16" cy="19.4" r="4.4" fill="#0A0A0F"/><circle cx="16" cy="19.4" r="3.1" fill="#2B7FFF"/><path d="M11.2 33.2h9.6l-1.5 3.4h-6.6Z" fill="#263238"/></svg></div>
+</div>
 <script>
-// ─── Transiciones espaciales: animar sólo lo que está en pantalla ───
+// ─── Fondo espacial: parallax de estrellas al hacer scroll ───
 (function(){
-  var bands=document.querySelectorAll('.rb-spacetrans');
-  if(!bands.length) return;
-  if(!('IntersectionObserver' in window)){
-    Array.prototype.forEach.call(bands,function(b){ b.classList.add('is-live'); });
-    return;
+  var c=document.querySelector('.rb-cosmos');
+  if(!c) return;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  if(window.matchMedia('(max-width:768px)').matches) return;   /* en móvil, estrellas quietas */
+  /* el desplazamiento se envuelve al alto del tile: como el fondo se repite,
+     el salto es invisible y el parallax nunca se queda sin estrellas */
+  var TILE=[380,520,300], F=[0.05,0.11,0.19];
+  function apply(){
+    var y=window.pageYOffset||document.documentElement.scrollTop||0;
+    for(var i=0;i<3;i++){ c.style.setProperty('--rb-cy'+(i+1), (-((y*F[i])%TILE[i]))+'px'); }
   }
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){ e.target.classList.toggle('is-live', e.isIntersecting); });
-  },{rootMargin:'140px 0px'});
-  Array.prototype.forEach.call(bands,function(b){ io.observe(b); });
+  /* el navegador ya alinea los eventos de scroll al frame: no hace falta rAF,
+     y así el parallax no se traba si rAF viene limitado */
+  window.addEventListener('scroll',apply,{passive:true});
+  apply();
 })();
 </script>
 </body>
