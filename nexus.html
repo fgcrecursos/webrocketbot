@@ -72,12 +72,28 @@ window.RB_I18N=(function(){
       for(i=0;i<hits.length;i++){
         var node=hits[i],parts=node.nodeValue.split(split);
         if(parts.length<2||!node.parentNode) continue;
+        /* El traductor recorta los espacios pegados a un translate="no", así que
+           se los pasamos al span (los repone CSS con data-rb-padl/padr). */
+        var pad=[];
+        for(j=1;j<parts.length;j+=2){
+          var l=/\s$/.test(parts[j-1]||''), r=/^\s/.test(parts[j+1]||'');
+          if(l) parts[j-1]=parts[j-1].replace(/\s+$/,'');
+          if(r) parts[j+1]=parts[j+1].replace(/^\s+/,'');
+          pad[j]=(l?'l':'')+(r?'r':'');
+        }
         /* Un solo <span> sustituye al nodo de texto para no alterar el número
            de hijos del contenedor (importa en flex/grid con gap). */
         var box=document.createElement('span');
         for(j=0;j<parts.length;j++){
           if(!parts[j]) continue;
-          box.appendChild(j%2 ? shielded(parts[j]) : document.createTextNode(parts[j]));
+          if(j%2){
+            var sp=shielded(parts[j]);
+            if(pad[j].indexOf('l')>=0) sp.setAttribute('data-rb-padl','');
+            if(pad[j].indexOf('r')>=0) sp.setAttribute('data-rb-padr','');
+            box.appendChild(sp);
+          } else {
+            box.appendChild(document.createTextNode(parts[j]));
+          }
         }
         node.parentNode.replaceChild(box,node);
       }
@@ -733,6 +749,133 @@ body{top:0 !important;}
 .rb-brandpair__dust--2{width:3px;height:3px;left:92%;top:60%;animation-delay:1s;}
 .rb-brandpair__dust--3{width:3px;height:3px;left:70%;top:96%;animation-delay:1.7s;}
 @media(prefers-reduced-motion:reduce){.rb-brandpair__dust{animation:none;}}
+
+/* ═══════════ Transiciones espaciales entre secciones ═══════════ */
+.rb-spacetrans{position:relative;z-index:2;height:150px;margin:-45px 0;overflow:hidden;pointer-events:none;
+  background:radial-gradient(ellipse 75% 130% at 50% 50%,rgba(2,6,27,.92) 0%,rgba(2,6,27,.45) 42%,rgba(2,6,27,0) 74%);}
+[data-theme="light"] .rb-spacetrans{background:radial-gradient(ellipse 75% 130% at 50% 50%,rgba(2,6,27,.07) 0%,rgba(2,6,27,0) 70%);}
+/* las animaciones sólo corren mientras la banda está en pantalla */
+.rb-spacetrans *,.rb-spacetrans *::before,.rb-spacetrans *::after{animation-play-state:paused;}
+.rb-spacetrans.is-live *,.rb-spacetrans.is-live *::before,.rb-spacetrans.is-live *::after{animation-play-state:running;}
+
+/* ── nebulosa ── */
+.rb-spacetrans__neb{position:absolute;inset:-30% 0;
+  background:radial-gradient(ellipse 30% 65% at 24% 55%,rgba(188,0,23,.20),transparent 68%),
+             radial-gradient(ellipse 26% 60% at 76% 42%,rgba(43,127,255,.13),transparent 68%);
+  filter:blur(10px);animation:rb-sx-neb 14s ease-in-out infinite;}
+@keyframes rb-sx-neb{0%,100%{opacity:.7;transform:scale(1);}50%{opacity:1;transform:scale(1.08);}}
+
+/* ── campo de estrellas: 3 capas tileadas, sin nodos extra ── */
+.rb-spacetrans__stars,.rb-spacetrans__stars::before,.rb-spacetrans__stars::after{content:'';position:absolute;inset:0;}
+.rb-spacetrans__stars{
+  background-image:radial-gradient(1.6px 1.6px at 24px 34px,rgba(255,255,255,.95),transparent),
+                   radial-gradient(1.3px 1.3px at 108px 88px,rgba(255,255,255,.8),transparent),
+                   radial-gradient(1.1px 1.1px at 190px 26px,rgba(255,255,255,.7),transparent),
+                   radial-gradient(1.5px 1.5px at 268px 112px,rgba(255,255,255,.85),transparent),
+                   radial-gradient(1px 1px at 330px 62px,rgba(255,255,255,.6),transparent);
+  background-size:380px 150px;animation:rb-sx-drift1 70s linear infinite,rb-sx-tw1 5s ease-in-out infinite;}
+.rb-spacetrans__stars::before{
+  background-image:radial-gradient(1.2px 1.2px at 60px 18px,rgba(255,255,255,.7),transparent),
+                   radial-gradient(1px 1px at 150px 96px,rgba(255,255,255,.55),transparent),
+                   radial-gradient(1.4px 1.4px at 232px 52px,rgba(255,214,214,.75),transparent),
+                   radial-gradient(1px 1px at 400px 130px,rgba(255,255,255,.5),transparent),
+                   radial-gradient(1.2px 1.2px at 470px 40px,rgba(180,210,255,.7),transparent);
+  background-size:540px 150px;animation:rb-sx-drift2 110s linear infinite,rb-sx-tw2 7s ease-in-out infinite;}
+.rb-spacetrans__stars::after{
+  background-image:radial-gradient(2px 2px at 84px 70px,#fff,transparent),
+                   radial-gradient(1.8px 1.8px at 216px 22px,rgba(255,190,190,.9),transparent);
+  background-size:300px 150px;animation:rb-sx-drift3 45s linear infinite,rb-sx-tw3 3.4s ease-in-out infinite;}
+@keyframes rb-sx-drift1{to{background-position:-380px 0;}}
+@keyframes rb-sx-drift2{to{background-position:-540px 0;}}
+@keyframes rb-sx-drift3{to{background-position:-300px 0;}}
+@keyframes rb-sx-tw1{0%,100%{opacity:.85;}50%{opacity:.45;}}
+@keyframes rb-sx-tw2{0%,100%{opacity:.55;}50%{opacity:.95;}}
+@keyframes rb-sx-tw3{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+/* ── estrellas fugaces ── */
+.rb-spacetrans__shoot{position:absolute;top:22%;left:-18%;width:170px;height:2px;border-radius:2px;opacity:0;
+  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.18) 30%,rgba(255,255,255,.9));
+  animation:rb-sx-shoot 7s cubic-bezier(.25,0,.15,1) infinite;}
+.rb-spacetrans__shoot::after{content:'';position:absolute;right:-3px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;
+  background:#fff;box-shadow:0 0 10px 2px rgba(255,255,255,.9),0 0 22px 7px rgba(43,127,255,.45);}
+.rb-spacetrans__shoot--b{top:64%;left:-24%;width:140px;animation-name:rb-sx-shoot-b;animation-duration:8.5s;animation-delay:3.4s;}
+.rb-spacetrans__shoot--b::after{box-shadow:0 0 10px 2px rgba(255,255,255,.9),0 0 22px 7px rgba(188,0,23,.5);}
+.rb-spacetrans__shoot--c{top:42%;left:-30%;width:200px;animation-duration:9.5s;animation-delay:6s;}
+@keyframes rb-sx-shoot{0%{transform:translate3d(0,0,0) rotate(12deg);opacity:0;}5%{opacity:1;}45%{opacity:1;}
+  60%,100%{transform:translate3d(135vw,72px,0) rotate(12deg);opacity:0;}}
+@keyframes rb-sx-shoot-b{0%{transform:translate3d(0,0,0) rotate(-9deg);opacity:0;}5%{opacity:1;}45%{opacity:1;}
+  60%,100%{transform:translate3d(140vw,-54px,0) rotate(-9deg);opacity:0;}}
+
+/* ── cohete ── */
+.rb-spacetrans__rocket{position:absolute;left:-10%;top:64%;width:46px;height:46px;margin-top:-23px;
+  animation:rb-sx-fly 9s cubic-bezier(.42,0,.58,1) infinite;}
+@keyframes rb-sx-fly{0%{transform:translate3d(0,0,0);opacity:0;}6%{opacity:1;}88%{opacity:1;}
+  100%{transform:translate3d(125vw,-96px,0);opacity:0;}}
+.rb-spacetrans__bob{position:absolute;inset:0;animation:rb-sx-bob 2.1s ease-in-out infinite alternate;}
+@keyframes rb-sx-bob{from{transform:translateY(-4px) rotate(-2deg);}to{transform:translateY(4px) rotate(2deg);}}
+.rb-spacetrans__ship{position:absolute;inset:0;width:100%;height:100%;transform:rotate(42deg);
+  filter:drop-shadow(0 0 9px rgba(188,0,23,.55));}
+.rb-spacetrans__flame{position:absolute;left:50%;top:50%;width:13px;height:44px;
+  transform:translate(-50%,-50%) rotate(42deg) translateY(28px);}
+.rb-spacetrans__flame::before{content:'';position:absolute;inset:0;transform-origin:50% 0;
+  background:linear-gradient(180deg,rgba(255,236,170,.95),rgba(255,150,40,.8) 28%,rgba(188,0,23,.6) 58%,rgba(188,0,23,0) 100%);
+  border-radius:50% 50% 46% 46%/22% 22% 78% 78%;filter:blur(2.4px);
+  animation:rb-sx-flame .16s ease-in-out infinite alternate;}
+@keyframes rb-sx-flame{from{transform:scale(1,1);opacity:.95;}to{transform:scale(.82,.72);opacity:.6;}}
+/* cohete en sentido inverso */
+.rb-spacetrans__rocket--rtl{left:auto;right:-10%;top:36%;animation-name:rb-sx-fly-rtl;animation-duration:11s;}
+.rb-spacetrans__rocket--rtl .rb-spacetrans__ship{transform:rotate(-42deg);}
+.rb-spacetrans__rocket--rtl .rb-spacetrans__flame{transform:translate(-50%,-50%) rotate(-42deg) translateY(28px);}
+@keyframes rb-sx-fly-rtl{0%{transform:translate3d(0,0,0);opacity:0;}6%{opacity:1;}88%{opacity:1;}
+  100%{transform:translate3d(-125vw,-80px,0);opacity:0;}}
+
+/* ── planeta con satélite en órbita ── */
+.rb-spacetrans__orbit{position:absolute;right:11%;top:50%;width:104px;height:104px;margin-top:-52px;}
+.rb-spacetrans__orbit--left{right:auto;left:9%;width:86px;height:86px;margin-top:-43px;}
+.rb-spacetrans__ring{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(255,255,255,.16);
+  animation:rb-sx-orbit 16s linear infinite;}
+.rb-spacetrans__ring i{position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;border-radius:50%;
+  background:var(--rb-red);box-shadow:0 0 10px 2px rgba(188,0,23,.85);}
+@keyframes rb-sx-orbit{to{transform:rotate(360deg);}}
+.rb-spacetrans__planet{position:absolute;left:50%;top:50%;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;
+  background:radial-gradient(circle at 33% 30%,#6b7b8c,#263238 58%,#12161c);
+  box-shadow:inset -6px -4px 12px rgba(0,0,0,.65),0 0 24px rgba(43,127,255,.22);
+  animation:rb-sx-neb 9s ease-in-out infinite;}
+
+@media(max-width:768px){
+  .rb-spacetrans{height:104px;margin:-28px 0;}
+  .rb-spacetrans__rocket{width:34px;height:34px;margin-top:-17px;}
+  .rb-spacetrans__orbit{width:74px;height:74px;margin-top:-37px;right:6%;}
+  .rb-spacetrans__orbit--left{width:64px;height:64px;margin-top:-32px;left:5%;}
+  .rb-spacetrans__planet{width:28px;height:28px;margin:-14px 0 0 -14px;}
+  .rb-spacetrans__shoot{width:120px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .rb-spacetrans{height:70px;margin:-22px 0;}
+  .rb-spacetrans *,.rb-spacetrans *::before,.rb-spacetrans *::after{animation:none !important;}
+  .rb-spacetrans__rocket,.rb-spacetrans__shoot{display:none;}
+}
+
+/* ── Selector de idioma con banderas ── */
+.rb-lang__btn{width:auto;min-width:56px;padding:0 10px;border-radius:19px;gap:6px;}
+.rb-lang__chev{width:11px;height:11px;flex:0 0 auto;opacity:.6;transition:transform .2s;}
+.rb-lang__btn[aria-expanded="true"] .rb-lang__chev{transform:rotate(180deg);}
+.rb-flag{display:block;width:20px;height:14px;border-radius:3px;overflow:hidden;flex:0 0 auto;
+  box-shadow:0 0 0 1px rgba(0,0,0,.14),0 1px 2px rgba(0,0,0,.18);}
+[data-theme="dark"] .rb-flag{box-shadow:0 0 0 1px rgba(255,255,255,.2),0 1px 3px rgba(0,0,0,.5);}
+.rb-flag svg{display:block;width:100%;height:100%;}
+.rb-lang__btn [data-flag]{display:none;}
+.rb-lang__btn[data-active="es"] [data-flag="es"],
+.rb-lang__btn[data-active="en"] [data-flag="en"],
+.rb-lang__btn[data-active="pt"] [data-flag="pt"]{display:block;}
+.rb-lang__opt .rb-flag{width:22px;height:15px;}
+
+/* ── Google Translate recorta los espacios pegados a un translate="no";
+      los reponemos desde CSS para que no se junten las palabras ── */
+[data-rb-padl]::before{content:"\00a0";}
+[data-rb-padr]::after{content:"\00a0";}
+#heroRot::before{content:"\00a0";}
+#heroRot::after{content:"\00a0";}
 </style>
 </head>
 <body>
@@ -763,13 +906,11 @@ body{top:0 !important;}
     <div class="rb-nav__actions">
       <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
       <div class="rb-lang" id="rb-lang">
-        <button class="rb-iconbtn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false">
-          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-        </button>
+        <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
-          <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button">🇪🇸 Español</button>
-          <button class="rb-lang__opt" data-lang="en" type="button">🇺🇸 English</button>
-          <button class="rb-lang__opt" data-lang="pt" type="button">🇧🇷 Português</button>
+          <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span>Español</button>
+          <button class="rb-lang__opt" data-lang="en" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span>English</button>
+          <button class="rb-lang__opt" data-lang="pt" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span>Português</button>
         </div>
       </div>
       <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
@@ -944,7 +1085,7 @@ body{top:0 !important;}
   <div class="rb-hero__particles"></div>
   <div class="container rb-hero__grid">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title">Convierte los datos de tus bots en <span class="rb-hero__rot" id="heroRot">aplicaciones</span> que tu equipo usa</h1>
+      <h1 class="rb-hero__title">Convierte los datos de tus bots en<span class="rb-hero__rot" id="heroRot">aplicaciones</span>que tu equipo usa</h1>
       <p class="rb-hero__sub">Crea aplicaciones, dashboards, portales, reportes y herramientas internas conectadas a los datos de tu operación, de forma visual y sin programar.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="http://rocketview.myrb.io/">Pruébalo ahora</a>
@@ -982,6 +1123,14 @@ body{top:0 !important;}
 </section>
 
 <!-- CLIENTS -->
+<!-- transición espacial -->
+<div class="rb-spacetrans" aria-hidden="true">
+  <div class="rb-spacetrans__neb"></div>
+  <div class="rb-spacetrans__stars"></div>
+  <span class="rb-spacetrans__shoot"></span>
+  <span class="rb-spacetrans__shoot rb-spacetrans__shoot--b"></span>
+  <div class="rb-spacetrans__rocket"><div class="rb-spacetrans__bob"><span class="rb-spacetrans__flame"></span><svg class="rb-spacetrans__ship" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 21.5 2 30.2V37l6.5-4.6Z" fill="#8E0011"/><path d="M23.5 21.5 30 30.2V37l-6.5-4.6Z" fill="#8E0011"/><path d="M16 1.4c4.9 5 7.6 12 7.6 19.6v9.4l-2.4 2.8h-10.4L8.4 30.4V21C8.4 13.4 11.1 6.4 16 1.4Z" fill="#EDF1F6"/><path d="M16 1.4c2.9 3 5 6.9 6.2 11.2H9.8C11 8.3 13.1 4.4 16 1.4Z" fill="#BC0017"/><circle cx="16" cy="19.4" r="4.4" fill="#0A0A0F"/><circle cx="16" cy="19.4" r="3.1" fill="#2B7FFF"/><path d="M13.6 17.6a3.4 3.4 0 0 1 2.2-1.4" stroke="rgba(255,255,255,.75)" stroke-width="1.1" stroke-linecap="round"/><path d="M11.2 33.2h9.6l-1.5 3.4h-6.6Z" fill="#263238"/></svg></div></div>
+</div>
 <section class="rb-clients">
   <div class="container">
     <p class="rb-clients__label">Empresas que confían en Rocketbot</p>
@@ -1075,6 +1224,14 @@ body{top:0 !important;}
 </section>
 
 <!-- PROBLEMA -->
+<!-- transición espacial -->
+<div class="rb-spacetrans" aria-hidden="true">
+  <div class="rb-spacetrans__neb"></div>
+  <div class="rb-spacetrans__stars"></div>
+  <span class="rb-spacetrans__shoot"></span>
+  <span class="rb-spacetrans__shoot rb-spacetrans__shoot--b"></span>
+  <div class="rb-spacetrans__orbit"><span class="rb-spacetrans__ring"><i></i></span><span class="rb-spacetrans__planet"></span></div>
+</div>
 <section class="rb-section rb-section--alt">
   <div class="container">
     <div class="rb-section__head">
@@ -1127,6 +1284,15 @@ body{top:0 !important;}
 </section>
 
 <!-- MCP / CLAUDE -->
+<!-- transición espacial -->
+<div class="rb-spacetrans" aria-hidden="true">
+  <div class="rb-spacetrans__neb"></div>
+  <div class="rb-spacetrans__stars"></div>
+  <span class="rb-spacetrans__shoot"></span>
+  <span class="rb-spacetrans__shoot rb-spacetrans__shoot--b"></span>
+  <div class="rb-spacetrans__rocket rb-spacetrans__rocket--rtl"><div class="rb-spacetrans__bob"><span class="rb-spacetrans__flame"></span><svg class="rb-spacetrans__ship" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 21.5 2 30.2V37l6.5-4.6Z" fill="#8E0011"/><path d="M23.5 21.5 30 30.2V37l-6.5-4.6Z" fill="#8E0011"/><path d="M16 1.4c4.9 5 7.6 12 7.6 19.6v9.4l-2.4 2.8h-10.4L8.4 30.4V21C8.4 13.4 11.1 6.4 16 1.4Z" fill="#EDF1F6"/><path d="M16 1.4c2.9 3 5 6.9 6.2 11.2H9.8C11 8.3 13.1 4.4 16 1.4Z" fill="#BC0017"/><circle cx="16" cy="19.4" r="4.4" fill="#0A0A0F"/><circle cx="16" cy="19.4" r="3.1" fill="#2B7FFF"/><path d="M13.6 17.6a3.4 3.4 0 0 1 2.2-1.4" stroke="rgba(255,255,255,.75)" stroke-width="1.1" stroke-linecap="round"/><path d="M11.2 33.2h9.6l-1.5 3.4h-6.6Z" fill="#263238"/></svg></div></div>
+  <div class="rb-spacetrans__orbit rb-spacetrans__orbit--left"><span class="rb-spacetrans__ring"><i></i></span><span class="rb-spacetrans__planet"></span></div>
+</div>
 <section class="rb-section rb-section--space" id="ia">
   <div class="container">
     <div class="rb-section__head">
@@ -1228,6 +1394,15 @@ body{top:0 !important;}
 </section>
 
 <!-- VERTICALES -->
+<!-- transición espacial -->
+<div class="rb-spacetrans" aria-hidden="true">
+  <div class="rb-spacetrans__neb"></div>
+  <div class="rb-spacetrans__stars"></div>
+  <span class="rb-spacetrans__shoot"></span>
+  <span class="rb-spacetrans__shoot rb-spacetrans__shoot--b"></span>
+  <span class="rb-spacetrans__shoot rb-spacetrans__shoot--c"></span>
+  <div class="rb-spacetrans__orbit"><span class="rb-spacetrans__ring"><i></i></span><span class="rb-spacetrans__planet"></span></div>
+</div>
 <section class="rb-section rb-section--alt" id="casos">
   <div class="container">
     <div class="rb-section__head">
@@ -1296,6 +1471,14 @@ body{top:0 !important;}
 </section>
 
 <!-- FINAL -->
+<!-- transición espacial -->
+<div class="rb-spacetrans" aria-hidden="true">
+  <div class="rb-spacetrans__neb"></div>
+  <div class="rb-spacetrans__stars"></div>
+  <span class="rb-spacetrans__shoot"></span>
+  <span class="rb-spacetrans__shoot rb-spacetrans__shoot--b"></span>
+  <div class="rb-spacetrans__rocket"><div class="rb-spacetrans__bob"><span class="rb-spacetrans__flame"></span><svg class="rb-spacetrans__ship" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 21.5 2 30.2V37l6.5-4.6Z" fill="#8E0011"/><path d="M23.5 21.5 30 30.2V37l-6.5-4.6Z" fill="#8E0011"/><path d="M16 1.4c4.9 5 7.6 12 7.6 19.6v9.4l-2.4 2.8h-10.4L8.4 30.4V21C8.4 13.4 11.1 6.4 16 1.4Z" fill="#EDF1F6"/><path d="M16 1.4c2.9 3 5 6.9 6.2 11.2H9.8C11 8.3 13.1 4.4 16 1.4Z" fill="#BC0017"/><circle cx="16" cy="19.4" r="4.4" fill="#0A0A0F"/><circle cx="16" cy="19.4" r="3.1" fill="#2B7FFF"/><path d="M13.6 17.6a3.4 3.4 0 0 1 2.2-1.4" stroke="rgba(255,255,255,.75)" stroke-width="1.1" stroke-linecap="round"/><path d="M11.2 33.2h9.6l-1.5 3.4h-6.6Z" fill="#263238"/></svg></div></div>
+</div>
 <section class="rb-cta-band">
   <div class="container">
     <div class="rb-cta-band__inner">
@@ -1461,6 +1644,7 @@ function googleTranslateElementInit(){
   });
   function setLang(lang){
     try{ if(window.RB_I18N) RB_I18N.setLang(lang); }catch(e){}
+    if(btn) btn.setAttribute('data-active', lang);
     try{ localStorage.setItem('rb-lang', lang); }catch(e){}
     menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
       o.classList.toggle('rb-lang--active', o.dataset.lang === lang);
@@ -1489,6 +1673,7 @@ function googleTranslateElementInit(){
   });
   var saved = 'es';
   try{ saved = localStorage.getItem('rb-lang') || 'es'; }catch(e){}
+  btn.setAttribute('data-active', (window.RB_I18N && RB_I18N.lang) || saved);
   menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
     o.classList.toggle('rb-lang--active', o.dataset.lang === saved);
   });
@@ -1796,6 +1981,21 @@ FAQS.forEach(function(pair){
     var href = a.getAttribute('href').split('/').pop();
     if (href === here) a.classList.add('is-current');
   });
+})();
+</script>
+<script>
+// ─── Transiciones espaciales: animar sólo lo que está en pantalla ───
+(function(){
+  var bands=document.querySelectorAll('.rb-spacetrans');
+  if(!bands.length) return;
+  if(!('IntersectionObserver' in window)){
+    Array.prototype.forEach.call(bands,function(b){ b.classList.add('is-live'); });
+    return;
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ e.target.classList.toggle('is-live', e.isIntersecting); });
+  },{rootMargin:'140px 0px'});
+  Array.prototype.forEach.call(bands,function(b){ io.observe(b); });
 })();
 </script>
 </body>

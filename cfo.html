@@ -72,12 +72,28 @@ window.RB_I18N=(function(){
       for(i=0;i<hits.length;i++){
         var node=hits[i],parts=node.nodeValue.split(split);
         if(parts.length<2||!node.parentNode) continue;
+        /* El traductor recorta los espacios pegados a un translate="no", así que
+           se los pasamos al span (los repone CSS con data-rb-padl/padr). */
+        var pad=[];
+        for(j=1;j<parts.length;j+=2){
+          var l=/\s$/.test(parts[j-1]||''), r=/^\s/.test(parts[j+1]||'');
+          if(l) parts[j-1]=parts[j-1].replace(/\s+$/,'');
+          if(r) parts[j+1]=parts[j+1].replace(/^\s+/,'');
+          pad[j]=(l?'l':'')+(r?'r':'');
+        }
         /* Un solo <span> sustituye al nodo de texto para no alterar el número
            de hijos del contenedor (importa en flex/grid con gap). */
         var box=document.createElement('span');
         for(j=0;j<parts.length;j++){
           if(!parts[j]) continue;
-          box.appendChild(j%2 ? shielded(parts[j]) : document.createTextNode(parts[j]));
+          if(j%2){
+            var sp=shielded(parts[j]);
+            if(pad[j].indexOf('l')>=0) sp.setAttribute('data-rb-padl','');
+            if(pad[j].indexOf('r')>=0) sp.setAttribute('data-rb-padr','');
+            box.appendChild(sp);
+          } else {
+            box.appendChild(document.createTextNode(parts[j]));
+          }
         }
         node.parentNode.replaceChild(box,node);
       }
@@ -440,6 +456,26 @@ ul{margin:0;padding:0;list-style:none;}
 .goog-te-banner-frame,.goog-te-gadget,.goog-te-gadget-icon,#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,.goog-tooltip:hover,body > .skiptranslate{display:none !important;height:0 !important;}
 body{top:0 !important;}
 .goog-text-highlight{background:none !important;box-shadow:none !important;}
+
+/* ── Selector de idioma con banderas ── */
+.rb-lang__btn{width:auto;min-width:56px;padding:0 10px;border-radius:19px;gap:6px;}
+.rb-lang__chev{width:11px;height:11px;flex:0 0 auto;opacity:.6;transition:transform .2s;}
+.rb-lang__btn[aria-expanded="true"] .rb-lang__chev{transform:rotate(180deg);}
+.rb-flag{display:block;width:20px;height:14px;border-radius:3px;overflow:hidden;flex:0 0 auto;
+  box-shadow:0 0 0 1px rgba(0,0,0,.14),0 1px 2px rgba(0,0,0,.18);}
+[data-theme="dark"] .rb-flag{box-shadow:0 0 0 1px rgba(255,255,255,.2),0 1px 3px rgba(0,0,0,.5);}
+.rb-flag svg{display:block;width:100%;height:100%;}
+.rb-lang__btn [data-flag]{display:none;}
+.rb-lang__btn[data-active="es"] [data-flag="es"],
+.rb-lang__btn[data-active="en"] [data-flag="en"],
+.rb-lang__btn[data-active="pt"] [data-flag="pt"]{display:block;}
+.rb-lang__opt .rb-flag{width:22px;height:15px;}
+
+/* ── Google Translate recorta los espacios pegados a un translate="no";
+      los reponemos desde CSS para que no se junten las palabras ── */
+[data-rb-padl]::before{content:"\00a0";}
+[data-rb-padr]::after{content:"\00a0";}
+#heroRot::before{content:"\00a0";}
 </style>
 </head>
 <body>
@@ -470,13 +506,11 @@ body{top:0 !important;}
     <div class="rb-nav__actions">
       <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
       <div class="rb-lang" id="rb-lang">
-        <button class="rb-iconbtn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false">
-          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-        </button>
+        <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
-          <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button">🇪🇸 Español</button>
-          <button class="rb-lang__opt" data-lang="en" type="button">🇺🇸 English</button>
-          <button class="rb-lang__opt" data-lang="pt" type="button">🇧🇷 Português</button>
+          <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span>Español</button>
+          <button class="rb-lang__opt" data-lang="en" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span>English</button>
+          <button class="rb-lang__opt" data-lang="pt" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span>Português</button>
         </div>
       </div>
       <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
@@ -650,7 +684,7 @@ body{top:0 !important;}
   <div class="rb-hero__particles"></div>
   <div class="container">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title">Automatizar dejó de ser un tema de TI. Es una decisión <span class="rb-hero__rot" id="heroRot">financiera</span></h1>
+      <h1 class="rb-hero__title">Automatizar dejó de ser un tema de TI. Es una decisión<span class="rb-hero__rot" id="heroRot">financiera</span></h1>
       <p class="rb-hero__sub">Cada proceso manual consume margen, tiempo y capacidad operativa. La automatización reduce costos, acelera la ejecución y libera recursos para que Finanzas tome mejores decisiones. La pregunta ya no es si automatizar, sino cuánto dinero pierde tu empresa por no hacerlo.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="#calculadora">Calcula el impacto financiero</a>
@@ -968,6 +1002,7 @@ function googleTranslateElementInit(){
   });
   function setLang(lang){
     try{ if(window.RB_I18N) RB_I18N.setLang(lang); }catch(e){}
+    if(btn) btn.setAttribute('data-active', lang);
     try{ localStorage.setItem('rb-lang', lang); }catch(e){}
     menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
       o.classList.toggle('rb-lang--active', o.dataset.lang === lang);
@@ -996,6 +1031,7 @@ function googleTranslateElementInit(){
   });
   var saved = 'es';
   try{ saved = localStorage.getItem('rb-lang') || 'es'; }catch(e){}
+  btn.setAttribute('data-active', (window.RB_I18N && RB_I18N.lang) || saved);
   menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
     o.classList.toggle('rb-lang--active', o.dataset.lang === saved);
   });
