@@ -2,6 +2,92 @@
 <html lang="es" data-theme="light">
 <head>
 <meta charset="utf-8">
+<!-- ── Rocketbot i18n: protege los nombres de producto de Google Translate
+     y sirve los textos dinámicos ya traducidos (es / en / pt) ── -->
+<script>
+window.RB_I18N=(function(){
+  var OK={es:1,en:1,pt:1};
+  var subs=[];
+  /* Los nombres de producto se respetan tal cual en los tres idiomas.
+     El único que se traduce es Orquestador. */
+  var NAMES=['Saturn Studio','RPA Studio','AI Studio','Rocketbot','Orquestador','Xperience','Nexus'];
+  var ORQ={es:'Orquestador',en:'Orchestrator',pt:'Orquestrador'};
+  var SKIP={SCRIPT:1,STYLE:1,NOSCRIPT:1,TEXTAREA:1,OPTION:1,CODE:1,PRE:1};
+  function detect(){
+    var raw=(document.cookie.match(/(?:^|;\s*)googtrans=([^;]*)/)||[])[1]||'';
+    try{ raw=decodeURIComponent(raw); }catch(e){}
+    var m=raw.match(/^\/[^\/]*\/([a-z]{2})/);
+    var l=m?m[1]:'';
+    if(!l){ try{ l=localStorage.getItem('rb-lang')||''; }catch(e){} }
+    return OK[l]?l:'es';
+  }
+  function shielded(txt){
+    var s=document.createElement('span');
+    s.className='notranslate';
+    s.setAttribute('translate','no');
+    s.textContent=txt;
+    if(txt==='Orquestador'){ s.setAttribute('data-rb-prod','orquestador'); }
+    return s;
+  }
+  var API={
+    lang:detect(),
+    pick:function(map){ return map[API.lang]||map.es; },
+    onLang:function(fn){ subs.push(fn); },
+    setLang:function(l){
+      API.lang=OK[l]?l:'es';
+      API.localize();
+      for(var i=0;i<subs.length;i++){ try{ subs[i](API.lang); }catch(e){} }
+    },
+    localize:function(){
+      var t=ORQ[API.lang]||ORQ.es,i;
+      var n=document.querySelectorAll('[data-rb-prod="orquestador"]');
+      for(i=0;i<n.length;i++){ if(n[i].textContent!==t) n[i].textContent=t; }
+      var g=document.querySelectorAll('img[data-rb-alt="orquestador"]');
+      for(i=0;i<g.length;i++){ g[i].alt=t; }
+    },
+    /* Envuelve cada nombre de producto en <span translate="no"> antes de que
+       cargue el widget de Google Translate. Idempotente. */
+    shield:function(root){
+      root=root||document.body;
+      if(!root||!document.createTreeWalker) return;
+      var i,j,alt=new RegExp('^(?:'+NAMES.join('|')+')$');
+      var imgs=root.querySelectorAll('img[alt]');
+      for(i=0;i<imgs.length;i++){
+        if(!alt.test(imgs[i].alt)) continue;
+        imgs[i].setAttribute('translate','no');
+        if(imgs[i].alt==='Orquestador'){ imgs[i].setAttribute('data-rb-alt','orquestador'); }
+      }
+      var find=new RegExp('\\b(?:'+NAMES.join('|')+')\\b');
+      var split=new RegExp('(\\b(?:'+NAMES.join('|')+')\\b)','g');
+      var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null,false),n,hits=[];
+      while((n=w.nextNode())){
+        if(!n.nodeValue||!find.test(n.nodeValue)) continue;
+        var p=n.parentNode,skip=false;
+        while(p&&p.nodeType===1){
+          if(SKIP[p.tagName]||p.getAttribute('translate')==='no'){ skip=true; break; }
+          p=p.parentNode;
+        }
+        if(!skip) hits.push(n);
+      }
+      for(i=0;i<hits.length;i++){
+        var node=hits[i],parts=node.nodeValue.split(split);
+        if(parts.length<2||!node.parentNode) continue;
+        /* Un solo <span> sustituye al nodo de texto para no alterar el número
+           de hijos del contenedor (importa en flex/grid con gap). */
+        var box=document.createElement('span');
+        for(j=0;j<parts.length;j++){
+          if(!parts[j]) continue;
+          box.appendChild(j%2 ? shielded(parts[j]) : document.createTextNode(parts[j]));
+        }
+        node.parentNode.replaceChild(box,node);
+      }
+      API.localize();
+    }
+  };
+  return API;
+})();
+document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); }catch(e){} });
+</script>
 <!-- Google tag (gtag.js) – GA4 | reemplaza G-2EHJ8S289M con tu Measurement ID -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EHJ8S289M"></script>
 <script>
@@ -206,7 +292,15 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
 .rb-dlmodal__vdl:hover{opacity:.85;}
 .rb-dlmodal__vdl svg{width:14px;height:14px;flex:0 0 auto;}
 @media(max-width:520px){.rb-dlmodal__vrow{flex-direction:column;align-items:stretch;}.rb-dlmodal__vdl{justify-content:center;}}
-@media(max-width:640px){.rb-dlmodal__body{grid-template-columns:1fr;}.rb-dlmodal__side{flex-direction:row;flex-wrap:wrap;}}
+.rb-dlmodal__req{margin-top:20px;display:flex;flex-direction:column;gap:12px;}
+.rb-dlmodal__reqgrp{border:1px solid var(--border);border-radius:12px;background:var(--card);padding:12px 14px;}
+.rb-dlmodal__reqgrp--rec .rb-dlmodal__reqttl{color:var(--rb-green,#1D9E75);}
+.rb-dlmodal__reqttl{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--rb-red);margin-bottom:8px;}
+.rb-dlmodal__reqrow{display:flex;flex-direction:column;gap:1px;padding:7px 0;border-top:1px solid var(--border);}
+.rb-dlmodal__reqrow:first-of-type{border-top:0;padding-top:0;}
+.rb-dlmodal__reqrow span{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);}
+.rb-dlmodal__reqrow strong{font-size:12.5px;font-weight:600;color:var(--foreground);line-height:1.4;}
+@media(max-width:640px){.rb-dlmodal__body{grid-template-columns:1fr;}.rb-dlmodal__side{flex-direction:row;flex-wrap:wrap;}.rb-dlmodal__req{flex:1 1 100%;flex-direction:row;flex-wrap:wrap;margin-top:8px;}.rb-dlmodal__reqgrp{flex:1 1 210px;}}
 
 /* LANGUAGE SWITCHER */
 .rb-lang{position:relative;}
@@ -218,7 +312,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;letter-spacing:-0
 .rb-lang__opt:hover{background:rgba(188,0,23,.07);color:var(--rb-red);}
 .rb-lang__opt.rb-lang--active{color:var(--rb-red);background:rgba(188,0,23,.05);}
 /* Hide Google Translate toolbar */
-.goog-te-banner-frame,.goog-te-gadget,.goog-te-gadget-icon,#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,.goog-tooltip:hover,.skiptranslate{display:none !important;height:0 !important;}
+.goog-te-banner-frame,.goog-te-gadget,.goog-te-gadget-icon,#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,.goog-tooltip:hover,body > .skiptranslate{display:none !important;height:0 !important;}
 body{top:0 !important;}
 .goog-text-highlight{background:none !important;box-shadow:none !important;}
 
@@ -319,6 +413,21 @@ body{top:0 !important;}
         <button type="button" class="rb-dlmodal__pill is-active" data-dl-pill="rpa">
           <img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
         </button>
+
+        <div class="rb-dlmodal__req">
+          <div class="rb-dlmodal__reqgrp">
+            <div class="rb-dlmodal__reqttl">Requisitos mínimos</div>
+            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i3-4340 o AMD FX-6300</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>10 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>4 GB RAM</strong></div>
+          </div>
+          <div class="rb-dlmodal__reqgrp rb-dlmodal__reqgrp--rec">
+            <div class="rb-dlmodal__reqttl">Configuración recomendada</div>
+            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i5</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>175 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>8 GB RAM</strong></div>
+          </div>
+        </div>
       </div>
       <div class="rb-dlmodal__main">
         <div class="rb-dlmodal__program is-active" data-dl-panel="rpa">
@@ -600,6 +709,9 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
   });
 })();</script>
 
+<!-- Nombres de producto protegidos antes de cargar el traductor -->
+<script>try{ RB_I18N.shield(); }catch(e){}</script>
+
 <!-- Google Translate -->
 <div id="google_translate_element" style="display:none;visibility:hidden;position:absolute;"></div>
 <script>
@@ -631,6 +743,7 @@ function googleTranslateElementInit(){
   });
 
   function setLang(lang){
+    try{ if(window.RB_I18N) RB_I18N.setLang(lang); }catch(e){}
     try{ localStorage.setItem('rb-lang', lang); }catch(e){}
     menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
       o.classList.toggle('rb-lang--active', o.dataset.lang === lang);
