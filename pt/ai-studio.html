@@ -161,7 +161,7 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-nav__inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;}
 .rb-nav__logo-wrap{display:flex;align-items:center;flex-shrink:0;}
 .rb-nav__logo{height:32px;width:auto;display:block;}
-.rb-nav__links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;}
+.rb-nav__links{display:flex;align-items:center;gap:22px;list-style:none;margin:0;padding:0;}
 .rb-nav__links a,.rb-nav__links button{background:none;border:none;padding:0;font-size:14px;font-weight:500;color:#555;display:inline-flex;align-items:center;gap:4px;transition:color .2s; white-space:nowrap; flex-shrink:0;}
 [data-theme="dark"] .rb-nav__links a,[data-theme="dark"] .rb-nav__links button{color:rgba(255,255,255,.6);}
 .rb-nav__links a:hover,.rb-nav__links button:hover{color:#000;}
@@ -184,6 +184,12 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-nav__suite-hdr{display:inline-flex !important;align-items:center;gap:6px;padding:9px 18px !important;border-radius:9999px;white-space:nowrap;line-height:1;flex:0 0 auto;background:linear-gradient(110deg,#FF2942,#BC0017) !important;color:#fff !important;font-weight:800 !important;font-size:13px !important;box-shadow:0 6px 18px rgba(188,0,23,.45);transition:transform .2s,box-shadow .2s,filter .2s;}
 .rb-nav__suite-hdr:hover{color:#fff !important;transform:translateY(-1px);box-shadow:0 10px 26px rgba(188,0,23,.6);filter:brightness(1.06);}
 @media(max-width:1260px){.rb-nav__suite-li{display:none !important;}}
+.rb-nav__plans-li{display:flex;align-items:center;flex:0 0 auto;}
+.rb-nav__plans-hdr{display:inline-flex !important;align-items:center;gap:6px;padding:8px 17px !important;border:1.5px solid rgba(188,0,23,.55);border-radius:9999px;white-space:nowrap;line-height:1;flex:0 0 auto;color:var(--rb-red) !important;font-weight:800 !important;font-size:13px !important;transition:background .2s,color .2s,border-color .2s,transform .2s;}
+[data-theme="dark"] .rb-nav__plans-hdr{color:#FF5A6E !important;border-color:rgba(255,90,110,.55);}
+.rb-nav__plans-hdr:hover{background:var(--rb-red);border-color:var(--rb-red);color:#fff !important;transform:translateY(-1px);}
+.rb-nav__plans-hdr[aria-current="page"]{background:var(--rb-red);border-color:var(--rb-red);color:#fff !important;}
+@media(max-width:1260px){.rb-nav__plans-li{display:none !important;}}
 .rb-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:12px 24px;border-radius:var(--r-pill);border:1px solid transparent;transition:transform .2s,box-shadow .25s,background .25s,color .2s; white-space:nowrap;}
 .rb-btn--primary{background:var(--rb-red);color:#fff;box-shadow:0 4px 16px rgba(188,0,23,.25);}
 .rb-btn--primary:hover{background:var(--rb-red-deep);transform:translateY(-1px);box-shadow:0 10px 30px rgba(188,0,23,.45);}
@@ -760,6 +766,7 @@ html{scroll-padding-top:92px;}
     </a>
     <ul class="rb-nav__links">
       <li class="rb-nav__suite-li"><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suíte</a></li>
+      <li class="rb-nav__plans-li"><a href="planes.html" class="rb-nav__plans-hdr">Planos</a></li>
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Produtos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
@@ -790,7 +797,6 @@ html{scroll-padding-top:92px;}
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
         <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
       </button>
-      <a href="cfo.html" class="rb-btn rb-cfo-btn">Para CFOs</a>
       <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Download</button>
     </div>
   </div>
@@ -822,6 +828,7 @@ html{scroll-padding-top:92px;}
     </div>
     <div class="rb-mobile-menu__actions">
       <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suíte Rocketbot</a>
+      <a href="planes.html" class="rb-mobile-menu__btn">Planos e preços</a>
       <a href="contacto.html" class="rb-mobile-menu__btn">Fale conosco</a>
       <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Download</button>
     </div>
@@ -1240,7 +1247,7 @@ html{scroll-padding-top:92px;}
         </div>
       </div>
       <div class="rb-footer__col"><h6>Produtos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestrador</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contato</a></li><li><a href="#">Políticas de privacidade</a></li><li><a href="#">Políticas de segurança</a></li><li><a href="#">Trabalhe conosco</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="planes.html">Planos e preços</a></li><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contato</a></li><li><a href="#">Políticas de privacidade</a></li><li><a href="#">Políticas de segurança</a></li><li><a href="#">Trabalhe conosco</a></li></ul></div>
       <div class="rb-footer__col"><h6>Suporte e serviços</h6><ul><li><a href="#">Certificação</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Fórum</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a></li><li><a href="#">Downloads</a></li><li><a href="#">Perguntas frequentes</a></li><li><a href="#">Media kit</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">

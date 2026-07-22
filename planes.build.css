@@ -1,0 +1,84 @@
+
+/* ═══════════════════ PÁGINA DE PLANES ═══════════════════ */
+/* Banda: la suite completa entra en todos los planes, se dice una sola vez */
+.rb-suiteband{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px 24px;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--card);padding:18px 24px;margin-bottom:26px;}
+.rb-suiteband__lb{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rb-green,#1D9E75);}
+.rb-suiteband__list{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 22px;}
+.rb-suiteband__it{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--foreground);}
+.rb-suiteband__it img{width:20px;height:20px;object-fit:contain;flex-shrink:0;}
+@media(max-width:700px){.rb-suiteband,.rb-suiteband__list{justify-content:flex-start;}}
+
+/* Tarjetas de plan */
+.rb-pcards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch;}
+.rb-pcard{position:relative;display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--card);padding:28px 24px 24px;}
+.rb-pcard--feat{border-color:var(--rb-red);box-shadow:0 18px 50px -22px rgba(188,0,23,.5);}
+.rb-pcard__badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--rb-red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:var(--r-pill);white-space:nowrap;}
+.rb-pcard__num{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rb-red);margin-bottom:6px;}
+.rb-pcard h3{font-size:20px;margin-bottom:4px;color:var(--foreground);}
+.rb-pcard__aud{font-size:13px;color:var(--muted);line-height:1.5;}
+.rb-pcard__price{font-weight:800;font-size:28px;letter-spacing:-.02em;color:var(--foreground);margin:16px 0 0;line-height:1.15;}
+.rb-pcard__price .cur{font-size:15px;font-weight:700;color:var(--muted);margin-right:5px;}
+.rb-pcard__price .per{font-size:14px;font-weight:600;color:var(--muted);}
+.rb-pcard__cap{font-size:12.5px;font-weight:700;color:var(--rb-red);line-height:1.4;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:11px 0;margin:16px 0 18px;}
+.rb-pcard .rb-btn{width:100%;justify-content:center;margin-bottom:20px;}
+.rb-pcard__lb{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.rb-pcard__inc{display:flex;flex-direction:column;gap:7px;margin:0;flex:1 1 auto;}
+.rb-pcard__inc li{position:relative;padding-left:21px;font-size:13px;line-height:1.45;color:var(--foreground);}
+.rb-pcard__inc li::before{content:'✓';position:absolute;left:0;top:0;color:var(--rb-green,#1D9E75);font-weight:800;font-size:12px;}
+.rb-pcard__addons{margin-top:18px;padding-top:16px;border-top:1px dashed var(--border);}
+.rb-pcard__addons ul{display:flex;flex-direction:column;gap:5px;margin:0;}
+.rb-pcard__addons li{font-size:12px;color:var(--muted);line-height:1.45;}
+.rb-pcard__addons li b{color:var(--foreground);font-weight:700;}
+.rb-price-note{text-align:center;font-size:13px;color:var(--muted);margin-top:22px;}
+@media(max-width:1080px){.rb-pcards{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.rb-pcards{grid-template-columns:1fr;}}
+/* Subgrid: alinea fila a fila las tarjetas entre si. Sin esto, un plan cuyo
+   "Ideal para" ocupa 1 linea en vez de 2 corre hacia arriba todo lo que
+   sigue; el largo del texto varia por plan y por idioma. */
+@supports(grid-template-rows:subgrid){
+  @media(min-width:601px){.rb-pcard{display:grid;grid-template-rows:subgrid;grid-row:span 9;row-gap:0;}}
+  @media(min-width:1081px){.rb-pcards{grid-template-rows:repeat(9,auto);}}
+  @media(min-width:601px) and (max-width:1080px){.rb-pcards{grid-template-rows:repeat(18,auto);}}
+}
+
+/* Tabla comparativa */
+.rb-ptbl-wrap{overflow:visible;}
+.rb-ptbl{--ptbl-bg:var(--background);--ptbl-stripe:#F2F3F4;width:100%;border-collapse:separate;border-spacing:0;}
+[data-theme="dark"] .rb-ptbl{--ptbl-stripe:#111116;}
+.rb-ptbl th,.rb-ptbl td{padding:11px 14px;text-align:center;font-size:13.5px;color:var(--foreground);border-bottom:1px solid var(--border);vertical-align:middle;}
+.rb-ptbl thead th{position:sticky;top:64px;z-index:6;background:var(--ptbl-bg);font-size:16px;font-weight:800;padding:16px 14px;border-bottom:2px solid var(--foreground);}
+.rb-ptbl th:first-child,.rb-ptbl td:first-child{text-align:left;}
+.rb-ptbl tbody td:first-child{font-weight:600;font-size:13px;background:var(--ptbl-bg);}
+.rb-ptbl tbody tr:nth-child(even) td{background:var(--ptbl-stripe);}
+.rb-ptbl thead th.is-std{background:rgba(188,0,23,.07);color:var(--rb-red);border:2px solid var(--rb-red);border-radius:12px 12px 0 0;}
+/* el `tr` de mas no sobra: sin el, la fila cebrada (que tambien lleva tres
+   selectores de elemento) le gana a la columna destacada y le come el tinte */
+.rb-ptbl tbody tr td.is-std{background:rgba(188,0,23,.07);border-left:2px solid var(--rb-red);border-right:2px solid var(--rb-red);}
+[data-theme="dark"] .rb-ptbl tbody tr td.is-std{background:rgba(188,0,23,.16);}
+.rb-ptbl tbody tr.is-last td.is-std{border-bottom:2px solid var(--rb-red);}
+.rb-ptbl thead th.is-corp{background:var(--rb-secondary);color:#fff;border-radius:12px 12px 0 0;}
+[data-theme="dark"] .rb-ptbl thead th.is-corp{background:var(--rb-dark-3);}
+.rb-ptbl tr.rb-ptbl__grp td{background:var(--rb-secondary) !important;color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:9px 14px;}
+[data-theme="dark"] .rb-ptbl tr.rb-ptbl__grp td{background:var(--rb-dark-3) !important;}
+.rb-ptbl tr.rb-ptbl__grp td.is-std{border-left:2px solid var(--rb-red);border-right:2px solid var(--rb-red);}
+.rb-ptbl .yes{color:var(--rb-green,#1D9E75);font-weight:800;font-size:15px;}
+.rb-ptbl .no{color:var(--muted);}
+.rb-ptbl .best{color:var(--rb-red);font-weight:800;}
+
+/* Nota "i": arriba en desktop; anclada al pie de la pantalla cuando la tabla
+   scrollea en horizontal, porque dentro del contenedor quedaria recortada. */
+.rb-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;margin-left:6px;border:1.4px solid var(--muted);border-radius:50%;color:var(--muted);font-size:9px;font-style:normal;font-weight:800;line-height:1;cursor:help;vertical-align:middle;flex-shrink:0;transition:color .15s,border-color .15s;}
+.rb-info:hover,.rb-info:focus{border-color:var(--rb-red);color:var(--rb-red);outline:none;}
+.rb-info__pop{position:absolute;left:-4px;bottom:calc(100% + 9px);width:254px;background:var(--rb-secondary);color:#fff;font-size:12.5px;font-weight:400;line-height:1.5;letter-spacing:normal;text-transform:none;text-align:left;padding:11px 13px;border-radius:10px;box-shadow:0 14px 34px rgba(0,0,0,.35);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s;z-index:30;}
+[data-theme="dark"] .rb-info__pop{background:var(--rb-dark-3);border:1px solid rgba(255,255,255,.1);}
+.rb-info:hover .rb-info__pop,.rb-info:focus .rb-info__pop{opacity:1;visibility:visible;}
+@media(max-width:1040px){
+  .rb-ptbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--r-md);}
+  .rb-ptbl{min-width:880px;}
+  .rb-ptbl thead th{position:static;}
+  .rb-ptbl th:first-child,.rb-ptbl td:first-child{position:sticky;left:0;z-index:4;box-shadow:1px 0 0 var(--border);}
+  .rb-ptbl thead th:first-child{z-index:7;}
+  .rb-ptbl tr.rb-ptbl__grp td:first-child{background:var(--rb-secondary) !important;}
+  [data-theme="dark"] .rb-ptbl tr.rb-ptbl__grp td:first-child{background:var(--rb-dark-3) !important;}
+  .rb-info__pop{position:fixed;left:16px;right:16px;bottom:16px;width:auto;}
+}

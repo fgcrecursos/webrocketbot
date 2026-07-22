@@ -43,6 +43,27 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/suite-rocketbot"/>
   </url>
   <url>
+    <loc>https://rocketbot.com/planes</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/planes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/planes"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/planes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/planes"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/en/planes</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/planes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/planes"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/planes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/planes"/>
+  </url>
+  <url>
+    <loc>https://rocketbot.com/pt/planes</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/planes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/planes"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/planes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/planes"/>
+  </url>
+  <url>
     <loc>https://rocketbot.com/rpa-studio</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/rpa-studio"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/rpa-studio"/>

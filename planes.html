@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="es" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <!-- ── Rocketbot i18n: protege los nombres de producto de Google Translate
@@ -30,7 +30,7 @@ window.RB_I18N=(function(){
     return s;
   }
   var API={
-    lang:'pt',
+    lang:'es',
     pick:function(map){ return map[API.lang]||map.es; },
     onLang:function(fn){ subs.push(fn); },
     setLang:function(l){
@@ -102,6 +102,7 @@ window.RB_I18N=(function(){
   };
   return API;
 })();
+document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); }catch(e){} });
 </script>
 <!-- Google tag (gtag.js) – GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EHJ8S289M"></script>
@@ -112,31 +113,31 @@ window.RB_I18N=(function(){
   gtag('config', 'G-2EHJ8S289M');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Construir com o Claude ou comprar a suíte? | Rocketbot</title>
-<meta name="description" content="Os LLMs baratearam escrever código, não automatizar. A diferença está em operar, governar e manter. Não é a suíte contra o Claude: é o Claude cru contra o Claude governado.">
+<title>Planes y precios | Rocketbot</title>
+<meta name="description" content="Todos los planes de la Suite Rocketbot en detalle: capacidad, límites por producto, seguridad y soporte. Compara Entry, Standard, Enterprise y Corporate.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://rocketbot.com/pt/construir-vs-comprar">
-<link rel="alternate" hreflang="es" href="https://rocketbot.com/construir-vs-comprar">
-<link rel="alternate" hreflang="en" href="https://rocketbot.com/en/construir-vs-comprar">
-<link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/construir-vs-comprar">
-<link rel="alternate" hreflang="x-default" href="https://rocketbot.com/construir-vs-comprar">
+<link rel="canonical" href="https://rocketbot.com/planes">
+<link rel="alternate" hreflang="es" href="https://rocketbot.com/planes">
+<link rel="alternate" hreflang="en" href="https://rocketbot.com/en/planes">
+<link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/planes">
+<link rel="alternate" hreflang="x-default" href="https://rocketbot.com/planes">
 <link rel="icon" href="/assets/logos/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/logos/rocketbot-iso.png">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rocketbot">
-<meta property="og:title" content="Construir com o Claude ou comprar a suíte? | Rocketbot">
-<meta property="og:description" content="Não é a suíte contra o Claude: é o Claude cru contra o Claude governado. Descubra o que faz sentido no seu contexto.">
-<meta property="og:url" content="https://rocketbot.com/pt/construir-vs-comprar">
+<meta property="og:title" content="Planes y precios | Rocketbot">
+<meta property="og:description" content="Capacidad, límites producto por producto, seguridad y soporte. Los cuatro planes de la Suite Rocketbot, comparados en detalle.">
+<meta property="og:url" content="https://rocketbot.com/planes">
 <meta property="og:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="pt_BR">
+<meta property="og:locale" content="es_LA">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rocketbot">
-<meta name="twitter:title" content="Construir com o Claude ou comprar a suíte? | Rocketbot">
-<meta name="twitter:description" content="Não é a suíte contra o Claude: é o Claude cru contra o Claude governado.">
+<meta name="twitter:title" content="Planes y precios | Rocketbot">
+<meta name="twitter:description" content="Capacidad, límites producto por producto, seguridad y soporte. Los cuatro planes de la Suite Rocketbot, comparados en detalle.">
 <meta name="twitter:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -575,6 +576,91 @@ html{scroll-padding-top:92px;}
   .rb-btn--lg{padding:14px 20px;font-size:14px;}
   .rb-roi-cta .rb-btn{max-width:100%;white-space:normal;text-align:center;}
 }
+
+/* ═══════════════════ PÁGINA DE PLANES ═══════════════════ */
+/* Banda: la suite completa entra en todos los planes, se dice una sola vez */
+.rb-suiteband{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px 24px;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--card);padding:18px 24px;margin-bottom:26px;}
+.rb-suiteband__lb{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rb-green,#1D9E75);}
+.rb-suiteband__list{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 22px;}
+.rb-suiteband__it{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--foreground);}
+.rb-suiteband__it img{width:20px;height:20px;object-fit:contain;flex-shrink:0;}
+@media(max-width:700px){.rb-suiteband,.rb-suiteband__list{justify-content:flex-start;}}
+
+/* Tarjetas de plan */
+.rb-pcards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch;}
+.rb-pcard{position:relative;display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--card);padding:28px 24px 24px;}
+.rb-pcard--feat{border-color:var(--rb-red);box-shadow:0 18px 50px -22px rgba(188,0,23,.5);}
+.rb-pcard__badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--rb-red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:var(--r-pill);white-space:nowrap;}
+.rb-pcard__num{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rb-red);margin-bottom:6px;}
+.rb-pcard h3{font-size:20px;margin-bottom:4px;color:var(--foreground);}
+.rb-pcard__aud{font-size:13px;color:var(--muted);line-height:1.5;}
+.rb-pcard__price{font-weight:800;font-size:28px;letter-spacing:-.02em;color:var(--foreground);margin:16px 0 0;line-height:1.15;}
+.rb-pcard__price .cur{font-size:15px;font-weight:700;color:var(--muted);margin-right:5px;}
+.rb-pcard__price .per{font-size:14px;font-weight:600;color:var(--muted);}
+.rb-pcard__cap{font-size:12.5px;font-weight:700;color:var(--rb-red);line-height:1.4;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:11px 0;margin:16px 0 18px;}
+.rb-pcard .rb-btn{width:100%;justify-content:center;margin-bottom:20px;}
+.rb-pcard__lb{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.rb-pcard__inc{display:flex;flex-direction:column;gap:7px;margin:0;flex:1 1 auto;}
+.rb-pcard__inc li{position:relative;padding-left:21px;font-size:13px;line-height:1.45;color:var(--foreground);}
+.rb-pcard__inc li::before{content:'✓';position:absolute;left:0;top:0;color:var(--rb-green,#1D9E75);font-weight:800;font-size:12px;}
+.rb-pcard__addons{margin-top:18px;padding-top:16px;border-top:1px dashed var(--border);}
+.rb-pcard__addons ul{display:flex;flex-direction:column;gap:5px;margin:0;}
+.rb-pcard__addons li{font-size:12px;color:var(--muted);line-height:1.45;}
+.rb-pcard__addons li b{color:var(--foreground);font-weight:700;}
+.rb-price-note{text-align:center;font-size:13px;color:var(--muted);margin-top:22px;}
+@media(max-width:1080px){.rb-pcards{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.rb-pcards{grid-template-columns:1fr;}}
+/* Subgrid: alinea fila a fila las tarjetas entre si. Sin esto, un plan cuyo
+   "Ideal para" ocupa 1 linea en vez de 2 corre hacia arriba todo lo que
+   sigue; el largo del texto varia por plan y por idioma. */
+@supports(grid-template-rows:subgrid){
+  @media(min-width:601px){.rb-pcard{display:grid;grid-template-rows:subgrid;grid-row:span 9;row-gap:0;}}
+  @media(min-width:1081px){.rb-pcards{grid-template-rows:repeat(9,auto);}}
+  @media(min-width:601px) and (max-width:1080px){.rb-pcards{grid-template-rows:repeat(18,auto);}}
+}
+
+/* Tabla comparativa */
+.rb-ptbl-wrap{overflow:visible;}
+.rb-ptbl{--ptbl-bg:var(--background);--ptbl-stripe:#F2F3F4;width:100%;border-collapse:separate;border-spacing:0;}
+[data-theme="dark"] .rb-ptbl{--ptbl-stripe:#111116;}
+.rb-ptbl th,.rb-ptbl td{padding:11px 14px;text-align:center;font-size:13.5px;color:var(--foreground);border-bottom:1px solid var(--border);vertical-align:middle;}
+.rb-ptbl thead th{position:sticky;top:64px;z-index:6;background:var(--ptbl-bg);font-size:16px;font-weight:800;padding:16px 14px;border-bottom:2px solid var(--foreground);}
+.rb-ptbl th:first-child,.rb-ptbl td:first-child{text-align:left;}
+.rb-ptbl tbody td:first-child{font-weight:600;font-size:13px;background:var(--ptbl-bg);}
+.rb-ptbl tbody tr:nth-child(even) td{background:var(--ptbl-stripe);}
+.rb-ptbl thead th.is-std{background:rgba(188,0,23,.07);color:var(--rb-red);border:2px solid var(--rb-red);border-radius:12px 12px 0 0;}
+/* el `tr` de mas no sobra: sin el, la fila cebrada (que tambien lleva tres
+   selectores de elemento) le gana a la columna destacada y le come el tinte */
+.rb-ptbl tbody tr td.is-std{background:rgba(188,0,23,.07);border-left:2px solid var(--rb-red);border-right:2px solid var(--rb-red);}
+[data-theme="dark"] .rb-ptbl tbody tr td.is-std{background:rgba(188,0,23,.16);}
+.rb-ptbl tbody tr.is-last td.is-std{border-bottom:2px solid var(--rb-red);}
+.rb-ptbl thead th.is-corp{background:var(--rb-secondary);color:#fff;border-radius:12px 12px 0 0;}
+[data-theme="dark"] .rb-ptbl thead th.is-corp{background:var(--rb-dark-3);}
+.rb-ptbl tr.rb-ptbl__grp td{background:var(--rb-secondary) !important;color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:9px 14px;}
+[data-theme="dark"] .rb-ptbl tr.rb-ptbl__grp td{background:var(--rb-dark-3) !important;}
+.rb-ptbl tr.rb-ptbl__grp td.is-std{border-left:2px solid var(--rb-red);border-right:2px solid var(--rb-red);}
+.rb-ptbl .yes{color:var(--rb-green,#1D9E75);font-weight:800;font-size:15px;}
+.rb-ptbl .no{color:var(--muted);}
+.rb-ptbl .best{color:var(--rb-red);font-weight:800;}
+
+/* Nota "i": arriba en desktop; anclada al pie de la pantalla cuando la tabla
+   scrollea en horizontal, porque dentro del contenedor quedaria recortada. */
+.rb-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;margin-left:6px;border:1.4px solid var(--muted);border-radius:50%;color:var(--muted);font-size:9px;font-style:normal;font-weight:800;line-height:1;cursor:help;vertical-align:middle;flex-shrink:0;transition:color .15s,border-color .15s;}
+.rb-info:hover,.rb-info:focus{border-color:var(--rb-red);color:var(--rb-red);outline:none;}
+.rb-info__pop{position:absolute;left:-4px;bottom:calc(100% + 9px);width:254px;background:var(--rb-secondary);color:#fff;font-size:12.5px;font-weight:400;line-height:1.5;letter-spacing:normal;text-transform:none;text-align:left;padding:11px 13px;border-radius:10px;box-shadow:0 14px 34px rgba(0,0,0,.35);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s;z-index:30;}
+[data-theme="dark"] .rb-info__pop{background:var(--rb-dark-3);border:1px solid rgba(255,255,255,.1);}
+.rb-info:hover .rb-info__pop,.rb-info:focus .rb-info__pop{opacity:1;visibility:visible;}
+@media(max-width:1040px){
+  .rb-ptbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--r-md);}
+  .rb-ptbl{min-width:880px;}
+  .rb-ptbl thead th{position:static;}
+  .rb-ptbl th:first-child,.rb-ptbl td:first-child{position:sticky;left:0;z-index:4;box-shadow:1px 0 0 var(--border);}
+  .rb-ptbl thead th:first-child{z-index:7;}
+  .rb-ptbl tr.rb-ptbl__grp td:first-child{background:var(--rb-secondary) !important;}
+  [data-theme="dark"] .rb-ptbl tr.rb-ptbl__grp td:first-child{background:var(--rb-dark-3) !important;}
+  .rb-info__pop{position:fixed;left:16px;right:16px;bottom:16px;width:auto;}
+}
+
 </style>
 </head>
 <body>
@@ -582,29 +668,29 @@ html{scroll-padding-top:92px;}
 <nav class="rb-nav" id="rb-nav">
   <div class="rb-nav__inner">
     <a href="index.html" class="rb-nav__logo-wrap">
-      <img id="nav-logo" src="/assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
+      <img id="nav-logo" src="assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
     </a>
     <ul class="rb-nav__links">
-      <li class="rb-nav__suite-li"><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suíte</a></li>
-      <li class="rb-nav__plans-li"><a href="planes.html" class="rb-nav__plans-hdr">Planos</a></li>
+      <li class="rb-nav__suite-li"><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
+      <li class="rb-nav__plans-li"><a href="planes.html" class="rb-nav__plans-hdr" aria-current="page">Planes</a></li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Produtos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button">Productos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestrador</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
+          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestador</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
         </div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="cfo.html">Para CFOs</a><a href="construir-vs-comprar.html">Construir ou comprar</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
+        <div class="rb-nav__dropdown"><a href="cfo.html">Para CFOs</a><a href="construir-vs-comprar.html">Construir o comprar</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Suporte e serviços <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Fórum</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a><a href="#">Media kit</a></div>
+        <button type="button">Soporte y servicios <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a><a href="#">Media kit</a></div>
       </li>
-      <li><a href="contacto.html">Fale conosco</a></li>
+      <li><a href="contacto.html">Contáctanos</a></li>
     </ul>
     <div class="rb-nav__actions">
-      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
       <div class="rb-lang" id="rb-lang">
         <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
@@ -613,11 +699,11 @@ html{scroll-padding-top:92px;}
           <button class="rb-lang__opt" data-lang="pt" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span>Português</button>
         </div>
       </div>
-      <button class="rb-iconbtn" id="theme-btn" title="Mudar tema" type="button">
+      <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
         <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
       </button>
-      <a href="contacto.html" class="rb-btn rb-btn--primary">Vamos falar do seu caso</a>
+      <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Descarga</button>
     </div>
   </div>
 </nav>
@@ -626,11 +712,11 @@ html{scroll-padding-top:92px;}
 <div class="rb-mobile-menu" id="rb-mobile-menu">
   <div class="rb-mobile-menu__inner">
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Produtos</div>
+      <div class="rb-mobile-menu__label">Productos</div>
       <a href="saturn-studio.html">Saturn Studio</a>
       <a href="rpa-studio.html">RPA Studio</a>
       <a href="ai-studio.html">AI Studio</a>
-      <a href="orquestador.html">Orquestrador</a>
+      <a href="orquestador.html">Orquestador</a>
       <a href="xperience.html">Xperience</a>
       <a href="nexus.html">Nexus</a>
     </div>
@@ -640,17 +726,17 @@ html{scroll-padding-top:92px;}
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Suporte e serviços</div>
-      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Fórum</a>
+      <div class="rb-mobile-menu__label">Soporte y servicios</div>
+      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a>
       <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
-      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a>
+      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Media kit</a>
     </div>
     <div class="rb-mobile-menu__actions">
-      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suíte Rocketbot</a>
-      <a href="planes.html" class="rb-mobile-menu__btn">Planos e preços</a>
-      <a href="contacto.html" class="rb-mobile-menu__btn">Fale conosco</a>
-      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Download</button>
+      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suite Rocketbot</a>
+      <a href="planes.html" class="rb-mobile-menu__btn">Planes y precios</a>
+      <a href="contacto.html" class="rb-mobile-menu__btn">Contáctanos</a>
+      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Descarga</button>
     </div>
   </div>
 </div>
@@ -659,35 +745,35 @@ html{scroll-padding-top:92px;}
 <div class="rb-dlmodal" id="rbDlModal" aria-hidden="true">
   <div class="rb-dlmodal__backdrop" data-dl-close></div>
   <div class="rb-dlmodal__panel" role="dialog" aria-modal="true" aria-labelledby="rbDlTitle">
-    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Fechar">&times;</button>
-    <h2 id="rbDlTitle" class="rb-dlmodal__title">Baixe o Rocketbot</h2>
-    <p class="rb-dlmodal__sub">Escolha o produto e o seu sistema operacional.</p>
+    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Cerrar">&times;</button>
+    <h2 id="rbDlTitle" class="rb-dlmodal__title">Descarga Rocketbot</h2>
+    <p class="rb-dlmodal__sub">Elige el programa y tu sistema operativo.</p>
     <div class="rb-dlmodal__body">
       <div class="rb-dlmodal__side">
-        <div class="rb-dlmodal__label">Produtos</div>
+        <div class="rb-dlmodal__label">Programas</div>
         <button type="button" class="rb-dlmodal__pill is-active" data-dl-pill="rpa">
-          <img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
+          <img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
         </button>
 
         <div class="rb-dlmodal__req">
           <div class="rb-dlmodal__reqgrp">
             <div class="rb-dlmodal__reqttl">Requisitos mínimos</div>
-            <div class="rb-dlmodal__reqrow"><span>Processador</span><strong translate="no">Intel Core i3-4340 ou AMD FX-6300</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Armazenamento</span><strong>10 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memória</span><strong>4 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i3-4340 o AMD FX-6300</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>10 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>4 GB RAM</strong></div>
           </div>
           <div class="rb-dlmodal__reqgrp rb-dlmodal__reqgrp--rec">
-            <div class="rb-dlmodal__reqttl">Configuração recomendada</div>
-            <div class="rb-dlmodal__reqrow"><span>Processador</span><strong translate="no">Intel Core i5</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Armazenamento</span><strong>175 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memória</span><strong>8 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Configuración recomendada</div>
+            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i5</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>175 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>8 GB RAM</strong></div>
           </div>
         </div>
       </div>
       <div class="rb-dlmodal__main">
         <div class="rb-dlmodal__program is-active" data-dl-panel="rpa">
-          <div class="rb-dlmodal__ptitle"><img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
-          <p class="rb-dlmodal__pdesc">Baixe o instalador do seu sistema operacional. No site de download você encontra todas as versões disponíveis e suas notas de lançamento.</p>
+          <div class="rb-dlmodal__ptitle"><img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
+          <p class="rb-dlmodal__pdesc">Descarga el instalador para tu sistema operativo. En el sitio de descarga encontrarás todas las versiones disponibles y sus notas de lanzamiento.</p>
           <div class="rb-dlmodal__os">
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7H3V5.5ZM11.4 4.3 21 3v8.4h-9.6V4.3ZM3 12.4h7.5v7.1L3 18.5v-6.1ZM11.4 12.4H21V21l-9.6-1.3v-7.3Z"/></svg>Windows<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -695,31 +781,31 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Última versão</span></div>
+                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Última versión</span></div>
                     <div class="rb-dlmodal__vmeta">354 MB · ZIP · MD5 153fd4432f30564ecd16b146dcfaac31</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2025.07.01 <span class="rb-dlmodal__vtag">Python 3.13</span></div>
                     <div class="rb-dlmodal__vmeta">356 MB · ZIP · MD5 9f0e2c18051b020d71387821f3abdf82</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2024.05.28</div>
                     <div class="rb-dlmodal__vmeta">458 MB · ZIP · MD5 b4034aaf4759f710f6754df5bbd81be2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2023.11.10</div>
                     <div class="rb-dlmodal__vmeta">358 MB · ZIP · MD5 a18cc70a91134e73d2da277f973fa87a</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 </div>
               </div>
@@ -730,17 +816,17 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Última versão</span></div>
+                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Última versión</span></div>
                     <div class="rb-dlmodal__vmeta">248 MB · ZIP · MD5 ff4ea3d2e49aa4e3294158f04ad81922</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Mac ARM · v2025.07.01</div>
                     <div class="rb-dlmodal__vmeta">533 MB · ZIP · MD5 3635e4cd1ec90eb5bac453c6b813bf29</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 </div>
               </div>
@@ -751,24 +837,24 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Última versão</span></div>
+                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Última versión</span></div>
                     <div class="rb-dlmodal__vmeta">434 MB · ZIP · MD5 6312df8b82977e4e08d48826deb95b34</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">RHEL · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">166.2 MB · TAR.GZ · MD5 6d98a8f63cec705d181a011dfb69c90c</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Ubuntu · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">118.1 MB · TAR.XZ · MD5 b2d9a94de8299615e525ea26d5d543a2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 </div>
               </div>
@@ -785,178 +871,266 @@ html{scroll-padding-top:92px;}
   <div class="rb-hero__particles"></div>
   <div class="container">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title">Toda a inteligência do Claude,<br>sem construir<span class="rb-hero__rot" id="heroRot">a estrutura</span></h1>
-      <p class="rb-hero__sub">Modelos como o Claude baratearam escrever código, e isso é ótimo. Mas em automação empresarial o que mais custa não é escrever: é operar, governar e manter. A plataforma cuida dessa parte, para você ficar com a inteligência e pular o trabalho pesado.</p>
+      <span class="rb-eyebrow rb-eyebrow--light"><span class="dot"></span>Planes y precios</span>
+      <h1 class="rb-hero__title">Automatización que crece<br><span style="color:var(--rb-red);">con tu operación</span></h1>
+      <p class="rb-hero__sub">Una sola suite — RPA, orquestación, IA y aplicaciones. Eliges la capacidad; todos los productos vienen incluidos en cada plan.</p>
       <div class="rb-hero__ctas">
-        <a class="rb-btn rb-btn--primary rb-btn--lg" href="#decision">Construir ou comprar? Decida</a>
-        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#comparacion" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver a comparação</a>
+        <a class="rb-btn rb-btn--primary rb-btn--lg" href="contacto.html">Hablar con ventas</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#comparar" style="color:#fff;border-color:rgba(255,255,255,.25);">Comparar planes</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INSIGHT 10/90 -->
-<section class="rb-section">
-  <div class="container">
-    <div class="rb-insight">
-      <div>
-        <h2>O Claude reduz o custo de <span>escrever código</span>. Não o de automatizar.</h2>
-        <p>Escrever o script é a parte fácil, e é a que um LLM resolve muito bem. Mas em automação empresarial, construir é só o começo: o custo real está em fazer rodar sozinho, sem falhar, com permissões, rastreabilidade e manutenção quando os sistemas mudam.</p>
-        <p>Por isso "deixa o Claude fazer tudo" parece simples e sai caro: torna fácil a parte fácil e deixa a difícil intacta.</p>
-      </div>
-      <div class="rb-split-bar">
-        <div class="row">
-          <div class="rl"><span>Escrever o código</span><span class="pc" style="color:var(--rb-blue)">~10%</span></div>
-          <div class="track"><div class="fill code"></div></div>
-          <div class="cap">O que um LLM realmente acelera.</div>
-        </div>
-        <div class="row">
-          <div class="rl"><span>Operar, governar e manter</span><span class="pc" style="color:var(--rb-red)">~90%</span></div>
-          <div class="track"><div class="fill ops"></div></div>
-          <div class="cap">Execução 24/7, erros, permissões, auditoria, integração e manutenção.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ICEBERG -->
-<section class="rb-section rb-section--alt">
+<!-- PLANES -->
+<section class="rb-section rb-section--alt" id="planes">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">O que você vê é <span>uma fração</span><br>do que você constrói.</h2>
-      <p class="rb-section__sub">O protótipo que o Claude ajuda a escrever é a ponta. Embaixo está tudo o que você ainda precisa construir e sustentar para levar à&nbsp;produção.</p>
+      <h2 class="rb-section__title">Cuatro planes,<br><span>una sola suite completa.</span></h2>
+      <p class="rb-section__sub">Lo que cambia de un plan a otro es la capacidad de ejecución, los límites de usuarios y las características de seguridad y&nbsp;soporte.</p>
     </div>
-    <div class="rb-ice">
-      <div class="rb-ice-top">
-        <span class="tag">Acima da superfície</span>
-        <h3>O que você acha que está construindo</h3>
-        <p>Um script que automatiza a tarefa.</p>
-        <div class="rb-ice-tip">o script</div>
+    <div class="rb-suiteband">
+      <span class="rb-suiteband__lb">&#10003; Incluido en todos los planes</span>
+      <div class="rb-suiteband__list">
+        <span class="rb-suiteband__it"><img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</span>
+        <span class="rb-suiteband__it"><img src="assets/logos/products/saturn-studio.png" alt="" loading="lazy" decoding="async">Saturn Studio</span>
+        <span class="rb-suiteband__it"><img src="assets/logos/products/orchestrator.png" alt="" loading="lazy" decoding="async">Orquestador</span>
+        <span class="rb-suiteband__it"><img src="assets/logos/products/xperience.png" alt="" loading="lazy" decoding="async">Xperience</span>
+        <span class="rb-suiteband__it"><img src="assets/logos/products/ai-studio.png" alt="" loading="lazy" decoding="async">AI Studio</span>
+        <span class="rb-suiteband__it"><img src="assets/logos/products/nexus.png" alt="" loading="lazy" decoding="async">Nexus</span>
       </div>
-      <svg class="rb-ice-wave" viewBox="0 0 1200 26" preserveAspectRatio="none"><path fill="currentColor" d="M0 14 Q150 2 300 14 T600 14 T900 14 T1200 14 V26 H0 Z"/></svg>
-      <div class="rb-ice-bottom">
-        <span class="tag">Abaixo da superfície</span>
-        <h3>O que você de fato tem que construir e manter</h3>
-        <div class="rb-ice-grid">
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Execução 24/7 sem supervisão</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/></svg><span>Novas tentativas e tratamento de erros</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Credenciais e permissões por papel</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v5H4zM4 13h10v7H4z"/></svg><span>Rastreabilidade e auditoria</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg><span>Monitoramento e alertas</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg><span>Integração com sistemas sem API</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2z"/></svg><span>Manutenção quando tudo muda</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><span>Segurança e conformidade</span></div>
-          <div class="rb-ice-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M19 8v6M16 11h6"/></svg><span>Garantir que não dependa de uma só pessoa</span></div>
+    </div>
+    <div class="rb-pcards">
+      <article class="rb-pcard">
+        <div class="rb-pcard__num">01 &middot; Entry</div>
+        <h3>Entry</h3>
+        <p class="rb-pcard__aud">Para equipos que automatizan sus primeros procesos.</p>
+        <div class="rb-pcard__price"><span class="cur">U$D</span>7.990<span class="per">/año</span></div>
+        <div class="rb-pcard__cap">5 automatizaciones en paralelo</div>
+        <a class="rb-btn rb-btn--ghost" href="contacto.html">Hablar con ventas</a>
+        <div class="rb-pcard__lb">Incluye</div>
+        <ul class="rb-pcard__inc">
+          <li>Todos los productos de la suite</li>
+          <li>25M créditos de AI Studio / año</li>
+          <li>2 licencias de desarrollo</li>
+          <li>5 aplicaciones Nexus · 10 usuarios finales</li>
+          <li>Soporte por Slack · respuesta 60 min</li>
+          <li>Auditoría 90 días · 2FA · SSO Google</li>
+        </ul>
+        <div class="rb-pcard__addons">
+          <div class="rb-pcard__lb">Add-ons</div>
+          <ul>
+            <li>Atención por evento <b>7×24</b> (costo adicional)</li>
+            <li>Créditos de IA extra</li>
+          </ul>
         </div>
-      </div>
+      </article>
+      <article class="rb-pcard rb-pcard--feat">
+        <span class="rb-pcard__badge">Más elegido</span>
+        <div class="rb-pcard__num">02 &middot; Standard</div>
+        <h3>Standard</h3>
+        <p class="rb-pcard__aud">Para escalar la automatización a varias áreas.</p>
+        <div class="rb-pcard__price"><span class="cur">U$D</span>14.990<span class="per">/año</span></div>
+        <div class="rb-pcard__cap">20 automatizaciones en paralelo</div>
+        <a class="rb-btn rb-btn--primary" href="contacto.html">Hablar con ventas</a>
+        <div class="rb-pcard__lb">Todo lo de Entry, más</div>
+        <ul class="rb-pcard__inc">
+          <li>50M créditos de AI Studio / año</li>
+          <li>3 licencias de desarrollo</li>
+          <li>Apps y workspaces ilimitados (Nexus)</li>
+          <li>Bring Your Own Model (IA externa)</li>
+          <li>Monitoreo en tiempo real</li>
+          <li>Auditoría 180 días · Customer Success · Meetups</li>
+        </ul>
+        <div class="rb-pcard__addons">
+          <div class="rb-pcard__lb">Add-ons</div>
+          <ul>
+            <li>Atención por evento <b>7×24</b> (costo adicional)</li>
+            <li>Usuarios finales adicionales</li>
+            <li>Créditos de IA extra</li>
+          </ul>
+        </div>
+      </article>
+      <article class="rb-pcard">
+        <div class="rb-pcard__num">03 &middot; Enterprise</div>
+        <h3>Enterprise</h3>
+        <p class="rb-pcard__aud">Para operaciones críticas con mayor volumen y control.</p>
+        <div class="rb-pcard__price"><span class="cur">U$D</span>24.990<span class="per">/año</span></div>
+        <div class="rb-pcard__cap">50 automatizaciones en paralelo</div>
+        <a class="rb-btn rb-btn--ghost" href="contacto.html">Hablar con ventas</a>
+        <div class="rb-pcard__lb">Todo lo de Standard, más</div>
+        <ul class="rb-pcard__inc">
+          <li>100M créditos de AI Studio / año</li>
+          <li>5 licencias de desarrollo</li>
+          <li>15 usuarios creadores de apps</li>
+          <li>50 usuarios finales · 50 usuarios con login</li>
+          <li>Respuesta de soporte 30 min</li>
+          <li>Prioridad de ejecución alta</li>
+        </ul>
+        <div class="rb-pcard__addons">
+          <div class="rb-pcard__lb">Add-ons</div>
+          <ul>
+            <li>Atención por evento <b>7×24</b> (costo adicional)</li>
+            <li>Usuarios y creadores adicionales</li>
+            <li>Créditos de IA extra</li>
+          </ul>
+        </div>
+      </article>
+      <article class="rb-pcard">
+        <div class="rb-pcard__num">04 &middot; Corporate</div>
+        <h3>Corporate</h3>
+        <p class="rb-pcard__aud">Para grandes organizaciones con requisitos de seguridad y compliance.</p>
+        <div class="rb-pcard__price"><span class="cur">U$D</span>49.990<span class="per">/año</span></div>
+        <div class="rb-pcard__cap">200 en paralelo · 1.000 procesos administrados</div>
+        <a class="rb-btn rb-btn--ghost" href="contacto.html">Hablar con ventas</a>
+        <div class="rb-pcard__lb">Todo lo de Enterprise, más</div>
+        <ul class="rb-pcard__inc">
+          <li>250M créditos de AI Studio / año</li>
+          <li>Licencias y usuarios ilimitados</li>
+          <li>SSO corporativo (Active Directory) · SCIM</li>
+          <li>Auditoría 12 meses + export SIEM</li>
+          <li>Prioridad de ejecución máxima</li>
+          <li>Customer Success dedicado · respuesta 15 min</li>
+        </ul>
+        <div class="rb-pcard__addons">
+          <div class="rb-pcard__lb">Add-ons</div>
+          <ul>
+            <li>Atención por evento <b>7×24</b> (costo adicional)</li>
+            <li>Onboarding y capacitación a medida</li>
+          </ul>
+        </div>
+      </article>
     </div>
+    <p class="rb-price-note">Precios en dólares estadounidenses (U$D). Licencia anual.</p>
   </div>
 </section>
 
-<!-- COMPARISON -->
-<section class="rb-section" id="comparacion">
+<!-- COMPARATIVA -->
+<section class="rb-section" id="comparar">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title rb-title-nowrap">O que um LLM resolve <span>e o que não resolve</span></h2>
-      <p class="rb-section__sub">O Claude é excelente para escrever e prototipar. No caminho DIY, todo o resto é você que constrói e&nbsp;sustenta.</p>
+      <h2 class="rb-section__title">Compara los planes<br><span>línea por línea.</span></h2>
+      <p class="rb-section__sub">Todos los límites de la suite, producto por producto. Pasa el cursor sobre <span class="rb-info" aria-hidden="true">i</span> para ver el detalle de cada&nbsp;característica.</p>
     </div>
-    <div class="rb-cmp-wrap">
-      <table class="rb-cmp" id="cmp">
-        <thead><tr><th>Capacidade</th><th>Claude cru / DIY</th><th>Suíte (com o Claude dentro)</th></tr></thead>
-        <tbody id="cmpBody"></tbody>
+    <div class="rb-ptbl-wrap">
+      <table class="rb-ptbl">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Entry</th>
+            <th class="is-std">Standard</th>
+            <th>Enterprise</th>
+            <th class="is-corp">Corporate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="rb-ptbl__grp"><td>Productos incluidos</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>RPA Studio<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Robots de software que operan cualquier sistema como una persona: hacen clic, copian datos, llenan formularios.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Saturn Studio<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Constructor de flujos en la nube que conecta más de 500 aplicaciones sin instalar nada.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Orquestador + Xperience<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Panel central para programar, ejecutar y monitorear tus automatizaciones. Incluye portal de formularios de autoservicio.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>AI Studio<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">IA que lee y entiende documentos, correos, imágenes y audio para automatizar decisiones.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Nexus<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Crea aplicaciones de negocio a medida para tu equipo, sin escribir código.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr class="rb-ptbl__grp"><td>RPA Studio</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Licencias de desarrollo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Personas que pueden construir y editar automatizaciones y apps en la plataforma.</span></span></td><td>2</td><td class="is-std">3</td><td>5</td><td class="best">Ilimitadas</td></tr>
+          <tr class="rb-ptbl__grp"><td>Saturn Studio — Motor de ejecución</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Automatizaciones en paralelo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Cuántas automatizaciones pueden ejecutarse al mismo tiempo. Es tu capacidad de trabajo simultáneo.</span></span></td><td>5</td><td class="is-std">20</td><td>50</td><td class="best">200</td></tr>
+          <tr><td>Tiempo máximo por flujo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Duración máxima que puede correr una automatización antes de detenerse.</span></span></td><td>10 min</td><td class="is-std">30 min</td><td>30 min</td><td>1 hora</td></tr>
+          <tr><td>Intervalo mínimo entre ejecuciones<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Tiempo mínimo de espera entre dos ejecuciones consecutivas de una misma automatización.</span></span></td><td>1 min</td><td class="is-std">1 min</td><td>1 min</td><td>0 min</td></tr>
+          <tr><td>Tamaño máximo de archivo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Peso máximo de un archivo que una automatización puede procesar.</span></span></td><td>100 MB</td><td class="is-std">250 MB</td><td>250 MB</td><td>1 GB</td></tr>
+          <tr><td>Moons consecutivos por ejecución<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Moons son los pasos o acciones que ejecuta un flujo. Este es el máximo por ejecución.</span></span></td><td>10.000</td><td class="is-std">30.000</td><td>30.000</td><td>Ilimitado</td></tr>
+          <tr><td>Prioridad de ejecución<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Orden de atención cuando hay muchas automatizaciones en cola. A mayor prioridad, menos espera.</span></span></td><td>Estándar</td><td class="is-std">Alta</td><td>Alta</td><td class="best">Máxima</td></tr>
+          <tr class="rb-ptbl__grp"><td>Saturn Studio — Builder e integraciones</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Cantidad de flujos<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Número de automatizaciones distintas que puedes diseñar y guardar.</span></span></td><td>Ilimitada</td><td class="is-std">Ilimitada</td><td>Ilimitada</td><td>Ilimitada</td></tr>
+          <tr><td>Funciones personalizadas (JS)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Código JavaScript propio para lógica avanzada dentro de los flujos.</span></span></td><td class="no">—</td><td class="is-std">Limitado</td><td>Limitado</td><td>Avanzado</td></tr>
+          <tr><td>Templates<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Plantillas prediseñadas para acelerar la creación de automatizaciones.</span></span></td><td>Extended</td><td class="is-std">Full</td><td>Full</td><td>Full + Custom</td></tr>
+          <tr><td>Apps y componentes estándar<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Conectores e integraciones listas para usar con aplicaciones externas.</span></span></td><td>500+</td><td class="is-std">500+</td><td>500+</td><td>500+</td></tr>
+          <tr><td>Webhooks<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Un webhook permite que un sistema externo dispare una automatización mediante una llamada web.</span></span></td><td>5</td><td class="is-std">20</td><td>50</td><td class="best">200</td></tr>
+          <tr><td>Apps personalizadas<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Conectores a medida para sistemas que no están en el catálogo estándar.</span></span></td><td class="no">—</td><td class="is-std">Limitado</td><td>Limitado</td><td>Avanzado</td></tr>
+          <tr><td>Apps Enterprise<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Conectores a sistemas empresariales de gran escala (ERP, mainframe, etc.).</span></span></td><td class="no">—</td><td class="is-std no">—</td><td class="no">—</td><td>Basic</td></tr>
+          <tr><td>Conexión con LLMs<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Usa modelos de lenguaje de terceros dentro de los flujos de Saturn Studio.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Human in the Loop<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Pasos donde una persona aprueba o interviene dentro de una automatización.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr class="rb-ptbl__grp"><td>Saturn Studio — Monitoreo y analytics</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Ejecuciones guardadas<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Historial de ejecuciones que se conserva para consulta.</span></span></td><td>1.000</td><td class="is-std">5.000</td><td>5.000</td><td class="best">100.000</td></tr>
+          <tr><td>Retención de logs de ejecución<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Cuánto tiempo se guardan los registros de cada ejecución.</span></span></td><td>7 días</td><td class="is-std">30 días</td><td>30 días</td><td class="best">365 días</td></tr>
+          <tr><td>Monitoreo en tiempo real<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Visualización en vivo del estado y desempeño de tus automatizaciones.</span></span></td><td class="no">—</td><td class="is-std">Básico</td><td>Básico</td><td class="best">Avanzado</td></tr>
+          <tr><td>Búsqueda full-text en logs<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Buscar texto libre dentro de los registros de ejecución.</span></span></td><td class="no">—</td><td class="is-std">Básico</td><td>Básico</td><td class="best">Avanzado</td></tr>
+          <tr><td>Dashboard de analytics<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Tableros con métricas de uso y desempeño de las automatizaciones.</span></span></td><td>Standard</td><td class="is-std">Advanced</td><td>Advanced</td><td class="best">Enterprise</td></tr>
+          <tr class="rb-ptbl__grp"><td>Saturn Studio — Gobernanza y seguridad</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Miembros del equipo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Personas que pueden acceder al espacio de trabajo de Saturn Studio.</span></span></td><td>5</td><td class="is-std">15</td><td>15</td><td class="best">Ilimitados</td></tr>
+          <tr><td>Equipos y roles<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Organización de usuarios en equipos con permisos diferenciados.</span></span></td><td class="no">—</td><td class="is-std">Básico</td><td>Básico</td><td class="best">Avanzado</td></tr>
+          <tr><td>Bóveda de credenciales cifrada<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Bóveda cifrada para guardar credenciales y datos sensibles.</span></span></td><td class="no">—</td><td class="is-std">Básico</td><td>Básico</td><td class="best">Avanzado</td></tr>
+          <tr><td>Autenticación 2FA<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Segundo factor de autenticación. Heredado del Orquestador, punto único de identidad de la suite.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>SSO (Google / OAuth)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Inicio de sesión con Google. Heredado del Orquestador.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>SSO corporativo (Active Directory)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Autenticación con el directorio corporativo. Exclusivo de Corporate. Heredado del Orquestador.</span></span></td><td class="no">—</td><td class="is-std no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr><td>Audit logs<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Registro de eventos de seguridad de Saturn Studio: quién hizo qué y cuándo.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Retención de audit logs<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Cuánto tiempo se conservan los audit logs de Saturn Studio. Corporate cumple el benchmark de 12 meses.</span></span></td><td>90 días</td><td class="is-std">180 días</td><td>180 días</td><td class="best">365 días</td></tr>
+          <tr><td>Export de audit logs (API / SIEM)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Exportar los audit logs a un sistema SIEM externo vía API. Exclusivo de Corporate.</span></span></td><td class="no">—</td><td class="is-std no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr class="rb-ptbl__grp"><td>Orquestador — Capacidad de ejecución</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Procesos administrados<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Total de procesos que el Orquestador retiene y administra (desplegados).</span></span></td><td>5</td><td class="is-std">20</td><td>50</td><td class="best">1.000</td></tr>
+          <tr><td>Procesos en ejecución paralela<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Procesos corriendo simultáneamente en el Orquestador. Independiente del paralelo de Saturn.</span></span></td><td>5</td><td class="is-std">20</td><td>50</td><td class="best">200</td></tr>
+          <tr><td>Robots registrables<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Máquinas o agentes conectados al Orquestador. Se registran sin límite y no consumen capacidad.</span></span></td><td>Ilimitados</td><td class="is-std">Ilimitados</td><td>Ilimitados</td><td>Ilimitados</td></tr>
+          <tr class="rb-ptbl__grp"><td>Xperience — Portal de autoservicio</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Xperience incluido<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Portal de formularios de autoservicio incluido en todos los planes.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Formularios públicos<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Formularios con enlace abierto, sin login, para recibir solicitudes externas.</span></span></td><td>Ilimitados</td><td class="is-std">Ilimitados</td><td>Ilimitados</td><td>Ilimitados</td></tr>
+          <tr><td>Formularios privados<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Formularios con login y permisos por rol.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Usuarios con login<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Personas que acceden a formularios privados con usuario y permisos por rol.</span></span></td><td>10</td><td class="is-std">25</td><td>50</td><td class="best">Ilimitados</td></tr>
+          <tr class="rb-ptbl__grp"><td>Orquestador — Gestión y observabilidad</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Usuarios de Control Room<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Personas que operan y supervisan las automatizaciones desde el panel del Orquestador.</span></span></td><td>5</td><td class="is-std">5</td><td>15</td><td class="best">Ilimitados</td></tr>
+          <tr><td>Retención de logs de ejecución<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Cuánto tiempo se guardan los registros de ejecución del Orquestador.</span></span></td><td>7 días</td><td class="is-std">30 días</td><td>30 días</td><td class="best">365 días</td></tr>
+          <tr class="rb-ptbl__grp"><td>Orquestador — Gobernanza y seguridad</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Autenticación 2FA<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Segundo factor de autenticación. El Orquestador es el punto único de identidad de la suite.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>SSO (Google / OAuth)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Inicio de sesión con Google, para toda la suite.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>SSO corporativo (Active Directory)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Autenticación con el directorio corporativo. Exclusivo de Corporate.</span></span></td><td class="no">—</td><td class="is-std no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr><td>Audit logs<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Registro de eventos de seguridad del Orquestador: quién hizo qué y cuándo.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Retención de audit logs<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Cuánto tiempo se conservan los audit logs del Orquestador. Corporate cumple el benchmark de 12 meses.</span></span></td><td>90 días</td><td class="is-std">180 días</td><td>180 días</td><td class="best">365 días</td></tr>
+          <tr><td>Export de audit logs (API / SIEM)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Exportar los audit logs a un sistema SIEM externo vía API. Exclusivo de Corporate.</span></span></td><td class="no">—</td><td class="is-std no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr class="rb-ptbl__grp"><td>AI Studio</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Créditos de AI Studio / año<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Volumen anual de procesamiento con IA incluido en el plan. Sin acumulación al ciclo siguiente.</span></span></td><td>25M</td><td class="is-std">50M</td><td>100M</td><td class="best">250M</td></tr>
+          <tr><td>Modelo de IA incluido<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Motor interno de AI Studio, operando dentro del entorno Rocketbot.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Bring Your Own Model<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Conecta tu propio modelo de IA externo (Azure OpenAI, Bedrock, etc.) en AI Studio.</span></span></td><td class="no">—</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Documentos — tamaño máx. (PDF, TXT)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Peso máximo de un documento que AI Studio puede procesar.</span></span></td><td>25 MB</td><td class="is-std">25 MB</td><td>25 MB</td><td>25 MB</td></tr>
+          <tr><td>Correo — tamaño máx.<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Peso máximo por mensaje de correo, incluidos adjuntos (Gmail, Outlook, IMAP, POP3).</span></span></td><td>25 MB</td><td class="is-std">25 MB</td><td>25 MB</td><td>25 MB</td></tr>
+          <tr><td>Imágenes — tamaño máx.<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Peso máximo de una imagen (PNG, JPEG, JPG, WEBP, GIF no animado).</span></span></td><td>10 MB</td><td class="is-std">10 MB</td><td>10 MB</td><td>10 MB</td></tr>
+          <tr><td>Audio — tamaño máx. (MP3, WAV)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Peso máximo de un archivo de audio que AI Studio puede procesar.</span></span></td><td>25 MB</td><td class="is-std">25 MB</td><td>25 MB</td><td>25 MB</td></tr>
+          <tr class="rb-ptbl__grp"><td>Nexus — Plan y usuarios</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Usuarios creadores de apps<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Usuarios con permisos para construir aplicaciones en Nexus.</span></span></td><td>5</td><td class="is-std">5</td><td>15</td><td class="best">Ilimitados</td></tr>
+          <tr><td>Usuarios finales<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Personas que usan las apps publicadas sin permisos de construcción.</span></span></td><td>10</td><td class="is-std">25</td><td>50</td><td class="best">Ilimitados</td></tr>
+          <tr><td>Creadores adicionales (add-on)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Posibilidad de sumar más usuarios creadores como complemento pagado.</span></span></td><td class="no">—</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr class="rb-ptbl__grp"><td>Nexus — Capacidad</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Aplicaciones<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Cantidad de aplicaciones de negocio que puedes crear en Nexus.</span></span></td><td>5</td><td class="is-std">Ilimitadas</td><td>Ilimitadas</td><td>Ilimitadas</td></tr>
+          <tr><td>Workspaces<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Espacios de trabajo para organizar apps, automatizaciones y datos por equipo o proyecto.</span></span></td><td>1</td><td class="is-std">Ilimitados</td><td>Ilimitados</td><td>Ilimitados</td></tr>
+          <tr><td>Filas máx. base interna<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Número máximo de registros en la base de datos interna de Nexus.</span></span></td><td>50.000</td><td class="is-std">500.000</td><td>500.000</td><td class="best">Ilimitado</td></tr>
+          <tr><td>Timeout por query<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Tiempo máximo que puede tardar una consulta a datos antes de cancelarse.</span></span></td><td>30 s</td><td class="is-std">60 s</td><td>60 s</td><td>Configurable</td></tr>
+          <tr><td>Timeout por función JS<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Tiempo máximo de ejecución de una función JavaScript en una app.</span></span></td><td>10 s</td><td class="is-std">30 s</td><td>30 s</td><td>Configurable</td></tr>
+          <tr><td>Request body máx.<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Tamaño máximo del cuerpo de una petición HTTP que la app puede recibir o enviar.</span></span></td><td>10 MB</td><td class="is-std">50 MB</td><td>50 MB</td><td>Configurable</td></tr>
+          <tr class="rb-ptbl__grp"><td>Nexus — Builder e integraciones</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>AI Builder (MCP)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Asistente de IA para construir apps. MCP conecta modelos con herramientas y datos.</span></span></td><td>Básico</td><td class="is-std">Avanzado</td><td>Avanzado</td><td class="best">Avanzado</td></tr>
+          <tr><td>Data sources externas<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Conexión a MySQL, PostgreSQL, Supabase, Google Sheets, S3 y más.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Integración con la suite Rocketbot<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Nexus se conecta con el resto de los productos de la suite.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>On-Premises Gateway<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Puente seguro para conectar Nexus con sistemas en la red interna del cliente.</span></span></td><td class="no">—</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>REST API + API externa + MCP Server<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Interfaces de programación para integrar Nexus con otros sistemas.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Import/Export de apps (JSON)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Exportar e importar aplicaciones completas en formato JSON.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr class="rb-ptbl__grp"><td>Nexus — Observabilidad y seguridad</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Retención de logs de ejecución<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Cuánto tiempo se guardan los registros de ejecución de Nexus.</span></span></td><td>7 días</td><td class="is-std">30 días</td><td>30 días</td><td class="best">365 días</td></tr>
+          <tr><td>Backups y restore<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Copias de seguridad y restauración de aplicaciones y datos.</span></span></td><td class="no">—</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Grupos de usuarios<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Gestión de acceso de varios usuarios a la vez mediante grupos.</span></span></td><td class="no">—</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Variables de entorno cifradas<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Configuración y secretos almacenados de forma cifrada, separados por ambiente.</span></span></td><td class="no">—</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Autenticación 2FA<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Segundo factor de autenticación. Heredado del Orquestador, punto único de identidad de la suite.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>SSO (Google / OAuth)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Inicio de sesión con Google. Heredado del Orquestador.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>SSO corporativo (Active Directory)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Autenticación con el directorio corporativo. Exclusivo de Corporate.</span></span></td><td class="no">—</td><td class="is-std no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr><td>SSO enforced<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">SSO obligatorio para todos los usuarios. Exclusivo de Corporate (Nexus Enterprise).</span></span></td><td class="no">—</td><td class="is-std no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr><td>AD / SCIM<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Aprovisionamiento automático de usuarios vía directorio corporativo (SCIM). Exclusivo de Corporate.</span></span></td><td class="no">—</td><td class="is-std no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr><td>Audit logs<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Registro de eventos de seguridad de Nexus: quién hizo qué y cuándo.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Retención de audit logs<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Cuánto tiempo se conservan los audit logs de Nexus. Corporate cumple el benchmark de 12 meses.</span></span></td><td>90 días</td><td class="is-std">180 días</td><td>180 días</td><td class="best">365 días</td></tr>
+          <tr><td>Export de audit logs (API / SIEM)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Exportar los audit logs a un sistema SIEM externo vía API. Exclusivo de Corporate.</span></span></td><td class="no">—</td><td class="is-std no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr class="rb-ptbl__grp"><td>Soporte</td><td class="is-std"></td><td></td><td></td><td></td></tr>
+          <tr><td>Canal de soporte<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Canal de Slack dedicado con nuestro equipo, en horario hábil (5×8).</span></span></td><td>Slack</td><td class="is-std">Slack</td><td>Slack</td><td>Slack</td></tr>
+          <tr><td>Primera respuesta (horario 5×8)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Tiempo máximo hasta la primera respuesta del equipo de soporte, en horario hábil.</span></span></td><td>60 min</td><td class="is-std">45 min</td><td>30 min</td><td class="best">15 min</td></tr>
+          <tr><td>Atención por evento 7×24<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Cobertura fuera del horario hábil para eventos puntuales. Disponible en todos los planes con costo adicional.</span></span></td><td>Costo adicional</td><td class="is-std">Costo adicional</td><td>Costo adicional</td><td>Costo adicional</td></tr>
+          <tr><td>Customer Success<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Equipo que te acompaña en la adopción y el crecimiento de tu operación. Dedicado en Corporate.</span></span></td><td>Compartido</td><td class="is-std">Compartido</td><td>Compartido</td><td class="best">Dedicado</td></tr>
+          <tr class="is-last"><td>Atención por meetup<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Sesiones de acompañamiento presenciales o en línea para tu equipo. Desde el plan Standard.</span></span></td><td class="no">—</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        </tbody>
       </table>
-    </div>
-    <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:14px">Não é que o Claude "não consiga": é que você teria que construir e manter todo o resto ao redor.</p>
-  </div>
-</section>
-
-<!-- DECISION HELPER -->
-<section class="rb-section rb-section--alt" id="decision">
-  <div class="container">
-    <div class="rb-section__head">
-      <h2 class="rb-section__title">Construir você mesmo ou <span>comprar?</span></h2>
-      <p class="rb-section__sub">Responda quatro perguntas sobre a sua situação. Às vezes o DIY é o certo; às vezes não. Isto ajuda você a&nbsp;enxergar.</p>
-    </div>
-    <div class="rb-bvb">
-      <div class="rb-bvb-q" id="bvbQ"></div>
-      <div class="rb-bvb-out">
-        <span class="rb-bvb-lbl">Recomendação</span>
-        <div class="rb-bvb-meter"><div class="mk" id="bvbMk"></div></div>
-        <div class="rb-bvb-ends"><span>Faça você mesmo</span><span>Plataforma</span></div>
-        <div class="rb-bvb-verdict" id="bvbVerdict"></div>
-        <div class="rb-bvb-body" id="bvbBody"></div>
-        <div class="rb-bvb-drivers" id="bvbDrivers"></div>
-      </div>
-    </div>
-    <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:18px">Orientação geral conforme o seu contexto; a decisão final depende da sua operação específica.</p>
-  </div>
-</section>
-
-<!-- ARCHITECTURE -->
-<section class="rb-section" id="arquitectura">
-  <div class="container">
-    <div class="rb-section__head">
-      <h2 class="rb-section__title">Não é "IA para tudo".<br><span>Cada coisa no seu lugar.</span></h2>
-      <p class="rb-section__sub">Em back-office de alto volume você quer execução determinística e auditável, com IA restrita ao ponto em que realmente contribui. É exatamente isso que a suíte&nbsp;combina.</p>
-    </div>
-    <div class="rb-compare">
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6"/><circle cx="9" cy="13" r="1" fill="currentColor"/><circle cx="15" cy="13" r="1" fill="currentColor"/></svg></div><div class="rb-compare__title">Determinístico para o que é estruturado</div><div class="rb-compare__desc">Os robôs executam os ~80% repetitivos sempre do mesmo jeito: previsível, rápido e auditável, sem um modelo improvisando a cada rodada.</div><span class="rb-compare__tag">RPA Studio</span></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-1 8H9a4 4 0 0 1-1-8V7a4 4 0 0 1 4-4z"/><path d="M9.5 16h5"/></svg></div><div class="rb-compare__title">IA onde ela agrega</div><div class="rb-compare__desc">Agentes e IA para os ~20% que exigem julgamento: interpretar dados não estruturados e resolver exceções, dentro de limites definidos.</div><span class="rb-compare__tag">AI Studio · Agentes</span></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="rb-compare__title">Governança acima de tudo</div><div class="rb-compare__desc">Permissões por papel, rastreabilidade de cada ação e supervisão humana. Controle não é um extra: já vem de fábrica.</div><span class="rb-compare__tag">Orquestrador</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- CLAUDE INSIDE -->
-<section class="rb-section rb-section--alt">
-  <div class="container">
-    <div class="rb-inside">
-      <div class="rb-brandpair" aria-hidden="true"><div class="rb-brandpair__halo"></div><div class="rb-brandpair__tile--solo"><svg class="ic" viewBox="0 0 100 100" fill="currentColor"><path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"/></svg><span>Claude</span></div><div class="rb-brandpair__dust rb-brandpair__dust--1"></div><div class="rb-brandpair__dust rb-brandpair__dust--2"></div><div class="rb-brandpair__dust rb-brandpair__dust--3"></div></div>
-      <h2>A suíte não compete com o Claude. Ela o inclui.</h2>
-      <p>Pelo MCP do Claude, você descreve em linguagem natural o que precisa e a plataforma monta o fluxo, o robô ou o painel, já governado, conectado e pronto para operar. Você fica com a inteligência do Claude sem ter que construir a estrutura ao redor dela.</p>
-      <div class="row">
-        <span class="ich">Claude no Orquestrador</span>
-        <span class="ich">Claude no Saturn Studio</span>
-        <span class="ich">Claude no Nexus</span>
-        <span class="ich">Compatível com qualquer IA</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="rb-section">
-  <div class="container">
-    <div class="rb-proof-strip">
-      <div class="rb-stat-card">
-        <div class="big">95%</div>
-        <div class="desc">das iniciativas de IA empresarial nunca chegam a gerar impacto mensurável no negócio.</div>
-        <div class="src">Fonte: MIT, projeto NANDA (2025)</div>
-      </div>
-      <div>
-        <h2>Quase todas morrem no vão.</h2>
-        <p>A maioria das iniciativas fica no meio do caminho entre "um script que funciona na demo" e "um sistema governado em produção". O que chega à produção se apoia em plataforma, não em heroísmo individual.</p>
-        <div class="rb-pcases">
-          <div class="rb-pcase"><div class="m">+USD 500K</div><div class="w"><img src="/assets/logos/clients/proteccion.svg" alt="Protección" loading="lazy" decoding="async"> · economizados</div></div>
-          <div class="rb-pcase"><div class="m">+USD 1,5M</div><div class="w"><img src="/assets/logos/clients/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async"> · economizados</div></div>
-          <div class="rb-pcase"><div class="m">+USD 500K</div><div class="w"><img src="/assets/logos/clients/consorcio.svg" alt="Consorcio" loading="lazy" decoding="async"> · economizados</div></div>
-        </div>
-        <p style="margin-top:18px"><a href="cfo.html" style="color:var(--rb-red);font-weight:700">Ver o caso de negócio para CFOs →</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL -->
-<section class="rb-cta-band">
-  <div class="container">
-    <div class="rb-cta-band__inner">
-      <div>
-        <h2 class="rb-cta-band__title">Fique com a inteligência. Pule a estrutura.</h2>
-        <p class="rb-cta-band__sub">Conte o seu caso e vamos avaliar juntos, com honestidade, se vale mais construir ou se apoiar na plataforma.</p>
-      </div>
-      <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Vamos falar do seu caso</a>
     </div>
   </div>
 </section>
@@ -964,8 +1138,46 @@ html{scroll-padding-top:92px;}
 <!-- FAQ -->
 <section class="rb-section rb-section--alt" id="faq">
   <div class="container">
-    <div class="rb-section__head"><h2 class="rb-section__title">As objeções, de frente</h2></div>
-    <div class="rb-faq" id="faqWrap"></div>
+    <div class="rb-section__head"><h2 class="rb-section__title">Preguntas frecuentes</h2></div>
+    <div class="rb-faq">
+      <details>
+        <summary>¿Qué es una &quot;automatización en paralelo&quot;?</summary>
+        <div class="rb-faq__body">Es una automatización ejecutándose al mismo tiempo que otras. El número de tu plan indica cuántas pueden correr simultáneamente. No pagas por robot ni por usuario: pagas por cada automatización en operación.</div>
+      </details>
+      <details>
+        <summary>¿Todos los planes incluyen la suite completa?</summary>
+        <div class="rb-faq__body">Sí. RPA Studio, Saturn Studio, Orquestador (con Xperience), AI Studio y Nexus vienen incluidos en todos los planes. Lo que cambia entre planes es la capacidad de ejecución, los límites de usuarios y las características de seguridad y soporte.</div>
+      </details>
+      <details>
+        <summary>¿Qué son los créditos de AI Studio?</summary>
+        <div class="rb-faq__body">Son el volumen anual de procesamiento con inteligencia artificial incluido en tu plan: leer y entender documentos, correos, imágenes y audio. Los créditos no utilizados no se acumulan al ciclo siguiente.</div>
+      </details>
+      <details>
+        <summary>¿Puedo usar mi propio modelo de IA?</summary>
+        <div class="rb-faq__body">Sí, desde el plan Standard. Con Bring Your Own Model conectas tu proveedor de IA externo (por ejemplo Azure OpenAI o Amazon Bedrock) en AI Studio. Todos los planes incluyen además el modelo interno de AI Studio, que opera dentro del entorno Rocketbot.</div>
+      </details>
+      <details>
+        <summary>¿Puedo agregar más usuarios?</summary>
+        <div class="rb-faq__body">Sí. Los planes incluyen add-ons de usuarios finales y usuarios creadores adicionales. El plan Corporate incluye usuarios ilimitados sin necesidad de add-ons.</div>
+      </details>
+      <details>
+        <summary>¿Qué cubre el soporte?</summary>
+        <div class="rb-faq__body">Todos los planes se atienden por un canal de Slack dedicado en horario hábil (5×8), con tiempos de primera respuesta que van desde 60 hasta 15 minutos según el plan. La atención por evento 7×24 está disponible en todos los planes con costo adicional.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="rb-cta-band" id="contacto">
+  <div class="container">
+    <div class="rb-cta-band__inner">
+      <div>
+        <h2 class="rb-cta-band__title">¿No sabes qué plan necesitas?</h2>
+        <p class="rb-cta-band__sub">Cuéntanos cuántos procesos quieres automatizar y te recomendamos el plan exacto — sin compromiso.</p>
+      </div>
+      <a class="rb-btn rb-btn--white rb-btn--lg" href="contacto.html">Agendar una llamada</a>
+    </div>
   </div>
 </section>
 
@@ -973,8 +1185,8 @@ html{scroll-padding-top:92px;}
   <div class="container">
     <div class="rb-footer__grid">
       <div class="rb-footer__brand">
-        <img src="/assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
-        <p class="rb-footer__copy">Plataforma de automação de processos e agentes inteligentes para recuperar tempo e tomar decisões melhores.</p>
+        <img src="assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
+        <p class="rb-footer__copy">Plataforma de automatización de procesos y agentes inteligentes para recuperar tiempo y tomar mejores decisiones.</p>
         <div class="rb-footer__social">
           <a href="https://www.facebook.com/rocketbot.es" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -990,19 +1202,19 @@ html{scroll-padding-top:92px;}
           </a>
         </div>
       </div>
-      <div class="rb-footer__col"><h6>Produtos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestrador</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="planes.html">Planos e preços</a></li><li><a href="suite-rocketbot.html">Suíte Rocketbot</a></li><li><a href="cfo.html">Para CFOs</a></li><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contato</a></li><li><a href="#">Políticas de privacidade</a></li><li><a href="#">Políticas de segurança</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Suporte e serviços</h6><ul><li><a href="#">Certificação</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Fórum</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Productos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestador</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="planes.html">Planes y precios</a></li><li><a href="suite-rocketbot.html">Suite Rocketbot</a></li><li><a href="cfo.html">Para CFOs</a></li><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="#">Políticas de privacidad</a></li><li><a href="#">Políticas de seguridad</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Soporte y servicios</h6><ul><li><a href="#">Certificación</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">
       <span>© Rocketbot SpA | All rights reserved 2018 – 2025</span>
-      <div class="rb-footer__legal"><a href="#">Políticas de privacidade</a><a href="#">Políticas de segurança</a></div>
+      <div class="rb-footer__legal"><a href="#">Políticas de privacidad</a><a href="#">Políticas de seguridad</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-var LOGOS={light:'/assets/logos/logo-header.png',dark:'/assets/logos/logo-header-white.png'};
+var LOGOS={light:'assets/logos/logo-header.png',dark:'assets/logos/logo-header-white.png'};
 var html=document.documentElement,navLogo=document.getElementById('nav-logo'),themeBtn=document.getElementById('theme-btn'),iconSun=document.getElementById('icon-sun'),iconMoon=document.getElementById('icon-moon');
 function applyTheme(t){html.setAttribute('data-theme',t);if(navLogo)navLogo.src=LOGOS[t];if(iconSun)iconSun.style.display=t==='dark'?'none':'';if(iconMoon)iconMoon.style.display=t==='light'?'none':'';try{localStorage.setItem('rb-theme',t);}catch(e){}}
 (function(){var s='dark';try{s=localStorage.getItem('rb-theme')||'dark';}catch(e){}applyTheme(s);})();
@@ -1085,6 +1297,8 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
   });
 })();</script>
 
+<!-- Nombres de producto protegidos antes de cargar el traductor -->
+<script>try{ RB_I18N.shield(); }catch(e){}</script>
 
 <script>
 /* Selector de idioma: navega entre /  /en/  /pt/ */
@@ -1092,7 +1306,7 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
   var btn  = document.getElementById('rb-lang-btn');
   var menu = document.getElementById('rb-lang-menu');
   if(!btn || !menu) return;
-  var CUR='pt', PAGE='construir-vs-comprar.html';
+  var CUR='es', PAGE='planes.html';
   btn.addEventListener('click', function(e){
     e.stopPropagation();
     var open = menu.classList.toggle('open');
@@ -1114,97 +1328,13 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
 })();
 </script>
 
-<!-- PAGE-SPECIFIC INTERACTIVE -->
-<script>
-const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-
-// hero rotating word
-(function(){
-  const rot=document.getElementById('heroRot'); if(!rot||reduce) return;
-  var W={es:['el andamiaje','la orquestación','el gobierno','la trazabilidad','el mantenimiento'],en:['the scaffolding','the orchestration','the governance','the traceability','the maintenance'],pt:['a estrutura','a orquestração','a governança','a rastreabilidade','a manutenção']};
-  var WORDS=(window.RB_I18N?RB_I18N.pick(W):W.es), wi=0;
-  rot.classList.add('notranslate'); rot.setAttribute('translate','no'); rot.textContent=WORDS[0];
-  if(window.RB_I18N) RB_I18N.onLang(function(){ WORDS=RB_I18N.pick(W); rot.textContent=WORDS[wi%WORDS.length]; });
-  setInterval(function(){ rot.classList.add('out'); setTimeout(function(){ wi=(wi+1)%WORDS.length; rot.textContent=WORDS[wi]; rot.classList.remove('out'); },300); },2000);
-})();
-
-// comparison table
-const CHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>';
-const TOOL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2z"/></svg>';
-const DOT='<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>';
-function cell(kind,txt){return '<span class="st '+kind+'"><span class="i">'+(kind==='yes'?CHK:(kind==='diy'?TOOL:DOT))+'</span>'+txt+'</span>';}
-const CMP=[
- ['Escrever e prototipar código',['yes','Excelente'],['yes','Incluido']],
- ['Ejecutar 24/7 sin supervisión',['diy','Lo construyes tú'],['yes','De fábrica']],
- ['Llegar a sistemas sin API (legacy/escritorio)',['diy','Frágil, lo construyes tú'],['yes','RPA Studio']],
- ['Estructurar datos no estructurados',['partial','Puntual, sin gobierno'],['yes','AI Studio']],
- ['Reintentos y manejo de errores',['diy','Lo construyes tú'],['yes','De fábrica']],
- ['Credenciales y permisos por rol',['diy','Lo construyes tú'],['yes','De fábrica']],
- ['Trazabilidad y auditoría',['diy','Lo construyes tú'],['yes','De fábrica']],
- ['Mantenimiento al cambiar los sistemas',['diy','Lo asumes tú'],['yes','Plataforma + soporte']]
-];
-document.getElementById('cmpBody').innerHTML=CMP.map(r=>'<tr><td class="cap">'+r[0]+'</td><td>'+cell(r[1][0],r[1][1])+'</td><td>'+cell(r[2][0],r[2][1])+'</td></tr>').join('');
-
-// decision helper
-const QS=[
- {g:'procesos',q:'¿Cuántos procesos quieres automatizar?',o:[['Pocos (1–3)',0],['Varios (4–15)',1],['Muchos (15+)',2]]},
- {g:'api',q:'¿Tus sistemas tienen API?',o:[['Casi todos',0],['Algunos',1],['Muchos legacy sin API',2]]},
- {g:'compliance',q:'¿Exigencias de cumplimiento / auditoría?',o:[['Bajas',0],['Medias',1],['Altas (banca, seguros, salud)',2]]},
- {g:'equipo',q:'¿Equipo técnico dedicado a mantenerlo?',o:[['Sí, robusto',0],['Limitado',1],['No',2]]}
-];
-const DRIVERS={procesos:'Muchos procesos',api:'Sistemas legacy sin API',compliance:'Cumplimiento alto',equipo:'Sin equipo de mantenimiento'};
-const state={procesos:1,api:1,compliance:1,equipo:1};
-const qWrap=document.getElementById('bvbQ');
-qWrap.innerHTML=QS.map(function(it){
-  return '<div class="rb-bq" data-g="'+it.g+'"><div class="ql">'+it.q+'</div><div class="opts">'+it.o.map(function(o,i){return '<button class="rb-bopt'+(state[it.g]===o[1]?' act':'')+'" data-v="'+o[1]+'">'+o[0]+'</button>';}).join('')+'</div></div>';
-}).join('');
-function decide(){
-  const score=state.procesos+state.api+state.compliance+state.equipo; // 0..8
-  const pct=Math.round(score/8*100);
-  document.getElementById('bvbMk').style.left=pct+'%';
-  let v,b;
-  if(score<=2){ v='Hacerlo tú mismo puede tener sentido'; b='Con pocos procesos bien definidos, sistemas con API y un equipo capaz, Python + Claude puede ser más simple y económico. Empieza por ahí y crece desde la evidencia.'; }
-  else if(score<=5){ v='Depende: pesa el costo de mantenerlo'; b='Construirlo es viable, pero el verdadero costo aparece al operarlo y mantenerlo. Evalúa cuánto de tu equipo quedará amarrado a sostener la automatización en vez de avanzar.'; }
-  else { v='Una plataforma te conviene'; b='A esta escala, con sistemas sin API y exigencias de cumplimiento, reconstruir orquestación, gobierno y trazabilidad por tu cuenta sale caro. Una plataforma que ya trae todo eso, y a Claude adentro, protege tu inversión.'; }
-  document.getElementById('bvbVerdict').textContent=v;
-  document.getElementById('bvbBody').textContent=b;
-  const drivers=Object.keys(state).filter(k=>state[k]===2).map(k=>'<span class="dch">'+DRIVERS[k]+'</span>');
-  document.getElementById('bvbDrivers').innerHTML=drivers.length?('<span class="dch" style="background:transparent;border-color:transparent;color:rgba(255,255,255,.45);padding-left:0">Lo que inclina a plataforma:</span>'+drivers.join('')):'';
-}
-qWrap.querySelectorAll('.rb-bq').forEach(function(group){
-  const g=group.getAttribute('data-g');
-  group.querySelectorAll('.rb-bopt').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      group.querySelectorAll('.rb-bopt').forEach(x=>x.classList.remove('act'));
-      btn.classList.add('act'); state[g]=+btn.getAttribute('data-v'); decide();
-    });
-  });
-});
-decide();
-
-// FAQ
-const FAQS=[
-  ['¿No es más barato hacerlo con Python y Claude?','Para pocos procesos bien definidos y con API, puede serlo. A escala, el costo se traslada a operar y mantener: ejecución 24/7, errores, permisos, trazabilidad e integraciones que igual hay que construir y sostener.'],
-  ['¿La suite no me amarra a un proveedor?','Trae estándares abiertos, despliegue híbrido y es compatible con cualquier IA. El lock-in más caro suele ser el otro: la automatización casera que solo entiende quien la programó, y que se cae cuando esa persona no está.'],
-  ['¿Por qué no usar Claude para todo?','Para back-office de alto volumen quieres ejecución determinística y auditable, no un modelo improvisando cada corrida. Lo correcto es robots determinísticos para lo estructurado + IA acotada para el juicio, todo bajo gobierno.'],
-  ['¿La suite realmente usa Claude?','Sí. A través del MCP de Claude, la inteligencia del modelo opera dentro de la plataforma, gobernada, trazable y conectada. No es la suite contra Claude: es Claude gobernado.'],
-  ['Tengo un equipo técnico fuerte, ¿igual me conviene?','Quizá no para un piloto pequeño. La pregunta es si quieres que tu mejor talento construya y mantenga andamiaje, o que se enfoque en problemas de negocio mientras la plataforma sostiene la operación.']
-];
-const fw=document.getElementById('faqWrap');
-FAQS.forEach(function(pair){
-  var d=document.createElement('div');
-  d.innerHTML='<details><summary>'+pair[0]+'</summary><div class="rb-faq__body">'+pair[1]+'</div></details>';
-  fw.appendChild(d.firstElementChild);
-});
-</script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "¿Construir con Claude o comprar la suite?",
-  "url": "https://rocketbot.com/construir-vs-comprar",
-  "description": "Comparación honesta entre construir automatización con Claude/Python y adoptar la Suite Rocketbot, con Claude gobernado adentro.",
+  "name": "Planes y precios",
+  "url": "https://rocketbot.com/planes",
+  "description": "Capacidad, límites producto por producto, seguridad y soporte. Los cuatro planes de la Suite Rocketbot, comparados en detalle.",
   "provider": { "@type": "Organization", "name": "Rocketbot", "url": "https://rocketbot.com" }
 }
 </script>
