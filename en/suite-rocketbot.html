@@ -537,6 +537,14 @@ body{top:0 !important;}
 @media(max-width:700px){.rb-suiteband,.rb-suiteband__list{justify-content:flex-start;}}
 @media(max-width:980px){.rb-tiers{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.rb-tiers{grid-template-columns:1fr;}}
+/* Subgrid: alinea fila a fila las tarjetas entre si. Sin esto, un plan cuyo
+   "Ideal para" ocupa 1 linea en vez de 2 corre hacia arriba todo lo que
+   sigue; el largo del texto varia por plan y por idioma. */
+@supports(grid-template-rows:subgrid){
+  @media(min-width:561px){.rb-tier{display:grid;grid-template-rows:subgrid;grid-row:span 7;row-gap:0;}}
+  @media(min-width:981px){.rb-tiers{grid-template-rows:repeat(7,auto);}}
+  @media(min-width:561px) and (max-width:980px){.rb-tiers{grid-template-rows:repeat(14,auto);}}
+}
 /* final cta */
 .rb-final{background:linear-gradient(135deg,var(--rb-red),var(--rb-red-deep));border-radius:var(--r-xl);padding:60px 44px;text-align:center;position:relative;overflow:hidden;}
 .rb-final::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 120% at 20% 0%,rgba(255,255,255,.18),transparent 60%);}
