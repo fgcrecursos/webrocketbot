@@ -6,13 +6,10 @@ Suma el acceso a /planes en las 39 paginas (es + /en/ + /pt/):
   · menu mobile — boton "Planes y precios"
   · footer  — enlace en la columna de Recursos
 
-Y reordena el header para que el boton nuevo entre sin desbordar:
+Y aprieta un poco los enlaces para hacerle lugar (gap 28px -> 19px). El resto
+del reacomodo del header — que los dos botones convivan sin desbordar — vive en
+patch_cfo_restore.py, que es donde esta el corte de 1560px.
 
-  · sale el boton "Para CFOs" de las acciones (sigue en el desplegable de
-    Recursos, en el menu mobile y en el footer). Con el boton de Planes el
-    header pedia hasta 1613px y los enlaces se ocultan recien en 1480px,
-    asi que entre medio la barra se desbordaba.
-  · el gap de los enlaces baja de 28px a 22px.
   · en /planes el CTA del header pasa a ser el de descarga, el mismo del
     resto del sitio (heredaba "Hablemos de tu caso" del esqueleto).
 
@@ -39,7 +36,6 @@ NAV_LABEL = {'es': 'Planes', 'en': 'Plans', 'pt': 'Planos'}
 LONG_LABEL = {'es': 'Planes y precios', 'en': 'Plans and pricing', 'pt': 'Planos e preços'}
 DL_LABEL = {'es': 'Descarga', 'en': 'Download', 'pt': 'Download'}
 SUITE_LI = re.compile(r'<li class="rb-nav__suite-li">.*?</li>', re.S)
-CFO_BTN = re.compile(r'\n?[ \t]*<a href="cfo\.html" class="rb-btn (?:rb-cfo-btn|rb-btn--cfo)">[^<]*</a>')
 NAV_GAP = re.compile(r'(\.rb-nav__links\s*\{[^}]*?gap:\s*)28px')
 PLANES_CTA = re.compile(r'<a href="contacto\.html" class="rb-btn rb-btn--primary">[^<]*</a>(\s*</div>\s*</div>\s*</nav>)')
 MOBILE_SUITE = re.compile(r'(<div class="rb-mobile-menu__actions">\s*<a href="suite-rocketbot\.html"[^>]*>[^<]*</a>)', re.S)
@@ -77,14 +73,10 @@ def patch(path, lang, is_planes):
             return m.group(1) + (indent + '  ' + item if indent else item)
         src = FOOTER_RES.sub(_foot, src, count=1)
 
-    # 5) fuera el boton "Para CFOs" de las acciones: duplicaba el enlace del
-    #    desplegable de Recursos y era lo que hacia desbordar la barra
-    src = CFO_BTN.sub('', src, count=1)
+    # 5) enlaces un poco mas juntos para que entre el boton nuevo
+    src = NAV_GAP.sub(lambda m: m.group(1) + '19px', src, count=1)
 
-    # 6) enlaces un poco mas juntos
-    src = NAV_GAP.sub(lambda m: m.group(1) + '22px', src, count=1)
-
-    # 7) en /planes, el CTA del header es el de descarga como en el resto
+    # 6) en /planes, el CTA del header es el de descarga como en el resto
     if is_planes:
         src = PLANES_CTA.sub(
             lambda m: '<button type="button" class="rb-btn rb-btn--primary" data-dl-open>%s</button>%s'
