@@ -521,10 +521,20 @@ body{top:0 !important;}
 .rb-tier__price{font-weight:800;font-size:26px;color:var(--foreground);margin:16px 0 2px;}
 .rb-tier__price .per{font-size:14px;font-weight:600;color:var(--muted);}
 .rb-tier__pl{font-size:12px;color:var(--rb-red);font-weight:600;margin-bottom:18px;}
-.rb-tier ul{display:flex;flex-direction:column;gap:10px;margin:0 0 22px;flex:1;}
-.rb-tier li{display:flex;gap:9px;font-size:13px;color:var(--foreground);}
-.rb-tier li .tk{color:#1D9E75;font-weight:700;}
+.rb-tier__specs{display:flex;flex-direction:column;margin:0 0 22px;flex:1;}
+.rb-tier__spec{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);}
+.rb-tier__spec:last-child{border-bottom:0;}
+.rb-tier__spec dt{font-size:12px;color:var(--muted);line-height:1.35;}
+.rb-tier__spec dd{margin:0;font-size:15px;font-weight:800;color:var(--foreground);text-align:right;white-space:nowrap;}
+.rb-tier__spec dd.best{color:var(--rb-red);}
 .rb-tier .rb-btn{width:100%;justify-content:center;}
+/* banda de suite compartida: lo que viene en todos los planes, una sola vez */
+.rb-suiteband{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px 24px;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--card);padding:18px 24px;margin-bottom:20px;}
+.rb-suiteband__lb{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rb-green,#1D9E75);}
+.rb-suiteband__list{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 22px;}
+.rb-suiteband__it{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--foreground);}
+.rb-suiteband__it img{width:20px;height:20px;object-fit:contain;flex-shrink:0;}
+@media(max-width:700px){.rb-suiteband,.rb-suiteband__list{justify-content:flex-start;}}
 @media(max-width:980px){.rb-tiers{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.rb-tiers{grid-template-columns:1fr;}}
 /* final cta */
@@ -1102,6 +1112,17 @@ html{scroll-padding-top:92px;}
       <p class="rb-section__sub">Todos os planos incluem a suíte completa. Você escolhe a capacidade: automações em paralelo, créditos do AI Studio e tempos de&nbsp;suporte.</p>
       <p class="rb-section__sub" style="margin-top:8px;font-size:13px;">Preços em dólares americanos (US$).</p>
     </div>
+    <div class="rb-suiteband">
+      <span class="rb-suiteband__lb">&#10003; Incluído em todos os planos</span>
+      <div class="rb-suiteband__list">
+        <span class="rb-suiteband__it"><img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</span>
+        <span class="rb-suiteband__it"><img src="/assets/logos/products/saturn-studio.png" alt="" loading="lazy" decoding="async">Saturn Studio</span>
+        <span class="rb-suiteband__it"><img src="/assets/logos/products/orchestrator.png" alt="" loading="lazy" decoding="async">Orquestrador</span>
+        <span class="rb-suiteband__it"><img src="/assets/logos/products/xperience.png" alt="" loading="lazy" decoding="async">Xperience</span>
+        <span class="rb-suiteband__it"><img src="/assets/logos/products/ai-studio.png" alt="" loading="lazy" decoding="async">AI Studio</span>
+        <span class="rb-suiteband__it"><img src="/assets/logos/products/nexus.png" alt="" loading="lazy" decoding="async">Nexus</span>
+      </div>
+    </div>
     <div class="rb-tiers">
       <div class="rb-tier">
         <div class="rb-tier__num">01 &middot; Entry</div>
@@ -1109,13 +1130,12 @@ html{scroll-padding-top:92px;}
         <p class="rb-tier__desc">Para um time pequeno que começa a escalar a sua automação.</p>
         <div class="rb-tier__price">US$ 7.990<span class="per">/ano</span></div>
         <div class="rb-tier__pl">Ideal para: time pequeno escalando</div>
-        <ul>
-          <li><span class="tk">&#10003;</span> 5 automações em paralelo</li>
-          <li><span class="tk">&#10003;</span> 25M de créditos do AI Studio por ano</li>
-          <li><span class="tk">&#10003;</span> Suíte completa: RPA Studio, Saturn Studio, Orquestrador + Xperience, AI Studio e Nexus</li>
-          <li><span class="tk">&#10003;</span> Suporte por Slack: resposta em 60 min</li>
-          <li><span class="tk">&#10003;</span> Customer Success compartilhado</li>
-        </ul>
+        <dl class="rb-tier__specs">
+          <div class="rb-tier__spec"><dt>Automações em paralelo</dt><dd>5</dd></div>
+          <div class="rb-tier__spec"><dt>Créditos do AI Studio / ano</dt><dd>25M</dd></div>
+          <div class="rb-tier__spec"><dt>Resposta por Slack</dt><dd>60 min</dd></div>
+          <div class="rb-tier__spec"><dt>Customer Success</dt><dd>Compartilhado</dd></div>
+        </dl>
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Vamos conversar</a>
       </div>
       <div class="rb-tier rb-tier--feat">
@@ -1125,13 +1145,12 @@ html{scroll-padding-top:92px;}
         <p class="rb-tier__desc">Para uma empresa média pronta para escalar a sua operação.</p>
         <div class="rb-tier__price">US$ 14.990<span class="per">/ano</span></div>
         <div class="rb-tier__pl">Ideal para: empresa média pronta para escalar</div>
-        <ul>
-          <li><span class="tk">&#10003;</span> 20 automações em paralelo</li>
-          <li><span class="tk">&#10003;</span> 50M de créditos do AI Studio por ano</li>
-          <li><span class="tk">&#10003;</span> Suíte completa: RPA Studio, Saturn Studio, Orquestrador + Xperience, AI Studio e Nexus</li>
-          <li><span class="tk">&#10003;</span> Suporte por Slack: resposta em 45 min</li>
-          <li><span class="tk">&#10003;</span> Customer Success compartilhado</li>
-        </ul>
+        <dl class="rb-tier__specs">
+          <div class="rb-tier__spec"><dt>Automações em paralelo</dt><dd>20</dd></div>
+          <div class="rb-tier__spec"><dt>Créditos do AI Studio / ano</dt><dd>50M</dd></div>
+          <div class="rb-tier__spec"><dt>Resposta por Slack</dt><dd>45 min</dd></div>
+          <div class="rb-tier__spec"><dt>Customer Success</dt><dd>Compartilhado</dd></div>
+        </dl>
         <a class="rb-btn rb-btn--primary" href="contacto.html">Agendar reunião</a>
       </div>
       <div class="rb-tier">
@@ -1140,13 +1159,12 @@ html{scroll-padding-top:92px;}
         <p class="rb-tier__desc">Para uma grande empresa avançando rumo à hiperautomação.</p>
         <div class="rb-tier__price">US$ 24.990<span class="per">/ano</span></div>
         <div class="rb-tier__pl">Ideal para: grande empresa rumo à hiperautomação</div>
-        <ul>
-          <li><span class="tk">&#10003;</span> 50 automações em paralelo</li>
-          <li><span class="tk">&#10003;</span> 100M de créditos do AI Studio por ano</li>
-          <li><span class="tk">&#10003;</span> Suíte completa: RPA Studio, Saturn Studio, Orquestrador + Xperience, AI Studio e Nexus</li>
-          <li><span class="tk">&#10003;</span> Suporte por Slack: resposta em 30 min</li>
-          <li><span class="tk">&#10003;</span> Customer Success compartilhado</li>
-        </ul>
+        <dl class="rb-tier__specs">
+          <div class="rb-tier__spec"><dt>Automações em paralelo</dt><dd>50</dd></div>
+          <div class="rb-tier__spec"><dt>Créditos do AI Studio / ano</dt><dd>100M</dd></div>
+          <div class="rb-tier__spec"><dt>Resposta por Slack</dt><dd>30 min</dd></div>
+          <div class="rb-tier__spec"><dt>Customer Success</dt><dd>Compartilhado</dd></div>
+        </dl>
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Vamos conversar</a>
       </div>
       <div class="rb-tier">
@@ -1155,13 +1173,12 @@ html{scroll-padding-top:92px;}
         <p class="rb-tier__desc">Para uma operação agêntica em escala corporativa.</p>
         <div class="rb-tier__price">US$ 49.990<span class="per">/ano</span></div>
         <div class="rb-tier__pl">Ideal para: operação agêntica em escala corporativa</div>
-        <ul>
-          <li><span class="tk">&#10003;</span> 200 automações em paralelo</li>
-          <li><span class="tk">&#10003;</span> 250M de créditos do AI Studio por ano</li>
-          <li><span class="tk">&#10003;</span> Suíte completa: RPA Studio, Saturn Studio, Orquestrador + Xperience, AI Studio e Nexus</li>
-          <li><span class="tk">&#10003;</span> Suporte por Slack: resposta em 15 min</li>
-          <li><span class="tk">&#10003;</span> Customer Success dedicado</li>
-        </ul>
+        <dl class="rb-tier__specs">
+          <div class="rb-tier__spec"><dt>Automações em paralelo</dt><dd class="best">200</dd></div>
+          <div class="rb-tier__spec"><dt>Créditos do AI Studio / ano</dt><dd class="best">250M</dd></div>
+          <div class="rb-tier__spec"><dt>Resposta por Slack</dt><dd class="best">15 min</dd></div>
+          <div class="rb-tier__spec"><dt>Customer Success</dt><dd class="best">Dedicado</dd></div>
+        </dl>
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Vamos conversar</a>
       </div>
     </div>
