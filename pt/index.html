@@ -225,11 +225,11 @@ p { margin: 0; }
 ═══════════════════════════════════════════ */
 .rb-nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-  padding: 18px 24px;
+  padding: 18px 20px;
   transition: padding .3s, backdrop-filter .3s, background .3s, border-color .3s;
 }
 .rb-nav.scrolled {
-  padding: 10px 24px;
+  padding: 10px 20px;
   background: linear-gradient(135deg, rgba(43,127,255,.12), rgba(188,0,23,.12), rgba(38,50,56,.18));
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -243,13 +243,13 @@ p { margin: 0; }
 .rb-nav__inner {
   width:fit-content;min-width:min(1280px,100%);max-width:100%; margin: 0 auto;
   display: flex; align-items: center;
-  justify-content: space-between; gap: 24px;
+  justify-content: space-between; gap: 20px;
 }
 .rb-nav__logo-wrap { display: flex; align-items: center; flex-shrink: 0; }
-.rb-nav__logo      { height: 32px; width: auto; display: block; }
+.rb-nav__logo      { height: 24px; width: auto; display: block; }
 
 .rb-nav__links {
-  display: flex; align-items: center; gap: 19px;
+  display: flex; align-items: center; gap: 16px;
   list-style: none; margin: 0; padding: 0;
 }
 .rb-nav__links a, .rb-nav__links button {
@@ -657,8 +657,8 @@ p { margin: 0; }
 [data-theme="dark"] .rb-solution__banner{background:rgba(188,0,23,.08);border-color:rgba(188,0,23,.2);}
 .rb-solution__banner-icon{flex-shrink:0;width:44px;height:44px;border-radius:12px;background:rgba(188,0,23,.12);display:flex;align-items:center;justify-content:center;color:var(--rb-red);}
 .rb-solution__banner-title{font-size:15px;font-weight:700;color:var(--foreground);margin-bottom:6px;}
-.rb-solution__banner-desc{font-size:13px;color:var(--rb-red);line-height:1.6;}
-[data-theme="dark"] .rb-solution__banner-desc{color:rgba(188,0,23,.85);}
+.rb-solution__banner-desc{font-size:13px;color:#555;line-height:1.6;}
+[data-theme="dark"] .rb-solution__banner-desc{color:rgba(255,255,255,.72);}.rb-solution__banner-desc a{color:var(--rb-red);font-weight:700;}[data-theme="dark"] .rb-solution__banner-desc a{color:#fff;text-decoration:underline;}
 @media(max-width:900px){.rb-solution__cols{grid-template-columns:1fr;gap:16px;}}
 
 /* ═══ IMPACTO (Sección 5) ════════════════════════════════════════════════════ */
@@ -1082,7 +1082,7 @@ a.rb-product { text-decoration:none; color:inherit; }
 .rb-mobile-menu__btn--primary{background:var(--rb-red);color:#fff;border-color:var(--rb-red);}
 .rb-mobile-menu__btn--primary:hover{background:var(--rb-red-deep);}
 @media(max-width:600px){.rb-hamburger{display:flex;}}
-@media(max-width:1560px){.rb-nav__links{display:none;}.rb-hamburger{display:flex;}.rb-nav__actions .rb-btn{display:none;}}
+@media(max-width:1432px){.rb-nav__links{display:none;}.rb-hamburger{display:flex;}.rb-nav__actions .rb-btn{display:none;}}
 
 /* DOWNLOAD MODAL */
 .rb-dlmodal{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .25s;}
@@ -1937,7 +1937,7 @@ html{scroll-padding-top:92px;}
       </div>
       <div>
         <div class="rb-solution__banner-title">Juntos, mantêm a operação em movimento.</div>
-        <p class="rb-solution__banner-desc">Enquanto os robôs executam as tarefas, os agentes analisam a informação e cuidam das exceções. Assim o seu time ganha tempo para analisar, decidir e gerar valor. Construir isso em casa ou comprar pronto? <a href="construir-vs-comprar.html" style="color:var(--rb-red);font-weight:700">Veja em Construir ou comprar →</a></p>
+        <p class="rb-solution__banner-desc">Enquanto os robôs executam as tarefas, os agentes analisam a informação e cuidam das exceções. Assim o seu time ganha tempo para analisar, decidir e gerar valor. Construir isso em casa ou comprar pronto? <a href="construir-vs-comprar.html">Veja em Construir ou comprar →</a></p>
       </div>
     </div>
   </div>

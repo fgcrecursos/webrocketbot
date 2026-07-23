@@ -866,7 +866,9 @@ def render_table(lang):
     for i, row in enumerate(rows):
         last = ' class="is-last"' if i == len(rows) - 1 else ''
         if row[0] == 'grp':
-            out.append('          <tr class="rb-ptbl__grp"><td>%s</td><td class="is-std"></td><td></td><td></td><td></td></tr>'
+            # la celda is-std es la 3ra columna (Standard), no la 2da (Entry):
+            # asi el borde rojo de la columna no da un salto en cada banda
+            out.append('          <tr class="rb-ptbl__grp"><td>%s</td><td></td><td class="is-std"></td><td></td><td></td></tr>'
                        % esc(tr(row[1], lang)))
             continue
         _, label, tip, cells = row
