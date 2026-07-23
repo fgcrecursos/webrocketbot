@@ -32,7 +32,7 @@ CSS_ADD = """
 .rb-nav__plans-hdr[aria-current="page"]{background:var(--rb-red);border-color:var(--rb-red);color:#fff !important;}
 @media(max-width:1260px){.rb-nav__plans-li{display:none !important;}}"""
 
-NAV_LABEL = {'es': 'Planes', 'en': 'Plans', 'pt': 'Planos'}
+NAV_LABEL = {'es': 'Precios', 'en': 'Pricing', 'pt': 'Preços'}
 LONG_LABEL = {'es': 'Planes y precios', 'en': 'Plans and pricing', 'pt': 'Planos e preços'}
 DL_LABEL = {'es': 'Descarga', 'en': 'Download', 'pt': 'Download'}
 SUITE_LI = re.compile(r'<li class="rb-nav__suite-li">.*?</li>', re.S)
