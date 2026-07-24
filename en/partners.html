@@ -114,7 +114,7 @@ window.RB_I18N=(function(){
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RPA & AI Partner Program | Become a Rocketbot Partner</title>
 <meta name="description" content="Join the Rocketbot partner program: sales support, technical support, training and Silver, Gold and Platinum tiers. Grow your business with RPA and AI.">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, follow"><!-- TEMP 2026-07-24: landing oculta; volver a "index, follow" para reactivar -->
 <link rel="canonical" href="https://rocketbot.com/en/partners">
 <link rel="alternate" hreflang="es" href="https://rocketbot.com/partners">
 <link rel="alternate" hreflang="en" href="https://rocketbot.com/en/partners">
@@ -490,6 +490,8 @@ html{scroll-padding-top:92px;}
 [data-theme="dark"] .rb-nav__dd-login{color:#FF5A6E !important;}
 .rb-mobile-menu__partner{color:var(--rb-red) !important;font-weight:800 !important;}
 [data-theme="dark"] .rb-mobile-menu__partner{color:#FF5A6E !important;}
+/* TEMP 2026-07-24: "Quiero ser partner" oculto a pedido; borrar estas 2 lineas para reactivar */
+.rb-nav__dd-cta,.rb-mobile-menu__partner{display:none !important;}
 </style>
 </head>
 <body>
