@@ -797,6 +797,16 @@ html{scroll-padding-top:92px;}
   .rb-roi-cta .rb-btn{max-width:100%;white-space:normal;text-align:center;}
 }
 </style>
+
+<style id="rb-ddnav-css">
+.rb-nav__item--dropdown.rb-dd-open>.rb-nav__dropdown{opacity:1 !important;pointer-events:auto !important;transform:translate(-50%,0) !important;}
+.rb-nav__dd-cta{display:flex !important;align-items:center;justify-content:center;gap:6px;margin:2px 4px 8px;padding:11px 16px !important;background:linear-gradient(110deg,#FF2942,#BC0017);color:#fff !important;font-weight:800 !important;border-radius:10px;box-shadow:0 6px 16px rgba(188,0,23,.32);transition:filter .2s,transform .2s;}
+.rb-nav__dd-cta:hover{color:#fff !important;filter:brightness(1.07);transform:translateY(-1px);background:linear-gradient(110deg,#FF2942,#BC0017) !important;}
+.rb-nav__dd-login{color:var(--rb-red) !important;font-weight:700 !important;}
+[data-theme="dark"] .rb-nav__dd-login{color:#FF5A6E !important;}
+.rb-mobile-menu__partner{color:var(--rb-red) !important;font-weight:800 !important;}
+[data-theme="dark"] .rb-mobile-menu__partner{color:#FF5A6E !important;}
+</style>
 </head>
 <body>
 
@@ -820,7 +830,10 @@ html{scroll-padding-top:92px;}
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Suporte e serviços <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Fórum</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a><a href="#">Media kit</a></div>
+        <div class="rb-nav__dropdown">
+          <a href="partners.html" class="rb-nav__dd-cta">✦ Quero ser parceiro</a><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Fórum</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a><a href="#">Media kit</a>
+          <a href="https://partners.rocketbot.com/wp-login.php" target="_blank" rel="noopener" class="rb-nav__dd-login">Login de Parceiros →</a>
+        </div>
       </li>
       <li><a href="contacto.html">Fale conosco</a></li>
     </ul>
@@ -867,6 +880,9 @@ html{scroll-padding-top:92px;}
       <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
       <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Media kit</a>
+    
+      <a href="partners.html" class="rb-mobile-menu__partner">Quero ser parceiro</a>
+      <a href="https://partners.rocketbot.com/wp-login.php" target="_blank" rel="noopener">Login de Parceiros</a>
     </div>
     <div class="rb-mobile-menu__actions">
       <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suíte Rocketbot</a>
@@ -1689,6 +1705,39 @@ omObs.observe(document.querySelector('.rb-omcp'));
      y así el parallax no se traba si rAF viene limitado */
   window.addEventListener('scroll',apply,{passive:true});
   apply();
+})();
+</script>
+
+<script id="rb-ddnav-js">
+(function(){
+  var items = Array.prototype.slice.call(document.querySelectorAll('.rb-nav__item--dropdown'));
+  if(!items.length) return;
+  function closeAll(except){
+    items.forEach(function(o){
+      if(o===except) return;
+      o.classList.remove('rb-dd-open');
+      var b=o.querySelector(':scope > button');
+      if(b) b.setAttribute('aria-expanded','false');
+    });
+  }
+  items.forEach(function(li){
+    var btn = li.querySelector(':scope > button');
+    if(!btn) return;
+    btn.setAttribute('aria-haspopup','true');
+    btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      var open = !li.classList.contains('rb-dd-open');
+      closeAll(li);
+      li.classList.toggle('rb-dd-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(e.target.closest && e.target.closest('.rb-nav__item--dropdown')) return;
+    closeAll(null);
+  });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(null); });
 })();
 </script>
 </body>
