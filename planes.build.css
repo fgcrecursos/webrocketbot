@@ -25,6 +25,14 @@
 .rb-pcard__inc{display:flex;flex-direction:column;gap:7px;margin:0;flex:1 1 auto;}
 .rb-pcard__inc li{position:relative;padding-left:21px;font-size:13px;line-height:1.45;color:var(--foreground);}
 .rb-pcard__inc li::before{content:'✓';position:absolute;left:0;top:0;color:var(--rb-green,#1D9E75);font-weight:800;font-size:12px;}
+/* Cartelito "total del plan": las tarjetas dicen "Todo lo de X, mas", asi que
+   una cantidad podria leerse como sumada a la del plan anterior. No se suma. */
+.rb-pcard__tag{display:inline-block;padding:1px 8px;border:1px solid var(--border);border-radius:var(--r-pill);font-size:9.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.7;white-space:nowrap;cursor:help;vertical-align:middle;transition:color .15s,border-color .15s;}
+.rb-pcard__tag:hover,.rb-pcard__tag:focus{border-color:var(--rb-red);color:var(--rb-red);outline:none;}
+.rb-pcard__tag:hover .rb-info__pop,.rb-pcard__tag:focus .rb-info__pop{opacity:1;visibility:visible;}
+/* el pop se ancla al <li> (position:relative) para no desbordar la tarjeta;
+   abajo de 1041px manda la regla generica que lo fija al pie de la pantalla */
+@media(min-width:1041px){.rb-pcard__inc li .rb-info__pop{left:0;right:0;width:auto;bottom:calc(100% + 8px);}}
 .rb-pcard__addons{margin-top:18px;padding-top:16px;border-top:1px dashed var(--border);}
 .rb-pcard__addons ul{display:flex;flex-direction:column;gap:5px;margin:0;}
 .rb-pcard__addons li{font-size:12px;color:var(--muted);line-height:1.45;}

@@ -79,6 +79,25 @@ def tr(val, lang):
     return val[lang] if isinstance(val, dict) else val
 
 
+# ── aclaracion de no-acumulacion para las lineas con una cantidad concreta ──
+# Las tarjetas dicen "Todo lo de X, mas": sin esto se puede leer que las
+# cantidades se suman de un plan al siguiente. No se suman.
+TAG_TOTAL = L('total del plan', 'plan total', 'total do plano')
+
+TIP_CREDITOS = L('Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.',
+                 'AI Studio credits are not cumulative between plans: the plan includes exactly this amount, it is not added to the previous plan’s.',
+                 'Os créditos de AI Studio não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.')
+
+TIP_LICENCIAS = L('Las licencias de desarrollo no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.',
+                  'Development licenses are not cumulative between plans: the plan includes exactly this number, it is not added to the previous plan’s.',
+                  'As licenças de desenvolvimento não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.')
+
+
+def NOTE(text, tip):
+    """Item de tarjeta con cartelito + detalle al pasar el cursor."""
+    return (text, TAG_TOTAL, tip)
+
+
 # ───────────────────────── contenido de las tarjetas ─────────────────────────
 PLANS = [
     {
@@ -96,10 +115,11 @@ PLANS = [
             L('Todos los productos de la suite',
               'Every product in the suite',
               'Todos os produtos da suíte'),
-            L('25M créditos de AI Studio / año',
-              '25M AI Studio credits / year',
-              '25M créditos de AI Studio / ano'),
-            L('2 licencias de desarrollo', '2 development licenses', '2 licenças de desenvolvimento'),
+            NOTE(L('25M créditos de AI Studio / año',
+                   '25M AI Studio credits / year',
+                   '25M créditos de AI Studio / ano'), TIP_CREDITOS),
+            NOTE(L('2 licencias de desarrollo', '2 development licenses', '2 licenças de desenvolvimento'),
+                 TIP_LICENCIAS),
             L('5 aplicaciones Nexus · 10 usuarios finales',
               '5 Nexus apps · 10 end users',
               '5 aplicativos Nexus · 10 usuários finais'),
@@ -129,10 +149,11 @@ PLANS = [
                  '20 automações em paralelo'),
         'inc_lb': L('Todo lo de Entry, más', 'Everything in Entry, plus', 'Tudo do Entry, mais'),
         'inc': [
-            L('50M créditos de AI Studio / año',
-              '50M AI Studio credits / year',
-              '50M créditos de AI Studio / ano'),
-            L('3 licencias de desarrollo', '3 development licenses', '3 licenças de desenvolvimento'),
+            NOTE(L('50M créditos de AI Studio / año',
+                   '50M AI Studio credits / year',
+                   '50M créditos de AI Studio / ano'), TIP_CREDITOS),
+            NOTE(L('3 licencias de desarrollo', '3 development licenses', '3 licenças de desenvolvimento'),
+                 TIP_LICENCIAS),
             L('Apps y workspaces ilimitados (Nexus)',
               'Unlimited apps and workspaces (Nexus)',
               'Apps e workspaces ilimitados (Nexus)'),
@@ -164,10 +185,11 @@ PLANS = [
                  '50 automações em paralelo'),
         'inc_lb': L('Todo lo de Standard, más', 'Everything in Standard, plus', 'Tudo do Standard, mais'),
         'inc': [
-            L('100M créditos de AI Studio / año',
-              '100M AI Studio credits / year',
-              '100M créditos de AI Studio / ano'),
-            L('5 licencias de desarrollo', '5 development licenses', '5 licenças de desenvolvimento'),
+            NOTE(L('100M créditos de AI Studio / año',
+                   '100M AI Studio credits / year',
+                   '100M créditos de AI Studio / ano'), TIP_CREDITOS),
+            NOTE(L('5 licencias de desarrollo', '5 development licenses', '5 licenças de desenvolvimento'),
+                 TIP_LICENCIAS),
             L('15 usuarios creadores de apps', '15 app-builder users', '15 usuários criadores de apps'),
             L('50 usuarios finales · 50 usuarios con login',
               '50 end users · 50 users with login',
@@ -195,9 +217,9 @@ PLANS = [
                  '200 em paralelo · 1.000 processos administrados'),
         'inc_lb': L('Todo lo de Enterprise, más', 'Everything in Enterprise, plus', 'Tudo do Enterprise, mais'),
         'inc': [
-            L('250M créditos de AI Studio / año',
-              '250M AI Studio credits / year',
-              '250M créditos de AI Studio / ano'),
+            NOTE(L('200M créditos de AI Studio / año',
+                   '200M AI Studio credits / year',
+                   '200M créditos de AI Studio / ano'), TIP_CREDITOS),
             L('Licencias y usuarios ilimitados', 'Unlimited licenses and users', 'Licenças e usuários ilimitados'),
             L('SSO corporativo (Active Directory) · SCIM',
               'Corporate SSO (Active Directory) · SCIM',
@@ -518,7 +540,7 @@ ROWS = [
      L('Volumen anual de procesamiento con IA incluido en el plan. Sin acumulación al ciclo siguiente.',
        'Annual AI processing volume included in the plan. It does not roll over to the next cycle.',
        'Volume anual de processamento com IA incluído no plano. Sem acumulação para o ciclo seguinte.'),
-     [T('25M'), T('50M'), T('100M'), B('250M')]),
+     [T('25M'), T('50M'), T('100M'), B('200M')]),
     ('row', L('Modelo de IA incluido', 'AI model included', 'Modelo de IA incluído'),
      L('Motor interno de AI Studio, operando dentro del entorno Rocketbot.',
        'AI Studio’s internal engine, running inside the Rocketbot environment.',
@@ -899,7 +921,14 @@ def render_cards(lang):
         out.append('        <div class="rb-pcard__lb">%s</div>' % esc(tr(p['inc_lb'], lang)))
         out.append('        <ul class="rb-pcard__inc">')
         for it in p['inc']:
-            out.append('          <li>%s</li>' % esc(tr(it, lang)))
+            if isinstance(it, tuple):
+                text, tag, tip = it
+                out.append('          <li>%s <span class="rb-pcard__tag" tabindex="0" role="button" '
+                           'aria-label="%s">%s<span class="rb-info__pop">%s</span></span></li>'
+                           % (esc(tr(text, lang)), esc(tr(COPY['info_aria'], lang)),
+                              esc(tr(tag, lang)), esc(tr(tip, lang))))
+            else:
+                out.append('          <li>%s</li>' % esc(tr(it, lang)))
         out.append('        </ul>')
         out.append('        <div class="rb-pcard__addons">')
         out.append('          <div class="rb-pcard__lb">%s</div>' % esc(tr(COPY['addons_lb'], lang)))

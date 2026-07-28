@@ -576,6 +576,19 @@ html{scroll-padding-top:92px;}
   .rb-btn--lg{padding:14px 20px;font-size:14px;}
   .rb-roi-cta .rb-btn{max-width:100%;white-space:normal;text-align:center;}
 }
+</style>
+
+<style id="rb-ddnav-css">
+.rb-nav__item--dropdown.rb-dd-open>.rb-nav__dropdown{opacity:1 !important;pointer-events:auto !important;transform:translate(-50%,0) !important;}
+.rb-nav__dd-cta{display:flex !important;align-items:center;justify-content:center;gap:6px;margin:2px 4px 8px;padding:11px 16px !important;background:linear-gradient(110deg,#FF2942,#BC0017) !important;color:#fff !important;font-weight:800 !important;border-radius:10px;box-shadow:0 6px 16px rgba(188,0,23,.32);transition:filter .2s,transform .2s;}
+.rb-nav__dropdown a.rb-nav__dd-cta:hover{color:#fff !important;}
+.rb-nav__dd-cta:hover{color:#fff !important;filter:brightness(1.07);transform:translateY(-1px);background:linear-gradient(110deg,#FF2942,#BC0017) !important;}
+.rb-nav__dd-login{color:var(--rb-red) !important;font-weight:700 !important;}
+[data-theme="dark"] .rb-nav__dd-login{color:#FF5A6E !important;}
+.rb-mobile-menu__partner{color:var(--rb-red) !important;font-weight:800 !important;}
+[data-theme="dark"] .rb-mobile-menu__partner{color:#FF5A6E !important;}
+/* TEMP 2026-07-24: "Quiero ser partner" oculto a pedido; borrar estas 2 lineas para reactivar */
+.rb-nav__dd-cta,.rb-mobile-menu__partner{display:none !important;}
 
 /* ═══════════════════ PÁGINA DE PLANES ═══════════════════ */
 /* Banda: la suite completa entra en todos los planes, se dice una sola vez */
@@ -603,6 +616,14 @@ html{scroll-padding-top:92px;}
 .rb-pcard__inc{display:flex;flex-direction:column;gap:7px;margin:0;flex:1 1 auto;}
 .rb-pcard__inc li{position:relative;padding-left:21px;font-size:13px;line-height:1.45;color:var(--foreground);}
 .rb-pcard__inc li::before{content:'✓';position:absolute;left:0;top:0;color:var(--rb-green,#1D9E75);font-weight:800;font-size:12px;}
+/* Cartelito "total del plan": las tarjetas dicen "Todo lo de X, mas", asi que
+   una cantidad podria leerse como sumada a la del plan anterior. No se suma. */
+.rb-pcard__tag{display:inline-block;padding:1px 8px;border:1px solid var(--border);border-radius:var(--r-pill);font-size:9.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.7;white-space:nowrap;cursor:help;vertical-align:middle;transition:color .15s,border-color .15s;}
+.rb-pcard__tag:hover,.rb-pcard__tag:focus{border-color:var(--rb-red);color:var(--rb-red);outline:none;}
+.rb-pcard__tag:hover .rb-info__pop,.rb-pcard__tag:focus .rb-info__pop{opacity:1;visibility:visible;}
+/* el pop se ancla al <li> (position:relative) para no desbordar la tarjeta;
+   abajo de 1041px manda la regla generica que lo fija al pie de la pantalla */
+@media(min-width:1041px){.rb-pcard__inc li .rb-info__pop{left:0;right:0;width:auto;bottom:calc(100% + 8px);}}
 .rb-pcard__addons{margin-top:18px;padding-top:16px;border-top:1px dashed var(--border);}
 .rb-pcard__addons ul{display:flex;flex-direction:column;gap:5px;margin:0;}
 .rb-pcard__addons li{font-size:12px;color:var(--muted);line-height:1.45;}
@@ -661,19 +682,6 @@ html{scroll-padding-top:92px;}
   .rb-info__pop{position:fixed;left:16px;right:16px;bottom:16px;width:auto;}
 }
 
-</style>
-
-<style id="rb-ddnav-css">
-.rb-nav__item--dropdown.rb-dd-open>.rb-nav__dropdown{opacity:1 !important;pointer-events:auto !important;transform:translate(-50%,0) !important;}
-.rb-nav__dd-cta{display:flex !important;align-items:center;justify-content:center;gap:6px;margin:2px 4px 8px;padding:11px 16px !important;background:linear-gradient(110deg,#FF2942,#BC0017) !important;color:#fff !important;font-weight:800 !important;border-radius:10px;box-shadow:0 6px 16px rgba(188,0,23,.32);transition:filter .2s,transform .2s;}
-.rb-nav__dropdown a.rb-nav__dd-cta:hover{color:#fff !important;}
-.rb-nav__dd-cta:hover{color:#fff !important;filter:brightness(1.07);transform:translateY(-1px);background:linear-gradient(110deg,#FF2942,#BC0017) !important;}
-.rb-nav__dd-login{color:var(--rb-red) !important;font-weight:700 !important;}
-[data-theme="dark"] .rb-nav__dd-login{color:#FF5A6E !important;}
-.rb-mobile-menu__partner{color:var(--rb-red) !important;font-weight:800 !important;}
-[data-theme="dark"] .rb-mobile-menu__partner{color:#FF5A6E !important;}
-/* TEMP 2026-07-24: "Quiero ser partner" oculto a pedido; borrar estas 2 lineas para reactivar */
-.rb-nav__dd-cta,.rb-mobile-menu__partner{display:none !important;}
 </style>
 </head>
 <body>
@@ -931,8 +939,8 @@ html{scroll-padding-top:92px;}
         <div class="rb-pcard__lb">Incluye</div>
         <ul class="rb-pcard__inc">
           <li>Todos los productos de la suite</li>
-          <li>25M créditos de AI Studio / año</li>
-          <li>2 licencias de desarrollo</li>
+          <li>25M créditos de AI Studio / año <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalle">total del plan<span class="rb-info__pop">Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
+          <li>2 licencias de desarrollo <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalle">total del plan<span class="rb-info__pop">Las licencias de desarrollo no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
           <li>5 aplicaciones Nexus · 10 usuarios finales</li>
           <li>Soporte por Slack · respuesta 60 min</li>
           <li>Auditoría 90 días · 2FA · SSO Google</li>
@@ -955,8 +963,8 @@ html{scroll-padding-top:92px;}
         <a class="rb-btn rb-btn--primary" href="contacto.html">Hablar con ventas</a>
         <div class="rb-pcard__lb">Todo lo de Entry, más</div>
         <ul class="rb-pcard__inc">
-          <li>50M créditos de AI Studio / año</li>
-          <li>3 licencias de desarrollo</li>
+          <li>50M créditos de AI Studio / año <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalle">total del plan<span class="rb-info__pop">Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
+          <li>3 licencias de desarrollo <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalle">total del plan<span class="rb-info__pop">Las licencias de desarrollo no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
           <li>Apps y workspaces ilimitados (Nexus)</li>
           <li>Bring Your Own Model (IA externa)</li>
           <li>Monitoreo en tiempo real</li>
@@ -980,8 +988,8 @@ html{scroll-padding-top:92px;}
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Hablar con ventas</a>
         <div class="rb-pcard__lb">Todo lo de Standard, más</div>
         <ul class="rb-pcard__inc">
-          <li>100M créditos de AI Studio / año</li>
-          <li>5 licencias de desarrollo</li>
+          <li>100M créditos de AI Studio / año <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalle">total del plan<span class="rb-info__pop">Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
+          <li>5 licencias de desarrollo <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalle">total del plan<span class="rb-info__pop">Las licencias de desarrollo no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
           <li>15 usuarios creadores de apps</li>
           <li>50 usuarios finales · 50 usuarios con login</li>
           <li>Respuesta de soporte 30 min</li>
@@ -1005,7 +1013,7 @@ html{scroll-padding-top:92px;}
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Hablar con ventas</a>
         <div class="rb-pcard__lb">Todo lo de Enterprise, más</div>
         <ul class="rb-pcard__inc">
-          <li>250M créditos de AI Studio / año</li>
+          <li>200M créditos de AI Studio / año <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalle">total del plan<span class="rb-info__pop">Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
           <li>Licencias y usuarios ilimitados</li>
           <li>SSO corporativo (Active Directory) · SCIM</li>
           <li>Auditoría 12 meses + export SIEM</li>
@@ -1105,7 +1113,7 @@ html{scroll-padding-top:92px;}
           <tr><td>Retención de audit logs<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Cuánto tiempo se conservan los audit logs del Orquestador. Corporate cumple el benchmark de 12 meses.</span></span></td><td>90 días</td><td class="is-std">180 días</td><td>180 días</td><td class="best">365 días</td></tr>
           <tr><td>Export de audit logs (API / SIEM)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Exportar los audit logs a un sistema SIEM externo vía API. Exclusivo de Corporate.</span></span></td><td class="no">—</td><td class="is-std no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
           <tr class="rb-ptbl__grp"><td>AI Studio</td><td></td><td class="is-std"></td><td></td><td></td></tr>
-          <tr><td>Créditos de AI Studio / año<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Volumen anual de procesamiento con IA incluido en el plan. Sin acumulación al ciclo siguiente.</span></span></td><td>25M</td><td class="is-std">50M</td><td>100M</td><td class="best">250M</td></tr>
+          <tr><td>Créditos de AI Studio / año<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Volumen anual de procesamiento con IA incluido en el plan. Sin acumulación al ciclo siguiente.</span></span></td><td>25M</td><td class="is-std">50M</td><td>100M</td><td class="best">200M</td></tr>
           <tr><td>Modelo de IA incluido<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Motor interno de AI Studio, operando dentro del entorno Rocketbot.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>Bring Your Own Model<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Conecta tu propio modelo de IA externo (Azure OpenAI, Bedrock, etc.) en AI Studio.</span></span></td><td class="no">—</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>Documentos — tamaño máx. (PDF, TXT)<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Peso máximo de un documento que AI Studio puede procesar.</span></span></td><td>25 MB</td><td class="is-std">25 MB</td><td>25 MB</td><td>25 MB</td></tr>
