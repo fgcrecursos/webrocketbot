@@ -615,13 +615,11 @@ html{scroll-padding-top:92px;}
 .rb-pcard__inc{display:flex;flex-direction:column;gap:7px;margin:0;flex:1 1 auto;}
 .rb-pcard__inc li{position:relative;padding-left:21px;font-size:13px;line-height:1.45;color:var(--foreground);}
 .rb-pcard__inc li::before{content:'✓';position:absolute;left:0;top:0;color:var(--rb-green,#1D9E75);font-weight:800;font-size:12px;}
-/* Cartelito "total del plan": las tarjetas dicen "Todo lo de X, mas", asi que
-   una cantidad podria leerse como sumada a la del plan anterior. No se suma. */
-.rb-pcard__tag{display:inline-block;padding:1px 8px;border:1px solid var(--border);border-radius:var(--r-pill);font-size:9.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.7;white-space:nowrap;cursor:help;vertical-align:middle;transition:color .15s,border-color .15s;}
-.rb-pcard__tag:hover,.rb-pcard__tag:focus{border-color:var(--rb-red);color:var(--rb-red);outline:none;}
-.rb-pcard__tag:hover .rb-info__pop,.rb-pcard__tag:focus .rb-info__pop{opacity:1;visibility:visible;}
-/* el pop se ancla al <li> (position:relative) para no desbordar la tarjeta;
-   abajo de 1041px manda la regla generica que lo fija al pie de la pantalla */
+/* "?" de no-acumulacion: las tarjetas dicen "Todo lo de X, mas", asi que una
+   cantidad podria leerse como sumada a la del plan anterior. No se suma.
+   position:static para que el pop se ancle al <li> y no desborde la tarjeta;
+   abajo de 1041px manda la regla generica que lo fija al pie de la pantalla. */
+.rb-pcard__inc .rb-info{position:static;}
 @media(min-width:1041px){.rb-pcard__inc li .rb-info__pop{left:0;right:0;width:auto;bottom:calc(100% + 8px);}}
 .rb-pcard__addons{margin-top:18px;padding-top:16px;border-top:1px dashed var(--border);}
 .rb-pcard__addons ul{display:flex;flex-direction:column;gap:5px;margin:0;}
@@ -667,7 +665,7 @@ html{scroll-padding-top:92px;}
    scrollea en horizontal, porque dentro del contenedor quedaria recortada. */
 .rb-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;margin-left:6px;border:1.4px solid var(--muted);border-radius:50%;color:var(--muted);font-size:9px;font-style:normal;font-weight:800;line-height:1;cursor:help;vertical-align:middle;flex-shrink:0;transition:color .15s,border-color .15s;}
 .rb-info:hover,.rb-info:focus{border-color:var(--rb-red);color:var(--rb-red);outline:none;}
-.rb-info__pop{position:absolute;left:-4px;bottom:calc(100% + 9px);width:254px;background:var(--rb-secondary);color:#fff;font-size:12.5px;font-weight:400;line-height:1.5;letter-spacing:normal;text-transform:none;text-align:left;padding:11px 13px;border-radius:10px;box-shadow:0 14px 34px rgba(0,0,0,.35);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s;z-index:30;}
+.rb-info__pop{position:absolute;left:-4px;bottom:calc(100% + 9px);width:254px;background:var(--rb-secondary);color:#fff;font-size:12.5px;font-weight:400;line-height:1.5;letter-spacing:normal;text-transform:none;text-align:left;white-space:normal;padding:11px 13px;border-radius:10px;box-shadow:0 14px 34px rgba(0,0,0,.35);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s;z-index:30;}
 [data-theme="dark"] .rb-info__pop{background:var(--rb-dark-3);border:1px solid rgba(255,255,255,.1);}
 .rb-info:hover .rb-info__pop,.rb-info:focus .rb-info__pop{opacity:1;visibility:visible;}
 @media(max-width:1040px){
@@ -938,8 +936,8 @@ html{scroll-padding-top:92px;}
         <div class="rb-pcard__lb">Inclui</div>
         <ul class="rb-pcard__inc">
           <li>Todos os produtos da suíte</li>
-          <li>25M créditos de AI Studio / ano <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalhe">total do plano<span class="rb-info__pop">Os créditos de AI Studio não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
-          <li>2 licenças de desenvolvimento <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalhe">total do plano<span class="rb-info__pop">As licenças de desenvolvimento não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
+          <li>25M créditos de AI Studio / ano<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">?<span class="rb-info__pop">Os créditos de AI Studio não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
+          <li>2 licenças de desenvolvimento<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">?<span class="rb-info__pop">As licenças de desenvolvimento não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
           <li>5 aplicativos Nexus · 10 usuários finais</li>
           <li>Suporte por Slack · resposta em 60 min</li>
           <li>Auditoria 90 dias · 2FA · SSO Google</li>
@@ -962,8 +960,8 @@ html{scroll-padding-top:92px;}
         <a class="rb-btn rb-btn--primary" href="contacto.html">Falar com vendas</a>
         <div class="rb-pcard__lb">Tudo do Entry, mais</div>
         <ul class="rb-pcard__inc">
-          <li>50M créditos de AI Studio / ano <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalhe">total do plano<span class="rb-info__pop">Os créditos de AI Studio não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
-          <li>3 licenças de desenvolvimento <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalhe">total do plano<span class="rb-info__pop">As licenças de desenvolvimento não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
+          <li>50M créditos de AI Studio / ano<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">?<span class="rb-info__pop">Os créditos de AI Studio não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
+          <li>3 licenças de desenvolvimento<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">?<span class="rb-info__pop">As licenças de desenvolvimento não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
           <li>Apps e workspaces ilimitados (Nexus)</li>
           <li>Bring Your Own Model (IA externa)</li>
           <li>Monitoramento em tempo real</li>
@@ -987,8 +985,8 @@ html{scroll-padding-top:92px;}
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Falar com vendas</a>
         <div class="rb-pcard__lb">Tudo do Standard, mais</div>
         <ul class="rb-pcard__inc">
-          <li>100M créditos de AI Studio / ano <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalhe">total do plano<span class="rb-info__pop">Os créditos de AI Studio não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
-          <li>5 licenças de desenvolvimento <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalhe">total do plano<span class="rb-info__pop">As licenças de desenvolvimento não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
+          <li>100M créditos de AI Studio / ano<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">?<span class="rb-info__pop">Os créditos de AI Studio não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
+          <li>5 licenças de desenvolvimento<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">?<span class="rb-info__pop">As licenças de desenvolvimento não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
           <li>15 usuários criadores de apps</li>
           <li>50 usuários finais · 50 usuários com login</li>
           <li>Resposta de suporte em 30 min</li>
@@ -1012,7 +1010,7 @@ html{scroll-padding-top:92px;}
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Falar com vendas</a>
         <div class="rb-pcard__lb">Tudo do Enterprise, mais</div>
         <ul class="rb-pcard__inc">
-          <li>200M créditos de AI Studio / ano <span class="rb-pcard__tag" tabindex="0" role="button" aria-label="Ver detalhe">total do plano<span class="rb-info__pop">Os créditos de AI Studio não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
+          <li>200M créditos de AI Studio / ano<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">?<span class="rb-info__pop">Os créditos de AI Studio não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.</span></span></li>
           <li>Licenças e usuários ilimitados</li>
           <li>SSO corporativo (Active Directory) · SCIM</li>
           <li>Auditoria 12 meses + export SIEM</li>

@@ -82,8 +82,6 @@ def tr(val, lang):
 # ── aclaracion de no-acumulacion para las lineas con una cantidad concreta ──
 # Las tarjetas dicen "Todo lo de X, mas": sin esto se puede leer que las
 # cantidades se suman de un plan al siguiente. No se suman.
-TAG_TOTAL = L('total del plan', 'plan total', 'total do plano')
-
 TIP_CREDITOS = L('Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.',
                  'AI Studio credits are not cumulative between plans: the plan includes exactly this amount, it is not added to the previous plan’s.',
                  'Os créditos de AI Studio não são acumuláveis entre planos: o plano inclui exatamente esta quantidade, não se soma à do plano anterior.')
@@ -94,8 +92,8 @@ TIP_LICENCIAS = L('Las licencias de desarrollo no son acumulables entre planes: 
 
 
 def NOTE(text, tip):
-    """Item de tarjeta con cartelito + detalle al pasar el cursor."""
-    return (text, TAG_TOTAL, tip)
+    """Item de tarjeta con "?" y el detalle al pasar el cursor."""
+    return (text, tip)
 
 
 # ───────────────────────── contenido de las tarjetas ─────────────────────────
@@ -922,11 +920,11 @@ def render_cards(lang):
         out.append('        <ul class="rb-pcard__inc">')
         for it in p['inc']:
             if isinstance(it, tuple):
-                text, tag, tip = it
-                out.append('          <li>%s <span class="rb-pcard__tag" tabindex="0" role="button" '
-                           'aria-label="%s">%s<span class="rb-info__pop">%s</span></span></li>'
+                text, tip = it
+                out.append('          <li>%s<span class="rb-info" tabindex="0" role="button" '
+                           'aria-label="%s">?<span class="rb-info__pop">%s</span></span></li>'
                            % (esc(tr(text, lang)), esc(tr(COPY['info_aria'], lang)),
-                              esc(tr(tag, lang)), esc(tr(tip, lang))))
+                              esc(tr(tip, lang))))
             else:
                 out.append('          <li>%s</li>' % esc(tr(it, lang)))
         out.append('        </ul>')
