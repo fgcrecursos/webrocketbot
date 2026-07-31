@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="es" data-theme="light">
 <head>
 <meta charset="utf-8">
 <!-- ── Rocketbot i18n: protege los nombres de producto de Google Translate
@@ -30,7 +30,7 @@ window.RB_I18N=(function(){
     return s;
   }
   var API={
-    lang:'en',
+    lang:'es',
     pick:function(map){ return map[API.lang]||map.es; },
     onLang:function(fn){ subs.push(fn); },
     setLang:function(l){
@@ -102,6 +102,7 @@ window.RB_I18N=(function(){
   };
   return API;
 })();
+document.addEventListener('DOMContentLoaded',function(){ try{ RB_I18N.shield(); }catch(e){} });
 </script>
 <!-- Google tag (gtag.js) – GA4 | reemplaza G-2EHJ8S289M con tu Measurement ID -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EHJ8S289M"></script>
@@ -112,31 +113,31 @@ window.RB_I18N=(function(){
   gtag('config', 'G-2EHJ8S289M');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact | Talk to an Enterprise Automation Advisor · Rocketbot</title>
-<meta name="description" content="Ready to automate your company? Get in touch with a specialist Rocketbot advisor. Reply within 24 business hours. RPA and AI for Latin America.">
-<meta name="robots" content="noindex, follow">
-<link rel="canonical" href="https://rocketbot.com/en/contacto">
-<link rel="alternate" hreflang="es" href="https://rocketbot.com/contacto">
-<link rel="alternate" hreflang="en" href="https://rocketbot.com/en/contacto">
-<link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/contacto">
-<link rel="alternate" hreflang="x-default" href="https://rocketbot.com/contacto">
+<title>Políticas de privacidad | Rocketbot</title>
+<meta name="description" content="Política de privacidad y protección de datos personales de Rocketbot: recolección, tratamiento, derechos ARCO y cookies.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rocketbot.com/politicas-de-privacidad">
+<link rel="alternate" hreflang="es" href="https://rocketbot.com/politicas-de-privacidad">
+<link rel="alternate" hreflang="en" href="https://rocketbot.com/en/politicas-de-privacidad">
+<link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/politicas-de-privacidad">
+<link rel="alternate" hreflang="x-default" href="https://rocketbot.com/politicas-de-privacidad">
 <link rel="icon" href="/assets/logos/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/logos/rocketbot-iso.png">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rocketbot">
-<meta property="og:title" content="Contact | Talk to an Enterprise Automation Advisor · Rocketbot">
-<meta property="og:description" content="Ready to automate your company? Get in touch with a specialist Rocketbot advisor. Reply within 24 business hours. RPA and AI for Latin America.">
-<meta property="og:url" content="https://rocketbot.com/en/contacto">
+<meta property="og:title" content="Políticas de privacidad | Rocketbot">
+<meta property="og:description" content="Política de privacidad y protección de datos personales de Rocketbot: recolección, tratamiento, derechos ARCO y cookies.">
+<meta property="og:url" content="https://rocketbot.com/politicas-de-privacidad">
 <meta property="og:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="es_LA">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rocketbot">
-<meta name="twitter:title" content="Contact | Talk to an Enterprise Automation Advisor · Rocketbot">
-<meta name="twitter:description" content="Ready to automate your company? Get in touch with a specialist Rocketbot advisor. Reply within 24 business hours. RPA and AI for Latin America.">
+<meta name="twitter:title" content="Políticas de privacidad | Rocketbot">
+<meta name="twitter:description" content="Política de privacidad y protección de datos personales de Rocketbot: recolección, tratamiento, derechos ARCO y cookies.">
 <meta name="twitter:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -440,52 +441,69 @@ html{scroll-padding-top:92px;}
 .rb-nav__dd-cta,.rb-mobile-menu__partner{display:none !important;}
 </style>
 <style id="rb-lang-temp-hide">/* TEMP: language switcher hidden */ .rb-lang{display:none !important;}</style>
+
+<style id="rb-legal-css">
+.rb-legalpg{padding-top:72px;}
+.rb-legalpg-hero{padding:72px 0 40px;text-align:center;}
+.rb-legalpg-hero .container{max-width:760px;}
+.rb-legalpg-hero__title{font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-.03em;margin:20px 0 10px;}
+.rb-legalpg-hero__meta{font-size:13.5px;opacity:.55;}
+.rb-legal{max-width:820px;margin:0 auto;padding:0 0 96px;}
+.rb-legal h2{font-size:clamp(20px,2.4vw,26px);font-weight:800;letter-spacing:-.01em;margin:44px 0 16px;color:var(--rb-red);}
+.rb-legal h2:first-child{margin-top:0;}
+.rb-legal h3{font-size:17px;font-weight:700;margin:28px 0 12px;color:var(--foreground);}
+.rb-legal p{font-size:15px;line-height:1.75;color:var(--foreground);opacity:.82;margin:0 0 14px;}
+.rb-legal ul{margin:0 0 14px;padding-left:22px;list-style:disc;}
+.rb-legal li{font-size:15px;line-height:1.7;color:var(--foreground);opacity:.82;margin-bottom:8px;}
+.rb-legal li::marker{color:var(--rb-red);}
+.rb-legal strong{color:var(--foreground);opacity:1;}
+</style>
 </head>
 <body>
 
 <nav class="rb-nav" id="rb-nav">
   <div class="rb-nav__inner">
     <a href="index.html" class="rb-nav__logo-wrap">
-      <img id="nav-logo" src="/assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
+      <img id="nav-logo" src="assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
     </a>
     <ul class="rb-nav__links">
       <li class="rb-nav__suite-li"><a href="suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
-      <li class="rb-nav__plans-li"><a href="planes.html" class="rb-nav__plans-hdr">Pricing</a></li>
+      <li class="rb-nav__plans-li"><a href="planes.html" class="rb-nav__plans-hdr">Precios</a></li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Products <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button">Productos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orchestrator</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
+          <a href="saturn-studio.html">Saturn Studio</a><a href="rpa-studio.html">RPA Studio</a><a href="ai-studio.html">AI Studio</a><a href="orquestador.html">Orquestador</a><a href="xperience.html">Xperience</a><a href="nexus.html">Nexus</a>
         </div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Resources <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="cfo.html">For CFOs</a><a href="construir-vs-comprar.html">Build or buy</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
+        <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="cfo.html">Para CFOs</a><a href="construir-vs-comprar.html">Construir o comprar</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Support &amp; services <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button">Soporte y servicios <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="partners.html" class="rb-nav__dd-cta">✦ Become a partner</a><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a>
-          <a href="faq.html" class="rb-nav__dd-faq">FAQs</a><a href="terminos-y-condiciones.html" class="rb-nav__dd-tyc">Terms & Conditions</a><a href="https://partners.rocketbot.com/wp-login.php" target="_blank" rel="noopener" class="rb-nav__dd-login">Partner Login →</a>
+          <a href="partners.html" class="rb-nav__dd-cta">✦ Quiero ser partner</a><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
+          <a href="faq.html" class="rb-nav__dd-faq">FAQs</a><a href="terminos-y-condiciones.html" class="rb-nav__dd-tyc">Términos y condiciones</a><a href="https://partners.rocketbot.com/wp-login.php" target="_blank" rel="noopener" class="rb-nav__dd-login">Login de Partners →</a>
         </div>
       </li>
-      <li><a href="contacto.html">Talk to us</a></li>
+      <li><a href="contacto.html">Contáctanos</a></li>
     </ul>
     <div class="rb-nav__actions">
-      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
       <div class="rb-lang" id="rb-lang">
-      <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Language" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
       <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
         <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span>Español</button>
         <button class="rb-lang__opt" data-lang="en" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span>English</button>
         <button class="rb-lang__opt" data-lang="pt" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span>Português</button>
       </div>
     </div>
-      <button class="rb-iconbtn" id="theme-btn" title="Switch theme" type="button">
+      <button class="rb-iconbtn" id="theme-btn" title="Cambiar tema" type="button">
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
         <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
       </button>
-      <a href="cfo.html" class="rb-btn rb-btn--cfo">For CFOs</a>
-      <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Download</button>
+      <a href="cfo.html" class="rb-btn rb-btn--cfo">Para CFOs</a>
+      <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Descarga</button>
     </div>
   </div>
 </nav>
@@ -494,35 +512,35 @@ html{scroll-padding-top:92px;}
 <div class="rb-mobile-menu" id="rb-mobile-menu">
   <div class="rb-mobile-menu__inner">
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Products</div>
+      <div class="rb-mobile-menu__label">Productos</div>
       <a href="saturn-studio.html">Saturn Studio</a>
       <a href="rpa-studio.html">RPA Studio</a>
       <a href="ai-studio.html">AI Studio</a>
-      <a href="orquestador.html">Orchestrator</a>
+      <a href="orquestador.html">Orquestador</a>
       <a href="xperience.html">Xperience</a>
       <a href="nexus.html">Nexus</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Resources</div>
+      <div class="rb-mobile-menu__label">Recursos</div>
       <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Support &amp; services</div>
-      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a>
+      <div class="rb-mobile-menu__label">Soporte y servicios</div>
+      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a>
       <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
-      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a>
+      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a>
       <a href="faq.html" class="rb-mobile-menu__faq">FAQs</a>
-      <a href="terminos-y-condiciones.html" class="rb-mobile-menu__tyc">Terms & Conditions</a>
+      <a href="terminos-y-condiciones.html" class="rb-mobile-menu__tyc">Términos y condiciones</a>
     
-      <a href="partners.html" class="rb-mobile-menu__partner">Become a partner</a>
-      <a href="https://partners.rocketbot.com/wp-login.php" target="_blank" rel="noopener">Partner Login</a>
+      <a href="partners.html" class="rb-mobile-menu__partner">Quiero ser partner</a>
+      <a href="https://partners.rocketbot.com/wp-login.php" target="_blank" rel="noopener">Login de Partners</a>
     </div>
     <div class="rb-mobile-menu__actions">
-      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Rocketbot Suite</a>
-      <a href="planes.html" class="rb-mobile-menu__btn">Plans and pricing</a>
-      <a href="contacto.html" class="rb-mobile-menu__btn">Talk to us</a>
-      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Download</button>
+      <a href="suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suite Rocketbot</a>
+      <a href="planes.html" class="rb-mobile-menu__btn">Planes y precios</a>
+      <a href="contacto.html" class="rb-mobile-menu__btn">Contáctanos</a>
+      <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Descarga</button>
     </div>
   </div>
 </div>
@@ -531,35 +549,35 @@ html{scroll-padding-top:92px;}
 <div class="rb-dlmodal" id="rbDlModal" aria-hidden="true">
   <div class="rb-dlmodal__backdrop" data-dl-close></div>
   <div class="rb-dlmodal__panel" role="dialog" aria-modal="true" aria-labelledby="rbDlTitle">
-    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Close">&times;</button>
-    <h2 id="rbDlTitle" class="rb-dlmodal__title">Download Rocketbot</h2>
-    <p class="rb-dlmodal__sub">Pick your product and operating system.</p>
+    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Cerrar">&times;</button>
+    <h2 id="rbDlTitle" class="rb-dlmodal__title">Descarga Rocketbot</h2>
+    <p class="rb-dlmodal__sub">Elige el programa y tu sistema operativo.</p>
     <div class="rb-dlmodal__body">
       <div class="rb-dlmodal__side">
-        <div class="rb-dlmodal__label">Products</div>
+        <div class="rb-dlmodal__label">Programas</div>
         <button type="button" class="rb-dlmodal__pill is-active" data-dl-pill="rpa">
-          <img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
+          <img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
         </button>
 
         <div class="rb-dlmodal__req">
           <div class="rb-dlmodal__reqgrp">
-            <div class="rb-dlmodal__reqttl">Minimum requirements</div>
-            <div class="rb-dlmodal__reqrow"><span>Processor</span><strong translate="no">Intel Core i3-4340 or AMD FX-6300</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Storage</span><strong>10 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memory</span><strong>4 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Requisitos mínimos</div>
+            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i3-4340 o AMD FX-6300</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>10 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>4 GB RAM</strong></div>
           </div>
           <div class="rb-dlmodal__reqgrp rb-dlmodal__reqgrp--rec">
-            <div class="rb-dlmodal__reqttl">Recommended setup</div>
-            <div class="rb-dlmodal__reqrow"><span>Processor</span><strong translate="no">Intel Core i5</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Storage</span><strong>175 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memory</span><strong>8 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Configuración recomendada</div>
+            <div class="rb-dlmodal__reqrow"><span>Procesador</span><strong translate="no">Intel Core i5</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Almacenamiento</span><strong>175 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memoria</span><strong>8 GB RAM</strong></div>
           </div>
         </div>
       </div>
       <div class="rb-dlmodal__main">
         <div class="rb-dlmodal__program is-active" data-dl-panel="rpa">
-          <div class="rb-dlmodal__ptitle"><img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
-          <p class="rb-dlmodal__pdesc">Download the installer for your operating system. The download site lists every available version along with its release notes.</p>
+          <div class="rb-dlmodal__ptitle"><img src="assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
+          <p class="rb-dlmodal__pdesc">Descarga el instalador para tu sistema operativo. En el sitio de descarga encontrarás todas las versiones disponibles y sus notas de lanzamiento.</p>
           <div class="rb-dlmodal__os">
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7H3V5.5ZM11.4 4.3 21 3v8.4h-9.6V4.3ZM3 12.4h7.5v7.1L3 18.5v-6.1ZM11.4 12.4H21V21l-9.6-1.3v-7.3Z"/></svg>Windows<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
@@ -567,31 +585,31 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Latest version</span></div>
+                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Última versión</span></div>
                     <div class="rb-dlmodal__vmeta">354 MB · ZIP · MD5 153fd4432f30564ecd16b146dcfaac31</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2025.07.01 <span class="rb-dlmodal__vtag">Python 3.13</span></div>
                     <div class="rb-dlmodal__vmeta">356 MB · ZIP · MD5 9f0e2c18051b020d71387821f3abdf82</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2024.05.28</div>
                     <div class="rb-dlmodal__vmeta">458 MB · ZIP · MD5 b4034aaf4759f710f6754df5bbd81be2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2023.11.10</div>
                     <div class="rb-dlmodal__vmeta">358 MB · ZIP · MD5 a18cc70a91134e73d2da277f973fa87a</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 </div>
               </div>
@@ -602,17 +620,17 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Latest version</span></div>
+                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Última versión</span></div>
                     <div class="rb-dlmodal__vmeta">248 MB · ZIP · MD5 ff4ea3d2e49aa4e3294158f04ad81922</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Mac ARM · v2025.07.01</div>
                     <div class="rb-dlmodal__vmeta">533 MB · ZIP · MD5 3635e4cd1ec90eb5bac453c6b813bf29</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 </div>
               </div>
@@ -623,24 +641,24 @@ html{scroll-padding-top:92px;}
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Latest version</span></div>
+                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Última versión</span></div>
                     <div class="rb-dlmodal__vmeta">434 MB · ZIP · MD5 6312df8b82977e4e08d48826deb95b34</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">RHEL · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">166.2 MB · TAR.GZ · MD5 6d98a8f63cec705d181a011dfb69c90c</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Ubuntu · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">118.1 MB · TAR.XZ · MD5 b2d9a94de8299615e525ea26d5d543a2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Descargar</a>
                 </div>
                 </div>
               </div>
@@ -654,70 +672,132 @@ html{scroll-padding-top:92px;}
 
 
 <!-- CONTACT PAGE -->
-<section class="rb-contact-page">
-  <div class="rb-contact-page__particles"></div>
-  <div class="container">
-    <div class="rb-contact-grid">
+<!-- ======================= LEGAL PAGE ======================= -->
+<main class="rb-legalpg">
 
-      <!-- FORM SIDE -->
-      <div>
-        <div class="rb-contact-hero__eyebrow">
-          </div>
-        <h1 class="rb-contact-hero__title">Thanks for your interest</h1>
-        <p class="rb-contact-hero__sub">Fill in the form and tell us what challenge you're looking to solve.</p>
-
-        <div class="rb-clientify-wrap">
-          <script type="text/javascript" src="https://api.clientify.net/web-marketing/superforms/script/251784.js"></script>
-        </div>
-      </div>
-
-      <!-- INFO SIDE -->
-      <div class="rb-contact-info">
-        <div>
-          <img src="/assets/logos/logo-header.png" alt="Rocketbot" class="rb-contact-info__logo" id="contact-logo" loading="lazy" decoding="async">
-          <p class="rb-contact-info__tagline" style="margin-top:16px;">A process automation and intelligent agent platform built to win back time and support better decisions.</p>
-        </div>
-        <div class="rb-contact-info__divider"></div>
-        <div class="rb-contact-info__block">
-          <div class="rb-contact-info__block-title">Our products</div>
-          <div class="rb-contact-products">
-            <span class="rb-contact-product-pill">Saturn Studio</span>
-            <span class="rb-contact-product-pill">RPA Studio</span>
-            <span class="rb-contact-product-pill">AI Studio</span>
-            <span class="rb-contact-product-pill">Orchestrator</span>
-            <span class="rb-contact-product-pill">Xperience</span>
-            <span class="rb-contact-product-pill">Nexus</span>
-          </div>
-        </div>
-        <div class="rb-contact-info__block">
-          <div class="rb-contact-info__block-title">Why Rocketbot?</div>
-          <p class="rb-contact-info__block-text">More than 10 years helping companies across Latin America automate processes, win back time and operate with more visibility and control. <strong>More than 700 companies in 21 countries</strong> already use Rocketbot to run critical processes and improve their operation.</p>
-        </div>
-        <div class="rb-contact-info__block">
-          <div class="rb-contact-info__block-title">Response time</div>
-          <p class="rb-contact-info__block-text">Our team will review your request and get back to you shortly.</p>
-        </div>
-        <div class="rb-contact-info__block">
-          <div class="rb-contact-info__block-title">Resources</div>
-          <p class="rb-contact-info__block-text">
-            <a href="https://docs.rocketbot.com" target="_blank" rel="noopener" style="color:var(--rb-red);font-weight:600;">Documentation →</a><br>
-            <a href="https://academy.rocketbot.com" target="_blank" rel="noopener" style="color:var(--rb-red);font-weight:600;">Academy →</a><br>
-            <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener" style="color:var(--rb-red);font-weight:600;">Marketplace →</a>
-          </p>
-        </div>
-      </div>
-
+  <section class="rb-legalpg-hero">
+    <div class="container">
+      <span class="rb-eyebrow"><span class="dot"></span>Legal</span>
+      <h1 class="rb-legalpg-hero__title">Políticas de privacidad</h1>
+      <p class="rb-legalpg-hero__meta">Última actualización: 1 de octubre de 2021</p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="rb-legal">
+
+<h2>I. Política de privacidad y protección de datos personales</h2>
+<p>El sitio web WWW.ROCKETBOT.COM, en adelante «ROCKETBOT», «WWW.ROCKETBOT.COM» o «el sitio web» indistintamente, pone en conocimiento de las personas que hagan uso del mismo, en adelante «personas usuarias», la presente política de privacidad y protección de los datos personales.</p>
+<p>Esta política de privacidad y protección de los datos personales forma parte de los Términos y Condiciones Generales de Uso del sitio web WWW.ROCKETBOT.COM.</p>
+<p>La lectura de la misma le permitirá a las personas usuarias conocer el modo en que ROCKETBOT recolecta, trata y protege sus datos personales. El acceso, uso y permanencia en el sitio web implica la aceptación de la presente política de privacidad.</p>
+<p>De particular importancia resultan la aplicación de la Ley N.º 19.628 de Protección de Datos Personales y la Ley N.º 19.496 sobre Derechos del Consumidor. Esta política, en lo que no contraviene la legislación chilena, está adaptada al Reglamento Europeo de Protección de Datos (RGPD).</p>
+<h3>1. Definiciones</h3>
+<ul>
+<li><strong>Almacenamiento de datos:</strong> conservación o custodia de datos en un registro, banco o base de datos.</li>
+<li><strong>Dato estadístico:</strong> aquel que en su origen, o como consecuencia de su tratamiento, no puede ser asociado a un titular identificado o identificable.</li>
+<li><strong>Datos de carácter personal o datos personales:</strong> aquellos relativos a cualquier información concerniente a personas naturales, identificadas o identificables.</li>
+<li><strong>Datos sensibles:</strong> aquellos datos personales que se refieren a las características físicas o morales de las personas o a hechos o circunstancias de su vida privada o intimidad, tales como los hábitos personales, el origen racial, las ideologías y opiniones políticas, las creencias o convicciones religiosas, los estados de salud físicos o psíquicos y la vida sexual.</li>
+<li><strong>Registro, banco o base de datos:</strong> conjunto organizado de datos de carácter personal, sea automatizado o no, que permita relacionar los datos entre sí, así como realizar todo tipo de tratamiento de datos.</li>
+<li><strong>Responsable del registro, banco o base de datos:</strong> la persona natural o jurídica a quien compete las decisiones relacionadas con el tratamiento de los datos de carácter personal.</li>
+<li><strong>Titular de los datos:</strong> persona natural a la que se refieren los datos de carácter personal.</li>
+<li><strong>Tratamiento de datos:</strong> cualquier operación o procedimiento técnico, automatizado o no, que permita recolectar, almacenar, grabar, organizar, elaborar, seleccionar, extraer, confrontar, interconectar, disociar, comunicar, ceder, transferir, transmitir o cancelar datos de carácter personal, o utilizarlos en cualquier otra forma.</li>
+</ul>
+<h3>2. Principios aplicables al tratamiento de los datos personales</h3>
+<p>ROCKETBOT trata los datos personales conforme a los principios de licitud, finalidad, proporcionalidad, calidad, seguridad y responsabilidad establecidos en la Ley N.º 19.628, aplicando las definiciones descritas en la sección anterior a cada tratamiento que realiza.</p>
+<h3>3. Responsable del registro, banco o base de datos</h3>
+<p>La persona responsable del tratamiento de los datos personales recogidos a través del sitio web ROCKETBOT es SOLUCIONES INFORMÁTICAS ROCKET NOT, Rol Único Tributario N.º 76.945.322-9, representada por JUAN JORGE HERRERA WAGENKNECHT, cédula nacional de identidad N.º 10.302.205-3, en adelante, la responsable del tratamiento.</p>
+<p>Los datos para tomar contacto con la persona responsable son:</p>
+<ul>
+<li>Correo electrónico: jjherrera@rocketbot.com</li>
+<li>Dirección: Dr. Barros Borgoño 246</li>
+</ul>
+<h3>4. Recolección y registro de datos de carácter personal y finalidad de su tratamiento</h3>
+<p>Los datos personales obtenidos por ROCKETBOT mediante los formularios extendidos en sus páginas quedarán incorporados y serán tratados en nuestras bases de datos con el fin de facilitar, agilizar y cumplir los compromisos establecidos entre ROCKETBOT y las personas usuarias, mantener la relación que se establezca en los formularios que éstas rellenen, o atender una solicitud o consulta de las mismas.</p>
+<p>En concreto, los datos de las personas usuarias serán obtenidos por ROCKETBOT a través de las siguientes acciones:</p>
+<ul>
+<li>Formularios de mensaje o contacto</li>
+<li>Descarga de licencias</li>
+<li>Cookies de sitios</li>
+</ul>
+<h3>5. Categoría de datos personales</h3>
+<p>Las categorías de datos que se tratan en ROCKETBOT son únicamente datos identificativos. En ningún caso se tratan categorías de datos personales de carácter sensible, como el estado de salud de las personas o sus opiniones políticas o creencias religiosas.</p>
+<p>No pueden ser objeto de tratamiento los datos sensibles, salvo cuando la ley lo autorice, exista consentimiento de la persona titular de dichos datos o éstos sean necesarios para la determinación u otorgamiento de beneficios de salud que correspondan a sus titulares.</p>
+<h3>6. Base legal para el tratamiento de los datos personales</h3>
+<p>El tratamiento de los datos personales solamente puede efectuarse cuando la ley lo autorice o el titular consienta expresamente en ello. ROCKETBOT se compromete a recabar el consentimiento expreso, escrito y verificable de la persona usuaria respecto de los datos personales de los que es titular, para el tratamiento de dichos datos para uno o varios fines específicos, debidamente informados. También se informará de la posible comunicación al público de los datos almacenados y tratados.</p>
+<p>No requiere autorización el tratamiento de datos personales que provengan o se recolecten de fuentes accesibles al público, cuando sean de carácter económico, financiero, bancario o comercial, se contengan en listados relativos a una categoría de personas que se limiten a indicar antecedentes tales como la pertenencia del individuo a ese grupo, su profesión o actividad, sus títulos educativos, dirección o fecha de nacimiento, o sean necesarios para comunicaciones comerciales de respuesta directa o comercialización o venta directa de bienes o servicios.</p>
+<p>Tampoco requerirá de esta autorización el tratamiento de datos personales que realicen personas jurídicas privadas para el uso exclusivo suyo, de sus asociados y de las entidades a que están afiliadas, con fines estadísticos, de tarificación u otros de beneficio general de aquéllos.</p>
+<p>Los datos personales deben utilizarse solamente para los fines para los cuales hubieren sido recolectados, salvo que provengan o se hayan recolectado de fuentes accesibles al público. No pueden ser objeto de tratamiento los datos sensibles, salvo cuando la ley lo autorice, exista consentimiento del titular o sean datos necesarios para la determinación u otorgamiento de beneficios de salud que correspondan a sus titulares.</p>
+<p>La persona usuaria tendrá derecho a retirar su consentimiento en cualquier momento. Será tan fácil retirar el consentimiento como darlo. Como regla general, el retiro del consentimiento no condicionará el uso del sitio web.</p>
+<p>En las ocasiones en las que la persona usuaria deba o pueda facilitar sus datos a través de formularios para realizar consultas, solicitar información o por motivos relacionados con el contenido del sitio web, se le informará en caso de que la cumplimentación de alguno de ellos sea obligatoria debido a que sean imprescindibles para el correcto desarrollo de la operación realizada.</p>
+<h3>7. Período de retención de los datos personales</h3>
+<p>Los datos personales solamente serán retenidos durante el tiempo mínimo necesario para los fines de su tratamiento y, en todo caso, únicamente durante el siguiente plazo: 1 año, o hasta que la persona usuaria solicite su supresión.</p>
+<p>En el momento en que se obtengan los datos personales se informará a la persona usuaria sobre el plazo durante el cual se conservarán los datos personales o, cuando eso no sea posible, los criterios utilizados para determinar este plazo.</p>
+<h3>8. Destinatarios de los datos personales</h3>
+<p>Los datos personales de las personas usuarias no serán compartidos, vendidos, cedidos, arrendados, comercializados o transmitidos de modo alguno con terceras personas, salvo en los casos que la ley lo exija.</p>
+<h3>9. Datos personales de menores de edad</h3>
+<p>Solamente las personas mayores de 14 años podrán otorgar su consentimiento para el tratamiento de sus datos personales de forma lícita por ROCKETBOT.</p>
+<p>Si se trata de una persona menor de 14 años será necesario el consentimiento de los padres o representantes legales o de quien tiene a su cargo el cuidado personal del niño o niña, salvo que expresamente lo autorice o mandate la ley.</p>
+<p>Los datos sensibles de las personas adolescentes menores de 16 años solamente se podrán tratar con el consentimiento otorgado por sus padres o representantes legales o quien tiene a su cargo el cuidado personal del menor, salvo que expresamente lo autorice o mandate la ley.</p>
+<h3>10. Secreto y seguridad de los datos personales</h3>
+<p>ROCKETBOT se compromete a adoptar las medidas técnicas y organizativas necesarias, según el nivel de seguridad adecuado al riesgo de los datos recogidos, de forma que se garantice la seguridad de los datos de carácter personal y se evite la destrucción, pérdida o alteración accidental o ilícita de datos personales transmitidos, conservados o tratados de otra forma, o la comunicación o acceso no autorizado a dichos datos.</p>
+<p>El sitio web WWW.ROCKETBOT.COM cuenta con un certificado SSL (Secure Socket Layer), que asegura que los datos personales se transmiten de forma segura y confidencial entre el servidor y la persona usuaria, totalmente cifrada o encriptada.</p>
+<p>Sin embargo, debido a que ROCKETBOT no puede garantizar la inexpugnabilidad de internet ni la ausencia total de accesos fraudulentos a los datos personales, la persona responsable del tratamiento se compromete a comunicar a las personas usuarias, sin dilación indebida, la ocurrencia de cualquier violación de la seguridad de los datos personales que sea probable que entrañe un alto riesgo para los derechos y libertades de las personas físicas.</p>
+<p>Los datos personales serán tratados como confidenciales por la persona responsable del tratamiento, quien se compromete a garantizar, por medio de una obligación legal o contractual, que dicha confidencialidad sea respetada por sus empleados, asociados y toda persona a la cual le haga accesible la información.</p>
+<h3>11. Derechos derivados del tratamiento de los datos personales</h3>
+<p>La persona usuaria podrá ejercer frente a la persona responsable del tratamiento los siguientes derechos:</p>
+<ul>
+<li><strong>Derecho de acceso:</strong> obtener confirmación de si ROCKETBOT está tratando o no sus datos personales y, en caso afirmativo, obtener información sobre sus datos concretos y del tratamiento realizado.</li>
+<li><strong>Derecho de rectificación:</strong> a que se modifiquen sus datos personales que resulten inexactos o incompletos.</li>
+<li><strong>Derecho de supresión (el derecho al olvido):</strong> a obtener la supresión de sus datos personales cuando éstos ya no sean necesarios para los fines para los cuales fueron recogidos, cuando se haya retirado el consentimiento, cuando hayan sido tratados ilícitamente, o cuando deban suprimirse en cumplimiento de una obligación legal.</li>
+<li>Si los datos suprimidos o rectificados hubieren sido comunicados previamente a terceros determinados o determinables, la persona responsable deberá avisarles a la brevedad posible la operación efectuada.</li>
+<li>No podrá pedirse la rectificación, supresión o bloqueo de datos personales almacenados por mandato legal, fuera de los casos contemplados en la ley respectiva.</li>
+<li><strong>Derecho a la limitación del tratamiento:</strong> a limitar el tratamiento de sus datos personales cuando impugne su exactitud, el tratamiento sea ilícito, el responsable ya no los necesite pero la persona usuaria los necesite para reclamaciones, o se haya opuesto al tratamiento.</li>
+<li><strong>Derecho a la portabilidad de los datos:</strong> a recibir sus datos personales en un formato estructurado, de uso común y lectura mecánica, y a transmitirlos a otro responsable.</li>
+<li><strong>Derecho de oposición:</strong> a que no se lleve a cabo el tratamiento de sus datos personales o se cese el tratamiento de los mismos.</li>
+<li><strong>Derecho a no ser objeto de una decisión basada únicamente en el tratamiento automatizado</strong>, incluida la elaboración de perfiles, salvo que la legislación vigente establezca lo contrario.</li>
+</ul>
+<p>La persona usuaria podrá ejercitar sus derechos mediante comunicación escrita dirigida a la persona responsable del tratamiento, conforme lo establece el artículo 16 de la Ley N.º 19.628.</p>
+<h3>12. Reclamaciones ante la autoridad de control</h3>
+<p>En caso de que la persona usuaria considere que existe un problema o infracción de la normativa vigente en la forma en la que se están tratando sus datos personales, tendrá derecho a ejercer las acciones que estime pertinentes ante los Tribunales de Justicia.</p>
+<h3>13. Datos obtenidos por API</h3>
+<p>Las llamadas a API como la API de Google Workspace no se utilizan para desarrollar, mejorar o entrenar modelos generalizados de IA y/o aprendizaje automático.</p>
+<h2>II. Política de cookies</h2>
+<p>El acceso a este sitio web puede implicar la utilización de cookies. Las cookies son pequeñas cantidades de información que se almacenan en el navegador utilizado por cada persona usuaria para que el servidor recuerde cierta información que posteriormente, y únicamente el servidor que la implementó, leerá. Las cookies facilitan la navegación, la hacen más amigable y no dañan el dispositivo de navegación.</p>
+<p>La información recolectada a través de las cookies puede incluir la fecha y hora de visitas del sitio web, las páginas visionadas, el tiempo que se ha estado en el sitio web y los sitios visitados justo antes y después del mismo. Ninguna cookie permite contactar con el número de teléfono de la persona usuaria ni extraer información del disco duro o robar información personal; la única manera de que información privada forme parte de una cookie es que la persona usuaria se la proporcione directamente al servidor.</p>
+<p>Las cookies que permiten identificar a una persona se consideran datos personales, por lo que les es aplicable la política de privacidad descrita anteriormente. Para su utilización será necesario el consentimiento de la persona usuaria, comunicado en base a una elección auténtica, ofrecido mediante una afirmación positiva, antes del tratamiento inicial, removible y documentado.</p>
+<h3>1. Cookies propias</h3>
+<p>Son aquellas cookies que son enviadas al dispositivo de la persona usuaria y gestionadas exclusivamente por ROCKETBOT para el mejor funcionamiento del sitio web. La información recabada se emplea para mejorar la calidad del sitio, su contenido y la experiencia de la persona usuaria, permitiendo reconocerla como visitante recurrente y adaptar el contenido a sus preferencias.</p>
+<h3>2. Cookies de terceros</h3>
+<p>Son cookies utilizadas y gestionadas por entidades externas que proporcionan a ROCKETBOT servicios solicitados por éste para mejorar su sitio web y la experiencia de navegación. Se utilizan principalmente para obtener estadísticas de accesos y analizar cómo interactúa la persona usuaria con el sitio web: número de páginas visitadas, idioma, ubicación aproximada por dirección IP, frecuencia y reincidencia de las visitas, tiempo de visita, navegador, operador o tipo de dispositivo. La información se recopila de forma anónima y se elaboran informes de tendencias sin identificar a personas usuarias individuales. Las cookies de terceros utilizadas por este sitio web son proporcionadas por:</p>
+<ul>
+<li>Facebook</li>
+<li>LinkedIn</li>
+<li>Google</li>
+</ul>
+<p>Puede obtener más información sobre las cookies y consultar el tipo de cookies utilizadas, sus principales características y período de expiración en los siguientes enlaces: facebook.com/policies/cookies · policies.google.com/privacy · linkedin.com/legal/cookie-policy. Las entidades encargadas del suministro de cookies podrán ceder esta información a terceros cuando lo exija la ley o sea un tercero quien procese esta información para dichas entidades.</p>
+<h3>3. Cookies de redes sociales</h3>
+<p>ROCKETBOT incorpora plugins de redes sociales que permiten acceder a ellas desde el sitio web, por lo que sus cookies pueden almacenarse en el navegador de la persona usuaria. Las titulares de dichas redes sociales disponen de sus propias políticas de protección de datos y de cookies, siendo ellas mismas responsables de sus propios ficheros y prácticas de privacidad. Se recomienda consultar directamente las políticas de Facebook, X/Twitter, Instagram, YouTube, Google, LinkedIn, Pinterest y TikTok.</p>
+<h3>4. Deshabilitar, rechazar y eliminar cookies</h3>
+<p>La persona usuaria puede deshabilitar, rechazar y eliminar las cookies, total o parcialmente, instaladas en su dispositivo mediante la configuración de su navegador (Chrome, Firefox, Safari, entre otros). Los procedimientos para rechazar y eliminar cookies pueden diferir de un navegador a otro, por lo que se recomienda acudir a las instrucciones facilitadas por el navegador utilizado. En caso de rechazar el uso de cookies, total o parcialmente, la persona usuaria podrá seguir usando el sitio web, aunque podrá tener limitada la utilización de algunas de sus prestaciones.</p>
+<h2>III. Aceptación y cambio de esta política de privacidad</h2>
+<p>Es necesario que la persona usuaria haya leído y esté conforme con las condiciones sobre la protección de datos de carácter personal contenidas en esta política de privacidad y de cookies, y que acepte el tratamiento de sus datos personales para que la persona responsable del tratamiento pueda proceder al mismo en la forma, durante los plazos y para las finalidades indicadas. El uso del sitio web implica la aceptación de esta política.</p>
+<p>ROCKETBOT se reserva el derecho a modificar su política de privacidad y de cookies de acuerdo a su propio criterio, o motivado por un cambio legislativo o jurisprudencial. Los cambios o actualizaciones serán puestos en conocimiento de la persona usuaria. Se recomienda consultar esta página de forma periódica para estar al tanto de los últimos cambios.</p>
+<p>Esta política de privacidad y de cookies fue elaborada el día 1 de octubre de 2021 y se encuentra actualizada para adaptarse a la legislación vigente.</p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="rb-footer">
   <div class="container">
     <div class="rb-footer__grid">
       <div class="rb-footer__brand">
-        <img src="/assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
-        <p class="rb-footer__copy">A process automation and intelligent agent platform built to win back time and support better decisions.</p>
+        <img src="assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
+        <p class="rb-footer__copy">Plataforma de automatización de procesos y agentes inteligentes para recuperar tiempo y tomar mejores decisiones.</p>
         <div class="rb-footer__social">
           <a href="https://www.facebook.com/rocketbot.es" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -733,19 +813,19 @@ html{scroll-padding-top:92px;}
           </a>
         </div>
       </div>
-      <div class="rb-footer__col"><h6>Products</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orchestrator</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Resources</h6><ul><li><a href="planes.html">Plans and pricing</a></li><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Company</h6><ul><li><a href="contacto.html">Contact</a></li><li><a href="politicas-de-privacidad.html">Privacy policy</a></li><li><a href="politicas-de-seguridad.html">Security policy</a></li><li><a href="terminos-y-condiciones.html" class="rb-footer__tyc">Terms & Conditions</a></li><li><a href="https://careers.rocketbot.com/" target="_blank" rel="noopener">Work with us</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Support &amp; services</h6><ul><li><a href="#">Certification</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a></li><li><a href="#">Downloads</a></li><li><a href="faq.html">FAQs</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Productos</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orquestador</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="planes.html">Planes y precios</a></li><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="contacto.html">Contacto</a></li><li><a href="politicas-de-privacidad.html">Políticas de privacidad</a></li><li><a href="politicas-de-seguridad.html">Políticas de seguridad</a></li><li><a href="terminos-y-condiciones.html" class="rb-footer__tyc">Términos y condiciones</a></li><li><a href="https://careers.rocketbot.com/" target="_blank" rel="noopener">Trabaja con Nosotros</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Soporte y servicios</h6><ul><li><a href="#">Certificación</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Foro</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentación</a></li><li><a href="#">Descargas</a></li><li><a href="faq.html">FAQs</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">
       <span>© Rocketbot SpA | All rights reserved 2018 – 2025</span>
-      <div class="rb-footer__legal"><a href="politicas-de-privacidad.html">Privacy policy</a><a href="politicas-de-seguridad.html">Security policy</a></div>
+      <div class="rb-footer__legal"><a href="politicas-de-privacidad.html">Políticas de privacidad</a><a href="politicas-de-seguridad.html">Políticas de seguridad</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-var LOGOS={light:'/assets/logos/logo-header.png',dark:'/assets/logos/logo-header-white.png'};
+var LOGOS={light:'assets/logos/logo-header.png',dark:'assets/logos/logo-header-white.png'};
 var html=document.documentElement,navLogo=document.getElementById('nav-logo'),themeBtn=document.getElementById('theme-btn'),iconSun=document.getElementById('icon-sun'),iconMoon=document.getElementById('icon-moon');
 var contactLogo=document.getElementById('contact-logo');
 function applyTheme(t){
@@ -836,6 +916,8 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
   });
 })();</script>
 
+<!-- Nombres de producto protegidos antes de cargar el traductor -->
+<script>try{ RB_I18N.shield(); }catch(e){}</script>
 
 <script>
 /* Selector de idioma: navega entre /  /en/  /pt/ */
@@ -843,7 +925,7 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
   var btn  = document.getElementById('rb-lang-btn');
   var menu = document.getElementById('rb-lang-menu');
   if(!btn || !menu) return;
-  var CUR='en', PAGE='contacto.html';
+  var CUR='es', PAGE='politicas-de-privacidad.html';
   btn.addEventListener('click', function(e){
     e.stopPropagation();
     var open = menu.classList.toggle('open');
@@ -868,9 +950,9 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ContactPage",
+  "@type": "WebPage",
   "name": "Contacto Rocketbot",
-  "url": "https://rocketbot.com/contacto",
+  "url": "https://rocketbot.com/politicas-de-privacidad",
   "description": "Formulario de contacto para hablar con un asesor especializado en automatización empresarial.",
   "provider": {
     "@type": "Organization",

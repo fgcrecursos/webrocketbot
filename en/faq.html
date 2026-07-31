@@ -112,22 +112,22 @@ window.RB_I18N=(function(){
   gtag('config', 'G-2EHJ8S289M');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact | Talk to an Enterprise Automation Advisor · Rocketbot</title>
-<meta name="description" content="Ready to automate your company? Get in touch with a specialist Rocketbot advisor. Reply within 24 business hours. RPA and AI for Latin America.">
-<meta name="robots" content="noindex, follow">
-<link rel="canonical" href="https://rocketbot.com/en/contacto">
-<link rel="alternate" hreflang="es" href="https://rocketbot.com/contacto">
-<link rel="alternate" hreflang="en" href="https://rocketbot.com/en/contacto">
-<link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/contacto">
-<link rel="alternate" hreflang="x-default" href="https://rocketbot.com/contacto">
+<title>Frequently Asked Questions | Rocketbot</title>
+<meta name="description" content="We answer the most common questions about process automation, RPA, artificial intelligence and the Rocketbot Suite.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rocketbot.com/en/faq">
+<link rel="alternate" hreflang="es" href="https://rocketbot.com/faq">
+<link rel="alternate" hreflang="en" href="https://rocketbot.com/en/faq">
+<link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/faq">
+<link rel="alternate" hreflang="x-default" href="https://rocketbot.com/faq">
 <link rel="icon" href="/assets/logos/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/logos/rocketbot-iso.png">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rocketbot">
-<meta property="og:title" content="Contact | Talk to an Enterprise Automation Advisor · Rocketbot">
-<meta property="og:description" content="Ready to automate your company? Get in touch with a specialist Rocketbot advisor. Reply within 24 business hours. RPA and AI for Latin America.">
-<meta property="og:url" content="https://rocketbot.com/en/contacto">
+<meta property="og:title" content="Frequently Asked Questions | Rocketbot">
+<meta property="og:description" content="We answer the most common questions about process automation, RPA, artificial intelligence and the Rocketbot Suite.">
+<meta property="og:url" content="https://rocketbot.com/en/faq">
 <meta property="og:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -135,8 +135,8 @@ window.RB_I18N=(function(){
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rocketbot">
-<meta name="twitter:title" content="Contact | Talk to an Enterprise Automation Advisor · Rocketbot">
-<meta name="twitter:description" content="Ready to automate your company? Get in touch with a specialist Rocketbot advisor. Reply within 24 business hours. RPA and AI for Latin America.">
+<meta name="twitter:title" content="Frequently Asked Questions | Rocketbot">
+<meta name="twitter:description" content="We answer the most common questions about process automation, RPA, artificial intelligence and the Rocketbot Suite.">
 <meta name="twitter:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -440,6 +440,28 @@ html{scroll-padding-top:92px;}
 .rb-nav__dd-cta,.rb-mobile-menu__partner{display:none !important;}
 </style>
 <style id="rb-lang-temp-hide">/* TEMP: language switcher hidden */ .rb-lang{display:none !important;}</style>
+
+<style id="rb-faq-css">
+.rb-faqpg{padding-top:72px;}
+.rb-faqpg-hero{padding:76px 0 48px;text-align:center;}
+.rb-faqpg-hero .container{max-width:760px;}
+.rb-faqpg-hero__title{font-size:clamp(30px,4.4vw,48px);font-weight:900;letter-spacing:-.03em;margin:20px 0 14px;}
+.rb-faqpg-hero__sub{font-size:17px;line-height:1.6;opacity:.75;}
+.rb-faqpg-cat{padding:36px 0;}
+.rb-faqpg-cat + .rb-faqpg-cat{border-top:1px solid var(--border);}
+.rb-faqpg-cat__title{font-size:clamp(20px,2.4vw,26px);font-weight:800;letter-spacing:-.01em;margin-bottom:22px;color:var(--foreground);}
+.rb-faqpg-cat__title span{color:var(--rb-red);}
+.rb-faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.rb-faq details{background:var(--card);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;transition:background .35s,border-color .3s;}
+.rb-faq details[open]{border-color:rgba(188,0,23,.3);}
+.rb-faq summary{padding:20px 24px;font-size:15px;font-weight:600;color:var(--foreground);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s;}
+.rb-faq summary::-webkit-details-marker{display:none;}
+.rb-faq summary::after{content:'+';font-size:20px;color:var(--rb-red);font-weight:700;flex-shrink:0;}
+.rb-faq details[open] summary::after{content:'2';}
+.rb-faq summary:hover{color:var(--rb-red);}
+.rb-faq__body{padding:0 24px 20px;font-size:14px;color:#666;line-height:1.7;}
+[data-theme="dark"] .rb-faq__body{color:rgba(255,255,255,.5);}
+</style>
 </head>
 <body>
 
@@ -654,62 +676,67 @@ html{scroll-padding-top:92px;}
 
 
 <!-- CONTACT PAGE -->
-<section class="rb-contact-page">
-  <div class="rb-contact-page__particles"></div>
-  <div class="container">
-    <div class="rb-contact-grid">
+<!-- ======================= FAQ ======================= -->
+<main class="rb-faqpg">
 
-      <!-- FORM SIDE -->
-      <div>
-        <div class="rb-contact-hero__eyebrow">
-          </div>
-        <h1 class="rb-contact-hero__title">Thanks for your interest</h1>
-        <p class="rb-contact-hero__sub">Fill in the form and tell us what challenge you're looking to solve.</p>
-
-        <div class="rb-clientify-wrap">
-          <script type="text/javascript" src="https://api.clientify.net/web-marketing/superforms/script/251784.js"></script>
-        </div>
-      </div>
-
-      <!-- INFO SIDE -->
-      <div class="rb-contact-info">
-        <div>
-          <img src="/assets/logos/logo-header.png" alt="Rocketbot" class="rb-contact-info__logo" id="contact-logo" loading="lazy" decoding="async">
-          <p class="rb-contact-info__tagline" style="margin-top:16px;">A process automation and intelligent agent platform built to win back time and support better decisions.</p>
-        </div>
-        <div class="rb-contact-info__divider"></div>
-        <div class="rb-contact-info__block">
-          <div class="rb-contact-info__block-title">Our products</div>
-          <div class="rb-contact-products">
-            <span class="rb-contact-product-pill">Saturn Studio</span>
-            <span class="rb-contact-product-pill">RPA Studio</span>
-            <span class="rb-contact-product-pill">AI Studio</span>
-            <span class="rb-contact-product-pill">Orchestrator</span>
-            <span class="rb-contact-product-pill">Xperience</span>
-            <span class="rb-contact-product-pill">Nexus</span>
-          </div>
-        </div>
-        <div class="rb-contact-info__block">
-          <div class="rb-contact-info__block-title">Why Rocketbot?</div>
-          <p class="rb-contact-info__block-text">More than 10 years helping companies across Latin America automate processes, win back time and operate with more visibility and control. <strong>More than 700 companies in 21 countries</strong> already use Rocketbot to run critical processes and improve their operation.</p>
-        </div>
-        <div class="rb-contact-info__block">
-          <div class="rb-contact-info__block-title">Response time</div>
-          <p class="rb-contact-info__block-text">Our team will review your request and get back to you shortly.</p>
-        </div>
-        <div class="rb-contact-info__block">
-          <div class="rb-contact-info__block-title">Resources</div>
-          <p class="rb-contact-info__block-text">
-            <a href="https://docs.rocketbot.com" target="_blank" rel="noopener" style="color:var(--rb-red);font-weight:600;">Documentation →</a><br>
-            <a href="https://academy.rocketbot.com" target="_blank" rel="noopener" style="color:var(--rb-red);font-weight:600;">Academy →</a><br>
-            <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener" style="color:var(--rb-red);font-weight:600;">Marketplace →</a>
-          </p>
-        </div>
-      </div>
-
+  <section class="rb-faqpg-hero">
+    <div class="container">
+      <span class="rb-eyebrow"><span class="dot"></span>Help</span>
+      <h1 class="rb-faqpg-hero__title">Frequently asked questions</h1>
+      <p class="rb-faqpg-hero__sub">Everything you need to know about automation, RPA, artificial intelligence and the Rocketbot Suite.</p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="rb-faqpg-cat">
+    <div class="container">
+      <h2 class="rb-faqpg-cat__title">Process automation</h2>
+      <div class="rb-faq">
+        <details><summary>What is process automation?</summary><div class="rb-faq__body">Process automation means using software to run repetitive tasks automatically. It reduces errors, saves time, increases productivity and frees people to focus on higher-value work for the business.</div></details>
+        <details><summary>What processes can be automated?</summary><div class="rb-faq__body">Repetitive processes such as data entry, invoice management, bank reconciliation, customer service, HR, purchasing, report generation and any task that follows defined rules or connects several systems can be automated.</div></details>
+        <details><summary>How do I know if a process can be automated?</summary><div class="rb-faq__body">If a process takes a lot of time, requires copying information between systems, generates frequent errors or always follows the same steps, it is likely a good candidate for automation. The more repetitive and structured it is, the greater the benefit.</div></details>
+        <details><summary>What are the benefits of automating processes?</summary><div class="rb-faq__body">Automating processes helps reduce execution times, decrease manual errors, improve productivity, increase traceability and deliver a better experience for both teams and customers.</div></details>
+      </div>
+    </div>
+  </section>
+  <section class="rb-faqpg-cat">
+    <div class="container">
+      <h2 class="rb-faqpg-cat__title">RPA and Artificial Intelligence</h2>
+      <div class="rb-faq">
+        <details><summary>What is RPA?</summary><div class="rb-faq__body">RPA (Robotic Process Automation) is a technology that uses software robots to run repetitive tasks across applications and systems, just as a person would, but faster, more accurately and more consistently.</div></details>
+        <details><summary>What is the difference between RPA and artificial intelligence?</summary><div class="rb-faq__body">RPA follows rules to execute repetitive tasks. Artificial intelligence interprets information, recognizes patterns and helps make decisions. When both work together, it is possible to automate much more complex processes.</div></details>
+        <details><summary>What is an intelligent agent?</summary><div class="rb-faq__body">An intelligent agent uses artificial intelligence to analyze information, make decisions and execute actions within a process. It can work with documents, emails, conversations and other data to support or complete tasks automatically.</div></details>
+        <details><summary>When does it make sense to use artificial intelligence?</summary><div class="rb-faq__body">Artificial intelligence adds the most value when a process needs to interpret documents, analyze information, classify data or support decision-making. For repetitive, rule-based tasks, traditional automation is usually enough.</div></details>
+      </div>
+    </div>
+  </section>
+  <section class="rb-faqpg-cat">
+    <div class="container">
+      <h2 class="rb-faqpg-cat__title">Rocketbot Suite</h2>
+      <div class="rb-faq">
+        <details><summary>What is an enterprise automation platform?</summary><div class="rb-faq__body">It is a platform that brings together tools to create, run, manage and monitor automations from a single place. Beyond automating tasks, it lets you integrate systems, control permissions, oversee processes and scale the operation.</div></details>
+        <details><summary>What is the Rocketbot Suite?</summary><div class="rb-faq__body">The Rocketbot Suite is an enterprise automation platform that integrates process automation, artificial intelligence, intelligent agents, forms, applications, governance and monitoring to manage processes end to end.</div></details>
+        <details><summary>What products does the Rocketbot Suite include?</summary><div class="rb-faq__body">The Rocketbot Suite includes RPA Studio, Saturn Studio, AI Studio, Xperience, Orchestrator and Nexus. Each product serves a specific function, and together they let you automate, manage and scale business processes.</div></details>
+        <details><summary>Does the Rocketbot Suite work with Claude?</summary><div class="rb-faq__body">Yes. Claude can be used within the Rocketbot Suite to create automations, applications and forms using natural language, while the platform provides integration, governance, monitoring and traceability.</div></details>
+        <details><summary>Does the Rocketbot Suite work with other AI models?</summary><div class="rb-faq__body">Yes. The Rocketbot Suite is compatible with different artificial intelligence models so organizations can choose the technology that best fits each need.</div></details>
+        <details><summary>What systems does Rocketbot integrate with?</summary><div class="rb-faq__body">Rocketbot can integrate with ERPs, CRMs, databases, APIs, web applications, desktop systems, cloud services and many other tools used by companies.</div></details>
+        <details><summary>How does Rocketbot protect information?</summary><div class="rb-faq__body">The Rocketbot Suite includes role-based access control, traceability, monitoring, auditing and different deployment options to help protect information and securely manage every automation.</div></details>
+      </div>
+    </div>
+  </section>
+  <section class="rb-faqpg-cat">
+    <div class="container">
+      <h2 class="rb-faqpg-cat__title">Implementation</h2>
+      <div class="rb-faq">
+        <details><summary>Do I need to know how to code to automate processes?</summary><div class="rb-faq__body">No. Many automations can be built using visual tools and AI-powered assistants. When a project requires more advanced development, the platform also lets you extend its capabilities.</div></details>
+        <details><summary>Is it cheaper to build a solution with Python and Claude?</summary><div class="rb-faq__body">It depends on the project. For small automations it can be a good option. However, as the operation grows, a platform helps reduce the effort of integration, monitoring, maintenance and scalability.</div></details>
+        <details><summary>What is the difference between building a solution and using a platform?</summary><div class="rb-faq__body">Building a solution means developing and maintaining every component yourself. A platform already includes capabilities such as integrations, monitoring, security, permissions and traceability, which speeds up implementation and simplifies operation.</div></details>
+        <details><summary>How do I choose the first process to automate?</summary><div class="rb-faq__body">It is best to start with a repetitive, high-volume process with a clear impact on time, cost or quality. This type of process tends to deliver quick results and makes it easier to demonstrate the value of automation.</div></details>
+        <details><summary>Can a company start with a pilot?</summary><div class="rb-faq__body">Yes. Many organizations start by automating one or two processes to measure results, and once the return is validated, they expand automation to other areas of the business.</div></details>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="rb-footer">
@@ -843,7 +870,7 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
   var btn  = document.getElementById('rb-lang-btn');
   var menu = document.getElementById('rb-lang-menu');
   if(!btn || !menu) return;
-  var CUR='en', PAGE='contacto.html';
+  var CUR='en', PAGE='faq.html';
   btn.addEventListener('click', function(e){
     e.stopPropagation();
     var open = menu.classList.toggle('open');
@@ -868,9 +895,9 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ContactPage",
+  "@type": "FAQPage",
   "name": "Contacto Rocketbot",
-  "url": "https://rocketbot.com/contacto",
+  "url": "https://rocketbot.com/faq",
   "description": "Formulario de contacto para hablar con un asesor especializado en automatización empresarial.",
   "provider": {
     "@type": "Organization",
