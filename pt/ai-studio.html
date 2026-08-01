@@ -987,11 +987,11 @@ html{scroll-padding-top:92px;}
   <div class="rb-hero__particles"></div>
   <div class="container rb-hero__grid">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title">Dê sentido a qualquer <span class="rb-hero__rot" id="rot">e-mail</span></h1>
+      <h1 class="rb-hero__title">Transforme qualquer <span class="rb-hero__rot" id="rot">documento</span> em dados prontos para automatizar.</h1>
       <p class="rb-hero__sub">O AI Studio usa inteligência artificial para compreender e-mails, documentos, imagens e áudios, extrair a informação relevante e convertê-la em dados estruturados, prontos para automatizar processos, integrar sistemas e apoiar decisões melhores.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://aistudio.rocketbot.com/#/">Teste agora</a>
-        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Falar com vendas</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver demonstração</a>
       </div>
     </div>
     <div class="rb-hero__visual" aria-hidden="true">
@@ -1103,7 +1103,7 @@ html{scroll-padding-top:92px;}
 <section class="rb-section" id="modelos">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Use os nossos modelos,<br><span>ou conecte os seus.</span></h2>
+      <h2 class="rb-section__title">Use os nossos modelos<br><span>ou conecte os seus.</span></h2>
       <p class="rb-section__sub">O AI Studio dá liberdade de escolha. Comece com os modelos que a Rocketbot inclui ou conecte os seus próprios modelos, na nuvem ou na sua infraestrutura&nbsp;on-premise.</p>
     </div>
     <div class="rb-models-grid">
@@ -1164,7 +1164,7 @@ html{scroll-padding-top:92px;}
         <p>Prefere não escrever prompts? O AI Studio gera automaticamente conforme o tipo de documento, para você começar a extrair informação já no primeiro minuto.</p>
         <div class="rb-promptbox">
           <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5L19 8.5l-5.2 1.5L12 15l-1.8-5L5 8.5 10.2 7z"/></svg>Gerado por IA</div>
-          <div class="pt">Identifique o tipo de documento e extraia os seus campos-chave: emissor, destinatário, número, datas, valores e impostos. Normalize as datas para AAAA-MM-DD e os valores para número.</div>
+          <div class="pt">Identifique o tipo de documento e extraia os seus campos-chave: emissor, destinatário, número, datas, valores e impostos. Normalize as datas para AAAA-MM-DD e os valores para formato numérico.</div>
         </div>
       </div>
     </div>
@@ -1210,7 +1210,7 @@ html{scroll-padding-top:92px;}
 <section class="rb-section rb-section--space">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Proteja a sua informação em cada etapa</h2>
+      <h2 class="rb-section__title">Proteja a sua informação em cada etapa.</h2>
       <p class="rb-section__sub">O AI Studio incorpora controles de segurança, criptografia e governança para processar informação com confiança, manter o controle dos seus dados e atender aos padrões de segurança da sua&nbsp;organização.</p>
     </div>
     <div class="rb-iso">
@@ -1397,7 +1397,7 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
 const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
 // rotating hero word
-const ROT=['correo','documento','imagen','conversación']; let ri=0;
+const ROT=['documento','e-mail','imagem','áudio']; let ri=0;
 const rotEl=document.getElementById('rot');
 if(!reduce){setInterval(()=>{ri=(ri+1)%ROT.length;rotEl.style.opacity=0;rotEl.style.transform='translateY(-6px)';setTimeout(()=>{rotEl.textContent=ROT[ri];rotEl.style.opacity=1;rotEl.style.transform='translateY(0)';},250);},2200);}
 
@@ -1410,36 +1410,36 @@ const MIC={
 const CHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>';
 
 const CASES=[
-  {key:'factura', mod:'doc', tag:'Documento · PDF', label:'factura.pdf',
-   raw:'<div class="rtitle">Factura electrónica N° 88213</div><div class="rbody">Proveedor: Distribuidora Andes SpA<br>RUT 76.123.456-7 · Fecha 12/06/2026<br>OC asociada: OC-2025-0471<br>Resma papel carta x20 · Tóner HP 26A x4 · Silla ergonómica x2 · Cabo de rede Cat6 x10<br>Neto $534.200 · IVA $101.498 · Total $635.698 CLP</div>',
-   fields:[['Tipo','Factura electrónica'],['N° documento','88213'],['Proveedor','Distribuidora Andes SpA'],['RUT','76.123.456-7'],['Fecha','2026-06-12'],['OC asociada','OC-2025-0471'],['Neto','$534.200'],['IVA','$101.498'],['Total','$635.698']],
-   table:{cap:'Ítems',cols:['Descripción','Cant.','P. unit.','Total'],rows:[['Resma papel carta','20','$2.990','$59.800'],['Tóner HP 26A','4','$64.900','$259.600'],['Silla ergonómica','2','$89.900','$179.800'],['Cabo de rede Cat6','10','$3.500','$35.000']]},
-   data:{tipoDocumento:'Factura electrónica',numero:'88213',proveedor:'Distribuidora Andes SpA',rut:'76.123.456-7',fecha:'2026-06-12',ocAsociada:'OC-2025-0471',items:[{descripcion:'Resma papel carta',cantidad:20,precioUnitario:2990,total:59800},{descripcion:'Tóner HP 26A',cantidad:4,precioUnitario:64900,total:259600},{descripcion:'Silla ergonómica',cantidad:2,precioUnitario:89900,total:179800},{descripcion:'Cabo de rede Cat6',cantidad:10,precioUnitario:3500,total:35000}],neto:534200,iva:101498,total:635698,moneda:'CLP'}},
-  {key:'correo', mod:'mail', tag:'Correo', label:'reclamo-4471',
-   raw:'<div class="rmeta"><b>De:</b> maria.soto@empresa.cl</div><div class="rmeta"><b>Asunto:</b> Problema con factura 4471</div><div class="rbody" style="margin-top:10px">Hola, recibí la factura 4471 con un monto incorrecto: dice $1.290.000 pero cotizamos $1.190.000. Necesito la corrección antes del viernes para poder pagar. Gracias, María.</div>',
-   fields:[['Tipo','Reclamo de facturación'],['Cliente','Maria Soto'],['Email','maria.soto@empresa.cl'],['Documento','Factura 4471'],['Monto en disputa','$100.000'],['Plazo','2026-06-26'],['Prioridad','Alta'],['Acción sugerida','Emitir nota de crédito']],
+  {key:'nf', mod:'doc', tag:'Documento · PDF', label:'nota-fiscal.pdf',
+   raw:'<div class="rtitle">Nota fiscal eletrônica N° 88213</div><div class="rbody">Fornecedor: Distribuidora Andes Ltda<br>CNPJ 76.123.456/0001-07 · Data 12/06/2026<br>Pedido associado: PC-2025-0471<br>Resma de papel A4 x20 · Toner HP 26A x4 · Cadeira ergonômica x2 · Cabo de rede Cat6 x10<br>Valor líquido R$ 534,20 · Impostos R$ 101,50 · Total R$ 635,70</div>',
+   fields:[['Tipo','Nota fiscal eletrônica'],['N° do documento','88213'],['Fornecedor','Distribuidora Andes Ltda'],['CNPJ','76.123.456/0001-07'],['Data','2026-06-12'],['Pedido associado','PC-2025-0471'],['Valor líquido','R$ 534,20'],['Impostos','R$ 101,50'],['Total','R$ 635,70']],
+   table:{cap:'Itens',cols:['Descrição','Qtd.','Valor unit.','Total'],rows:[['Resma de papel A4','20','R$ 2,99','R$ 59,80'],['Toner HP 26A','4','R$ 64,90','R$ 259,60'],['Cadeira ergonômica','2','R$ 89,90','R$ 179,80'],['Cabo de rede Cat6','10','R$ 3,50','R$ 35,00']]},
+   data:{tipoDocumento:'Nota fiscal eletrônica',numero:'88213',fornecedor:'Distribuidora Andes Ltda',cnpj:'76.123.456/0001-07',data:'2026-06-12',pedidoAssociado:'PC-2025-0471',itens:[{descricao:'Resma de papel A4',quantidade:20,valorUnitario:2.99,total:59.80},{descricao:'Toner HP 26A',quantidade:4,valorUnitario:64.90,total:259.60},{descricao:'Cadeira ergonômica',quantidade:2,valorUnitario:89.90,total:179.80},{descricao:'Cabo de rede Cat6',quantidade:10,valorUnitario:3.50,total:35.00}],valorLiquido:534.20,impostos:101.50,total:635.70,moeda:'BRL'}},
+  {key:'email', mod:'mail', tag:'E-mail', label:'reclamacao-4471',
+   raw:'<div class="rmeta"><b>De:</b> maria.souza@empresa.com.br</div><div class="rmeta"><b>Assunto:</b> Problema com a nota fiscal 4471</div><div class="rbody" style="margin-top:10px">Olá, recebi a nota fiscal 4471 com um valor incorreto: consta R$ 1.290,00, mas o combinado foi R$ 1.190,00. Preciso da correção antes de sexta-feira para conseguir pagar. Obrigada, Maria.</div>',
+   fields:[['Tipo','Reclamação de cobrança'],['Cliente','Maria Souza'],['E-mail','maria.souza@empresa.com.br'],['Documento','Nota fiscal 4471'],['Valor em disputa','R$ 100,00'],['Prazo','2026-06-26'],['Prioridade','Alta'],['Ação sugerida','Emitir nota de crédito']],
    table:null,
-   data:{tipo:'Reclamo de facturación',cliente:'Maria Soto',email:'maria.soto@empresa.cl',documento:'Factura 4471',montoEnDisputa:100000,moneda:'CLP',plazo:'2026-06-26',prioridad:'alta',accionSugerida:'Emitir nota de crédito'}},
-  {key:'comprobante', mod:'img', tag:'Imagen · OCR', label:'comprobante.jpg',
-   raw:'<div class="rtitle">Comprobante de transferencia</div><div class="rbody">Banco: BancoEstado<br>Cuenta origen: ****4471<br>Destino: Proveedor XYZ SpA<br>Monto: $2.450.000<br>18/06/2026 14:32<br>N° operación: 9982304</div>',
-   fields:[['Tipo','Comprobante de transferencia'],['Banco','BancoEstado'],['Cuenta origen','****4471'],['Destino','Proveedor XYZ SpA'],['Monto','$2.450.000'],['Fecha y hora','2026-06-18 14:32'],['N° operación','9982304']],
+   data:{tipo:'Reclamação de cobrança',cliente:'Maria Souza',email:'maria.souza@empresa.com.br',documento:'Nota fiscal 4471',valorEmDisputa:100.00,moeda:'BRL',prazo:'2026-06-26',prioridade:'alta',acaoSugerida:'Emitir nota de crédito'}},
+  {key:'comprovante', mod:'img', tag:'Imagem · OCR', label:'comprovante.jpg',
+   raw:'<div class="rtitle">Comprovante de transferência</div><div class="rbody">Banco: Banco do Brasil<br>Conta de origem: ****4471<br>Destino: Fornecedor XYZ Ltda<br>Valor: R$ 2.450,00<br>18/06/2026 14:32<br>N° da operação: 9982304</div>',
+   fields:[['Tipo','Comprovante de transferência'],['Banco','Banco do Brasil'],['Conta de origem','****4471'],['Destino','Fornecedor XYZ Ltda'],['Valor','R$ 2.450,00'],['Data e hora','2026-06-18 14:32'],['N° da operação','9982304']],
    table:null,
-   data:{tipo:'Comprobante de transferencia',banco:'BancoEstado',cuentaOrigen:'****4471',destino:'Proveedor XYZ SpA',monto:2450000,moneda:'CLP',fechaHora:'2026-06-18T14:32:00',numeroOperacion:'9982304'}},
-  {key:'llamada', mod:'mic', tag:'Audio · 2:14', label:'llamada.mp3',
-   raw:'<div class="rtitle">Transcripción de llamada</div><div class="rbody">«…buenas, llamo porque mi pedido 5530 no ha llegado y necesito reagendar la entrega para el lunes en la mañana, mi número es el 9 8765 4321…»</div>',
-   fields:[['Motivo','Reagendar entrega'],['Pedido','5530'],['Nueva fecha','Lunes AM'],['Teléfono','+56 9 8765 4321'],['Sentimiento','Molesto'],['Acción sugerida','Criar chamado de logística']],
+   data:{tipo:'Comprovante de transferência',banco:'Banco do Brasil',contaOrigem:'****4471',destino:'Fornecedor XYZ Ltda',valor:2450.00,moeda:'BRL',dataHora:'2026-06-18T14:32:00',numeroOperacao:'9982304'}},
+  {key:'ligacao', mod:'mic', tag:'Áudio · 2:14', label:'ligacao.mp3',
+   raw:'<div class="rtitle">Transcrição da ligação</div><div class="rbody">&quot;...boa tarde, estou ligando porque o meu pedido 5530 não chegou e preciso reagendar a entrega para segunda-feira de manhã, meu número é 9 8765-4321...&quot;</div>',
+   fields:[['Motivo','Reagendar entrega'],['Pedido','5530'],['Nova data','Segunda de manhã'],['Telefone','+55 9 8765-4321'],['Sentimento','Insatisfeito'],['Ação sugerida','Criar chamado de logística']],
    table:null,
-   data:{motivo:'Reagendar entrega',pedido:'5530',nuevaFecha:'lunes AM',telefono:'+56 9 8765 4321',sentimiento:'molesto',accionSugerida:'Criar chamado de logística'}},
-  {key:'cartola', mod:'doc', tag:'Documento · PDF', label:'cartola.pdf',
-   raw:'<div class="rtitle">Cartola bancaria — Junio 2026</div><div class="rbody">Titular: Constructora Lillo Ltda.<br>Cuenta: ****8821 · Periodo: 01–30 jun 2026<br>Saldo inicial $12.450.320 · Saldo final $11.823.670<br>4 movimientos · Abonos $3.200.000 · Cargos $3.826.650</div>',
-   fields:[['Titular','Constructora Lillo Ltda.'],['Cuenta','****8821'],['Periodo','2026-06-01 — 2026-06-30'],['Saldo inicial','$12.450.320'],['Saldo final','$11.823.670'],['Total abonos','$3.200.000'],['Total cargos','$3.826.650']],
-   table:{cap:'Movimientos',cols:['Fecha','Descripción','Monto','Tipo'],rows:[['06-03','Abono cliente','$3.200.000','crédito'],['06-09','Pago proveedor','-$2.450.000','débito'],['06-25','Remuneraciones','-$1.180.000','débito'],['06-30','Comisión','-$196.650','débito']]},
-   data:{titular:'Constructora Lillo Ltda.',cuenta:'****8821',periodo:{desde:'2026-06-01',hasta:'2026-06-30'},saldoInicial:12450320,saldoFinal:11823670,movimientos:[{fecha:'2026-06-03',descripcion:'Abono cliente - Inmobiliaria Sur',monto:3200000,tipo:'credito'},{fecha:'2026-06-09',descripcion:'Pago proveedor - Distribuidora Andes',monto:-2450000,tipo:'debito'},{fecha:'2026-06-25',descripcion:'Pago remuneraciones',monto:-1180000,tipo:'debito'},{fecha:'2026-06-30',descripcion:'Comisión mantención',monto:-196650,tipo:'debito'}],totalAbonos:3200000,totalCargos:3826650,moneda:'CLP'}}
+   data:{motivo:'Reagendar entrega',pedido:'5530',novaData:'segunda de manhã',telefone:'+55 9 8765-4321',sentimento:'insatisfeito',acaoSugerida:'Criar chamado de logística'}},
+  {key:'extrato', mod:'doc', tag:'Documento · PDF', label:'extrato.pdf',
+   raw:'<div class="rtitle">Extrato bancário — Junho de 2026</div><div class="rbody">Titular: Construtora Lillo Ltda.<br>Conta: ****8821 · Período: 01–30 jun 2026<br>Saldo inicial R$ 12.450,32 · Saldo final R$ 11.823,67<br>4 lançamentos · Créditos R$ 3.200,00 · Débitos R$ 3.826,65</div>',
+   fields:[['Titular','Construtora Lillo Ltda.'],['Conta','****8821'],['Período','2026-06-01 — 2026-06-30'],['Saldo inicial','R$ 12.450,32'],['Saldo final','R$ 11.823,67'],['Total de créditos','R$ 3.200,00'],['Total de débitos','R$ 3.826,65']],
+   table:{cap:'Lançamentos',cols:['Data','Descrição','Valor','Tipo'],rows:[['06-03','Crédito do cliente','R$ 3.200,00','crédito'],['06-09','Pagamento a fornecedor','-R$ 2.450,00','débito'],['06-25','Folha de pagamento','-R$ 1.180,00','débito'],['06-30','Tarifa','-R$ 196,65','débito']]},
+   data:{titular:'Construtora Lillo Ltda.',conta:'****8821',periodo:{de:'2026-06-01',ate:'2026-06-30'},saldoInicial:12450.32,saldoFinal:11823.67,lancamentos:[{data:'2026-06-03',descricao:'Crédito do cliente',valor:3200.00,tipo:'credito'},{data:'2026-06-09',descricao:'Pagamento a fornecedor',valor:-2450.00,tipo:'debito'},{data:'2026-06-25',descricao:'Folha de pagamento',valor:-1180.00,tipo:'debito'},{data:'2026-06-30',descricao:'Tarifa',valor:-196.65,tipo:'debito'}],totalCreditos:3200.00,totalDebitos:3826.65,moeda:'BRL'}}
 ];
 
 let cur=0, view='vista';
 const stabs=document.getElementById('stabs');
-const LBL={factura:'Factura',correo:'Correo',comprobante:'Comprobante',llamada:'Llamada',cartola:'Cartola'};
+const LBL={nf:'Nota fiscal',email:'E-mail',comprovante:'Comprovante',ligacao:'Ligação',extrato:'Extrato'};
 CASES.forEach((c,i)=>{
   const b=document.createElement('button'); b.className='rb-show-tab'+(i===0?' active':'');
   b.innerHTML='<span class="si">'+MIC[c.mod]+'</span>'+LBL[c.key];
@@ -1503,9 +1503,9 @@ const M_ICN={
   server:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h0M7 17.5h0"/></svg>'
 };
 const MODELS=[
-  {key:'rocketbot',icon:'spark',title:'Modelos incluidos',sub:'Listos para usar, sin configuración',desc:'Rocketbot incluye modelos de IA ya integrados, para que empieces a extraer información desde el primer día, sin configurar nada ni montar infraestructura.',chips:['Cero configuración','Sin infraestructura propia','Actualizados por Rocketbot']},
-  {key:'cloud',icon:'cloud',title:'Seu modelo · Cloud',sub:'Seu provedor, suas chaves',desc:'Conecta tus propios modelos en la nube y úsalos dentro de AI Studio bajo tus llaves y tus políticas, con la libertad de cambiar de proveedor cuando lo necesites.',chips:['Tu proveedor y tus llaves','Control de costos','Cambias de modelo cuando quieras']},
-  {key:'onprem',icon:'server',title:'Tu modelo · On-premise',sub:'En tu propia infraestructura',desc:'¿Datos sensibles o sector regulado? Despliega y conecta tus modelos en tu propia infraestructura: la información nunca sale de tu entorno.',chips:['Soberanía de datos','Cumplimiento normativo','Sin salida de datos al exterior']}
+  {key:'rocketbot',icon:'spark',title:'Modelos inclusos',sub:'Prontos para usar desde o primeiro dia.',desc:'Comece a extrair informação desde o primeiro dia com modelos já integrados ou conecte os seus próprios modelos quando a sua operação precisar. Você escolhe como implantar a IA.',chips:['Pronto para usar','Sem infraestrutura própria','Atualizado pela Rocketbot']},
+  {key:'cloud',icon:'cloud',title:'Seu modelo · Cloud',sub:'Seu provedor. Suas chaves.',desc:'Conecte os seus próprios modelos na nuvem e use-os dentro do AI Studio com as suas chaves e políticas, com liberdade para trocar de provedor quando precisar.',chips:['Seu provedor e suas chaves','Controle de custos','Troque de modelo quando quiser']},
+  {key:'onprem',icon:'server',title:'Seu modelo · On-premise',sub:'Processamento dentro da sua infraestrutura.',desc:'Dados sensíveis ou setor regulado? Implante e conecte os seus modelos na sua própria infraestrutura: a informação nunca sai do seu ambiente.',chips:['Soberania de dados','Conformidade regulatória','Nenhum dado sai do seu ambiente']}
 ];
 const mseg=document.getElementById('mseg');
 MODELS.forEach((m,i)=>{const b=document.createElement('button');b.className='rb-mopt'+(i===0?' active':'');b.innerHTML='<span class="mi">'+M_ICN[m.icon]+'</span><span class="rb-mopt__text"><span class="mt">'+m.title+'</span><span class="ms">'+m.sub+'</span></span>';b.addEventListener('click',()=>selectModel(i));mseg.appendChild(b);});
@@ -1537,38 +1537,38 @@ const IND_ICN={
   civic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9h14v12M3 9l9-5 9 5"/><path d="M9 13v4M15 13v4"/></svg>'
 };
 const INDUSTRIES=[
-  {name:'Banca y finanzas',icon:'bank',intro:'Miles de documentos financieros procesados con precisión para acelerar la operación y reducir errores.',cases:[
-    {t:'Facturas',area:'Documento',d:'Extrae automáticamente proveedor, montos, impuestos y fechas desde facturas en PDF o imagen.',tag:'Listo para el ERP'},
-    {t:'Cartolas bancarias',area:'Documento',d:'Identifica movimientos, saldos y transacciones desde cartolas de cualquier entidad financiera.',tag:'Sin transcripción manual'},
-    {t:'Llamadas de cobranza',area:'Audio',d:'Transcribe conversaciones, identifica compromisos de pago y evalúa el cumplimiento del protocolo.',tag:'Monitoreo de calidad'}]},
-  {name:'Seguros',icon:'shield',intro:'Automatiza la lectura de documentos críticos durante todo el ciclo del siniestro.',cases:[
-    {t:'Documentación de siniestros',area:'Documento',d:'Extrae información desde pólizas, partes y comprobantes para acelerar cada caso.',tag:'Resolución más rápida'},
-    {t:'Formularios escaneados',area:'Imagen',d:'Convierte formularios e imágenes en información estructurada.',tag:'OCR inteligente'},
-    {t:'Reclamos por correo',area:'Correo',d:'Clasifica automáticamente cada solicitud y extrae la información relevante.',tag:'Respuesta más rápida'}]},
-  {name:'Retail y consumo',icon:'cart',intro:'Transforma miles de documentos y mensajes diarios en información lista para operar.',cases:[
-    {t:'Órdenes de compra',area:'Documento',d:'Extrae productos, cantidades y condiciones desde PDFs y correos electrónicos.',tag:'Sin transcripción manual'},
-    {t:'Boletas y comprobantes',area:'Imagen',d:'Digitaliza comprobantes y estructura automáticamente la información.',tag:'Datos listos para integrar'},
-    {t:'Opinión del cliente',area:'Correo',d:'Analiza comentarios y reseñas para detectar temas, tendencias y sentimiento.',tag:'Análisis automático'}]},
-  {name:'Manufactura y agro',icon:'factory',intro:'Procesa documentación operacional sin importar el formato.',cases:[
-    {t:'Facturas de proveedores',area:'Documento',d:'Extrae la información necesaria para automatizar cuentas por pagar.',tag:'Pagos oportunos'},
-    {t:'Certificados',area:'Imagen',d:'Interpreta certificados de calidad y exportación para validar su contenido.',tag:'Cumplimiento normativo'},
-    {t:'Reportes de planta',area:'Documento',d:'Convierte reportes operativos en datos listos para análisis y automatización.',tag:'Mayor visibilidad'}]},
-  {name:'Saúde e farma',icon:'pulse',intro:'Procesa información clínica y administrativa con rapidez y precisión.',cases:[
-    {t:'Órdenes y recetas',area:'Documento',d:'Extrae automáticamente la información relevante de órdenes médicas y recetas.',tag:'Datos estructurados'},
-    {t:'Bonos y prestaciones',area:'Imagen',d:'Obtiene la información necesaria para agilizar la facturación.',tag:'Menos rechazos'},
-    {t:'Llamadas de pacientes',area:'Audio',d:'Transcribe conversaciones y detecta automáticamente la intención del paciente.',tag:'Atención más rápida'}]},
-  {name:'Logística y transporte',icon:'truck',intro:'Mantén la operación en movimiento con información lista desde el primer momento.',cases:[
-    {t:'Guías de transporte',area:'Documento',d:'Digitaliza guías y documentos logísticos desde imágenes o PDFs.',tag:'Sin transcripción manual'},
-    {t:'Documentación aduanera',area:'Documento',d:'Extrae automáticamente los datos clave para procesos de comercio exterior.',tag:'Cumplimiento normativo'},
-    {t:'Llamadas de seguimiento',area:'Audio',d:'Interpreta conversaciones y actualiza el estado de cada envío.',tag:'Acción inmediata'}]},
-  {name:'Telecomunicaciones',icon:'signal',intro:'Automatiza la lectura y clasificación de contratos, correos y llamadas.',cases:[
-    {t:'Contratos y altas',area:'Documento',d:'Extrae automáticamente la información necesaria para provisionar nuevos servicios.',tag:'Implementación más rápida'},
-    {t:'Reclamos por correo',area:'Correo',d:'Clasifica solicitudes según prioridad y tipo de incidencia.',tag:'Cumplimiento de SLA'},
-    {t:'Llamadas de soporte',area:'Audio',d:'Transcribe conversaciones y propone la mejor resolución.',tag:'Mayor productividad'}]},
-  {name:'Setor público',icon:'civic',intro:'Moderniza la gestión documental sobre sistemas heredados.',cases:[
-    {t:'Solicitudes ciudadanas',area:'Documento',d:'Extrae automáticamente la información de formularios y solicitudes.',tag:'Reduce el tiempo de ciclo'},
-    {t:'Documentos históricos',area:'Imagen',d:'Digitaliza documentos antiguos y recupera su información mediante IA.',tag:'OCR inteligente'},
-    {t:'Expedientes',area:'Documento',d:'Organiza y estructura expedientes completos para facilitar su consulta.',tag:'Mayor trazabilidad'}]}
+  {name:'Bancos e finanças',icon:'bank',intro:'Milhares de documentos financeiros processados com precisão para acelerar a operação e reduzir erros.',cases:[
+    {t:'Notas fiscais',area:'Documento',d:'Extrai automaticamente fornecedor, valores, impostos e datas de notas fiscais em PDF ou imagem.',tag:'Pronto para o ERP'},
+    {t:'Extratos bancários',area:'Documento',d:'Identifica lançamentos, saldos e transações de extratos de qualquer instituição financeira.',tag:'Sem digitação manual'},
+    {t:'Ligações de cobrança',area:'Áudio',d:'Transcreve conversas, identifica compromissos de pagamento e avalia o cumprimento do protocolo.',tag:'Monitoramento de qualidade'}]},
+  {name:'Seguros',icon:'shield',intro:'Automatiza a leitura de documentos críticos durante todo o ciclo do sinistro.',cases:[
+    {t:'Documentação de sinistros',area:'Documento',d:'Extrai informações de apólices, boletins e comprovantes para acelerar cada caso.',tag:'Resolução mais rápida'},
+    {t:'Formulários digitalizados',area:'Imagem',d:'Transforma formulários e imagens em informação estruturada.',tag:'OCR inteligente'},
+    {t:'Reclamações por e-mail',area:'E-mail',d:'Classifica automaticamente cada solicitação e extrai a informação relevante.',tag:'Resposta mais rápida'}]},
+  {name:'Varejo e consumo',icon:'cart',intro:'Transforma milhares de documentos e mensagens diárias em informação pronta para operar.',cases:[
+    {t:'Pedidos de compra',area:'Documento',d:'Extrai produtos, quantidades e condições de PDFs e e-mails.',tag:'Sem digitação manual'},
+    {t:'Notas e comprovantes',area:'Imagem',d:'Digitaliza comprovantes e estrutura a informação automaticamente.',tag:'Dados prontos para integrar'},
+    {t:'Opinião do cliente',area:'E-mail',d:'Analisa comentários e avaliações para detectar temas, tendências e sentimento.',tag:'Análise automática'}]},
+  {name:'Indústria e agro',icon:'factory',intro:'Processa documentação operacional independentemente do formato.',cases:[
+    {t:'Notas fiscais de fornecedores',area:'Documento',d:'Extrai a informação necessária para automatizar as contas a pagar.',tag:'Pagamentos em dia'},
+    {t:'Certificados',area:'Imagem',d:'Interpreta certificados de qualidade e exportação para validar seu conteúdo.',tag:'Conformidade regulatória'},
+    {t:'Relatórios de planta',area:'Documento',d:'Transforma relatórios operacionais em dados prontos para análise e automação.',tag:'Mais visibilidade'}]},
+  {name:'Saúde e farma',icon:'pulse',intro:'Processa informação clínica e administrativa com rapidez e precisão.',cases:[
+    {t:'Pedidos e receitas',area:'Documento',d:'Extrai automaticamente a informação relevante de pedidos médicos e receitas.',tag:'Dados estruturados'},
+    {t:'Vouchers e guias',area:'Imagem',d:'Obtém a informação necessária para agilizar o faturamento.',tag:'Menos glosas'},
+    {t:'Ligações de pacientes',area:'Áudio',d:'Transcreve conversas e detecta automaticamente a intenção do paciente.',tag:'Atendimento mais rápido'}]},
+  {name:'Logística e transporte',icon:'truck',intro:'Mantém a operação em movimento com informação pronta desde o primeiro momento.',cases:[
+    {t:'Guias de transporte',area:'Documento',d:'Digitaliza guias e documentos logísticos a partir de imagens ou PDFs.',tag:'Sem digitação manual'},
+    {t:'Documentação aduaneira',area:'Documento',d:'Extrai automaticamente os dados-chave para processos de comércio exterior.',tag:'Conformidade regulatória'},
+    {t:'Ligações de acompanhamento',area:'Áudio',d:'Interpreta conversas e atualiza o status de cada envio.',tag:'Ação imediata'}]},
+  {name:'Telecomunicações',icon:'signal',intro:'Automatiza a leitura e classificação de contratos, e-mails e ligações.',cases:[
+    {t:'Contratos e habilitações',area:'Documento',d:'Extrai automaticamente a informação necessária para provisionar novos serviços.',tag:'Implementação mais rápida'},
+    {t:'Reclamações por e-mail',area:'E-mail',d:'Classifica solicitações por prioridade e tipo de incidência.',tag:'Cumprimento de SLA'},
+    {t:'Ligações de suporte',area:'Áudio',d:'Transcreve conversas e propõe a melhor resolução.',tag:'Mais produtividade'}]},
+  {name:'Setor público',icon:'civic',intro:'Moderniza a gestão documental sobre sistemas legados.',cases:[
+    {t:'Solicitações do cidadão',area:'Documento',d:'Extrai automaticamente a informação de formulários e solicitações.',tag:'Reduz o tempo de ciclo'},
+    {t:'Documentos históricos',area:'Imagem',d:'Digitaliza documentos antigos e recupera sua informação por meio de IA.',tag:'OCR inteligente'},
+    {t:'Processos e expedientes',area:'Documento',d:'Organiza e estrutura processos completos para facilitar sua consulta.',tag:'Mais rastreabilidade'}]}
 ];
 const rail=document.getElementById('rail');
 INDUSTRIES.forEach((ind,i)=>{const b=document.createElement('button');b.className='rb-explorer__ind';b.setAttribute('role','tab');b.setAttribute('aria-selected',i===0);b.innerHTML='<span class="ico">'+IND_ICN[ind.icon]+'</span><span class="nm">'+ind.name+'</span>';b.addEventListener('click',()=>selectInd(i));rail.appendChild(b);});
@@ -1584,16 +1584,16 @@ function selectInd(i){
 selectInd(0);
 
 const FAQS=[
-  ['¿Qué tipos de información puede procesar AI Studio?','AI Studio utiliza inteligencia artificial para comprender y extraer información de correos electrónicos, documentos PDF, imágenes y archivos de audio, convirtiéndola automáticamente en datos estructurados listos para tus procesos.'],
-  ['¿Necesito entrenar la IA antes de empezar?','No. AI Studio puede comenzar a procesar y extraer información desde el primer día, sin necesidad de entrenar modelos con grandes volúmenes de datos.'],
-  ['¿Puedo utilizar mis propios modelos de inteligencia artificial?','Sí. Puedes usar los modelos incluidos en Rocketbot o conectar los tuyos, ya sea mediante tu proveedor en la nube, con tus propias API Keys o desplegados en infraestructura on-premise para mantener el control y la soberanía de tus datos.'],
-  ['¿Puedo definir exactamente qué información extraer?','Sí. Puedes crear plantillas personalizadas y definir los campos que deseas extraer, incluyendo tablas, listas, estructuras anidadas y otros formatos complejos.'],
-  ['¿Cómo envío la información para procesarla?','Puedes cargar archivos manualmente, recibirlos por correo electrónico, conectarlos desde servicios como Google Drive o incorporarlos automáticamente mediante flujos de automatización con Rocketbot.'],
-  ['¿Qué formatos de documentos, imágenes y audio son compatibles?','AI Studio procesa documentos PDF, imágenes en formatos PNG, JPEG, WEBP y GIF no animado, además de archivos de audio MP3 y WAV de hasta 25 MB por archivo.'],
-  ['¿Qué puedo hacer con la información extraída?','Puedes enviarla automáticamente a ERPs, CRMs, bases de datos, hojas de cálculo, APIs, Webhooks o utilizarla para iniciar nuevos procesos y automatizaciones dentro del ecosistema Rocketbot.'],
-  ['¿Qué nivel de seguridad ofrece AI Studio?','AI Studio incorpora cifrado de datos, control de accesos, trazabilidad completa y la posibilidad de operar en infraestructura on-premise. Además, forma parte de la Suite Rocketbot, certificada bajo la norma ISO/IEC 27001 para la gestión de seguridad de la información.'],
-  ['¿Qué diferencia a AI Studio de un OCR tradicional?','Un OCR solo convierte una imagen en texto. AI Studio comprende el contenido, identifica la información relevante, la organiza en datos estructurados y la deja lista para integrarse con tus sistemas y procesos de negocio.'],
-  ['¿Puede integrarse con mis sistemas actuales?','Sí. AI Studio se integra con ERPs, CRMs, bases de datos, APIs REST, Webhooks y el resto de la Suite Rocketbot para que la información fluya automáticamente entre todos tus sistemas.']
+  ['Quais tipos de informação o AI Studio pode processar?','O AI Studio usa inteligência artificial para compreender e extrair informação de e-mails, documentos PDF, imagens e arquivos de áudio, convertendo-a automaticamente em dados estruturados prontos para os seus processos.'],
+  ['Preciso treinar a IA antes de começar?','Não. O AI Studio pode começar a processar e extrair informação desde o primeiro dia, sem necessidade de treinar modelos com grandes volumes de dados.'],
+  ['Posso usar os meus próprios modelos de inteligência artificial?','Sim. Você pode usar os modelos inclusos na Rocketbot ou conectar os seus, seja pelo seu provedor na nuvem, com as suas próprias API Keys ou implantados em infraestrutura on-premise para manter o controle e a soberania dos seus dados.'],
+  ['Posso definir exatamente qual informação extrair?','Sim. Você pode criar modelos personalizados e definir os campos que deseja extrair, incluindo tabelas, listas, estruturas aninhadas e outros formatos complexos.'],
+  ['Como envio a informação para processá-la?','Você pode carregar arquivos manualmente, recebê-los por e-mail, conectá-los a partir de serviços como o Google Drive ou incorporá-los automaticamente por meio de fluxos de automação com a Rocketbot.'],
+  ['Quais formatos de documentos, imagens e áudio são compatíveis?','O AI Studio processa documentos PDF, imagens nos formatos PNG, JPEG, WEBP e GIF não animado, além de arquivos de áudio MP3 e WAV de até 25 MB por arquivo.'],
+  ['O que posso fazer com a informação extraída?','Você pode enviá-la automaticamente para ERPs, CRMs, bancos de dados, planilhas, APIs, Webhooks ou usá-la para disparar novos processos e automações dentro do ecossistema Rocketbot.'],
+  ['Qual nível de segurança o AI Studio oferece?','O AI Studio inclui criptografia de dados, controle de acesso, rastreabilidade completa e a possibilidade de operar em infraestrutura on-premise. Além disso, faz parte da Suite Rocketbot, certificada pela norma ISO/IEC 27001 de gestão de segurança da informação.'],
+  ['Qual a diferença entre o AI Studio e um OCR tradicional?','Um OCR apenas converte uma imagem em texto. O AI Studio compreende o conteúdo, identifica a informação relevante, organiza-a em dados estruturados e a deixa pronta para integrar aos seus sistemas e processos de negócio.'],
+  ['Pode integrar-se aos meus sistemas atuais?','Sim. O AI Studio se integra a ERPs, CRMs, bancos de dados, APIs REST, Webhooks e ao restante da Suite Rocketbot para que a informação flua automaticamente entre todos os seus sistemas.']
 ];
 const fw=document.getElementById('faqWrap');
 FAQS.forEach(function(pair){
@@ -1610,7 +1610,7 @@ FAQS.forEach(function(pair){
   "name": "AI Studio",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
-  "description": "Convierte correos, documentos, imágenes y audios en datos estructurados listos para usar, con modelos propios o conectados por el cliente.",
+  "description": "O AI Studio transforma e-mails, documentos, imagens e áudios em dados estruturados prontos para usar, com modelos próprios ou conectados pelo cliente.",
   "url": "https://rocketbot.com/ai-studio",
   "offers": {
     "@type": "Offer",

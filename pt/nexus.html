@@ -1140,11 +1140,11 @@ html{scroll-padding-top:92px;}
   <div class="rb-hero__particles"></div>
   <div class="container rb-hero__grid">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title">Transforme os dados dos seus bots em<span class="rb-hero__rot" id="heroRot">aplicações</span>que o seu time realmente usa</h1>
+      <h1 class="rb-hero__title">Transforme os dados das suas automações em<span class="rb-hero__rot" id="heroRot">aplicações</span>que o seu time realmente usa</h1>
       <p class="rb-hero__sub">Crie aplicações, painéis, portais, relatórios e ferramentas internas conectadas aos dados da sua operação, de forma visual e sem programar.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="http://rocketview.myrb.io/">Teste agora</a>
-        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Falar com vendas</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver demo</a>
       </div>
     </div>
     <div class="rb-hero__visual" aria-hidden="true">
@@ -1675,7 +1675,7 @@ const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 })();
 
 // ---- app tabs ----
-const AWT={robots:'Contabilización de Facturas · Dashboard',track:'TrackLog · Portal de seguimiento',appr:'Nexus · Aprobaciones'};
+const AWT={robots:'Contabilização de Notas Fiscais · Painel',track:'TrackLog · Portal de acompanhamento',appr:'Nexus · Aprovações'};
 document.querySelectorAll('#nTabs .rb-ntab').forEach(t=>{
   t.addEventListener('click',()=>{
     const p=t.getAttribute('data-p');
@@ -1687,25 +1687,25 @@ document.querySelectorAll('#nTabs .rb-ntab').forEach(t=>{
 
 // ---- invoices table (live simulation) ----
 const FICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l3 3v15H7z"/><path d="M10 12h5M10 16h3"/></svg>';
-const ELBL={ok:'Contabilizada',proc:'En proceso',warn:'Excepción'};
-const PROV=['Comercial Andina SpA','Distribuidora Sur Ltda.','Soluciones TI SpA','Agrofresh Chile','Importadora del Pacífico','Servicios Logísticos PIT','Editorial Norte','Insumos Médicos S.A.','Transportes Centro','Energía Solar SpA','Ferretería Maipú','Textil del Maule','Frutícola O’Higgins','Acme Logística','Aceros del Sur'];
+const ELBL={ok:'Contabilizada',proc:'Em processamento',warn:'Exceção'};
+const PROV=['Comercial Andina Ltda.','Distribuidora Sul Ltda.','Soluções TI Ltda.','Agrofresh Brasil','Importadora do Pacífico','Serviços Logísticos PIT','Editora Norte','Insumos Médicos S.A.','Transportes Centro','Energia Solar Ltda.','Ferragens Maipu','Têxtil do Maule','Frutícola O’Higgins','Acme Logística','Aços do Sul'];
 const now0=Date.now();
 function mk(seq,prov,monto,conf,estado,ageS){return {id:'F-2026-0'+seq,prov:prov,monto:monto,conf:conf,estado:estado,ts:now0-ageS*1000};}
 let FACTURAS=[
- mk(4871,'Comercial Andina SpA',1245000,99,'ok',12),
- mk(4870,'Distribuidora Sur Ltda.',480500,98,'ok',8),
- mk(4869,'Soluciones TI SpA',2310900,96,'proc',5),
- mk(4868,'Agrofresh Chile',875300,54,'warn',18),
- mk(4867,'Importadora del Pacífico',3120000,100,'ok',6),
- mk(4866,'Servicios Logísticos PIT',642800,97,'proc',4),
- mk(4865,'Editorial Norte',198400,91,'proc',11),
+ mk(4871,'Comercial Andina Ltda.',1245000,99,'ok',12),
+ mk(4870,'Distribuidora Sul Ltda.',480500,98,'ok',8),
+ mk(4869,'Soluções TI Ltda.',2310900,96,'proc',5),
+ mk(4868,'Agrofresh Brasil',875300,54,'warn',18),
+ mk(4867,'Importadora do Pacífico',3120000,100,'ok',6),
+ mk(4866,'Serviços Logísticos PIT',642800,97,'proc',4),
+ mk(4865,'Editora Norte',198400,91,'proc',11),
  mk(4864,'Insumos Médicos S.A.',5090250,61,'warn',22),
  mk(4863,'Transportes Centro',1004700,95,'ok',9),
- mk(4862,'Energía Solar SpA',760000,99,'ok',7)
+ mk(4862,'Energia Solar Ltda.',760000,99,'ok',7)
 ];
 let fSeq=4872, okCount=3998, warnCount=16, procesadas=4079, montoM=284.5, robFilter='all', lastUpd=Date.now();
 const nf=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');
-function ageLbl(ts){const s=Math.max(1,Math.round((Date.now()-ts)/1000));return s<60?('hace '+s+' s'):('hace '+Math.floor(s/60)+' m');}
+function ageLbl(ts){const s=Math.max(1,Math.round((Date.now()-ts)/1000));return s<60?('há '+s+' s'):('há '+Math.floor(s/60)+' m');}
 function bump(el){if(!el||reduce)return;el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump');}
 function rowHTML(f){
   const ec=f._enter?' rb-fdrop':(f._flash?(' rb-fflash-'+(f.estado==='warn'?'warn':'ok')):'');
@@ -1761,37 +1761,37 @@ if(!reduce){
 // ---- tracking ----
 const CHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>';
 const TRACKS={
- '00847':{id:'TRK-2024-00847',state:'En tránsito',cls:'transit',origin:'Buenos Aires',dest:'Córdoba',eta:'Hoy, 17:00',prog:76,
-   steps:[{t:'Retiro en origen',s:'Depósito Central Buenos Aires · Lun 3 jun, 08:14',st:'done'},
-          {t:'Ingreso a hub de despacho',s:'Hub Palermo · Clasificación completada · Lun 3 jun, 10:52',st:'done'},
-          {t:'En ruta · salida nocturna',s:'Unidad 6 · Ruta Nacional 9 · Mar 4 jun, 22:30',st:'now'},
-          {t:'Llegada a hub Córdoba',s:'Estimada · Hoy',st:''}],
-   detail:[['Tipo de carga','Refrigerada'],['Bultos','48 unidades'],['Peso total','312 kg'],['Temperatura','4 °C · OK']]},
- '00831':{id:'TRK-2024-00831',state:'Entregado',cls:'deliv',origin:'Santiago',dest:'Rosario',eta:'Entregado · Lun 3 jun',prog:100,
-   steps:[{t:'Retiro en origen',s:'Depósito Santiago · Dom 1 jun, 07:40',st:'done'},
-          {t:'Ingreso a hub de despacho',s:'Hub Mendoza · Clasificación completada · Dom 1 jun, 19:10',st:'done'},
-          {t:'En ruta a destino',s:'Unidad 12 · Corredor Bioceánico · Lun 2 jun, 06:20',st:'done'},
-          {t:'Entregado',s:'Sucursal Rosario · Recibido por J. Díaz · Lun 3 jun, 11:05',st:'done'}],
-   detail:[['Tipo de carga','Seca'],['Bultos','12 unidades'],['Peso total','80 kg'],['Estado','Entregado · OK']]},
- '00804':{id:'TRK-2024-00804',state:'Demorado',cls:'delay',origin:'Mendoza',dest:'Tucumán',eta:'Reprogramada · Mañana',prog:42,
-   alert:'Demora en hub: corte de ruta por clima. Reprogramado para el día siguiente.',
-   steps:[{t:'Retiro en origen',s:'Depósito Mendoza · Mar 4 jun, 09:15',st:'done'},
-          {t:'Ingreso a hub de despacho',s:'Hub San Juan · Mar 4 jun, 15:48',st:'done'},
-          {t:'Detenido en hub · demora',s:'Corte de Ruta 38 por clima · Mié 5 jun, 02:10',st:'now'},
-          {t:'Llegada a hub Tucumán',s:'Reprogramada · Mañana',st:''}],
-   detail:[['Tipo de carga','Seca'],['Bultos','27 unidades'],['Peso total','190 kg'],['Estado','Demorado']]}
+ '00847':{id:'TRK-2024-00847',state:'Em trânsito',cls:'transit',origin:'Buenos Aires',dest:'Córdoba',eta:'Hoje, 17h00',prog:76,
+   steps:[{t:'Retirada na origem',s:'Depósito Central Buenos Aires · Seg 3 jun, 08:14',st:'done'},
+          {t:'Chegada ao hub de despacho',s:'Hub Palermo · Triagem concluída · Seg 3 jun, 10:52',st:'done'},
+          {t:'Em trânsito · saída noturna',s:'Unidade 6 · Rota Nacional 9 · Ter 4 jun, 22:30',st:'now'},
+          {t:'Chegada ao hub Córdoba',s:'Estimada · Hoje',st:''}],
+   detail:[['Tipo de carga','Refrigerada'],['Volumes','48 unidades'],['Peso total','312 kg'],['Temperatura','4 °C · OK']]},
+ '00831':{id:'TRK-2024-00831',state:'Entregue',cls:'deliv',origin:'Santiago',dest:'Rosário',eta:'Entregue · Seg 3 jun',prog:100,
+   steps:[{t:'Retirada na origem',s:'Depósito Santiago · Dom 1 jun, 07:40',st:'done'},
+          {t:'Chegada ao hub de despacho',s:'Hub Mendoza · Triagem concluída · Dom 1 jun, 19:10',st:'done'},
+          {t:'Em trânsito para o destino',s:'Unidade 12 · Corredor Bioceânico · Seg 2 jun, 06:20',st:'done'},
+          {t:'Entregue',s:'Filial Rosário · Recebido por J. Díaz · Seg 3 jun, 11:05',st:'done'}],
+   detail:[['Tipo de carga','Seca'],['Volumes','12 unidades'],['Peso total','80 kg'],['Status','Entregue · OK']]},
+ '00804':{id:'TRK-2024-00804',state:'Atrasado',cls:'delay',origin:'Mendoza',dest:'Tucumán',eta:'Reprogramada · Amanhã',prog:42,
+   alert:'Atraso no hub: rota interditada por clima. Reprogramado para o dia seguinte.',
+   steps:[{t:'Retirada na origem',s:'Depósito Mendoza · Ter 4 jun, 09:15',st:'done'},
+          {t:'Chegada ao hub de despacho',s:'Hub San Juan · Ter 4 jun, 15:48',st:'done'},
+          {t:'Parado no hub · atraso',s:'Rota 38 interditada por clima · Qua 5 jun, 02:10',st:'now'},
+          {t:'Chegada ao hub Tucumán',s:'Reprogramada · Amanhã',st:''}],
+   detail:[['Tipo de carga','Seca'],['Volumes','27 unidades'],['Peso total','190 kg'],['Status','Atrasado']]}
 };
-const TRK_ACC='<div class="rb-trk-acc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Acceso restringido por Nexus · cada cliente ve solo sus envíos.</div>';
+const TRK_ACC='<div class="rb-trk-acc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Acesso restrito pelo Nexus · cada cliente vê apenas os próprios envios.</div>';
 function renderTrack(key){
   const t=TRACKS[key]; if(!t) return;
   document.querySelectorAll('#trkRecent button').forEach(b=>b.classList.toggle('act',b.getAttribute('data-k')===key));
   let b='<div class="rb-trk-id"><b>'+t.id+'</b><span class="rb-pill '+t.cls+'">'+t.state+'</span></div>';
-  b+='<div class="rb-trk-route"><div><span>Origen</span><b>'+t.origin+'</b></div><div><span>Destino</span><b>'+t.dest+'</b></div><div><span>Entrega estimada</span><b>'+t.eta+'</b></div></div>';
+  b+='<div class="rb-trk-route"><div><span>Origem</span><b>'+t.origin+'</b></div><div><span>Destino</span><b>'+t.dest+'</b></div><div><span>Entrega estimada</span><b>'+t.eta+'</b></div></div>';
   if(t.alert) b+='<div class="rb-trk-alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h16.9a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>'+t.alert+'</div>';
-  b+='<div class="rb-trk-prog"><i style="width:'+t.prog+'%"></i></div><div class="rb-trk-prog-l"><span>Retirado</span><span>En ruta</span><span>Hub destino</span><span>Entregado</span></div>';
+  b+='<div class="rb-trk-prog"><i style="width:'+t.prog+'%"></i></div><div class="rb-trk-prog-l"><span>Retirado</span><span>Em trânsito</span><span>Hub destino</span><span>Entregue</span></div>';
   b+='<div class="rb-tl">'+t.steps.map(s=>'<div class="rb-tl-step '+s.st+'"><span class="dot">'+CHK+'</span><div><div class="ti">'+s.t+'</div><div class="ts">'+s.s+'</div></div></div>').join('')+'</div>';
   document.getElementById('trkBody').innerHTML=b;
-  document.getElementById('trkSide').innerHTML='<h5>Detalle del envío</h5>'+t.detail.map(d=>'<div class="rb-trk-row"><span>'+d[0]+'</span><b>'+d[1]+'</b></div>').join('')+TRK_ACC;
+  document.getElementById('trkSide').innerHTML='<h5>Detalhes do envio</h5>'+t.detail.map(d=>'<div class="rb-trk-row"><span>'+d[0]+'</span><b>'+d[1]+'</b></div>').join('')+TRK_ACC;
 }
 document.getElementById('trkRecent').innerHTML=Object.keys(TRACKS).map(k=>'<button data-k="'+k+'">'+TRACKS[k].id+'</button>').join('');
 document.querySelectorAll('#trkRecent button').forEach(btn=>btn.addEventListener('click',()=>renderTrack(btn.getAttribute('data-k'))));
@@ -1800,7 +1800,7 @@ function trkSearch(){
   if(!q){renderTrack('00847');return;}
   const key=Object.keys(TRACKS).find(k=>TRACKS[k].id.toLowerCase().includes(q)||k.includes(q));
   if(key){renderTrack(key);}
-  else{document.getElementById('trkBody').innerHTML='<div class="rb-no-res">No se encontró ningún envío con ese número.</div>';document.getElementById('trkSide').innerHTML='';
+  else{document.getElementById('trkBody').innerHTML='<div class="rb-no-res">Nenhum envio encontrado com esse número.</div>';document.getElementById('trkSide').innerHTML='';
     document.querySelectorAll('#trkRecent button').forEach(b=>b.classList.remove('act'));}
 }
 document.getElementById('trkGo').addEventListener('click',trkSearch);
@@ -1809,16 +1809,17 @@ renderTrack('00847');
 
 // ---- approvals ----
 let apData=[
- ['Aumento salarial fuera de rango','Compensaciones','María González','alta'],
- ['Contratación sin verificación','Onboarding','Juan Pérez','media'],
- ['Horas extras excedidas','Nómina','Laura Fernández','media'],
- ['Gasto fuera de política','Gastos','Carlos López','baja'],
- ['Vacaciones en período crítico','Ausencias','Ana Silva','baja']
+ ['Aumento salarial fora da faixa','Compensação','Maria González','alta'],
+ ['Contratação sem verificação','Onboarding','Juan Pérez','media'],
+ ['Horas extras excedidas','Folha de pagamento','Laura Fernández','media'],
+ ['Gasto fora da política','Despesas','Carlos López','baja'],
+ ['Férias em período crítico','Ausências','Ana Silva','baja']
 ];
+const PRIOLBL={alta:'Alta',media:'Média',baja:'Baixa'};
 function renderAppr(){
   const tb=document.getElementById('apTbody');
-  tb.innerHTML=apData.map((a,i)=>'<tr class="rb-ap-row" data-i="'+i+'"><td style="font-weight:600">'+a[0]+'</td><td style="color:var(--muted)">'+a[1]+'</td><td>'+a[2]+'</td><td><span class="rb-prio '+a[3]+'">'+a[3].charAt(0).toUpperCase()+a[3].slice(1)+'</span></td>'
-   +'<td style="text-align:right;white-space:nowrap"><button class="rb-ap-btn ok" onclick="apAct('+i+',1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Aprobar</button> <button class="rb-ap-btn no" onclick="apAct('+i+',0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Rechazar</button></td></tr>').join('');
+  tb.innerHTML=apData.map((a,i)=>'<tr class="rb-ap-row" data-i="'+i+'"><td style="font-weight:600">'+a[0]+'</td><td style="color:var(--muted)">'+a[1]+'</td><td>'+a[2]+'</td><td><span class="rb-prio '+a[3]+'">'+PRIOLBL[a[3]]+'</span></td>'
+   +'<td style="text-align:right;white-space:nowrap"><button class="rb-ap-btn ok" onclick="apAct('+i+',1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Aprovar</button> <button class="rb-ap-btn no" onclick="apAct('+i+',0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Rejeitar</button></td></tr>').join('');
   document.getElementById('apEmpty').style.display=apData.length?'none':'block';
 }
 function apAct(i,ok){
@@ -1836,17 +1837,17 @@ renderAppr();
 
 // ---- MCP / Claude: instrucción -> app ----
 const NMCP={
- cobranzas:{title:'Panel de Cobranzas',conn:'Bancos de dados dos bots',
-   prompt:'Crea un dashboard de cobranzas con la deuda total, un gráfico de evolución y una tabla de clientes morosos.',
-   reply:'Listo. Armé «Panel de Cobranzas» con tarjetas KPI, un gráfico de evolución y una tabla de morosos, conectado a tu base de datos.',
+ cobranzas:{title:'Painel de Cobrança',conn:'Bancos de dados dos bots',
+   prompt:'Crie um painel de cobrança com a dívida total, um gráfico de evolução e uma tabela de clientes inadimplentes.',
+   reply:'Pronto. Criei o "Painel de Cobrança" com cartões de KPI, um gráfico de evolução e uma tabela de inadimplentes, conectado ao seu banco de dados.',
    blocks:['kpi','bars','table']},
- proveedores:{title:'Portal de Proveedores',conn:'Saturn Studio',
-   prompt:'Necesito un portal donde los proveedores carguen sus facturas y vean el estado de aprobación.',
-   reply:'Hecho. Generé «Portal de Proveedores» con formulario de carga, tabla de estados y acceso restringido por proveedor.',
+ proveedores:{title:'Portal de Fornecedores',conn:'Saturn Studio',
+   prompt:'Preciso de um portal onde os fornecedores enviem suas notas fiscais e vejam o status de aprovação.',
+   reply:'Feito. Gerei o "Portal de Fornecedores" com formulário de envio, tabela de status e acesso restrito por fornecedor.',
    blocks:['form','table','access']},
- operaciones:{title:'Tablero de Operaciones',conn:'Rocketbot Orquestador',
-   prompt:'Arma un tablero con el estado de los robots, alertas y un feed de actividad en tiempo real.',
-   reply:'Creé «Tablero de Operaciones» con KPIs en vivo, panel de alertas y un feed de actividad, conectado al Orquestador.',
+ operaciones:{title:'Quadro de Operações',conn:'Orquestrador',
+   prompt:'Monte um painel com o status dos robôs, alertas e um feed de atividade em tempo real.',
+   reply:'Criei o "Quadro de Operações" com KPIs em tempo real, painel de alertas e um feed de atividade, conectado ao Orquestrador.',
    blocks:['kpi','alert','feed']}
 };
 const NBI={
@@ -1860,20 +1861,20 @@ const NBI={
 };
 function nblock(t){
   let inner='';
-  if(t==='kpi') inner='<div class="rb-mcp-blk-h">'+NBI.kpi+'Tarjetas KPI</div><div class="rb-mcp-kpis"><div class="rb-mcp-kpi"></div><div class="rb-mcp-kpi"></div><div class="rb-mcp-kpi"></div></div>';
-  else if(t==='bars') inner='<div class="rb-mcp-blk-h">'+NBI.bars+'Gráfico de evolución</div><div class="rb-mcp-bars">'+[42,68,55,82,60,90,72].map(h=>'<span style="height:'+h+'%"></span>').join('')+'</div>';
-  else if(t==='table') inner='<div class="rb-mcp-blk-h">'+NBI.table+'Tabla de datos</div><div class="rb-mcp-tbl">'+[1,2,3].map(()=>'<div class="rb-mcp-tr"><span></span><span></span><span></span></div>').join('')+'</div>';
-  else if(t==='form') inner='<div class="rb-mcp-blk-h">'+NBI.form+'Formulario de carga</div><div class="rb-mcp-inp"></div><div class="rb-mcp-inp"></div><span class="rb-mcp-btn2">Enviar factura</span>';
-  else if(t==='feed') inner='<div class="rb-mcp-blk-h">'+NBI.feed+'Feed de actividad</div>'+[1,2,3].map(()=>'<div class="rb-mcp-fl"><span class="d"></span><span class="l"></span></div>').join('');
-  else if(t==='alert') inner='<div class="rb-mcp-blk-h">'+NBI.alert+'Panel de alertas</div><div class="rb-mcp-alert">3 alertas activas requieren atención</div>';
-  else if(t==='access') inner='<div class="rb-mcp-blk-h">'+NBI.access+'Acceso por proveedor</div><div class="rb-mcp-note">Cada proveedor ve solo sus propios documentos.</div>';
+  if(t==='kpi') inner='<div class="rb-mcp-blk-h">'+NBI.kpi+'Cartões KPI</div><div class="rb-mcp-kpis"><div class="rb-mcp-kpi"></div><div class="rb-mcp-kpi"></div><div class="rb-mcp-kpi"></div></div>';
+  else if(t==='bars') inner='<div class="rb-mcp-blk-h">'+NBI.bars+'Gráfico de evolução</div><div class="rb-mcp-bars">'+[42,68,55,82,60,90,72].map(h=>'<span style="height:'+h+'%"></span>').join('')+'</div>';
+  else if(t==='table') inner='<div class="rb-mcp-blk-h">'+NBI.table+'Tabela de dados</div><div class="rb-mcp-tbl">'+[1,2,3].map(()=>'<div class="rb-mcp-tr"><span></span><span></span><span></span></div>').join('')+'</div>';
+  else if(t==='form') inner='<div class="rb-mcp-blk-h">'+NBI.form+'Formulário de envio</div><div class="rb-mcp-inp"></div><div class="rb-mcp-inp"></div><span class="rb-mcp-btn2">Enviar nota fiscal</span>';
+  else if(t==='feed') inner='<div class="rb-mcp-blk-h">'+NBI.feed+'Feed de atividade</div>'+[1,2,3].map(()=>'<div class="rb-mcp-fl"><span class="d"></span><span class="l"></span></div>').join('');
+  else if(t==='alert') inner='<div class="rb-mcp-blk-h">'+NBI.alert+'Painel de alertas</div><div class="rb-mcp-alert">3 alertas ativos exigem atenção</div>';
+  else if(t==='access') inner='<div class="rb-mcp-blk-h">'+NBI.access+'Acesso por fornecedor</div><div class="rb-mcp-note">Cada fornecedor vê apenas os próprios documentos.</div>';
   return '<div class="rb-mcp-blk rb-mcp-reveal">'+inner+'</div>';
 }
 let nmCur='cobranzas', nmToken=0, nmTimers=[];
 function nmSleep(ms){return new Promise(function(r){nmTimers.push(setTimeout(r,ms));});}
 function nmClear(){nmTimers.forEach(clearTimeout); nmTimers=[];}
 function nmBuild(c){
-  const conn='<div class="rb-mcp-conn rb-mcp-reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>Conexión: '+c.conn+'</div>';
+  const conn='<div class="rb-mcp-conn rb-mcp-reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>Conexão: '+c.conn+'</div>';
   document.getElementById('nmScreen').innerHTML=conn+c.blocks.map(nblock).join('');
 }
 async function nmPlay(key){
@@ -1881,16 +1882,16 @@ async function nmPlay(key){
   document.querySelectorAll('#nmChips .rb-mcp-chip').forEach(function(ch){ch.classList.toggle('act',ch.getAttribute('data-k')===nmCur);});
   const user=document.getElementById('nmUser'); user.textContent=''; user.classList.add('typing');
   document.getElementById('nmBotRow').style.visibility='hidden';
-  document.getElementById('nmTitle').textContent='Pantalla generada';
+  document.getElementById('nmTitle').textContent='Tela gerada';
   document.getElementById('nmScreen').innerHTML=''; document.getElementById('nmPub').style.display='none';
-  const btn=document.getElementById('nmGen'); btn.disabled=true; btn.textContent='Generando…';
+  const btn=document.getElementById('nmGen'); btn.disabled=true; btn.textContent='Gerando…';
   if(reduce){
     user.textContent=c.prompt; user.classList.remove('typing');
     document.getElementById('nmBotRow').style.visibility='visible'; document.getElementById('nmBot').textContent=c.reply;
-    document.getElementById('nmTitle').textContent='Pantalla · '+c.title; nmBuild(c);
+    document.getElementById('nmTitle').textContent='Tela · '+c.title; nmBuild(c);
     document.querySelectorAll('#nmScreen .rb-mcp-reveal').forEach(function(e){e.classList.add('in');});
     document.getElementById('nmConn').textContent='Conectado a '+c.conn; document.getElementById('nmPub').style.display='flex';
-    btn.disabled=false; btn.textContent='Generar de nuevo'; return;
+    btn.disabled=false; btn.textContent='Gerar novamente'; return;
   }
   for(let i=0;i<c.prompt.length;i++){ if(my!==nmToken)return; user.textContent+=c.prompt[i]; await nmSleep(19); }
   user.classList.remove('typing'); await nmSleep(330); if(my!==nmToken)return;
@@ -1898,12 +1899,12 @@ async function nmPlay(key){
   document.getElementById('nmBot').innerHTML='<span class="rb-mcp-dots"><span></span><span></span><span></span></span>';
   await nmSleep(1100); if(my!==nmToken)return;
   document.getElementById('nmBot').textContent=c.reply; await nmSleep(260); if(my!==nmToken)return;
-  document.getElementById('nmTitle').textContent='Pantalla · '+c.title; nmBuild(c);
+  document.getElementById('nmTitle').textContent='Tela · '+c.title; nmBuild(c);
   const blks=[].slice.call(document.querySelectorAll('#nmScreen .rb-mcp-reveal'));
   for(let i=0;i<blks.length;i++){ if(my!==nmToken)return; blks[i].classList.add('in'); await nmSleep(300); }
   if(my!==nmToken)return;
   document.getElementById('nmConn').textContent='Conectado a '+c.conn; document.getElementById('nmPub').style.display='flex';
-  btn.disabled=false; btn.textContent='Generar de nuevo';
+  btn.disabled=false; btn.textContent='Gerar novamente';
 }
 document.querySelectorAll('#nmChips .rb-mcp-chip').forEach(function(ch){ ch.addEventListener('click',function(){ nmPlay(ch.getAttribute('data-k')); }); });
 let nmSeen=false;
@@ -1912,12 +1913,12 @@ nmObs.observe(document.querySelector('.rb-mcp-grid'));
 
 // ---- FAQ ----
 const FAQS=[
-  ['¿Puedo crear dashboards y portales con inteligencia artificial?','Sí. Describe en lenguaje natural el dashboard, portal o aplicación que necesitas y, mediante el MCP de Claude, Nexus genera las pantallas y las conecta con tus datos automáticamente.'],
-  ['¿Necesito saber programar para usar Nexus?','No. Nexus cuenta con un constructor visual para crear dashboards, portales y aplicaciones sin escribir código. Si necesitas una lógica más avanzada, puedes complementarla con IA o desarrollo personalizado.'],
-  ['¿Cuánto tiempo toma crear un dashboard o portal?','Depende del proyecto. Un dashboard sencillo puede estar listo en pocas horas, mientras que aplicaciones más completas pueden construirse en días, no en meses.'],
-  ['¿Mis datos están seguros?','Sí. Nexus protege la información con credenciales cifradas, control de accesos y aislamiento de datos por organización, para que cada empresa opere de forma segura.'],
-  ['¿Puedo conectarlo con los sistemas que ya utilizo?','Sí. Nexus se integra con bases de datos, APIs REST, Google Sheets, Amazon S3 y otros sistemas, para mostrar la información sin reemplazar tu infraestructura.'],
-  ['¿Qué pasa si necesito una funcionalidad específica?','Puedes extender Nexus con componentes personalizados, HTML y JavaScript cuando el proyecto lo requiera, sin perder las ventajas de la plataforma.']
+  ['Posso criar dashboards e portais com inteligência artificial?','Sim. Descreva em linguagem natural o painel, portal ou aplicação que você precisa e, por meio do MCP do Claude, o Nexus gera as telas e as conecta aos seus dados automaticamente.'],
+  ['Preciso saber programar para usar o Nexus?','Não. O Nexus conta com um construtor visual para criar painéis, portais e aplicações sem escrever código. Se precisar de uma lógica mais avançada, você pode complementar com IA ou desenvolvimento personalizado.'],
+  ['Quanto tempo leva para criar um painel ou portal?','Depende do projeto. Um painel simples pode ficar pronto em poucas horas, enquanto aplicações mais completas podem ser construídas em dias, não em meses.'],
+  ['Meus dados estão seguros?','Sim. O Nexus protege a informação com credenciais criptografadas, controle de acessos e isolamento de dados por organização, para que cada empresa opere com segurança.'],
+  ['Posso conectá-lo aos sistemas que já uso?','Sim. O Nexus se integra a bancos de dados, APIs REST, Google Sheets, Amazon S3 e outros sistemas, para mostrar a informação sem substituir a sua infraestrutura.'],
+  ['O que acontece se eu precisar de uma funcionalidade específica?','Você pode estender o Nexus com componentes personalizados, HTML e JavaScript quando o projeto exigir, sem perder as vantagens da plataforma.']
 ];
 const fw=document.getElementById('faqWrap');
 FAQS.forEach(function(pair){
@@ -1934,7 +1935,7 @@ FAQS.forEach(function(pair){
   "name": "Nexus",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
-  "description": "Plataforma low-code para crear dashboards, portales y herramientas internas conectadas a los datos de tus automatizaciones, sin código frontend.",
+  "description": "Plataforma low-code para criar painéis, portais e ferramentas internas conectadas aos dados das suas automações, sem código de frontend.",
   "url": "https://rocketbot.com/nexus",
   "offers": {
     "@type": "Offer",

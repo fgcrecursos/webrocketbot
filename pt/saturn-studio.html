@@ -928,11 +928,11 @@ html{scroll-padding-top:92px;}
   <div class="rb-hero__particles"></div>
   <div class="container rb-hero__grid">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title"><span class="rb-hero__ln">Conecte e automatize</span><br><span class="rb-hero__ln"><strong><span class="rb-hero__rot" id="heroRot">processos</span></strong>sem código</span></h1>
+      <h1 class="rb-hero__title"><span class="rb-hero__ln">Conecte e automatize</span><br><span class="rb-hero__ln"><strong><span class="rb-hero__rot" id="heroRot">seus processos</span></strong></span></h1>
       <p class="rb-hero__sub">O Saturn Studio reúne automação, inteligência artificial e agentes inteligentes para executar processos de ponta a ponta, integrados aos seus sistemas e com controle e rastreabilidade em cada passo.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://studio.rocketbot.com/">Teste agora</a>
-        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Falar com vendas</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#demo" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver a demonstração</a>
       </div>
     </div>
     <div class="rb-hero__visual" aria-hidden="true">
@@ -1285,7 +1285,7 @@ const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 // ---- hero rotating word ----
 (function(){
   const rot=document.getElementById('heroRot'); if(!rot||reduce) return;
-  var W={es:['procesos','flujos','agentes','robots'],en:['processes','flows','agents','robots'],pt:['processos','fluxos','agentes','robôs']};
+  var W={es:['tus procesos','tus sistemas','tu operación'],en:['processes','flows','agents','robots'],pt:['seus processos','seus sistemas','sua operação']};
   var WORDS=(window.RB_I18N?RB_I18N.pick(W):W.es), wi=0;
   rot.classList.add('notranslate'); rot.setAttribute('translate','no'); rot.textContent=WORDS[0];
   if(window.RB_I18N) RB_I18N.onLang(function(){ WORDS=RB_I18N.pick(W); rot.textContent=WORDS[wi%WORDS.length]; });
@@ -1309,14 +1309,14 @@ const SI={
 // ---- workflow canvas ----
 const SWF={
  onb:{name:'Onboarding de cliente',
-   nodes:[{ic:'form',k:'rb',t:'Xperience',s:'Solicitud recibida'},{ic:'ai',k:'rb',t:'AI Studio',s:'Estructura el documento'},{ic:'agent',k:'ai',t:'Agente IA',s:'Evalúa y decide'},{ic:'robot',k:'rb',t:'RPA Studio',s:'Carga en sistema legacy'},{ic:'bell',k:'out',t:'Notificación',s:'Avisa por WhatsApp'}],
-   edges:['datos','JSON','decisión','registro']},
- cxp:{name:'Cuentas por pagar',
-   nodes:[{ic:'mail',k:'ext',t:'Correo',s:'Chega a nota fiscal'},{ic:'ai',k:'rb',t:'AI Studio',s:'Extrai dados do PDF'},{ic:'agent',k:'ai',t:'Agente IA',s:'Concilia con la OC'},{ic:'robot',k:'rb',t:'RPA Studio',s:'Ingresa al ERP'},{ic:'dash',k:'rb',t:'Nexus',s:'Actualiza el dashboard'}],
-   edges:['factura','JSON','conciliado','registro']},
- att:{name:'Atención inteligente',
-   nodes:[{ic:'form',k:'rb',t:'Xperience',s:'Consulta del cliente'},{ic:'agent',k:'ai',t:'Agente IA',s:'Interpreta la intención'},{ic:'api',k:'ext',t:'API externa',s:'Consulta el sistema'},{ic:'robot',k:'rb',t:'RPA Studio',s:'Acción donde no hay API'},{ic:'chat',k:'out',t:'Respuesta',s:'Responde al cliente'}],
-   edges:['consulta','contexto','datos','acción']}
+   nodes:[{ic:'form',k:'rb',t:'Xperience',s:'Solicitação recebida'},{ic:'ai',k:'rb',t:'AI Studio',s:'Estrutura o documento'},{ic:'agent',k:'ai',t:'Agente de IA',s:'Avalia e decide'},{ic:'robot',k:'rb',t:'RPA Studio',s:'Registra no sistema legado'},{ic:'bell',k:'out',t:'Notificação',s:'Avisa por WhatsApp'}],
+   edges:['dados','JSON','decisão','registro']},
+ cxp:{name:'Contas a pagar',
+   nodes:[{ic:'mail',k:'ext',t:'E-mail',s:'Chega a nota fiscal'},{ic:'ai',k:'rb',t:'AI Studio',s:'Extrai dados do PDF'},{ic:'agent',k:'ai',t:'Agente de IA',s:'Concilia com o pedido de compra'},{ic:'robot',k:'rb',t:'RPA Studio',s:'Lança no ERP'},{ic:'dash',k:'rb',t:'Nexus',s:'Atualiza o painel'}],
+   edges:['nota fiscal','JSON','conciliado','registro']},
+ att:{name:'Atendimento inteligente',
+   nodes:[{ic:'form',k:'rb',t:'Xperience',s:'Consulta do cliente'},{ic:'agent',k:'ai',t:'Agente de IA',s:'Interpreta a intenção'},{ic:'api',k:'ext',t:'API externa',s:'Consulta o sistema'},{ic:'robot',k:'rb',t:'RPA Studio',s:'Age onde não há API'},{ic:'chat',k:'out',t:'Resposta',s:'Responde ao cliente'}],
+   edges:['consulta','contexto','dados','ação']}
 };
 let sCur='onb', sToken=0, sTimers=[];
 function sSleep(ms){return new Promise(function(r){sTimers.push(setTimeout(r,ms));});}
@@ -1331,18 +1331,18 @@ function sBuild(w){
   });
   document.getElementById('sFlow').innerHTML=h;
 }
-function sStatus(s){const el=document.getElementById('sStatus');el.className='st '+s;el.innerHTML='<span class="ld"></span>'+(s==='run'?'Ejecutando':(s==='done'?'Completado':'Listo'));}
+function sStatus(s){const el=document.getElementById('sStatus');el.className='st '+s;el.innerHTML='<span class="ld"></span>'+(s==='run'?'Executando':(s==='done'?'Concluído':'Pronto'));}
 async function sPlay(key){
   sClear(); const my=++sToken; if(key) sCur=key; const w=SWF[sCur];
   document.querySelectorAll('#sTabs .rb-wf-tab').forEach(t=>t.classList.toggle('act',t.getAttribute('data-p')===sCur));
-  document.getElementById('sTitle').textContent='Flujo · '+w.name;
+  document.getElementById('sTitle').textContent='Fluxo · '+w.name;
   sBuild(w); sStatus('run');
-  const btn=document.getElementById('sRun'); btn.disabled=true; btn.textContent='Ejecutando…';
+  const btn=document.getElementById('sRun'); btn.disabled=true; btn.textContent='Executando…';
   const nodes=[].slice.call(document.querySelectorAll('#sFlow .rb-wf-node'));
   const edges=[].slice.call(document.querySelectorAll('#sFlow .rb-wf-edge'));
   if(reduce){
     nodes.forEach(n=>n.classList.add('done')); edges.forEach(e=>e.classList.add('lit'));
-    sStatus('done'); btn.disabled=false; btn.textContent='Ejecutar de nuevo'; return;
+    sStatus('done'); btn.disabled=false; btn.textContent='Executar de novo'; return;
   }
   nodes[0].classList.add('active'); await sSleep(500); if(my!==sToken)return;
   for(let i=0;i<edges.length;i++){
@@ -1353,7 +1353,7 @@ async function sPlay(key){
     nodes[i+1].classList.add('active'); await sSleep(420); if(my!==sToken)return;
   }
   nodes[nodes.length-1].classList.remove('active'); nodes[nodes.length-1].classList.add('done');
-  sStatus('done'); btn.disabled=false; btn.textContent='Ejecutar de nuevo';
+  sStatus('done'); btn.disabled=false; btn.textContent='Executar de novo';
 }
 document.querySelectorAll('#sTabs .rb-wf-tab').forEach(t=>t.addEventListener('click',()=>sPlay(t.getAttribute('data-p'))));
 let sSeen=false;
@@ -1361,12 +1361,12 @@ new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting
 
 // ---- ecosystem hub ----
 const ECO=[
- {ic:'robot',nm:'RPA Studio',d:'Automatiza tareas en sistemas con o sin API, incluidos sistemas legados y aplicaciones de escritorio.'},
- {ic:'ai',nm:'AI Studio',d:'Convierte documentos, correos e imágenes en datos estructurados listos para automatizar procesos.'},
- {ic:'form',nm:'Xperience',d:'Inicia procesos desde formularios inteligentes y conecta cada solicitud con el flujo de automatización adecuado.'},
- {ic:'saturn',nm:'Orquestador',d:'Programa, supervisa y controla cada ejecución con trazabilidad, reglas de negocio y permisos centralizados.'},
- {ic:'dash',nm:'Nexus',d:'Convierte la información de tus procesos en dashboards, portales y aplicaciones para toda la operación.'},
- {ic:'api',nm:'+38 Integraciones',d:'Conecta SAP, Salesforce, Microsoft 365, Google, Oracle, ServiceNow, WhatsApp, APIs, modelos de IA y mucho más para integrar toda tu operación.'}
+ {ic:'robot',nm:'RPA Studio',d:'Automatize tarefas em sistemas com ou sem API, incluindo sistemas legados e aplicações desktop.'},
+ {ic:'ai',nm:'AI Studio',d:'Transforme documentos, e-mails e imagens em dados estruturados, prontos para automatizar processos.'},
+ {ic:'form',nm:'Xperience',d:'Inicie processos a partir de formulários inteligentes e conecte cada solicitação ao fluxo de automação certo.'},
+ {ic:'saturn',nm:'Orquestador',d:'Programe, supervisione e controle cada execução com rastreabilidade, regras de negócio e permissões centralizadas.'},
+ {ic:'dash',nm:'Nexus',d:'Transforme os dados dos seus processos em dashboards, portais e aplicações para toda a operação.'},
+ {ic:'api',nm:'+38 Integrações',d:'Conecte SAP, Salesforce, Microsoft 365, Google, Oracle, ServiceNow, WhatsApp, APIs, modelos de IA e muito mais para integrar toda a sua operação.'}
 ];
 const en=document.getElementById('ecoNodes');
 function ecoIc(e){return PLOGO[e.nm]?'<div class="ic logo"><img src="'+PLOGO[e.nm]+'" alt="'+e.nm+'" loading="lazy" decoding="async"></div>':'<div class="ic">'+SI[e.ic]+'</div>';}
@@ -1381,18 +1381,18 @@ ecoSel(0);
 
 // ---- MCP / Claude: instrucción -> flujo ----
 const NMCP={
- onb:{title:'Flujo · Onboarding',conn:'Xperience + AI Studio + RPA',
-   prompt:'Cuando llegue una solicitud por formulario, estructura el documento, valídalo y cárgalo en el sistema.',
-   reply:'Listo. Propuse un flujo de onboarding con 5 nodos; revísalo y ajústalo antes de activarlo.',
-   cmds:['Disparador · Formulario Xperience','AI Studio · Estructurar el documento','Agente IA · Evaluar y decidir','RPA Studio · Cargar en el sistema','Notificar · Avisar al equipo']},
- fact:{title:'Flujo · Cuentas por pagar',conn:'Correo + AI Studio + RPA + Nexus',
-   prompt:'Cuando llegue una factura por correo, extrae los datos, concílialos y regístralos en el ERP.',
-   reply:'Generé un flujo de cuentas por pagar con extracción por IA, conciliación y registro en el ERP.',
-   cmds:['Disparador · Correo entrante','AI Studio · Extraer datos del PDF','Agente IA · Conciliar con la OC','RPA Studio · Ingresar al ERP','Nexus · Actualizar el dashboard']},
- sync:{title:'Flujo · Sincronizar datos',conn:'API externa + Base de datos',
-   prompt:'Cada hora, trae los pedidos nuevos desde la API, transfórmalos y guárdalos en la base de datos.',
-   reply:'Creé un flujo programado que consulta la API, transforma los datos y los guarda, con alerta ante errores.',
-   cmds:['Programación · Cada hora','API externa · Traer pedidos nuevos','Agente IA · Transformar y validar','Base de datos · Guardar registros','Alerta · Avisar ante errores']}
+ onb:{title:'Fluxo · Onboarding',conn:'Xperience + AI Studio + RPA',
+   prompt:'Quando chegar uma solicitação por formulário, estruture o documento, valide-o e registre-o no sistema.',
+   reply:'Pronto. Propus um fluxo de onboarding com 5 nós; revise e ajuste antes de ativá-lo.',
+   cmds:['Gatilho · Formulário Xperience','AI Studio · Estruturar o documento','Agente de IA · Avaliar e decidir','RPA Studio · Registrar no sistema','Notificar · Avisar a equipe']},
+ fact:{title:'Fluxo · Contas a pagar',conn:'E-mail + AI Studio + RPA + Nexus',
+   prompt:'Quando chegar uma nota fiscal por e-mail, extraia os dados, concilie-os e registre-os no ERP.',
+   reply:'Gerei um fluxo de contas a pagar com extração por IA, conciliação e registro no ERP.',
+   cmds:['Gatilho · E-mail recebido','AI Studio · Extrair dados do PDF','Agente de IA · Conciliar com o pedido de compra','RPA Studio · Lançar no ERP','Nexus · Atualizar o painel']},
+ sync:{title:'Fluxo · Sincronizar dados',conn:'API externa + Banco de dados',
+   prompt:'A cada hora, busque os novos pedidos na API, transforme-os e salve-os no banco de dados.',
+   reply:'Criei um fluxo programado que consulta a API, transforma os dados e os salva, com alerta em caso de erros.',
+   cmds:['Programação · A cada hora','API externa · Buscar novos pedidos','Agente de IA · Transformar e validar','Banco de dados · Salvar registros','Alerta · Avisar em caso de erros']}
 };
 function nmcmd(c,i){const p=c.split(' · ');return '<div class="rb-mcp-cmd rb-mcp-reveal"><span class="n">'+(i+1)+'</span><div class="t">'+p[0]+'<small>'+(p[1]||'')+'</small></div></div>';}
 function nmBuild(c){
@@ -1407,15 +1407,15 @@ async function nmPlay(key){
   document.querySelectorAll('#nmChips .rb-mcp-chip').forEach(function(ch){ch.classList.toggle('act',ch.getAttribute('data-k')===nmCur);});
   const user=document.getElementById('nmUser'); user.textContent=''; user.classList.add('typing');
   document.getElementById('nmBotRow').style.visibility='hidden';
-  document.getElementById('nmTitle').textContent='Flujo propuesto'; document.getElementById('nmScreen').innerHTML=''; document.getElementById('nmPub').style.display='none';
-  const btn=document.getElementById('nmGen'); btn.disabled=true; btn.textContent='Generando…';
+  document.getElementById('nmTitle').textContent='Fluxo proposto'; document.getElementById('nmScreen').innerHTML=''; document.getElementById('nmPub').style.display='none';
+  const btn=document.getElementById('nmGen'); btn.disabled=true; btn.textContent='Gerando…';
   if(reduce){
     user.textContent=c.prompt; user.classList.remove('typing');
     document.getElementById('nmBotRow').style.visibility='visible'; document.getElementById('nmBot').textContent=c.reply;
     document.getElementById('nmTitle').textContent=c.title; nmBuild(c);
     document.querySelectorAll('#nmScreen .rb-mcp-reveal').forEach(function(e){e.classList.add('in');});
     document.getElementById('nmConn').textContent='Usa: '+c.conn; document.getElementById('nmPub').style.display='flex';
-    btn.disabled=false; btn.textContent='Generar de nuevo'; return;
+    btn.disabled=false; btn.textContent='Gerar de novo'; return;
   }
   for(let i=0;i<c.prompt.length;i++){ if(my!==nmToken)return; user.textContent+=c.prompt[i]; await nmSleep(18); }
   user.classList.remove('typing'); await nmSleep(330); if(my!==nmToken)return;
@@ -1428,7 +1428,7 @@ async function nmPlay(key){
   for(let i=0;i<blks.length;i++){ if(my!==nmToken)return; blks[i].classList.add('in'); await nmSleep(300); }
   if(my!==nmToken)return;
   document.getElementById('nmConn').textContent='Usa: '+c.conn; document.getElementById('nmPub').style.display='flex';
-  btn.disabled=false; btn.textContent='Generar de nuevo';
+  btn.disabled=false; btn.textContent='Gerar de novo';
 }
 document.querySelectorAll('#nmChips .rb-mcp-chip').forEach(function(ch){ ch.addEventListener('click',function(){ nmPlay(ch.getAttribute('data-k')); }); });
 let nmSeen=false;
@@ -1436,13 +1436,13 @@ new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersectin
 
 // ---- FAQ ----
 const FAQS=[
-  ['¿Qué es Saturn Studio?','Saturn Studio es la plataforma no-code de Rocketbot para diseñar, orquestar y ejecutar procesos inteligentes. Conecta inteligencia artificial, automatización y tus sistemas desde una sola plataforma, con control y trazabilidad en cada paso.'],
-  ['¿Necesito saber programar?','No. Saturn Studio es una plataforma visual y no-code que permite crear procesos sin escribir código. Si tu operación lo requiere, también admite lógica avanzada e integraciones mediante APIs.'],
-  ['¿Con qué se integra?','Saturn Studio se integra con modelos de IA como OpenAI, Claude y Gemini; plataformas como Microsoft 365, Google Workspace, Salesforce, HubSpot, SAP, Oracle, ServiceNow, WhatsApp y muchas más. Además, puede conectarse con cualquier API REST, base de datos o sistema propio.'],
-  ['¿Cómo funciona con el resto de la Suite Rocketbot?','Saturn Studio coordina toda la Suite Rocketbot. Se conecta con RPA Studio para automatizar sistemas, AI Studio para procesar información, Xperience para iniciar procesos desde formularios, Orquestador para supervisar las ejecuciones y Nexus para visualizar los resultados.'],
-  ['¿Los agentes toman decisiones por sí solos?','Los agentes ejecutan tareas y toman decisiones dentro de las reglas que defines. Tú mantienes el control mediante supervisión, permisos, trazabilidad y aprobación cuando el proceso lo requiere.'],
-  ['¿Puedo crear procesos con ayuda de IA?','Sí. Gracias al MCP de Claude, puedes describir lo que necesitas en lenguaje natural. Claude propone la estructura del proceso y Saturn Studio la deja lista para revisar, adaptar y ejecutar.'],
-  ['¿Qué nivel de control y seguridad ofrece?','Cada ejecución queda registrada con información sobre qué ocurrió, cuándo ocurrió y por qué. Además, Saturn Studio incorpora permisos por roles, trazabilidad completa y el respaldo de la certificación ISO 27001 de la Suite Rocketbot.']
+  ['O que é o Saturn Studio?','O Saturn Studio é a plataforma no-code da Rocketbot para desenhar, orquestrar e executar processos inteligentes. Conecta inteligência artificial, automação e os seus sistemas em uma única plataforma, com controle e rastreabilidade em cada passo.'],
+  ['Preciso saber programar?','Não. O Saturn Studio é uma plataforma visual e no-code que permite criar processos sem escrever código. Se a sua operação exigir, também aceita lógica avançada e integrações via API.'],
+  ['Com o que ele se integra?','O Saturn Studio se integra a modelos de IA como OpenAI, Claude e Gemini; plataformas como Microsoft 365, Google Workspace, Salesforce, HubSpot, SAP, Oracle, ServiceNow, WhatsApp e muitas outras. Além disso, pode se conectar a qualquer API REST, banco de dados ou sistema próprio.'],
+  ['Como funciona com o restante da Suíte Rocketbot?','O Saturn Studio coordena toda a Suíte Rocketbot. Ele se conecta ao RPA Studio para automatizar sistemas, ao AI Studio para processar informações, ao Xperience para iniciar processos a partir de formulários, ao Orquestrador para supervisionar as execuções e ao Nexus para visualizar os resultados.'],
+  ['Os agentes tomam decisões sozinhos?','Os agentes executam tarefas e tomam decisões dentro das regras que você define. Você mantém o controle por meio de supervisão, permissões, rastreabilidade e aprovação quando o processo exigir.'],
+  ['Posso criar processos com ajuda de IA?','Sim. Graças ao MCP do Claude, você pode descrever o que precisa em linguagem natural. O Claude propõe a estrutura do processo e o Saturn Studio a deixa pronta para revisar, adaptar e executar.'],
+  ['Que nível de controle e segurança ele oferece?','Cada execução fica registrada com informações sobre o que aconteceu, quando aconteceu e por quê. Além disso, o Saturn Studio conta com permissões por papéis, rastreabilidade completa e o respaldo da certificação ISO 27001 da Suíte Rocketbot.']
 ];
 const fw=document.getElementById('faqWrap');
 FAQS.forEach(function(pair){

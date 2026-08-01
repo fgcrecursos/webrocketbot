@@ -997,7 +997,7 @@ html{scroll-padding-top:92px;}
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></div><div class="rb-compare__title">Visual builder</div><div class="rb-compare__desc">Design forms by dragging fields and configuring the process from an intuitive interface, with no code.</div></div>
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8 7l8 4M8 17l8-4"/></svg></div><div class="rb-compare__title">Conditional logic and validation</div><div class="rb-compare__desc">Show fields based on the answers, validate the information and adapt the form automatically to each case.</div></div>
       <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div><div class="rb-compare__title">Every field you need</div><div class="rb-compare__desc">Text, lists, dates, signatures, images, files, location, checkboxes, tables and much more, for any process.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg></div><div class="rb-compare__title">Permissions and secure access</div><div class="rb-compare__desc">Publish forms openly or protect them with users, passwords and role-based permissions to control who gets in.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg></div><div class="rb-compare__title">Permissions and secure access</div><div class="rb-compare__desc">Publish forms openly or protect them with usernames, passwords, and role-based permissions to control who gets in.</div></div>
     </div>
   </div>
 </section>
@@ -1097,7 +1097,7 @@ html{scroll-padding-top:92px;}
     <div class="rb-cta-band__inner">
       <div>
         <h2 class="rb-cta-band__title">Still kicking off your processes with emails and spreadsheets?</h2>
-        <p class="rb-cta-band__sub">With Xperience, every process starts with a smart form — faster, tidier and traceable, with the automation already running.</p>
+        <p class="rb-cta-band__sub">With Xperience, every process starts with a smart form: faster, tidier, and more traceable, with the automation already running.</p>
       </div>
       <a href="contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Talk to us</a>
     </div>
@@ -1263,15 +1263,15 @@ const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
 // ---- showcase: form -> automation ----
 const XC={
- salud:{title:'Declaración de Salud',badge:['Public · link abierto','pub'],
-   fields:[{l:'RUT',t:'text',p:'12.345.678-9',v:'12.345.678-9'},{l:'Nombre completo',t:'text',p:'Nombre y apellido',v:'María González'},{l:'¿Síntomas en las últimas 48 horas?',t:'select',p:'Selecciona una opción',v:'No'},{l:'Temperatura (°C)',t:'text',p:'36.5',v:'36.4'},{l:'Declaro que la información es verídica',t:'check'}],
-   steps:['Recepción del formulario','Validación de datos','Evaluación de respuestas','Registro de la declaración','Notificación a prevención']},
- credito:{title:'Solicitud de Crédito',badge:['Privado · requiere acceso','priv'],
-   fields:[{l:'RUT del solicitante',t:'text',p:'12.345.678-9',v:'12.345.678-9'},{l:'Monto solicitado',t:'text',p:'$ 5.000.000',v:'$ 5.000.000'},{l:'Plazo (meses)',t:'select',p:'Selecciona el plazo',v:'24 meses'},{l:'Liquidación de sueldo',t:'file',v:'liquidacion.pdf'},{l:'Acepto los términos y condiciones',t:'check'}],
-   steps:['Autenticación del usuario','Validación de documentos','Evaluación de scoring','Creación de la solicitud','Notificación al ejecutivo']},
- obra:{title:'Seguimiento de Obra',badge:['Privado · personal en terreno','priv'],
-   fields:[{l:'ID de obra',t:'text',p:'OBRA-2026-014',v:'OBRA-2026-014'},{l:'Avance reportado (%)',t:'text',p:'65',v:'65'},{l:'Evidencia fotográfica',t:'file',v:'avance_obra.jpg'},{l:'Observaciones',t:'text',p:'Detalle del avance…',v:'Hormigonado de losa nivel 3 completado.'}],
-   steps:['Registro del avance','Adjunto de la evidencia','Actualización del panel de obra','Alerta ante desvíos','Notificación al supervisor']}
+ salud:{title:'Health Declaration',badge:['Public · open link','pub'],
+   fields:[{l:'Employee ID',t:'text',p:'EMP-00000',v:'EMP-12345'},{l:'Full name',t:'text',p:'First and last name',v:'Maria Gonzalez'},{l:'Symptoms in the last 48 hours?',t:'select',p:'Select an option',v:'No'},{l:'Temperature (°F)',t:'text',p:'98.6',v:'97.5'},{l:'I declare that this information is accurate',t:'check'}],
+   steps:['Form received','Data validated','Responses reviewed','Declaration logged','Prevention team notified']},
+ credito:{title:'Loan Application',badge:['Private · requires access','priv'],
+   fields:[{l:'Applicant ID',t:'text',p:'EMP-00000',v:'EMP-12345'},{l:'Amount requested',t:'text',p:'$50,000',v:'$50,000'},{l:'Term (months)',t:'select',p:'Select term',v:'24 months'},{l:'Pay stub',t:'file',v:'paystub.pdf'},{l:'I accept the terms and conditions',t:'check'}],
+   steps:['User authentication','Document validation','Credit scoring evaluation','Application created','Loan officer notified']},
+ obra:{title:'Site Progress Report',badge:['Private · field personnel','priv'],
+   fields:[{l:'Site ID',t:'text',p:'SITE-0000-000',v:'SITE-2026-014'},{l:'Progress reported (%)',t:'text',p:'65',v:'65'},{l:'Photo evidence',t:'file',v:'site_progress.jpg'},{l:'Notes',t:'text',p:'Details about the progress…',v:'Level 3 slab concrete pour completed.'}],
+   steps:['Progress logged','Evidence attached','Site dashboard updated','Deviation alert check','Supervisor notified']}
 };
 let xCur='salud', xToken=0, xTimers=[];
 const ICON_CHEV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
@@ -1283,7 +1283,7 @@ const ICON_CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
 
 function xField(f){
   if(f.t==='check') return '<div class="rb-xfield"><div class="rb-xcheck"><span class="box">'+ICON_CHECK+'</span>'+f.l+'</div></div>';
-  if(f.t==='file') return '<div class="rb-xfield"><label>'+f.l+'</label><div class="rb-xinput file"><span class="xfic">'+ICON_FILE+'</span><span class="xval">Adjuntar archivo</span></div></div>';
+  if(f.t==='file') return '<div class="rb-xfield"><label>'+f.l+'</label><div class="rb-xinput file"><span class="xfic">'+ICON_FILE+'</span><span class="xval">Attach file</span></div></div>';
   if(f.t==='select') return '<div class="rb-xfield"><label>'+f.l+'</label><div class="rb-xinput sel"><span class="xval">'+f.p+'</span>'+ICON_CHEV+'</div></div>';
   return '<div class="rb-xfield"><label>'+f.l+'</label><div class="rb-xinput"><span class="xval">'+f.p+'</span></div></div>';
 }
@@ -1295,14 +1295,14 @@ function xReset(){
   document.getElementById('xFields').innerHTML=c.fields.map(xField).join('');
   document.getElementById('xSteps').innerHTML=c.steps.map(s=>'<div class="rb-xstep"><span class="dot">'+ICON_CHECK+'</span><span class="lbl">'+s+'</span></div>').join('');
   document.getElementById('xDone').style.display='none';
-  const btn=document.getElementById('xSubmit'); btn.disabled=false; btn.textContent='Enviar formulario'; btn.classList.remove('rb-btn--green');
+  const btn=document.getElementById('xSubmit'); btn.disabled=false; btn.textContent='Submit form'; btn.classList.remove('rb-btn--green');
 }
 function sleep(ms){return new Promise(function(r){xTimers.push(setTimeout(r,ms));});}
 function xClear(){xTimers.forEach(clearTimeout); xTimers=[];}
 async function xFill(root,f,my){
   if(f.t==='check'){ await sleep(220); if(my!==xToken)return; root.querySelector('.box').classList.add('checked'); return; }
   const box=root.querySelector('.rb-xinput'); const val=box.querySelector('.xval');
-  if(f.t==='file'){ box.classList.add('typing'); val.textContent='Adjuntando…'; await sleep(520); if(my!==xToken)return; box.classList.remove('typing'); box.classList.add('filled'); box.querySelector('.xfic').innerHTML=ICON_OK; val.textContent=f.v; return; }
+  if(f.t==='file'){ box.classList.add('typing'); val.textContent='Attaching…'; await sleep(520); if(my!==xToken)return; box.classList.remove('typing'); box.classList.add('filled'); box.querySelector('.xfic').innerHTML=ICON_OK; val.textContent=f.v; return; }
   if(f.t==='select'){ box.classList.add('typing'); await sleep(380); if(my!==xToken)return; box.classList.remove('typing'); box.classList.add('filled'); val.textContent=f.v; return; }
   box.classList.add('typing','filled'); val.textContent='';
   for(let i=0;i<f.v.length;i++){ if(my!==xToken)return; val.textContent+=f.v[i]; await sleep(38); }
@@ -1315,17 +1315,17 @@ async function xPlay(){
   if(reduce){
     c.fields.forEach(function(f,i){ const root=fes[i]; if(f.t==='check'){root.querySelector('.box').classList.add('checked');} else {const box=root.querySelector('.rb-xinput'); box.classList.add('filled'); if(f.t==='file')box.querySelector('.xfic').innerHTML=ICON_OK; box.querySelector('.xval').textContent=f.v;} });
     document.querySelectorAll('#xSteps .rb-xstep').forEach(function(s){s.classList.add('done');});
-    document.getElementById('xDone').style.display='flex'; btn.textContent='Enviado ✓'; btn.disabled=true; btn.classList.add('rb-btn--green'); return;
+    document.getElementById('xDone').style.display='flex'; btn.textContent='Submitted ✓'; btn.disabled=true; btn.classList.add('rb-btn--green'); return;
   }
-  btn.disabled=true; btn.textContent='Completando…';
+  btn.disabled=true; btn.textContent='Completing…';
   for(let i=0;i<c.fields.length;i++){ if(my!==xToken)return; await xFill(fes[i],c.fields[i],my); await sleep(200); if(my!==xToken)return; }
   await sleep(440); if(my!==xToken)return;
-  btn.textContent='Procesando…';
+  btn.textContent='Processing…';
   const steps=[].slice.call(document.querySelectorAll('#xSteps .rb-xstep'));
   for(let i=0;i<steps.length;i++){ if(my!==xToken)return; if(i>0){steps[i-1].classList.remove('active');steps[i-1].classList.add('done');} steps[i].classList.add('active'); await sleep(760); }
   if(my!==xToken)return;
   steps[steps.length-1].classList.remove('active'); steps[steps.length-1].classList.add('done');
-  document.getElementById('xDone').style.display='flex'; btn.textContent='Enviado ✓'; btn.classList.add('rb-btn--green');
+  document.getElementById('xDone').style.display='flex'; btn.textContent='Submitted ✓'; btn.classList.add('rb-btn--green');
 }
 document.querySelectorAll('#xTabs .rb-xtab').forEach(function(t){
   t.addEventListener('click',function(){
@@ -1340,23 +1340,23 @@ xObs.observe(document.querySelector('.rb-xwrap'));
 
 // ---- MCP / Claude: instrucción -> formulario ----
 const MCP={
- salud:{title:'Declaración de Salud',priv:true,
-   prompt:'Crea un formulario privado de declaración de salud con RUT, nombre, síntomas y temperatura, que dispare el proceso de prevención.',
-   reply:'Listo. Creé «Declaración de Salud» (privado) con 4 campos y validaciones, y lo conecté a la automatización de prevención.',
-   fields:[['RUT','text'],['Nombre completo','text'],['¿Síntomas en 48h?','select'],['Temperatura (°C)','number']],
-   trigger:'Proceso de prevención'},
- credito:{title:'Solicitud de Crédito',priv:true,
-   prompt:'Necesito un formulario de solicitud de crédito con RUT, monto, plazo y adjuntar la liquidación. Que valide documentos y notifique al ejecutivo.',
-   reply:'Hecho. Generé «Solicitud de Crédito» (privado) con carga de archivo y validaciones, conectado al flujo que avisa al ejecutivo.',
-   fields:[['RUT del solicitante','text'],['Monto solicitado','number'],['Plazo (meses)','select'],['Liquidación de sueldo','file']],
-   trigger:'Validación y notificación al ejecutivo'},
- obra:{title:'Seguimiento de Obra',priv:true,
-   prompt:'Arma un formulario de avance de obra con ID, porcentaje de avance, foto y observaciones, que actualice el panel y alerte si hay desvíos.',
-   reply:'Creé «Seguimiento de Obra» (privado) con foto y observaciones, conectado a la actualización del panel y a las alertas de desvío.',
-   fields:[['ID de obra','text'],['Avance (%)','number'],['Evidencia fotográfica','file'],['Observaciones','text']],
-   trigger:'Actualización de panel y alerta de desvíos'}
+ salud:{title:'Health Declaration',priv:true,
+   prompt:'Create a private health declaration form with employee ID, name, symptoms, and temperature, that triggers the prevention process.',
+   reply:'Done. I created "Health Declaration" (private) with 4 fields and validations, and connected it to the prevention automation.',
+   fields:[['Employee ID','text'],['Full name','text'],['Symptoms in 48h?','select'],['Temperature (°F)','number']],
+   trigger:'Prevention process'},
+ credito:{title:'Loan Application',priv:true,
+   prompt:'I need a loan application form with applicant ID, amount, term, and a pay stub upload. It should validate documents and notify the loan officer.',
+   reply:'Done. I generated "Loan Application" (private) with file upload and validations, connected to the flow that notifies the loan officer.',
+   fields:[['Applicant ID','text'],['Amount requested','number'],['Term (months)','select'],['Pay stub','file']],
+   trigger:'Validation and loan officer notification'},
+ obra:{title:'Site Progress',priv:true,
+   prompt:'Build a site progress form with site ID, percentage of progress, photo, and notes, that updates the dashboard and alerts on deviations.',
+   reply:'I created "Site Progress" (private) with photo and notes, connected to the dashboard update and deviation alerts.',
+   fields:[['Site ID','text'],['Progress (%)','number'],['Photo evidence','file'],['Notes','text']],
+   trigger:'Dashboard update and deviation alert'}
 };
-const MFT={text:'texto',select:'lista',number:'número',file:'archivo',check:'casilla'};
+const MFT={text:'text',select:'list',number:'number',file:'file',check:'checkbox'};
 const MFIC={
  text:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7h14M5 12h14M5 17h8"/></svg>',
  select:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M9 11l3 3 3-3"/></svg>',
@@ -1374,15 +1374,15 @@ async function mcpPlay(key){
   const user=document.getElementById('mUser'); user.textContent=''; user.classList.add('typing');
   document.getElementById('mBotRow').style.visibility='hidden';
   document.getElementById('mTitle').textContent=c.title;
-  const bd=document.getElementById('mBadge'); bd.className='rb-mcp-badge '+(c.priv?'priv':'pub'); bd.textContent=c.priv?'Privado':'Public';
+  const bd=document.getElementById('mBadge'); bd.className='rb-mcp-badge '+(c.priv?'priv':'pub'); bd.textContent=c.priv?'Private':'Public';
   document.getElementById('mFields').innerHTML=c.fields.map(mcpField).join('');
   const trg=document.getElementById('mTrigger'); trg.classList.remove('in'); trg.querySelector('.tt').textContent=c.trigger;
-  const btn=document.getElementById('mGen'); btn.disabled=true; btn.textContent='Generando…';
+  const btn=document.getElementById('mGen'); btn.disabled=true; btn.textContent='Generating…';
   if(reduce){
     user.textContent=c.prompt; user.classList.remove('typing');
     document.getElementById('mBotRow').style.visibility='visible'; document.getElementById('mBot').textContent=c.reply;
     document.querySelectorAll('#mFields .rb-mcp-field').forEach(function(f){f.classList.add('in');}); trg.classList.add('in');
-    btn.disabled=false; btn.textContent='Generar de nuevo'; return;
+    btn.disabled=false; btn.textContent='Generate again'; return;
   }
   for(let i=0;i<c.prompt.length;i++){ if(my!==mToken)return; user.textContent+=c.prompt[i]; await mSleep(20); }
   user.classList.remove('typing'); await mSleep(340); if(my!==mToken)return;
@@ -1393,7 +1393,7 @@ async function mcpPlay(key){
   const fs=[].slice.call(document.querySelectorAll('#mFields .rb-mcp-field'));
   for(let i=0;i<fs.length;i++){ if(my!==mToken)return; fs[i].classList.add('in'); await mSleep(230); }
   if(my!==mToken)return; trg.classList.add('in');
-  btn.disabled=false; btn.textContent='Generar de nuevo';
+  btn.disabled=false; btn.textContent='Generate again';
 }
 document.querySelectorAll('#mChips .rb-mcp-chip').forEach(function(ch){ ch.addEventListener('click',function(){ mcpPlay(ch.getAttribute('data-k')); }); });
 let mSeen=false;
@@ -1402,15 +1402,15 @@ mObs.observe(document.querySelector('.rb-mcp-grid'));
 
 // ---- FAQ ----
 const FAQS=[
-  ['¿Qué diferencia a Xperience de un formulario tradicional?','Xperience no solo captura información. Cada envío puede iniciar automáticamente un robot, un agente de IA o un flujo de trabajo para ejecutar el proceso completo, sin intervención manual.'],
-  ['¿Los formularios pueden ser públicos o privados?','Sí. Puedes publicar formularios abiertos mediante un enlace o restringir el acceso con autenticación, permisos por rol y controles de seguridad.'],
-  ['¿Necesito conocimientos técnicos para crear formularios?','No. Xperience incorpora un constructor visual con campos, validaciones y lógica condicional para que cualquier persona pueda diseñar formularios sin programar.'],
-  ['¿Qué tipos de campos puedo utilizar?','Puedes incorporar campos de texto, listas, fechas, archivos, firmas, botones, imágenes y otros componentes avanzados, además de reglas y lógica condicional para adaptar cada formulario al proceso.'],
-  ['¿Puedo crear formularios con inteligencia artificial?','Sí. Mediante el MCP de Claude puedes describir el formulario en lenguaje natural y la IA genera automáticamente los campos, validaciones y estructura, listos para conectarlos con tu automatización.'],
-  ['¿Funciona para equipos en terreno?','Sí. Los formularios pueden completarse desde cualquier dispositivo móvil para registrar inspecciones, evidencias, visitas, mantenimientos, auditorías o cualquier proceso de campo.'],
-  ['¿Cómo se integra con mis procesos?','Cada formulario puede activar robots, agentes inteligentes, flujos de trabajo e integraciones con otros sistemas, convirtiéndose en el punto de entrada de la automatización.'],
-  ['¿Puede conectarse con otros sistemas?','Sí. Xperience se integra con ERPs, CRMs, bases de datos, APIs, Webhooks y el resto de la Suite Rocketbot para automatizar procesos de punta a punta.'],
-  ['¿Cómo hago seguimiento de cada solicitud?','Desde el Orquestador puedes monitorear cada ejecución en tiempo real, consultar su estado, revisar el historial y acceder a la trazabilidad completa de cada proceso.']
+  ['What sets Xperience apart from a traditional form?','Xperience doesn’t just capture information. Every submission can automatically start a robot, an AI agent, or a workflow to run the complete process, with no manual intervention.'],
+  ['Can forms be public or private?','Yes. You can publish open forms through a link, or restrict access with authentication, role-based permissions, and security controls.'],
+  ['Do I need technical skills to create forms?','No. Xperience includes a visual builder with fields, validations, and conditional logic, so anyone can design forms without coding.'],
+  ['What types of fields can I use?','You can add text fields, lists, dates, files, signatures, buttons, images, and other advanced components, along with rules and conditional logic to adapt each form to your process.'],
+  ['Can I create forms with artificial intelligence?','Yes. Using Claude’s MCP, you can describe the form in plain language, and the AI automatically generates the fields, validations, and structure, ready to connect to your automation.'],
+  ['Does it work for field teams?','Yes. Forms can be completed from any mobile device to log inspections, evidence, visits, audits, or any other field process.'],
+  ['How does it integrate with my processes?','Every form can trigger robots, intelligent agents, workflows, and integrations with other systems, becoming the entry point for automation.'],
+  ['Can it connect with other systems?','Yes. Xperience integrates with ERPs, CRMs, databases, APIs, webhooks, and the rest of the Rocketbot Suite to automate processes end to end.'],
+  ['How do I track each request?','From the Orchestrator, you can monitor every execution in real time, check its status, review the history, and access the complete traceability of each process.']
 ];
 const fw=document.getElementById('faqWrap');
 FAQS.forEach(function(pair){

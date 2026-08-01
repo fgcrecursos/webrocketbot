@@ -880,11 +880,11 @@ html{scroll-padding-top:92px;}
   <div class="rb-hero__particles"></div>
   <div class="container rb-hero__grid">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title">Formulários que não só<br>coletam dados.<br><strong>Disparam<span class="rb-hero__rot" id="heroRot">processos</span>.</strong></h1>
+      <h1 class="rb-hero__title">Formulários inteligentes<br><strong>para automatizar processos.</strong></h1>
       <p class="rb-hero__sub">Crie formulários sem código que validam a informação e colocam robôs, agentes e fluxos em movimento automaticamente a partir de um único envio.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://noc-design.myrb.io/forms/login">Teste agora</a>
-        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Falar com vendas</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver demonstração</a>
       </div>
     </div>
     <div class="rb-hero__visual" aria-hidden="true">
@@ -1246,15 +1246,15 @@ const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
 // ---- showcase: form -> automation ----
 const XC={
- salud:{title:'Declaración de Salud',badge:['Público · link abierto','pub'],
-   fields:[{l:'RUT',t:'text',p:'12.345.678-9',v:'12.345.678-9'},{l:'Nombre completo',t:'text',p:'Nombre y apellido',v:'María González'},{l:'¿Síntomas en las últimas 48 horas?',t:'select',p:'Selecciona una opción',v:'No'},{l:'Temperatura (°C)',t:'text',p:'36.5',v:'36.4'},{l:'Declaro que la información es verídica',t:'check'}],
-   steps:['Recepción del formulario','Validación de datos','Evaluación de respuestas','Registro de la declaración','Notificación a prevención']},
- credito:{title:'Solicitud de Crédito',badge:['Privado · requiere acceso','priv'],
-   fields:[{l:'RUT del solicitante',t:'text',p:'12.345.678-9',v:'12.345.678-9'},{l:'Monto solicitado',t:'text',p:'$ 5.000.000',v:'$ 5.000.000'},{l:'Plazo (meses)',t:'select',p:'Selecciona el plazo',v:'24 meses'},{l:'Liquidación de sueldo',t:'file',v:'liquidacion.pdf'},{l:'Acepto los términos y condiciones',t:'check'}],
-   steps:['Autenticación del usuario','Validación de documentos','Evaluación de scoring','Creación de la solicitud','Notificación al ejecutivo']},
- obra:{title:'Seguimiento de Obra',badge:['Privado · personal en terreno','priv'],
-   fields:[{l:'ID de obra',t:'text',p:'OBRA-2026-014',v:'OBRA-2026-014'},{l:'Avance reportado (%)',t:'text',p:'65',v:'65'},{l:'Evidencia fotográfica',t:'file',v:'avance_obra.jpg'},{l:'Observaciones',t:'text',p:'Detalle del avance…',v:'Hormigonado de losa nivel 3 completado.'}],
-   steps:['Registro del avance','Adjunto de la evidencia','Actualización del panel de obra','Alerta ante desvíos','Notificación al supervisor']}
+ salud:{title:'Declaração de Saúde',badge:['Público · link aberto','pub'],
+   fields:[{l:'Matrícula do funcionário',t:'text',p:'FUNC-00000',v:'FUNC-12345'},{l:'Nome completo',t:'text',p:'Nome e sobrenome',v:'Maria Gonçalves'},{l:'Sintomas nas últimas 48 horas?',t:'select',p:'Selecione uma opção',v:'Não'},{l:'Temperatura (°C)',t:'text',p:'36.5',v:'36.4'},{l:'Declaro que esta informação é verdadeira',t:'check'}],
+   steps:['Recebimento do formulário','Validação dos dados','Avaliação das respostas','Registro da declaração','Notificação à prevenção']},
+ credito:{title:'Solicitação de Crédito',badge:['Privado · requer acesso','priv'],
+   fields:[{l:'Matrícula do solicitante',t:'text',p:'FUNC-00000',v:'FUNC-12345'},{l:'Valor solicitado',t:'text',p:'R$ 25.000',v:'R$ 25.000'},{l:'Prazo (meses)',t:'select',p:'Selecione o prazo',v:'24 meses'},{l:'Holerite',t:'file',v:'holerite.pdf'},{l:'Aceito os termos e condições',t:'check'}],
+   steps:['Autenticação do usuário','Validação de documentos','Avaliação de score de crédito','Criação da solicitação','Notificação ao gerente']},
+ obra:{title:'Acompanhamento de Obra',badge:['Privado · pessoal de campo','priv'],
+   fields:[{l:'ID da obra',t:'text',p:'OBRA-0000-000',v:'OBRA-2026-014'},{l:'Avanço reportado (%)',t:'text',p:'65',v:'65'},{l:'Evidência fotográfica',t:'file',v:'avanco_obra.jpg'},{l:'Observações',t:'text',p:'Detalhes do avanço…',v:'Concretagem da laje do nível 3 concluída.'}],
+   steps:['Registro do avanço','Anexo da evidência','Atualização do painel da obra','Verificação de alerta de desvio','Notificação ao supervisor']}
 };
 let xCur='salud', xToken=0, xTimers=[];
 const ICON_CHEV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
@@ -1266,7 +1266,7 @@ const ICON_CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
 
 function xField(f){
   if(f.t==='check') return '<div class="rb-xfield"><div class="rb-xcheck"><span class="box">'+ICON_CHECK+'</span>'+f.l+'</div></div>';
-  if(f.t==='file') return '<div class="rb-xfield"><label>'+f.l+'</label><div class="rb-xinput file"><span class="xfic">'+ICON_FILE+'</span><span class="xval">Adjuntar archivo</span></div></div>';
+  if(f.t==='file') return '<div class="rb-xfield"><label>'+f.l+'</label><div class="rb-xinput file"><span class="xfic">'+ICON_FILE+'</span><span class="xval">Anexar arquivo</span></div></div>';
   if(f.t==='select') return '<div class="rb-xfield"><label>'+f.l+'</label><div class="rb-xinput sel"><span class="xval">'+f.p+'</span>'+ICON_CHEV+'</div></div>';
   return '<div class="rb-xfield"><label>'+f.l+'</label><div class="rb-xinput"><span class="xval">'+f.p+'</span></div></div>';
 }
@@ -1278,14 +1278,14 @@ function xReset(){
   document.getElementById('xFields').innerHTML=c.fields.map(xField).join('');
   document.getElementById('xSteps').innerHTML=c.steps.map(s=>'<div class="rb-xstep"><span class="dot">'+ICON_CHECK+'</span><span class="lbl">'+s+'</span></div>').join('');
   document.getElementById('xDone').style.display='none';
-  const btn=document.getElementById('xSubmit'); btn.disabled=false; btn.textContent='Enviar formulario'; btn.classList.remove('rb-btn--green');
+  const btn=document.getElementById('xSubmit'); btn.disabled=false; btn.textContent='Enviar formulário'; btn.classList.remove('rb-btn--green');
 }
 function sleep(ms){return new Promise(function(r){xTimers.push(setTimeout(r,ms));});}
 function xClear(){xTimers.forEach(clearTimeout); xTimers=[];}
 async function xFill(root,f,my){
   if(f.t==='check'){ await sleep(220); if(my!==xToken)return; root.querySelector('.box').classList.add('checked'); return; }
   const box=root.querySelector('.rb-xinput'); const val=box.querySelector('.xval');
-  if(f.t==='file'){ box.classList.add('typing'); val.textContent='Adjuntando…'; await sleep(520); if(my!==xToken)return; box.classList.remove('typing'); box.classList.add('filled'); box.querySelector('.xfic').innerHTML=ICON_OK; val.textContent=f.v; return; }
+  if(f.t==='file'){ box.classList.add('typing'); val.textContent='Anexando…'; await sleep(520); if(my!==xToken)return; box.classList.remove('typing'); box.classList.add('filled'); box.querySelector('.xfic').innerHTML=ICON_OK; val.textContent=f.v; return; }
   if(f.t==='select'){ box.classList.add('typing'); await sleep(380); if(my!==xToken)return; box.classList.remove('typing'); box.classList.add('filled'); val.textContent=f.v; return; }
   box.classList.add('typing','filled'); val.textContent='';
   for(let i=0;i<f.v.length;i++){ if(my!==xToken)return; val.textContent+=f.v[i]; await sleep(38); }
@@ -1300,10 +1300,10 @@ async function xPlay(){
     document.querySelectorAll('#xSteps .rb-xstep').forEach(function(s){s.classList.add('done');});
     document.getElementById('xDone').style.display='flex'; btn.textContent='Enviado ✓'; btn.disabled=true; btn.classList.add('rb-btn--green'); return;
   }
-  btn.disabled=true; btn.textContent='Completando…';
+  btn.disabled=true; btn.textContent='Preenchendo…';
   for(let i=0;i<c.fields.length;i++){ if(my!==xToken)return; await xFill(fes[i],c.fields[i],my); await sleep(200); if(my!==xToken)return; }
   await sleep(440); if(my!==xToken)return;
-  btn.textContent='Procesando…';
+  btn.textContent='Processando…';
   const steps=[].slice.call(document.querySelectorAll('#xSteps .rb-xstep'));
   for(let i=0;i<steps.length;i++){ if(my!==xToken)return; if(i>0){steps[i-1].classList.remove('active');steps[i-1].classList.add('done');} steps[i].classList.add('active'); await sleep(760); }
   if(my!==xToken)return;
@@ -1323,23 +1323,23 @@ xObs.observe(document.querySelector('.rb-xwrap'));
 
 // ---- MCP / Claude: instrucción -> formulario ----
 const MCP={
- salud:{title:'Declaración de Salud',priv:true,
-   prompt:'Crea un formulario privado de declaración de salud con RUT, nombre, síntomas y temperatura, que dispare el proceso de prevención.',
-   reply:'Listo. Creé «Declaración de Salud» (privado) con 4 campos y validaciones, y lo conecté a la automatización de prevención.',
-   fields:[['RUT','text'],['Nombre completo','text'],['¿Síntomas en 48h?','select'],['Temperatura (°C)','number']],
-   trigger:'Proceso de prevención'},
- credito:{title:'Solicitud de Crédito',priv:true,
-   prompt:'Necesito un formulario de solicitud de crédito con RUT, monto, plazo y adjuntar la liquidación. Que valide documentos y notifique al ejecutivo.',
-   reply:'Hecho. Generé «Solicitud de Crédito» (privado) con carga de archivo y validaciones, conectado al flujo que avisa al ejecutivo.',
-   fields:[['RUT del solicitante','text'],['Monto solicitado','number'],['Plazo (meses)','select'],['Liquidación de sueldo','file']],
-   trigger:'Validación y notificación al ejecutivo'},
- obra:{title:'Seguimiento de Obra',priv:true,
-   prompt:'Arma un formulario de avance de obra con ID, porcentaje de avance, foto y observaciones, que actualice el panel y alerte si hay desvíos.',
-   reply:'Creé «Seguimiento de Obra» (privado) con foto y observaciones, conectado a la actualización del panel y a las alertas de desvío.',
-   fields:[['ID de obra','text'],['Avance (%)','number'],['Evidencia fotográfica','file'],['Observaciones','text']],
-   trigger:'Actualización de panel y alerta de desvíos'}
+ salud:{title:'Declaração de Saúde',priv:true,
+   prompt:'Crie um formulário privado de declaração de saúde com matrícula, nome, sintomas e temperatura, que dispare o processo de prevenção.',
+   reply:'Pronto. Criei a «Declaração de Saúde» (privada) com 4 campos e validações, e a conectei à automação de prevenção.',
+   fields:[['Matrícula','text'],['Nome completo','text'],['Sintomas em 48h?','select'],['Temperatura (°C)','number']],
+   trigger:'Processo de prevenção'},
+ credito:{title:'Solicitação de Crédito',priv:true,
+   prompt:'Preciso de um formulário de solicitação de crédito com matrícula, valor, prazo e envio do holerite. Que valide os documentos e notifique o gerente.',
+   reply:'Feito. Gerei a «Solicitação de Crédito» (privada) com envio de arquivo e validações, conectada ao fluxo que avisa o gerente.',
+   fields:[['Matrícula do solicitante','text'],['Valor solicitado','number'],['Prazo (meses)','select'],['Holerite','file']],
+   trigger:'Validação e notificação ao gerente'},
+ obra:{title:'Acompanhamento de Obra',priv:true,
+   prompt:'Monte um formulário de avanço de obra com ID, porcentagem de avanço, foto e observações, que atualize o painel e alerte em caso de desvios.',
+   reply:'Criei o «Acompanhamento de Obra» (privado) com foto e observações, conectado à atualização do painel e aos alertas de desvio.',
+   fields:[['ID da obra','text'],['Avanço (%)','number'],['Evidência fotográfica','file'],['Observações','text']],
+   trigger:'Atualização do painel e alerta de desvio'}
 };
-const MFT={text:'texto',select:'lista',number:'número',file:'archivo',check:'casilla'};
+const MFT={text:'texto',select:'lista',number:'número',file:'arquivo',check:'caixa de seleção'};
 const MFIC={
  text:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7h14M5 12h14M5 17h8"/></svg>',
  select:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M9 11l3 3 3-3"/></svg>',
@@ -1360,12 +1360,12 @@ async function mcpPlay(key){
   const bd=document.getElementById('mBadge'); bd.className='rb-mcp-badge '+(c.priv?'priv':'pub'); bd.textContent=c.priv?'Privado':'Público';
   document.getElementById('mFields').innerHTML=c.fields.map(mcpField).join('');
   const trg=document.getElementById('mTrigger'); trg.classList.remove('in'); trg.querySelector('.tt').textContent=c.trigger;
-  const btn=document.getElementById('mGen'); btn.disabled=true; btn.textContent='Generando…';
+  const btn=document.getElementById('mGen'); btn.disabled=true; btn.textContent='Gerando…';
   if(reduce){
     user.textContent=c.prompt; user.classList.remove('typing');
     document.getElementById('mBotRow').style.visibility='visible'; document.getElementById('mBot').textContent=c.reply;
     document.querySelectorAll('#mFields .rb-mcp-field').forEach(function(f){f.classList.add('in');}); trg.classList.add('in');
-    btn.disabled=false; btn.textContent='Generar de nuevo'; return;
+    btn.disabled=false; btn.textContent='Gerar novamente'; return;
   }
   for(let i=0;i<c.prompt.length;i++){ if(my!==mToken)return; user.textContent+=c.prompt[i]; await mSleep(20); }
   user.classList.remove('typing'); await mSleep(340); if(my!==mToken)return;
@@ -1376,7 +1376,7 @@ async function mcpPlay(key){
   const fs=[].slice.call(document.querySelectorAll('#mFields .rb-mcp-field'));
   for(let i=0;i<fs.length;i++){ if(my!==mToken)return; fs[i].classList.add('in'); await mSleep(230); }
   if(my!==mToken)return; trg.classList.add('in');
-  btn.disabled=false; btn.textContent='Generar de nuevo';
+  btn.disabled=false; btn.textContent='Gerar novamente';
 }
 document.querySelectorAll('#mChips .rb-mcp-chip').forEach(function(ch){ ch.addEventListener('click',function(){ mcpPlay(ch.getAttribute('data-k')); }); });
 let mSeen=false;
@@ -1385,15 +1385,15 @@ mObs.observe(document.querySelector('.rb-mcp-grid'));
 
 // ---- FAQ ----
 const FAQS=[
-  ['¿Qué diferencia a Xperience de un formulario tradicional?','Xperience no solo captura información. Cada envío puede iniciar automáticamente un robot, un agente de IA o un flujo de trabajo para ejecutar el proceso completo, sin intervención manual.'],
-  ['¿Los formularios pueden ser públicos o privados?','Sí. Puedes publicar formularios abiertos mediante un enlace o restringir el acceso con autenticación, permisos por rol y controles de seguridad.'],
-  ['¿Necesito conocimientos técnicos para crear formularios?','No. Xperience incorpora un constructor visual con campos, validaciones y lógica condicional para que cualquier persona pueda diseñar formularios sin programar.'],
-  ['¿Qué tipos de campos puedo utilizar?','Puedes incorporar campos de texto, listas, fechas, archivos, firmas, botones, imágenes y otros componentes avanzados, además de reglas y lógica condicional para adaptar cada formulario al proceso.'],
-  ['¿Puedo crear formularios con inteligencia artificial?','Sí. Mediante el MCP de Claude puedes describir el formulario en lenguaje natural y la IA genera automáticamente los campos, validaciones y estructura, listos para conectarlos con tu automatización.'],
-  ['¿Funciona para equipos en terreno?','Sí. Los formularios pueden completarse desde cualquier dispositivo móvil para registrar inspecciones, evidencias, visitas, mantenimientos, auditorías o cualquier proceso de campo.'],
-  ['¿Cómo se integra con mis procesos?','Cada formulario puede activar robots, agentes inteligentes, flujos de trabajo e integraciones con otros sistemas, convirtiéndose en el punto de entrada de la automatización.'],
-  ['¿Puede conectarse con otros sistemas?','Sí. Xperience se integra con ERPs, CRMs, bases de datos, APIs, Webhooks y el resto de la Suite Rocketbot para automatizar procesos de punta a punta.'],
-  ['¿Cómo hago seguimiento de cada solicitud?','Desde el Orquestador puedes monitorear cada ejecución en tiempo real, consultar su estado, revisar el historial y acceder a la trazabilidad completa de cada proceso.']
+  ['O que diferencia o Xperience de um formulário tradicional?','O Xperience não apenas captura informações. Cada envio pode iniciar automaticamente um robô, um agente de IA ou um fluxo de trabalho para executar o processo completo, sem intervenção manual.'],
+  ['Os formulários podem ser públicos ou privados?','Sim. Você pode publicar formulários abertos por meio de um link ou restringir o acesso com autenticação, permissões por papel e controles de segurança.'],
+  ['Preciso de conhecimento técnico para criar formulários?','Não. O Xperience conta com um construtor visual com campos, validações e lógica condicional para que qualquer pessoa possa criar formulários sem programar.'],
+  ['Quais tipos de campos posso utilizar?','Você pode incluir campos de texto, listas, datas, arquivos, assinaturas, botões, imagens e outros componentes avançados, além de regras e lógica condicional para adaptar cada formulário ao processo.'],
+  ['Posso criar formulários com inteligência artificial?','Sim. Por meio do MCP do Claude, você pode descrever o formulário em linguagem natural, e a IA gera automaticamente os campos, validações e a estrutura, prontos para se conectar à sua automação.'],
+  ['Funciona para equipes de campo?','Sim. Os formulários podem ser preenchidos em qualquer dispositivo móvel para registrar inspeções, evidências, visitas, manutenções, auditorias ou qualquer outro processo de campo.'],
+  ['Como ele se integra aos meus processos?','Cada formulário pode acionar robôs, agentes inteligentes, fluxos de trabalho e integrações com outros sistemas, se tornando o ponto de entrada da automação.'],
+  ['Ele pode se conectar a outros sistemas?','Sim. O Xperience se integra a ERPs, CRMs, bancos de dados, APIs, Webhooks e ao restante da Suíte Rocketbot para automatizar processos de ponta a ponta.'],
+  ['Como faço o acompanhamento de cada solicitação?','Pelo Orquestrador, você pode monitorar cada execução em tempo real, consultar seu status, revisar o histórico e acessar a rastreabilidade completa de cada processo.']
 ];
 const fw=document.getElementById('faqWrap');
 FAQS.forEach(function(pair){

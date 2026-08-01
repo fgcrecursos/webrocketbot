@@ -1469,13 +1469,13 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
 <script>
 /* ===== Suite pipeline ===== */
 (function(){
-  var PROCNAME={finanzas:'Conciliación bancaria',rrhh:'Onboarding de colaborador',operaciones:'Procesamiento de órdenes de compra',experiencia:'Atención de solicitudes y reclamos',ventas:'Gestión de cotizaciones'};
+  var PROCNAME={finanzas:'Conciliação bancária',rrhh:'Onboarding de colaborador',operaciones:'Processamento de pedidos de compra',experiencia:'Atendimento de solicitações e reclamações',ventas:'Gestão de cotações'};
   var PROC={
-    finanzas:["Finanzas carga los parámetros del cierre y las cartolas del banco desde un formulario validado.","Coordina el proceso: activa los robots, espera resultados y deriva las diferencias al responsable.","Descarga cartolas, cruza movimientos con el ERP y detecta diferencias automáticamente.","Lee glosas, descripciones y comprobantes no estructurados para clasificar partidas que el robot no resuelve por sí solo.","Supervisa cada ejecución con trazabilidad completa y reintentos ante errores.","Muestra el estado del cierre y las diferencias pendientes en un dashboard en tiempo real."],
-    rrhh:["El nuevo colaborador o su jefatura completa la ficha de ingreso con datos y documentos validados.","Orquesta altas, accesos y notificaciones entre RRHH, TI y los sistemas internos.","Crea al colaborador en el ERP y la nómina, y gestiona la solicitud de accesos.","Extrae y valida datos de contratos, cédulas y certificados en segundos.","Controla que cada ingreso cumpla los plazos y alerta los pasos pendientes.","Reporta tiempos de incorporación, dotación y pendientes por área."],
-    operaciones:["El área solicitante carga la requisición con todos los datos validados desde el inicio.","Orquesta aprobaciones, validación de proveedor y emisión de la orden de punta a punta.","Registra la orden en el ERP, valida stock y notifica a proveedores y bodega.","Lee cotizaciones y facturas para validar montos, precios y condiciones automáticamente.","Da seguimiento al estado de cada orden y escala las que se atrasan.","Consolida volumen, tiempos de ciclo y cumplimiento de proveedores."],
-    experiencia:["El cliente ingresa su solicitud o reclamo con la información validada desde el primer contacto.","Clasifica el caso, lo asigna al área correcta y coordina la respuesta de punta a punta.","Consulta sistemas, actualiza registros y ejecuta las acciones operativas de cada caso.","Interpreta el mensaje del cliente, detecta la intención y prioriza según urgencia.","Controla los tiempos de respuesta (SLA) y escala los casos críticos.","Reporta volumen, tiempos de resolución y satisfacción por canal."],
-    ventas:["El equipo comercial o el cliente carga la solicitud de cotización con los datos validados.","Orquesta la generación de la cotización, su aprobación y el seguimiento de punta a punta.","Arma la cotización en los sistemas, valida precios y condiciones, y la envía al cliente.","Analiza la solicitud, sugiere productos y detecta oportunidades de mayor valor.","Da seguimiento a cada oportunidad y alerta las que requieren acción.","Reporta pipeline, tasas de conversión y tiempos de respuesta comercial."]
+    finanzas:["A área financeira envia os parâmetros do fechamento e os extratos bancários por meio de um formulário validado.","Coordena o processo: aciona os robôs, aguarda os resultados e encaminha as diferenças ao responsável.","Baixa os extratos, cruza as movimentações com o ERP e detecta diferenças automaticamente.","Lê descrições, memorandos e comprovantes não estruturados para classificar itens que o robô não resolve sozinho.","Supervisiona cada execução com rastreabilidade completa e novas tentativas em caso de erro.","Mostra o status do fechamento e as diferenças pendentes em um painel em tempo real."],
+    rrhh:["O novo colaborador ou a sua liderança preenche a ficha de admissão com dados e documentos validados.","Coordena admissões, acessos e notificações entre RH, TI e os sistemas internos.","Cria o colaborador no ERP e na folha de pagamento, e gerencia as solicitações de acesso.","Extrai e valida dados de contratos, documentos e certificados em segundos.","Controla se cada admissão cumpre os prazos e alerta sobre as etapas pendentes.","Reporta tempos de integração, quadro de pessoal e pendências por área."],
+    operaciones:["A área solicitante envia a requisição com todos os dados validados desde o início.","Coordena aprovações, validação de fornecedores e emissão do pedido de ponta a ponta.","Registra o pedido no ERP, valida o estoque e notifica fornecedores e o depósito.","Lê cotações e faturas para validar valores, preços e condições automaticamente.","Acompanha o status de cada pedido e escala os que estão atrasados.","Consolida volume, tempos de ciclo e cumprimento dos fornecedores."],
+    experiencia:["O cliente registra a sua solicitação ou reclamação com informações validadas desde o primeiro contato.","Classifica o caso, atribui à área correta e coordena a resposta de ponta a ponta.","Consulta sistemas, atualiza registros e executa as ações operacionais de cada caso.","Interpreta a mensagem do cliente, detecta a intenção e prioriza conforme a urgência.","Controla os tempos de resposta e escala os casos críticos.","Reporta volume, tempos de resolução e satisfação por canal."],
+    ventas:["A equipe comercial ou o cliente envia a solicitação de cotação com os dados validados.","Coordena a geração, aprovação e acompanhamento da cotação de ponta a ponta.","Gera a cotação nos sistemas, valida preços e condições, e a envia ao cliente.","Analisa a solicitação, sugere produtos e identifica oportunidades de maior valor.","Acompanha cada oportunidade e alerta as que exigem ação.","Reporta pipeline, taxas de conversão e tempos de resposta comercial."]
   };
   var procName=document.getElementById('rb-procName');
   var tabs=document.querySelectorAll('.rb-pipe__tab');
@@ -1499,7 +1499,7 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
 (function(){
   var archEl=document.getElementById('rb-arch2');
   if(!archEl) return;
-  var PROD={X:{n:'Xperience',logo:'/assets/logos/products/xperience.png'},S:{n:'Saturn Studio',logo:'/assets/logos/products/saturn-studio.png'},R:{n:'RPA Studio',logo:'/assets/logos/products/rpa-studio.png'},A:{n:'AI Studio',logo:'/assets/logos/products/ai-studio.png'},O:{n:'Orquestador',logo:'/assets/logos/products/orchestrator.png'},N:{n:'Nexus',logo:'/assets/logos/products/nexus.png'}};
+  var PROD={X:{n:'Xperience',logo:'/assets/logos/products/xperience.png'},S:{n:'Saturn Studio',logo:'/assets/logos/products/saturn-studio.png'},R:{n:'RPA Studio',logo:'/assets/logos/products/rpa-studio.png'},A:{n:'AI Studio',logo:'/assets/logos/products/ai-studio.png'},O:{n:'Orquestrador',logo:'/assets/logos/products/orchestrator.png'},N:{n:'Nexus',logo:'/assets/logos/products/nexus.png'}};
   var ORDER=['X','S','R','A','O','N'];
   var AL_ICONS={
     target:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>',
@@ -1507,12 +1507,12 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
     grid:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>'
   };
   var LAYERS=[
-    {tag:'Objetivo de negocio', name:'Estrategia de automatización', role:'La meta', icon:'target',
-     text:'El objetivo de negocio ordena todo lo demás: reducir costos, escalar sin sumar estructura y decidir con información al día. Toda la arquitectura existe para sostener esa meta.'},
-    {tag:'Capa de inteligencia', name:'Claude · MCP', role:'Inteligencia sin andamiaje', icon:'spark', brain:true,
-     text:'Claude interpreta la intención en lenguaje natural, razona sobre el proceso y lo conecta con la suite a través del MCP, sin que construyas ni mantengas el andamiaje de integración.'},
-    {tag:'Ejecución y gobierno', name:'Suite Rocketbot', role:'Ejecución determinística + gobierno', icon:'grid', prods:true,
-     text:'Robots deterministas y reglas de negocio ejecutan lo repetitivo igual, siempre. Cada acción queda auditada, con control de accesos y trazabilidad de punta a punta bajo ISO 27001.'}
+    {tag:'Objetivo de negócio', name:'Estratégia de automação', role:'A meta', icon:'target',
+     text:'O objetivo de negócio orienta tudo o mais: reduzir custos, escalar sem aumentar a estrutura e decidir com informação atualizada. Toda a arquitetura existe para sustentar essa meta.'},
+    {tag:'Camada de inteligência', name:'Claude · MCP', role:'Inteligência sem andaimes', icon:'spark', brain:true,
+     text:"Claude interpreta a intenção em linguagem natural, raciocina sobre o processo e o conecta com a suíte por meio do MCP, sem que você precise construir ou manter uma camada de integração."},
+    {tag:'Execução e governança', name:'Suíte Rocketbot', role:'Execução determinística + governança', icon:'grid', prods:true,
+     text:'Robôs determinísticos e regras de negócio executam o trabalho repetitivo sempre da mesma forma. Cada ação fica auditada, com controle de acessos e rastreabilidade de ponta a ponta sob certificação ISO 27001.'}
   ];
   var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   var CHEV_D='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v13M6 13l6 6 6-6"/></svg>';
@@ -1530,7 +1530,7 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
     layerEls[i]=el; archEl.appendChild(el);
     if(i<LAYERS.length-1){
       var c=document.createElement('div'); c.className='rb-aconn2'; c.dataset.c=i;
-      c.innerHTML='<div class="rail"></div><div class="pdot"></div><span class="clab">'+CHEV_D+'Intención</span><span class="clab">'+CHEV_U+'Resultados</span>';
+      c.innerHTML='<div class="rail"></div><div class="pdot"></div><span class="clab">'+CHEV_D+'Intenção</span><span class="clab">'+CHEV_U+'Resultados</span>';
       aConnEls.push(c); archEl.appendChild(c);
     }
   });
