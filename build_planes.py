@@ -805,7 +805,7 @@ COPY = {
                  'Capacidade, limites produto a produto, segurança e suporte. Os quatro planos da Suíte Rocketbot, comparados em detalhe.'),
     'eyebrow': L('Planes y precios', 'Plans and pricing', 'Planos e preços'),
     'h1_a': L('Automatización que crece', 'Automation that grows', 'Automação que cresce'),
-    'h1_b': L('con tu operación', 'with your operation', 'com a sua operação'),
+    'h1_b': L('con tu operación', 'with your operations', 'com a sua operação'),
     'hero_sub': L('Una sola suite — RPA, orquestación, IA y aplicaciones. Eliges la capacidad; todos los productos vienen incluidos en cada plan.',
                   'One single suite — RPA, orchestration, AI and applications. You choose the capacity; every product is included in every plan.',
                   'Uma única suíte — RPA, orquestração, IA e aplicativos. Você escolhe a capacidade; todos os produtos vêm incluídos em cada plano.'),
@@ -1044,8 +1044,19 @@ def build(lang, css_extra):
     base = BASE if lang == 'es' else os.path.join(ROOT, lang, 'construir-vs-comprar.html')
     src = io.open(base, encoding='utf-8').read()
 
-    # 2) CSS propio de esta pagina, antes del cierre del <style>
-    src = src.replace('</style>\n</head>', css_extra + '\n</style>\n</head>', 1)
+    # 2) CSS propio de esta pagina, antes del cierre del <style> que la
+    # precede. El esqueleto tiene 3 bloques <style> distintos antes de
+    # </head> (el grande, uno chico "rb-ddnav-css" y uno chico y propio
+    # "rb-lang-temp-hide" que cierra en su misma linea). Hay que insertar
+    # el CSS de planes DENTRO de un bloque <style> real: ancla al cierre
+    # que esta justo antes de <style id="rb-lang-temp-hide">, no al literal
+    # "</style>\n</head>" (eso matchea el cierre de rb-lang-temp-hide y deja
+    # el CSS de planes suelto, fuera de cualquier <style>, entre dos tags).
+    anchor = '</style>\n<style id="rb-lang-temp-hide">'
+    if anchor in src:
+        src = src.replace(anchor, css_extra + '\n' + anchor, 1)
+    else:
+        src = src.replace('</style>\n</head>', css_extra + '\n</style>\n</head>', 1)
 
     # 3) contenido: de <!-- HERO --> hasta el footer
     i = src.index('<!-- HERO -->')

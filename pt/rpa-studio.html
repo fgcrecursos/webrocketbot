@@ -113,7 +113,7 @@ window.RB_I18N=(function(){
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RPA Studio | Automação Robótica de Processos Empresariais · Rocketbot</title>
-<meta name="description" content="Automatiza tareas repetitivas con RPA Studio. Robots de software que aumentan la productividad y reducen errores. Escala tus operaciones en Latinoamérica.">
+<meta name="description" content="Automatize tarefas repetitivas com o RPA Studio. Robôs de software que aumentam a produtividade e reduzem erros. Escale as suas operações na América Latina.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://rocketbot.com/pt/rpa-studio">
 <link rel="alternate" hreflang="es" href="https://rocketbot.com/rpa-studio">
@@ -126,7 +126,7 @@ window.RB_I18N=(function(){
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rocketbot">
 <meta property="og:title" content="RPA Studio | Automação Robótica de Processos Empresariais · Rocketbot">
-<meta property="og:description" content="Robots de software que ejecutan tus procesos entre sistemas, sin tocar tu infraestructura y sin programar. Más de 500 procesos implementados.">
+<meta property="og:description" content="Robôs de software que executam os seus processos entre sistemas, sem tocar na sua infraestrutura e sem programar. Mais de 500 processos implementados.">
 <meta property="og:url" content="https://rocketbot.com/pt/rpa-studio">
 <meta property="og:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -136,7 +136,7 @@ window.RB_I18N=(function(){
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rocketbot">
 <meta name="twitter:title" content="RPA Studio | Automação Robótica de Processos Empresariais · Rocketbot">
-<meta name="twitter:description" content="Robots de software que ejecutan tus procesos entre sistemas, sin tocar tu infraestructura y sin programar.">
+<meta name="twitter:description" content="Robôs de software que executam os seus processos entre sistemas, sem tocar na sua infraestrutura e sem programar.">
 <meta name="twitter:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1300,12 +1300,12 @@ const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
 // ---------- robot flow ----------
 const STEPS = [
-  {nm:'Lee', step:'Captura', icon:'scan', tx:'Obtiene información desde correos, archivos de Excel, páginas web, documentos o cualquier sistema, sin importar el formato.'},
-  {nm:'Procesa', step:'Decide', icon:'cpu', tx:'Aplica las reglas del proceso, valida la información y determina la siguiente acción de forma automática.'},
-  {nm:'Ejecuta', step:'Age', icon:'robot', tx:'Opera aplicaciones y sistemas como lo haría una persona, sin modificar tu infraestructura.'},
-  {nm:'Registra', step:'Controla', icon:'log', tx:'Registra cada acción con trazabilidad completa para saber qué ocurrió, cuándo ocurrió y cuál fue el resultado.'}
+  {nm:'Lê', step:'Captura', icon:'scan', tx:'Obtém informações de e-mails, arquivos do Excel, páginas web, documentos ou qualquer sistema, independentemente do formato.'},
+  {nm:'Processa', step:'Decide', icon:'cpu', tx:'Aplica as regras do processo, valida as informações e determina automaticamente a próxima ação.'},
+  {nm:'Executa', step:'Age', icon:'robot', tx:'Opera aplicações e sistemas como uma pessoa faria, sem modificar a sua infraestrutura.'},
+  {nm:'Registra', step:'Controla', icon:'log', tx:'Registra cada ação com rastreabilidade completa para saber o que aconteceu, quando aconteceu e qual foi o resultado.'}
 ];
-const FPL = ['datos','decisión','acciones'];
+const FPL = ['dados','decisão','ações'];
 let fActive=0, fTimer=null; const fnodes=[], fconns=[];
 (function buildFlow(){
   const flow=document.getElementById('rflow');
@@ -1536,7 +1536,7 @@ new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersectin
   "name": "RPA Studio",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
-  "description": "Robots de software que ejecutan procesos empresariales entre sistemas, sin programar y sin modificar la infraestructura existente.",
+  "description": "Robôs de software que executam processos empresariais entre sistemas, sem programar e sem modificar a infraestrutura existente.",
   "url": "https://rocketbot.com/rpa-studio",
   "offers": {
     "@type": "Offer",

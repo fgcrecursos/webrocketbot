@@ -113,7 +113,7 @@ window.RB_I18N=(function(){
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RPA Studio | Robotic Process Automation for Business · Rocketbot</title>
-<meta name="description" content="Automatiza tareas repetitivas con RPA Studio. Robots de software que aumentan la productividad y reducen errores. Escala tus operaciones en Latinoamérica.">
+<meta name="description" content="Automate repetitive tasks with RPA Studio. Software robots that boost productivity and reduce errors. Scale your operations across Latin America.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://rocketbot.com/en/rpa-studio">
 <link rel="alternate" hreflang="es" href="https://rocketbot.com/rpa-studio">
@@ -126,7 +126,7 @@ window.RB_I18N=(function(){
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rocketbot">
 <meta property="og:title" content="RPA Studio | Robotic Process Automation for Business · Rocketbot">
-<meta property="og:description" content="Robots de software que ejecutan tus procesos entre sistemas, sin tocar tu infraestructura y sin programar. Más de 500 procesos implementados.">
+<meta property="og:description" content="Software robots that run your processes across systems, without touching your infrastructure and without coding. More than 500 processes deployed.">
 <meta property="og:url" content="https://rocketbot.com/en/rpa-studio">
 <meta property="og:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -136,7 +136,7 @@ window.RB_I18N=(function(){
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rocketbot">
 <meta name="twitter:title" content="RPA Studio | Robotic Process Automation for Business · Rocketbot">
-<meta name="twitter:description" content="Robots de software que ejecutan tus procesos entre sistemas, sin tocar tu infraestructura y sin programar.">
+<meta name="twitter:description" content="Software robots that run your processes across systems, without touching your infrastructure and without coding.">
 <meta name="twitter:image" content="https://webrocketbot.vercel.app/assets/logos/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1317,12 +1317,12 @@ const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
 // ---------- robot flow ----------
 const STEPS = [
-  {nm:'Lee', step:'Captura', icon:'scan', tx:'Obtiene información desde correos, archivos de Excel, páginas web, documentos o cualquier sistema, sin importar el formato.'},
-  {nm:'Procesa', step:'Decide', icon:'cpu', tx:'Aplica las reglas del proceso, valida la información y determina la siguiente acción de forma automática.'},
-  {nm:'Ejecuta', step:'Acts', icon:'robot', tx:'Opera aplicaciones y sistemas como lo haría una persona, sin modificar tu infraestructura.'},
-  {nm:'Registra', step:'Controla', icon:'log', tx:'Registra cada acción con trazabilidad completa para saber qué ocurrió, cuándo ocurrió y cuál fue el resultado.'}
+  {nm:'Read', step:'Capture', icon:'scan', tx:'Pull information from emails, Excel files, web pages, documents, or any system, regardless of format.'},
+  {nm:'Process', step:'Decide', icon:'cpu', tx:'Apply the process rules, validate the information, and automatically determine the next action.'},
+  {nm:'Execute', step:'Act', icon:'robot', tx:'Operate applications and systems exactly as a person would, without changing your infrastructure.'},
+  {nm:'Log', step:'Control', icon:'log', tx:'Record every action with full traceability to know what happened, when it happened, and what the result was.'}
 ];
-const FPL = ['datos','decisión','acciones'];
+const FPL = ['data','decision','actions'];
 let fActive=0, fTimer=null; const fnodes=[], fconns=[];
 (function buildFlow(){
   const flow=document.getElementById('rflow');
@@ -1353,38 +1353,38 @@ document.getElementById('rflow').addEventListener('mouseleave',fPlay);
 
 // ---------- industry explorer ----------
 const INDUSTRIES=[
-  {name:'Banca y finanzas',icon:'bank',intro:'Automatiza procesos financieros críticos con mayor velocidad, precisión y cumplimiento normativo.',cases:[
-    {t:'Onboarding y KYC',area:'Cumplimiento',d:'Valida identidades, consulta listas restrictivas y crea expedientes automáticamente.',tag:'Disponible 24/7'},
-    {t:'Reportes regulatorios',area:'Cumplimiento',d:'Consolida información y genera reportes para organismos reguladores de forma automática.',tag:'Cumplimiento normativo'},
-    {t:'Cierre financiero',area:'Finanzas',d:'Automatiza conciliaciones y tareas de cierre para reducir tiempos y errores operativos.',tag:'Cierre más rápido'}]},
-  {name:'Seguros',icon:'shield',intro:'Automatiza el ciclo completo de las pólizas y los siniestros con trazabilidad de principio a fin.',cases:[
-    {t:'Emisión de pólizas',area:'Operaciones',d:'Valida información y genera pólizas automáticamente en los sistemas corporativos.',tag:'Reduce el tiempo de ciclo'},
-    {t:'Liquidación de siniestros',area:'Operaciones',d:'Reúne antecedentes, valida coberturas y prepara cada caso para su resolución.',tag:'Procesos más rápidos'},
-    {t:'Cobranza y recaudación',area:'Cobranza',d:'Concilia pagos, detecta morosidad y activa automáticamente la gestión de cobranza.',tag:'Mayor recuperación'}]},
-  {name:'Retail y consumo',icon:'cart',intro:'Conecta ventas, inventario y operaciones para responder al ritmo del negocio.',cases:[
-    {t:'Órdenes de compra',area:'Operaciones',d:'Captura órdenes desde distintos canales y las registra automáticamente en el ERP.',tag:'Sin transcripción manual'},
-    {t:'Conciliación de e-commerce',area:'Finanzas',d:'Cruza ventas, pagos y pasarelas para acelerar el cierre diario.',tag:'Cierre más rápido'},
-    {t:'Reposición de inventario',area:'Operaciones',d:'Analiza ventas y stock para iniciar procesos de reposición automáticamente.',tag:'Evita quiebres de inventario'}]},
-  {name:'Manufactura y agro',icon:'factory',intro:'Automatiza la operación desde la planta hasta la exportación con procesos conectados.',cases:[
-    {t:'Cuentas por pagar',area:'Finanzas',d:'Valida documentos de proveedores y prepara pagos automáticamente.',tag:'Pagos a tiempo'},
-    {t:'Producción y mermas',area:'Operaciones',d:'Consolida información operacional y genera reportes de producción.',tag:'Trazabilidad completa'},
-    {t:'Certificados de exportación',area:'Comex',d:'Genera y valida la documentación necesaria para cada embarque.',tag:'Cumplimiento normativo'}]},
-  {name:'Health & pharma',icon:'pulse',intro:'Automatiza procesos administrativos y clínicos para mejorar la atención y reducir tiempos.',cases:[
-    {t:'Agendamiento',area:'Atención',d:'Agenda, confirma y reprograma citas automáticamente.',tag:'Disponible 24/7'},
-    {t:'Facturación a aseguradoras',area:'Finanzas',d:'Procesa prestaciones y gestiona rechazos de manera automática.',tag:'Menos rechazos'},
-    {t:'Carga de resultados',area:'Operaciones',d:'Registra resultados clínicos en los sistemas sin intervención manual.',tag:'Sin transcripción manual'}]},
-  {name:'Logística y transporte',icon:'truck',intro:'Automatiza documentos, liquidaciones y operaciones para mantener la cadena logística en movimiento.',cases:[
-    {t:'Ingreso de guías',area:'Operaciones',d:'Digitaliza y registra documentos de transporte automáticamente.',tag:'Sin transcripción manual'},
-    {t:'Liquidación de fletes',area:'Finanzas',d:'Calcula y concilia pagos a transportistas según las condiciones acordadas.',tag:'Pagos a tiempo'},
-    {t:'Documentación aduanera',area:'Comex',d:'Genera y valida documentación para procesos de comercio exterior.',tag:'Cumplimiento normativo'}]},
-  {name:'Telecomunicaciones',icon:'signal',intro:'Automatiza altas, bajas, facturación y operaciones críticas con mayor velocidad.',cases:[
-    {t:'Alta y baja de servicios',area:'Operaciones',d:'Provisiona servicios entre múltiples plataformas automáticamente.',tag:'Reduce el tiempo de ciclo'},
-    {t:'Interconexión',area:'Finanzas',d:'Liquida y concilia el tráfico entre operadores sin errores manuales.',tag:'Mayor precisión'},
-    {t:'Facturación masiva',area:'Finanzas',d:'Ejecuta procesos de facturación y emisión de notas de crédito.',tag:'Cierre más rápido'}]},
-  {name:'Public sector',icon:'civic',intro:'Moderniza procesos sobre sistemas heredados con mayor eficiencia y cumplimiento.',cases:[
-    {t:'Tramitación de solicitudes',area:'Atención',d:'Recibe, valida y distribuye solicitudes entre las distintas áreas.',tag:'Reduce el tiempo de ciclo'},
-    {t:'Sistemas heredados',area:'Operaciones',d:'Automatiza procesos sobre aplicaciones sin APIs ni desarrollos complejos.',tag:'Integra sistemas heredados'},
-    {t:'Transparencia',area:'Cumplimiento',d:'Consolida y publica automáticamente la información exigida por la normativa.',tag:'Cumplimiento normativo'}]}
+  {name:'Banking & Finance',icon:'bank',intro:'Automate critical financial processes with more speed, accuracy, and regulatory compliance.',cases:[
+    {t:'Onboarding & KYC',area:'Compliance',d:'Validate identities, screen watchlists, and build customer files automatically.',tag:'Available 24/7'},
+    {t:'Regulatory reporting',area:'Compliance',d:'Consolidate information and automatically generate reports for regulators.',tag:'Regulatory compliance'},
+    {t:'Financial close',area:'Finance',d:'Automate reconciliations and closing tasks to reduce time and operational errors.',tag:'Faster close'}]},
+  {name:'Insurance',icon:'shield',intro:'Automate the full policy and claims lifecycle with end-to-end traceability.',cases:[
+    {t:'Policy issuance',area:'Operations',d:'Validate information and automatically issue policies in your core systems.',tag:'Shorter cycle time'},
+    {t:'Claims settlement',area:'Operations',d:'Gather documentation, validate coverage, and prepare each case for resolution.',tag:'Faster processes'},
+    {t:'Collections & recovery',area:'Collections',d:'Reconcile payments, detect delinquency, and automatically trigger collections workflows.',tag:'Higher recovery'}]},
+  {name:'Retail & Consumer',icon:'cart',intro:'Connect sales, inventory, and operations to keep pace with the business.',cases:[
+    {t:'Purchase orders',area:'Operations',d:'Capture orders from multiple channels and automatically record them in the ERP.',tag:'No manual entry'},
+    {t:'E-commerce reconciliation',area:'Finance',d:'Cross-check sales, payments, and gateways to speed up daily close.',tag:'Faster close'},
+    {t:'Inventory replenishment',area:'Operations',d:'Analyze sales and stock levels to automatically trigger replenishment.',tag:'Prevents stockouts'}]},
+  {name:'Manufacturing & Agriculture',icon:'factory',intro:'Automate operations from the plant floor to export, with connected processes.',cases:[
+    {t:'Accounts payable',area:'Finance',d:'Validate vendor documents and automatically prepare payments.',tag:'On-time payments'},
+    {t:'Production & waste tracking',area:'Operations',d:'Consolidate operational data and generate production reports.',tag:'Full traceability'},
+    {t:'Export certificates',area:'Foreign Trade',d:'Generate and validate the documentation required for each shipment.',tag:'Regulatory compliance'}]},
+  {name:'Health & Pharma',icon:'pulse',intro:'Automate administrative and clinical processes to improve care and reduce turnaround times.',cases:[
+    {t:'Scheduling',area:'Service',d:'Automatically schedule, confirm, and reschedule appointments.',tag:'Available 24/7'},
+    {t:'Insurance billing',area:'Finance',d:'Automatically process claims and manage denials.',tag:'Fewer denials'},
+    {t:'Results upload',area:'Operations',d:'Record clinical results in your systems with no manual entry.',tag:'No manual entry'}]},
+  {name:'Logistics & Transportation',icon:'truck',intro:'Automate documents, settlements, and operations to keep the supply chain moving.',cases:[
+    {t:'Waybill entry',area:'Operations',d:'Automatically digitize and record shipping documents.',tag:'No manual entry'},
+    {t:'Freight settlement',area:'Finance',d:'Calculate and reconcile carrier payments based on agreed terms.',tag:'On-time payments'},
+    {t:'Customs documentation',area:'Foreign Trade',d:'Generate and validate documentation for cross-border trade.',tag:'Regulatory compliance'}]},
+  {name:'Telecommunications',icon:'signal',intro:'Automate activations, deactivations, billing, and critical operations with more speed.',cases:[
+    {t:'Service activation & deactivation',area:'Operations',d:'Automatically provision services across multiple platforms.',tag:'Shorter cycle time'},
+    {t:'Interconnection',area:'Finance',d:'Automatically settle and reconcile carrier traffic, with no manual errors.',tag:'Higher accuracy'},
+    {t:'Mass billing',area:'Finance',d:'Automatically run billing processes and issue credit notes.',tag:'Faster close'}]},
+  {name:'Public Sector',icon:'civic',intro:'Modernize processes on legacy systems with greater efficiency and compliance.',cases:[
+    {t:'Request processing',area:'Service',d:'Receive, validate, and route requests across departments.',tag:'Shorter cycle time'},
+    {t:'Legacy systems',area:'Operations',d:'Automate processes on applications with no APIs and no complex development.',tag:'Legacy system integration'},
+    {t:'Transparency',area:'Compliance',d:'Automatically consolidate and publish the information required by regulation.',tag:'Regulatory compliance'}]}
 ];
 const rail=document.getElementById('rail');
 INDUSTRIES.forEach((ind,i)=>{
@@ -1411,17 +1411,17 @@ selectInd(0);
 
 // ---------- FAQ ----------
 const FAQS=[
-  ['What is Rocketbot RPA Studio?','RPA Studio es la plataforma de automatización de procesos de Rocketbot. Permite crear robots de software para ejecutar tareas entre sistemas, aplicaciones y plataformas con mayor velocidad, precisión y trazabilidad.'],
-  ['¿Qué diferencia a Rocketbot de otras soluciones?','Rocketbot permite automatizar procesos sin modificar la infraestructura ni los sistemas que tu empresa ya utiliza. Su implementación es rápida, flexible y escalable, adaptándose a las necesidades de cada operación.'],
-  ['¿Necesito saber programar?','No. Su interfaz visual permite crear automatizaciones mediante componentes prediseñados, sin necesidad de escribir código. Para escenarios avanzados, también admite Python y JavaScript.'],
-  ['¿Puedo crear robots con ayuda de IA?','Sí. Gracias al MCP de Claude, puedes describir el proceso en lenguaje natural. Claude genera la lógica del robot para que puedas revisarla, ajustarla y ejecutarla en RPA Studio. Tú mantienes el control de lo que se pone en producción.'],
-  ['¿Qué procesos puedo automatizar?','Puedes automatizar conciliaciones bancarias, procesamiento de facturas, generación de reportes, integración con Excel, gestión de correos, actualización de sistemas y muchos otros procesos operativos entre aplicaciones.'],
-  ['¿Funciona solo en Windows?','No. RPA Studio es compatible con Windows, Linux y macOS, lo que permite automatizar procesos en distintos entornos tecnológicos.'],
-  ['¿Cómo se integra con mis sistemas actuales?','Se integra mediante conectores, APIs o interacción directa con aplicaciones. Los robots operan sobre tus sistemas actuales sin requerir cambios complejos en la infraestructura.'],
-  ['¿Qué nivel de seguridad ofrece?','RPA Studio incorpora cifrado de datos, control de accesos y trazabilidad completa. Además, forma parte de la Suite Rocketbot, certificada bajo la norma ISO/IEC 27001.'],
-  ['¿Cuánto tiempo toma implementar un robot?','Depende de la complejidad del proceso, pero muchos robots pueden diseñarse, probarse y ponerse en producción en cuestión de días o semanas.'],
-  ['¿Cuándo se ven los resultados?','Los beneficios suelen observarse desde los primeros procesos automatizados. En proyectos con una adopción madura, la inversión puede recuperarse en pocos meses.'],
-  ['¿Puedo escalar a medida que mi empresa crece?','Sí. Puedes comenzar automatizando unos pocos procesos y escalar a cientos de robots administrados de forma centralizada dentro del ecosistema Rocketbot.']
+  ['What is Rocketbot RPA Studio?',"RPA Studio is Rocketbot's process automation platform. It lets you create software robots to run tasks across systems, applications, and platforms with more speed, accuracy, and traceability."],
+  ['How is Rocketbot different from other solutions?','Rocketbot lets you automate processes without modifying your infrastructure or the systems your company already uses. Implementation is fast, flexible, and scalable, adapting to the needs of each operation.'],
+  ['Do I need to know how to code?','No. Our visual interface lets you build automations using prebuilt components, with no code required. For advanced cases, it also supports Python and JavaScript.'],
+  ['Can I create robots with AI help?',"Yes. Through Claude's MCP, you can describe the process in plain language. Claude generates the robot's logic so you can review, adjust, and run it in RPA Studio. You stay in control of what goes into production."],
+  ['What processes can I automate?','You can automate bank reconciliations, invoice processing, report generation, Excel integration, email management, system updates, and many other operational processes across applications.'],
+  ['Does it only work on Windows?','No. RPA Studio is compatible with Windows, Linux, and macOS, so you can automate processes across different technology environments.'],
+  ['How does it integrate with my current systems?','It integrates through connectors, APIs, or direct interaction with applications. The robots operate on your current systems without requiring complex changes to your infrastructure.'],
+  ['What level of security does it offer?',"RPA Studio includes data encryption, access control, and full traceability. It's also part of the Rocketbot Suite, certified under the ISO/IEC 27001 standard."],
+  ['How long does it take to implement a robot?','It depends on the complexity of the process, but most robots can be designed, tested, and put into production within days or weeks.'],
+  ['When do I see results?','Benefits are usually visible from the first automated processes. In projects with mature adoption, the investment can pay back in just a few months.'],
+  ['Can I scale as my company grows?','Yes. You can start by automating a few processes and scale to hundreds of robots managed centrally within the Rocketbot ecosystem.']
 ];
 const fw=document.getElementById('faqWrap');
 FAQS.forEach(function(pair){
@@ -1446,45 +1446,45 @@ FAQS.forEach(function(pair){
 // ---------- execution demo ----------
 const RCHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>';
 const PROC={
- concil:{title:'RPA Studio · Conciliación bancaria',bot:'rbt-fin-01',
-   steps:['Abrir el core bancario','Descargar la cartola','Cruzar con el ERP','Marcar diferencias','Generar el reporte'],
-   tl:[[null,'Iniciando robot RBT-FIN-01'],[0,'Abriendo core bancario'],[null,'Sesión iniciada [ok]'],[1,'Descargando cartola del día'],[null,'1.284 movimientos leídos'],[2,'Cruzando movimientos contra el ERP'],[null,'3 diferencias detectadas [wn]'],[3,'Marcando diferencias'],[4,'Generando reporte de conciliación'],[null,'Reporte enviado a Finanzas [ok]']],
-   ok:'Conciliación completada · 3 diferencias para revisión'},
- oc:{title:'RPA Studio · Carga de órdenes de compra',bot:'rbt-ops-04',
-   steps:['Leer correos entrantes','Extraer datos de la OC','Validar contra el catálogo','Cargar en el ERP','Confirmar recepción'],
-   tl:[[null,'Iniciando robot RBT-OPS-04'],[0,'Revisando bandeja de correo'],[null,'12 órdenes nuevas'],[1,'Extrayendo datos de cada OC'],[2,'Validando productos y precios'],[null,'1 excepción derivada a revisión [wn]'],[3,'Cargando 11 órdenes al ERP'],[null,'Órdenes creadas [ok]'],[4,'Confirmando recepción']],
-   ok:'11 órdenes cargadas · 1 excepción derivada'},
- fact:{title:'RPA Studio · Facturación electrónica',bot:'rbt-fac-02',
-   steps:['Leer ventas del día','Generar las facturas','Validar con el SII','Enviar al cliente','Registrar en contabilidad'],
-   tl:[[null,'Iniciando robot RBT-FAC-02'],[0,'Leyendo ventas del día'],[null,'487 documentos a emitir'],[1,'Generando facturas electrónicas'],[2,'Validando folios con el SII'],[null,'Documentos timbrados [ok]'],[3,'Enviando por correo a clientes'],[4,'Registrando en contabilidad'],[null,'Cierre del día completado [ok]']],
-   ok:'487 documentos emitidos y registrados'}
+ concil:{title:'RPA Studio · Bank reconciliation',bot:'rbt-fin-01',
+   steps:['Open the banking portal','Download the statement','Cross-check with the ERP','Flag discrepancies','Generate the report'],
+   tl:[[null,'Starting robot RBT-FIN-01'],[0,'Opening banking portal'],[null,'Session started [ok]'],[1,"Downloading today's statement"],[null,'1,284 transactions read'],[2,'Cross-checking transactions against the ERP'],[null,'3 discrepancies detected [wn]'],[3,'Flagging discrepancies'],[4,'Generating reconciliation report'],[null,'Report sent to Finance [ok]']],
+   ok:'Reconciliation completed · 3 discrepancies for review'},
+ oc:{title:'RPA Studio · Purchase order entry',bot:'rbt-ops-04',
+   steps:['Read incoming emails','Extract data from the PO','Validate against the catalog','Load into the ERP','Confirm receipt'],
+   tl:[[null,'Starting robot RBT-OPS-04'],[0,'Checking inbox'],[null,'12 new orders'],[1,'Extracting data from each PO'],[2,'Validating products and prices'],[null,'1 exception sent for review [wn]'],[3,'Loading 11 orders into the ERP'],[null,'Orders created [ok]'],[4,'Confirming receipt']],
+   ok:'11 orders loaded · 1 exception sent for review'},
+ fact:{title:'RPA Studio · Invoice processing',bot:'rbt-fac-02',
+   steps:["Read today's sales",'Generate the invoices','Validate sales tax by state','Send to customer','Record in accounting software'],
+   tl:[[null,'Starting robot RBT-FAC-02'],[0,"Reading today's sales"],[null,'487 documents to issue'],[1,'Generating invoices'],[2,'Validating sales tax by state'],[null,'Documents validated [ok]'],[3,'Sending invoices to customers by email'],[4,'Recording in accounting software'],[null,'Day closing completed [ok]']],
+   ok:'487 documents issued and recorded'}
 };
 let rCur='concil', rToken=0, rTimers=[];
 function rSleep(ms){return new Promise(function(r){rTimers.push(setTimeout(r,ms));});}
 function rClear(){rTimers.forEach(clearTimeout); rTimers=[];}
-function logLine(t,txt){return '<div class="ln"><span class="tm">['+t+']</span><span class="tx">'+txt.replace('[ok]','<span class="ok">OK</span>').replace('[wn]','<span class="wn">REVISAR</span>')+'</span></div>';}
+function logLine(t,txt){return '<div class="ln"><span class="tm">['+t+']</span><span class="tx">'+txt.replace('[ok]','<span class="ok">OK</span>').replace('[wn]','<span class="wn">REVIEW</span>')+'</span></div>';}
 function pad(n){return (n<10?'0':'')+n;}
 function rSteps(p){document.getElementById('rStepList').innerHTML=p.steps.map(s=>'<div class="rb-exec-step"><span class="dot">'+RCHK+'</span><span class="lbl">'+s+'</span></div>').join('');}
 function rActivate(i){const els=[].slice.call(document.querySelectorAll('#rStepList .rb-exec-step'));els.forEach((el,idx)=>{el.classList.toggle('active',idx===i);if(idx<i){el.classList.add('done');el.classList.remove('active');}});}
 function rDoneAll(){document.querySelectorAll('#rStepList .rb-exec-step').forEach(el=>{el.classList.remove('active');el.classList.add('done');});}
-function rSetStatus(run){const s=document.getElementById('rStatus');s.className='st '+(run?'run':'done');s.innerHTML='<span class="ld"></span>'+(run?'Ejecutando':'Completado');}
+function rSetStatus(run){const s=document.getElementById('rStatus');s.className='st '+(run?'run':'done');s.innerHTML='<span class="ld"></span>'+(run?'Running':'Completed');}
 async function rPlay(key){
   rClear(); const my=++rToken; if(key) rCur=key; const p=PROC[rCur];
   document.querySelectorAll('#dTabs .rb-exec-tab').forEach(t=>t.classList.toggle('act',t.getAttribute('data-p')===rCur));
   document.getElementById('rTitle').textContent=p.title; document.getElementById('rBot').textContent=p.bot+'@rocketbot';
   rSteps(p); document.getElementById('rLog').innerHTML=''; rSetStatus(true);
-  const btn=document.getElementById('rRun'); btn.disabled=true; btn.textContent='Ejecutando…';
+  const btn=document.getElementById('rRun'); btn.disabled=true; btn.textContent='Running…';
   const log=document.getElementById('rLog');
   let h=10,m=2,s=1;
   function stamp(){s+=1+Math.floor(Math.random()*3); if(s>59){s-=60;m++;} if(m>59){m-=60;h++;} return pad(h)+':'+pad(m)+':'+pad(s);}
   if(reduce){
     p.tl.forEach(e=>{if(e[0]!==null)rActivate(e[0]); log.innerHTML+=logLine(stamp(),e[1]);});
-    rDoneAll(); log.innerHTML+=logLine(stamp(),'<span class="ok">'+p.ok+'</span>'); rSetStatus(false); btn.disabled=false; btn.textContent='Ejecutar de nuevo'; return;
+    rDoneAll(); log.innerHTML+=logLine(stamp(),'<span class="ok">'+p.ok+'</span>'); rSetStatus(false); btn.disabled=false; btn.textContent='Run again'; return;
   }
   for(let i=0;i<p.tl.length;i++){ if(my!==rToken)return; const e=p.tl[i]; if(e[0]!==null)rActivate(e[0]); log.innerHTML+=logLine(stamp(),e[1]); log.scrollTop=log.scrollHeight; await rSleep(620); }
   if(my!==rToken)return; rDoneAll(); rSetStatus(false);
   log.innerHTML+=logLine(stamp(),'<span class="ok">'+p.ok+'</span>'); log.scrollTop=log.scrollHeight;
-  btn.disabled=false; btn.textContent='Ejecutar de nuevo';
+  btn.disabled=false; btn.textContent='Run again';
 }
 document.querySelectorAll('#dTabs .rb-exec-tab').forEach(t=>t.addEventListener('click',()=>rPlay(t.getAttribute('data-p'))));
 let rSeen=false;
@@ -1492,18 +1492,18 @@ new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting
 
 // ---------- MCP / Claude: instrucción -> robot ----------
 const NMCP={
- concil:{title:'Robot · Conciliación',conn:'Core bancario + ERP',
-   prompt:'Crea un robot que descargue la cartola del banco, la cruce con el ERP y marque las diferencias.',
-   reply:'Listo. Propuse un robot de conciliación con 5 comandos; revísalo y ajústalo antes de ejecutarlo.',
-   cmds:['Abrir aplicación · Core bancario','Descargar archivo · Cartola del día','Leer datos · ERP','Comparar y validar · Detectar diferencias','Generar reporte · Enviar a Finanzas']},
- portal:{title:'Robot · Extracción de portal',conn:'Portal web + Excel',
-   prompt:'Necesito un robot que entre a un portal, descargue los documentos del día y los guarde en una planilla.',
-   reply:'Generé un robot de extracción con navegación web, descarga y escritura en Excel.',
-   cmds:['Abrir navegador · Iniciar sesión','Navegar · Sección de documentos','Descargar archivos · Del día','Extraer datos · De cada documento','Escribir en Excel · Consolidado']},
- erp:{title:'Robot · Carga a ERP',conn:'Correo + ERP',
-   prompt:'Arma un robot que tome las órdenes de compra del correo, las valide y las cargue al ERP.',
-   reply:'Creé un robot de carga con lectura de correo, validación y registro en el ERP.',
-   cmds:['Leer correo · Bandeja de entrada','Extraer datos · Orden de compra','Validar · Catálogo y precios','Ingresar al sistema · ERP','Confirmar · Notificar al solicitante']}
+ concil:{title:'Robot · Reconciliation',conn:'Banking portal + ERP',
+   prompt:'Create a robot that downloads the bank statement, cross-checks it with the ERP, and flags any discrepancies.',
+   reply:"Done. I've proposed a reconciliation robot with 5 commands; review and adjust it before running.",
+   cmds:['Open application · Banking portal',"Download file · Today's statement",'Read data · ERP','Compare and validate · Detect discrepancies','Generate report · Send to Finance']},
+ portal:{title:'Robot · Portal extraction',conn:'Web portal + Excel',
+   prompt:"I need a robot that logs into a portal, downloads the day's documents, and saves them in a spreadsheet.",
+   reply:"I've generated an extraction robot with web navigation, download, and Excel writing.",
+   cmds:['Open browser · Log in','Navigate · Documents section',"Download files · Today's files",'Extract data · From each document','Write to Excel · Consolidated file']},
+ erp:{title:'Robot · Load into ERP',conn:'Email + ERP',
+   prompt:'Build a robot that takes purchase orders from email, validates them, and loads them into the ERP.',
+   reply:"I've created a loading robot with email reading, validation, and ERP recording.",
+   cmds:['Read email · Inbox','Extract data · Purchase order','Validate · Catalog and pricing','Enter into system · ERP','Confirm · Notify requester']}
 };
 function nmcmd(c,i){const p=c.split(' · ');return '<div class="rb-mcp-cmd rb-mcp-reveal"><span class="n">'+(i+1)+'</span><div class="t">'+p[0]+'<small>'+(p[1]||'')+'</small></div></div>';}
 function nmBuild(c){
@@ -1518,15 +1518,15 @@ async function nmPlay(key){
   document.querySelectorAll('#nmChips .rb-mcp-chip').forEach(function(ch){ch.classList.toggle('act',ch.getAttribute('data-k')===nmCur);});
   const user=document.getElementById('nmUser'); user.textContent=''; user.classList.add('typing');
   document.getElementById('nmBotRow').style.visibility='hidden';
-  document.getElementById('nmTitle').textContent='Robot propuesto'; document.getElementById('nmScreen').innerHTML=''; document.getElementById('nmPub').style.display='none';
-  const btn=document.getElementById('nmGen'); btn.disabled=true; btn.textContent='Generando…';
+  document.getElementById('nmTitle').textContent='Proposed robot'; document.getElementById('nmScreen').innerHTML=''; document.getElementById('nmPub').style.display='none';
+  const btn=document.getElementById('nmGen'); btn.disabled=true; btn.textContent='Generating…';
   if(reduce){
     user.textContent=c.prompt; user.classList.remove('typing');
     document.getElementById('nmBotRow').style.visibility='visible'; document.getElementById('nmBot').textContent=c.reply;
     document.getElementById('nmTitle').textContent=c.title; nmBuild(c);
     document.querySelectorAll('#nmScreen .rb-mcp-reveal').forEach(function(e){e.classList.add('in');});
-    document.getElementById('nmConn').textContent='Usa: '+c.conn; document.getElementById('nmPub').style.display='flex';
-    btn.disabled=false; btn.textContent='Generar de nuevo'; return;
+    document.getElementById('nmConn').textContent='Uses: '+c.conn; document.getElementById('nmPub').style.display='flex';
+    btn.disabled=false; btn.textContent='Generate again'; return;
   }
   for(let i=0;i<c.prompt.length;i++){ if(my!==nmToken)return; user.textContent+=c.prompt[i]; await nmSleep(19); }
   user.classList.remove('typing'); await nmSleep(330); if(my!==nmToken)return;
@@ -1538,8 +1538,8 @@ async function nmPlay(key){
   const blks=[].slice.call(document.querySelectorAll('#nmScreen .rb-mcp-reveal'));
   for(let i=0;i<blks.length;i++){ if(my!==nmToken)return; blks[i].classList.add('in'); await nmSleep(300); }
   if(my!==nmToken)return;
-  document.getElementById('nmConn').textContent='Usa: '+c.conn; document.getElementById('nmPub').style.display='flex';
-  btn.disabled=false; btn.textContent='Generar de nuevo';
+  document.getElementById('nmConn').textContent='Uses: '+c.conn; document.getElementById('nmPub').style.display='flex';
+  btn.disabled=false; btn.textContent='Generate again';
 }
 document.querySelectorAll('#nmChips .rb-mcp-chip').forEach(function(ch){ ch.addEventListener('click',function(){ nmPlay(ch.getAttribute('data-k')); }); });
 let nmSeen=false;
@@ -1553,7 +1553,7 @@ new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersectin
   "name": "RPA Studio",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
-  "description": "Robots de software que ejecutan procesos empresariales entre sistemas, sin programar y sin modificar la infraestructura existente.",
+  "description": "Software robots that run business processes across systems, with no coding and no changes to your existing infrastructure.",
   "url": "https://rocketbot.com/rpa-studio",
   "offers": {
     "@type": "Offer",

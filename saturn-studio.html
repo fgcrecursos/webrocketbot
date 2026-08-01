@@ -929,11 +929,11 @@ html{scroll-padding-top:92px;}
   <div class="rb-hero__particles"></div>
   <div class="container rb-hero__grid">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title"><span class="rb-hero__ln">Conecta y automatiza</span><br><span class="rb-hero__ln"><strong><span class="rb-hero__rot" id="heroRot">procesos</span></strong>sin código</span></h1>
+      <h1 class="rb-hero__title"><span class="rb-hero__ln">Conecta y automatiza</span><br><span class="rb-hero__ln"><strong><span class="rb-hero__rot" id="heroRot">tus procesos</span></strong></span></h1>
       <p class="rb-hero__sub">Saturn Studio conecta automatización, inteligencia artificial y agentes inteligentes para ejecutar procesos de principio a fin, integrados con tus sistemas y con control y trazabilidad en cada paso.</p>
       <div class="rb-hero__ctas">
         <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://studio.rocketbot.com/">Pruébalo ahora</a>
-        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Contactar a ventas</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#demo" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver el demo</a>
       </div>
     </div>
     <div class="rb-hero__visual" aria-hidden="true">
@@ -1288,7 +1288,7 @@ const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 // ---- hero rotating word ----
 (function(){
   const rot=document.getElementById('heroRot'); if(!rot||reduce) return;
-  var W={es:['procesos','flujos','agentes','robots'],en:['processes','flows','agents','robots'],pt:['processos','fluxos','agentes','robôs']};
+  var W={es:['tus procesos','tus sistemas','tu operación'],en:['processes','flows','agents','robots'],pt:['seus processos','seus sistemas','sua operação']};
   var WORDS=(window.RB_I18N?RB_I18N.pick(W):W.es), wi=0;
   rot.classList.add('notranslate'); rot.setAttribute('translate','no'); rot.textContent=WORDS[0];
   if(window.RB_I18N) RB_I18N.onLang(function(){ WORDS=RB_I18N.pick(W); rot.textContent=WORDS[wi%WORDS.length]; });
