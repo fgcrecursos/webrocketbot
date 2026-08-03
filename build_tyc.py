@@ -62,15 +62,30 @@ TYC_JS = """
 (function () {
   var tabs   = document.querySelectorAll('.rb-tyc-tab[data-tyc]');
   var panels = document.querySelectorAll('.rb-tyc-panel');
+  function activate(key, updateHash) {
+    var tab = document.querySelector('.rb-tyc-tab[data-tyc="' + key + '"]');
+    var panel = document.getElementById('tyc-' + key);
+    if (!tab || !panel) return false;
+    tabs.forEach(function (t)   { t.classList.remove('active'); });
+    panels.forEach(function (p) { p.classList.remove('active'); });
+    tab.classList.add('active');
+    panel.classList.add('active');
+    if (updateHash) history.replaceState(null, '', '#' + key);
+    return true;
+  }
   tabs.forEach(function (tab) {
     tab.addEventListener('click', function () {
-      tabs.forEach(function (t)   { t.classList.remove('active'); });
-      panels.forEach(function (p) { p.classList.remove('active'); });
-      tab.classList.add('active');
-      var panel = document.getElementById('tyc-' + tab.dataset.tyc);
-      if (panel) panel.classList.add('active');
+      activate(tab.dataset.tyc, true);
     });
   });
+  var initial = (location.hash || '').replace('#', '');
+  if (initial) {
+    var target = document.querySelector('.rb-tyc-tab[data-tyc="' + initial + '"]');
+    if (target) {
+      activate(initial, false);
+      setTimeout(function () { target.scrollIntoView({block: 'start'}); }, 0);
+    }
+  }
 })();
 </script>
 """
@@ -114,7 +129,7 @@ def table(headers, rows):
         trs += '<tr>' + ''.join('<td>%s</td>' % c for c in r) + '</tr>'
     return '<div class="rb-legal-table-wrap"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (th, trs)
 
-PLAN_COLS = ['', 'Entry 0', 'Entry 1', 'Standard', 'Enterprise', 'Corporate']
+PLAN_COLS = ['', 'Entry 1', 'Standard', 'Enterprise', 'Corporate']
 
 # ═══════════════════════════════════════════════════════════════════════
 # CONTENT — one function per product returning {'es':html,'en':html,'pt':html}
@@ -122,67 +137,67 @@ PLAN_COLS = ['', 'Entry 0', 'Entry 1', 'Standard', 'Enterprise', 'Corporate']
 
 def content_suite():
     plan_rows_es = [
-        ['Procesos administrados (Orquestador)','1','5','20','50','1.000'],
-        ['Procesos en ejecución paralela (Orquestador)','1','5','20','50','200'],
-        ['Ejecuciones en paralelo (Saturn Studio)','1','5','20','50','200'],
-        ['Licencias de desarrollo (RPA Studio)','1','2','3','5','Ilimitadas'],
-        ['Créditos de AI Studio incluidos / año (sin rollover)','5M','25M','50M','100M','250M'],
-        ['Creators de Nexus incluidos','2','5','5','15','Ilimitados'],
-        ['End Users de Nexus incluidos','5','10','25','50','Ilimitados'],
-        ['Usuarios con login de Xperience','5','10','25','50','Ilimitados'],
-        ['Robots registrables','Ilimitados','Ilimitados','Ilimitados','Ilimitados','Ilimitados'],
+        ['Procesos administrados (Orquestador)','5','20','50','1.000'],
+        ['Procesos en ejecución paralela (Orquestador)','5','20','50','200'],
+        ['Ejecuciones en paralelo (Saturn Studio)','5','20','50','200'],
+        ['Licencias de desarrollo (RPA Studio)','2','3','5','Ilimitadas'],
+        ['Créditos de AI Studio incluidos / año (sin rollover)','25M','50M','100M','250M'],
+        ['Creators de Nexus incluidos','5','5','15','Ilimitados'],
+        ['End Users de Nexus incluidos','10','25','50','Ilimitados'],
+        ['Usuarios con login de Xperience','10','25','50','Ilimitados'],
+        ['Robots registrables','Ilimitados','Ilimitados','Ilimitados','Ilimitados'],
     ]
     plan_rows_en = [
-        ['Managed processes (Orchestrator)','1','5','20','50','1,000'],
-        ['Parallel-running processes (Orchestrator)','1','5','20','50','200'],
-        ['Parallel executions (Saturn Studio)','1','5','20','50','200'],
-        ['Development licenses (RPA Studio)','1','2','3','5','Unlimited'],
-        ['AI Studio credits included / year (no rollover)','5M','25M','50M','100M','250M'],
-        ['Nexus Creators included','2','5','5','15','Unlimited'],
-        ['Nexus End Users included','5','10','25','50','Unlimited'],
-        ['Xperience login users','5','10','25','50','Unlimited'],
-        ['Registerable robots','Unlimited','Unlimited','Unlimited','Unlimited','Unlimited'],
+        ['Managed processes (Orchestrator)','5','20','50','1,000'],
+        ['Parallel-running processes (Orchestrator)','5','20','50','200'],
+        ['Parallel executions (Saturn Studio)','5','20','50','200'],
+        ['Development licenses (RPA Studio)','2','3','5','Unlimited'],
+        ['AI Studio credits included / year (no rollover)','25M','50M','100M','250M'],
+        ['Nexus Creators included','5','5','15','Unlimited'],
+        ['Nexus End Users included','10','25','50','Unlimited'],
+        ['Xperience login users','10','25','50','Unlimited'],
+        ['Registerable robots','Unlimited','Unlimited','Unlimited','Unlimited'],
     ]
     plan_rows_pt = [
-        ['Processos administrados (Orquestrador)','1','5','20','50','1.000'],
-        ['Processos em execução paralela (Orquestrador)','1','5','20','50','200'],
-        ['Execuções em paralelo (Saturn Studio)','1','5','20','50','200'],
-        ['Licenças de desenvolvimento (RPA Studio)','1','2','3','5','Ilimitadas'],
-        ['Créditos de AI Studio incluídos / ano (sem rollover)','5M','25M','50M','100M','250M'],
-        ['Creators de Nexus incluídos','2','5','5','15','Ilimitados'],
-        ['End Users de Nexus incluídos','5','10','25','50','Ilimitados'],
-        ['Usuários com login do Xperience','5','10','25','50','Ilimitados'],
-        ['Robôs registráveis','Ilimitados','Ilimitados','Ilimitados','Ilimitados','Ilimitados'],
+        ['Processos administrados (Orquestrador)','5','20','50','1.000'],
+        ['Processos em execução paralela (Orquestrador)','5','20','50','200'],
+        ['Execuções em paralelo (Saturn Studio)','5','20','50','200'],
+        ['Licenças de desenvolvimento (RPA Studio)','2','3','5','Ilimitadas'],
+        ['Créditos de AI Studio incluídos / ano (sem rollover)','25M','50M','100M','250M'],
+        ['Creators de Nexus incluídos','5','5','15','Ilimitados'],
+        ['End Users de Nexus incluídos','10','25','50','Ilimitados'],
+        ['Usuários com login do Xperience','10','25','50','Ilimitados'],
+        ['Robôs registráveis','Ilimitados','Ilimitados','Ilimitados','Ilimitados'],
     ]
     support_rows = [
-        ['Canal de soporte','Slack','Slack','Slack','Slack','Slack'],
-        ['Horario de soporte','8×5','8×5','8×5','8×5','8×5'],
-        ['Atención por evento 7×24','Costo adicional','Costo adicional','Costo adicional','Costo adicional','Costo adicional'],
-        ['Tiempo de primera respuesta (min)','60','60','45','30','15'],
-        ['Customer Success Manager','No','Compartido','Compartido','Compartido','Dedicado'],
-        ['Atención por meetup','No','No','Sí','Sí','Sí'],
+        ['Canal de soporte','Slack','Slack','Slack','Slack'],
+        ['Horario de soporte','8×5','8×5','8×5','8×5'],
+        ['Atención por evento 7×24','Costo adicional','Costo adicional','Costo adicional','Costo adicional'],
+        ['Tiempo de primera respuesta (min)','60','45','30','15'],
+        ['Customer Success Manager','Compartido','Compartido','Compartido','Dedicado'],
+        ['Atención por meetup','No','Sí','Sí','Sí'],
     ]
     support_rows_en = [
-        ['Support channel','Slack','Slack','Slack','Slack','Slack'],
-        ['Support hours','8×5','8×5','8×5','8×5','8×5'],
-        ['24/7 event coverage','Extra cost','Extra cost','Extra cost','Extra cost','Extra cost'],
-        ['First-response time (min)','60','60','45','30','15'],
-        ['Customer Success Manager','No','Shared','Shared','Shared','Dedicated'],
-        ['Meetup support','No','No','Yes','Yes','Yes'],
+        ['Support channel','Slack','Slack','Slack','Slack'],
+        ['Support hours','8×5','8×5','8×5','8×5'],
+        ['24/7 event coverage','Extra cost','Extra cost','Extra cost','Extra cost'],
+        ['First-response time (min)','60','45','30','15'],
+        ['Customer Success Manager','Shared','Shared','Shared','Dedicated'],
+        ['Meetup support','No','Yes','Yes','Yes'],
     ]
     support_rows_pt = [
-        ['Canal de suporte','Slack','Slack','Slack','Slack','Slack'],
-        ['Horário de suporte','8×5','8×5','8×5','8×5','8×5'],
-        ['Atendimento por evento 7×24','Custo adicional','Custo adicional','Custo adicional','Custo adicional','Custo adicional'],
-        ['Tempo de primeira resposta (min)','60','60','45','30','15'],
-        ['Customer Success Manager','Não','Compartilhado','Compartilhado','Compartilhado','Dedicado'],
-        ['Atendimento por meetup','Não','Não','Sim','Sim','Sim'],
+        ['Canal de suporte','Slack','Slack','Slack','Slack'],
+        ['Horário de suporte','8×5','8×5','8×5','8×5'],
+        ['Atendimento por evento 7×24','Custo adicional','Custo adicional','Custo adicional','Custo adicional'],
+        ['Tempo de primeira resposta (min)','60','45','30','15'],
+        ['Customer Success Manager','Compartilhado','Compartilhado','Compartilhado','Dedicado'],
+        ['Atendimento por meetup','Não','Sim','Sim','Sim'],
     ]
 
     es = """
 <h2>1. Objeto y alcance</h2>
 <p>Este documento establece los términos y condiciones técnicas de la Suite Rocketbot ("la Suite"), conjunto integrado compuesto por RPA Studio, Saturn Studio, el Orquestador (incluido su módulo Xperience), AI Studio y Nexus. Define el modelo comercial por planes, las capacidades y límites transversales a todos los productos, y el orden de precedencia respecto de los T&C de cada producto.</p>
-<p>Aplica a toda persona física o jurídica ("el Cliente") que adquiera y utilice la Suite en cualquiera de sus planes: Entry 0, Entry 1, Standard, Enterprise y Corporate. El alcance se limita a los aspectos técnicos; las condiciones comerciales, legales y de licenciamiento se rigen por el contrato de adquisición.</p>
+<p>Aplica a toda persona física o jurídica ("el Cliente") que adquiera y utilice la Suite en cualquiera de sus planes: Entry 1, Standard, Enterprise y Corporate. El alcance se limita a los aspectos técnicos; las condiciones comerciales, legales y de licenciamiento se rigen por el contrato de adquisición.</p>
 <p>Es un documento técnico y descriptivo, no un contrato ni un SLA vinculante por sí mismo. En caso de discrepancia, el orden de precedencia es: (1) el contrato comercial; (2) la tabla canónica de límites por plan; (3) este documento marco; (4) los T&C de cada producto.</p>
 <h2>2. Composición y modelo comercial</h2>
 <p>Todos los planes incluyen los cinco productos: <strong>RPA Studio</strong> (entorno de desarrollo de robots), <strong>Saturn Studio</strong> (constructor de workflows cloud con 500+ apps), <strong>Orquestador</strong> (administración, calendarización, despacho, monitoreo y autenticación central, incluye Xperience), <strong>AI Studio</strong> (procesamiento inteligente de documentos, correos, imágenes y audio) y <strong>Nexus</strong> (plataforma low-code de aplicaciones internas). Cada nivel de plan incluye al menos las prestaciones del nivel inmediatamente inferior.</p>
@@ -201,6 +216,7 @@ def content_suite():
 <p><strong>Del proveedor:</strong> mantener disponibles los productos de la Suite conforme al contrato; prestar soporte y corregir defectos reproducibles; notificar modificaciones materiales; mantener la certificación ISO 27001 vigente a nivel de suite.</p>
 <h2>7. Limitaciones y disposiciones finales</h2>
 <p>Los resultados de modelos de IA están sujetos a limitaciones inherentes (error, sesgos, variabilidad) y no deben interpretarse como consejo profesional; su uso en decisiones de alto impacto requiere validación del Cliente. La Suite no provee de forma nativa mecanismos de integridad evidencial forense (firma digital, sellado de tiempo); cuando existan requisitos regulatorios probatorios, el Cliente debe implementar controles compensatorios externos.</p>
+<p>El detalle de las responsabilidades compartidas entre el Cliente y el proveedor se describe en la <a href="https://docs.rocketbot.com/2024/05/16/matriz-de-responsabilidad/" target="_blank" rel="noopener">matriz de responsabilidad</a>.</p>
 <p>En caso de discrepancia entre este documento y el contrato comercial, prevalece el contrato. <strong>La versión en español de este documento es la versión oficial</strong>; las traducciones existentes tienen carácter referencial.</p>
 """.format(plan_table=table(PLAN_COLS, plan_rows_es), support_table=table(PLAN_COLS, support_rows))
 
@@ -208,7 +224,7 @@ def content_suite():
 <div class="rb-legal-note">{note}</div>
 <h2>1. Purpose and scope</h2>
 <p>This document sets out the technical terms and conditions of the Rocketbot Suite ("the Suite"), an integrated set made up of RPA Studio, Saturn Studio, the Orchestrator (including its Xperience module), AI Studio and Nexus. It defines the plan-based commercial model, cross-product capabilities and limits, and the order of precedence relative to each product's own technical terms.</p>
-<p>It applies to any individual or legal entity ("the Client") that acquires and uses the Suite under any of its plans: Entry 0, Entry 1, Standard, Enterprise and Corporate. Scope is limited to technical aspects; commercial, legal and licensing terms are governed by the acquisition contract.</p>
+<p>It applies to any individual or legal entity ("the Client") that acquires and uses the Suite under any of its plans: Entry 1, Standard, Enterprise and Corporate. Scope is limited to technical aspects; commercial, legal and licensing terms are governed by the acquisition contract.</p>
 <p>This is a technical, descriptive document, not itself a contract or a binding SLA. In case of discrepancy, the order of precedence is: (1) the commercial contract; (2) the canonical plan-limits table; (3) this framework document; (4) each product's own technical terms.</p>
 <h2>2. Composition and commercial model</h2>
 <p>Every plan includes all five products: <strong>RPA Studio</strong> (robot development environment), <strong>Saturn Studio</strong> (cloud workflow builder with 500+ apps), <strong>Orchestrator</strong> (central management, scheduling, dispatch, monitoring and authentication, including Xperience), <strong>AI Studio</strong> (intelligent processing of documents, emails, images and audio) and <strong>Nexus</strong> (low-code platform for internal applications). Each higher plan tier includes at least the features of the tier immediately below it.</p>
@@ -227,6 +243,7 @@ def content_suite():
 <p><strong>Provider:</strong> keep the Suite's products available per the contract; provide support and fix reproducible defects; notify material changes; maintain the Suite's ISO 27001 certification.</p>
 <h2>7. Limitations and final provisions</h2>
 <p>Outputs from AI models are subject to inherent limitations (error, bias, variability) and should not be treated as professional advice; using them in high-impact decisions requires Client validation. The Suite does not natively provide forensic evidentiary-integrity mechanisms (digital signature, timestamping); where regulatory evidentiary requirements exist, the Client must implement external compensating controls.</p>
+<p>The breakdown of shared responsibilities between the Client and the provider is described in the <a href="https://docs.rocketbot.com/2024/05/16/matriz-de-responsabilidad/" target="_blank" rel="noopener">responsibility matrix</a>.</p>
 <p>In case of discrepancy between this document and the commercial contract, the contract prevails. <strong>The Spanish-language version of this document is the official version</strong>; any existing translations are for reference only.</p>
 """.format(note=LANG_NOTE['en'], plan_table=table(PLAN_COLS, plan_rows_en), support_table=table(PLAN_COLS, support_rows_en))
 
@@ -234,7 +251,7 @@ def content_suite():
 <div class="rb-legal-note">{note}</div>
 <h2>1. Objeto e escopo</h2>
 <p>Este documento estabelece os termos e condições técnicas da Suite Rocketbot ("a Suite"), conjunto integrado composto por RPA Studio, Saturn Studio, o Orquestrador (incluindo seu módulo Xperience), AI Studio e Nexus. Define o modelo comercial por planos, as capacidades e limites transversais a todos os produtos, e a ordem de precedência em relação aos T&C de cada produto.</p>
-<p>Aplica-se a qualquer pessoa física ou jurídica ("o Cliente") que adquira e utilize a Suite em qualquer um de seus planos: Entry 0, Entry 1, Standard, Enterprise e Corporate. O escopo se limita aos aspectos técnicos; as condições comerciais, legais e de licenciamento são regidas pelo contrato de aquisição.</p>
+<p>Aplica-se a qualquer pessoa física ou jurídica ("o Cliente") que adquira e utilize a Suite em qualquer um de seus planos: Entry 1, Standard, Enterprise e Corporate. O escopo se limita aos aspectos técnicos; as condições comerciais, legais e de licenciamento são regidas pelo contrato de aquisição.</p>
 <p>É um documento técnico e descritivo, não um contrato nem um SLA vinculante por si só. Em caso de divergência, a ordem de precedência é: (1) o contrato comercial; (2) a tabela canônica de limites por plano; (3) este documento-quadro; (4) os T&C de cada produto.</p>
 <h2>2. Composição e modelo comercial</h2>
 <p>Todos os planos incluem os cinco produtos: <strong>RPA Studio</strong> (ambiente de desenvolvimento de robôs), <strong>Saturn Studio</strong> (construtor de workflows em nuvem com mais de 500 apps), <strong>Orquestrador</strong> (administração, agendamento, despacho, monitoramento e autenticação central, incluindo o Xperience), <strong>AI Studio</strong> (processamento inteligente de documentos, e-mails, imagens e áudio) e <strong>Nexus</strong> (plataforma low-code de aplicações internas). Cada nível de plano inclui pelo menos os recursos do nível imediatamente inferior.</p>
@@ -253,6 +270,7 @@ def content_suite():
 <p><strong>Do provedor:</strong> manter disponíveis os produtos da Suite conforme o contrato; prestar suporte e corrigir defeitos reproduzíveis; notificar modificações materiais; manter a certificação ISO 27001 vigente em nível de suite.</p>
 <h2>7. Limitações e disposições finais</h2>
 <p>Os resultados de modelos de IA estão sujeitos a limitações inerentes (erro, viés, variabilidade) e não devem ser interpretados como aconselhamento profissional; seu uso em decisões de alto impacto requer validação do Cliente. A Suite não fornece nativamente mecanismos de integridade evidencial forense (assinatura digital, carimbo de tempo); quando existirem requisitos regulatórios probatórios, o Cliente deve implementar controles compensatórios externos.</p>
+<p>O detalhamento das responsabilidades compartilhadas entre o Cliente e o provedor está descrito na <a href="https://docs.rocketbot.com/2024/05/16/matriz-de-responsabilidad/" target="_blank" rel="noopener">matriz de responsabilidade</a>.</p>
 <p>Em caso de divergência entre este documento e o contrato comercial, prevalece o contrato. <strong>A versão em espanhol deste documento é a versão oficial</strong>; as traduções existentes têm caráter referencial.</p>
 """.format(note=LANG_NOTE['pt'], plan_table=table(PLAN_COLS, plan_rows_pt), support_table=table(PLAN_COLS, support_rows_pt))
 
@@ -261,14 +279,14 @@ def content_suite():
 
 def content_rpa():
     dev_rows = {
-        'es': [['Licencias de desarrollo incluidas','1','2','3','5','Ilimitadas'],['Robots construibles','Ilimitados','Ilimitados','Ilimitados','Ilimitados','Ilimitados'],['Agentes registrables','Ilimitados','Ilimitados','Ilimitados','Ilimitados','Ilimitados']],
-        'en': [['Development licenses included','1','2','3','5','Unlimited'],['Buildable robots','Unlimited','Unlimited','Unlimited','Unlimited','Unlimited'],['Registerable agents','Unlimited','Unlimited','Unlimited','Unlimited','Unlimited']],
-        'pt': [['Licenças de desenvolvimento incluídas','1','2','3','5','Ilimitadas'],['Robôs construíveis','Ilimitados','Ilimitados','Ilimitados','Ilimitados','Ilimitados'],['Agentes registráveis','Ilimitados','Ilimitados','Ilimitados','Ilimitados','Ilimitados']],
+        'es': [['Licencias de desarrollo incluidas','2','3','5','Ilimitadas'],['Robots construibles','Ilimitados','Ilimitados','Ilimitados','Ilimitados'],['Agentes registrables','Ilimitados','Ilimitados','Ilimitados','Ilimitados']],
+        'en': [['Development licenses included','2','3','5','Unlimited'],['Buildable robots','Unlimited','Unlimited','Unlimited','Unlimited'],['Registerable agents','Unlimited','Unlimited','Unlimited','Unlimited']],
+        'pt': [['Licenças de desenvolvimento incluídas','2','3','5','Ilimitadas'],['Robôs construíveis','Ilimitados','Ilimitados','Ilimitados','Ilimitados'],['Agentes registráveis','Ilimitados','Ilimitados','Ilimitados','Ilimitados']],
     }
     sup_rows = {
-        'es': [['Canal de soporte','Slack','Slack','Slack','Slack','Slack'],['Horario','8×5','8×5','8×5','8×5','8×5'],['Evento 7×24','Costo adicional','Costo adicional','Costo adicional','Costo adicional','Costo adicional'],['1ra respuesta (min)','60','60','45','30','15'],['CSM','No','Compartido','Compartido','Compartido','Dedicado'],['Meetup','No','No','Sí','Sí','Sí']],
-        'en': [['Support channel','Slack','Slack','Slack','Slack','Slack'],['Hours','8×5','8×5','8×5','8×5','8×5'],['24/7 event coverage','Extra cost','Extra cost','Extra cost','Extra cost','Extra cost'],['1st response (min)','60','60','45','30','15'],['CSM','No','Shared','Shared','Shared','Dedicated'],['Meetup','No','No','Yes','Yes','Yes']],
-        'pt': [['Canal de suporte','Slack','Slack','Slack','Slack','Slack'],['Horário','8×5','8×5','8×5','8×5','8×5'],['Evento 7×24','Custo adicional','Custo adicional','Custo adicional','Custo adicional','Custo adicional'],['1ª resposta (min)','60','60','45','30','15'],['CSM','Não','Compartilhado','Compartilhado','Compartilhado','Dedicado'],['Meetup','Não','Não','Sim','Sim','Sim']],
+        'es': [['Canal de soporte','Slack','Slack','Slack','Slack'],['Horario','8×5','8×5','8×5','8×5'],['Evento 7×24','Costo adicional','Costo adicional','Costo adicional','Costo adicional'],['1ra respuesta (min)','60','45','30','15'],['CSM','Compartido','Compartido','Compartido','Dedicado'],['Meetup','No','Sí','Sí','Sí']],
+        'en': [['Support channel','Slack','Slack','Slack','Slack'],['Hours','8×5','8×5','8×5','8×5'],['24/7 event coverage','Extra cost','Extra cost','Extra cost','Extra cost'],['1st response (min)','60','45','30','15'],['CSM','Shared','Shared','Shared','Dedicated'],['Meetup','No','Yes','Yes','Yes']],
+        'pt': [['Canal de suporte','Slack','Slack','Slack','Slack'],['Horário','8×5','8×5','8×5','8×5'],['Evento 7×24','Custo adicional','Custo adicional','Custo adicional','Custo adicional'],['1ª resposta (min)','60','45','30','15'],['CSM','Compartilhado','Compartilhado','Compartilhado','Dedicado'],['Meetup','Não','Sim','Sim','Sim']],
     }
     es = """
 <h2>1. Objeto y alcance</h2>
@@ -351,9 +369,9 @@ def content_rpa():
 
 
 def content_saturn():
-    limits_es = [['Ejecuciones en paralelo','1','5','20','50','200'],['Tiempo máximo por flow','10 min','10 min','30 min','30 min','1 hora'],['Tamaño máximo de archivo','100 MB','100 MB','250 MB','250 MB','1 GB'],['Moons consecutivos por ejecución','10.000','10.000','30.000','30.000','Ilimitado'],['Apps y componentes estándar','500+','500+','500+','500+','500+'],['Funciones custom (JS)','No','No','Limitado','Limitado','Avanzado'],['Miembros del equipo','5','5','15','15','Ilimitados'],['Retención de logs de ejecución','7 días','7 días','30 días','30 días','365 días']]
-    limits_en = [['Parallel executions','1','5','20','50','200'],['Maximum time per flow','10 min','10 min','30 min','30 min','1 hour'],['Maximum file size','100 MB','100 MB','250 MB','250 MB','1 GB'],['Consecutive moons per execution','10,000','10,000','30,000','30,000','Unlimited'],['Standard apps and components','500+','500+','500+','500+','500+'],['Custom functions (JS)','No','No','Limited','Limited','Advanced'],['Team members','5','5','15','15','Unlimited'],['Execution log retention','7 days','7 days','30 days','30 days','365 days']]
-    limits_pt = [['Execuções em paralelo','1','5','20','50','200'],['Tempo máximo por flow','10 min','10 min','30 min','30 min','1 hora'],['Tamanho máximo de arquivo','100 MB','100 MB','250 MB','250 MB','1 GB'],['Moons consecutivos por execução','10.000','10.000','30.000','30.000','Ilimitado'],['Apps e componentes padrão','500+','500+','500+','500+','500+'],['Funções custom (JS)','Não','Não','Limitado','Limitado','Avançado'],['Membros da equipe','5','5','15','15','Ilimitados'],['Retenção de logs de execução','7 dias','7 dias','30 dias','30 dias','365 dias']]
+    limits_es = [['Ejecuciones en paralelo','5','20','50','200'],['Tiempo máximo por flow','10 min','30 min','30 min','1 hora'],['Tamaño máximo de archivo','100 MB','250 MB','250 MB','1 GB'],['Moons consecutivos por ejecución','10.000','30.000','30.000','Ilimitado'],['Apps y componentes estándar','500+','500+','500+','500+'],['Funciones custom (JS)','No','Limitado','Limitado','Avanzado'],['Miembros del equipo','5','15','15','Ilimitados'],['Retención de logs de ejecución','7 días','30 días','30 días','365 días']]
+    limits_en = [['Parallel executions','5','20','50','200'],['Maximum time per flow','10 min','30 min','30 min','1 hour'],['Maximum file size','100 MB','250 MB','250 MB','1 GB'],['Consecutive moons per execution','10,000','30,000','30,000','Unlimited'],['Standard apps and components','500+','500+','500+','500+'],['Custom functions (JS)','No','Limited','Limited','Advanced'],['Team members','5','15','15','Unlimited'],['Execution log retention','7 days','30 days','30 days','365 days']]
+    limits_pt = [['Execuções em paralelo','5','20','50','200'],['Tempo máximo por flow','10 min','30 min','30 min','1 hora'],['Tamanho máximo de arquivo','100 MB','250 MB','250 MB','1 GB'],['Moons consecutivos por execução','10.000','30.000','30.000','Ilimitado'],['Apps e componentes padrão','500+','500+','500+','500+'],['Funções custom (JS)','Não','Limitado','Limitado','Avançado'],['Membros da equipe','5','15','15','Ilimitados'],['Retenção de logs de execução','7 dias','30 dias','30 dias','365 dias']]
 
     es = """
 <h2>1. Objeto y alcance</h2>
@@ -368,7 +386,7 @@ def content_saturn():
 <p>El tiempo máximo por flow es un techo duro: una ejecución que lo alcance es terminada por la Plataforma. Al alcanzarse el límite de procesos simultáneos, las nuevas solicitudes se encolan hasta liberar capacidad.</p>
 <h2>5. Monitoreo, gobernanza y seguridad</h2>
 <p>Incluye historial de ejecuciones, logs detallados y dashboards de analytics, con retención FIFO según plan (para necesidades de retención mayor, el Cliente debe exportar logs periódicamente bajo su responsabilidad). Los audit logs de acciones administrativas están disponibles en todos los planes.</p>
-<p>2FA en todos los planes; SSO con Google/OAuth en todos los planes y Active Directory exclusivo de Corporate; almacén cifrado de secretos desde Standard (no existe en Entry 0/Entry 1, por lo que no se recomienda uso productivo con credenciales sensibles en esos planes); comunicación cifrada TLS y aislamiento lógico entre tenants en todos los planes.</p>
+<p>2FA en todos los planes; SSO con Google/OAuth en todos los planes y Active Directory exclusivo de Corporate; almacén cifrado de secretos desde Standard (no existe en Entry 1, por lo que no se recomienda uso productivo con credenciales sensibles en esos planes); comunicación cifrada TLS y aislamiento lógico entre tenants en todos los planes.</p>
 <h2>6. Soporte y responsabilidades</h2>
 <p>El soporte se define a nivel de Suite. <strong>Del Cliente:</strong> dimensionar el plan, diseñar flows dentro de los límites técnicos, gestionar credenciales y su rotación, evitar datos confidenciales en logs, exportar evidencia cuando la retención del plan sea insuficiente, configurar accesos y 2FA. <strong>Del proveedor:</strong> disponibilidad conforme al plan, parches sin afectar flows del Cliente, aviso de mantenimientos, soporte técnico, cifrado en tránsito y en reposo, aislamiento entre tenants.</p>
 <h2>7. Limitaciones</h2>
@@ -390,7 +408,7 @@ def content_saturn():
 <p>The maximum time per flow is a hard ceiling: an execution that reaches it is terminated by the Platform. Once the concurrent-process limit is reached, new requests queue until capacity frees up.</p>
 <h2>5. Monitoring, governance and security</h2>
 <p>Includes execution history, detailed logs and analytics dashboards, with FIFO retention by plan (for greater retention needs, the Client must periodically export logs at its own responsibility). Audit logs of administrative actions are available on every plan.</p>
-<p>2FA on every plan; Google/OAuth SSO on every plan and Active Directory exclusive to Corporate; encrypted secrets store from Standard up (not present on Entry 0/Entry 1, so production use with sensitive credentials is not recommended on those plans); encrypted TLS communication and logical tenant isolation on every plan.</p>
+<p>2FA on every plan; Google/OAuth SSO on every plan and Active Directory exclusive to Corporate; encrypted secrets store from Standard up (not present on Entry 1, so production use with sensitive credentials is not recommended on those plans); encrypted TLS communication and logical tenant isolation on every plan.</p>
 <h2>6. Support and responsibilities</h2>
 <p>Support is defined at the Suite level. <strong>Client:</strong> size the plan, design flows within technical limits, manage credentials and their rotation, avoid confidential data in logs, export evidence when the plan's retention is insufficient, configure access and 2FA. <strong>Provider:</strong> availability per the plan, patches that do not affect the Client's flows, maintenance notices, technical support, encryption in transit and at rest, tenant isolation.</p>
 <h2>7. Limitations</h2>
@@ -412,7 +430,7 @@ def content_saturn():
 <p>O tempo máximo por flow é um teto rígido: uma execução que o atinja é encerrada pela Plataforma. Ao atingir o limite de processos simultâneos, novas solicitações entram em fila até a liberação de capacidade.</p>
 <h2>5. Monitoramento, governança e segurança</h2>
 <p>Inclui histórico de execuções, logs detalhados e dashboards de analytics, com retenção FIFO conforme o plano (para necessidades de retenção maiores, o Cliente deve exportar logs periodicamente sob sua responsabilidade). Os audit logs de ações administrativas estão disponíveis em todos os planos.</p>
-<p>2FA em todos os planos; SSO com Google/OAuth em todos os planos e Active Directory exclusivo do Corporate; armazenamento cifrado de segredos a partir do Standard (inexistente no Entry 0/Entry 1, portanto o uso produtivo com credenciais sensíveis não é recomendado nesses planos); comunicação cifrada TLS e isolamento lógico entre tenants em todos os planos.</p>
+<p>2FA em todos os planos; SSO com Google/OAuth em todos os planos e Active Directory exclusivo do Corporate; armazenamento cifrado de segredos a partir do Standard (inexistente no Entry 1, portanto o uso produtivo com credenciais sensíveis não é recomendado nesses planos); comunicação cifrada TLS e isolamento lógico entre tenants em todos os planos.</p>
 <h2>6. Suporte e responsabilidades</h2>
 <p>O suporte é definido em nível de Suite. <strong>Do Cliente:</strong> dimensionar o plano, projetar flows dentro dos limites técnicos, gerenciar credenciais e sua rotação, evitar dados confidenciais em logs, exportar evidências quando a retenção do plano for insuficiente, configurar acessos e 2FA. <strong>Do provedor:</strong> disponibilidade conforme o plano, patches sem afetar os flows do Cliente, aviso de manutenções, suporte técnico, criptografia em trânsito e em repouso, isolamento entre tenants.</p>
 <h2>7. Limitações</h2>
@@ -424,21 +442,21 @@ def content_saturn():
 
 
 def content_orquestador():
-    limits_es = [['Procesos administrados','1','5','20','50','1.000'],['Procesos en ejecución paralela','1','5','20','50','200'],['Robots registrables','Ilimitados','Ilimitados','Ilimitados','Ilimitados','Ilimitados'],['Licencias de desarrollo (RPA Studio)','1','2','3','5','Ilimitadas'],['Usuarios de Control Room','2','5','5','15','Ilimitados'],['Usuarios con login (Xperience)','5','10','25','50','Ilimitados'],['Retención de logs de ejecución','7 días','7 días','30 días','30 días','365 días'],['Retención de audit logs','90 días','90 días','180 días','180 días','365 días']]
-    limits_en = [['Managed processes','1','5','20','50','1,000'],['Parallel-running processes','1','5','20','50','200'],['Registerable robots','Unlimited','Unlimited','Unlimited','Unlimited','Unlimited'],['Development licenses (RPA Studio)','1','2','3','5','Unlimited'],['Control Room users','2','5','5','15','Unlimited'],['Login users (Xperience)','5','10','25','50','Unlimited'],['Execution log retention','7 days','7 days','30 days','30 days','365 days'],['Audit log retention','90 days','90 days','180 days','180 days','365 days']]
-    limits_pt = [['Processos administrados','1','5','20','50','1.000'],['Processos em execução paralela','1','5','20','50','200'],['Robôs registráveis','Ilimitados','Ilimitados','Ilimitados','Ilimitados','Ilimitados'],['Licenças de desenvolvimento (RPA Studio)','1','2','3','5','Ilimitadas'],['Usuários de Control Room','2','5','5','15','Ilimitados'],['Usuários com login (Xperience)','5','10','25','50','Ilimitados'],['Retenção de logs de execução','7 dias','7 dias','30 dias','30 dias','365 dias'],['Retenção de audit logs','90 dias','90 dias','180 dias','180 dias','365 dias']]
+    limits_es = [['Procesos administrados','5','20','50','1.000'],['Procesos en ejecución paralela','5','20','50','200'],['Robots registrables','Ilimitados','Ilimitados','Ilimitados','Ilimitados'],['Licencias de desarrollo (RPA Studio)','2','3','5','Ilimitadas'],['Usuarios Process Control','5','5','15','Ilimitados'],['Usuarios con login (Xperience)','10','25','50','Ilimitados'],['Retención de logs de ejecución','7 días','30 días','30 días','365 días'],['Retención de audit logs','90 días','180 días','180 días','365 días']]
+    limits_en = [['Managed processes','5','20','50','1,000'],['Parallel-running processes','5','20','50','200'],['Registerable robots','Unlimited','Unlimited','Unlimited','Unlimited'],['Development licenses (RPA Studio)','2','3','5','Unlimited'],['Process Control users','5','5','15','Unlimited'],['Login users (Xperience)','10','25','50','Unlimited'],['Execution log retention','7 days','30 days','30 days','365 days'],['Audit log retention','90 days','180 days','180 days','365 days']]
+    limits_pt = [['Processos administrados','5','20','50','1.000'],['Processos em execução paralela','5','20','50','200'],['Robôs registráveis','Ilimitados','Ilimitados','Ilimitados','Ilimitados'],['Licenças de desenvolvimento (RPA Studio)','2','3','5','Ilimitadas'],['Usuários Process Control','5','5','15','Ilimitados'],['Usuários com login (Xperience)','10','25','50','Ilimitados'],['Retenção de logs de execução','7 dias','30 dias','30 dias','365 dias'],['Retenção de audit logs','90 dias','180 dias','180 dias','365 dias']]
 
     es = """
 <h2>1. Objeto y alcance</h2>
 <p>Este documento describe Rocketbot Orquestador ("el Orquestador"), incluyendo su módulo Xperience de formularios y portal self-service: capacidades funcionales, componentes, límites técnicos y condiciones por plan. No se comercializa como producto independiente; se contrata dentro de uno de los cinco planes de la Suite.</p>
-<h2>2. Arquitectura y Control Room</h2>
-<p>Opera bajo un modelo cliente-servidor: el servidor centraliza administración, scheduling, cola y persistencia, mientras los agentes instalados en hosts del Cliente ejecutan los robots asignados y reportan resultados. <strong>Control Room</strong> es la interfaz unificada de administración (single-instance): gestión de robots, agentes, calendarios, cola, usuarios, roles, logs, reportes y formularios de Xperience, sujeta al modelo RBAC de permisos.</p>
+<h2>2. Arquitectura y Process Control</h2>
+<p>Opera bajo un modelo cliente-servidor: el servidor centraliza administración, scheduling, cola y persistencia, mientras los agentes instalados en hosts del Cliente ejecutan los robots asignados y reportan resultados. <strong>Process Control</strong> es la interfaz unificada de administración (single-instance): gestión de robots, agentes, calendarios, cola, usuarios, roles, logs, reportes y formularios de Xperience, sujeta al modelo RBAC de permisos.</p>
 <h2>3. Gestión de robots, agentes y calendarización</h2>
 <p>Publicación, versionado y etiquetado de robots en el repositorio central; registro, monitoreo y configuración de agentes (que operan sin límite cuantitativo — la capacidad efectiva la gobierna la cuota de procesos del plan). La calendarización admite expresiones cron, disparo por webhook, por finalización de otro robot o por envío de un formulario de Xperience.</p>
 <h2>4. Cola, motor de ejecución y logs</h2>
 <p>La cola encola, prioriza y asigna ejecuciones al agente disponible según reglas de tags, capacidad y prioridad (diseñadas por el Cliente). El Orquestador almacena de forma nativa cuatro tipos de log (Robot, Proceso, Usuario, Instancia) con registro obligatorio del dato de entrada y del componente donde ocurrió cada error, consultables desde Control Room o vía API. La retención depende del plan; para necesidades regulatorias mayores, el Cliente debe exportar logs periódicamente. <strong>El Orquestador no aplica de forma nativa integridad evidencial forense</strong> (firma digital, sellado de tiempo TSA) — cuando se requieran garantías probatorias formales, deben implementarse controles compensatorios externos.</p>
 <h2>5. RBAC, repositorio y Xperience</h2>
-<p>El control de accesos basado en roles opera a nivel de la instancia única de Control Room, con SSO Google/OAuth en todos los planes y Active Directory exclusivo de Corporate. El repositorio de robots es un almacén de artefactos (no reemplaza un sistema Git de control de versiones). <strong>Xperience</strong>, incluido en todos los planes, permite formularios públicos (sin login) o privados (con login y permisos por rol) cuyo envío dispara automáticamente una ejecución; no tiene límite cuantitativo propio — el límite real lo gobierna la cuota de procesos del plan, y el Cliente debe diseñar los formularios públicos evitando exposición de datos sensibles o disparo abusivo.</p>
+<p>El control de accesos basado en roles opera a nivel de la instancia única de Process Control, con SSO Google/OAuth en todos los planes y Active Directory exclusivo de Corporate. El repositorio de robots es un almacén de artefactos (no reemplaza un sistema Git de control de versiones). <strong>Xperience</strong>, incluido en todos los planes, permite formularios públicos (sin login) o privados (con login y permisos por rol) cuyo envío dispara automáticamente una ejecución; no tiene límite cuantitativo propio — el límite real lo gobierna la cuota de procesos del plan, y el Cliente debe diseñar los formularios públicos evitando exposición de datos sensibles o disparo abusivo.</p>
 <h2>6. Límites por plan</h2>
 {limits_table}
 <h2>7. Seguridad, integraciones y soporte</h2>
@@ -453,14 +471,14 @@ def content_orquestador():
 <div class="rb-legal-note">{note}</div>
 <h2>1. Purpose and scope</h2>
 <p>This document describes Rocketbot Orchestrator ("the Orchestrator"), including its Xperience forms and self-service portal module: functional capabilities, components, technical limits and per-plan conditions. It is not sold as a standalone product; it is contracted within one of the Suite's five plans.</p>
-<h2>2. Architecture and Control Room</h2>
-<p>Operates on a client-server model: the server centralizes administration, scheduling, queueing and persistence, while agents installed on the Client's hosts run assigned robots and report results back. <strong>Control Room</strong> is the unified (single-instance) management interface: robots, agents, calendars, queue, users, roles, logs, reports and Xperience forms, all subject to the RBAC permission model.</p>
+<h2>2. Architecture and Process Control</h2>
+<p>Operates on a client-server model: the server centralizes administration, scheduling, queueing and persistence, while agents installed on the Client's hosts run assigned robots and report results back. <strong>Process Control</strong> is the unified (single-instance) management interface: robots, agents, calendars, queue, users, roles, logs, reports and Xperience forms, all subject to the RBAC permission model.</p>
 <h2>3. Robot, agent and scheduling management</h2>
 <p>Publishing, versioning and tagging of robots in the central repository; registration, monitoring and configuration of agents (which register with no quantitative limit — effective capacity is governed by the plan's process quota). Scheduling supports cron expressions, webhook triggers, chaining on another robot's completion, or triggering on submission of an Xperience form.</p>
 <h2>4. Queue, execution engine and logs</h2>
 <p>The queue enqueues, prioritizes and assigns executions to the best-available agent according to tag, capacity and priority rules (designed by the Client). The Orchestrator natively stores four log types (Robot, Process, User, Instance) with mandatory recording of input data and of the component where each error occurred, queryable from Control Room or via API. Retention depends on the plan; for greater regulatory needs, the Client must periodically export logs. <strong>The Orchestrator does not natively apply forensic evidentiary integrity</strong> (digital signature, TSA timestamping) — where formal evidentiary guarantees are required, external compensating controls must be implemented.</p>
 <h2>5. RBAC, repository and Xperience</h2>
-<p>Role-based access control operates at the level of Control Room's single instance, with Google/OAuth SSO on every plan and Active Directory exclusive to Corporate. The robot repository is an artifact store (it does not replace a Git-style version-control system). <strong>Xperience</strong>, included on every plan, allows public forms (no login) or private forms (login and role-based permissions) whose submission automatically triggers an execution; it has no quantitative limit of its own — the real limit is governed by the plan's process quota, and the Client must design public forms to avoid exposing sensitive data or abusive triggering.</p>
+<p>Role-based access control operates at the level of Process Control's single instance, with Google/OAuth SSO on every plan and Active Directory exclusive to Corporate. The robot repository is an artifact store (it does not replace a Git-style version-control system). <strong>Xperience</strong>, included on every plan, allows public forms (no login) or private forms (login and role-based permissions) whose submission automatically triggers an execution; it has no quantitative limit of its own — the real limit is governed by the plan's process quota, and the Client must design public forms to avoid exposing sensitive data or abusive triggering.</p>
 <h2>6. Plan limits</h2>
 {limits_table}
 <h2>7. Security, integrations and support</h2>
@@ -475,14 +493,14 @@ def content_orquestador():
 <div class="rb-legal-note">{note}</div>
 <h2>1. Objeto e escopo</h2>
 <p>Este documento descreve o Rocketbot Orquestrador ("o Orquestrador"), incluindo seu módulo Xperience de formulários e portal self-service: capacidades funcionais, componentes, limites técnicos e condições por plano. Não é comercializado como produto independente; é contratado dentro de um dos cinco planos da Suite.</p>
-<h2>2. Arquitetura e Control Room</h2>
-<p>Opera sob um modelo cliente-servidor: o servidor centraliza administração, agendamento, fila e persistência, enquanto os agentes instalados nos hosts do Cliente executam os robôs atribuídos e reportam os resultados. O <strong>Control Room</strong> é a interface unificada de administração (instância única): gestão de robôs, agentes, calendários, fila, usuários, papéis, logs, relatórios e formulários do Xperience, sujeita ao modelo RBAC de permissões.</p>
+<h2>2. Arquitetura e Process Control</h2>
+<p>Opera sob um modelo cliente-servidor: o servidor centraliza administração, agendamento, fila e persistência, enquanto os agentes instalados nos hosts do Cliente executam os robôs atribuídos e reportam os resultados. O <strong>Process Control</strong> é a interface unificada de administração (instância única): gestão de robôs, agentes, calendários, fila, usuários, papéis, logs, relatórios e formulários do Xperience, sujeita ao modelo RBAC de permissões.</p>
 <h2>3. Gestão de robôs, agentes e agendamento</h2>
 <p>Publicação, versionamento e marcação de robôs no repositório central; registro, monitoramento e configuração de agentes (que se registram sem limite quantitativo — a capacidade efetiva é governada pela cota de processos do plano). O agendamento admite expressões cron, disparo por webhook, por conclusão de outro robô ou pelo envio de um formulário do Xperience.</p>
 <h2>4. Fila, motor de execução e logs</h2>
 <p>A fila enfileira, prioriza e atribui execuções ao agente disponível segundo regras de tags, capacidade e prioridade (definidas pelo Cliente). O Orquestrador armazena nativamente quatro tipos de log (Robô, Processo, Usuário, Instância) com registro obrigatório do dado de entrada e do componente onde ocorreu cada erro, consultáveis pelo Control Room ou via API. A retenção depende do plano; para necessidades regulatórias maiores, o Cliente deve exportar logs periodicamente. <strong>O Orquestrador não aplica nativamente integridade evidencial forense</strong> (assinatura digital, carimbo de tempo TSA) — quando forem exigidas garantias probatórias formais, devem ser implementados controles compensatórios externos.</p>
 <h2>5. RBAC, repositório e Xperience</h2>
-<p>O controle de acesso baseado em papéis opera no nível da instância única do Control Room, com SSO Google/OAuth em todos os planos e Active Directory exclusivo do Corporate. O repositório de robôs é um armazém de artefatos (não substitui um sistema Git de controle de versões). O <strong>Xperience</strong>, incluído em todos os planos, permite formulários públicos (sem login) ou privados (com login e permissões por papel) cujo envio dispara automaticamente uma execução; não tem limite quantitativo próprio — o limite real é governado pela cota de processos do plano, e o Cliente deve projetar os formulários públicos evitando exposição de dados sensíveis ou disparo abusivo.</p>
+<p>O controle de acesso baseado em papéis opera no nível da instância única do Process Control, com SSO Google/OAuth em todos os planos e Active Directory exclusivo do Corporate. O repositório de robôs é um armazém de artefatos (não substitui um sistema Git de controle de versões). O <strong>Xperience</strong>, incluído em todos os planos, permite formulários públicos (sem login) ou privados (com login e permissões por papel) cujo envio dispara automaticamente uma execução; não tem limite quantitativo próprio — o limite real é governado pela cota de processos do plano, e o Cliente deve projetar os formulários públicos evitando exposição de dados sensíveis ou disparo abusivo.</p>
 <h2>6. Limites por plano</h2>
 {limits_table}
 <h2>7. Segurança, integrações e suporte</h2>
@@ -497,9 +515,9 @@ def content_orquestador():
 
 
 def content_ai():
-    credit_rows_es = [['Créditos incluidos / año (sin rollover)','5.000.000','25.000.000','50.000.000','100.000.000','250.000.000'],['Modelo interno de AI Studio','Sí','Sí','Sí','Sí','Sí'],['Bring Your Own Model','No','No','Sí','Sí','Sí']]
-    credit_rows_en = [['Credits included / year (no rollover)','5,000,000','25,000,000','50,000,000','100,000,000','250,000,000'],['AI Studio internal model','Yes','Yes','Yes','Yes','Yes'],['Bring Your Own Model','No','No','Yes','Yes','Yes']]
-    credit_rows_pt = [['Créditos incluídos / ano (sem rollover)','5.000.000','25.000.000','50.000.000','100.000.000','250.000.000'],['Modelo interno do AI Studio','Sim','Sim','Sim','Sim','Sim'],['Bring Your Own Model','Não','Não','Sim','Sim','Sim']]
+    credit_rows_es = [['Créditos incluidos / año (sin rollover)','25.000.000','50.000.000','100.000.000','250.000.000'],['Modelo interno de AI Studio','Sí','Sí','Sí','Sí'],['Bring Your Own Model','No','Sí','Sí','Sí']]
+    credit_rows_en = [['Credits included / year (no rollover)','25,000,000','50,000,000','100,000,000','250,000,000'],['AI Studio internal model','Yes','Yes','Yes','Yes'],['Bring Your Own Model','No','Yes','Yes','Yes']]
+    credit_rows_pt = [['Créditos incluídos / ano (sem rollover)','25.000.000','50.000.000','100.000.000','250.000.000'],['Modelo interno do AI Studio','Sim','Sim','Sim','Sim'],['Bring Your Own Model','Não','Sim','Sim','Sim']]
     fmt_rows_es = [['Audio','MP3, WAV','25 MB por archivo'],['Imágenes','PNG, JPEG, JPG, WEBP, GIF (no animado)','10 MB por archivo'],['Documentos','PDF, TXT','25 MB por archivo'],['Correos','Gmail, Outlook, IMAP, POP3','25 MB por mensaje, incl. adjuntos']]
     fmt_rows_en = [['Audio','MP3, WAV','25 MB per file'],['Images','PNG, JPEG, JPG, WEBP, GIF (non-animated)','10 MB per file'],['Documents','PDF, TXT','25 MB per file'],['Emails','Gmail, Outlook, IMAP, POP3','25 MB per message, incl. attachments']]
     fmt_rows_pt = [['Áudio','MP3, WAV','25 MB por arquivo'],['Imagens','PNG, JPEG, JPG, WEBP, GIF (não animado)','10 MB por arquivo'],['Documentos','PDF, TXT','25 MB por arquivo'],['E-mails','Gmail, Outlook, IMAP, POP3','25 MB por mensagem, incl. anexos']]
@@ -576,9 +594,9 @@ def content_ai():
 
 
 def content_nexus():
-    limits_es = [['Creators (Makers) incluidos','2','5','5','15','Ilimitados'],['End Users incluidos','5','10','25','50','Ilimitados'],['Aplicaciones','5','5','Ilimitadas','Ilimitadas','Ilimitadas'],['Filas máximas en base interna','50.000','50.000','500.000','500.000','Ilimitado'],['Tiempo máx. por Query','30 s','30 s','60 s','60 s','Configurable'],['Tiempo máx. por JS Function','10 s','10 s','30 s','30 s','Configurable'],['On-Premises Gateway','No','No','Sí','Sí','Sí'],['Retención de logs de ejecución','7 días','7 días','30 días','30 días','365 días']]
-    limits_en = [['Creators (Makers) included','2','5','5','15','Unlimited'],['End Users included','5','10','25','50','Unlimited'],['Applications','5','5','Unlimited','Unlimited','Unlimited'],['Max. rows in internal DB','50,000','50,000','500,000','500,000','Unlimited'],['Max. time per Query','30 s','30 s','60 s','60 s','Configurable'],['Max. time per JS Function','10 s','10 s','30 s','30 s','Configurable'],['On-Premises Gateway','No','No','Yes','Yes','Yes'],['Execution log retention','7 days','7 days','30 days','30 days','365 days']]
-    limits_pt = [['Creators (Makers) incluídos','2','5','5','15','Ilimitados'],['End Users incluídos','5','10','25','50','Ilimitados'],['Aplicações','5','5','Ilimitadas','Ilimitadas','Ilimitadas'],['Linhas máximas na base interna','50.000','50.000','500.000','500.000','Ilimitado'],['Tempo máx. por Query','30 s','30 s','60 s','60 s','Configurável'],['Tempo máx. por JS Function','10 s','10 s','30 s','30 s','Configurável'],['On-Premises Gateway','Não','Não','Sim','Sim','Sim'],['Retenção de logs de execução','7 dias','7 dias','30 dias','30 dias','365 dias']]
+    limits_es = [['Creators (Makers) incluidos','5','5','15','Ilimitados'],['End Users incluidos','10','25','50','Ilimitados'],['Aplicaciones','5','Ilimitadas','Ilimitadas','Ilimitadas'],['Filas máximas en base interna','50.000','500.000','500.000','Ilimitado'],['Tiempo máx. por Query','30 s','60 s','60 s','Configurable'],['Tiempo máx. por JS Function','10 s','30 s','30 s','Configurable'],['On-Premises Gateway','No','Sí','Sí','Sí'],['Retención de logs de ejecución','7 días','30 días','30 días','365 días']]
+    limits_en = [['Creators (Makers) included','5','5','15','Unlimited'],['End Users included','10','25','50','Unlimited'],['Applications','5','Unlimited','Unlimited','Unlimited'],['Max. rows in internal DB','50,000','500,000','500,000','Unlimited'],['Max. time per Query','30 s','60 s','60 s','Configurable'],['Max. time per JS Function','10 s','30 s','30 s','Configurable'],['On-Premises Gateway','No','Yes','Yes','Yes'],['Execution log retention','7 days','30 days','30 days','365 days']]
+    limits_pt = [['Creators (Makers) incluídos','5','5','15','Ilimitados'],['End Users incluídos','10','25','50','Ilimitados'],['Aplicações','5','Ilimitadas','Ilimitadas','Ilimitadas'],['Linhas máximas na base interna','50.000','500.000','500.000','Ilimitado'],['Tempo máx. por Query','30 s','60 s','60 s','Configurável'],['Tempo máx. por JS Function','10 s','30 s','30 s','Configurável'],['On-Premises Gateway','Não','Sim','Sim','Sim'],['Retenção de logs de execução','7 dias','30 dias','30 dias','365 dias']]
     action_rows_es = [['Query INSERT/UPDATE/DELETE','1 Action por ejecución'],['Query SELECT/COUNT','No consume'],['JS Function','1 Action por ejecución'],['API Call','1 Action por ejecución'],['MCP tool','1 Action por invocación'],['Acciones de UI (Show, Hide, Navigate, SetValue)','No consume']]
     action_rows_en = [['INSERT/UPDATE/DELETE Query','1 Action per execution'],['SELECT/COUNT Query','No consumption'],['JS Function','1 Action per execution'],['API Call','1 Action per execution'],['MCP tool','1 Action per invocation'],['UI actions (Show, Hide, Navigate, SetValue)','No consumption']]
     action_rows_pt = [['Query INSERT/UPDATE/DELETE','1 Action por execução'],['Query SELECT/COUNT','Não consome'],['JS Function','1 Action por execução'],['API Call','1 Action por execução'],['MCP tool','1 Action por invocação'],['Ações de UI (Show, Hide, Navigate, SetValue)','Não consome']]
@@ -604,7 +622,7 @@ def content_nexus():
 <h2>8. Seguridad y responsabilidades</h2>
 <p>Autenticación JWT en cookie HttpOnly (Secure, SameSite=Strict), SSO OAuth/OIDC configurable en Business y Enterprise (obligatorio en Enterprise), roles OWNER/ADMIN/MAKER/VIEWER, Content Security Policy estricta y rate limiting en todos los endpoints. <strong>Del Cliente:</strong> dimensionar el plan según Actions, apps y usuarios esperados; gestionar usuarios, roles, API Keys y MCP Keys con mínimo privilegio; custodiar y rotar credenciales de Data Sources; validar las salidas del MCP Server antes de publicarlas. <strong>Del proveedor:</strong> operar la infraestructura SaaS; aplicar los controles de seguridad; notificar cambios materiales; brindar soporte conforme al plan.</p>
 <h2>9. Limitaciones</h2>
-<p>Nexus no reemplaza sistemas ERP, CRM, HRIS ni sistemas transaccionales de misión crítica de alto volumen; no ofrece de forma nativa reporting avanzado tipo BI ni separación fuerte de ambientes DEV/QA/PROD dentro de un mismo tenant. El código de JS Functions y el HTML de componentes Div son responsabilidad del Cliente. Las salidas generadas por el MCP Server dependen del cliente de IA utilizado: Nexus no garantiza su corrección semántica.</p>
+<p>Nexus <strong>no reemplaza sistemas ERP, CRM, HRIS</strong> ni sistemas transaccionales de misión crítica de alto volumen; <strong>no ofrece de forma nativa reporting avanzado tipo BI</strong> ni separación fuerte de ambientes DEV/QA/PROD dentro de un mismo tenant. El código de JS Functions y el HTML de componentes Div son responsabilidad del Cliente. Las salidas generadas por el MCP Server dependen del cliente de IA utilizado: Nexus no garantiza su corrección semántica.</p>
 <p><strong>La versión en español de este documento es la versión oficial</strong>; las traducciones existentes tienen carácter referencial.</p>
 """.format(limits_table=table(PLAN_COLS, limits_es), action_table=table(['Operación','Consumo'], action_rows_es))
 
@@ -630,7 +648,7 @@ def content_nexus():
 <h2>8. Security and responsibilities</h2>
 <p>JWT authentication in an HttpOnly cookie (Secure, SameSite=Strict), configurable OAuth/OIDC SSO on Business and Enterprise (enforced on Enterprise), OWNER/ADMIN/MAKER/VIEWER roles, strict Content Security Policy and rate limiting on every endpoint. <strong>Client:</strong> size the plan to expected Actions, apps and users; manage users, roles, API Keys and MCP Keys under least privilege; safeguard and rotate Data Source credentials; validate MCP Server outputs before publishing them. <strong>Provider:</strong> operate the SaaS infrastructure; apply the security controls; notify material changes; provide support per the plan.</p>
 <h2>9. Limitations</h2>
-<p>Nexus does not replace ERP, CRM, HRIS or high-volume mission-critical transactional systems; it does not natively offer advanced BI-style reporting or strong separation of DEV/QA/PROD environments within a single tenant. JS Function code and Div component HTML are the Client's responsibility. Outputs generated by the MCP Server depend on the AI client used: Nexus does not guarantee their semantic correctness.</p>
+<p>Nexus <strong>does not replace ERP, CRM, HRIS</strong> or high-volume mission-critical transactional systems; <strong>it does not natively offer advanced BI-style reporting</strong> or strong separation of DEV/QA/PROD environments within a single tenant. JS Function code and Div component HTML are the Client's responsibility. Outputs generated by the MCP Server depend on the AI client used: Nexus does not guarantee their semantic correctness.</p>
 <p><strong>The Spanish-language version of this document is the official version</strong>; any existing translations are for reference only.</p>
 """.format(note=LANG_NOTE['en'], limits_table=table(PLAN_COLS, limits_en), action_table=table(['Operation','Consumption'], action_rows_en))
 
@@ -656,7 +674,7 @@ def content_nexus():
 <h2>8. Segurança e responsabilidades</h2>
 <p>Autenticação JWT em cookie HttpOnly (Secure, SameSite=Strict), SSO OAuth/OIDC configurável no Business e Enterprise (obrigatório no Enterprise), papéis OWNER/ADMIN/MAKER/VIEWER, Content Security Policy estrita e rate limiting em todos os endpoints. <strong>Do Cliente:</strong> dimensionar o plano conforme Actions, apps e usuários esperados; gerenciar usuários, papéis, API Keys e MCP Keys com privilégio mínimo; custodiar e rotacionar credenciais de Data Sources; validar as saídas do MCP Server antes de publicá-las. <strong>Do provedor:</strong> operar a infraestrutura SaaS; aplicar os controles de segurança; notificar mudanças materiais; prestar suporte conforme o plano.</p>
 <h2>9. Limitações</h2>
-<p>O Nexus não substitui sistemas ERP, CRM, HRIS nem sistemas transacionais de missão crítica de alto volume; não oferece nativamente relatórios avançados tipo BI nem separação forte de ambientes DEV/QA/PROD dentro de um mesmo tenant. O código das JS Functions e o HTML dos componentes Div são de responsabilidade do Cliente. As saídas geradas pelo MCP Server dependem do cliente de IA utilizado: o Nexus não garante sua correção semântica.</p>
+<p>O Nexus <strong>não substitui sistemas ERP, CRM, HRIS</strong> nem sistemas transacionais de missão crítica de alto volume; <strong>não oferece nativamente relatórios avançados tipo BI</strong> nem separação forte de ambientes DEV/QA/PROD dentro de um mesmo tenant. O código das JS Functions e o HTML dos componentes Div são de responsabilidade do Cliente. As saídas geradas pelo MCP Server dependem do cliente de IA utilizado: o Nexus não garante sua correção semântica.</p>
 <p><strong>A versão em espanhol deste documento é a versão oficial</strong>; as traduções existentes têm caráter referencial.</p>
 """.format(note=LANG_NOTE['pt'], limits_table=table(PLAN_COLS, limits_pt), action_table=table(['Operação','Consumo'], action_rows_pt))
 

@@ -575,6 +575,13 @@ html{scroll-padding-top:92px;}
   .rb-btn--lg{padding:14px 20px;font-size:14px;}
   .rb-roi-cta .rb-btn{max-width:100%;white-space:normal;text-align:center;}
 }
+
+.rb-iso-badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;letter-spacing:.02em;color:#999;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:5px 12px;white-space:nowrap;}
+.rb-iso-badge svg{width:14px;height:14px;color:var(--rb-green,#1D9E75);flex:0 0 auto;}
+.rb-iso-badge:hover{border-color:rgba(255,255,255,.3);color:#ccc;}
+@media(max-width:640px){.rb-footer__bottom{flex-wrap:wrap;gap:14px;}}
+
+.rb-footer__bottomleft{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
 </style>
 
 <style id="rb-ddnav-css">
@@ -1102,7 +1109,7 @@ html{scroll-padding-top:92px;}
           <tr><td>Formulários privados<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">i<span class="rb-info__pop">Formulários com login e permissões por papel.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>Usuários com login<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">i<span class="rb-info__pop">Pessoas que acessam formulários privados com usuário e permissões por papel.</span></span></td><td>10</td><td class="is-std">25</td><td>50</td><td class="best">Ilimitados</td></tr>
           <tr class="rb-ptbl__grp"><td>Orquestrador — Gestão e observabilidade</td><td></td><td class="is-std"></td><td></td><td></td></tr>
-          <tr><td>Usuários do Control Room<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">i<span class="rb-info__pop">Pessoas que operam e supervisionam as automações pelo painel do Orquestrador.</span></span></td><td>5</td><td class="is-std">5</td><td>15</td><td class="best">Ilimitados</td></tr>
+          <tr><td>Usuários Process Control<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">i<span class="rb-info__pop">Pessoas que operam e supervisionam as automações pelo painel do Orquestrador.</span></span></td><td>5</td><td class="is-std">5</td><td>15</td><td class="best">Ilimitados</td></tr>
           <tr><td>Retenção de logs de execução<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">i<span class="rb-info__pop">Por quanto tempo os registros de execução do Orquestrador são guardados.</span></span></td><td>7 dias</td><td class="is-std">30 dias</td><td>30 dias</td><td class="best">365 dias</td></tr>
           <tr class="rb-ptbl__grp"><td>Orquestrador — Governança e segurança</td><td></td><td class="is-std"></td><td></td><td></td></tr>
           <tr><td>Autenticação 2FA<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalhe">i<span class="rb-info__pop">Segundo fator de autenticação. O Orquestrador é o ponto único de identidade da suíte.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
@@ -1234,7 +1241,7 @@ html{scroll-padding-top:92px;}
       <div class="rb-footer__col"><h6>Suporte e serviços</h6><ul><li><a href="#">Certificação</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Fórum</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">
-      <span>© Rocketbot SpA | All rights reserved 2018 – 2025</span>
+      <div class="rb-footer__bottomleft"><span>© Rocketbot SpA | All rights reserved 2018 – 2025</span><span class="rb-iso-badge" title="Certificação ISO/IEC 27001 — Gestão de segurança da informação"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>ISO/IEC 27001</span></div>
       <div class="rb-footer__legal"><a href="politicas-de-privacidad.html">Políticas de privacidade</a><a href="politicas-de-seguridad.html">Políticas de segurança</a></div>
     </div>
   </div>
