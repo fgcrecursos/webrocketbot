@@ -653,7 +653,10 @@ html{scroll-padding-top:92px;}
 .rb-ptbl th:first-child,.rb-ptbl td:first-child{text-align:left;}
 .rb-ptbl tbody td:first-child{font-weight:600;font-size:13px;background:var(--ptbl-bg);}
 .rb-ptbl tbody tr:nth-child(even) td{background:var(--ptbl-stripe);}
-.rb-ptbl thead th.is-std{background:rgba(188,0,23,.07);color:var(--rb-red);border:2px solid var(--rb-red);border-radius:12px 12px 0 0;}
+/* el tinte va como gradiente sobre --ptbl-bg y no como rgba suelto: este th es
+   sticky, y un fondo semitransparente deja ver las filas que scrollean por
+   debajo (el nombre del plan se leia encimado con los valores de la tabla) */
+.rb-ptbl thead th.is-std{background:linear-gradient(rgba(188,0,23,.07),rgba(188,0,23,.07)),var(--ptbl-bg);color:var(--rb-red);border:2px solid var(--rb-red);border-radius:12px 12px 0 0;}
 /* el `tr` de mas no sobra: sin el, la fila cebrada (que tambien lleva tres
    selectores de elemento) le gana a la columna destacada y le come el tinte */
 .rb-ptbl tbody tr td.is-std{background:rgba(188,0,23,.07);border-left:2px solid var(--rb-red);border-right:2px solid var(--rb-red);}
@@ -712,7 +715,7 @@ html{scroll-padding-top:92px;}
       <li class="rb-nav__item rb-nav__item--dropdown">
         <button type="button">Support &amp; services <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="partners.html" class="rb-nav__dd-cta">✦ Become a partner</a><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a>
+          <a href="partners.html" class="rb-nav__dd-cta">✦ Become a partner</a><a href="https://market.rocketbot.com/" target="_blank" rel="noopener">Forum</a><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a>
           <a href="faq.html" class="rb-nav__dd-faq">FAQs</a><a href="terminos-y-condiciones.html" class="rb-nav__dd-tyc">Terms & Conditions</a><a href="https://partners.rocketbot.com/wp-login.php" target="_blank" rel="noopener" class="rb-nav__dd-login">Partner Login →</a>
         </div>
       </li>
@@ -757,7 +760,7 @@ html{scroll-padding-top:92px;}
     </div>
     <div class="rb-mobile-menu__section">
       <div class="rb-mobile-menu__label">Support &amp; services</div>
-      <a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a>
+      <a href="https://market.rocketbot.com/" target="_blank" rel="noopener">Forum</a>
       <a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a>
       <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a>
       <a href="faq.html" class="rb-mobile-menu__faq">FAQs</a>
@@ -1072,7 +1075,7 @@ html{scroll-padding-top:92px;}
           <tr><td>Minimum interval between runs<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Minimum wait between two consecutive runs of the same automation.</span></span></td><td>1 min</td><td class="is-std">1 min</td><td>1 min</td><td>0 min</td></tr>
           <tr><td>Maximum file size<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Maximum size of a file an automation can process.</span></span></td><td>100 MB</td><td class="is-std">250 MB</td><td>250 MB</td><td>1 GB</td></tr>
           <tr><td>Consecutive Moons per run<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Moons are the steps or actions a flow runs. This is the maximum per run.</span></span></td><td>10,000</td><td class="is-std">30,000</td><td>30,000</td><td>Unlimited</td></tr>
-          <tr><td>Execution priority<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Order of service when many automations are queued. Higher priority means less waiting.</span></span></td><td>Standard</td><td class="is-std">High</td><td>High</td><td class="best">Highest</td></tr>
+          <tr><td>Better execution capacity in Nexus and Saturn Studio<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Processing capacity allocated to your runs when the queue is under heavy load. More capacity means less waiting.</span></span></td><td>Standard</td><td class="is-std">High</td><td>High</td><td class="best">Highest</td></tr>
           <tr class="rb-ptbl__grp"><td>Saturn Studio — Builder and integrations</td><td></td><td class="is-std"></td><td></td><td></td></tr>
           <tr><td>Number of flows<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">How many different automations you can design and save.</span></span></td><td>Unlimited</td><td class="is-std">Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
           <tr><td>Custom functions (JS)<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Your own JavaScript code for advanced logic inside the flows.</span></span></td><td class="no">—</td><td class="is-std">Limited</td><td>Limited</td><td>Advanced</td></tr>
@@ -1132,7 +1135,6 @@ html{scroll-padding-top:92px;}
           <tr><td>Additional builders (add-on)<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Option to add more builder users as a paid add-on.</span></span></td><td class="no">—</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr class="rb-ptbl__grp"><td>Nexus — Capacity</td><td></td><td class="is-std"></td><td></td><td></td></tr>
           <tr><td>Applications<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">How many business applications you can create in Nexus.</span></span></td><td>5</td><td class="is-std">Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
-          <tr><td>Workspaces<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Workspaces to organize apps, automations and data by team or project.</span></span></td><td>1</td><td class="is-std">Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
           <tr><td>Max rows, internal database<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Maximum number of records in the Nexus internal database.</span></span></td><td>50,000</td><td class="is-std">500,000</td><td>500,000</td><td class="best">Unlimited</td></tr>
           <tr><td>Timeout per query<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Maximum time a data query can take before it is cancelled.</span></span></td><td>30 s</td><td class="is-std">60 s</td><td>60 s</td><td>Configurable</td></tr>
           <tr><td>Timeout per JS function<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Maximum run time for a JavaScript function inside an app.</span></span></td><td>10 s</td><td class="is-std">30 s</td><td>30 s</td><td>Configurable</td></tr>
@@ -1238,7 +1240,7 @@ html{scroll-padding-top:92px;}
       </div>
       <div class="rb-footer__col"><h6>Products</h6><ul><li><a href="saturn-studio.html">Saturn Studio</a></li><li><a href="rpa-studio.html">RPA Studio</a></li><li><a href="ai-studio.html">AI Studio</a></li><li><a href="orquestador.html">Orchestrator</a></li><li><a href="xperience.html">Xperience</a></li><li><a href="nexus.html">Nexus</a></li></ul></div>
       <div class="rb-footer__col"><h6>Resources</h6><ul><li><a href="planes.html">Plans and pricing</a></li><li><a href="suite-rocketbot.html">Rocketbot Suite</a></li><li><a href="cfo.html">For CFOs</a></li><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Company</h6><ul><li><a href="contacto.html">Contact</a></li><li><a href="politicas-de-privacidad.html">Privacy policy</a></li><li><a href="politicas-de-seguridad.html">Security policy</a></li><li><a href="terminos-y-condiciones.html" class="rb-footer__tyc">Terms & Conditions</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Support &amp; services</h6><ul><li><a href="#">Certification</a></li><li><a href="https://forum.rocketbot.com" target="_blank" rel="noopener">Forum</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Support &amp; services</h6><ul><li><a href="https://market.rocketbot.com/" target="_blank" rel="noopener">Forum</a></li><li><a href="https://marketplace.rocketbot.com" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">
       <div class="rb-footer__bottomleft"><span>© Rocketbot SpA | All rights reserved 2018 – 2025</span><span class="rb-iso-badge" title="ISO/IEC 27001 certification — Information security management"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>ISO/IEC 27001</span></div>

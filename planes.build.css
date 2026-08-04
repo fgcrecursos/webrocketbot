@@ -56,7 +56,10 @@
 .rb-ptbl th:first-child,.rb-ptbl td:first-child{text-align:left;}
 .rb-ptbl tbody td:first-child{font-weight:600;font-size:13px;background:var(--ptbl-bg);}
 .rb-ptbl tbody tr:nth-child(even) td{background:var(--ptbl-stripe);}
-.rb-ptbl thead th.is-std{background:rgba(188,0,23,.07);color:var(--rb-red);border:2px solid var(--rb-red);border-radius:12px 12px 0 0;}
+/* el tinte va como gradiente sobre --ptbl-bg y no como rgba suelto: este th es
+   sticky, y un fondo semitransparente deja ver las filas que scrollean por
+   debajo (el nombre del plan se leia encimado con los valores de la tabla) */
+.rb-ptbl thead th.is-std{background:linear-gradient(rgba(188,0,23,.07),rgba(188,0,23,.07)),var(--ptbl-bg);color:var(--rb-red);border:2px solid var(--rb-red);border-radius:12px 12px 0 0;}
 /* el `tr` de mas no sobra: sin el, la fila cebrada (que tambien lleva tres
    selectores de elemento) le gana a la columna destacada y le come el tinte */
 .rb-ptbl tbody tr td.is-std{background:rgba(188,0,23,.07);border-left:2px solid var(--rb-red);border-right:2px solid var(--rb-red);}
