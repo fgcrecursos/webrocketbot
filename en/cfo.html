@@ -426,6 +426,9 @@ ul{margin:0;padding:0;list-style:none;}
 .rb-dlmodal__oshead:hover{color:var(--rb-red);}
 .rb-dlmodal__oshead:hover svg:not(.rb-dlmodal__oschev){color:var(--rb-red);}
 .rb-dlmodal__vwrap{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s cubic-bezier(.4,0,.2,1),opacity .3s ease;}
+.rb-dlmodal__osreq{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;line-height:1.5;color:var(--muted);padding:0 0 13px;margin-top:-6px;}
+.rb-dlmodal__osreq svg{width:13px;height:13px;flex:0 0 auto;margin-top:2px;color:var(--rb-green,#1D9E75);}
+.rb-dlmodal__osreq b{color:var(--foreground);font-weight:700;}
 .rb-dlmodal__osgroup.is-open .rb-dlmodal__vwrap{opacity:1;transition:max-height .4s cubic-bezier(.4,0,.2,1),opacity .35s ease .08s;}
 .rb-dlmodal__vlist{display:flex;flex-direction:column;gap:8px;padding:2px 0 14px;}
 .rb-dlmodal__vrow{transform:translateY(-8px);opacity:0;transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .3s ease;}
@@ -691,6 +694,7 @@ html{scroll-padding-top:92px;}
           <div class="rb-dlmodal__os">
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7H3V5.5ZM11.4 4.3 21 3v8.4h-9.6V4.3ZM3 12.4h7.5v7.1L3 18.5v-6.1ZM11.4 12.4H21V21l-9.6-1.3v-7.3Z"/></svg>Windows<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+              <div class="rb-dlmodal__osreq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Requires <b>Windows 10</b> or higher &middot; <b>Windows Server 2016</b> or higher</span></div>
               <div class="rb-dlmodal__vwrap">
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
@@ -726,6 +730,7 @@ html{scroll-padding-top:92px;}
             </div>
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.7 12.7c0-2.4 2-3.6 2.1-3.7-1.1-1.6-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.7 0-2-.9-3.2-.8-1.7 0-3.2 1-4.1 2.5-1.7 3-.4 7.5 1.3 10 .8 1.2 1.8 2.5 3.1 2.5 1.2-.1 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.7-1-2.7-4.1v-.2ZM14.4 5.5c.6-.8 1.1-1.9.9-3-1 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-.9 2.9 1.1.1 2.2-.5 2.8-1.3Z"/></svg>macOS<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+              <div class="rb-dlmodal__osreq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Requires <b>macOS 11</b> (Big Sur) or higher</span></div>
               <div class="rb-dlmodal__vwrap">
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
@@ -747,6 +752,7 @@ html{scroll-padding-top:92px;}
             </div>
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2c.3 1.3.6 2.3 1.4 3.4.7 1 1.8 1.8 2 3.2.2 1.1-.2 2-.7 2.8.6.2 1.4.8 1.7 1.7.4 1.2-.2 2.5-1.3 3.1.3.4.5 1 .3 1.6-.4 1.2-2.2 1.7-3.7 1.7-1 0-1.8-.3-2.7-.3-.9 0-1.7.4-2.7.3-1.5 0-3.3-.5-3.7-1.7-.2-.6 0-1.2.3-1.6-1.1-.6-1.7-1.9-1.3-3.1.3-.9 1.1-1.5 1.7-1.7-.5-.8-.9-1.7-.7-2.8.2-1.4 1.3-2.2 2-3.2.8-1.1 1.1-2.1 1.4-3.4h4.7Z"/></svg>Linux<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
+              <div class="rb-dlmodal__osreq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Requires <b>Ubuntu 20.04 LTS</b> or higher &middot; <b>RHEL 8</b> or higher</span></div>
               <div class="rb-dlmodal__vwrap">
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
