@@ -818,9 +818,15 @@ COPY = {
                    'What changes from one plan to the next is execution capacity, user limits and the security and support&nbsp;features.',
                    'O que muda de um plano para outro é a capacidade de execução, os limites de usuários e os recursos de segurança e&nbsp;suporte.'),
     'suite_lb': L('Incluido en todos los planes', 'Included in every plan', 'Incluído em todos os planos'),
-    'price_note': L('Precios en dólares estadounidenses (USD). Licencia anual.',
-                    'Prices in US dollars (USD). Annual license.',
-                    'Preços em dólares americanos (US$). Licença anual.'),
+    'price_note': L('Precios en dólares estadounidenses (USD). Licencia anual. '
+                    'Los valores no incluyen los impuestos aplicables en cada país.',
+                    'Prices in US dollars (USD). Annual license. '
+                    'Amounts do not include the taxes applicable in each country.',
+                    'Preços em dólares americanos (US$). Licença anual. '
+                    'Os valores não incluem os impostos aplicáveis em cada país.'),
+    'tax_note': L('No incluye los impuestos de cada país',
+                  'Does not include each country&#8217;s taxes',
+                  'Não inclui os impostos de cada país'),
     'cur': L('USD', 'USD', 'US$'),
     'per': L('/año', '/year', '/ano'),
     'addons_lb': L('Add-ons', 'Add-ons', 'Add-ons'),
@@ -914,6 +920,7 @@ def render_cards(lang):
         out.append('        <p class="rb-pcard__aud">%s</p>' % esc(tr(p['aud'], lang)))
         out.append('        <div class="rb-pcard__price"><span class="cur">%s</span>%s<span class="per">%s</span></div>'
                    % (tr(COPY['cur'], lang), tr(p['price'], lang), tr(COPY['per'], lang)))
+        out.append('        <div class="rb-pcard__tax">%s</div>' % tr(COPY['tax_note'], lang))
         out.append('        <div class="rb-pcard__cap">%s</div>' % esc(tr(p['cap'], lang)))
         btn = 'rb-btn--primary' if p['feat'] else 'rb-btn--ghost'
         out.append('        <a class="rb-btn %s" href="contacto.html">%s</a>' % (btn, esc(tr(COPY['cta_sales'], lang))))

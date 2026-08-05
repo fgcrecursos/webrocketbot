@@ -620,6 +620,8 @@ html{scroll-padding-top:92px;}
 .rb-pcard__price{font-weight:800;font-size:28px;letter-spacing:-.02em;color:var(--foreground);margin:16px 0 0;line-height:1.15;}
 .rb-pcard__price .cur{font-size:15px;font-weight:700;color:var(--muted);margin-right:5px;}
 .rb-pcard__price .per{font-size:14px;font-weight:600;color:var(--muted);}
+/* los precios son netos: el impuesto lo define el pais del cliente */
+.rb-pcard__tax{font-size:11.5px;font-weight:600;color:var(--muted);line-height:1.35;margin-top:5px;}
 .rb-pcard__cap{font-size:12.5px;font-weight:700;color:var(--rb-red);line-height:1.4;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:11px 0;margin:16px 0 18px;}
 .rb-pcard .rb-btn{width:100%;justify-content:center;margin-bottom:20px;}
 .rb-pcard__lb{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
@@ -643,9 +645,9 @@ html{scroll-padding-top:92px;}
    "Ideal para" ocupa 1 linea en vez de 2 corre hacia arriba todo lo que
    sigue; el largo del texto varia por plan y por idioma. */
 @supports(grid-template-rows:subgrid){
-  @media(min-width:601px){.rb-pcard{display:grid;grid-template-rows:subgrid;grid-row:span 9;row-gap:0;}}
-  @media(min-width:1081px){.rb-pcards{grid-template-rows:repeat(9,auto);}}
-  @media(min-width:601px) and (max-width:1080px){.rb-pcards{grid-template-rows:repeat(18,auto);}}
+  @media(min-width:601px){.rb-pcard{display:grid;grid-template-rows:subgrid;grid-row:span 10;row-gap:0;}}
+  @media(min-width:1081px){.rb-pcards{grid-template-rows:repeat(10,auto);}}
+  @media(min-width:601px) and (max-width:1080px){.rb-pcards{grid-template-rows:repeat(20,auto);}}
 }
 
 /* Tabla comparativa */
@@ -950,6 +952,7 @@ html{scroll-padding-top:92px;}
         <h3>Entry</h3>
         <p class="rb-pcard__aud">Para equipos que automatizan sus primeros procesos.</p>
         <div class="rb-pcard__price"><span class="cur">USD</span>7.990<span class="per">/año</span></div>
+        <div class="rb-pcard__tax">No incluye los impuestos de cada país</div>
         <div class="rb-pcard__cap">5 automatizaciones en paralelo</div>
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Hablar con ventas</a>
         <div class="rb-pcard__lb">Incluye</div>
@@ -975,6 +978,7 @@ html{scroll-padding-top:92px;}
         <h3>Standard</h3>
         <p class="rb-pcard__aud">Para escalar la automatización a varias áreas.</p>
         <div class="rb-pcard__price"><span class="cur">USD</span>14.990<span class="per">/año</span></div>
+        <div class="rb-pcard__tax">No incluye los impuestos de cada país</div>
         <div class="rb-pcard__cap">20 automatizaciones en paralelo</div>
         <a class="rb-btn rb-btn--primary" href="contacto.html">Hablar con ventas</a>
         <div class="rb-pcard__lb">Todo lo de Entry, más</div>
@@ -1000,6 +1004,7 @@ html{scroll-padding-top:92px;}
         <h3>Enterprise</h3>
         <p class="rb-pcard__aud">Para operaciones críticas con mayor volumen y control.</p>
         <div class="rb-pcard__price"><span class="cur">USD</span>24.990<span class="per">/año</span></div>
+        <div class="rb-pcard__tax">No incluye los impuestos de cada país</div>
         <div class="rb-pcard__cap">50 automatizaciones en paralelo</div>
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Hablar con ventas</a>
         <div class="rb-pcard__lb">Todo lo de Standard, más</div>
@@ -1025,6 +1030,7 @@ html{scroll-padding-top:92px;}
         <h3>Corporate</h3>
         <p class="rb-pcard__aud">Para grandes organizaciones con requisitos de seguridad y compliance.</p>
         <div class="rb-pcard__price"><span class="cur">USD</span>49.990<span class="per">/año</span></div>
+        <div class="rb-pcard__tax">No incluye los impuestos de cada país</div>
         <div class="rb-pcard__cap">200 en paralelo · 1.000 procesos administrados</div>
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Hablar con ventas</a>
         <div class="rb-pcard__lb">Todo lo de Enterprise, más</div>
@@ -1045,7 +1051,7 @@ html{scroll-padding-top:92px;}
         </div>
       </article>
     </div>
-    <p class="rb-price-note">Precios en dólares estadounidenses (USD). Licencia anual.</p>
+    <p class="rb-price-note">Precios en dólares estadounidenses (USD). Licencia anual. Los valores no incluyen los impuestos aplicables en cada país.</p>
   </div>
 </section>
 

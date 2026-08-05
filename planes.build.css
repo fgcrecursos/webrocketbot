@@ -19,6 +19,8 @@
 .rb-pcard__price{font-weight:800;font-size:28px;letter-spacing:-.02em;color:var(--foreground);margin:16px 0 0;line-height:1.15;}
 .rb-pcard__price .cur{font-size:15px;font-weight:700;color:var(--muted);margin-right:5px;}
 .rb-pcard__price .per{font-size:14px;font-weight:600;color:var(--muted);}
+/* los precios son netos: el impuesto lo define el pais del cliente */
+.rb-pcard__tax{font-size:11.5px;font-weight:600;color:var(--muted);line-height:1.35;margin-top:5px;}
 .rb-pcard__cap{font-size:12.5px;font-weight:700;color:var(--rb-red);line-height:1.4;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:11px 0;margin:16px 0 18px;}
 .rb-pcard .rb-btn{width:100%;justify-content:center;margin-bottom:20px;}
 .rb-pcard__lb{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
@@ -42,9 +44,9 @@
    "Ideal para" ocupa 1 linea en vez de 2 corre hacia arriba todo lo que
    sigue; el largo del texto varia por plan y por idioma. */
 @supports(grid-template-rows:subgrid){
-  @media(min-width:601px){.rb-pcard{display:grid;grid-template-rows:subgrid;grid-row:span 9;row-gap:0;}}
-  @media(min-width:1081px){.rb-pcards{grid-template-rows:repeat(9,auto);}}
-  @media(min-width:601px) and (max-width:1080px){.rb-pcards{grid-template-rows:repeat(18,auto);}}
+  @media(min-width:601px){.rb-pcard{display:grid;grid-template-rows:subgrid;grid-row:span 10;row-gap:0;}}
+  @media(min-width:1081px){.rb-pcards{grid-template-rows:repeat(10,auto);}}
+  @media(min-width:601px) and (max-width:1080px){.rb-pcards{grid-template-rows:repeat(20,auto);}}
 }
 
 /* Tabla comparativa */

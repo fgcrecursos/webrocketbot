@@ -530,6 +530,7 @@ body{top:0 !important;}
 .rb-tier__desc{font-size:13px;color:#888;min-height:40px;}
 .rb-tier__price{font-weight:800;font-size:26px;color:var(--foreground);margin:16px 0 2px;}
 .rb-tier__price .per{font-size:14px;font-weight:600;color:var(--muted);}
+.rb-tier__tax{font-size:11.5px;font-weight:600;color:var(--muted);line-height:1.35;margin:2px 0 8px;}
 .rb-tier__pl{font-size:12px;color:var(--rb-red);font-weight:600;margin-bottom:18px;}
 .rb-tier__specs{display:flex;flex-direction:column;margin:0 0 22px;flex:1;}
 .rb-tier__spec{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);}
@@ -554,9 +555,9 @@ body{top:0 !important;}
    "Ideal para" ocupa 1 linea en vez de 2 corre hacia arriba todo lo que
    sigue; el largo del texto varia por plan y por idioma. */
 @supports(grid-template-rows:subgrid){
-  @media(min-width:561px){.rb-tier{display:grid;grid-template-rows:subgrid;grid-row:span 7;row-gap:0;}}
-  @media(min-width:981px){.rb-tiers{grid-template-rows:repeat(7,auto);}}
-  @media(min-width:561px) and (max-width:980px){.rb-tiers{grid-template-rows:repeat(14,auto);}}
+  @media(min-width:561px){.rb-tier{display:grid;grid-template-rows:subgrid;grid-row:span 8;row-gap:0;}}
+  @media(min-width:981px){.rb-tiers{grid-template-rows:repeat(8,auto);}}
+  @media(min-width:561px) and (max-width:980px){.rb-tiers{grid-template-rows:repeat(16,auto);}}
 }
 /* final cta */
 .rb-final{background:linear-gradient(135deg,var(--rb-red),var(--rb-red-deep));border-radius:var(--r-xl);padding:60px 44px;text-align:center;position:relative;overflow:hidden;}
@@ -1164,7 +1165,7 @@ html{scroll-padding-top:92px;}
     <div class="rb-section__head">
       <h2 class="rb-section__title">Un plan que crece al ritmo<br><span>de tu operaci&#243;n.</span></h2>
       <p class="rb-section__sub">Todos los planes incluyen la suite completa. Eliges la capacidad: automatizaciones en paralelo, cr&#233;ditos de AI Studio y tiempos de&nbsp;soporte.</p>
-      <p class="rb-section__sub" style="margin-top:8px;font-size:13px;">Precios en dólares estadounidenses (USD).</p>
+      <p class="rb-section__sub" style="margin-top:8px;font-size:13px;">Precios en dólares estadounidenses (USD). No incluyen los impuestos aplicables en cada país.</p>
     </div>
     <div class="rb-suiteband">
       <span class="rb-suiteband__lb">&#10003; Incluido en todos los planes</span>
@@ -1183,6 +1184,7 @@ html{scroll-padding-top:92px;}
         <h3>Entry</h3>
         <p class="rb-tier__desc">Para un equipo pequeño que empieza a escalar su automatización.</p>
         <div class="rb-tier__price">USD 7.990<span class="per">/año</span></div>
+        <div class="rb-tier__tax">No incluye los impuestos de cada país</div>
         <div class="rb-tier__pl">Ideal para: equipo pequeño escalando</div>
         <dl class="rb-tier__specs">
           <div class="rb-tier__spec"><dt>Automatizaciones en paralelo</dt><dd>5</dd></div>
@@ -1198,6 +1200,7 @@ html{scroll-padding-top:92px;}
         <h3>Standard</h3>
         <p class="rb-tier__desc">Para una empresa mediana lista para escalar su operación.</p>
         <div class="rb-tier__price">USD 14.990<span class="per">/año</span></div>
+        <div class="rb-tier__tax">No incluye los impuestos de cada país</div>
         <div class="rb-tier__pl">Ideal para: empresa mediana lista para escalar</div>
         <dl class="rb-tier__specs">
           <div class="rb-tier__spec"><dt>Automatizaciones en paralelo</dt><dd>20</dd></div>
@@ -1212,6 +1215,7 @@ html{scroll-padding-top:92px;}
         <h3>Enterprise</h3>
         <p class="rb-tier__desc">Para una gran empresa avanzando hacia la hiperautomatización.</p>
         <div class="rb-tier__price">USD 24.990<span class="per">/año</span></div>
+        <div class="rb-tier__tax">No incluye los impuestos de cada país</div>
         <div class="rb-tier__pl">Ideal para: gran empresa hacia la hiperautomatización</div>
         <dl class="rb-tier__specs">
           <div class="rb-tier__spec"><dt>Automatizaciones en paralelo</dt><dd>50</dd></div>
@@ -1226,6 +1230,7 @@ html{scroll-padding-top:92px;}
         <h3>Corporate</h3>
         <p class="rb-tier__desc">Para una operación agéntica a escala corporativa.</p>
         <div class="rb-tier__price">USD 49.990<span class="per">/año</span></div>
+        <div class="rb-tier__tax">No incluye los impuestos de cada país</div>
         <div class="rb-tier__pl">Ideal para: operación agéntica a escala corporativa</div>
         <dl class="rb-tier__specs">
           <div class="rb-tier__spec"><dt>Automatizaciones en paralelo</dt><dd class="best">200</dd></div>
