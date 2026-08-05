@@ -113,10 +113,11 @@ PLANS = [
             L('Todos los productos de la suite',
               'Every product in the suite',
               'Todos os produtos da suíte'),
-            NOTE(L('25M créditos de AI Studio / año',
-                   '25M AI Studio credits / year',
-                   '25M créditos de AI Studio / ano'), TIP_CREDITOS),
-            NOTE(L('2 licencias de desarrollo', '2 development licenses', '2 licenças de desenvolvimento'),
+            NOTE(L('Total de 25M créditos de AI Studio / año',
+                   '25M AI Studio credits / year in total',
+                   'Total de 25M créditos de AI Studio / ano'), TIP_CREDITOS),
+            NOTE(L('Total de 2 licencias de desarrollo', '2 development licenses in total',
+                   'Total de 2 licenças de desenvolvimento'),
                  TIP_LICENCIAS),
             L('5 aplicaciones Nexus · 10 usuarios finales',
               '5 Nexus apps · 10 end users',
@@ -147,10 +148,11 @@ PLANS = [
                  '20 automações em paralelo'),
         'inc_lb': L('Todo lo de Entry, más', 'Everything in Entry, plus', 'Tudo do Entry, mais'),
         'inc': [
-            NOTE(L('50M créditos de AI Studio / año',
-                   '50M AI Studio credits / year',
-                   '50M créditos de AI Studio / ano'), TIP_CREDITOS),
-            NOTE(L('3 licencias de desarrollo', '3 development licenses', '3 licenças de desenvolvimento'),
+            NOTE(L('Total de 50M créditos de AI Studio / año',
+                   '50M AI Studio credits / year in total',
+                   'Total de 50M créditos de AI Studio / ano'), TIP_CREDITOS),
+            NOTE(L('Total de 3 licencias de desarrollo', '3 development licenses in total',
+                   'Total de 3 licenças de desenvolvimento'),
                  TIP_LICENCIAS),
             L('Apps ilimitadas (Nexus)',
               'Unlimited apps (Nexus)',
@@ -183,10 +185,11 @@ PLANS = [
                  '50 automações em paralelo'),
         'inc_lb': L('Todo lo de Standard, más', 'Everything in Standard, plus', 'Tudo do Standard, mais'),
         'inc': [
-            NOTE(L('100M créditos de AI Studio / año',
-                   '100M AI Studio credits / year',
-                   '100M créditos de AI Studio / ano'), TIP_CREDITOS),
-            NOTE(L('5 licencias de desarrollo', '5 development licenses', '5 licenças de desenvolvimento'),
+            NOTE(L('Total de 100M créditos de AI Studio / año',
+                   '100M AI Studio credits / year in total',
+                   'Total de 100M créditos de AI Studio / ano'), TIP_CREDITOS),
+            NOTE(L('Total de 5 licencias de desarrollo', '5 development licenses in total',
+                   'Total de 5 licenças de desenvolvimento'),
                  TIP_LICENCIAS),
             L('15 usuarios creadores de apps', '15 app-builder users', '15 usuários criadores de apps'),
             L('50 usuarios finales · 50 usuarios con login',
@@ -217,9 +220,9 @@ PLANS = [
                  '200 em paralelo · 1.000 processos administrados'),
         'inc_lb': L('Todo lo de Enterprise, más', 'Everything in Enterprise, plus', 'Tudo do Enterprise, mais'),
         'inc': [
-            NOTE(L('200M créditos de AI Studio / año',
-                   '200M AI Studio credits / year',
-                   '200M créditos de AI Studio / ano'), TIP_CREDITOS),
+            NOTE(L('Total de 200M créditos de AI Studio / año',
+                   '200M AI Studio credits / year in total',
+                   'Total de 200M créditos de AI Studio / ano'), TIP_CREDITOS),
             L('Licencias y usuarios ilimitados', 'Unlimited licenses and users', 'Licenças e usuários ilimitados'),
             L('SSO corporativo (Active Directory) · SCIM',
               'Corporate SSO (Active Directory) · SCIM',
@@ -830,6 +833,14 @@ COPY = {
     'cur': L('USD', 'USD', 'US$'),
     'per': L('/año', '/year', '/ano'),
     'addons_lb': L('Add-ons', 'Add-ons', 'Add-ons'),
+    # Las tarjetas dicen "Todo lo de X, mas": esta nota deja explicito, sin
+    # depender del "?", que las cantidades son el total del plan.
+    'inc_note': L('Las cantidades indicadas son el total que incluye este plan: '
+                  'no se suman a las del plan anterior.',
+                  'The amounts shown are the total included in this plan: '
+                  'they are not added to those of the previous plan.',
+                  'As quantidades indicadas são o total incluído neste plano: '
+                  'não se somam às do plano anterior.'),
     'cmp_t_a': L('Compara los planes', 'Compare the plans', 'Compare os planos'),
     'cmp_t_b': L('línea por línea.', 'line by line.', 'linha por linha.'),
     'cmp_sub': L('Todos los límites de la suite, producto por producto. Pasa el cursor sobre <span class="rb-info" aria-hidden="true">i</span> para ver el detalle de cada&nbsp;característica.',
@@ -936,6 +947,7 @@ def render_cards(lang):
             else:
                 out.append('          <li>%s</li>' % esc(tr(it, lang)))
         out.append('        </ul>')
+        out.append('        <p class="rb-pcard__note">%s</p>' % esc(tr(COPY['inc_note'], lang)))
         out.append('        <div class="rb-pcard__addons">')
         out.append('          <div class="rb-pcard__lb">%s</div>' % esc(tr(COPY['addons_lb'], lang)))
         out.append('          <ul>')

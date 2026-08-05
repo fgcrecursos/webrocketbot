@@ -633,6 +633,9 @@ html{scroll-padding-top:92px;}
    abajo de 1041px manda la regla generica que lo fija al pie de la pantalla. */
 .rb-pcard__inc .rb-info{position:static;}
 @media(min-width:1041px){.rb-pcard__inc li .rb-info__pop{left:0;right:0;width:auto;bottom:calc(100% + 8px);}}
+/* el "?" solo no alcanzaba: la aclaracion de no-acumulacion tiene que leerse
+   sin interactuar con la tarjeta */
+.rb-pcard__note{font-size:11.5px;line-height:1.45;color:var(--muted);margin:12px 0 0;}
 .rb-pcard__addons{margin-top:18px;padding-top:16px;border-top:1px dashed var(--border);}
 .rb-pcard__addons ul{display:flex;flex-direction:column;gap:5px;margin:0;}
 .rb-pcard__addons li{font-size:12px;color:var(--muted);line-height:1.45;}
@@ -642,11 +645,16 @@ html{scroll-padding-top:92px;}
 @media(max-width:600px){.rb-pcards{grid-template-columns:1fr;}}
 /* Subgrid: alinea fila a fila las tarjetas entre si. Sin esto, un plan cuyo
    "Ideal para" ocupa 1 linea en vez de 2 corre hacia arriba todo lo que
-   sigue; el largo del texto varia por plan y por idioma. */
+   sigue; el largo del texto varia por plan y por idioma.
+   El span tiene que igualar la cantidad de hijos en flujo de la tarjeta
+   (el badge es absolute y no cuenta): num, h3, aud, price, tax, cap, boton,
+   label, lista, nota de no-acumulacion, add-ons = 11. Si se agrega o saca un
+   hijo hay que actualizar los tres numeros, o los ultimos bloques se
+   superponen en la misma fila. */
 @supports(grid-template-rows:subgrid){
-  @media(min-width:601px){.rb-pcard{display:grid;grid-template-rows:subgrid;grid-row:span 10;row-gap:0;}}
-  @media(min-width:1081px){.rb-pcards{grid-template-rows:repeat(10,auto);}}
-  @media(min-width:601px) and (max-width:1080px){.rb-pcards{grid-template-rows:repeat(20,auto);}}
+  @media(min-width:601px){.rb-pcard{display:grid;grid-template-rows:subgrid;grid-row:span 11;row-gap:0;}}
+  @media(min-width:1081px){.rb-pcards{grid-template-rows:repeat(11,auto);}}
+  @media(min-width:601px) and (max-width:1080px){.rb-pcards{grid-template-rows:repeat(22,auto);}}
 }
 
 /* Tabla comparativa */
@@ -957,12 +965,13 @@ html{scroll-padding-top:92px;}
         <div class="rb-pcard__lb">Includes</div>
         <ul class="rb-pcard__inc">
           <li>Every product in the suite</li>
-          <li>25M AI Studio credits / year<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">AI Studio credits are not cumulative between plans: the plan includes exactly this amount, it is not added to the previous plan’s.</span></span></li>
-          <li>2 development licenses<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">Development licenses are not cumulative between plans: the plan includes exactly this number, it is not added to the previous plan’s.</span></span></li>
+          <li>25M AI Studio credits / year in total<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">AI Studio credits are not cumulative between plans: the plan includes exactly this amount, it is not added to the previous plan’s.</span></span></li>
+          <li>2 development licenses in total<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">Development licenses are not cumulative between plans: the plan includes exactly this number, it is not added to the previous plan’s.</span></span></li>
           <li>5 Nexus apps · 10 end users</li>
           <li>Slack support · 60 min first response</li>
           <li>90-day audit logs · 2FA · Google SSO</li>
         </ul>
+        <p class="rb-pcard__note">The amounts shown are the total included in this plan: they are not added to those of the previous plan.</p>
         <div class="rb-pcard__addons">
           <div class="rb-pcard__lb">Add-ons</div>
           <ul>
@@ -982,13 +991,14 @@ html{scroll-padding-top:92px;}
         <a class="rb-btn rb-btn--primary" href="contacto.html">Talk to sales</a>
         <div class="rb-pcard__lb">Everything in Entry, plus</div>
         <ul class="rb-pcard__inc">
-          <li>50M AI Studio credits / year<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">AI Studio credits are not cumulative between plans: the plan includes exactly this amount, it is not added to the previous plan’s.</span></span></li>
-          <li>3 development licenses<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">Development licenses are not cumulative between plans: the plan includes exactly this number, it is not added to the previous plan’s.</span></span></li>
+          <li>50M AI Studio credits / year in total<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">AI Studio credits are not cumulative between plans: the plan includes exactly this amount, it is not added to the previous plan’s.</span></span></li>
+          <li>3 development licenses in total<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">Development licenses are not cumulative between plans: the plan includes exactly this number, it is not added to the previous plan’s.</span></span></li>
           <li>Unlimited apps (Nexus)</li>
           <li>Bring Your Own Model (external AI)</li>
           <li>Real-time monitoring</li>
           <li>180-day audit logs · Customer Success · Meetups</li>
         </ul>
+        <p class="rb-pcard__note">The amounts shown are the total included in this plan: they are not added to those of the previous plan.</p>
         <div class="rb-pcard__addons">
           <div class="rb-pcard__lb">Add-ons</div>
           <ul>
@@ -1008,13 +1018,14 @@ html{scroll-padding-top:92px;}
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Talk to sales</a>
         <div class="rb-pcard__lb">Everything in Standard, plus</div>
         <ul class="rb-pcard__inc">
-          <li>100M AI Studio credits / year<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">AI Studio credits are not cumulative between plans: the plan includes exactly this amount, it is not added to the previous plan’s.</span></span></li>
-          <li>5 development licenses<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">Development licenses are not cumulative between plans: the plan includes exactly this number, it is not added to the previous plan’s.</span></span></li>
+          <li>100M AI Studio credits / year in total<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">AI Studio credits are not cumulative between plans: the plan includes exactly this amount, it is not added to the previous plan’s.</span></span></li>
+          <li>5 development licenses in total<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">Development licenses are not cumulative between plans: the plan includes exactly this number, it is not added to the previous plan’s.</span></span></li>
           <li>15 app-builder users</li>
           <li>50 end users · 50 users with login</li>
           <li>30 min support response</li>
           <li>Better execution capacity in Nexus and Saturn Studio</li>
         </ul>
+        <p class="rb-pcard__note">The amounts shown are the total included in this plan: they are not added to those of the previous plan.</p>
         <div class="rb-pcard__addons">
           <div class="rb-pcard__lb">Add-ons</div>
           <ul>
@@ -1034,13 +1045,14 @@ html{scroll-padding-top:92px;}
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Talk to sales</a>
         <div class="rb-pcard__lb">Everything in Enterprise, plus</div>
         <ul class="rb-pcard__inc">
-          <li>200M AI Studio credits / year<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">AI Studio credits are not cumulative between plans: the plan includes exactly this amount, it is not added to the previous plan’s.</span></span></li>
+          <li>200M AI Studio credits / year in total<span class="rb-info" tabindex="0" role="button" aria-label="See detail">?<span class="rb-info__pop">AI Studio credits are not cumulative between plans: the plan includes exactly this amount, it is not added to the previous plan’s.</span></span></li>
           <li>Unlimited licenses and users</li>
           <li>Corporate SSO (Active Directory) · SCIM</li>
           <li>12-month audit logs + SIEM export</li>
           <li>Highest execution capacity in Nexus and Saturn Studio</li>
           <li>Dedicated Customer Success · 15 min response</li>
         </ul>
+        <p class="rb-pcard__note">The amounts shown are the total included in this plan: they are not added to those of the previous plan.</p>
         <div class="rb-pcard__addons">
           <div class="rb-pcard__lb">Add-ons</div>
           <ul>

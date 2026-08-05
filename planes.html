@@ -634,6 +634,9 @@ html{scroll-padding-top:92px;}
    abajo de 1041px manda la regla generica que lo fija al pie de la pantalla. */
 .rb-pcard__inc .rb-info{position:static;}
 @media(min-width:1041px){.rb-pcard__inc li .rb-info__pop{left:0;right:0;width:auto;bottom:calc(100% + 8px);}}
+/* el "?" solo no alcanzaba: la aclaracion de no-acumulacion tiene que leerse
+   sin interactuar con la tarjeta */
+.rb-pcard__note{font-size:11.5px;line-height:1.45;color:var(--muted);margin:12px 0 0;}
 .rb-pcard__addons{margin-top:18px;padding-top:16px;border-top:1px dashed var(--border);}
 .rb-pcard__addons ul{display:flex;flex-direction:column;gap:5px;margin:0;}
 .rb-pcard__addons li{font-size:12px;color:var(--muted);line-height:1.45;}
@@ -643,11 +646,16 @@ html{scroll-padding-top:92px;}
 @media(max-width:600px){.rb-pcards{grid-template-columns:1fr;}}
 /* Subgrid: alinea fila a fila las tarjetas entre si. Sin esto, un plan cuyo
    "Ideal para" ocupa 1 linea en vez de 2 corre hacia arriba todo lo que
-   sigue; el largo del texto varia por plan y por idioma. */
+   sigue; el largo del texto varia por plan y por idioma.
+   El span tiene que igualar la cantidad de hijos en flujo de la tarjeta
+   (el badge es absolute y no cuenta): num, h3, aud, price, tax, cap, boton,
+   label, lista, nota de no-acumulacion, add-ons = 11. Si se agrega o saca un
+   hijo hay que actualizar los tres numeros, o los ultimos bloques se
+   superponen en la misma fila. */
 @supports(grid-template-rows:subgrid){
-  @media(min-width:601px){.rb-pcard{display:grid;grid-template-rows:subgrid;grid-row:span 10;row-gap:0;}}
-  @media(min-width:1081px){.rb-pcards{grid-template-rows:repeat(10,auto);}}
-  @media(min-width:601px) and (max-width:1080px){.rb-pcards{grid-template-rows:repeat(20,auto);}}
+  @media(min-width:601px){.rb-pcard{display:grid;grid-template-rows:subgrid;grid-row:span 11;row-gap:0;}}
+  @media(min-width:1081px){.rb-pcards{grid-template-rows:repeat(11,auto);}}
+  @media(min-width:601px) and (max-width:1080px){.rb-pcards{grid-template-rows:repeat(22,auto);}}
 }
 
 /* Tabla comparativa */
@@ -958,12 +966,13 @@ html{scroll-padding-top:92px;}
         <div class="rb-pcard__lb">Incluye</div>
         <ul class="rb-pcard__inc">
           <li>Todos los productos de la suite</li>
-          <li>25M créditos de AI Studio / año<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
-          <li>2 licencias de desarrollo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Las licencias de desarrollo no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
+          <li>Total de 25M créditos de AI Studio / año<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
+          <li>Total de 2 licencias de desarrollo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Las licencias de desarrollo no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
           <li>5 aplicaciones Nexus · 10 usuarios finales</li>
           <li>Soporte por Slack · respuesta 60 min</li>
           <li>Auditoría 90 días · 2FA · SSO Google</li>
         </ul>
+        <p class="rb-pcard__note">Las cantidades indicadas son el total que incluye este plan: no se suman a las del plan anterior.</p>
         <div class="rb-pcard__addons">
           <div class="rb-pcard__lb">Add-ons</div>
           <ul>
@@ -983,13 +992,14 @@ html{scroll-padding-top:92px;}
         <a class="rb-btn rb-btn--primary" href="contacto.html">Hablar con ventas</a>
         <div class="rb-pcard__lb">Todo lo de Entry, más</div>
         <ul class="rb-pcard__inc">
-          <li>50M créditos de AI Studio / año<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
-          <li>3 licencias de desarrollo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Las licencias de desarrollo no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
+          <li>Total de 50M créditos de AI Studio / año<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
+          <li>Total de 3 licencias de desarrollo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Las licencias de desarrollo no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
           <li>Apps ilimitadas (Nexus)</li>
           <li>Bring Your Own Model (IA externa)</li>
           <li>Monitoreo en tiempo real</li>
           <li>Auditoría 180 días · Customer Success · Meetups</li>
         </ul>
+        <p class="rb-pcard__note">Las cantidades indicadas son el total que incluye este plan: no se suman a las del plan anterior.</p>
         <div class="rb-pcard__addons">
           <div class="rb-pcard__lb">Add-ons</div>
           <ul>
@@ -1009,13 +1019,14 @@ html{scroll-padding-top:92px;}
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Hablar con ventas</a>
         <div class="rb-pcard__lb">Todo lo de Standard, más</div>
         <ul class="rb-pcard__inc">
-          <li>100M créditos de AI Studio / año<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
-          <li>5 licencias de desarrollo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Las licencias de desarrollo no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
+          <li>Total de 100M créditos de AI Studio / año<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
+          <li>Total de 5 licencias de desarrollo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Las licencias de desarrollo no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
           <li>15 usuarios creadores de apps</li>
           <li>50 usuarios finales · 50 usuarios con login</li>
           <li>Respuesta de soporte 30 min</li>
           <li>Mejor capacidad de ejecución en Nexus y Saturn Studio</li>
         </ul>
+        <p class="rb-pcard__note">Las cantidades indicadas son el total que incluye este plan: no se suman a las del plan anterior.</p>
         <div class="rb-pcard__addons">
           <div class="rb-pcard__lb">Add-ons</div>
           <ul>
@@ -1035,13 +1046,14 @@ html{scroll-padding-top:92px;}
         <a class="rb-btn rb-btn--ghost" href="contacto.html">Hablar con ventas</a>
         <div class="rb-pcard__lb">Todo lo de Enterprise, más</div>
         <ul class="rb-pcard__inc">
-          <li>200M créditos de AI Studio / año<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
+          <li>Total de 200M créditos de AI Studio / año<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">?<span class="rb-info__pop">Los créditos de AI Studio no son acumulables entre planes: el plan incluye exactamente esta cantidad, no se suma a la del plan anterior.</span></span></li>
           <li>Licencias y usuarios ilimitados</li>
           <li>SSO corporativo (Active Directory) · SCIM</li>
           <li>Auditoría 12 meses + export SIEM</li>
           <li>Máxima capacidad de ejecución en Nexus y Saturn Studio</li>
           <li>Customer Success dedicado · respuesta 15 min</li>
         </ul>
+        <p class="rb-pcard__note">Las cantidades indicadas son el total que incluye este plan: no se suman a las del plan anterior.</p>
         <div class="rb-pcard__addons">
           <div class="rb-pcard__lb">Add-ons</div>
           <ul>
