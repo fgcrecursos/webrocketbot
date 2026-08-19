@@ -9,44 +9,232 @@
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*).html",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options",    "value": "nosniff" },
-        { "key": "X-Frame-Options",            "value": "SAMEORIGIN" },
-        { "key": "X-XSS-Protection",           "value": "1; mode=block" },
-        { "key": "Referrer-Policy",             "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy",          "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type",   "value": "application/xml" },
-        { "key": "Cache-Control",  "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Content-Type",  "value": "text/plain" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     }
   ],
   "redirects": [
     {
-      "source": "/index",
-      "destination": "/",
+      "source": "/en/suite-rocketbot.html",
+      "destination": "/en/rocketbot-suite.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/suite-rocketbot",
+      "destination": "/en/rocketbot-suite",
+      "permanent": true
+    },
+    {
+      "source": "/en/planes.html",
+      "destination": "/en/pricing.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/planes",
+      "destination": "/en/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/en/contacto.html",
+      "destination": "/en/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/contacto",
+      "destination": "/en/contact",
+      "permanent": true
+    },
+    {
+      "source": "/en/orquestador.html",
+      "destination": "/en/orchestrator.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/orquestador",
+      "destination": "/en/orchestrator",
+      "permanent": true
+    },
+    {
+      "source": "/en/construir-vs-comprar.html",
+      "destination": "/en/build-vs-buy.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/construir-vs-comprar",
+      "destination": "/en/build-vs-buy",
+      "permanent": true
+    },
+    {
+      "source": "/en/politicas-de-privacidad.html",
+      "destination": "/en/privacy-policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/politicas-de-privacidad",
+      "destination": "/en/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/en/politicas-de-seguridad.html",
+      "destination": "/en/security-policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/politicas-de-seguridad",
+      "destination": "/en/security-policy",
+      "permanent": true
+    },
+    {
+      "source": "/en/terminos-y-condiciones.html",
+      "destination": "/en/terms-and-conditions.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/terminos-y-condiciones",
+      "destination": "/en/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/pt/planes.html",
+      "destination": "/pt/planos.html",
+      "permanent": true
+    },
+    {
+      "source": "/pt/planes",
+      "destination": "/pt/planos",
+      "permanent": true
+    },
+    {
+      "source": "/pt/contacto.html",
+      "destination": "/pt/contato.html",
+      "permanent": true
+    },
+    {
+      "source": "/pt/contacto",
+      "destination": "/pt/contato",
+      "permanent": true
+    },
+    {
+      "source": "/pt/orquestador.html",
+      "destination": "/pt/orquestrador.html",
+      "permanent": true
+    },
+    {
+      "source": "/pt/orquestador",
+      "destination": "/pt/orquestrador",
+      "permanent": true
+    },
+    {
+      "source": "/pt/construir-vs-comprar.html",
+      "destination": "/pt/construir-ou-comprar.html",
+      "permanent": true
+    },
+    {
+      "source": "/pt/construir-vs-comprar",
+      "destination": "/pt/construir-ou-comprar",
+      "permanent": true
+    },
+    {
+      "source": "/pt/politicas-de-privacidad.html",
+      "destination": "/pt/politicas-de-privacidade.html",
+      "permanent": true
+    },
+    {
+      "source": "/pt/politicas-de-privacidad",
+      "destination": "/pt/politicas-de-privacidade",
+      "permanent": true
+    },
+    {
+      "source": "/pt/politicas-de-seguridad.html",
+      "destination": "/pt/politicas-de-seguranca.html",
+      "permanent": true
+    },
+    {
+      "source": "/pt/politicas-de-seguridad",
+      "destination": "/pt/politicas-de-seguranca",
+      "permanent": true
+    },
+    {
+      "source": "/pt/terminos-y-condiciones.html",
+      "destination": "/pt/termos-e-condicoes.html",
+      "permanent": true
+    },
+    {
+      "source": "/pt/terminos-y-condiciones",
+      "destination": "/pt/termos-e-condicoes",
+      "permanent": true
+    },
+    {
+      "source": "/pt/partners.html",
+      "destination": "/pt/parceiros.html",
+      "permanent": true
+    },
+    {
+      "source": "/pt/partners",
+      "destination": "/pt/parceiros",
       "permanent": true
     }
   ]

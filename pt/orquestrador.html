@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="pt-BR" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <!-- ── Rocketbot i18n: protege los nombres de producto de Google Translate
@@ -30,7 +30,7 @@ window.RB_I18N=(function(){
     return s;
   }
   var API={
-    lang:'en',
+    lang:'pt',
     pick:function(map){ return map[API.lang]||map.es; },
     onLang:function(fn){ subs.push(fn); },
     setLang:function(l){
@@ -112,31 +112,31 @@ window.RB_I18N=(function(){
   gtag('config', 'G-2EHJ8S289M');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Orchestrator | Governance and control for your robots · Rocketbot</title>
-<meta name="description" content="Govern, monitor and scale robots, agents and applications from one place: Rocketbot, Python or any platform, with full traceability of every run.">
+<title>Orquestrador | Governança e controle dos seus robôs · Rocketbot</title>
+<meta name="description" content="Governe, monitore e escale robôs, agentes e aplicações em um só lugar: Rocketbot, Python ou qualquer plataforma, com rastreabilidade de cada execução.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://rocketbot.com/en/orquestador.html">
+<link rel="canonical" href="https://rocketbot.com/pt/orquestrador.html">
 <link rel="alternate" hreflang="es" href="https://rocketbot.com/orquestador.html">
-<link rel="alternate" hreflang="en" href="https://rocketbot.com/en/orquestador.html">
-<link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/orquestador.html">
+<link rel="alternate" hreflang="en" href="https://rocketbot.com/en/orchestrator.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/orquestrador.html">
 <link rel="alternate" hreflang="x-default" href="https://rocketbot.com/orquestador.html">
 <link rel="icon" href="/assets/logos/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/logos/rocketbot-iso.png">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rocketbot">
-<meta property="og:title" content="Orchestrator | Governance and control for your robots · Rocketbot">
-<meta property="og:description" content="Schedule, supervise and govern your robots, agents and applications from a single console, with automatic retries and full traceability.">
-<meta property="og:url" content="https://rocketbot.com/en/orquestador.html">
+<meta property="og:title" content="Orquestrador | Governança e controle dos seus robôs · Rocketbot">
+<meta property="og:description" content="Programe, supervisione e governe seus robôs, agentes e aplicações a partir de um único console, com novas tentativas automáticas e rastreabilidade completa.">
+<meta property="og:url" content="https://rocketbot.com/pt/orquestrador.html">
 <meta property="og:image" content="https://rocketbot.com/assets/logos/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="pt_BR">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rocketbot">
-<meta name="twitter:title" content="Orchestrator | Governance and control for your robots · Rocketbot">
-<meta name="twitter:description" content="Schedule, supervise and govern your robots, agents and applications from a single console.">
+<meta name="twitter:title" content="Orquestrador | Governança e controle dos seus robôs · Rocketbot">
+<meta name="twitter:description" content="Programe, supervisione e governe seus robôs, agentes e aplicações a partir de um único console.">
 <meta name="twitter:image" content="https://rocketbot.com/assets/logos/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -915,51 +915,68 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
   .rb-nlf__btn,.rb-nls__btn{transition:none;}
 }
 </style>
+<style id="rb-wa-css">
+.rb-wa{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#25D366;color:#fff;
+  box-shadow:0 6px 20px rgba(0,0,0,.28);
+  transition:transform .2s,box-shadow .2s;
+}
+.rb-wa:hover{transform:scale(1.06);box-shadow:0 10px 26px rgba(0,0,0,.34);}
+.rb-wa:active{transform:scale(.98);}
+.rb-wa:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+.rb-wa svg{width:30px;height:30px;display:block;}
+@media(max-width:600px){.rb-wa{right:14px;bottom:14px;width:52px;height:52px;}.rb-wa svg{width:27px;height:27px;}}
+@media(prefers-reduced-motion:reduce){.rb-wa{transition:none;}.rb-wa:hover{transform:none;}}
+@media print{.rb-wa{display:none;}}
+</style>
 </head>
 <body>
 
 <nav class="rb-nav" id="rb-nav">
   <div class="rb-nav__inner">
-    <a href="/en/index.html" class="rb-nav__logo-wrap">
+    <a href="/pt/index.html" class="rb-nav__logo-wrap">
       <img id="nav-logo" src="/assets/logos/logo-header.png" alt="Rocketbot" class="rb-nav__logo">
     </a>
     <ul class="rb-nav__links">
-      <li class="rb-nav__suite-li"><a href="/en/suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
-      <li class="rb-nav__plans-li"><a href="/en/planes.html" class="rb-nav__plans-hdr">Pricing</a></li>
+      <li class="rb-nav__suite-li"><a href="/pt/suite-rocketbot.html" class="rb-nav__suite-hdr">✦ Suite</a></li>
+      <li class="rb-nav__plans-li"><a href="/pt/planos.html" class="rb-nav__plans-hdr">Preços</a></li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Products <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button">Produtos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="/en/saturn-studio.html">Saturn Studio</a><a href="/en/rpa-studio.html">RPA Studio</a><a href="/en/ai-studio.html">AI Studio</a><a href="/en/orquestador.html">Orchestrator</a><a href="/en/xperience.html">Xperience</a><a href="/en/nexus.html">Nexus</a>
+          <a href="/pt/saturn-studio.html">Saturn Studio</a><a href="/pt/rpa-studio.html">RPA Studio</a><a href="/pt/ai-studio.html">AI Studio</a><a href="/pt/orquestrador.html">Orquestrador</a><a href="/pt/xperience.html">Xperience</a><a href="/pt/nexus.html">Nexus</a>
         </div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Resources <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="rb-nav__dropdown"><a href="/en/cfo.html">For CFOs</a><a href="/en/construir-vs-comprar.html">Build or buy</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
+        <button type="button">Recursos <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="rb-nav__dropdown"><a href="/pt/cfo.html">Para CFOs</a><a href="/pt/construir-ou-comprar.html">Construir ou comprar</a><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></div>
       </li>
       <li class="rb-nav__item rb-nav__item--dropdown">
-        <button type="button">Support &amp; services <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button">Suporte e serviços <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-nav__dropdown">
-          <a href="/en/partners.html" class="rb-nav__dd-cta">✦ Become a partner</a><a href="https://forum.rocketbot.com/" target="_blank" rel="noopener">Forum</a><a href="https://market.rocketbot.com/" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a>
-          <a href="/en/faq.html" class="rb-nav__dd-faq">FAQs</a><a href="/en/terminos-y-condiciones.html" class="rb-nav__dd-tyc">Terms & Conditions</a><a href="https://partners.rocketbot.com/wp-login.php" target="_blank" rel="noopener" class="rb-nav__dd-login">Partner Login →</a>
+          <a href="/pt/parceiros.html" class="rb-nav__dd-cta">✦ Quero ser parceiro</a><a href="https://forum.rocketbot.com/" target="_blank" rel="noopener">Fórum</a><a href="https://market.rocketbot.com/" target="_blank" rel="noopener">Marketplace</a><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a>
+          <a href="/pt/faq.html" class="rb-nav__dd-faq">FAQs</a><a href="/pt/termos-e-condicoes.html" class="rb-nav__dd-tyc">Termos e condições</a><a href="https://partners.rocketbot.com/wp-login.php" target="_blank" rel="noopener" class="rb-nav__dd-login">Login de Parceiros →</a>
         </div>
       </li>
-      <li><a href="/en/contacto.html">Talk to us</a></li>
+      <li><a href="/pt/contato.html">Fale conosco</a></li>
     </ul>
     <div class="rb-nav__actions">
-      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button class="rb-hamburger" id="rb-hamburger" type="button" aria-label="Abrir menu"><span></span><span></span><span></span></button>
       <div class="rb-lang" id="rb-lang">
-        <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Language" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button class="rb-iconbtn rb-lang__btn" id="rb-lang-btn" title="Idioma" type="button" aria-haspopup="true" aria-expanded="false" data-active="es"><span class="rb-flag" data-flag="es"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span><span class="rb-flag" data-flag="en"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span><span class="rb-flag" data-flag="pt"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span><svg class="rb-lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="rb-lang__menu" id="rb-lang-menu" role="menu">
           <button class="rb-lang__opt rb-lang--active" data-lang="es" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg></span>Español</button>
           <button class="rb-lang__opt" data-lang="en" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="12" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="2.4" cy="2.2" r=".6"/><circle cx="6" cy="2.2" r=".6"/><circle cx="9.6" cy="2.2" r=".6"/><circle cx="4.2" cy="4.3" r=".6"/><circle cx="7.8" cy="4.3" r=".6"/><circle cx="2.4" cy="6.4" r=".6"/><circle cx="6" cy="6.4" r=".6"/><circle cx="9.6" cy="6.4" r=".6"/><circle cx="4.2" cy="8.5" r=".6"/><circle cx="7.8" cy="8.5" r=".6"/></g></svg></span>English</button>
           <button class="rb-lang__opt" data-lang="pt" type="button" translate="no"><span class="rb-flag"><svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="30" height="20" fill="#009B3A"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10Z" fill="#FEDF00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/><path d="M10.56 8.81q4.44 5.59 8.88 0-4.44 3.79-8.88 0Z" fill="#fff"/></svg></span>Português</button>
         </div>
       </div>
-      <button class="rb-iconbtn" id="theme-btn" title="Switch theme" type="button">
+      <button class="rb-iconbtn" id="theme-btn" title="Mudar tema" type="button">
         <svg id="icon-sun" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"/></svg>
         <svg id="icon-moon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
       </button>
-      <a href="/en/cfo.html" class="rb-btn rb-cfo-btn">For CFOs</a>
+      <a href="/pt/cfo.html" class="rb-btn rb-cfo-btn">Para CFOs</a>
       <button type="button" class="rb-btn rb-btn--primary" data-dl-open>Download</button>
     </div>
   </div>
@@ -969,34 +986,34 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
 <div class="rb-mobile-menu" id="rb-mobile-menu">
   <div class="rb-mobile-menu__inner">
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Products</div>
-      <a href="/en/saturn-studio.html">Saturn Studio</a>
-      <a href="/en/rpa-studio.html">RPA Studio</a>
-      <a href="/en/ai-studio.html">AI Studio</a>
-      <a href="/en/orquestador.html">Orchestrator</a>
-      <a href="/en/xperience.html">Xperience</a>
-      <a href="/en/nexus.html">Nexus</a>
+      <div class="rb-mobile-menu__label">Produtos</div>
+      <a href="/pt/saturn-studio.html">Saturn Studio</a>
+      <a href="/pt/rpa-studio.html">RPA Studio</a>
+      <a href="/pt/ai-studio.html">AI Studio</a>
+      <a href="/pt/orquestrador.html">Orquestrador</a>
+      <a href="/pt/xperience.html">Xperience</a>
+      <a href="/pt/nexus.html">Nexus</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Resources</div>
+      <div class="rb-mobile-menu__label">Recursos</div>
       <a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a>
       <a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a>
     </div>
     <div class="rb-mobile-menu__section">
-      <div class="rb-mobile-menu__label">Support &amp; services</div>
-      <a href="https://forum.rocketbot.com/" target="_blank" rel="noopener">Forum</a>
+      <div class="rb-mobile-menu__label">Suporte e serviços</div>
+      <a href="https://forum.rocketbot.com/" target="_blank" rel="noopener">Fórum</a>
       <a href="https://market.rocketbot.com/" target="_blank" rel="noopener">Marketplace</a>
-      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a>
-      <a href="/en/faq.html" class="rb-mobile-menu__faq">FAQs</a>
-      <a href="/en/terminos-y-condiciones.html" class="rb-mobile-menu__tyc">Terms & Conditions</a>
+      <a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a>
+      <a href="/pt/faq.html" class="rb-mobile-menu__faq">FAQs</a>
+      <a href="/pt/termos-e-condicoes.html" class="rb-mobile-menu__tyc">Termos e condições</a>
     
-      <a href="/en/partners.html" class="rb-mobile-menu__partner">Become a partner</a>
-      <a href="https://partners.rocketbot.com/wp-login.php" target="_blank" rel="noopener">Partner Login</a>
+      <a href="/pt/parceiros.html" class="rb-mobile-menu__partner">Quero ser parceiro</a>
+      <a href="https://partners.rocketbot.com/wp-login.php" target="_blank" rel="noopener">Login de Parceiros</a>
     </div>
     <div class="rb-mobile-menu__actions">
-      <a href="/en/suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Rocketbot Suite</a>
-      <a href="/en/planes.html" class="rb-mobile-menu__btn">Plans and pricing</a>
-      <a href="/en/contacto.html" class="rb-mobile-menu__btn">Talk to us</a>
+      <a href="/pt/suite-rocketbot.html" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary">✦ Suite Rocketbot</a>
+      <a href="/pt/planos.html" class="rb-mobile-menu__btn">Planos e preços</a>
+      <a href="/pt/contato.html" class="rb-mobile-menu__btn">Fale conosco</a>
       <button type="button" class="rb-mobile-menu__btn rb-mobile-menu__btn--primary" data-dl-open>Download</button>
     </div>
   </div>
@@ -1006,119 +1023,119 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
 <div class="rb-dlmodal" id="rbDlModal" aria-hidden="true">
   <div class="rb-dlmodal__backdrop" data-dl-close></div>
   <div class="rb-dlmodal__panel" role="dialog" aria-modal="true" aria-labelledby="rbDlTitle">
-    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Close">&times;</button>
-    <h2 id="rbDlTitle" class="rb-dlmodal__title">Download Rocketbot</h2>
-    <p class="rb-dlmodal__sub">Pick your product and operating system.</p>
+    <button type="button" class="rb-dlmodal__close" data-dl-close aria-label="Fechar">&times;</button>
+    <h2 id="rbDlTitle" class="rb-dlmodal__title">Baixe o Rocketbot</h2>
+    <p class="rb-dlmodal__sub">Escolha o produto e o seu sistema operacional.</p>
     <div class="rb-dlmodal__body">
       <div class="rb-dlmodal__side">
-        <div class="rb-dlmodal__label">Products</div>
+        <div class="rb-dlmodal__label">Produtos</div>
         <button type="button" class="rb-dlmodal__pill is-active" data-dl-pill="rpa">
           <img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio
         </button>
 
         <div class="rb-dlmodal__req">
           <div class="rb-dlmodal__reqgrp">
-            <div class="rb-dlmodal__reqttl">Minimum requirements</div>
-            <div class="rb-dlmodal__reqrow"><span>Processor</span><strong translate="no">Intel Core i3-4340 or AMD FX-6300</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Storage</span><strong>10 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memory</span><strong>4 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Requisitos mínimos</div>
+            <div class="rb-dlmodal__reqrow"><span>Processador</span><strong translate="no">Intel Core i3-4340 ou AMD FX-6300</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Armazenamento</span><strong>10 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memória</span><strong>4 GB RAM</strong></div>
           </div>
           <div class="rb-dlmodal__reqgrp rb-dlmodal__reqgrp--rec">
-            <div class="rb-dlmodal__reqttl">Recommended setup</div>
-            <div class="rb-dlmodal__reqrow"><span>Processor</span><strong translate="no">Intel Core i5</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Storage</span><strong>175 GB</strong></div>
-            <div class="rb-dlmodal__reqrow"><span>Memory</span><strong>8 GB RAM</strong></div>
+            <div class="rb-dlmodal__reqttl">Configuração recomendada</div>
+            <div class="rb-dlmodal__reqrow"><span>Processador</span><strong translate="no">Intel Core i5</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Armazenamento</span><strong>175 GB</strong></div>
+            <div class="rb-dlmodal__reqrow"><span>Memória</span><strong>8 GB RAM</strong></div>
           </div>
         </div>
       </div>
       <div class="rb-dlmodal__main">
         <div class="rb-dlmodal__program is-active" data-dl-panel="rpa">
           <div class="rb-dlmodal__ptitle"><img src="/assets/logos/products/rpa-studio.png" alt="" loading="lazy" decoding="async">RPA Studio</div>
-          <p class="rb-dlmodal__pdesc">Download the installer for your operating system. The download site lists every available version along with its release notes.</p>
+          <p class="rb-dlmodal__pdesc">Baixe o instalador do seu sistema operacional. No site de download você encontra todas as versões disponíveis e suas notas de lançamento.</p>
           <div class="rb-dlmodal__os">
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.4v7H3V5.5ZM11.4 4.3 21 3v8.4h-9.6V4.3ZM3 12.4h7.5v7.1L3 18.5v-6.1ZM11.4 12.4H21V21l-9.6-1.3v-7.3Z"/></svg>Windows<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
-              <div class="rb-dlmodal__osreq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Requires <b>Windows 10</b> or higher &middot; <b>Windows Server 2016</b> or higher</span></div>
+              <div class="rb-dlmodal__osreq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Requer <b>Windows 10</b> ou superior &middot; <b>Windows Server 2016</b> ou superior</span></div>
               <div class="rb-dlmodal__vwrap">
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Latest version</span></div>
+                    <div class="rb-dlmodal__vver">v2026.04.07 <span class="rb-dlmodal__vtag">Última versão</span></div>
                     <div class="rb-dlmodal__vmeta">354 MB · ZIP · MD5 153fd4432f30564ecd16b146dcfaac31</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20260407.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2025.07.01 <span class="rb-dlmodal__vtag">Python 3.13</span></div>
                     <div class="rb-dlmodal__vmeta">356 MB · ZIP · MD5 9f0e2c18051b020d71387821f3abdf82</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_win_20250701.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2024.05.28</div>
                     <div class="rb-dlmodal__vmeta">458 MB · ZIP · MD5 b4034aaf4759f710f6754df5bbd81be2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20240528.zip?v=2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">v2023.11.10</div>
                     <div class="rb-dlmodal__vmeta">358 MB · ZIP · MD5 a18cc70a91134e73d2da277f973fa87a</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/Rocketbot_win_20231110.zip?v=2023" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 </div>
               </div>
             </div>
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.7 12.7c0-2.4 2-3.6 2.1-3.7-1.1-1.6-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.7 0-2-.9-3.2-.8-1.7 0-3.2 1-4.1 2.5-1.7 3-.4 7.5 1.3 10 .8 1.2 1.8 2.5 3.1 2.5 1.2-.1 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.7-1-2.7-4.1v-.2ZM14.4 5.5c.6-.8 1.1-1.9.9-3-1 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-.9 2.9 1.1.1 2.2-.5 2.8-1.3Z"/></svg>macOS<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
-              <div class="rb-dlmodal__osreq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Requires <b>macOS 11</b> (Big Sur) or higher</span></div>
+              <div class="rb-dlmodal__osreq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Requer <b>macOS 11</b> (Big Sur) ou superior</span></div>
               <div class="rb-dlmodal__vwrap">
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Latest version</span></div>
+                    <div class="rb-dlmodal__vver">Mac Intel · v2025.07.24 <span class="rb-dlmodal__vtag">Última versão</span></div>
                     <div class="rb-dlmodal__vmeta">248 MB · ZIP · MD5 ff4ea3d2e49aa4e3294158f04ad81922</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_mac-X86-X64_2025.07.24.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Mac ARM · v2025.07.01</div>
                     <div class="rb-dlmodal__vmeta">533 MB · ZIP · MD5 3635e4cd1ec90eb5bac453c6b813bf29</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.us-east-1.amazonaws.com/rocketbot_2025_07_01_mac_arm.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 </div>
               </div>
             </div>
             <div class="rb-dlmodal__osgroup">
               <div class="rb-dlmodal__oshead"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2c.3 1.3.6 2.3 1.4 3.4.7 1 1.8 1.8 2 3.2.2 1.1-.2 2-.7 2.8.6.2 1.4.8 1.7 1.7.4 1.2-.2 2.5-1.3 3.1.3.4.5 1 .3 1.6-.4 1.2-2.2 1.7-3.7 1.7-1 0-1.8-.3-2.7-.3-.9 0-1.7.4-2.7.3-1.5 0-3.3-.5-3.7-1.7-.2-.6 0-1.2.3-1.6-1.1-.6-1.7-1.9-1.3-3.1.3-.9 1.1-1.5 1.7-1.7-.5-.8-.9-1.7-.7-2.8.2-1.4 1.3-2.2 2-3.2.8-1.1 1.1-2.1 1.4-3.4h4.7Z"/></svg>Linux<svg class="rb-dlmodal__oschev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
-              <div class="rb-dlmodal__osreq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Requires <b>Ubuntu 20.04 LTS</b> or higher &middot; <b>RHEL 8</b> or higher</span></div>
+              <div class="rb-dlmodal__osreq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Requer <b>Ubuntu 20.04 LTS</b> ou superior &middot; <b>RHEL 8</b> ou superior</span></div>
               <div class="rb-dlmodal__vwrap">
                 <div class="rb-dlmodal__vlist">
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
-                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Latest version</span></div>
+                    <div class="rb-dlmodal__vver">Ubuntu · v2024.05.28 <span class="rb-dlmodal__vtag">Última versão</span></div>
                     <div class="rb-dlmodal__vmeta">434 MB · ZIP · MD5 6312df8b82977e4e08d48826deb95b34</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_ubuntu_20240528.zip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">RHEL · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">166.2 MB · TAR.GZ · MD5 6d98a8f63cec705d181a011dfb69c90c</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_rhel.tar.gz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 <div class="rb-dlmodal__vrow">
                   <div class="rb-dlmodal__vinfo">
                     <div class="rb-dlmodal__vver">Ubuntu · v2020.12.30</div>
                     <div class="rb-dlmodal__vmeta">118.1 MB · TAR.XZ · MD5 b2d9a94de8299615e525ea26d5d543a2</div>
                   </div>
-                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Download</a>
+                  <a class="rb-dlmodal__vdl" href="https://rocketbot-bin.s3.amazonaws.com/rocketbot_20201230_a0_linux_ubuntu.tar.xz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></svg>Baixar</a>
                 </div>
                 </div>
               </div>
@@ -1135,12 +1152,12 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
   <div class="rb-hero__particles"></div>
   <div class="container rb-hero__grid">
     <div class="rb-hero__content">
-      <h1 class="rb-hero__title">Govern and scale<strong><span class="rb-hero__rot" id="heroRot">your entire operation</span>.</strong></h1>
-      <p class="rb-hero__sub">Centralize the execution of robots, agents, and applications from a single console. Schedule processes, monitor operations in real time, retry automatically when something fails, and keep full traceability of every run, whatever the technology.</p>
+      <h1 class="rb-hero__title">Governe e escale<strong><span class="rb-hero__rot" id="heroRot">toda a sua operação</span>.</strong></h1>
+      <p class="rb-hero__sub">Centralize a execução de robôs, agentes e aplicações em um único console. Programe processos, monitore a operação em tempo real, faça novas tentativas automáticas em caso de erro e mantenha rastreabilidade completa de cada execução, seja qual for a tecnologia.</p>
       <div class="rb-hero__ctas">
-        <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://orchestrator.myrb.io/#/auth/login">Try it now</a>
-        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#consola" style="border-color:rgba(255,255,255,.25);color:#fff;">See the console</a>
-        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="/en/contacto.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Contact sales</a>
+        <a class="rb-btn rb-btn--primary rb-btn--lg" href="https://orchestrator.myrb.io/#/auth/login">Teste agora</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="#consola" style="border-color:rgba(255,255,255,.25);color:#fff;">Ver o console</a>
+        <a class="rb-btn rb-btn--ghost rb-btn--lg" href="/pt/contato.html" style="border-color:rgba(255,255,255,.25);color:#fff;">Falar com vendas</a>
       </div>
     </div>
     <div class="rb-hero__visual" aria-hidden="true">
@@ -1161,27 +1178,10 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
 <!-- CLIENTS -->
 <section class="rb-clients">
   <div class="container">
-    <p class="rb-clients__label">Companies that trust Rocketbot</p>
+    <p class="rb-clients__label">Empresas que confiam na Rocketbot</p>
     <div class="rb-marquee"><div class="rb-marquee__track">
-      <img src="/assets/clients/marquee-en/samsung.svg" alt="Samsung" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/ricoh.svg" alt="Ricoh" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/bdo.svg" alt="BDO" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/lockton.svg" alt="Lockton" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/decameron.svg" alt="Decameron" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/juan-valdez.svg" alt="Juan Valdez" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/grendene.svg" alt="Grendene" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/ram.svg" alt="RAM" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/benitez-insurance.svg" alt="Benitez Insurance" loading="lazy" decoding="async">
-      <!-- duplicate set for seamless marquee loop -->
-      <img src="/assets/clients/marquee-en/samsung.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/ricoh.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/bdo.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/lockton.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/decameron.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/juan-valdez.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/grendene.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/ram.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="/assets/clients/marquee-en/benitez-insurance.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img src="/assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="/assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="/assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="/assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="/assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="/assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="/assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="/assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
+      <img src="/assets/clients/marquee/lafise.svg" alt="Lafise" loading="lazy" decoding="async"><img src="/assets/clients/marquee/alpina.svg" alt="Alpina" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sharp.svg" alt="Sharp" loading="lazy" decoding="async"><img src="/assets/clients/marquee/movistar.svg" alt="Movistar" loading="lazy" decoding="async"><img src="/assets/clients/marquee/sabadell.svg" alt="Banco Sabadell" loading="lazy" decoding="async"><img src="/assets/clients/marquee/zurich.svg" alt="Zurich" loading="lazy" decoding="async"><img src="/assets/clients/marquee/produbanco.svg" alt="Produbanco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/entel.svg" alt="Entel" loading="lazy" decoding="async"><img src="/assets/clients/marquee/adecco.svg" alt="Adecco" loading="lazy" decoding="async"><img src="/assets/clients/marquee/verisure.svg" alt="Verisure" loading="lazy" decoding="async"><img src="/assets/clients/marquee/pronaca.svg" alt="Pronaca" loading="lazy" decoding="async"><img src="/assets/clients/marquee/agrosuper.svg" alt="Agrosuper" loading="lazy" decoding="async">
     </div></div>
   </div>
 </section>
@@ -1190,30 +1190,30 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
 <section class="rb-section" id="consola">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Your entire operations, <span>under control</span></h2>
-      <p class="rb-section__sub">Schedule runs, monitor every robot and automation, retry processes automatically when they fail, and keep a complete record for audit and&nbsp;traceability.</p>
+      <h2 class="rb-section__title">Toda a sua operação, <span>sob controle</span></h2>
+      <p class="rb-section__sub">Programe execuções, monitore cada robô e automação, repita processos automaticamente em caso de erro e mantenha um registro completo para auditoria e&nbsp;rastreabilidade.</p>
     </div>
     <div class="rb-console">
       <div class="rb-console__bar">
-        <span class="ttl"><span class="dotbtns"><i></i><i></i><i></i></span>Operations console</span>
-        <span class="rb-live"><span class="ld"></span>Live</span>
+        <span class="ttl"><span class="dotbtns"><i></i><i></i><i></i></span>Console de operação</span>
+        <span class="rb-live"><span class="ld"></span>Ao vivo</span>
       </div>
       <div class="rb-cmetrics">
-        <div class="rb-cm"><div class="l">Running</div><div class="n accent" id="mRun">0</div></div>
-        <div class="rb-cm"><div class="l">Queued</div><div class="n" id="mQueue">0</div></div>
-        <div class="rb-cm"><div class="l">Completed today</div><div class="n" id="mDone">0</div></div>
-        <div class="rb-cm"><div class="l">Retries resolved</div><div class="n" id="mRetry">0</div></div>
+        <div class="rb-cm"><div class="l">Em execução</div><div class="n accent" id="mRun">0</div></div>
+        <div class="rb-cm"><div class="l">Na fila</div><div class="n" id="mQueue">0</div></div>
+        <div class="rb-cm"><div class="l">Concluídas hoje</div><div class="n" id="mDone">0</div></div>
+        <div class="rb-cm"><div class="l">Novas tentativas resolvidas</div><div class="n" id="mRetry">0</div></div>
       </div>
       <div class="rb-clist" id="clist"></div>
     </div>
     <div class="rb-clegend">
-      <span><span class="d" style="background:#2B7FFF"></span>Running</span>
-      <span><span class="d" style="background:#1D9E75"></span>Completed</span>
-      <span><span class="d" style="background:#BA7517"></span>Retrying</span>
-      <span><span class="d" style="background:#909090"></span>Queued</span>
+      <span><span class="d" style="background:#2B7FFF"></span>Em execução</span>
+      <span><span class="d" style="background:#1D9E75"></span>Concluído</span>
+      <span><span class="d" style="background:#BA7517"></span>Tentando de novo</span>
+      <span><span class="d" style="background:#909090"></span>Na fila</span>
     </div>
     <div class="rb-auditlog">
-      <div class="rb-al-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12l1.5 1.5L13 11"/></svg>Activity log<span class="note">who ran what, when, and with what result</span></div>
+      <div class="rb-al-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12l1.5 1.5L13 11"/></svg>Registro de atividade<span class="note">quem executou o quê, quando e com qual resultado</span></div>
       <div class="rb-al-list" id="alList"></div>
     </div>
   </div>
@@ -1223,14 +1223,14 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
 <section class="rb-section rb-section--alt">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Control all your automation<br><span>from one place</span></h2>
-      <p class="rb-section__sub">Schedule runs, monitor robots and agents, manage permissions, and oversee your entire operation from a central platform that grows with your&nbsp;company.</p>
+      <h2 class="rb-section__title">Controle toda a sua automação<br><span>em um só lugar</span></h2>
+      <p class="rb-section__sub">Programe execuções, monitore robôs e agentes, administre permissões e supervisione toda a sua operação em uma plataforma centralizada que cresce junto com a sua&nbsp;empresa.</p>
     </div>
     <div class="rb-compare rb-compare--four">
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M12 13v4M10 15h4"/></svg></div><div class="rb-compare__title">Smart scheduling</div><div class="rb-compare__desc">Schedule robots and processes to run exactly when your operations need them, automatically and reliably.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 3 3 5-6 5 5"/><path d="M3 21h18"/></svg></div><div class="rb-compare__title">Real-time monitoring</div><div class="rb-compare__desc">See the status, metrics, alerts, and run history of every automation from a single console.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6M13 4l-2 16"/></svg></div><div class="rb-compare__title">Cross-platform orchestration</div><div class="rb-compare__desc">Manage Rocketbot robots, Python, UI automations, and other platforms from the same Orchestrator.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a2 2 0 0 1 2-2h2M16 3h2a2 2 0 0 1 2 2v2M20 17v2a2 2 0 0 1-2 2h-2M8 21H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg></div><div class="rb-compare__title">APIs and webhooks</div><div class="rb-compare__desc">Connect your operations to ERPs, CRMs, databases, and any system through REST API and webhooks.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M12 13v4M10 15h4"/></svg></div><div class="rb-compare__title">Programação inteligente</div><div class="rb-compare__desc">Programe robôs e processos para rodar exatamente quando a sua operação precisa, de forma automática e confiável.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 3 3 5-6 5 5"/><path d="M3 21h18"/></svg></div><div class="rb-compare__title">Monitoramento em tempo real</div><div class="rb-compare__desc">Veja status, métricas, alertas e histórico de execução de cada automação em um único console.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6M13 4l-2 16"/></svg></div><div class="rb-compare__title">Orquestração multiplataforma</div><div class="rb-compare__desc">Administre robôs da Rocketbot, Python, automações de UI e outras plataformas a partir do mesmo Orquestrador.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a2 2 0 0 1 2-2h2M16 3h2a2 2 0 0 1 2 2v2M20 17v2a2 2 0 0 1-2 2h-2M8 21H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg></div><div class="rb-compare__title">APIs e webhooks</div><div class="rb-compare__desc">Integre a sua operação a ERPs, CRMs, bancos de dados e qualquer sistema por meio de API REST e webhooks.</div></div>
     </div>
   </div>
 </section>
@@ -1239,49 +1239,49 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
 <section class="rb-section" id="gobernanza">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">One point of control<br><span class="rb-title-nowrap">for robots, agents, and applications</span></h2>
-      <p class="rb-section__sub">The Orchestrator centralizes execution, scheduling, monitoring, and governance for robots, AI agents, and applications on a single platform. Oversee your entire operation with traceability, permissions, and control, no matter what technology it was built&nbsp;with.</p>
+      <h2 class="rb-section__title">Um só ponto de controle<br><span class="rb-title-nowrap">para robôs, agentes e aplicações</span></h2>
+      <p class="rb-section__sub">O Orquestrador centraliza a execução, a programação, o monitoramento e a governança de robôs, agentes de IA e aplicações em uma única plataforma. Supervisione toda a operação com rastreabilidade, permissões e controle, seja qual for a tecnologia usada para&nbsp;construí-la.</p>
     </div>
     <div class="rb-arch" id="arch">
       <div class="rb-arch-cols">
       <div class="rb-arch-plane">
         <div class="ph" data-key="orquestador">
-          <div class="ic ic--logo"><img src="/assets/logos/products/orchestrator.png" alt="Orchestrator" loading="lazy" decoding="async"></div>
-          <div><div class="lab">Governance plane</div><h3>Orchestrator</h3></div>
+          <div class="ic ic--logo"><img src="/assets/logos/products/orchestrator.png" alt="Orquestrador" loading="lazy" decoding="async"></div>
+          <div><div class="lab">Plano de governança</div><h3>Orquestrador</h3></div>
         </div>
         <div class="rb-arch-chips">
-          <div class="rb-achip" data-key="programacion"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>Scheduling</div>
-          <div class="rb-achip" data-key="rbac"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Permissions · RBAC</div>
-          <div class="rb-achip" data-key="versionado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8 7l8 4M8 17l8-4"/></svg>Versioning and rollback</div>
-          <div class="rb-achip" data-key="entornos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/></svg>Dev/test/prod environments</div>
-          <div class="rb-achip" data-key="credenciales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="3.5"/><path d="M10 13l9-9M16 7l2 2M19 4l1.5 1.5"/></svg>Credentials and connections</div>
-          <div class="rb-achip" data-key="reintentos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/></svg>Automatic retries</div>
-          <div class="rb-achip" data-key="trazabilidad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 13l1.4 1.4L13 11.5"/></svg>Traceability</div>
-          <div class="rb-achip" data-key="monitoreo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg>Real-time monitoring</div>
+          <div class="rb-achip" data-key="programacion"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>Programação</div>
+          <div class="rb-achip" data-key="rbac"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Permissões · RBAC</div>
+          <div class="rb-achip" data-key="versionado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8 7l8 4M8 17l8-4"/></svg>Versionamento e rollback</div>
+          <div class="rb-achip" data-key="entornos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/></svg>Ambientes dev/test/prod</div>
+          <div class="rb-achip" data-key="credenciales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="3.5"/><path d="M10 13l9-9M16 7l2 2M19 4l1.5 1.5"/></svg>Credenciais e conexões</div>
+          <div class="rb-achip" data-key="reintentos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/></svg>Novas tentativas automáticas</div>
+          <div class="rb-achip" data-key="trazabilidad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 13l1.4 1.4L13 11.5"/></svg>Rastreabilidade</div>
+          <div class="rb-achip" data-key="monitoreo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg>Monitoramento em tempo real</div>
         </div>
       </div>
       <div class="rb-arch-mid">
         <span class="rb-aflow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <span class="lbl">Control, policy, and execution</span>
+        <span class="lbl">Controle, políticas e execução</span>
         <span class="rb-aflow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></span>
-        <span class="lbl">Status, telemetry, and audit</span>
+        <span class="lbl">Status, métricas e auditoria</span>
       </div>
       <div class="rb-arch-base">
-        <div class="blab">Robots, agents, and applications</div>
+        <div class="blab">Robôs, agentes e aplicações</div>
         <div class="rb-arch-cards">
-          <div class="rb-acard" data-key="rpa"><div class="ic"><img src="/assets/logos/products/rpa-studio.png" alt="RPA Studio" loading="lazy" decoding="async"></div><div><div class="nm">RPA Studio</div><div class="ds">Robots</div></div></div>
-          <div class="rb-acard" data-key="ai"><div class="ic"><img src="/assets/logos/products/ai-studio.png" alt="AI Studio" loading="lazy" decoding="async"></div><div><div class="nm">AI Studio</div><div class="ds">AI agents</div></div></div>
-          <div class="rb-acard" data-key="saturn"><div class="ic"><img src="/assets/logos/products/saturn-studio.png" alt="Saturn Studio" loading="lazy" decoding="async"></div><div><div class="nm">Saturn Studio</div><div class="ds">Flows and APIs</div></div></div>
+          <div class="rb-acard" data-key="rpa"><div class="ic"><img src="/assets/logos/products/rpa-studio.png" alt="RPA Studio" loading="lazy" decoding="async"></div><div><div class="nm">RPA Studio</div><div class="ds">Robôs</div></div></div>
+          <div class="rb-acard" data-key="ai"><div class="ic"><img src="/assets/logos/products/ai-studio.png" alt="AI Studio" loading="lazy" decoding="async"></div><div><div class="nm">AI Studio</div><div class="ds">Agentes com IA</div></div></div>
+          <div class="rb-acard" data-key="saturn"><div class="ic"><img src="/assets/logos/products/saturn-studio.png" alt="Saturn Studio" loading="lazy" decoding="async"></div><div><div class="nm">Saturn Studio</div><div class="ds">Fluxos e APIs</div></div></div>
           <div class="rb-acard" data-key="python"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6M13 4l-2 16"/></svg></div><div><div class="nm">Python</div><div class="ds">Scripts</div></div></div>
-          <div class="rb-acard" data-key="xperience"><div class="ic"><img src="/assets/logos/products/xperience.png" alt="Xperience" loading="lazy" decoding="async"></div><div><div class="nm">Xperience</div><div class="ds">Forms</div></div></div>
-          <div class="rb-acard" data-key="otras"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><div><div class="nm">Other platforms</div><div class="ds">Automation Anywhere and more</div></div></div>
-          <div class="rb-acard" data-key="apps"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M6.5 6.5h0M9 6.5h0"/></svg></div><div><div class="nm">Any app</div><div class="ds">Docker · Excel · Executables (.exe)</div></div></div>
+          <div class="rb-acard" data-key="xperience"><div class="ic"><img src="/assets/logos/products/xperience.png" alt="Xperience" loading="lazy" decoding="async"></div><div><div class="nm">Xperience</div><div class="ds">Formulários</div></div></div>
+          <div class="rb-acard" data-key="otras"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><div><div class="nm">Outras plataformas</div><div class="ds">Automation Anywhere e mais</div></div></div>
+          <div class="rb-acard" data-key="apps"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M6.5 6.5h0M9 6.5h0"/></svg></div><div><div class="nm">Qualquer aplicação</div><div class="ds">Docker · Excel · Executáveis (.exe)</div></div></div>
         </div>
-        <div class="rb-arch-infra" data-key="infra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h0M7 17h0"/></svg>In the cloud · AWS infrastructure · High availability</div>
+        <div class="rb-arch-infra" data-key="infra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h0M7 17h0"/></svg>Infraestrutura cloud sobre a AWS · Alta disponibilidade</div>
       </div>
       </div>
       <div class="rb-ia-detail" id="iaDetail"></div>
-      <div class="rb-ia-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l11 7-5 1 3 6-2 1-3-6-4 4z"/></svg>Click any element to see what it does.</div>
+      <div class="rb-ia-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l11 7-5 1 3 6-2 1-3-6-4 4z"/></svg>Clique em qualquer elemento para conhecer sua função.</div>
     </div>
   </div>
 </section>
@@ -1290,13 +1290,13 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
 <section class="rb-section rb-section--alt" id="orquesta">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Orchestrate any technology, <span>not just Rocketbot</span></h2>
-      <p class="rb-section__sub">Centralize the execution of robots, scripts, and applications from one console. Manage Rocketbot robots, Python, and other RPA platforms, and run any application installed on the machine with whatever parameters it&nbsp;needs.</p>
+      <h2 class="rb-section__title">Orquestre qualquer tecnologia, <span>não só a Rocketbot</span></h2>
+      <p class="rb-section__sub">Centralize a execução de robôs, scripts e aplicações em um único console. Administre robôs da Rocketbot, Python e outras plataformas de RPA, além de executar qualquer aplicação instalada na máquina com os parâmetros que ela&nbsp;precisar.</p>
     </div>
     <div class="rb-compare">
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><div class="rb-compare__title">All your RPA, in one place</div><div class="rb-compare__desc">Manage robots built with Rocketbot, Python, UI automations, and platforms such as Automation Anywhere, with centralized monitoring, scheduling, and control.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M6.5 6.5h0M9 6.5h0"/></svg></div><div class="rb-compare__title">Run any application</div><div class="rb-compare__desc">Start servers, run Docker containers, open Excel, or any installed application, passing in the parameters it needs from the Orchestrator.</div></div>
-      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg></div><div class="rb-compare__title">Run it, parameterize it, monitor it</div><div class="rb-compare__desc">Launch processes with the parameters each application requires. Robots run automations end to end and report their status and results in real time.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><div class="rb-compare__title">Todo o seu RPA em um só lugar</div><div class="rb-compare__desc">Administre robôs criados com Rocketbot, Python, automações de UI e plataformas como Automation Anywhere, com monitoramento, programação e controle centralizados.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M6.5 6.5h0M9 6.5h0"/></svg></div><div class="rb-compare__title">Execute qualquer aplicação</div><div class="rb-compare__desc">Suba servidores, rode contêineres Docker, abra o Excel ou qualquer aplicação instalada, enviando os parâmetros necessários a partir do Orquestrador.</div></div>
+      <div class="rb-compare__card"><div class="rb-compare__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg></div><div class="rb-compare__title">Execute, parametrize e supervisione</div><div class="rb-compare__desc">Dispare processos com os parâmetros que cada aplicação exige. Os robôs executam automações de ponta a ponta e reportam status e resultados em tempo real.</div></div>
     </div>
   </div>
 </section>
@@ -1306,23 +1306,23 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
   <div class="container">
     <div class="rb-section__head">
       <div class="rb-brandpair" aria-hidden="true"><div class="rb-brandpair__halo"></div><div class="rb-brandpair__tile--solo"><svg class="ic" viewBox="0 0 100 100" fill="currentColor"><path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"/></svg><span>Claude</span></div><div class="rb-brandpair__dust rb-brandpair__dust--1"></div><div class="rb-brandpair__dust rb-brandpair__dust--2"></div><div class="rb-brandpair__dust rb-brandpair__dust--3"></div></div>
-      <h2 class="rb-section__title">Connect any AI<br><span>to your operations.</span></h2>
-      <p class="rb-section__sub">Through MCP (Model Context Protocol), connect Claude or any compatible AI model to check the Orchestrator's status, analyze metrics, build dashboards, and run actions via API, all within the permissions, roles, and limits you&nbsp;define.</p>
+      <h2 class="rb-section__title">Conecte qualquer IA<br><span>à sua operação.</span></h2>
+      <p class="rb-section__sub">Por meio do MCP (Model Context Protocol), conecte o Claude ou qualquer modelo de IA compatível para consultar o status do Orquestrador, analisar métricas, gerar painéis e executar ações via API. Tudo dentro das permissões, papéis e limites que você&nbsp;define.</p>
     </div>
     <div class="rb-omcp">
       <div class="rb-om-card">
-        <div class="rb-om-lbl">Instruction to Claude</div>
-        <div class="rb-om-msg"><span class="rb-om-av user">You</span><div class="rb-om-bub" id="omUser"></div></div>
+        <div class="rb-om-lbl">Instrução ao Claude</div>
+        <div class="rb-om-msg"><span class="rb-om-av user">Você</span><div class="rb-om-bub" id="omUser"></div></div>
         <div class="rb-om-msg" id="omBotRow" style="visibility:hidden"><span class="rb-om-av bot">C</span><div class="rb-om-bub" id="omBot"></div></div>
         <div class="rb-om-chips" id="omChips">
-          <button class="rb-om-chip act" data-k="consultar">Check metrics</button>
-          <button class="rb-om-chip" data-k="ejecutar">Run a robot</button>
-          <button class="rb-om-chip" data-k="denegado">Action without permission</button>
+          <button class="rb-om-chip act" data-k="consultar">Consultar métricas</button>
+          <button class="rb-om-chip" data-k="ejecutar">Executar um robô</button>
+          <button class="rb-om-chip" data-k="denegado">Ação sem permissão</button>
         </div>
-        <div class="rb-om-bar"><span class="ph">Ask the Orchestrator for something…</span><button class="rb-btn rb-btn--green" id="omGen" onclick="omPlay()">Send</button></div>
+        <div class="rb-om-bar"><span class="ph">Peça algo ao Orquestrador…</span><button class="rb-btn rb-btn--green" id="omGen" onclick="omPlay()">Enviar</button></div>
       </div>
       <div class="rb-om-out">
-        <div class="rb-om-out-h"><span class="pin"></span><span id="omKind">Orchestrator response</span></div>
+        <div class="rb-om-out-h"><span class="pin"></span><span id="omKind">Resposta do Orquestrador</span></div>
         <div class="rb-om-res" id="omRes"></div>
       </div>
     </div>
@@ -1331,15 +1331,15 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
       <div class="rb-om-flow">
         <span class="rb-om-key"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2L20 3M16 7l2 2M13 10l2 2"/></svg>API Key</span>
         <span class="rb-om-arrow">→</span>
-        <span class="rb-om-key"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/></svg>Role</span>
+        <span class="rb-om-key"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/></svg>Papel</span>
         <span class="rb-om-arrow">→</span>
-        <span class="rb-om-key"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Allowed actions</span>
+        <span class="rb-om-key"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Ações permitidas</span>
       </div>
-      <p><b>The AI acts as just another user.</b> Its API key determines the role it's assigned, and that role defines exactly what it can query, run or modify. If an action isn't allowed, it simply doesn't run. Everything is logged, guaranteeing control, security and traceability.</p>
+      <p><b>A IA age como mais um usuário.</b> A sua API Key determina o papel atribuído, e esse papel define exatamente o que ela pode consultar, executar ou modificar. Se uma ação não é permitida, ela simplesmente não roda. Tudo fica registrado, garantindo controle, segurança e rastreabilidade.</p>
     </div>
     <div class="rb-om-foot">
-      <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-1 8H9a4 4 0 0 1-1-8V7a4 4 0 0 1 4-4z"/><path d="M9.5 16h5"/></svg>Works with any AI</span>
-      <span class="soon"><b>In exploration</b> Python code generation and controlled deployment to production.</span>
+      <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-1 8H9a4 4 0 0 1-1-8V7a4 4 0 0 1 4-4z"/><path d="M9.5 16h5"/></svg>Compatível com qualquer IA</span>
+      <span class="soon"><b>Em exploração</b> Geração de código Python e implantação controlada em produção.</span>
     </div>
   </div>
 </section>
@@ -1348,48 +1348,48 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
 <section class="rb-section rb-section--space" id="seguridad">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Security and resilience you can operate on</h2>
-      <p class="rb-section__sub">The Orchestrator runs on AWS infrastructure with a microservices architecture, layered security, and high availability, keeping your operations secure, available, and under&nbsp;control.</p>
+      <h2 class="rb-section__title">Segurança e resiliência para operar com confiança</h2>
+      <p class="rb-section__sub">O Orquestrador roda sobre infraestrutura AWS com arquitetura de microsserviços, segurança em camadas e alta disponibilidade, mantendo a sua operação segura, disponível e sob&nbsp;controle.</p>
     </div>
     <div class="rb-sec-cols">
       <div class="rb-scard2">
-        <div class="sh"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg></div><h3>Security and access</h3></div>
+        <div class="sh"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg></div><h3>Segurança e acesso</h3></div>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Role-based access control (RBAC)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Single sign-on (SSO)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Two-factor authentication (2FA)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Encrypted HTTPS / TLS 1.2 communication</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Sessions protected with JWT</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Passwords hashed with Argon2 and bcrypt</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Controle de acesso baseado em papéis (RBAC)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Login único (SSO)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Autenticação de dois fatores (2FA)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Comunicação criptografada via HTTPS/TLS</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Sessões protegidas com JWT</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Senhas criptografadas com Argon2 e bcrypt</li>
         </ul>
       </div>
       <div class="rb-scard2">
-        <div class="sh"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M3 15h18M9 4v5M15 9v6M12 15v5M12 4v5"/></svg></div><h3>Platform protection</h3></div>
+        <div class="sh"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M3 15h18M9 4v5M15 9v6M12 15v5M12 4v5"/></svg></div><h3>Proteção da plataforma</h3></div>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Web Application Firewall (WAF) and layered defense</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Intrusion detection and prevention</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Amazon GuardDuty and AWS Security Hub</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Files and robots encrypted at rest (Amazon S3)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Public access restricted on critical components</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Regular ethical hacking and vulnerability management</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Web Application Firewall (WAF) e defesa em camadas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Detecção e prevenção de intrusões</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Amazon GuardDuty e AWS Security Hub</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Arquivos e robôs protegidos com criptografia em repouso (Amazon S3)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Acesso público restrito a componentes críticos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Testes periódicos de Ethical Hacking e gestão de vulnerabilidades</li>
         </ul>
       </div>
       <div class="rb-scard2">
-        <div class="sh"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h0M7 17.5h0"/></svg></div><h3>Continuity and resilience</h3></div>
+        <div class="sh"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h0M7 17.5h0"/></svg></div><h3>Continuidade e resiliência</h3></div>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Multi-Availability Zone AWS infrastructure</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>High-availability Multi-AZ database</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Continuous monitoring with Amazon CloudWatch</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Auto-scaling based on demand</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Backups with retention and restore testing</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Central repository with versioning and rollback</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Infraestrutura AWS Multi-AZ</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Banco de dados Multi-AZ</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Monitoramento contínuo com Amazon CloudWatch</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Escalonamento automático conforme a demanda</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Backups com retenção e testes de restauração</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Repositório centralizado com versionamento e rollback</li>
         </ul>
       </div>
     </div>
     <div class="rb-stat-row">
-      <div class="rb-statpill rb-statpill--iso"><div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg></div><div><div class="big">ISO/IEC 27001<span class="rb-statpill__badge">Certified</span></div><div class="lbl">Certified security management system</div></div></div>
-      <div class="rb-statpill"><div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-5l-2 5-4-10-2 5H2"/></svg></div><div><div class="big">99.9%</div><div class="lbl">uptime</div></div></div>
-      <div class="rb-statpill"><div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></svg></div><div><div class="big">Ethical hacking</div><div class="lbl">regular penetration testing</div></div></div>
+      <div class="rb-statpill rb-statpill--iso"><div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4.2"/></svg></div><div><div class="big">ISO/IEC 27001<span class="rb-statpill__badge">Certificado</span></div><div class="lbl">Sistema de gestão de segurança certificado</div></div></div>
+      <div class="rb-statpill"><div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-5l-2 5-4-10-2 5H2"/></svg></div><div><div class="big">99,9 %</div><div class="lbl">de disponibilidade</div></div></div>
+      <div class="rb-statpill"><div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></svg></div><div><div class="big">Hacking ético</div><div class="lbl">Testes periódicos de penetração</div></div></div>
     </div>
   </div>
 </section>
@@ -1398,12 +1398,12 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
 <section class="rb-section">
   <div class="container">
     <div class="rb-section__head">
-      <h2 class="rb-section__title">Operations that<br><span>scale with confidence</span></h2>
+      <h2 class="rb-section__title">Uma operação que<br><span>escala com confiança</span></h2>
     </div>
     <div class="rb-reco">
-      <div class="rb-rstat"><div class="n">+500</div><div class="l">processes deployed in real companies</div></div>
-      <div class="rb-rstat"><div class="n">4.7 &#9733;</div><div class="l">on Gartner Peer Insights</div></div>
-      <div class="rb-rstat"><div class="n">ISO/IEC 27001</div><div class="l">certified security management</div></div>
+      <div class="rb-rstat"><div class="n">+500</div><div class="l">processos automatizados implementados</div></div>
+      <div class="rb-rstat"><div class="n">+38</div><div class="l">integrações nativas</div></div>
+      <div class="rb-rstat"><div class="n">ISO/IEC 27001</div><div class="l">gestão de segurança certificada</div></div>
     </div>
   </div>
 </section>
@@ -1413,10 +1413,10 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
   <div class="container">
     <div class="rb-cta-band__inner">
       <div>
-        <h2 class="rb-cta-band__title">Ready to take more control of your automation?</h2>
-        <p class="rb-cta-band__sub">See how the Orchestrator helps you govern, monitor, and scale your processes from a single place.</p>
+        <h2 class="rb-cta-band__title">Pronto para ter mais controle sobre a sua automação?</h2>
+        <p class="rb-cta-band__sub">Veja como o Orquestrador ajuda você a governar, monitorar e escalar os seus processos em um só lugar.</p>
       </div>
-      <a href="/en/contacto.html" class="rb-btn rb-btn--white rb-btn--lg">Talk to us</a>
+      <a href="/pt/contato.html" class="rb-btn rb-btn--white rb-btn--lg">Fale conosco</a>
     </div>
   </div>
 </section>
@@ -1424,7 +1424,7 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
 <!-- FAQ -->
 <section class="rb-section rb-section--alt" id="faq">
   <div class="container">
-    <div class="rb-section__head"><h2 class="rb-section__title">Frequently asked questions</h2></div>
+    <div class="rb-section__head"><h2 class="rb-section__title">Perguntas frequentes</h2></div>
     <div class="rb-faq" id="faqWrap"></div>
   </div>
 </section>
@@ -1434,45 +1434,39 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
     <div class="rb-footer__grid">
       <div class="rb-footer__brand">
         <img src="/assets/logos/logo-header-white.png" alt="Rocketbot" loading="lazy" decoding="async">
-        <p class="rb-footer__copy">A process automation and intelligent agent platform built to win back time and support better decisions.</p>
+        <p class="rb-footer__copy">Plataforma de automação de processos e agentes inteligentes para recuperar tempo e tomar decisões melhores.</p>
         <div class="rb-footer__social">
-          <a href="https://www.facebook.com/rocketbot.es" target="_blank" rel="noopener" aria-label="Facebook">
+          <a href="https://www.facebook.com/profile.php?id=61586735514304" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
-          <a href="https://www.instagram.com/rocketbot_es/" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/company/rocketrobot/posts/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/rocketbot-br/" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@Rocketbot_Plataforma" target="_blank" rel="noopener" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1a242a"/></svg>
           </a>
         </div>
         <!-- rb-nl-footer -->
         <div class="rb-nlf">
           <p class="rb-nlf__t">Newsletter</p>
-          <p class="rb-nlf__s">Automation, AI and real cases. Once a month.</p>
-          <form class="rb-nlf__f" novalidate data-rb-nl data-sending="Sending…" data-ok-title="You're in." data-ok-text="The next edition lands in your inbox." data-err-name="Enter your full name." data-err-email="Enter a valid email address." data-err-company="Enter your company name." data-err-country="Select your country." data-err-send="We couldn't complete your subscription. Please try again in a moment.">
-            <input class="rb-nl-in" type="text" name="name" autocomplete="name" placeholder="Full name" aria-label="Full name">
-            <input class="rb-nl-in" type="email" name="email" autocomplete="email" placeholder="Email" aria-label="Email">
+          <p class="rb-nlf__s">Automação, IA e casos reais. Uma vez por mês.</p>
+          <form class="rb-nlf__f" novalidate data-rb-nl data-sending="Enviando…" data-ok-title="Pronto!" data-ok-text="Você recebe a próxima edição no seu e-mail." data-err-name="Escreva o seu nome e sobrenome." data-err-email="Escreva um e-mail válido." data-err-company="Escreva o nome da sua empresa." data-err-country="Selecione o seu país." data-err-send="Não conseguimos concluir a inscrição. Tente de novo em instantes.">
+            <input class="rb-nl-in" type="text" name="name" autocomplete="name" placeholder="Nome e sobrenome" aria-label="Nome e sobrenome">
+            <input class="rb-nl-in" type="email" name="email" autocomplete="email" placeholder="E-mail" aria-label="E-mail">
             <div class="rb-nlf__row">
-              <input class="rb-nl-in" type="text" name="company" autocomplete="organization" placeholder="Company" aria-label="Company">
-              <select class="rb-nl-in" name="country" autocomplete="country-name" aria-label="Country"><option value="" disabled selected>Select your country</option><option value="Argentina">Argentina</option><option value="Bolivia">Bolivia</option><option value="Brazil">Brazil</option><option value="Chile">Chile</option><option value="Colombia">Colombia</option><option value="Costa Rica">Costa Rica</option><option value="Dominican Republic">Dominican Republic</option><option value="Ecuador">Ecuador</option><option value="El Salvador">El Salvador</option><option value="Guatemala">Guatemala</option><option value="Honduras">Honduras</option><option value="Mexico">Mexico</option><option value="Nicaragua">Nicaragua</option><option value="Panama">Panama</option><option value="Paraguay">Paraguay</option><option value="Peru">Peru</option><option value="Portugal">Portugal</option><option value="Spain">Spain</option><option value="United States">United States</option><option value="Uruguay">Uruguay</option><option value="Venezuela">Venezuela</option><option value="Other country">Other country</option></select>
+              <input class="rb-nl-in" type="text" name="company" autocomplete="organization" placeholder="Empresa" aria-label="Empresa">
+              <select class="rb-nl-in" name="country" autocomplete="country-name" aria-label="País"><option value="" disabled selected>Selecione o seu país</option><option value="Argentina">Argentina</option><option value="Bolívia">Bolívia</option><option value="Brasil">Brasil</option><option value="Chile">Chile</option><option value="Colômbia">Colômbia</option><option value="Costa Rica">Costa Rica</option><option value="El Salvador">El Salvador</option><option value="Equador">Equador</option><option value="Espanha">Espanha</option><option value="Estados Unidos">Estados Unidos</option><option value="Guatemala">Guatemala</option><option value="Honduras">Honduras</option><option value="México">México</option><option value="Nicarágua">Nicarágua</option><option value="Panamá">Panamá</option><option value="Paraguai">Paraguai</option><option value="Peru">Peru</option><option value="Portugal">Portugal</option><option value="República Dominicana">República Dominicana</option><option value="Uruguai">Uruguai</option><option value="Venezuela">Venezuela</option><option value="Outro país">Outro país</option></select>
             </div>
-            <button class="rb-nlf__btn" type="submit">Subscribe</button>
+            <button class="rb-nlf__btn" type="submit">Quero receber</button>
             <p class="rb-nl-msg" data-rb-nl-msg role="status" aria-live="polite"></p>
-            <p class="rb-nlf__legal">By subscribing you accept our <a href="/en/politicas-de-privacidad.html">privacy policy</a>.</p>
+            <p class="rb-nlf__legal">Ao se inscrever você aceita as nossas <a href="/pt/politicas-de-privacidade.html">políticas de privacidade</a>.</p>
           </form>
         </div>
       </div>
-      <div class="rb-footer__col"><h6>Products</h6><ul><li><a href="/en/saturn-studio.html">Saturn Studio</a></li><li><a href="/en/rpa-studio.html">RPA Studio</a></li><li><a href="/en/ai-studio.html">AI Studio</a></li><li><a href="/en/orquestador.html">Orchestrator</a></li><li><a href="/en/xperience.html">Xperience</a></li><li><a href="/en/nexus.html">Nexus</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Resources</h6><ul><li><a href="/en/planes.html">Plans and pricing</a></li><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Company</h6><ul><li><a href="/en/contacto.html">Contact</a></li><li><a href="/en/politicas-de-privacidad.html">Privacy policy</a></li><li><a href="/en/politicas-de-seguridad.html">Security policy</a></li><li><a href="/en/terminos-y-condiciones.html" class="rb-footer__tyc">Terms & Conditions</a></li><li><a href="https://careers.rocketbot.com/" target="_blank" rel="noopener">Work with us</a></li></ul></div>
-      <div class="rb-footer__col"><h6>Support &amp; services</h6><ul><li><a href="https://forum.rocketbot.com/" target="_blank" rel="noopener">Forum</a></li><li><a href="https://market.rocketbot.com/" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentation</a></li><li><a href="#" data-dl-open role="button">Downloads</a></li><li><a href="/en/faq.html">FAQs</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Produtos</h6><ul><li><a href="/pt/saturn-studio.html">Saturn Studio</a></li><li><a href="/pt/rpa-studio.html">RPA Studio</a></li><li><a href="/pt/ai-studio.html">AI Studio</a></li><li><a href="/pt/orquestrador.html">Orquestrador</a></li><li><a href="/pt/xperience.html">Xperience</a></li><li><a href="/pt/nexus.html">Nexus</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Recursos</h6><ul><li><a href="/pt/planos.html">Planos e preços</a></li><li><a href="https://rocketbot.com/es/blog/" target="_blank" rel="noopener">Blog</a></li><li><a href="https://academy.rocketbot.com" target="_blank" rel="noopener">Academy</a></li></ul><h6 style="margin-top:28px;">Empresa</h6><ul><li><a href="/pt/contato.html">Contato</a></li><li><a href="/pt/politicas-de-privacidade.html">Políticas de privacidade</a></li><li><a href="/pt/politicas-de-seguranca.html">Políticas de segurança</a></li><li><a href="/pt/termos-e-condicoes.html" class="rb-footer__tyc">Termos e condições</a></li><li><a href="https://careers.rocketbot.com/" target="_blank" rel="noopener">Trabalhe conosco</a></li></ul></div>
+      <div class="rb-footer__col"><h6>Suporte e serviços</h6><ul><li><a href="https://forum.rocketbot.com/" target="_blank" rel="noopener">Fórum</a></li><li><a href="https://market.rocketbot.com/" target="_blank" rel="noopener">Marketplace</a></li><li><a href="https://docs.rocketbot.com" target="_blank" rel="noopener">Documentação</a></li><li><a href="#" data-dl-open role="button">Downloads</a></li><li><a href="/pt/faq.html">Perguntas frequentes</a></li></ul></div>
     </div>
     <div class="rb-footer__bottom">
-      <div class="rb-footer__bottomleft"><span>© Rocketbot SpA | All rights reserved 2018 – 2026</span><span class="rb-iso-badge" title="ISO/IEC 27001 certification — Information security management"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>ISO/IEC 27001</span></div>
-      <div class="rb-footer__legal"><a href="/en/politicas-de-privacidad.html">Privacy policy</a><a href="/en/politicas-de-seguridad.html">Security policy</a></div>
+      <div class="rb-footer__bottomleft"><span>© Rocketbot SpA | Todos os direitos reservados 2018 – 2026</span><span class="rb-iso-badge" title="Certificação ISO/IEC 27001 — Gestão de segurança da informação"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>ISO/IEC 27001</span></div>
+      <div class="rb-footer__legal"><a href="/pt/politicas-de-privacidade.html">Políticas de privacidade</a><a href="/pt/politicas-de-seguranca.html">Políticas de segurança</a></div>
     </div>
   </div>
 </footer>
@@ -1568,7 +1562,7 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
   var btn  = document.getElementById('rb-lang-btn');
   var menu = document.getElementById('rb-lang-menu');
   if(!btn || !menu) return;
-  var CUR='en', PAGE='orquestador.html';
+  var CUR='pt', PAGE='orquestrador.html';
   btn.addEventListener('click', function(e){
     e.stopPropagation();
     var open = menu.classList.toggle('open');
@@ -1578,7 +1572,7 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
     menu.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
   });
-  function url(l){ return l==='es' ? '/'+PAGE : '/'+l+'/'+PAGE; }
+  function url(l){ var t=l==='pt'?'pt-BR':l; var a=document.querySelector('link[rel="alternate"][hreflang="'+t+'"]'); if(a){ try{ return new URL(a.getAttribute('href'), location.href).pathname; }catch(e){} } return l==='es' ? '/'+PAGE : '/'+l+'/'+PAGE; }
   menu.querySelectorAll('.rb-lang__opt').forEach(function(o){
     o.classList.toggle('rb-lang--active', o.dataset.lang===CUR);
     o.addEventListener('click', function(){
@@ -1596,14 +1590,14 @@ const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
 // ---- live console ----
 const PROCS=[
-  {pn:'Bank reconciliation',robot:'RBT-FIN-01',meta:'RBT-FIN-01 · every hour'},
-  {pn:'Invoice upload',robot:'RBT-CXP-02',meta:'RBT-CXP-02 · daily at 08:00'},
-  {pn:'CRM sync',robot:'RBT-VEN-03',meta:'RBT-VEN-03 · every 15 min'},
-  {pn:'Report generation',robot:'RBT-BI-04',meta:'RBT-BI-04 · daily at 07:00'},
-  {pn:'User provisioning',robot:'RBT-RRHH-05',meta:'RBT-RRHH-05 · on demand'},
-  {pn:'Data backup',robot:'RBT-IT-06',meta:'RBT-IT-06 · daily at 23:00'}
+  {pn:'Conciliação bancária',robot:'RBT-FIN-01',meta:'RBT-FIN-01 · a cada hora'},
+  {pn:'Carga de notas fiscais',robot:'RBT-CXP-02',meta:'RBT-CXP-02 · diariamente às 08:00'},
+  {pn:'Sincronização CRM',robot:'RBT-VEN-03',meta:'RBT-VEN-03 · a cada 15 min'},
+  {pn:'Geração de relatórios',robot:'RBT-BI-04',meta:'RBT-BI-04 · diariamente às 07:00'},
+  {pn:'Cadastro de usuários',robot:'RBT-RRHH-05',meta:'RBT-RRHH-05 · sob demanda'},
+  {pn:'Backup de dados',robot:'RBT-IT-06',meta:'RBT-IT-06 · diariamente às 23:00'}
 ];
-const PTXT={run:'Running',done:'Completed',queue:'Queued',retry:'Retrying'};
+const PTXT={run:'Em execução',done:'Concluído',queue:'Na fila',retry:'Tentando de novo'};
 let doneToday=1247, retriesToday=18;
 const rows=PROCS.map(p=>({...p,state:'queue',progress:0,willRetry:false,hold:0}));
 rows[0].state='run';rows[0].progress=46;
@@ -1620,7 +1614,7 @@ rows.forEach((r,i)=>{
 function render(){
   document.getElementById('mRun').textContent=rows.filter(r=>r.state==='run').length;
   document.getElementById('mQueue').textContent=rows.filter(r=>r.state==='queue').length;
-  document.getElementById('mDone').textContent=doneToday.toLocaleString('en-US');
+  document.getElementById('mDone').textContent=doneToday.toLocaleString('pt-BR');
   document.getElementById('mRetry').textContent=retriesToday;
   rows.forEach((r,i)=>{
     const pill=document.getElementById('pill'+i),bar=document.getElementById('bar'+i);
@@ -1632,14 +1626,14 @@ function render(){
 // ---- audit log ----
 let simSec=9*3600+41*60+5;
 function clk(){const h=Math.floor(simSec/3600)%24,m=Math.floor(simSec/60)%60,s=simSec%60;const p=n=>String(n).padStart(2,'0');return p(h)+':'+p(m)+':'+p(s);}
-const ALBL={done:'Completed',retry:'Retry',start:'Started'};
+const ALBL={done:'Concluído',retry:'Nova tentativa',start:'Iniciado'};
 const audit=[];
 function logEvent(type,r){
   simSec+=5+Math.floor(Math.random()*16);
   let tx='';
-  if(type==='start')tx='<b>'+r.robot+'</b> started <b>'+r.pn+'</b>';
-  else if(type==='done')tx='<b>'+r.robot+'</b> completed <b>'+r.pn+'</b>';
-  else tx='Automatic retry on <b>'+r.robot+'</b> · '+r.pn;
+  if(type==='start')tx='<b>'+r.robot+'</b> iniciou <b>'+r.pn+'</b>';
+  else if(type==='done')tx='<b>'+r.robot+'</b> concluiu <b>'+r.pn+'</b>';
+  else tx='Nova tentativa automática em <b>'+r.robot+'</b> · '+r.pn;
   audit.unshift({t:clk(),tx,type,fresh:true});
   if(audit.length>6)audit.pop();
   renderAudit();
@@ -1673,23 +1667,23 @@ if(!reduce){setInterval(tick,750);}
 
 // ---- interactive architecture ----
 const IA={
- orquestador:['Governance plane','Orchestrator','The central control layer: it executes, schedules, controls permissions and versions, retries, and leaves a full trace of everything running underneath it.'],
- programacion:['Governance','Scheduling','Run robots and processes at the time and frequency you need, with advanced cron jobs.'],
- rbac:['Governance','Permissions · RBAC','Role-based access control: define who can create, manage, or run each process.'],
- versionado:['Governance','Versioning and rollback','Centralized repository with version history; roll back to a previous version if something fails in production.'],
- entornos:['Governance','Dev/test/prod environments','Isolate development, testing, and production environments, with access control by environment.'],
- credenciales:['Governance','Credentials and connections','Centralized management of credentials and connections to your systems, protected and reusable.'],
- reintentos:['Governance','Retries','When an error occurs, the Orchestrator retries automatically and keeps operations running.'],
- trazabilidad:['Governance','Traceability','Complete record of who ran what, when, and with what result, ready for audit.'],
- monitoreo:['Governance','Monitoring','Real-time status, metrics, and run history for every robot.'],
- rpa:['Execution','RPA Studio · Robots','Automation robots built in Rocketbot, run and monitored from the console.'],
- ai:['Execution','AI Studio · AI agents','AI agents that understand documents, emails, images, and conversations.'],
- saturn:['Execution','Saturn Studio · Flows','Flow engine that connects products, external APIs, and AI models.'],
- python:['Execution','Python · Scripts','Automations and custom development in Python, governed alongside everything else.'],
- xperience:['Execution','Xperience · Forms','Forms that launch processes with validated data, with people in the loop when needed.'],
- otras:['Execution','Other platforms','Also run robots from other platforms, like Automation Anywhere, from a single console.'],
- apps:['Execution','Any app','Spin up servers, run Docker containers, open Excel, or any installed program, passing it parameters.'],
- infra:['Infrastructure','SaaS platform on AWS','Multi-Availability Zone, high availability, encryption, and ISO/IEC 27001 certification.']
+ orquestador:['Plano de governança','Orquestrador','A camada de controle central: executa, programa, controla permissões e versões, faz novas tentativas e mantém o rastreamento completo de tudo o que roda abaixo dela.'],
+ programacion:['Governança','Programação','Executa robôs e processos no momento e na frequência que você precisar, com cron jobs avançados.'],
+ rbac:['Governança','Permissões · RBAC','Controle de acesso baseado em papéis: você define quem pode criar, administrar ou executar cada processo.'],
+ versionado:['Governança','Versionamento e rollback','Repositório centralizado com versões históricas; reverta para uma versão anterior em caso de falha em produção.'],
+ entornos:['Governança','Ambientes dev/test/prod','Isola ambientes de desenvolvimento, testes e produção, com controle de acesso por ambiente.'],
+ credenciales:['Governança','Credenciais e conexões','Gestão centralizada de credenciais e conexões com os seus sistemas, protegidas e reutilizáveis.'],
+ reintentos:['Governança','Novas tentativas','Diante de um erro, o Orquestrador tenta novamente automaticamente e mantém a operação em andamento.'],
+ trazabilidad:['Governança','Rastreabilidade','Registro completo de quem executou o quê, quando e com qual resultado, pronto para auditoria.'],
+ monitoreo:['Governança','Monitoramento','Status, métricas e execuções de cada robô em tempo real.'],
+ rpa:['Execução','RPA Studio · Robôs','Robôs de automação criados na Rocketbot, executados e supervisionados a partir do console.'],
+ ai:['Execução','AI Studio · Agentes','Agentes com IA que entendem documentos, e-mails, imagens e conversas.'],
+ saturn:['Execução','Saturn Studio · Fluxos','Motor de fluxos que conecta produtos, APIs externas e modelos de IA.'],
+ python:['Execução','Python · Scripts','Automações e desenvolvimentos em Python, governados junto com o resto.'],
+ xperience:['Execução','Xperience · Formulários','Formulários que iniciam processos com dados validados, com pessoas no fluxo quando necessário.'],
+ otras:['Execução','Outras plataformas','Executa também robôs de outras plataformas, como o Automation Anywhere, a partir de um único console.'],
+ apps:['Execução','Qualquer aplicação','Sobe servidores, executa contêineres Docker, abre o Excel ou qualquer programa instalado na máquina, enviando parâmetros.'],
+ infra:['Infraestrutura','Plataforma SaaS sobre a AWS','Multi-Availability Zone, alta disponibilidade, criptografia e certificação ISO 27001.']
 };
 const iaDetail=document.getElementById('iaDetail');
 const iaNodes=document.querySelectorAll('#arch [data-key]');
@@ -1699,19 +1693,19 @@ if(iaDetail) iaShow('orquestador');
 
 // ---- FAQ ----
 const FAQS=[
-  ['What is the Orchestrator and what is it for?','The Rocketbot Orchestrator centralizes the administration, scheduling, monitoring, and governance of robots and automated processes. From a single place, you can control operations, monitor runs, and keep full traceability in real time.'],
-  ['Can I connect Claude or another AI to the Orchestrator?','Yes. Through MCP (Model Context Protocol), models like Claude can check the status of operations, generate dashboards, and run actions via API. Permissions are controlled through roles (RBAC), and every action is logged.'],
-  ['Can I manage Python robots and Rocketbot together?','Yes. The Orchestrator lets you manage robots built in Rocketbot Studio, Python automations, and other processes from the same platform.'],
-  ['Does it only work with Rocketbot robots?','No. Besides Rocketbot robots, you can run Python automations, UI processes, and applications installed on the machine, such as Docker, Excel, and other executables, passing in parameters when needed.'],
-  ['What level of traceability does it offer?','It logs who ran each process, when it happened, what actions were taken, and what the result was. All the information is available for audit and compliance.'],
-  ['How does it manage processes?','Schedule automatic runs, monitor robots, control versions, and oversee operations from a single console.'],
-  ['What happens if a process fails?','It can retry automatically based on the rules you define, and logs every attempt to make tracking and incident resolution easier.'],
-  ['Do I need to know how to code?','No. The interface lets you schedule, monitor, and manage processes visually. For advanced scenarios, it also offers a REST API and Webhooks.'],
-  ['What security measures does it include?','It includes role-based access control (RBAC), single sign-on (SSO), two-factor authentication (2FA), HTTPS connections, and complete activity logs for auditing.'],
-  ['Can it integrate with other systems?','Yes. It connects to ERPs, CRMs, databases, and business applications through REST API, Webhooks, and other integration mechanisms.'],
-  ['Can I separate development, testing, and production?','Yes. It lets you manage independent development, testing, and production environments, with access control, version management, and rollback when needed.'],
-  ['Where does the Orchestrator run?','It runs in the cloud on high-availability AWS infrastructure, with data encryption, redundancy, and ISO/IEC 27001 certification.'],
-  ['What availability does it offer?','Its cloud architecture includes distributed servers, auto-scaling, and up to 99.9% availability to keep operations running continuously.']
+  ['O que é o Orquestrador e para que serve?','O Orquestrador da Rocketbot centraliza a administração, a programação, o monitoramento e a governança de robôs e processos automatizados. A partir de um único lugar, você pode controlar a operação, supervisionar execuções e manter rastreabilidade em tempo real.'],
+  ['Posso conectar o Claude ou outra IA ao Orquestrador?','Sim. Por meio do MCP (Model Context Protocol), modelos como o Claude podem consultar o status da operação, gerar painéis e executar ações via API. As permissões são controladas por papéis (RBAC) e todas as ações ficam registradas.'],
+  ['Posso administrar robôs de Python e da Rocketbot juntos?','Sim. O Orquestrador permite administrar robôs desenvolvidos no Rocketbot Studio, automações em Python e outros processos a partir de uma mesma plataforma.'],
+  ['Ele só funciona com robôs da Rocketbot?','Não. Além de robôs da Rocketbot, ele pode executar automações em Python, processos de UI e aplicações instaladas na máquina, como Docker, Excel e outros executáveis, enviando parâmetros quando necessário.'],
+  ['Que rastreabilidade ele oferece?','Registra quem executou cada processo, quando ocorreu, quais ações foram realizadas e qual foi o resultado. Todas as informações ficam disponíveis para auditoria e conformidade.'],
+  ['Como ele administra os processos?','Programa execuções automáticas, monitora robôs, controla versões e supervisiona toda a operação a partir de um único console.'],
+  ['O que acontece quando um processo falha?','O Orquestrador pode tentar novamente automaticamente, seguindo as regras que você define, e registra cada tentativa para facilitar o acompanhamento e a resolução de incidentes.'],
+  ['Preciso saber programar para usá-lo?','Não. A interface permite programar, monitorar e administrar processos de forma visual. Para cenários avançados, também oferece API REST e Webhooks.'],
+  ['Quais medidas de segurança ele incorpora?','Inclui controle de acesso baseado em papéis (RBAC), login único (SSO), autenticação de dois fatores (2FA), conexões HTTPS e registros completos de atividade para auditoria.'],
+  ['Ele pode se integrar com outros sistemas?','Sim. Ele se conecta a ERPs, CRMs, bancos de dados e aplicações empresariais por meio de API REST, Webhooks e outros mecanismos de integração.'],
+  ['Posso separar ambientes de desenvolvimento, testes e produção?','Sim. O Orquestrador permite administrar ambientes independentes de desenvolvimento, testes e produção, com controle de acesso, gestão de versões e rollback quando necessário.'],
+  ['Onde o Orquestrador é executado?','O Orquestrador opera na nuvem sobre infraestrutura AWS de alta disponibilidade, com criptografia de dados, redundância e certificação ISO/IEC 27001.'],
+  ['Qual disponibilidade ele oferece?','Sua arquitetura na nuvem inclui servidores distribuídos, escalonamento automático e disponibilidade de até 99,9 % para manter a continuidade da operação.']
 ];
 const fw=document.getElementById('faqWrap');
 FAQS.forEach(function(pair){
@@ -1722,30 +1716,30 @@ FAQS.forEach(function(pair){
 
 // ---- MCP / Claude: instrucción -> Orquestador ----
 const OMCP={
- consultar:{kind:'Summary generated by Claude',
-   prompt:"How's the operation looking today? Show me what's running and put together a summary.",
-   reply:"I checked the Orchestrator's API. Here's what's running now and today's summary:",
+ consultar:{kind:'Resumo gerado pelo Claude',
+   prompt:'Como está a operação hoje? Mostre o que está rodando e monte um resumo.',
+   reply:'Consultei a API do Orquestrador. Isto está rodando agora e este é o resumo de hoje:',
    render:function(){return '<div class="rb-om-tiles">'
-     +'<div class="rb-om-tile run"><div class="v">3</div><div class="k">Running</div></div>'
-     +'<div class="rb-om-tile"><div class="v">2</div><div class="k">Queued</div></div>'
-     +'<div class="rb-om-tile"><div class="v">1,247</div><div class="k">Completed today</div></div>'
-     +'<div class="rb-om-tile retry"><div class="v">18</div><div class="k">Retries resolved</div></div>'
-     +'</div><div class="rb-om-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 4-5"/></svg>Dashboard generated by Claude from the Orchestrator\'s metrics.</div>';}},
- ejecutar:{kind:'Action executed',
-   prompt:'Start robot RBT-FIN-02 with the parameter month=June.',
-   reply:'Done. I started the run and it was logged in the activity log.',
+     +'<div class="rb-om-tile run"><div class="v">3</div><div class="k">Em execução</div></div>'
+     +'<div class="rb-om-tile"><div class="v">2</div><div class="k">Na fila</div></div>'
+     +'<div class="rb-om-tile"><div class="v">1.247</div><div class="k">Concluídas hoje</div></div>'
+     +'<div class="rb-om-tile retry"><div class="v">18</div><div class="k">Novas tentativas resolvidas</div></div>'
+     +'</div><div class="rb-om-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 4-5"/></svg>Painel gerado pelo Claude a partir das métricas do Orquestrador.</div>';}},
+ ejecutar:{kind:'Ação executada',
+   prompt:'Inicie o robô RBT-FIN-02 com o parâmetro mes=junho.',
+   reply:'Pronto. Iniciei a execução e ela foi registrada no log de atividade.',
    render:function(){return '<div class="rb-om-act ok">'
-     +'<div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg></span><div><div class="t1">Run started</div><div class="t2">RBT-FIN-02 · Running</div></div></div>'
-     +'<div class="rb-om-meta"><span class="rb-om-pill">robot: RBT-FIN-02</span><span class="rb-om-pill">month=June</span><span class="rb-om-pill role">role: Operator</span></div>'
-     +'<div class="rb-om-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Logged in the activity log.</div></div>';}},
- denegado:{kind:'Action denied',
-   prompt:'Push this new robot version to production.',
-   reply:"I can't: your API key has the Viewer role, which doesn't allow deploying to production. You define the control.",
+     +'<div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg></span><div><div class="t1">Execução iniciada</div><div class="t2">RBT-FIN-02 · Em execução</div></div></div>'
+     +'<div class="rb-om-meta"><span class="rb-om-pill">robot: RBT-FIN-02</span><span class="rb-om-pill">mes=junho</span><span class="rb-om-pill role">papel: Operador</span></div>'
+     +'<div class="rb-om-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Registrado no log de atividade.</div></div>';}},
+ denegado:{kind:'Ação negada',
+   prompt:'Envie esta nova versão do robô para produção.',
+   reply:'Não posso: sua API Key tem o papel Visualizador e não permite implantar em produção. Você define o controle.',
    render:function(){return '<div class="rb-om-act deny">'
-     +'<div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><div><div class="t1">Permission denied</div><div class="t2">Unauthorized production deployment</div></div></div>'
-     +'<div class="rb-om-meta"><span class="rb-om-pill role">role: Viewer</span><span class="rb-om-pill">deploy: production → blocked</span></div>'
+     +'<div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><div><div class="t1">Permissão negada</div><div class="t2">Implantação em produção não autorizada</div></div></div>'
+     +'<div class="rb-om-meta"><span class="rb-om-pill role">papel: Visualizador</span><span class="rb-om-pill">implantação: produção → bloqueada</span></div>'
      +'<div class="rb-om-deny-bar"></div>'
-     +'<div class="rb-om-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>The AI only does what its role allows. Control is absolute.</div></div>';}}
+     +'<div class="rb-om-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>A IA só faz o que o seu papel permite. O controle é absoluto.</div></div>';}}
 };
 let omCur='consultar', omToken=0, omTimers=[];
 function omSleep(ms){return new Promise(function(r){omTimers.push(setTimeout(r,ms));});}
@@ -1755,14 +1749,14 @@ async function omPlay(key){
   document.querySelectorAll('#omChips .rb-om-chip').forEach(function(ch){ch.classList.toggle('act',ch.getAttribute('data-k')===omCur);});
   const user=document.getElementById('omUser'); user.textContent=''; user.classList.add('typing');
   document.getElementById('omBotRow').style.visibility='hidden';
-  document.getElementById('omKind').textContent='Orchestrator response';
+  document.getElementById('omKind').textContent='Resposta do Orquestrador';
   const res=document.getElementById('omRes'); res.classList.remove('in'); res.innerHTML='';
-  const btn=document.getElementById('omGen'); btn.disabled=true; btn.textContent='Sending…';
+  const btn=document.getElementById('omGen'); btn.disabled=true; btn.textContent='Enviando…';
   if(reduce){
     user.textContent=c.prompt; user.classList.remove('typing');
     document.getElementById('omBotRow').style.visibility='visible'; document.getElementById('omBot').textContent=c.reply;
     document.getElementById('omKind').textContent=c.kind; res.innerHTML=c.render(); res.classList.add('in');
-    btn.disabled=false; btn.textContent='Send again'; return;
+    btn.disabled=false; btn.textContent='Enviar novamente'; return;
   }
   for(let i=0;i<c.prompt.length;i++){ if(my!==omToken)return; user.textContent+=c.prompt[i]; await omSleep(20); }
   user.classList.remove('typing'); await omSleep(320); if(my!==omToken)return;
@@ -1772,7 +1766,7 @@ async function omPlay(key){
   document.getElementById('omBot').textContent=c.reply; await omSleep(260); if(my!==omToken)return;
   document.getElementById('omKind').textContent=c.kind; res.innerHTML=c.render();
   await omSleep(40); if(my!==omToken)return; res.classList.add('in');
-  btn.disabled=false; btn.textContent='Send again';
+  btn.disabled=false; btn.textContent='Enviar novamente';
 }
 document.querySelectorAll('#omChips .rb-om-chip').forEach(function(ch){ ch.addEventListener('click',function(){ omPlay(ch.getAttribute('data-k')); }); });
 let omSeen=false;
@@ -1799,10 +1793,10 @@ omObs.observe(document.querySelector('.rb-omcp'));
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Orchestrator",
+  "name": "Orquestrador",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
-  "description": "Govern, monitor and scale robots, agents and applications from one place: Rocketbot, Python or any platform, with full traceability of every run.",
+  "description": "Governe, monitore e escale robôs, agentes e aplicações em um só lugar: Rocketbot, Python ou qualquer plataforma, com rastreabilidade de cada execução.",
   "url": "https://rocketbot.com/orquestador.html",
   "offers": {
     "@type": "Offer",
@@ -1813,7 +1807,7 @@ omObs.observe(document.querySelector('.rb-omcp'));
     "name": "Rocketbot",
     "url": "https://rocketbot.com"
   },
-  "inLanguage": "en"
+  "inLanguage": "pt-BR"
 }
 </script>
 <script>
@@ -1985,5 +1979,7 @@ omObs.observe(document.querySelector('.rb-omcp'));
   });
 })();
 </script>
+<!-- rb-wa -->
+<a class="rb-wa" href="https://wa.me/56972518446?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%20Rocketbot." target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp" title="Fale conosco pelo WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.12.56 4.19 1.62 6.02L4 29l8.13-1.58a12 12 0 0 0 3.9.66h.01C22.68 28.08 28 22.68 28 16.04 28 9.4 22.68 3 16.04 3zm0 22.02h-.01a10 10 0 0 1-5.09-1.4l-.36-.21-4.82.94.96-4.7-.24-.38a9.96 9.96 0 0 1-1.53-5.33c0-5.5 4.48-9.98 10-9.98 5.51 0 9.99 4.48 9.99 9.98 0 5.51-4.48 10.08-8.9 11.08zm5.48-7.47c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg></a>
 </body>
 </html>
