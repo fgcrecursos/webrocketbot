@@ -42,7 +42,8 @@
       "Bash(python patch_lang.py)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Bash(python -)"
     ]
   }
 }

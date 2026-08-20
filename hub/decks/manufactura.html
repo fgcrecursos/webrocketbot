@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rocketbot · Manufactura · Latinoamérica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#BC0017; --red-lt:#BC0017; --red-deep:#8E0011;
+  --blue:#2B7FFF; --green:#1D9E75; --amber:#BA7517; --secondary:#263238;
+  --d1:#0A0A0F; --d3:#1B1F23; --ink:#0B0E11; --paper:#FAFAFA;
+  --r-md:16px; --r-pill:9999px;
+  --head:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --pad:clamp(24px,5vw,88px); --ez:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:var(--body);background:var(--d1);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.deck{width:100%;height:100vh;height:100svh;overflow-y:scroll;scroll-snap-type:y mandatory}
+@media (prefers-reduced-motion:reduce){.deck{scroll-snap-type:none}}
+.slide{position:relative;width:100%;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
+  justify-content:center;padding:clamp(74px,9vh,102px) var(--pad) clamp(92px,10vh,112px);scroll-snap-align:start;overflow:hidden}
+.slide.light{background:var(--paper);color:var(--ink)}
+.slide.dark{background:var(--d1);color:var(--paper)}
+.slide.deep{background:linear-gradient(148deg,var(--red) 0%,var(--red-deep) 58%,#5c000b 100%);color:#fff}
+.inner{width:100%;max-width:1180px;margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:clamp(10px,1.05vw,12px);font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:clamp(15px,2.3vh,26px)}
+.light .eyebrow{color:var(--red)} .dark .eyebrow{color:var(--red-lt)} .deep .eyebrow{color:rgba(255,255,255,.72)}
+.eyebrow::before{content:"";width:26px;height:2px;background:currentColor;flex:none}
+h1,h2,h3{font-family:var(--head)}
+h1{font-size:clamp(30px,5.3vw,64px);font-weight:800;line-height:1.05;letter-spacing:-.028em}
+h2{font-size:clamp(24px,3.8vw,47px);font-weight:800;line-height:1.08;letter-spacing:-.022em}
+h3{font-size:clamp(14.5px,1.52vw,19px);font-weight:700;line-height:1.26;letter-spacing:-.01em}
+.accent{color:var(--red)} .dark .accent{color:var(--red-lt)}
+.lead{font-size:clamp(14.5px,1.5vw,18.5px);line-height:1.6;max-width:70ch;margin-top:clamp(12px,2vh,22px)}
+.light .lead{color:#41474d} .dark .lead{color:#B6BDC4} .deep .lead{color:rgba(255,255,255,.9)}
+.lead b{font-weight:700} .light .lead b{color:var(--ink)} .dark .lead b{color:#fff}
+.note{font-family:var(--mono);font-size:clamp(9.5px,.95vw,11px);line-height:1.62;margin-top:18px;max-width:90ch}
+.light .note{color:#7b8288} .dark .note{color:#767E86} .deep .note{color:rgba(255,255,255,.62)}
+.grid{display:grid;gap:clamp(11px,1.4vw,18px);margin-top:clamp(18px,3vh,34px)}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+.card{border-radius:var(--r-md);padding:clamp(15px,1.8vw,24px);border:1px solid rgba(0,0,0,.09);background:#fff;height:100%}
+.dark .card{background:var(--d3);border-color:rgba(255,255,255,.09)}
+.deep .card{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18)}
+.card p{font-size:clamp(11.8px,1.08vw,13.8px);line-height:1.56;margin-top:8px}
+.light .card p{color:#565c62} .dark .card p{color:#A7AEB5} .deep .card p{color:rgba(255,255,255,.84)}
+.card .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:9px;font-weight:500}
+.dark .card .tag{color:var(--red-lt)} .deep .card .tag{color:rgba(255,255,255,.75)}
+.stat-n{font-family:var(--head);font-size:clamp(26px,3.9vw,48px);font-weight:800;line-height:1;letter-spacing:-.032em;font-variant-numeric:tabular-nums}
+.stat-l{font-family:var(--mono);font-size:clamp(9.5px,.95vw,11px);letter-spacing:.08em;line-height:1.5;margin-top:11px;text-transform:uppercase}
+.light .stat-l{color:#71787e} .dark .stat-l{color:#8B939B} .deep .stat-l{color:rgba(255,255,255,.75)}
+.stat-s{font-size:clamp(11.5px,1.04vw,13px);line-height:1.5;margin-top:9px}
+.dark .stat-s{color:#A7AEB5} .deep .stat-s{color:rgba(255,255,255,.84)} .light .stat-s{color:#565c62}
+.cover-glow{position:absolute;width:min(120vw,1100px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(188,0,23,.28) 0%,rgba(188,0,23,0) 66%);top:-44%;right:-22%;pointer-events:none}
+.kbd-hint{position:absolute;bottom:clamp(70px,8vh,86px);left:var(--pad);font-family:var(--mono);font-size:11px;color:#6d757d;letter-spacing:.06em}
+.kbd{display:inline-block;border:1px solid #3a4148;border-radius:4px;padding:1px 6px;margin:0 1px;color:#aeb6bd}
+.slide .card,.slide .row,.slide .stepc,.slide .why-i{opacity:0;transform:translateY(15px);transition:opacity .5s var(--ez),transform .5s var(--ez)}
+.slide.seen .card,.slide.seen .row,.slide.seen .stepc,.slide.seen .why-i{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.slide .card,.slide .row,.slide .stepc,.slide .why-i{opacity:1;transform:none}}
+.card{transition:opacity .5s var(--ez),transform .3s var(--ez),border-color .25s ease}
+.slide.seen .card:hover{transform:translateY(-3px)}
+.dark .card:hover{border-color:rgba(188,0,23,.42)} .light .card:hover{border-color:rgba(188,0,23,.3)}
+
+
+
+/* Montserrat en los roles antes monoespaciados: mas peso para que el tracking siga legible */
+.eyebrow,.card .tag,.ovl-h b{font-weight:700}
+.note,.chart text{font-weight:500}
+.stat-l,.cq,.case .sector,.case .metrics div span,.cl,.cout .ck,.cout .cp,.csplit span,
+.hook span,.ovl-h span,.ovl-i .a,.hud,.abt,.absvg .cap,.kbd-hint{font-weight:600}
+.stepc::before{font-weight:600}
+
+/* rows */
+.rows{margin-top:clamp(14px,2.4vh,26px)}
+.row{display:grid;grid-template-columns:auto minmax(140px,21%) 1fr;gap:clamp(12px,2vw,26px);padding:clamp(12px,1.8vh,20px) 0;
+  border-top:1px solid rgba(255,255,255,.1);align-items:baseline}
+.light .row{border-color:rgba(0,0,0,.09)}
+.rows .row:last-child{border-bottom:1px solid rgba(255,255,255,.1)}
+.light .rows .row:last-child{border-bottom-color:rgba(0,0,0,.09)}
+.row .rn{font-family:var(--mono);font-size:clamp(10.5px,1.06vw,12.5px);font-weight:700;color:var(--red-lt);font-variant-numeric:tabular-nums}
+.light .row .rn{color:var(--red)}
+.row dt{font-family:var(--head);font-size:clamp(12.5px,1.28vw,16px);font-weight:700;line-height:1.28}
+.row dd{font-size:clamp(12px,1.14vw,14.5px);line-height:1.56;color:#98A0A8}
+.light .row dd{color:#565c62}
+.row dd b{color:#fff;font-weight:700} .light .row dd b{color:var(--ink)}
+
+/* why fail */
+.whys{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.8vw,24px);margin-top:clamp(18px,3vh,34px)}
+.why-i{display:grid;grid-template-columns:auto 1fr;gap:clamp(12px,1.6vw,20px);align-items:start}
+.why-i .x{width:32px;height:32px;border-radius:50%;background:rgba(188,0,23,.16);border:1px solid rgba(188,0,23,.5);
+  color:var(--red-lt);font-family:var(--mono);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.why-i b{font-family:var(--head);display:block;font-size:clamp(13.5px,1.42vw,18px);font-weight:700;line-height:1.26;color:#fff;margin-bottom:8px}
+.why-i p{font-size:clamp(12px,1.12vw,14px);line-height:1.52;color:#98A0A8;margin:0}
+
+/* cases */
+.case{display:flex;flex-direction:column;height:100%}
+.case .sector{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--red-lt);
+  padding-bottom:11px;margin-bottom:13px;border-bottom:1px solid rgba(255,255,255,.12)}
+.cq{font-family:var(--mono);font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;color:#767E86;display:block;margin-bottom:6px}
+.ca{font-size:clamp(11.5px,1.1vw,13.5px);line-height:1.5;color:#A7AEB5;margin-bottom:13px}
+.case .metrics{display:flex;gap:18px;margin-top:auto;padding-top:13px;border-top:1px solid rgba(255,255,255,.12)}
+.case .metrics div b{font-family:var(--head);font-size:clamp(15px,1.9vw,23px);font-weight:800;letter-spacing:-.02em;color:#fff}
+.case .metrics div span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8B939B;margin-top:5px}
+
+/* takeaway */
+.takeaway{margin-top:clamp(12px,2vh,22px);border-radius:14px;padding:clamp(14px,1.9vw,22px) clamp(16px,2.1vw,26px);
+  background:rgba(188,0,23,.14);border:1px solid rgba(188,0,23,.36);display:flex;gap:clamp(12px,1.8vw,22px);align-items:center;flex-wrap:wrap}
+.takeaway.ok{background:rgba(29,158,117,.13);border-color:rgba(29,158,117,.44)}
+.takeaway .tk{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--red-lt);flex:none;font-weight:700}
+.takeaway.ok .tk{color:var(--green)}
+.takeaway p{font-size:clamp(13.5px,1.48vw,19px);line-height:1.42;color:#fff;margin:0;font-weight:600;flex:1;min-width:250px}
+.takeaway b{color:var(--red-lt);font-weight:800} .takeaway.ok b{color:var(--green)}
+
+/* sliders + readout */
+.calc{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1fr);gap:clamp(16px,2.6vw,42px);margin-top:clamp(14px,2.4vh,26px);align-items:start}
+.cset{display:flex;flex-direction:column;gap:clamp(15px,2.2vh,22px)}
+.cl{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#8B939B;display:block;margin-bottom:11px}
+.crow{display:flex;align-items:center;gap:15px}
+.crow input[type=range]{-webkit-appearance:none;appearance:none;flex:1;min-width:0;background:transparent;height:34px;cursor:pointer;margin:0}
+.crow input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:rgba(255,255,255,.2)}
+.crow input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:var(--red);border:2px solid #fff;margin-top:-10px}
+.crow input[type=range]::-moz-range-track{height:4px;border-radius:2px;background:rgba(255,255,255,.2)}
+.crow input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--red);border:2px solid #fff}
+.crow .cv{font-family:var(--mono);font-weight:700;font-size:clamp(15px,1.65vw,19px);color:#fff;min-width:88px;text-align:right;font-variant-numeric:tabular-nums}
+.crow .cv small{display:block;font-size:9.5px;color:#8B939B;font-weight:400;letter-spacing:.05em;margin-top:3px}
+.cout{border-radius:20px;padding:clamp(20px,2.6vw,34px);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);text-align:center}
+.cout .ck{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8B939B;display:block}
+.cout .cn{font-family:var(--head);font-size:clamp(34px,6.2vw,76px);font-weight:900;letter-spacing:-.042em;line-height:1;color:var(--red-lt);font-variant-numeric:tabular-nums;margin:16px 0 8px}
+.cout .cn.ok{color:var(--green)}
+.cout .cp{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#8B939B;line-height:1.6}
+.csplit{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14)}
+.csplit b{font-family:var(--head);display:block;font-size:clamp(17px,2.2vw,28px);font-weight:800;letter-spacing:-.026em;color:#fff;font-variant-numeric:tabular-nums}
+.csplit span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8B939B;margin-top:8px;line-height:1.45}
+
+/* toggle pills */
+.pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:clamp(14px,2.2vh,24px)}
+.pill{font-family:var(--mono);font-size:clamp(10px,1.02vw,11.5px);letter-spacing:.09em;text-transform:uppercase;font-weight:700;
+  padding:11px 18px;border-radius:var(--r-pill);border:1px solid rgba(255,255,255,.2);background:transparent;color:#A7AEB5;cursor:pointer;transition:all .22s ease;min-height:42px}
+.pill:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.pill[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.light .pill{border-color:rgba(0,0,0,.16);color:#565c62}
+.light .pill:hover{border-color:rgba(0,0,0,.4);color:var(--ink)}
+.light .pill[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+
+/* waterfall bars */
+.wf{margin-top:clamp(16px,2.6vh,28px);display:flex;flex-direction:column;gap:9px}
+.wf-r{display:grid;grid-template-columns:minmax(130px,24%) 1fr auto;gap:clamp(10px,1.6vw,20px);align-items:center}
+.wf-r .wl{font-size:clamp(12px,1.16vw,14.5px);font-weight:600;line-height:1.3}
+.wf-t{height:clamp(30px,3.8vh,42px);border-radius:7px;background:rgba(255,255,255,.06);overflow:hidden}
+.light .wf-t{background:rgba(0,0,0,.05)}
+.wf-f{height:100%;border-radius:7px;width:0;transition:width .8s var(--ez);background:var(--secondary)}
+.wf-r.man .wf-f{background:linear-gradient(90deg,var(--red),var(--red-deep))}
+.wf-r.auto .wf-f{background:var(--green)}
+.wf-r .wv{font-family:var(--mono);font-weight:700;font-size:clamp(12.5px,1.34vw,17px);font-variant-numeric:tabular-nums;min-width:66px;text-align:right;color:#fff}
+.light .wf-r .wv{color:var(--ink)}
+
+/* steps + close */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,22px);margin-top:clamp(20px,3.2vh,36px);counter-reset:s}
+.stepc{padding-top:19px;border-top:2px solid rgba(255,255,255,.3);counter-increment:s}
+.stepc::before{content:counter(s,decimal-leading-zero);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.62);margin-bottom:11px}
+.stepc b{font-family:var(--head);display:block;font-size:clamp(12.5px,1.26vw,15.5px);font-weight:700;line-height:1.25;margin-bottom:8px}
+.stepc p{font-size:clamp(11.2px,1.04vw,13px);line-height:1.5;color:rgba(255,255,255,.82)}
+.hook{margin-top:clamp(18px,3vh,34px);border-radius:16px;padding:clamp(18px,2.4vw,30px);background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);text-align:center}
+.hook b{font-family:var(--head);display:block;font-size:clamp(16px,2.2vw,29px);font-weight:800;line-height:1.24;letter-spacing:-.022em;color:#fff}
+.hook span{display:block;font-family:var(--mono);font-size:clamp(10px,1.02vw,11.5px);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-top:13px}
+
+/* charts */
+.chart{width:100%;max-width:840px;margin:clamp(12px,2.2vh,26px) auto 0;display:block;overflow:visible}
+.chart text{font-family:var(--mono);letter-spacing:.06em}
+.chart .gl{stroke:rgba(255,255,255,.09);stroke-width:1}
+.chart .l-a{stroke:#5a636b;stroke-width:2.5;fill:none}
+.chart .l-b{stroke:var(--red-lt);stroke-width:3;fill:none;stroke-linejoin:round}
+.chart .l-c{stroke:var(--green);stroke-width:3;fill:none;stroke-linejoin:round}
+
+/* overview + nav */
+.ovl{position:fixed;inset:0;z-index:90;background:rgba(10,10,15,.97);backdrop-filter:blur(14px);display:none;overflow-y:auto;padding:clamp(52px,7vh,76px) var(--pad) var(--pad)}
+.ovl.on{display:block}
+.ovl-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;max-width:1180px;margin:0 auto clamp(18px,2.6vh,28px)}
+.ovl-h b{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red-lt);font-weight:500}
+.ovl-h span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:#767E86}
+.ovl-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:9px;max-width:1180px;margin:0 auto}
+.ovl-i{border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:13px;background:rgba(255,255,255,.03);cursor:pointer;text-align:left;color:inherit;font:inherit;transition:all .2s ease;min-height:86px;display:flex;flex-direction:column}
+.ovl-i:hover{border-color:var(--red-lt);background:rgba(188,0,23,.14);transform:translateY(-2px)}
+.ovl-i.now{border-color:var(--red-lt);background:rgba(188,0,23,.2)}
+.ovl-i .n{font-family:var(--mono);font-size:10px;color:var(--red-lt);letter-spacing:.08em;font-weight:700}
+.ovl-i .t{font-family:var(--head);font-size:12px;font-weight:700;line-height:1.28;color:#E4E8EB;margin-top:8px}
+.ovl-i .a{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#767E86;margin-top:auto;padding-top:8px}
+.rail{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;display:flex;gap:2px}
+.rail-act{flex:1;position:relative;background:rgba(255,255,255,.09)}
+.rail-act i{position:absolute;inset:0 auto 0 0;width:0;background:var(--red);transition:width .45s ease;display:block}
+.hud{position:fixed;bottom:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:11px var(--pad);pointer-events:none;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  background:linear-gradient(to top,rgba(10,10,15,.82),transparent)}
+.hud.on-light{background:linear-gradient(to top,rgba(250,250,250,.9),transparent)}
+.hud-act{color:#8B939B} .hud.on-light .hud-act{color:#71787e}
+.hud-nav{display:flex;align-items:center;gap:8px;pointer-events:auto}
+.nav-btn{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.24);background:rgba(10,10,15,.55);color:#C8CFD6;
+  cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .18s ease}
+.hud.on-light .nav-btn{border-color:rgba(0,0,0,.16);background:rgba(255,255,255,.75);color:#41474d}
+.nav-btn:hover:not(:disabled){background:var(--red);border-color:var(--red);color:#fff}
+.nav-btn:disabled{opacity:.28;cursor:not-allowed}
+.counter{font-weight:700;color:#C8CFD6;min-width:52px;text-align:right;font-variant-numeric:tabular-nums}
+.hud.on-light .counter{color:#41474d}
+
+@media(max-width:900px){
+  .g3,.g4,.steps,.whys{grid-template-columns:repeat(2,1fr)}
+  .g2,.calc{grid-template-columns:1fr}
+  .deck{scroll-snap-type:none}
+  .slide{min-height:auto;padding-top:78px;padding-bottom:92px}
+  .row,.wf-r{grid-template-columns:1fr;gap:9px}
+  .wf-r{grid-template-columns:1fr auto}
+  .wf-r .wl{grid-column:1/-1}
+  .lang{right:12px;top:10px}
+}
+@media(max-width:560px){ .g3,.g4,.steps,.whys,.csplit{grid-template-columns:1fr} }
+
+
+/* Pantallas bajas (laptops 768/800px): aprieta el ritmo vertical para que
+   el contenido termine por encima del HUD fijo y no quede tapado. */
+@media(max-height:820px){
+  .slide{padding-top:clamp(56px,7vh,74px);padding-bottom:clamp(72px,8vh,92px)}
+  .lead{margin-top:clamp(8px,1.4vh,16px)}
+  .pills{margin-top:clamp(10px,1.6vh,18px)}
+  .wf{gap:6px;margin-top:clamp(10px,1.6vh,18px)}
+  .wf-t{height:clamp(26px,3.2vh,34px)}
+  .takeaway{margin-top:clamp(8px,1.4vh,16px);padding:clamp(10px,1.4vw,16px) clamp(12px,1.6vw,20px)}
+  .grid{margin-top:clamp(12px,2vh,24px)}
+  .steps{margin-top:clamp(14px,2.2vh,26px)}
+  .rows{margin-top:clamp(10px,1.8vh,20px)}
+  .whys{margin-top:clamp(12px,2vh,24px)}
+  .note{margin-top:12px}
+  .kbd-hint{bottom:clamp(64px,7vh,78px)}
+}
+
+/* diagrama antes/después */
+.absvg text{font-family:var(--head)}
+.absvg .nd{fill:rgba(255,255,255,.05);stroke:rgba(255,255,255,.2);stroke-width:1}
+.absvg .actor .nd{fill:#39414a;stroke:#5a636b;stroke-width:1.5;transition:all .4s var(--ez)}
+.absvg.after .actor .nd{fill:#BC0017;stroke:#BC0017;stroke-width:2}
+.absvg .nl{fill:#C8CFD6;font-size:13.5px;font-weight:700}
+.absvg .actor .nl{fill:#fff;font-size:15px}
+.absvg .ar{stroke:#5a636b;stroke-width:2;fill:none;transition:stroke .4s ease}
+.absvg.after .ar{stroke:#BC0017}
+.absvg .cap{fill:#8B939B;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em}
+.abt{font-family:var(--mono);font-size:clamp(10px,1.02vw,12px);letter-spacing:.05em;padding:10px 15px;border-radius:var(--r-pill);
+  border:1px solid rgba(255,255,255,.16);color:#98A0A8;transition:all .35s var(--ez)}
+.abt.hot{border-color:var(--green);color:#fff;background:rgba(29,158,117,.14)}
+.nav-btn.pdf-btn{width:auto;padding:0 11px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.09em}
+
+
+/* ═══ IDIOMA ═══ */
+.hub-back{position:fixed;top:16px;left:var(--pad);z-index:70;display:block;line-height:0;opacity:.92;transition:opacity .2s ease}
+.hub-back:hover{opacity:1}
+.hub-back img{height:20px;width:auto;display:block}
+.hub-back .hb-light{display:none}
+.hub-back.on-light .hb-dark{display:none}
+.hub-back.on-light .hb-light{display:block}
+@media(max-width:900px){.hub-back{left:12px;top:12px}.hub-back img{height:17px}}
+.lang{position:fixed;top:14px;right:var(--pad);z-index:70;display:flex;gap:3px;padding:3px;border-radius:var(--r-pill);
+  border:1px solid rgba(255,255,255,.2);background:rgba(10,10,15,.72);backdrop-filter:blur(10px)}
+.lang.on-light{border-color:rgba(0,0,0,.14);background:rgba(255,255,255,.82)}
+.lang button{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.1em;padding:7px 13px;border-radius:var(--r-pill);
+  border:0;background:transparent;color:#8B939B;cursor:pointer;transition:all .2s ease;min-height:32px}
+.lang.on-light button{color:#71787e}
+.lang button[aria-pressed="true"]{background:var(--red);color:#fff}
+@media(max-width:900px){ .lang{right:12px;top:10px} }
+/* ══════════ EXPORTACIÓN A PDF ══════════ */
+@media print{
+  @page{ size: 13.333in 7.5in; margin: 0; }
+  html, body{ background:#fff !important; width:auto !important; height:auto !important; overflow:visible !important; margin:0 !important; }
+  .deck{ height:auto !important; max-height:none !important; overflow:visible !important; scroll-snap-type:none !important; display:block !important; }
+  .rail, .hud, .kbd-hint, .ovl, .lang, .hub-back, .pills, input[type=range]{ display:none !important; }
+  .slide{ width:13.333in !important; min-height:7.5in !important; height:auto !important;
+    margin:0 !important; padding:0.46in 0.58in !important;
+    display:flex !important; flex-direction:column !important; justify-content:center !important;
+    overflow:visible !important; page-break-after:always; break-after:page; }
+  .slide:last-of-type{ page-break-after:auto; break-after:auto; }
+  .inner{ width:100% !important; max-width:none !important; }
+  .slide .card, .slide .row, .slide .stepc, .slide .why-i, .slide .wf-r, .slide .case, .slide .abt{
+    opacity:1 !important; transform:none !important; }
+  .bar-fill{ width:var(--pw, 100%) !important; }
+  *{ animation:none !important; transition:none !important;
+     -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  .card, .row, .why-i, .stepc, .case, .wf-r{ break-inside:avoid; page-break-inside:avoid; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="rail" aria-hidden="true"><div class="rail-act"><i data-rail="0"></i></div><div class="rail-act"><i data-rail="1"></i></div><div class="rail-act"><i data-rail="2"></i></div><div class="rail-act"><i data-rail="3"></i></div></div>
+<a class="hub-back" id="hubBack" href="/hub" aria-label="Volver al hub"><img class="hb-dark" src="/assets/logos/logo-header-white.png" alt="Rocketbot"><img class="hb-light" src="/assets/logos/logo-header.png" alt="Rocketbot"></a>
+<div class="lang" id="lang" role="group" aria-label="Idioma / Language">
+  <button id="langEs" aria-pressed="true">ES</button>
+  <button id="langEn" aria-pressed="false">EN</button>
+</div>
+
+<main class="deck" id="deck">
+
+<section class="slide dark" data-act="0" data-actname="Dónde está el trabajo" data-actname-alt="Where the work sits">
+  <div class="cover-glow"></div>
+  <div class="inner">
+    <div class="eyebrow"><span data-alt="Industry briefing">Briefing sectorial</span> · <span data-alt="Manufacturing">Manufactura</span></div>
+    <h1 data-alt="You optimized the plant.<br>The <span class='accent'>paperwork</span> didn't move.">Optimizaste la planta.<br>El <span class='accent'>papeleo</span> no se movió.</h1>
+    <p class="lead" data-alt="Lean, automation and continuous improvement have been applied to production for decades. The administrative layer around it — purchasing, supplier invoices, production reporting, quality documentation — still largely runs the way it did twenty years ago.">Lean, automatización y mejora continua llevan décadas aplicándose a producción. La capa administrativa que la rodea — compras, facturas de proveedores, reportes de producción, documentación de calidad — sigue funcionando en buena medida como hace veinte años.</p>
+  </div>
+  <div class="kbd-hint"><span data-alt="Navigate with">Navega con</span> <span class="kbd">←</span> <span class="kbd">→</span> · <span class="kbd">O</span> <span data-alt="for all slides">para ver todas</span></div>
+</section>
+
+<section class="slide light" data-act="0" data-actname="Dónde está el trabajo" data-actname-alt="Where the work sits">
+  <div class="inner">
+    <div class="eyebrow">01 · <span data-alt="Manufacturing">Manufactura</span></div>
+    <h2 data-alt="What this industry is <span class='accent'>up against</span>.">A qué se enfrenta <span class='accent'>esta industria</span>.</h2>
+    <div class="grid g4"><div class="card"><span class="tag" data-alt="Margin">Margen</span><h3 data-alt="Input costs you don't control">Costos de insumos que no controlas</h3><p data-alt="When material and freight move against you, the only lever left is what it costs to operate around the product.">Cuando el material y el flete se mueven en tu contra, la única palanca que queda es cuánto cuesta operar alrededor del producto.</p></div><div class="card"><span class="tag" data-alt="Headcount">Dotación</span><h3 data-alt="Administrative roles are hard to fill">Los roles administrativos cuesta llenarlos</h3><p data-alt="The shortage isn't only on the floor. Purchasing, accounts payable and reporting roles sit open for months, and the work doesn't wait.">La escasez no es solo en planta. Compras, cuentas por pagar y reportería quedan vacantes por meses, y el trabajo no espera.</p></div><div class="card"><span class="tag" data-alt="Cash">Caja</span><h3 data-alt="Order-to-cash cycle length">Duración del ciclo pedido a cobro</h3><p data-alt="Every day between shipment and invoice is working capital sitting still. Most of those days are handoffs, not production.">Cada día entre el despacho y la factura es capital de trabajo detenido. La mayoría de esos días son traspasos, no producción.</p></div><div class="card"><span class="tag" data-alt="Compliance">Cumplimiento</span><h3 data-alt="Documentation that has to exist">Documentación que tiene que existir</h3><p data-alt="Quality records, traceability and audit evidence are non-negotiable. Produced by hand, they consume time and still fail.">Registros de calidad, trazabilidad y evidencia de auditoría no son negociables. Hechos a mano, consumen tiempo y aun así fallan.</p></div></div>
+  </div>
+</section>
+
+<section class="slide dark" data-act="0" data-actname="Dónde está el trabajo" data-actname-alt="Where the work sits">
+  <div class="inner">
+    <div class="eyebrow">01 · <span data-alt="Manufacturing">Manufactura</span></div>
+    <h2 data-alt="Where the repetitive work <span class='accent'>sits</span>.">Dónde está el trabajo <span class='accent'>repetitivo</span>.</h2>
+    <p class="lead" data-alt="Four high-volume administrative processes that surround production in almost every plant.">Cuatro procesos administrativos de alto volumen que rodean a producción en casi toda planta.</p>
+    <div class="grid g4"><div class="card"><span class="tag" data-alt="Purchasing">Compras</span><h3 data-alt="Purchase order management">Gestión de órdenes de compra</h3><p data-alt="Creating, validating and following up orders across suppliers and systems, without anyone re-keying the same data twice.">Crear, validar y hacer seguimiento de órdenes entre proveedores y sistemas, sin que nadie retipee los mismos datos dos veces.</p><div class="stat-n" style="font-size:clamp(19px,2.5vw,29px);margin-top:14px">80%</div><div class="stat-l" data-alt="Less time">Menos tiempo</div></div><div class="card"><span class="tag" data-alt="Accounts payable">Cuentas por pagar</span><h3 data-alt="Supplier invoice validation">Validación de facturas de proveedor</h3><p data-alt="Reading invoices, matching them against the order and the receipt, and routing only genuine exceptions to a person.">Leer facturas, cruzarlas contra la orden y la recepción, y derivar a una persona solo las excepciones reales.</p><div class="stat-n" style="font-size:clamp(19px,2.5vw,29px);margin-top:14px">80%</div><div class="stat-l" data-alt="Less time">Menos tiempo</div></div><div class="card"><span class="tag" data-alt="Operations">Operaciones</span><h3 data-alt="Production reporting">Reportes de producción</h3><p data-alt="Consolidating shift, line and yield data into the reports management uses to decide, in hours rather than days.">Consolidar datos de turno, línea y rendimiento en los reportes que la gerencia usa para decidir, en horas y no en días.</p><div class="stat-n" style="font-size:clamp(19px,2.5vw,29px);margin-top:14px">95%</div><div class="stat-l" data-alt="Fewer manual errors">Menos error manual</div></div><div class="card"><span class="tag" data-alt="Quality">Calidad</span><h3 data-alt="Documentation and traceability">Documentación y trazabilidad</h3><p data-alt="Assembling and filing the records audits and customers require, with a complete and consistent trail.">Armar y archivar los registros que exigen auditorías y clientes, con una traza completa y consistente.</p><div class="stat-n" style="font-size:clamp(19px,2.5vw,29px);margin-top:14px">85%</div><div class="stat-l" data-alt="Less time">Menos tiempo</div></div></div>
+    <p class="note" data-alt="Ranges observed across Rocketbot implementations. Results vary with volume, process complexity and each organization's starting point.">Rangos observados en implementaciones de Rocketbot. Los resultados varían según el volumen, la complejidad del proceso y el punto de partida de cada organización.</p>
+  </div>
+</section>
+
+<section class="slide dark" data-act="1" data-actname="El ciclo" data-actname-alt="The cycle">
+  <div class="inner">
+    <div class="eyebrow">02 · <span data-alt="The cycle">El ciclo</span></div>
+    <h2 data-alt="Where a case actually <span class='accent'>spends its time</span>.">En qué se le va el tiempo a <span class='accent'>un caso</span>.</h2>
+    <p class="lead" data-alt="Pick a process and compare how the elapsed time is distributed today against the same process with the manual steps removed.">Elige un proceso y compara cómo se distribuye el tiempo transcurrido hoy contra el mismo proceso sin los pasos manuales.</p>
+    <div class="pills" id="wfPills" role="group"><button class="pill" data-p="0" aria-pressed="true" data-alt="Purchase order to confirmation">Orden de compra a confirmación</button><button class="pill" data-p="1" aria-pressed="false" data-alt="Supplier invoice to payment">Factura de proveedor a pago</button><button class="pill" data-p="2" aria-pressed="false" data-alt="Shift data to report">Datos de turno a reporte</button></div>
+    <div class="wf" id="wf"></div>
+    <div class="takeaway ok"><span class="tk" data-alt="The shift">El cambio</span><p id="wfLine"></p></div>
+    <p class="note" data-alt="Illustrative distribution of elapsed time for processes of this type, not a measurement of a specific operation. What is achievable depends on volume, the systems involved and each organization's starting point.">Distribución ilustrativa del tiempo transcurrido para procesos de este tipo, no una medición de una operación específica. Lo alcanzable depende del volumen, los sistemas involucrados y el punto de partida de cada organización.</p>
+  </div>
+</section>
+
+<section class="slide dark" data-act="2" data-actname="Por qué no llega" data-actname-alt="Why it stalls">
+  <div class="inner">
+    <div class="eyebrow">03 · <span data-alt="Why it stalls">Por qué no llega</span></div>
+    <h2 data-alt="Why most programs <span class='accent'>stall</span>.">Por qué la mayoría <span class='accent'>no llega</span>.</h2>
+    <p class="lead" data-alt="Research on enterprise AI initiatives found that roughly 95% never produce a measurable business impact. The failure modes are consistent across industries — and none of them are technical.">La investigación sobre iniciativas de IA empresarial encontró que cerca del 95% nunca genera un impacto medible. Los modos de falla son consistentes entre industrias — y ninguno es técnico.</p>
+    <div class="whys"><div class="why-i"><span class="x">✕</span><div><b data-alt="They automate the wrong process">Automatizan el proceso equivocado</b><p data-alt="They start with whoever asked first, not with the process carrying the most volume. The result is real but too small to move any indicator.">Parten por quien pidió primero, no por el proceso que carga más volumen. El resultado es real pero muy chico para mover ningún indicador.</p></div></div><div class="why-i"><span class="x">✕</span><div><b data-alt="They never scale past the first team">Nunca escalan más allá del primer equipo</b><p data-alt="One automated process doesn't change a service level. Thirty does. Most programs stop at the first success.">Un proceso automatizado no cambia un nivel de servicio. Treinta sí. La mayoría se detiene en el primer éxito.</p></div></div><div class="why-i"><span class="x">✕</span><div><b data-alt="It breaks and no one fixes it">Se rompe y nadie lo arregla</b><p data-alt="An upstream system changes, the automation stops, and within weeks the team quietly goes back to doing it by hand.">Cambia un sistema aguas arriba, la automatización se detiene, y en pocas semanas el equipo vuelve en silencio a hacerlo a mano.</p></div></div><div class="why-i"><span class="x">✕</span><div><b data-alt="There's no executive owner">No hay dueño ejecutivo</b><p data-alt="Without someone at this level defending it when something urgent appears, it loses every prioritization fight it enters.">Sin alguien de este nivel que lo defienda cuando aparezca algo urgente, pierde todas las peleas de priorización.</p></div></div></div>
+    <p class="note" data-alt="Source: MIT, NANDA project (2025).">Fuente: MIT, proyecto NANDA (2025).</p>
+  </div>
+</section>
+
+<section class="slide dark" data-act="3" data-actname="Cómo funciona" data-actname-alt="How it works">
+  <div class="inner">
+    <div class="eyebrow">04 · Rocketbot</div>
+    <h2 data-alt="It works the way a person does,<br>in the systems you <span class='accent'>already run</span>.">Trabaja igual que una persona,<br>en los sistemas que <span class='accent'>ya operas</span>.</h2>
+    <div class="pills" role="group">
+      <button class="pill" id="abBefore" aria-pressed="true" data-alt="Today">Hoy</button>
+      <button class="pill" id="abAfter" aria-pressed="false" data-alt="With Rocketbot">Con Rocketbot</button>
+    </div>
+    <svg class="absvg" id="absvg" viewBox="0 0 960 190" role="img"
+         style="width:100%;max-width:960px;margin:clamp(14px,2.2vh,24px) auto 0;display:block;overflow:visible">
+      <g><rect class="nd" x="6" y="58" width="136" height="64" rx="13"/><text class="nl" x="74" y="96" text-anchor="middle" data-alt="Request">Solicitud</text></g>
+      <path class="ar" d="M148 90 H180"/><path class="ar" d="M172 84 l8 6 -8 6"/>
+      <g class="actor"><rect class="nd" x="186" y="48" width="158" height="84" rx="15"/>
+        <text class="nl" id="abActor" x="265" y="86" text-anchor="middle">Una persona</text>
+        <text class="cap" x="265" y="108" text-anchor="middle" font-size="10" data-alt="RUNS EVERY STEP">HACE CADA PASO</text></g>
+      <path class="ar" d="M350 90 H382"/><path class="ar" d="M374 84 l8 6 -8 6"/>
+      <g><rect class="nd" x="388" y="58" width="122" height="64" rx="13"/><text class="nl" x="449" y="96" text-anchor="middle" font-size="12.5" data-alt="ERP">ERP</text></g>
+      <path class="ar" d="M516 90 H548"/><path class="ar" d="M540 84 l8 6 -8 6"/>
+      <g><rect class="nd" x="554" y="58" width="122" height="64" rx="13"/><text class="nl" x="615" y="96" text-anchor="middle" font-size="12.5" data-alt="Plant system">Sistema de planta</text></g>
+      <path class="ar" d="M682 90 H714"/><path class="ar" d="M706 84 l8 6 -8 6"/>
+      <g><rect class="nd" x="720" y="58" width="110" height="64" rx="13"/><text class="nl" x="775" y="96" text-anchor="middle" font-size="12.5" data-alt="Spreadsheet">Planilla</text></g>
+      <path class="ar" d="M836 90 H858"/><path class="ar" d="M852 84 l6 6 -6 6"/>
+      <g><rect class="nd" x="864" y="58" width="90" height="64" rx="13"/></g>
+      <text class="cap" x="6" y="30" data-alt="INPUT">ENTRADA</text>
+      <text class="cap" x="388" y="30" data-alt="SYSTEMS YOU ALREADY USE">SISTEMAS QUE YA USAS</text>
+      <text class="cap" x="864" y="30" data-alt="OUTPUT">SALIDA</text>
+      <text class="nl" x="909" y="96" text-anchor="middle" font-size="12.5" data-alt="Supplier">Proveedor</text>
+    </svg>
+    <div class="ab-tags" style="display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:clamp(14px,2.2vh,24px)"><span class="abt" data-b="Solo en horario hábil" data-a="24/7, sin supervisión" data-b-alt="Business hours only" data-a-alt="24/7, unattended"></span><span class="abt" data-b="Un caso a la vez" data-a="Muchos casos en paralelo" data-b-alt="One case at a time" data-a-alt="Many cases in parallel"></span><span class="abt" data-b="Se detiene si falta alguien" data-a="No depende de nadie" data-b-alt="Stops when someone is out" data-a-alt="Depends on no one"></span><span class="abt" data-b="El error se descubre después" data-a="Queda registro de cada paso" data-b-alt="Errors surface downstream" data-a-alt="Every step is logged"></span></div>
+    <p class="note" data-alt="Rocketbot does not replace your systems or require changing them: it operates the same screens your team uses, including applications that expose no other means of connection. It removes repetitive steps, not people.">Rocketbot no reemplaza tus sistemas ni exige cambiarlos: opera las mismas pantallas que usa tu equipo, incluso en aplicaciones que no permiten conectarse por otra vía. Elimina pasos repetitivos, no personas.</p>
+  </div>
+</section>
+
+<section class="slide dark" data-act="3" data-actname="Cómo funciona" data-actname-alt="How it works">
+  <div class="inner">
+    <div class="eyebrow">04 · Rocketbot</div>
+    <h2 data-alt="Results in operations with the<br>same <span class='accent'>manual load</span>.">Resultados en operaciones con<br>la misma <span class='accent'>carga manual</span>.</h2>
+    <div class="grid g3"><div class="card case"><div class="sector" data-alt="Financial services · Grupo SURA">Servicios financieros · Grupo SURA</div><span class="cq" data-alt="The problem">El problema</span><p class="ca" data-alt="Migrating a new business unit's policy book meant reviewing and loading records one by one. Done by hand it would have taken weeks.">Migrar las pólizas de una nueva unidad de negocio exigía revisar y cargar registros uno por uno. A mano habría tomado semanas.</p><span class="cq" data-alt="The result">El resultado</span><p class="ca" data-alt="The full migration completed in 4 days. They now run 80 robots in production.">La migración completa se resolvió en 4 días. Hoy mantienen 80 robots en producción.</p><div class="metrics"><div><b>+USD 500K</b><span data-alt="released">liberados</span></div><div><b>80</b><span data-alt="robots in production">robots en producción</span></div></div></div><div class="card case"><div class="sector" data-alt="Consumer goods · Agribusiness">Consumo masivo · Agroindustria</div><span class="cq" data-alt="The problem">El problema</span><p class="ca" data-alt="Thousands of hours a year went into repetitive administrative processes that grew at the same pace as the operation.">Miles de horas al año se iban en procesos administrativos repetitivos que crecían al mismo ritmo que la operación.</p><span class="cq" data-alt="The result">El resultado</span><p class="ca" data-alt="Teams refocused on higher-value work, with more than 100 robots carrying the repetitive load.">Los equipos se reenfocaron en actividades de mayor valor, con más de 100 robots sosteniendo la carga repetitiva.</p><div class="metrics"><div><b>+USD 1.5M</b><span data-alt="released">liberados</span></div><div><b>+100</b><span data-alt="robots in production">robots en producción</span></div></div></div><div class="card case"><div class="sector" data-alt="Insurance · Chile">Seguros · Chile</div><span class="cq" data-alt="The problem">El problema</span><p class="ca" data-alt="Operating processes with a heavy manual load stretched response times and hurt the customer experience.">Procesos operativos con alta carga manual alargaban los tiempos de respuesta y golpeaban la experiencia del cliente.</p><span class="cq" data-alt="The result">El resultado</span><p class="ca" data-alt="More than 60 automations in production offloaded the teams and shortened handling times.">Más de 60 automatizaciones en producción descargaron a los equipos y acortaron los tiempos de atención.</p><div class="metrics"><div><b>+USD 500K</b><span data-alt="released">liberados</span></div><div><b>+60</b><span data-alt="automations">automatizaciones</span></div></div></div></div>
+    <p class="note" data-alt="Figures reported by clients with automated processes running in production. Rocketbot operates with 700+ clients across 21 countries and more than 5,000 processes implemented, under an ISO/IEC 27001-certified information security management system.">Cifras informadas por clientes con procesos automatizados operando en producción. Rocketbot opera con 700+ clientes en 21 países y más de 5.000 procesos implementados, bajo un sistema de gestión de seguridad de la información certificado ISO/IEC 27001.</p>
+  </div>
+</section>
+
+<section class="slide deep" data-act="3" data-actname="Cómo funciona" data-actname-alt="How it works">
+  <div class="inner">
+    <div class="eyebrow">04 · Rocketbot</div>
+    <h2 data-alt="What changes once<br>the processes are running.">Lo que cambia cuando<br>los procesos quedan funcionando.</h2>
+    <div class="grid g4"><div class="card"><div class="stat-n" data-alt="6 months">6 meses</div><div class="stat-l" data-alt="Average payback period">Plazo promedio de recuperación</div><p class="stat-s" data-alt="Within the same fiscal year.">Dentro del mismo ejercicio.</p></div><div class="card"><div class="stat-n" data-alt="up to 80%">hasta 80%</div><div class="stat-l" data-alt="Less time consolidating information">Menos tiempo consolidando información</div><p class="stat-s" data-alt="Reporting stops arriving late.">El reporte deja de llegar tarde.</p></div><div class="card"><div class="stat-n" data-alt="up to 90%">hasta 90%</div><div class="stat-l" data-alt="Reduction in cost per process">Reducción del costo por proceso</div><p class="stat-s" data-alt="Same team, more throughput.">Mismo equipo, más volumen procesado.</p></div><div class="card"><div class="stat-n" data-alt="ISO 27001">ISO 27001</div><div class="stat-l" data-alt="Certified suite">Suite certificada</div><p class="stat-s" data-alt="Every execution leaves an audit trail.">Cada ejecución deja traza de auditoría.</p></div></div>
+    <p class="note" data-alt="Figures observed across Rocketbot clients with automation in production. Results vary with volume, process complexity and each organization's starting point.">Cifras observadas en clientes Rocketbot con automatización en producción. Los resultados varían según el volumen, la complejidad del proceso y el punto de partida de cada organización.</p>
+  </div>
+</section>
+
+<section class="slide deep" data-act="3" data-actname="Cómo funciona" data-actname-alt="How it works">
+  <div class="inner">
+    <div class="eyebrow" data-alt="Next step">El siguiente paso</div>
+    <h2 data-alt="Start with the process that<br>breaks at every close.">Parte por el proceso que<br>se rompe en cada cierre.</h2>
+    <div class="hook"><b data-alt="In a 30-minute session we'll map where your cycle time actually goes, and which process is worth automating first.">En una sesión de 30 minutos mapeamos en qué se te va realmente el tiempo de ciclo, y qué proceso conviene automatizar primero.</b><span data-alt="No commitment · Built on your processes and your volumes">Sin compromiso · Con tus procesos y tus volúmenes</span></div>
+    <div class="steps"><div class="stepc"><b data-alt="We map the cycle">Mapeamos el ciclo</b><p data-alt="Where the case waits, where it gets re-keyed and where it stops.">Dónde espera el caso, dónde se vuelve a digitar y dónde se detiene.</p></div><div class="stepc"><b data-alt="We pick the highest-volume one">Elegimos el de mayor volumen</b><p data-alt="Not the one that annoys most. The one that carries the load.">No el que más molesta. El que carga el volumen.</p></div><div class="stepc"><b data-alt="We automate it and measure">Lo automatizamos y medimos</b><p data-alt="One process live with its indicator before committing to the rest.">Un proceso funcionando con su indicador antes de comprometer el resto.</p></div></div>
+    <p class="lead" style="margin-top:clamp(20px,3.2vh,34px);font-weight:600;font-size:clamp(15px,1.8vw,22px)" data-alt="You already know which one it is. Everyone in the plant does.">Ya sabes cuál es. Toda la planta lo sabe.</p>
+  </div>
+</section>
+
+</main>
+
+<div class="ovl" id="ovl" role="dialog" aria-modal="true">
+  <div class="ovl-h"><b data-alt="Overview">Vista general</b><span data-alt="Tap a slide to jump · ESC to close">Toca una lámina para ir · ESC para cerrar</span></div>
+  <div class="ovl-g" id="ovlG"></div>
+</div>
+
+<div class="hud" id="hud">
+  <span class="hud-act" id="hudAct"></span>
+  <div class="hud-nav">
+    <button class="nav-btn pdf-btn" id="pdfBtn" title="PDF">PDF</button>
+    <button class="nav-btn" id="grid" title="O">&#8862;</button>
+    <button class="nav-btn" id="prev">←</button>
+    <button class="nav-btn" id="next">→</button>
+    <span class="counter" id="counter">01 / 09</span>
+  </div>
+</div>
+<script>
+window.PRIM = "es"; window.ALT = "en";
+window.L = {"es": {"today": "HOY", "automated": "AUTOMATIZADO", "person": "Una persona", "nav": "Navega con", "all": "para ver todas", "overview": "Vista general", "tap": "Toca una lámina para ir · ESC para cerrar", "problem": "El problema", "result": "El resultado", "released": "liberados", "robots": "robots en producción", "autos": "automatizaciones", "act1": "Dónde está el trabajo", "act2": "El ciclo", "act3": "Por qué no llega", "act4": "Cómo funciona"}, "en": {"today": "TODAY", "automated": "AUTOMATED", "person": "A person", "nav": "Navigate with", "all": "for all slides", "overview": "Overview", "tap": "Tap a slide to jump · ESC to close", "problem": "The problem", "result": "The result", "released": "released", "robots": "robots in production", "autos": "automations", "act1": "Where the work sits", "act2": "The cycle", "act3": "Why it stalls", "act4": "How it works"}};
+window.CYCLES = {"es": [{"name": "Orden de compra a confirmación", "manual": [["Solicitud esperando procesamiento", 22], ["Digitación en el ERP", 10], ["Ruteo de aprobación por correo", 18], ["Confirmación con el proveedor", 10]], "auto": [["Creación y ruteo automatizados", 2], ["El comprador aprueba excepciones", 4]], "take": "De <b>60 horas</b> a <b>6</b>. La mayor parte de ese tiempo era la orden esperando, no alguien trabajándola."}, {"name": "Factura de proveedor a pago", "manual": [["Facturas en bandeja compartida", 26], ["Lectura y digitación manual", 14], ["Cruce a tres bandas a mano", 12], ["Persecución de excepciones", 10]], "auto": [["Lectura y cruce automatizados", 1], ["Cuentas por pagar ve las reales", 5]], "take": "De <b>62 horas</b> a <b>6</b>. Los descuentos por pronto pago dejan de ser teóricos."}, {"name": "Datos de turno a reporte", "manual": [["Esperar que reporten todas las líneas", 16], ["Consolidar planillas", 14], ["Conciliar diferencias", 10], ["Formatear y distribuir", 6]], "auto": [["Consolidación automatizada continua", 1], ["El analista interpreta y comenta", 4]], "take": "De <b>46 horas</b> a <b>5</b>. El reporte llega cuando el turno todavía es accionable."}], "en": [{"name": "Purchase order to confirmation", "manual": [["Request awaiting processing", 22], ["Keying into the ERP", 10], ["Approval routing by email", 18], ["Confirming with the supplier", 10]], "auto": [["Automated creation and routing", 2], ["The buyer approves exceptions", 4]], "take": "From <b>60 hours</b> to <b>6</b>. Most of that time was the order waiting, not anyone working on it."}, {"name": "Supplier invoice to payment", "manual": [["Invoices in a shared inbox", 26], ["Manual reading and keying", 14], ["Three-way match by hand", 12], ["Chasing exceptions", 10]], "auto": [["Automated read and match", 1], ["Accounts payable sees the real ones", 5]], "take": "From <b>62 hours</b> to <b>6</b>. Early-payment discounts stop being theoretical."}, {"name": "Shift data to report", "manual": [["Waiting for all lines to report", 16], ["Consolidating spreadsheets", 14], ["Reconciling differences", 10], ["Formatting and distributing", 6]], "auto": [["Continuous automated consolidation", 1], ["The analyst interprets and comments", 4]], "take": "From <b>46 hours</b> to <b>5</b>. The report arrives while the shift is still actionable."}]};
+window.TITLES = {"es": "Rocketbot · Manufactura · Latinoamérica", "en": "Rocketbot · Manufacturing · Latin America"};
+
+</script>
+<script>
+(function(){
+  "use strict";
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length, cur = -1;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var counter = document.getElementById('counter'), hud = document.getElementById('hud');
+  var hudAct = document.getElementById('hudAct');
+  var prevBtn = document.getElementById('prev'), nextBtn = document.getElementById('next');
+  var gridBtn = document.getElementById('grid');
+  var rails = Array.prototype.slice.call(document.querySelectorAll('[data-rail]'));
+  var langBar = document.getElementById('lang');
+  var hubBack = document.getElementById('hubBack');
+
+  /* ── idioma: PRIM en el cuerpo, ALT en data-alt ── */
+  var lang = window.PRIM;
+  var i18n = Array.prototype.slice.call(document.querySelectorAll('[data-alt]'));
+  i18n.forEach(function(el){ el.setAttribute('data-prim-cache', el.innerHTML); });
+  var actN = Array.prototype.slice.call(document.querySelectorAll('[data-actname-alt]'));
+
+  function actName(s){
+    return (lang === window.ALT && s.getAttribute('data-actname-alt'))
+      ? s.getAttribute('data-actname-alt') : (s.getAttribute('data-actname') || '');
+  }
+  function applyLang(L){
+    lang = L;
+    var alt = (L === window.ALT);
+    document.documentElement.lang = (L === 'en' ? 'en-US' : 'es');
+    document.title = window.TITLES[L];
+    i18n.forEach(function(el){
+      el.innerHTML = alt ? el.getAttribute('data-alt') : el.getAttribute('data-prim-cache');
+    });
+    document.getElementById('langEs').setAttribute('aria-pressed', String(L === 'es'));
+    document.getElementById('langEn').setAttribute('aria-pressed', String(L === 'en'));
+    if (cur >= 0) hudAct.textContent = actName(slides[cur]);
+    buildOverview();
+    renderWF();
+    setAB(abState);
+  }
+  document.getElementById('langEs').addEventListener('click', function(){ applyLang('es'); });
+  document.getElementById('langEn').addEventListener('click', function(){ applyLang('en'); });
+
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function goTo(i){
+    i = Math.max(0, Math.min(total - 1, i));
+    slides[i].scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }
+  function stagger(s){
+    var els = s.querySelectorAll('.card,.row,.stepc,.why-i,.case');
+    for (var i = 0; i < els.length; i++) els[i].style.transitionDelay = (reduce ? 0 : Math.min(i*55, 600)) + 'ms';
+    s.classList.add('seen');
+  }
+  function bars(s){
+    s.querySelectorAll('[data-w]').forEach(function(el){
+      if (el.dataset.done) return;
+      el.dataset.done = '1';
+      var w = el.getAttribute('data-w');
+      requestAnimationFrame(function(){ setTimeout(function(){ el.style.width = w + '%'; }, reduce ? 0 : 140); });
+    });
+  }
+  function countUp(s){
+    s.querySelectorAll('.stat-n').forEach(function(el){
+      if (el.dataset.ran) return;
+      var raw = el.textContent, m = raw.match(/([0-9][0-9.,]*)/);
+      if (!m){ el.dataset.ran='1'; return; }
+      var num = m[1], target = parseFloat(num.replace(/,/g,''));
+      if (!isFinite(target) || target === 0){ el.dataset.ran='1'; return; }
+      el.dataset.ran='1';
+      if (reduce) return;
+      var pre = raw.slice(0, m.index), post = raw.slice(m.index + num.length);
+      var fmt = new Intl.NumberFormat(document.documentElement.lang === 'es' ? 'es-CL' : 'en-US');
+      var t0 = null;
+      function frame(ts){
+        if (!t0) t0 = ts;
+        var k = Math.min((ts - t0)/900, 1), v = target * (1 - Math.pow(1-k, 3));
+        el.textContent = pre + fmt.format(Math.round(v)) + post;
+        if (k < 1) requestAnimationFrame(frame);
+      }
+      el.textContent = pre + '0' + post;
+      requestAnimationFrame(frame);
+    });
+  }
+  function setActive(i){
+    if (i === cur) return;
+    cur = i;
+    var s = slides[i];
+    counter.textContent = pad(i+1) + ' / ' + pad(total);
+    hudAct.textContent = actName(s);
+    var isLight = s.classList.contains('light');
+    hud.classList.toggle('on-light', isLight);
+    if (langBar) langBar.classList.toggle('on-light', isLight);
+    if (hubBack) hubBack.classList.toggle('on-light', isLight);
+    prevBtn.disabled = (i === 0);
+    nextBtn.disabled = (i === total - 1);
+    var act = parseInt(s.getAttribute('data-act'), 10) || 0;
+    var inAct = slides.filter(function(x){ return parseInt(x.getAttribute('data-act'),10) === act; });
+    var pos = inAct.indexOf(s) + 1;
+    rails.forEach(function(r, idx){
+      if (idx < act) r.style.width = '100%';
+      else if (idx === act) r.style.width = Math.round(pos/inAct.length*100) + '%';
+      else r.style.width = '0%';
+    });
+    stagger(s); bars(s); countUp(s);
+    var items = document.querySelectorAll('.ovl-i');
+    for (var k = 0; k < items.length; k++) items[k].classList.toggle('now', k === i);
+  }
+
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting && e.intersectionRatio > 0.5) setActive(slides.indexOf(e.target)); });
+    }, { threshold: [0.5] });
+    slides.forEach(function(s){ io.observe(s); });
+  }
+
+  var ovl = document.getElementById('ovl'), ovlG = document.getElementById('ovlG');
+  function buildOverview(){
+    ovlG.innerHTML = '';
+    slides.forEach(function(s, i){
+      var h = s.querySelector('h1, h2');
+      var b = document.createElement('button');
+      b.className = 'ovl-i' + (i === cur ? ' now' : '');
+      b.innerHTML = '<span class="n">' + pad(i+1) + '</span><span class="t"></span><span class="a"></span>';
+      b.querySelector('.t').textContent = h ? h.textContent.replace(/[ \t\n\r]+/g,' ').trim().slice(0,60) : '';
+      b.querySelector('.a').textContent = actName(s);
+      b.addEventListener('click', function(){ ovl.classList.remove('on'); goTo(i); });
+      ovlG.appendChild(b);
+    });
+  }
+  gridBtn.addEventListener('click', function(){ ovl.classList.toggle('on'); });
+  prevBtn.addEventListener('click', function(){ goTo(cur-1); });
+  nextBtn.addEventListener('click', function(){ goTo(cur+1); });
+
+  document.addEventListener('keydown', function(e){
+    var t = e.target.tagName;
+    if (t === 'INPUT') return;
+    if (e.key === 'Escape'){ ovl.classList.remove('on'); return; }
+    if (e.key === 'o' || e.key === 'O'){ e.preventDefault(); ovl.classList.toggle('on'); return; }
+    if (ovl.classList.contains('on')) return;
+    switch(e.key){
+      case 'ArrowRight': case 'ArrowDown': case 'PageDown': e.preventDefault(); goTo(cur+1); break;
+      case ' ': if (t !== 'BUTTON'){ e.preventDefault(); goTo(cur+1); } break;
+      case 'ArrowLeft': case 'ArrowUp': case 'PageUp': e.preventDefault(); goTo(cur-1); break;
+      case 'Home': e.preventDefault(); goTo(0); break;
+      case 'End': e.preventDefault(); goTo(total-1); break;
+      case 'f': case 'F':
+        if (document.fullscreenElement) document.exitFullscreen();
+        else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
+        break;
+    }
+  });
+
+  /* ── ciclo: cascada de tiempo ── */
+  var wfSel = 0;
+  function renderWF(){
+    var d = window.CYCLES[lang][wfSel];
+    var wrap = document.getElementById('wf');
+    if (!wrap) return;
+    var all = d.manual.concat(d.auto);
+    var max = Math.max.apply(null, all.map(function(r){ return r[1]; }));
+    var html = '';
+    [[d.manual, window.L[lang].today, ''], [d.auto, window.L[lang].automated, 'auto']].forEach(function(g, gi){
+      html += '<div style="font-family:var(--mono);font-size:10px;letter-spacing:.13em;color:' +
+              (gi ? 'var(--green)' : '#8B939B') + ';margin:' + (gi ? '15px 0 4px' : '0 0 4px') + '">' + g[1] + '</div>';
+      g[0].forEach(function(r){
+        html += '<div class="wf-r ' + (gi ? 'auto' : 'man') + '"><span class="wl"></span>' +
+                '<div class="wf-t"><div class="wf-f" style="width:' + Math.round(r[1]/max*100) + '%"></div></div>' +
+                '<span class="wv">' + r[1] + ' h</span></div>';
+      });
+    });
+    wrap.innerHTML = html;
+    var labels = [];
+    d.manual.forEach(function(r){ labels.push(r[0]); });
+    d.auto.forEach(function(r){ labels.push(r[0]); });
+    wrap.querySelectorAll('.wl').forEach(function(el, i){ el.textContent = labels[i]; });
+    document.getElementById('wfLine').innerHTML = d.take;
+    document.querySelectorAll('#wfPills .pill').forEach(function(p){
+      p.setAttribute('aria-pressed', String(parseInt(p.getAttribute('data-p'),10) === wfSel));
+    });
+  }
+  document.querySelectorAll('#wfPills .pill').forEach(function(p){
+    p.addEventListener('click', function(){ wfSel = parseInt(p.getAttribute('data-p'),10); renderWF(); });
+  });
+
+  /* ── antes / después ── */
+  var abState = false;
+  function setAB(after){
+    var svg = document.getElementById('absvg');
+    if (!svg) return;
+    abState = !!after;
+    svg.classList.toggle('after', abState);
+    document.getElementById('abBefore').setAttribute('aria-pressed', String(!abState));
+    document.getElementById('abAfter').setAttribute('aria-pressed', String(abState));
+    document.getElementById('abActor').textContent = abState ? 'Rocketbot' : window.L[lang].person;
+    document.querySelectorAll('.abt').forEach(function(t, i){
+      setTimeout(function(){
+        t.textContent = t.getAttribute((abState ? 'data-a' : 'data-b') + (lang === window.ALT ? '-alt' : ''));
+        t.classList.toggle('hot', abState);
+      }, reduce ? 0 : i * 90);
+    });
+  }
+  var abB = document.getElementById('abBefore');
+  if (abB){
+    abB.addEventListener('click', function(){ setAB(false); });
+    document.getElementById('abAfter').addEventListener('click', function(){ setAB(true); });
+  }
+
+  /* ── PDF ── */
+  function reveal(){
+    for (var i = 0; i < slides.length; i++) slides[i].classList.add('seen');
+    var b = document.querySelectorAll('[data-w]');
+    for (var j = 0; j < b.length; j++) b[j].style.width = b[j].getAttribute('data-w') + '%';
+  }
+  window.addEventListener('beforeprint', reveal);
+  var pdf = document.getElementById('pdfBtn');
+  if (pdf) pdf.addEventListener('click', function(){ ovl.classList.remove('on'); reveal(); window.print(); });
+
+  applyLang(window.PRIM);
+  setActive(0);
+})();
+
+</script>
+</body>
+</html>
