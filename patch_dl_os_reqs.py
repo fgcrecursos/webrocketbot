@@ -35,17 +35,17 @@ REQS = {
     'es': {
         'windows': 'Requiere <b>Windows 10</b> o superior &middot; <b>Windows Server 2016</b> o superior',
         'macos':   'Requiere <b>macOS 11</b> (Big Sur) o superior',
-        'linux':   'Requiere <b>Ubuntu 20.04 LTS</b> o superior &middot; <b>RHEL 8</b> o superior',
+        'linux':   'Requiere <b>Ubuntu 20.04</b> a <b>24.04</b> &middot; <b>RHEL 8</b> o superior',
     },
     'en': {
         'windows': 'Requires <b>Windows 10</b> or higher &middot; <b>Windows Server 2016</b> or higher',
         'macos':   'Requires <b>macOS 11</b> (Big Sur) or higher',
-        'linux':   'Requires <b>Ubuntu 20.04 LTS</b> or higher &middot; <b>RHEL 8</b> or higher',
+        'linux':   'Requires <b>Ubuntu 20.04</b> to <b>24.04</b> &middot; <b>RHEL 8</b> or higher',
     },
     'pt': {
         'windows': 'Requer <b>Windows 10</b> ou superior &middot; <b>Windows Server 2016</b> ou superior',
         'macos':   'Requer <b>macOS 11</b> (Big Sur) ou superior',
-        'linux':   'Requer <b>Ubuntu 20.04 LTS</b> ou superior &middot; <b>RHEL 8</b> ou superior',
+        'linux':   'Requer <b>Ubuntu 20.04</b> a <b>24.04</b> &middot; <b>RHEL 8</b> ou superior',
     },
 }
 
