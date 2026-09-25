@@ -250,12 +250,14 @@ PLANS = [
 
 # ───────────────────────── filas de la comparativa ─────────────────────────
 # ('grp', titulo) | ('row', etiqueta, nota, [entry, standard, enterprise, corporate])
+NO_INFRA = L('No incluida', 'Not included', 'Não incluída')
+
 ROWS = [
     ('grp', L('Productos incluidos', 'Products included', 'Produtos incluídos')),
     ('row', 'RPA Studio',
-     L('Robots de software que operan cualquier sistema como una persona: hacen clic, copian datos, llenan formularios.',
-       'Software robots that operate any system like a person: they click, copy data and fill in forms.',
-       'Robôs de software que operam qualquer sistema como uma pessoa: clicam, copiam dados, preenchem formulários.'),
+     L('Robots de software que operan cualquier sistema como una persona: hacen clic, copian datos, llenan formularios. Se ejecutan on-premise, en la infraestructura del cliente.',
+       "Software robots that operate any system like a person: they click, copy data and fill in forms. They run on-premise, on the customer's infrastructure.",
+       'Robôs de software que operam qualquer sistema como uma pessoa: clicam, copiam dados, preenchem formulários. São executados on-premise, na infraestrutura do cliente.'),
      [Y(), Y(), Y(), Y()]),
     ('row', 'Saturn Studio',
      L('Constructor de flujos en la nube que conecta más de 500 aplicaciones sin instalar nada.',
@@ -284,6 +286,11 @@ ROWS = [
        'People who can build and edit automations and apps on the platform.',
        'Pessoas que podem construir e editar automações e apps na plataforma.'),
      [T('2'), T('3'), T('5'), B(ILIM_AS)]),
+    ('row', L('Infraestructura', 'Infrastructure', 'Infraestrutura'),
+     L('Los componentes RPA se ejecutan on-premise, en la infraestructura del cliente (servidores, máquinas virtuales o equipos propios). El plan no incluye esa infraestructura.',
+       "RPA components run on-premise, on the customer's infrastructure (their own servers, virtual machines or computers). The plan does not include that infrastructure.",
+       'Os componentes RPA são executados on-premise, na infraestrutura do cliente (servidores, máquinas virtuais ou equipamentos próprios). O plano não inclui essa infraestrutura.'),
+     [T(NO_INFRA), T(NO_INFRA), T(NO_INFRA), T(NO_INFRA)]),
 
     ('grp', L('Saturn Studio — Motor de ejecución', 'Saturn Studio — Execution engine',
               'Saturn Studio — Motor de execução')),
