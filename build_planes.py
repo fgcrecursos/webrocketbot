@@ -255,9 +255,9 @@ NO_INFRA = L('No incluida', 'Not included', 'Não incluída')
 ROWS = [
     ('grp', L('Productos incluidos', 'Products included', 'Produtos incluídos')),
     ('row', 'RPA Studio',
-     L('Robots de software que operan cualquier sistema como una persona: hacen clic, copian datos, llenan formularios. Se ejecutan on-premise, en la infraestructura del cliente.',
-       "Software robots that operate any system like a person: they click, copy data and fill in forms. They run on-premise, on the customer's infrastructure.",
-       'Robôs de software que operam qualquer sistema como uma pessoa: clicam, copiam dados, preenchem formulários. São executados on-premise, na infraestrutura do cliente.'),
+     L('Robots de software que operan cualquier sistema como una persona: hacen clic, copian datos, llenan formularios.',
+       'Software robots that operate any system like a person: they click, copy data and fill in forms.',
+       'Robôs de software que operam qualquer sistema como uma pessoa: clicam, copiam dados, preenchem formulários.'),
      [Y(), Y(), Y(), Y()]),
     ('row', 'Saturn Studio',
      L('Constructor de flujos en la nube que conecta más de 500 aplicaciones sin instalar nada.',

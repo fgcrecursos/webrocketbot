@@ -683,7 +683,7 @@ html{scroll-padding-top:92px;}
 .rb-ptbl tr.rb-ptbl__grp td.is-std{border-left:2px solid var(--rb-red);border-right:2px solid var(--rb-red);}
 .rb-ptbl .yes{color:var(--rb-green,#1D9E75);font-weight:800;font-size:15px;}
 .rb-ptbl .no{color:var(--muted);}
-.rb-ptbl .best{color:var(--rb-red);font-weight:800;}
+.rb-ptbl .best{color:var(--rb-red);font-weight:800;}.rb-ptbl__sub{display:block;max-width:340px;margin-top:3px;font-size:12px;font-weight:500;line-height:1.4;color:var(--muted);white-space:normal;}
 
 /* Nota "i": arriba en desktop; anclada al pie de la pantalla cuando la tabla
    scrollea en horizontal, porque dentro del contenedor quedaria recortada. */
@@ -1199,14 +1199,14 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
         </thead>
         <tbody>
           <tr class="rb-ptbl__grp"><td>Productos incluidos</td><td></td><td class="is-std"></td><td></td><td></td></tr>
-          <tr><td>RPA Studio<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Robots de software que operan cualquier sistema como una persona: hacen clic, copian datos, llenan formularios. Se ejecutan on-premise, en la infraestructura del cliente.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>RPA Studio<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Robots de software que operan cualquier sistema como una persona: hacen clic, copian datos, llenan formularios.</span></span><span class="rb-ptbl__sub">Se ejecuta on-premise, en la infraestructura del cliente.</span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>Saturn Studio<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Constructor de flujos en la nube que conecta más de 500 aplicaciones sin instalar nada.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>Orquestador + Xperience<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Panel central para programar, ejecutar y monitorear tus automatizaciones. Incluye portal de formularios de autoservicio.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>AI Studio<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">IA que lee y entiende documentos, correos, imágenes y audio para automatizar decisiones.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>Nexus<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Crea aplicaciones de negocio a medida para tu equipo, sin escribir código.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr class="rb-ptbl__grp"><td>RPA Studio</td><td></td><td class="is-std"></td><td></td><td></td></tr>
           <tr><td>Licencias de desarrollo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Personas que pueden construir y editar automatizaciones y apps en la plataforma.</span></span></td><td>2</td><td class="is-std">3</td><td>5</td><td class="best">Ilimitadas</td></tr>
-          <tr><td>Infraestructura<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Los componentes RPA se ejecutan on-premise, en la infraestructura del cliente (servidores, máquinas virtuales o equipos propios). El plan no incluye esa infraestructura.</span></span></td><td>No incluida</td><td class="is-std">No incluida</td><td>No incluida</td><td>No incluida</td></tr>
+          <tr><td>Infraestructura<span class="rb-ptbl__sub">RPA Studio se ejecuta en servidores o máquinas virtuales del cliente; el plan no los incluye.</span></td><td>No incluida</td><td class="is-std">No incluida</td><td>No incluida</td><td>No incluida</td></tr>
           <tr class="rb-ptbl__grp"><td>Saturn Studio — Motor de ejecución</td><td></td><td class="is-std"></td><td></td><td></td></tr>
           <tr><td>Automatizaciones en paralelo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Cuántas automatizaciones pueden ejecutarse al mismo tiempo. Es tu capacidad de trabajo simultáneo.</span></span></td><td>5</td><td class="is-std">20</td><td>50</td><td class="best">200</td></tr>
           <tr><td>Tiempo máximo por flujo<span class="rb-info" tabindex="0" role="button" aria-label="Ver detalle">i<span class="rb-info__pop">Duración máxima que puede correr una automatización antes de detenerse.</span></span></td><td>10 min</td><td class="is-std">30 min</td><td>30 min</td><td>1 hora</td></tr>

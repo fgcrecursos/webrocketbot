@@ -682,7 +682,7 @@ html{scroll-padding-top:92px;}
 .rb-ptbl tr.rb-ptbl__grp td.is-std{border-left:2px solid var(--rb-red);border-right:2px solid var(--rb-red);}
 .rb-ptbl .yes{color:var(--rb-green,#1D9E75);font-weight:800;font-size:15px;}
 .rb-ptbl .no{color:var(--muted);}
-.rb-ptbl .best{color:var(--rb-red);font-weight:800;}
+.rb-ptbl .best{color:var(--rb-red);font-weight:800;}.rb-ptbl__sub{display:block;max-width:340px;margin-top:3px;font-size:12px;font-weight:500;line-height:1.4;color:var(--muted);white-space:normal;}
 
 /* Nota "i": arriba en desktop; anclada al pie de la pantalla cuando la tabla
    scrollea en horizontal, porque dentro del contenedor quedaria recortada. */
@@ -1198,14 +1198,14 @@ select.rb-nl-in option{background:#12181c;color:#fff;}
         </thead>
         <tbody>
           <tr class="rb-ptbl__grp"><td>Products included</td><td></td><td class="is-std"></td><td></td><td></td></tr>
-          <tr><td>RPA Studio<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Software robots that operate any system like a person: they click, copy data and fill in forms. They run on-premise, on the customer's infrastructure.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>RPA Studio<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Software robots that operate any system like a person: they click, copy data and fill in forms.</span></span><span class="rb-ptbl__sub">Runs on-premise, on the customer's infrastructure.</span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>Saturn Studio<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Cloud flow builder that connects more than 500 apps with nothing to install.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>Orchestrator + Xperience<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Central panel to schedule, run and monitor your automations. Includes the self-service forms portal.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>AI Studio<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">AI that reads and understands documents, email, images and audio to automate decisions.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>Nexus<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Build tailor-made business apps for your team, without writing code.</span></span></td><td class="yes">✓</td><td class="is-std yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr class="rb-ptbl__grp"><td>RPA Studio</td><td></td><td class="is-std"></td><td></td><td></td></tr>
           <tr><td>Development licenses<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">People who can build and edit automations and apps on the platform.</span></span></td><td>2</td><td class="is-std">3</td><td>5</td><td class="best">Unlimited</td></tr>
-          <tr><td>Infrastructure<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">RPA components run on-premise, on the customer's infrastructure (their own servers, virtual machines or computers). The plan does not include that infrastructure.</span></span></td><td>Not included</td><td class="is-std">Not included</td><td>Not included</td><td>Not included</td></tr>
+          <tr><td>Infrastructure<span class="rb-ptbl__sub">RPA Studio runs on the customer's own servers or virtual machines; the plan does not include them.</span></td><td>Not included</td><td class="is-std">Not included</td><td>Not included</td><td>Not included</td></tr>
           <tr class="rb-ptbl__grp"><td>Saturn Studio — Execution engine</td><td></td><td class="is-std"></td><td></td><td></td></tr>
           <tr><td>Automations running in parallel<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">How many automations can run at the same time. This is your simultaneous work capacity.</span></span></td><td>5</td><td class="is-std">20</td><td>50</td><td class="best">200</td></tr>
           <tr><td>Maximum time per flow<span class="rb-info" tabindex="0" role="button" aria-label="See detail">i<span class="rb-info__pop">Maximum time an automation can run before it stops.</span></span></td><td>10 min</td><td class="is-std">30 min</td><td>30 min</td><td>1 hour</td></tr>
