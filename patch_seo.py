@@ -11,7 +11,7 @@ GSC_TOKEN = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'  # ← Google Sea
 PAGES = {
     'index.html': {
         'title': 'Rocketbot | Suite de Automatización Empresarial RPA e IA para Latinoamérica',
-        'desc':  'Suite completa de automatización empresarial end-to-end. Agentes digitales con RPA e IA disponibles 24/7. Saturn Studio, RPA Studio, AI Studio, Orquestador y Xperience.',
+        'desc':  'Suite completa de automatización empresarial end-to-end. Agentes digitales con RPA e IA disponibles 24/7. Saturn Studio, RPA Studio, Ai Studio, Orquestador y Xperience.',
         'url':   BASE_URL + '/',
         'schema': [
             {
@@ -91,14 +91,14 @@ PAGES = {
         ],
     },
     'ai-studio.html': {
-        'title': 'AI Studio | Automatización con Inteligencia Artificial para Empresas · Rocketbot',
-        'desc':  'Potencia tus procesos con IA. AI Studio procesa correos con NLP, aplica visión computacional y OCR avanzado. Automatización inteligente con Rocketbot.',
+        'title': 'Ai Studio | Automatización con Inteligencia Artificial para Empresas · Rocketbot',
+        'desc':  'Potencia tus procesos con IA. Ai Studio procesa correos con NLP, aplica visión computacional y OCR avanzado. Automatización inteligente con Rocketbot.',
         'url':   BASE_URL + '/ai-studio',
         'schema': [
             {
                 '@context': 'https://schema.org',
                 '@type': 'SoftwareApplication',
-                'name': 'AI Studio',
+                'name': 'Ai Studio',
                 'applicationCategory': 'BusinessApplication',
                 'operatingSystem': 'Windows, Web',
                 'description': 'Módulo de inteligencia artificial para automatización avanzada: NLP, visión computacional y OCR.',
@@ -111,7 +111,7 @@ PAGES = {
                 '@type': 'BreadcrumbList',
                 'itemListElement': [
                     {'@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': BASE_URL},
-                    {'@type': 'ListItem', 'position': 2, 'name': 'AI Studio', 'item': BASE_URL + '/ai-studio'}
+                    {'@type': 'ListItem', 'position': 2, 'name': 'Ai Studio', 'item': BASE_URL + '/ai-studio'}
                 ]
             }
         ],
