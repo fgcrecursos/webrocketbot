@@ -1451,6 +1451,7 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
     document.body.style.overflow='hidden';
   }
   function closeModal(){
+    if(location.hash==='#descargar') history.replaceState(null,'',location.pathname+location.search);
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden','true');
     document.body.style.overflow='';
@@ -1458,6 +1459,7 @@ if(themeBtn)themeBtn.addEventListener('click',function(){applyTheme(html.getAttr
   openBtns.forEach(function(b){ b.addEventListener('click',openModal); });
   closeEls.forEach(function(el){ el.addEventListener('click',closeModal); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeModal(); });
+  if(location.hash==='#descargar') openModal();
     modal.querySelectorAll('.rb-dlmodal__osgroup').forEach(function(group){
       var head=group.querySelector('.rb-dlmodal__oshead');
       var wrap=group.querySelector('.rb-dlmodal__vwrap');

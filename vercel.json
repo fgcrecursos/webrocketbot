@@ -236,6 +236,11 @@
       "source": "/pt/partners",
       "destination": "/pt/parceiros",
       "permanent": true
+    },
+    {
+      "source": "/descargar",
+      "destination": "/#descargar",
+      "permanent": true
     }
   ]
 }
