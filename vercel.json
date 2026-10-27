@@ -241,6 +241,26 @@
       "source": "/descargar",
       "destination": "/#descargar",
       "permanent": true
+    },
+    {
+      "source": "/en/download",
+      "destination": "/en#descargar",
+      "permanent": true
+    },
+    {
+      "source": "/en/descargar",
+      "destination": "/en#descargar",
+      "permanent": true
+    },
+    {
+      "source": "/pt/baixar",
+      "destination": "/pt#descargar",
+      "permanent": true
+    },
+    {
+      "source": "/pt/descargar",
+      "destination": "/pt#descargar",
+      "permanent": true
     }
   ]
 }
