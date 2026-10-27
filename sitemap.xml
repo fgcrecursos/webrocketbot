@@ -232,27 +232,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/construir-vs-comprar.html"/>
   </url>
   <url>
-    <loc>https://rocketbot.com/blog.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/blog.html"/>
-  </url>
-  <url>
-    <loc>https://rocketbot.com/en/blog.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/blog.html"/>
-  </url>
-  <url>
-    <loc>https://rocketbot.com/pt/blog.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rocketbot.com/pt/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rocketbot.com/blog.html"/>
-  </url>
-  <url>
     <loc>https://rocketbot.com/contacto.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://rocketbot.com/contacto.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://rocketbot.com/en/contact.html"/>

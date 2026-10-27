@@ -2,7 +2,7 @@ import re, os
 os.chdir(r'C:\Users\frani\.claude\worktrees\quirky-aryabhata-b7856b')
 
 FILES = ['index.html','saturn-studio.html','rpa-studio.html','ai-studio.html',
-         'orquestador.html','xperience.html','contacto.html','blog.html']
+         'orquestador.html','xperience.html','contacto.html']
 
 # ── CSS to inject (before </style>) ───────────────────────────────────────────
 LANG_CSS = """
